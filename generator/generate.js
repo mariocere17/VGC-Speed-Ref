@@ -58,25 +58,10 @@ async function fetchWithRetry(url, attempts = 3) {
 }
 
 async function fetchPokemon(entry) {
-  // Build PokeAPI URL: prefer numeric id, fall back to name-as-slug
-  let apiId;
-  if (entry.form !== undefined && entry.id) {
-    // e.g. Calyrex-Ice → pokemon-species/{id} → variety[form]
-    const r = await fetchWithRetry(`https://pokeapi.co/api/v2/pokemon-species/${entry.id}`);
-    if (!r) { console.warn(`  ⚠ Species not found for ${entry.name}`); return null; }
-    const species = await r.json();
-    const variety = species.varieties[entry.form] ?? species.varieties[0];
-    if (!variety) { console.warn(`  ⚠ No variety[${entry.form}] for ${entry.name}`); return null; }
-    apiId = variety.pokemon.url.split('/').filter(Boolean).pop();
-  } else if (entry.id) {
-    apiId = entry.id;
-  } else {
-    // Slugify the display name for PokeAPI
-    apiId = entry.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-$/, '');
-  }
-
+  // Priority: explicit slug > numeric id > name-derived slug
+  const apiId = entry.slug ?? entry.id ?? entry.name.toLowerCase().replace(/[^a-z0-9-]+/g, '-').replace(/-+/g, '-').replace(/-$/, '');
   const r = await fetchWithRetry(`https://pokeapi.co/api/v2/pokemon/${apiId}`);
-  if (!r) { console.warn(`  ⚠ Pokemon not found: ${apiId}`); return null; }
+  if (!r) { console.warn(`  ⚠ Not found in PokeAPI: ${entry.name} (tried: ${apiId})`); return null; }
   return r.json();
 }
 
@@ -86,7 +71,9 @@ async function processPokemon(entry) {
   if (!data) return [];
 
   const base    = data.stats.find(s => s.stat.name === 'speed')?.base_stat;
-  const dex_id  = String(data.id);
+  // Use the national dex number from pool.json (entry.id) for grouping forms in the UI.
+  // Fall back to PokeAPI's internal id (which differs for alternate forms).
+  const dex_id  = String(entry.id ?? data.id);
   const name    = entry.name; // Use display name from pool.json
 
   if (!base) { console.warn(`  ⚠ No speed stat for ${name}`); return []; }
