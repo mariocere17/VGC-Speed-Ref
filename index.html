@@ -665,14 +665,11 @@ function selectForCompare(idx) {
   if (compareA === entry) { compareA = null; render(); return; }
   if (compareB === entry) { compareB = null; render(); return; }
 
-  if (!compareA) {
-    compareA = entry;
-    render();
-  } else {
-    compareB = entry;
-    render();
-    openCmp();
-  }
+  if (!compareA) compareA = entry;
+  else compareB = entry;
+
+  render();
+  if (compareA && compareB) openCmp();
 }
 
 function calcFinalSpeed(actual, cond) {
