@@ -152,7 +152,7 @@ tbody tr { cursor: pointer; }
 .cmp-close { background: none; border: none; color: var(--muted); font-size: 1.4rem; cursor: pointer; line-height: 1; }
 .cmp-close:hover { color: var(--text); }
 .cmp-hint { font-size: 0.75rem; color: var(--muted); text-align: center; }
-.cmp-cols { display: grid; grid-template-columns: 1fr 36px 1fr; gap: 10px; align-items: start; }
+.cmp-cols { display: grid; grid-template-columns: 1fr 36px 1fr; gap: 10px; align-items: stretch; }
 .cmp-vs {
   align-self: center; text-align: center; font-size: 0.85rem;
   font-weight: 700; color: var(--muted); padding-top: 40px;
@@ -698,12 +698,8 @@ function renderCmpCol(r, side) {
   // Weather boost indicator
   const abilityWeather = getWeatherAbility(r);
   let weatherBadge = '';
-  if (abilityWeather && cmpWeather) {
-    if (cmpWeather === abilityWeather) {
-      weatherBadge = `<span class="cmp-boost-badge boost-active">⚡ ${cmpWeather.toUpperCase()} boost active</span>`;
-    } else {
-      weatherBadge = `<span class="cmp-boost-badge boost-inactive">✗ ${abilityWeather} needed</span>`;
-    }
+  if (abilityWeather && cmpWeather === abilityWeather) {
+    weatherBadge = `<span class="cmp-boost-badge boost-active">⚡ ${cmpWeather.toUpperCase()} boost active</span>`;
   }
 
   const q = spriteQueue(r.pokemon);
