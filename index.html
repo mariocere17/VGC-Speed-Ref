@@ -48,6 +48,21 @@ input[type="text"] { width: 160px; }
 }
 .btn-reset:hover { color: var(--text); border-color: var(--text); }
 
+/* ── CONDITION TOGGLES ── */
+.conditions { display: flex; flex-direction: column; gap: 4px; }
+.conditions label { font-size: 0.7rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; }
+.toggle-group { display: flex; gap: 6px; }
+.btn-toggle {
+  padding: 5px 12px; border-radius: 6px; font-size: 0.8rem; font-weight: 600;
+  cursor: pointer; border: 1px solid var(--border); background: var(--bg); color: var(--muted);
+  transition: all .15s;
+}
+.btn-toggle:hover { color: var(--text); border-color: var(--text); }
+.btn-toggle.active-tailwind { background: #0d3460; color: #90caf9; border-color: #1565c0; }
+.btn-toggle.active-para    { background: #3d1a00; color: #ffab40; border-color: #e65100; }
+.speed-modified { color: #90caf9; }
+.speed-modified.para { color: #ffab40; }
+
 /* ── TABLE ── */
 .info-bar { color: var(--muted); font-size: 0.8rem; margin-bottom: 8px; }
 .info-bar strong { color: var(--text); }
@@ -172,6 +187,13 @@ tr:hover td { background: var(--surface2); }
     <div class="filter-group">
       <label>Ability / Item</label>
       <input type="text" id="abilityFilter" placeholder="e.g. Scarf, Unburden…">
+    </div>
+    <div class="conditions">
+      <label>Conditions</label>
+      <div class="toggle-group">
+        <button class="btn-toggle" id="btnTailwind" onclick="toggleCondition('tailwind')" title="Doubles Speed">Tailwind ×2</button>
+        <button class="btn-toggle" id="btnPara"     onclick="toggleCondition('para')"     title="Halves Speed">Paralysis ÷2</button>
+      </div>
     </div>
     <button class="btn-reset" onclick="resetFilters()">Reset</button>
   </div>
@@ -327,6 +349,20 @@ let ALL_DATA = [];
 let filtered = [];
 let sortCol = 'actual';
 let sortDir = 'desc';
+let condition = null; // 'tailwind' | 'para' | null
+
+function toggleCondition(c) {
+  condition = condition === c ? null : c;
+  document.getElementById('btnTailwind').className = 'btn-toggle' + (condition === 'tailwind' ? ' active-tailwind' : '');
+  document.getElementById('btnPara').className     = 'btn-toggle' + (condition === 'para'     ? ' active-para'     : '');
+  render();
+}
+
+function applyCondition(speed) {
+  if (condition === 'tailwind') return speed * 2;
+  if (condition === 'para')     return Math.floor(speed / 2);
+  return speed;
+}
 
 // ── Auto-load data.json ──────────────────────────────────────────
 (async function loadData() {
@@ -381,6 +417,9 @@ function resetFilters() {
   });
   document.getElementById('tierFilter').value = '';
   document.getElementById('multFilter').value = '';
+  condition = null;
+  document.getElementById('btnTailwind').className = 'btn-toggle';
+  document.getElementById('btnPara').className     = 'btn-toggle';
   applyFilters();
 }
 
@@ -447,9 +486,11 @@ function render() {
          <div class="pkmn-dex">#${esc(r.dex_id)}</div>`
       : `<div class="pkmn-name" style="color:var(--muted)">—</div>`;
 
+    const displaySpeed = applyCondition(r.actual);
+    const speedCls = condition === 'tailwind' ? ' speed-modified' : condition === 'para' ? ' speed-modified para' : '';
     return `<tr>
       <td><div class="pkmn-cell">${sprite}<div>${pkmn}</div></div></td>
-      <td><span class="speed-val">${r.actual}</span></td>
+      <td><span class="speed-val${speedCls}">${displaySpeed}</span></td>
       <td><span class="base-stat">${r.base}</span></td>
       <td>${tierBadge(r.tier)}</td>
       <td>${multBadge(r.mult)}</td>
