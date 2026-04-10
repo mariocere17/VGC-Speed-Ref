@@ -1,0 +1,31 @@
+{
+  "format": "Pokemon Champions VGC 2026",
+  "updated": "2026-04-10",
+  "note": "Add or remove entries as the Champions format pool is announced. 'id' is the PokeAPI numeric ID (optional if name is lowercase-hyphenated PokeAPI slug).",
+  "pokemon": [
+    { "name": "Incineroar",  "id": 727 },
+    { "name": "Sneasler",    "id": 903 },
+    { "name": "Whimsicott",  "id": 547 },
+    { "name": "Pelipper",    "id": 279 },
+    { "name": "Garchomp",    "id": 445 },
+    { "name": "Torkoal",     "id": 324 },
+    { "name": "Rillaboom",   "id": 812 },
+    { "name": "Urshifu",     "id": 892 },
+    { "name": "Calyrex-Ice", "id": 898, "form": 1 },
+    { "name": "Calyrex-Shadow", "id": 898, "form": 2 },
+    { "name": "Miraidon",    "id": 1008 },
+    { "name": "Koraidon",    "id": 1007 },
+    { "name": "Flutter Mane","id": 987 },
+    { "name": "Iron Hands",  "id": 992 },
+    { "name": "Landorus-T",  "id": 645, "form": 1 },
+    { "name": "Tyranitar",   "id": 248 },
+    { "name": "Amoonguss",   "id": 591 },
+    { "name": "Grimmsnarl",  "id": 861 },
+    { "name": "Kingambit",   "id": 983 },
+    { "name": "Gholdengo",   "id": 1000 },
+    { "name": "Ogerpon",     "id": 1017 },
+    { "name": "Farigiraf",   "id": 981 },
+    { "name": "Chi-Yu",      "id": 1004 },
+    { "name": "Chien-Pao",   "id": 1003 }
+  ]
+}
