@@ -185,6 +185,12 @@ tbody tr { cursor: pointer; }
 .cmp-outcome.winner { color: #3fb950; }
 .cmp-outcome.loser  { color: var(--muted); }
 .cmp-outcome.draw   { color: var(--accent); }
+.cmp-variant-select {
+  width: 100%; background: var(--bg); border: 1px solid var(--border);
+  color: var(--text); border-radius: 6px; padding: 5px 8px;
+  font-size: 0.78rem; outline: none; cursor: pointer;
+}
+.cmp-variant-select:focus { border-color: var(--accent); }
 
 /* ── LEGEND ── */
 .legend {
@@ -632,9 +638,22 @@ function renderCmpCol(r, side) {
 
   const tierLabel = r.tier === '最速' ? 'Max Speed' : r.tier === '準速' ? 'Neutral' : 'No EVs';
   const multLabel = r.mult === '×2' ? '×2' : r.mult === '×1.5' ? '×1.5' : '×1';
-
   const tw = cond === 'tailwind';
   const pa = cond === 'para';
+
+  // Variant selector: all entries in ALL_DATA with the same dex_id
+  const currentIdx = ALL_DATA.indexOf(r);
+  const variants = ALL_DATA.map((e, i) => ({ e, i })).filter(({ e }) => e.dex_id === r.dex_id);
+  const variantSelect = variants.length > 1 ? `
+    <select class="cmp-variant-select" onchange="changeCmpEntry('${side}', this.value)">
+      ${variants.map(({ e, i }) => {
+        const tl = e.tier === '最速' ? 'Max' : e.tier === '準速' ? 'Neutral' : 'No EVs';
+        const ml = e.mult ? ' ' + e.mult : '';
+        const al = e.abilities.map(a => T[a] || a).join('+');
+        const label = `${tl}${ml} → ${e.actual}${al ? ' · ' + al : ''}`;
+        return `<option value="${i}" ${i === currentIdx ? 'selected' : ''}>${esc(label)}</option>`;
+      }).join('')}
+    </select>` : '';
 
   return `
     <div class="cmp-pkmn">
@@ -644,6 +663,7 @@ function renderCmpCol(r, side) {
         <div class="cmp-pkmn-dex">#${esc(r.dex_id)}</div>
       </div>
     </div>
+    ${variantSelect}
     <div class="cmp-stats">
       <div class="cmp-row"><span class="cmp-label">Base Speed</span><span class="cmp-val">${r.base}</span></div>
       <div class="cmp-row"><span class="cmp-label">Investment</span><span class="cmp-val">${tierLabel}</span></div>
@@ -682,6 +702,15 @@ function openCmp() {
   cmpCondA = null; cmpCondB = null;
   renderCmpCols();
   document.getElementById('cmpOverlay').classList.add('open');
+}
+
+function changeCmpEntry(side, allDataIdx) {
+  const entry = ALL_DATA[+allDataIdx];
+  if (!entry) return;
+  if (side === 'A') compareA = entry;
+  else              compareB = entry;
+  render();
+  renderCmpCols();
 }
 
 function closeCmp() {
