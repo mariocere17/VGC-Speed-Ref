@@ -127,6 +127,65 @@ tr:hover td { background: var(--surface2); }
 }
 .chip[data-tip]:hover::after { display: block; }
 
+/* ── COMPARE ROW SELECTION ── */
+tr.cmp-sel-a td { background: rgba(124,77,255,.12) !important; }
+tr.cmp-sel-b td { background: rgba(33,150,243,.12)  !important; }
+tr.cmp-sel-a td:first-child { border-left: 3px solid var(--accent); }
+tr.cmp-sel-b td:first-child { border-left: 3px solid #42a5f5; }
+tbody tr { cursor: pointer; }
+
+/* ── COMPARE MODAL ── */
+.cmp-overlay {
+  display: none; position: fixed; inset: 0;
+  background: rgba(0,0,0,.8); z-index: 100;
+  align-items: center; justify-content: center; padding: 16px;
+}
+.cmp-overlay.open { display: flex; }
+.cmp-modal {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 12px; padding: 20px; width: min(720px, 100%);
+  max-height: 90vh; overflow-y: auto;
+  display: flex; flex-direction: column; gap: 14px;
+}
+.cmp-header { display: flex; align-items: center; justify-content: space-between; }
+.cmp-header h2 { font-size: 1rem; color: #c9d1d9; }
+.cmp-close { background: none; border: none; color: var(--muted); font-size: 1.4rem; cursor: pointer; line-height: 1; }
+.cmp-close:hover { color: var(--text); }
+.cmp-hint { font-size: 0.75rem; color: var(--muted); text-align: center; }
+.cmp-cols { display: grid; grid-template-columns: 1fr 36px 1fr; gap: 10px; align-items: start; }
+.cmp-vs {
+  align-self: center; text-align: center; font-size: 0.85rem;
+  font-weight: 700; color: var(--muted); padding-top: 40px;
+}
+.cmp-col {
+  background: var(--surface2); border: 2px solid var(--border);
+  border-radius: 10px; padding: 14px; display: flex; flex-direction: column; gap: 10px;
+  transition: border-color .2s;
+}
+.cmp-col.winner { border-color: #3fb950; }
+.cmp-col.loser  { opacity: .7; }
+.cmp-col.draw   { border-color: var(--accent); }
+.cmp-pkmn { display: flex; align-items: center; gap: 10px; }
+.cmp-sprite { width: 64px; height: 64px; object-fit: contain; image-rendering: pixelated; }
+.cmp-pkmn-info { display: flex; flex-direction: column; }
+.cmp-pkmn-name { font-size: 1rem; font-weight: 700; color: #c9d1d9; }
+.cmp-pkmn-dex  { font-size: 0.72rem; color: var(--muted); }
+.cmp-stats { display: flex; flex-direction: column; gap: 4px; font-size: 0.82rem; }
+.cmp-row { display: flex; justify-content: space-between; }
+.cmp-label { color: var(--muted); }
+.cmp-val   { font-weight: 600; }
+.cmp-divider { border: none; border-top: 1px solid var(--border); }
+.cmp-toggles { display: flex; gap: 6px; }
+.cmp-final { display: flex; align-items: center; justify-content: space-between; margin-top: 2px; }
+.cmp-final-speed { font-size: 2rem; font-weight: 700; }
+.cmp-final-speed.winner { color: #3fb950; }
+.cmp-final-speed.loser  { color: var(--muted); }
+.cmp-final-speed.draw   { color: #c9d1d9; }
+.cmp-outcome { font-size: 0.8rem; font-weight: 700; }
+.cmp-outcome.winner { color: #3fb950; }
+.cmp-outcome.loser  { color: var(--muted); }
+.cmp-outcome.draw   { color: var(--accent); }
+
 /* ── LEGEND ── */
 .legend {
   display: flex; flex-wrap: wrap; gap: 10px; align-items: center;
@@ -146,6 +205,22 @@ tr:hover td { background: var(--surface2); }
     · <span id="lastUpdated" style="color:var(--muted)">Loading…</span>
   </p>
 </header>
+
+<!-- COMPARE MODAL -->
+<div class="cmp-overlay" id="cmpOverlay" onclick="closeCmpOverlay(event)">
+  <div class="cmp-modal">
+    <div class="cmp-header">
+      <h2>Speed Comparison</h2>
+      <button class="cmp-close" onclick="closeCmp()">×</button>
+    </div>
+    <p class="cmp-hint">Click any row in the table to swap a slot</p>
+    <div class="cmp-cols">
+      <div class="cmp-col" id="cmpColA"></div>
+      <div class="cmp-vs">VS</div>
+      <div class="cmp-col" id="cmpColB"></div>
+    </div>
+  </div>
+</div>
 
 <!-- FILTERS (hidden until data loaded) -->
 <div id="mainContent" style="display:none">
@@ -351,6 +426,10 @@ let sortCol = 'actual';
 let sortDir = 'desc';
 let condition = null; // 'tailwind' | 'para' | null
 
+// ── Compare state ────────────────────────────────────────────────
+let compareA = null, compareB = null;
+let cmpCondA = null, cmpCondB = null;
+
 function toggleCondition(c) {
   condition = condition === c ? null : c;
   document.getElementById('btnTailwind').className = 'btn-toggle' + (condition === 'tailwind' ? ' active-tailwind' : '');
@@ -472,7 +551,7 @@ function render() {
     return;
   }
 
-  tbody.innerHTML = filtered.map(r => {
+  tbody.innerHTML = filtered.map((r, idx) => {
     const q = spriteQueue(r.pokemon);
     const firstSrc = q.shift();
     const sprite = r.pokemon
@@ -488,7 +567,8 @@ function render() {
 
     const displaySpeed = applyCondition(r.actual);
     const speedCls = condition === 'tailwind' ? ' speed-modified' : condition === 'para' ? ' speed-modified para' : '';
-    return `<tr>
+    const selCls = compareA === r ? ' cmp-sel-a' : compareB === r ? ' cmp-sel-b' : '';
+    return `<tr class="${selCls}" onclick="selectForCompare(${idx})">
       <td><div class="pkmn-cell">${sprite}<div>${pkmn}</div></div></td>
       <td><span class="speed-val${speedCls}">${displaySpeed}</span></td>
       <td><span class="base-stat">${r.base}</span></td>
@@ -502,6 +582,117 @@ function render() {
 // ── Wire filters ─────────────────────────────────────────────────
 ['pkmnFilter','minSpeed','maxSpeed','baseFilter','tierFilter','multFilter','abilityFilter']
   .forEach(id => document.getElementById(id).addEventListener('input', applyFilters));
+
+// ── Compare logic ────────────────────────────────────────────────
+function selectForCompare(idx) {
+  const entry = filtered[idx];
+  if (!entry) return;
+
+  if (compareA === entry) { compareA = null; render(); return; }
+  if (compareB === entry) { compareB = null; render(); return; }
+
+  if (!compareA) {
+    compareA = entry;
+    render();
+  } else {
+    compareB = entry;
+    render();
+    openCmp();
+  }
+}
+
+function calcFinalSpeed(actual, cond) {
+  if (cond === 'tailwind') return actual * 2;
+  if (cond === 'para')     return Math.floor(actual / 2);
+  return actual;
+}
+
+function cmpToggle(side, cond) {
+  if (side === 'A') cmpCondA = cmpCondA === cond ? null : cond;
+  else              cmpCondB = cmpCondB === cond ? null : cond;
+  renderCmpCols();
+}
+
+function renderCmpCol(r, side) {
+  const cond     = side === 'A' ? cmpCondA : cmpCondB;
+  const finalSpd = calcFinalSpeed(r.actual, cond);
+  const otherSpd = calcFinalSpeed(
+    side === 'A' ? (compareB?.actual ?? 0) : (compareA?.actual ?? 0),
+    side === 'A' ? cmpCondB : cmpCondA
+  );
+  const outcome  = finalSpd > otherSpd ? 'winner' : finalSpd < otherSpd ? 'loser' : 'draw';
+  const outcomeLabel = outcome === 'winner' ? 'FASTER' : outcome === 'loser' ? 'SLOWER' : 'TIE';
+
+  const q = spriteQueue(r.pokemon);
+  const src = q.shift();
+  const sprite = `<img class="cmp-sprite" src="${esc(src)}"
+    data-queue='${esc(JSON.stringify(q))}'
+    onerror="this._spriteQ=JSON.parse(this.dataset.queue||'[]');nextSprite(this)"
+    alt="${esc(r.pokemon)}">`;
+
+  const tierLabel = r.tier === '最速' ? 'Max Speed' : r.tier === '準速' ? 'Neutral' : 'No EVs';
+  const multLabel = r.mult === '×2' ? '×2' : r.mult === '×1.5' ? '×1.5' : '×1';
+
+  const tw = cond === 'tailwind';
+  const pa = cond === 'para';
+
+  return `
+    <div class="cmp-pkmn">
+      ${sprite}
+      <div class="cmp-pkmn-info">
+        <div class="cmp-pkmn-name">${esc(r.pokemon)}</div>
+        <div class="cmp-pkmn-dex">#${esc(r.dex_id)}</div>
+      </div>
+    </div>
+    <div class="cmp-stats">
+      <div class="cmp-row"><span class="cmp-label">Base Speed</span><span class="cmp-val">${r.base}</span></div>
+      <div class="cmp-row"><span class="cmp-label">Investment</span><span class="cmp-val">${tierLabel}</span></div>
+      <div class="cmp-row"><span class="cmp-label">Modifier</span><span class="cmp-val">${multLabel}</span></div>
+      <div class="cmp-row"><span class="cmp-label">Actual Speed</span><span class="cmp-val">${r.actual}</span></div>
+      <div class="cmp-row"><span class="cmp-label">Ability / Item</span><span class="cmp-val" style="font-size:.75rem">${abilityChips(r.abilities) || '—'}</span></div>
+    </div>
+    <hr class="cmp-divider">
+    <div class="cmp-toggles">
+      <button class="btn-toggle ${tw ? 'active-tailwind' : ''}" onclick="cmpToggle('${side}','tailwind')">Tailwind ×2</button>
+      <button class="btn-toggle ${pa ? 'active-para'     : ''}" onclick="cmpToggle('${side}','para')">Paralysis ÷2</button>
+    </div>
+    <hr class="cmp-divider">
+    <div class="cmp-final">
+      <span class="cmp-final-speed ${outcome}">${finalSpd}</span>
+      <span class="cmp-outcome ${outcome}">${outcomeLabel}</span>
+    </div>`;
+}
+
+function renderCmpCols() {
+  if (!compareA || !compareB) return;
+
+  const finalA = calcFinalSpeed(compareA.actual, cmpCondA);
+  const finalB = calcFinalSpeed(compareB.actual, cmpCondB);
+  const colA = document.getElementById('cmpColA');
+  const colB = document.getElementById('cmpColB');
+
+  colA.innerHTML = renderCmpCol(compareA, 'A');
+  colB.innerHTML = renderCmpCol(compareB, 'B');
+
+  colA.className = 'cmp-col ' + (finalA > finalB ? 'winner' : finalA < finalB ? 'loser' : 'draw');
+  colB.className = 'cmp-col ' + (finalB > finalA ? 'winner' : finalB < finalA ? 'loser' : 'draw');
+}
+
+function openCmp() {
+  cmpCondA = null; cmpCondB = null;
+  renderCmpCols();
+  document.getElementById('cmpOverlay').classList.add('open');
+}
+
+function closeCmp() {
+  document.getElementById('cmpOverlay').classList.remove('open');
+}
+
+function closeCmpOverlay(e) {
+  if (e.target === document.getElementById('cmpOverlay')) closeCmp();
+}
+
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeCmp(); });
 
 </script>
 </body>
