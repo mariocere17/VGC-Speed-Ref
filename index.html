@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pokemon SV — Speed Reference</title>
+<style>
+:root {
+  --bg: #0d1117; --surface: #161b22; --surface2: #1c2128;
+  --border: #30363d; --text: #e6edf3; --muted: #8b949e;
+  --accent: #7c4dff;
+  --mult2-bg: #0d3460; --mult2-fg: #90caf9;
+  --mult15-bg: #5c2800; --mult15-fg: #ffcc80;
+  --tier-max-bg: #1b3d1b; --tier-max-fg: #81c784;
+  --tier-near-bg: #4a3500; --tier-near-fg: #ffe082;
+  --tier-no-bg: #222; --tier-no-fg: #999;
+  --item-fg: #80cbc4; --ability-fg: #ce93d8;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); padding: 20px; min-height: 100vh; }
+
+/* ── HEADER ── */
+header { margin-bottom: 20px; }
+h1 { font-size: 1.5rem; color: #c9d1d9; margin-bottom: 3px; }
+.subtitle { color: var(--muted); font-size: 0.8rem; }
+.subtitle a { color: var(--accent); text-decoration: none; }
+
+/* ── FILTERS ── */
+.filters {
+  display: flex; flex-wrap: wrap; gap: 12px;
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 8px; padding: 14px; margin-bottom: 14px;
+}
+.filter-group { display: flex; flex-direction: column; gap: 4px; }
+label { font-size: 0.7rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; }
+input, select {
+  background: var(--bg); border: 1px solid var(--border); color: var(--text);
+  padding: 7px 10px; border-radius: 6px; font-size: 0.85rem; outline: none;
+}
+input:focus, select:focus { border-color: var(--accent); }
+input[type="number"] { width: 90px; }
+input[type="text"] { width: 160px; }
+.btn-reset {
+  align-self: flex-end; padding: 7px 14px; background: var(--bg);
+  border: 1px solid var(--border); color: var(--muted); border-radius: 6px;
+  cursor: pointer; font-size: 0.82rem;
+}
+.btn-reset:hover { color: var(--text); border-color: var(--text); }
+
+/* ── TABLE ── */
+.info-bar { color: var(--muted); font-size: 0.8rem; margin-bottom: 8px; }
+.info-bar strong { color: var(--text); }
+.table-wrap { overflow-x: auto; border-radius: 8px; border: 1px solid var(--border); }
+table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+thead { background: var(--surface2); position: sticky; top: 0; z-index: 5; }
+th {
+  padding: 10px 14px; text-align: left; font-weight: 600; color: var(--muted);
+  border-bottom: 1px solid var(--border); white-space: nowrap; cursor: pointer; user-select: none;
+}
+th:hover { color: var(--text); }
+th.sort-asc::after { content: ' ↑'; color: var(--accent); }
+th.sort-desc::after { content: ' ↓'; color: var(--accent); }
+td { padding: 8px 14px; border-bottom: 1px solid var(--border); vertical-align: middle; }
+tr:last-child td { border-bottom: none; }
+tr:hover td { background: var(--surface2); }
+
+/* ── POKEMON CELL ── */
+.pkmn-cell { display: flex; align-items: center; gap: 8px; min-width: 160px; }
+.pkmn-sprite { width: 36px; height: 36px; object-fit: contain; flex-shrink: 0; image-rendering: pixelated; }
+.pkmn-sprite-placeholder { width: 36px; height: 36px; flex-shrink: 0; }
+.pkmn-name { font-weight: 600; color: #c9d1d9; white-space: nowrap; }
+.pkmn-dex { font-size: 0.72rem; color: var(--muted); }
+
+/* ── BADGES ── */
+.speed-val { font-size: 1.05rem; font-weight: 700; color: #f0f6fc; }
+.base-stat { font-weight: 600; }
+.badge { display: inline-block; padding: 2px 7px; border-radius: 4px; font-size: 0.72rem; font-weight: 700; }
+.tier-max  { background: var(--tier-max-bg);  color: var(--tier-max-fg); }
+.tier-near { background: var(--tier-near-bg); color: var(--tier-near-fg); }
+.tier-none { background: var(--tier-no-bg);   color: var(--tier-no-fg); }
+.mult-x2   { background: var(--mult2-bg);  color: var(--mult2-fg); }
+.mult-x15  { background: var(--mult15-bg); color: var(--mult15-fg); }
+.mult-none { background: #1c2128; color: var(--muted); }
+
+/* ── ABILITY CHIPS ── */
+.ability-list { display: flex; flex-wrap: wrap; gap: 4px; }
+.chip {
+  display: inline-flex; align-items: center; gap: 3px;
+  padding: 2px 7px; border-radius: 12px; font-size: 0.75rem; white-space: nowrap;
+}
+.chip-ability { background: #2d1b4a; color: var(--ability-fg); border: 1px solid #5c3d8f; }
+.chip-item    { background: #0d2b2b; color: var(--item-fg);    border: 1px solid #1a5454; }
+
+/* ── EMPTY STATE ── */
+.empty { text-align: center; padding: 48px; color: var(--muted); }
+.empty-icon { font-size: 2.5rem; margin-bottom: 8px; }
+
+/* ── LEGEND ── */
+.legend {
+  display: flex; flex-wrap: wrap; gap: 10px; align-items: center;
+  margin-top: 14px; font-size: 0.75rem; color: var(--muted);
+}
+.legend strong { color: var(--text); }
+.legend-item { display: flex; align-items: center; gap: 5px; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>⚡ Pokemon SV — Speed Reference</h1>
+  <p class="subtitle">
+    Source: <a href="https://mattari-kura.com/champ/speed/?rule=1" target="_blank">mattari-kura.com</a>
+    · Rule 1 · Auto-updated daily via GitHub Actions
+    · <span id="lastUpdated" style="color:var(--muted)">Loading…</span>
+  </p>
+</header>
+
+<!-- FILTERS (hidden until data loaded) -->
+<div id="mainContent" style="display:none">
+  <div class="filters">
+    <div class="filter-group">
+      <label>Pokemon</label>
+      <input type="text" id="pkmnFilter" placeholder="e.g. Dragapult">
+    </div>
+    <div class="filter-group">
+      <label>Min Speed</label>
+      <input type="number" id="minSpeed" placeholder="0">
+    </div>
+    <div class="filter-group">
+      <label>Max Speed</label>
+      <input type="number" id="maxSpeed" placeholder="999">
+    </div>
+    <div class="filter-group">
+      <label>Base Stat</label>
+      <input type="number" id="baseFilter" placeholder="e.g. 130">
+    </div>
+    <div class="filter-group">
+      <label>EV Investment</label>
+      <select id="tierFilter">
+        <option value="">All</option>
+        <option value="最速">Max Speed (Timid/Jolly)</option>
+        <option value="準速">Neutral (Neutral +252)</option>
+        <option value="無振">No EVs</option>
+      </select>
+    </div>
+    <div class="filter-group">
+      <label>Multiplier</label>
+      <select id="multFilter">
+        <option value="">All</option>
+        <option value="×2">×2</option>
+        <option value="×1.5">×1.5</option>
+        <option value="none">No modifier</option>
+      </select>
+    </div>
+    <div class="filter-group">
+      <label>Ability / Item</label>
+      <input type="text" id="abilityFilter" placeholder="e.g. Scarf, Unburden…">
+    </div>
+    <button class="btn-reset" onclick="resetFilters()">Reset</button>
+  </div>
+
+  <div class="info-bar" id="infoBar"></div>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th onclick="sortBy('pokemon')" id="th-pokemon">Pokemon</th>
+          <th onclick="sortBy('actual')"  id="th-actual">Actual Speed</th>
+          <th onclick="sortBy('base')"    id="th-base">Base Stat</th>
+          <th>EV Investment</th>
+          <th onclick="sortBy('mult')"    id="th-mult">Multiplier</th>
+          <th>Ability / Item</th>
+        </tr>
+      </thead>
+      <tbody id="tableBody"></tbody>
+    </table>
+  </div>
+
+  <div class="legend">
+    <strong>Legend:</strong>
+    <span class="legend-item"><span class="badge tier-max">Max Speed</span> Timid/Jolly +252 EVs</span>
+    <span class="legend-item"><span class="badge tier-near">Neutral</span> Neutral nature +252 EVs</span>
+    <span class="legend-item"><span class="badge tier-none">No EVs</span> 0 speed EVs</span>
+    <span class="legend-item"><span class="badge mult-x2">×2</span> Weather/condition double</span>
+    <span class="legend-item"><span class="badge mult-x15">×1.5</span> Choice Scarf or ability</span>
+    <span class="legend-item"><span class="chip chip-ability">Ability</span> <span class="chip chip-item">Item</span></span>
+  </div>
+</div>
+
+<script>
+// ── Translations ────────────────────────────────────────────────
+const T = {
+  'かるわざ':            'Unburden',
+  'ようりょくそ':        'Chlorophyll',
+  'すなかき':            'Sand Rush',
+  'かそく':              'Speed Boost',
+  'こだわりスカーフ':    'Choice Scarf',
+  'はやあし':            'Quick Feet',
+  'くだけるよろい':      'Weak Armor',
+  'すいすい':            'Swift Swim',
+  'ゆきかき':            'Slush Rush',
+  'でんきエンジン':      'Electric Engine',
+  'ふくつのこころ':      'Steadfast',
+  'サーフテール':        'Surge Surfer',
+  'ゆきかき / すいすい': 'Slush Rush / Swift Swim',
+};
+const ITEMS = new Set(['こだわりスカーフ']);
+
+// Known abilities ordered longest-first for greedy prefix matching
+const ABILITY_LIST = [
+  'ゆきかき / すいすい', 'こだわりスカーフ', 'ふくつのこころ',
+  'でんきエンジン', 'サーフテール', 'ようりょくそ', 'くだけるよろい',
+  'かるわざ', 'すなかき', 'すいすい', 'ゆきかき', 'はやあし', 'かそく',
+];
+
+function splitAbilities(raw) {
+  if (!raw) return [];
+  const first = raw.split('\n')[0].trim();
+  const result = [];
+  let s = first;
+  while (s.length > 0) {
+    const match = ABILITY_LIST.find(a => s.startsWith(a));
+    if (match) { result.push(match); s = s.slice(match.length); }
+    else { result.push(s); break; }
+  }
+  return result.filter(Boolean);
+}
+
+function abilityChips(abilities) {
+  return abilities.map(a => {
+    const en = T[a] || a;
+    const cls = ITEMS.has(a) ? 'chip-item' : 'chip-ability';
+    return `<span class="chip ${cls}" title="${en}">${en}</span>`;
+  }).join('');
+}
+
+// ── Name / Sprite helpers ────────────────────────────────────────
+function nameToSlug(name) {
+  return name.toLowerCase().replace(/ /g, '-');
+}
+
+// Builds an ordered list of URLs to try for a given pokemon name.
+// Strategy: full slug → last-segment stripped → first word only
+function spriteQueue(name) {
+  const slug  = nameToSlug(name);
+  const parts = slug.split('-');
+  const last  = parts.length > 1 ? parts.slice(0, -1).join('-') : null;  // strip last segment
+  const first = parts.length > 1 ? parts[0] : null;                      // first word only
+  const pdb   = s => `https://img.pokemondb.net/sprites/home/normal/${s}.png`;
+  const sd    = s => `https://play.pokemonshowdown.com/sprites/gen5/${s}.png`;
+  const seen  = new Set([slug]);
+  const q     = [pdb(slug), sd(slug)];
+  if (last  && !seen.has(last))  { seen.add(last);  q.push(pdb(last),  sd(last));  }
+  if (first && !seen.has(first)) { seen.add(first); q.push(pdb(first), sd(first)); }
+  return q;
+}
+
+// Called by onerror chain on the img element
+function nextSprite(img) {
+  const q = img._spriteQ;
+  if (!q || !q.length) { img.style.opacity = '0.12'; img.onerror = null; return; }
+  img.onerror = () => nextSprite(img);
+  img.src = q.shift();
+}
+
+// ── Data processing ──────────────────────────────────────────────
+function processEntry(e) {
+  const baseMatch = (e.base || '').match(/(\d+)/);
+  const base = baseMatch ? parseInt(baseMatch[1]) : 0;
+  const tier = e.base.includes('最速') ? '最速' : e.base.includes('準速') ? '準速' : '無振';
+  const abilities = splitAbilities(e.ability || '');
+  return {
+    actual:    parseInt(e.actual) || 0,
+    base,
+    tier,
+    mult:      e.mult || '',
+    pokemon:   e.pokemon || '',
+    dex_id:    e.dex_id || '',
+    abilities,
+    // for filtering
+    abilityText: abilities.map(a => (T[a] || '') + ' ' + a).join(' ').toLowerCase(),
+  };
+}
+
+// ── State ────────────────────────────────────────────────────────
+let ALL_DATA = [];
+let filtered = [];
+let sortCol = 'actual';
+let sortDir = 'desc';
+
+// ── Auto-load data.json ──────────────────────────────────────────
+(async function loadData() {
+  const lastUpdated = document.getElementById('lastUpdated');
+  try {
+    const res = await fetch('./data.json');
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const json = await res.json();
+    const rows = json.data || json; // support both {data:[]} and plain array
+    ALL_DATA = rows.map(processEntry);
+    document.getElementById('mainContent').style.display = '';
+    if (json.updated) {
+      const d = new Date(json.updated);
+      lastUpdated.textContent = `Updated ${d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit', timeZone: 'UTC' })} UTC`;
+      lastUpdated.style.color = '#3fb950';
+    }
+    applyFilters();
+  } catch (e) {
+    lastUpdated.textContent = `Failed to load data: ${e.message}`;
+    lastUpdated.style.color = '#f85149';
+  }
+})();
+
+// ── Filters ──────────────────────────────────────────────────────
+function applyFilters() {
+  const pkmnQ  = document.getElementById('pkmnFilter').value.toLowerCase();
+  const minS   = parseFloat(document.getElementById('minSpeed').value) || 0;
+  const maxS   = parseFloat(document.getElementById('maxSpeed').value) || 9999;
+  const baseF  = parseFloat(document.getElementById('baseFilter').value) || 0;
+  const tier   = document.getElementById('tierFilter').value;
+  const mult   = document.getElementById('multFilter').value;
+  const abilQ  = document.getElementById('abilityFilter').value.toLowerCase();
+
+  filtered = ALL_DATA.filter(r => {
+    if (pkmnQ && !r.pokemon.toLowerCase().includes(pkmnQ)) return false;
+    if (r.actual < minS || r.actual > maxS) return false;
+    if (baseF && r.base !== baseF) return false;
+    if (tier && r.tier !== tier) return false;
+    if (mult === 'none' && r.mult !== '') return false;
+    if (mult && mult !== 'none' && r.mult !== mult) return false;
+    if (abilQ && !r.abilityText.includes(abilQ)) return false;
+    return true;
+  });
+
+  doSort();
+  render();
+}
+
+function resetFilters() {
+  ['pkmnFilter','minSpeed','maxSpeed','baseFilter','abilityFilter'].forEach(id => {
+    document.getElementById(id).value = '';
+  });
+  document.getElementById('tierFilter').value = '';
+  document.getElementById('multFilter').value = '';
+  applyFilters();
+}
+
+// ── Sort ─────────────────────────────────────────────────────────
+function sortBy(col) {
+  if (sortCol === col) sortDir = sortDir === 'asc' ? 'desc' : 'asc';
+  else { sortCol = col; sortDir = col === 'actual' ? 'desc' : 'asc'; }
+  doSort();
+  render();
+}
+
+function doSort() {
+  const d = sortDir === 'asc' ? 1 : -1;
+  filtered.sort((a, b) => {
+    if (sortCol === 'actual')  return (a.actual - b.actual) * d;
+    if (sortCol === 'base')    return (a.base   - b.base)   * d;
+    if (sortCol === 'pokemon') return a.pokemon.localeCompare(b.pokemon) * d;
+    if (sortCol === 'mult') {
+      const v = m => m === '×2' ? 2 : m === '×1.5' ? 1.5 : 1;
+      return (v(a.mult) - v(b.mult)) * d;
+    }
+    return 0;
+  });
+  ['actual','base','pokemon','mult'].forEach(c => {
+    const el = document.getElementById('th-' + c);
+    if (el) el.className = c === sortCol ? ('sort-' + sortDir) : '';
+  });
+}
+
+// ── Render ───────────────────────────────────────────────────────
+function tierBadge(t) {
+  if (t === '最速') return '<span class="badge tier-max">Max Speed</span>';
+  if (t === '準速') return '<span class="badge tier-near">Neutral</span>';
+  return '<span class="badge tier-none">No EVs</span>';
+}
+function multBadge(m) {
+  if (m === '×2')   return '<span class="badge mult-x2">×2</span>';
+  if (m === '×1.5') return '<span class="badge mult-x15">×1.5</span>';
+  return '<span class="badge mult-none">×1</span>';
+}
+
+function render() {
+  document.getElementById('infoBar').innerHTML =
+    `Showing <strong>${filtered.length}</strong> of <strong>${ALL_DATA.length}</strong> entries`;
+
+  const tbody = document.getElementById('tableBody');
+  if (!filtered.length) {
+    tbody.innerHTML = `<tr><td colspan="6" class="empty">
+      <div class="empty-icon">🔍</div>No results — try adjusting filters.</td></tr>`;
+    return;
+  }
+
+  tbody.innerHTML = filtered.map(r => {
+    const q = spriteQueue(r.pokemon);
+    const firstSrc = q.shift();
+    const sprite = r.pokemon
+      ? `<img class="pkmn-sprite" src="${firstSrc}" alt="${r.pokemon}"
+              data-queue='${JSON.stringify(q)}'
+              onerror="this._spriteQ=JSON.parse(this.dataset.queue||'[]');nextSprite(this)"
+              loading="lazy">`
+      : `<div class="pkmn-sprite-placeholder"></div>`;
+    const pkmn = r.pokemon
+      ? `<div class="pkmn-name">${r.pokemon}</div>
+         <div class="pkmn-dex">#${r.dex_id}</div>`
+      : `<div class="pkmn-name" style="color:var(--muted)">—</div>`;
+
+    return `<tr>
+      <td><div class="pkmn-cell">${sprite}<div>${pkmn}</div></div></td>
+      <td><span class="speed-val">${r.actual}</span></td>
+      <td><span class="base-stat">${r.base}</span></td>
+      <td>${tierBadge(r.tier)}</td>
+      <td>${multBadge(r.mult)}</td>
+      <td><div class="ability-list">${abilityChips(r.abilities)}</div></td>
+    </tr>`;
+  }).join('');
+}
+
+// ── Wire filters ─────────────────────────────────────────────────
+['pkmnFilter','minSpeed','maxSpeed','baseFilter','tierFilter','multFilter','abilityFilter']
+  .forEach(id => document.getElementById(id).addEventListener('input', applyFilters));
+
+</script>
+</body>
+</html>
