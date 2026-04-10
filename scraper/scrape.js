@@ -21,7 +21,8 @@ async function resolveNames(newIds, nameCache) {
         const r = await fetch(`https://pokeapi.co/api/v2/pokemon-species/${base}`);
         if (!r.ok) throw new Error(`HTTP ${r.status}`);
         const species = await r.json();
-        nameCache[id] = fmt(species.varieties[+idx]?.pokemon?.name || id);
+        const variety = species.varieties[+idx] ?? species.varieties[0];
+        nameCache[id] = fmt(variety?.pokemon?.name || id);
       }
     } catch (e) {
       console.warn(`  ⚠ Failed to resolve ${id}: ${e.message}`);
@@ -36,7 +37,10 @@ async function scrape() {
   try {
     const existing = JSON.parse(fs.readFileSync(DATA_FILE, 'utf8'));
     const rows = existing.data || existing; // handle both formats
-    rows.forEach(e => { if (e.dex_id && e.pokemon) nameCache[e.dex_id] = e.pokemon; });
+    // Skip malformed names (fallback IDs like "666 18") so they get re-resolved
+    rows.forEach(e => {
+      if (e.dex_id && e.pokemon && !/^\d/.test(e.pokemon)) nameCache[e.dex_id] = e.pokemon;
+    });
     console.log(`Loaded ${Object.keys(nameCache).length} cached names`);
   } catch {
     console.log('No existing data.json — starting fresh');
