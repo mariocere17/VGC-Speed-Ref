@@ -573,6 +573,8 @@ function resetFilters() {
   condition = null;
   document.getElementById('btnTailwind').className = 'btn-toggle';
   document.getElementById('btnPara').className     = 'btn-toggle';
+  compareA = null; compareB = null;
+  closeCmp();
   applyFilters();
 }
 
