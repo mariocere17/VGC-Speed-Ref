@@ -185,6 +185,23 @@ tbody tr { cursor: pointer; }
 .cmp-outcome.winner { color: #3fb950; }
 .cmp-outcome.loser  { color: var(--muted); }
 .cmp-outcome.draw   { color: var(--accent); }
+.cmp-weather-bar {
+  display: flex; align-items: center; gap: 6px; flex-wrap: wrap;
+}
+.cmp-weather-label { font-size: 0.75rem; color: var(--muted); margin-right: 2px; }
+.btn-weather {
+  padding: 4px 10px; border-radius: 6px; font-size: 0.78rem; font-weight: 600;
+  cursor: pointer; border: 1px solid var(--border); background: var(--bg); color: var(--muted);
+}
+.btn-weather:hover { color: var(--text); border-color: var(--text); }
+.btn-weather.active-weather { background: #1c2a3a; color: #90caf9; border-color: #1565c0; }
+.cmp-boost-badge {
+  font-size: 0.72rem; font-weight: 700; padding: 2px 7px; border-radius: 4px;
+  display: inline-block;
+}
+.boost-active   { background: #1b3d1b; color: #81c784; }
+.boost-inactive { background: #3d1a00; color: #ffab40; }
+
 .cmp-variant-select {
   width: 100%; background: var(--bg); border: 1px solid var(--border);
   color: var(--text); border-radius: 6px; padding: 5px 8px;
@@ -220,6 +237,14 @@ tbody tr { cursor: pointer; }
       <button class="cmp-close" onclick="closeCmp()">×</button>
     </div>
     <p class="cmp-hint">Click any row in the table to swap a slot</p>
+    <div class="cmp-weather-bar">
+      <span class="cmp-weather-label">Weather</span>
+      <button class="btn-weather active-weather" id="wNone" onclick="setCmpWeather(null)">None</button>
+      <button class="btn-weather" id="wSun"  onclick="setCmpWeather('sun')">☀️ Sun</button>
+      <button class="btn-weather" id="wRain" onclick="setCmpWeather('rain')">🌧️ Rain</button>
+      <button class="btn-weather" id="wSand" onclick="setCmpWeather('sand')">🌪️ Sand</button>
+      <button class="btn-weather" id="wSnow" onclick="setCmpWeather('snow')">❄️ Snow</button>
+    </div>
     <div class="cmp-cols">
       <div class="cmp-col" id="cmpColA"></div>
       <div class="cmp-vs">VS</div>
@@ -435,6 +460,49 @@ let condition = null; // 'tailwind' | 'para' | null
 // ── Compare state ────────────────────────────────────────────────
 let compareA = null, compareB = null;
 let cmpCondA = null, cmpCondB = null;
+let cmpWeather = null; // 'sun' | 'rain' | 'sand' | 'snow' | null
+
+const WEATHER_ABILITIES = {
+  sun:  ['ようりょくそ'],
+  rain: ['すいすい', 'ゆきかき / すいすい'],
+  sand: ['すなかき'],
+  snow: ['ゆきかき', 'ゆきかき / すいすい'],
+};
+
+function getWeatherAbility(r) {
+  // Returns which weather this entry's ability needs, or null
+  for (const [w, list] of Object.entries(WEATHER_ABILITIES)) {
+    if (r.abilities.some(a => list.includes(a))) return w;
+  }
+  return null;
+}
+
+function isWeatherEntry(r) {
+  // True if this entry's ×2 comes from a weather ability
+  return r.mult === '×2' && getWeatherAbility(r) !== null;
+}
+
+function calcFinalSpeedWeather(r, cond, weather) {
+  let speed = r.actual;
+  const abilityWeather = getWeatherAbility(r);
+  if (abilityWeather) {
+    const alreadyBoosted = isWeatherEntry(r);
+    if (weather === abilityWeather && !alreadyBoosted) speed *= 2;        // boost not yet applied
+    if (weather !== abilityWeather && alreadyBoosted)  speed = Math.floor(speed / 2); // wrong weather
+  }
+  return calcFinalSpeed(speed, cond);
+}
+
+function setCmpWeather(w) {
+  cmpWeather = w;
+  ['None','Sun','Rain','Sand','Snow'].forEach(n => {
+    const btn = document.getElementById('w' + n);
+    if (btn) btn.classList.remove('active-weather');
+  });
+  const activeId = w ? 'w' + w.charAt(0).toUpperCase() + w.slice(1) : 'wNone';
+  document.getElementById(activeId)?.classList.add('active-weather');
+  renderCmpCols();
+}
 
 function toggleCondition(c) {
   condition = condition === c ? null : c;
@@ -621,13 +689,22 @@ function cmpToggle(side, cond) {
 
 function renderCmpCol(r, side) {
   const cond     = side === 'A' ? cmpCondA : cmpCondB;
-  const finalSpd = calcFinalSpeed(r.actual, cond);
-  const otherSpd = calcFinalSpeed(
-    side === 'A' ? (compareB?.actual ?? 0) : (compareA?.actual ?? 0),
-    side === 'A' ? cmpCondB : cmpCondA
-  );
+  const finalSpd = calcFinalSpeedWeather(r, cond, cmpWeather);
+  const other    = side === 'A' ? compareB : compareA;
+  const otherSpd = other ? calcFinalSpeedWeather(other, side === 'A' ? cmpCondB : cmpCondA, cmpWeather) : 0;
   const outcome  = finalSpd > otherSpd ? 'winner' : finalSpd < otherSpd ? 'loser' : 'draw';
   const outcomeLabel = outcome === 'winner' ? 'FASTER' : outcome === 'loser' ? 'SLOWER' : 'TIE';
+
+  // Weather boost indicator
+  const abilityWeather = getWeatherAbility(r);
+  let weatherBadge = '';
+  if (abilityWeather && cmpWeather) {
+    if (cmpWeather === abilityWeather) {
+      weatherBadge = `<span class="cmp-boost-badge boost-active">⚡ ${cmpWeather.toUpperCase()} boost active</span>`;
+    } else {
+      weatherBadge = `<span class="cmp-boost-badge boost-inactive">✗ ${abilityWeather} needed</span>`;
+    }
+  }
 
   const q = spriteQueue(r.pokemon);
   const src = q.shift();
@@ -664,6 +741,7 @@ function renderCmpCol(r, side) {
       </div>
     </div>
     ${variantSelect}
+    ${weatherBadge}
     <div class="cmp-stats">
       <div class="cmp-row"><span class="cmp-label">Base Speed</span><span class="cmp-val">${r.base}</span></div>
       <div class="cmp-row"><span class="cmp-label">Investment</span><span class="cmp-val">${tierLabel}</span></div>
@@ -686,8 +764,8 @@ function renderCmpCol(r, side) {
 function renderCmpCols() {
   if (!compareA || !compareB) return;
 
-  const finalA = calcFinalSpeed(compareA.actual, cmpCondA);
-  const finalB = calcFinalSpeed(compareB.actual, cmpCondB);
+  const finalA = calcFinalSpeedWeather(compareA, cmpCondA, cmpWeather);
+  const finalB = calcFinalSpeedWeather(compareB, cmpCondB, cmpWeather);
   const colA = document.getElementById('cmpColA');
   const colB = document.getElementById('cmpColB');
 
@@ -699,7 +777,9 @@ function renderCmpCols() {
 }
 
 function openCmp() {
-  cmpCondA = null; cmpCondB = null;
+  cmpCondA = null; cmpCondB = null; cmpWeather = null;
+  ['None','Sun','Rain','Sand','Snow'].forEach(n => document.getElementById('w'+n)?.classList.remove('active-weather'));
+  document.getElementById('wNone')?.classList.add('active-weather');
   renderCmpCols();
   document.getElementById('cmpOverlay').classList.add('open');
 }
