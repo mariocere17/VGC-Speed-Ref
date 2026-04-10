@@ -96,6 +96,22 @@ tr:hover td { background: var(--surface2); }
 .empty { text-align: center; padding: 48px; color: var(--muted); }
 .empty-icon { font-size: 2.5rem; margin-bottom: 8px; }
 
+/* ── CHIP TOOLTIP ── */
+.chip { position: relative; }
+.chip::after {
+  content: attr(data-tip);
+  display: none;
+  position: absolute;
+  bottom: calc(100% + 6px);
+  left: 50%; transform: translateX(-50%);
+  background: #1c2128; border: 1px solid var(--border);
+  color: var(--text); font-size: 0.72rem; font-weight: 400;
+  white-space: nowrap; padding: 5px 9px; border-radius: 6px;
+  pointer-events: none; z-index: 50;
+  box-shadow: 0 4px 12px rgba(0,0,0,.5);
+}
+.chip[data-tip]:hover::after { display: block; }
+
 /* ── LEGEND ── */
 .legend {
   display: flex; flex-wrap: wrap; gap: 10px; align-items: center;
@@ -208,6 +224,22 @@ const T = {
 };
 const ITEMS = new Set(['こだわりスカーフ']);
 
+const DESC = {
+  'Unburden':              'Doubles Speed when the held item is lost or consumed',
+  'Chlorophyll':           'Doubles Speed in harsh sunlight',
+  'Sand Rush':             'Doubles Speed in a sandstorm',
+  'Speed Boost':           'Raises Speed by 1 stage at the end of each turn',
+  'Choice Scarf':          'Boosts Speed ×1.5, but locks the holder into one move',
+  'Quick Feet':            'Boosts Speed ×1.5 when the holder has a status condition',
+  'Weak Armor':            'Physical hits raise Speed ×2 and lower Defense',
+  'Swift Swim':            'Doubles Speed in rain',
+  'Slush Rush':            'Doubles Speed in snow or hail',
+  'Electric Engine':       'Doubles Speed when hit by an Electric-type move',
+  'Steadfast':             'Raises Speed by 1 stage each time the holder flinches',
+  'Surge Surfer':          'Doubles Speed on Electric Terrain',
+  'Slush Rush / Swift Swim': 'Doubles Speed in snow/hail or rain (depending on form)',
+};
+
 // Known abilities ordered longest-first for greedy prefix matching
 const ABILITY_LIST = [
   'ゆきかき / すいすい', 'こだわりスカーフ', 'ふくつのこころ',
@@ -232,7 +264,8 @@ function abilityChips(abilities) {
   return abilities.map(a => {
     const en = T[a] || a;
     const cls = ITEMS.has(a) ? 'chip-item' : 'chip-ability';
-    return `<span class="chip ${cls}" title="${en}">${en}</span>`;
+    const tip = DESC[en] ? ` data-tip="${DESC[en]}"` : '';
+    return `<span class="chip ${cls}"${tip}>${en}</span>`;
   }).join('');
 }
 
