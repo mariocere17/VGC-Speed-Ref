@@ -216,6 +216,65 @@ tbody tr { cursor: pointer; }
 }
 .legend strong { color: var(--text); }
 .legend-item { display: flex; align-items: center; gap: 5px; }
+
+/* ── CUSTOM SETS ── */
+.tier-custom { background: #003333; color: #4dd0e1; }
+.btn-delete-custom {
+  width: 18px; height: 18px; border-radius: 50%; border: none;
+  background: transparent; color: var(--muted); cursor: pointer;
+  font-size: 0.9rem; line-height: 1; padding: 0; flex-shrink: 0;
+  display: inline-flex; align-items: center; justify-content: center;
+  transition: color .15s;
+}
+.btn-delete-custom:hover { color: #f85149; }
+.btn-add-custom {
+  align-self: flex-end; padding: 7px 14px; background: #003333;
+  border: 1px solid #1a5454; color: #4dd0e1; border-radius: 6px;
+  cursor: pointer; font-size: 0.82rem; transition: all .15s;
+}
+.btn-add-custom:hover { background: #004444; border-color: #4dd0e1; }
+.custom-overlay {
+  display: none; position: fixed; inset: 0;
+  background: rgba(0,0,0,.8); z-index: 200;
+  align-items: center; justify-content: center; padding: 16px;
+}
+.custom-overlay.open { display: flex; }
+.custom-modal {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 12px; padding: 24px; width: min(460px, 100%);
+  display: flex; flex-direction: column; gap: 16px;
+}
+.custom-modal h2 { font-size: 1rem; color: #c9d1d9; }
+.custom-field { display: flex; flex-direction: column; gap: 6px; }
+.custom-field > label { font-size: 0.72rem; color: var(--muted); text-transform: uppercase; letter-spacing: .5px; }
+.custom-slider-row { display: flex; align-items: center; gap: 10px; }
+.custom-slider-row input[type="range"] { flex: 1; accent-color: var(--accent); }
+.custom-slider-row input[type="number"] { width: 60px; }
+.nature-row { display: flex; gap: 16px; }
+.nature-opt { display: flex; align-items: center; gap: 5px; cursor: pointer; font-size: 0.85rem; color: var(--text); }
+.nature-opt input { accent-color: var(--accent); width: auto; }
+.ability-radio-row { display: flex; flex-direction: column; gap: 6px; }
+.ability-opt { display: flex; align-items: center; gap: 6px; cursor: pointer; font-size: 0.85rem; color: var(--text); }
+.ability-opt input { accent-color: var(--accent); width: auto; }
+.scarf-row { display: flex; align-items: center; gap: 8px; font-size: 0.85rem; color: var(--text); }
+.scarf-row input[type="checkbox"] { accent-color: var(--accent); width: auto; }
+.custom-preview {
+  background: var(--bg); border: 1px solid var(--border);
+  border-radius: 8px; padding: 12px; text-align: center;
+}
+.custom-preview-label { font-size: 0.72rem; color: var(--muted); text-transform: uppercase; letter-spacing: .5px; }
+.custom-preview-speed { font-size: 2.5rem; font-weight: 700; color: #4dd0e1; margin-top: 4px; }
+.custom-modal-actions { display: flex; gap: 10px; justify-content: flex-end; }
+.btn-custom-cancel {
+  padding: 8px 16px; background: var(--bg); border: 1px solid var(--border);
+  color: var(--muted); border-radius: 6px; cursor: pointer; font-size: 0.85rem;
+}
+.btn-custom-cancel:hover { color: var(--text); }
+.btn-custom-save {
+  padding: 8px 16px; background: #003333; border: 1px solid #1a5454;
+  color: #4dd0e1; border-radius: 6px; cursor: pointer; font-size: 0.85rem; font-weight: 600;
+}
+.btn-custom-save:hover { background: #004444; }
 </style>
 </head>
 <body>
@@ -252,6 +311,49 @@ tbody tr { cursor: pointer; }
   </div>
 </div>
 
+<!-- CUSTOM MODAL -->
+<div class="custom-overlay" id="customOverlay" onclick="closeCustomOverlay(event)">
+  <div class="custom-modal">
+    <h2>Add Custom Set</h2>
+    <div class="custom-field">
+      <label>Pokémon</label>
+      <input type="text" id="cmPkmn" list="cmPkmnList" placeholder="e.g. Sneasler" oninput="cmOnPkmnChange()">
+      <datalist id="cmPkmnList"></datalist>
+    </div>
+    <div class="custom-field">
+      <label>Stat Points (0–32)</label>
+      <div class="custom-slider-row">
+        <input type="range" id="cmSlider" min="0" max="32" value="0" oninput="cmOnSPChange(this.value,'slider')">
+        <input type="number" id="cmSPNum" min="0" max="32" value="0" oninput="cmOnSPChange(this.value,'num')">
+      </div>
+    </div>
+    <div class="custom-field">
+      <label>Nature</label>
+      <div class="nature-row">
+        <label class="nature-opt"><input type="radio" name="cmNature" value="plus" onchange="cmUpdatePreview()"> + Favorable</label>
+        <label class="nature-opt"><input type="radio" name="cmNature" value="neutral" checked onchange="cmUpdatePreview()"> = Neutral</label>
+        <label class="nature-opt"><input type="radio" name="cmNature" value="minus" onchange="cmUpdatePreview()"> − Unfavorable</label>
+      </div>
+    </div>
+    <div class="custom-field" id="cmAbilityField" style="display:none">
+      <label>Speed Ability</label>
+      <div class="ability-radio-row" id="cmAbilityList"></div>
+    </div>
+    <div class="scarf-row">
+      <input type="checkbox" id="cmScarf" onchange="cmUpdatePreview()">
+      <label for="cmScarf">Choice Scarf ×1.5</label>
+    </div>
+    <div class="custom-preview">
+      <div class="custom-preview-label">Preview Speed</div>
+      <div class="custom-preview-speed" id="cmPreviewSpeed">—</div>
+    </div>
+    <div class="custom-modal-actions">
+      <button class="btn-custom-cancel" onclick="closeCustomModal()">Cancel</button>
+      <button class="btn-custom-save" onclick="saveCustomSet()">Save Set</button>
+    </div>
+  </div>
+</div>
+
 <!-- FILTERS (hidden until data loaded) -->
 <div id="mainContent" style="display:none">
   <div class="filters">
@@ -278,6 +380,7 @@ tbody tr { cursor: pointer; }
         <option value="最速">Max Speed (Timid/Jolly)</option>
         <option value="準速">Neutral (Neutral +252)</option>
         <option value="無振">No EVs</option>
+        <option value="custom">Custom</option>
       </select>
     </div>
     <div class="filter-group">
@@ -301,6 +404,7 @@ tbody tr { cursor: pointer; }
       </div>
     </div>
     <button class="btn-reset" onclick="resetFilters()">Reset</button>
+    <button class="btn-add-custom" onclick="openCustomModal()">＋ Custom</button>
   </div>
 
   <div class="info-bar" id="infoBar"></div>
@@ -564,6 +668,7 @@ function applyCondition(speed) {
     const json = await res.json();
     const rows = json.data || json;
     ALL_DATA = rows.map(processEntry);
+    injectCustomSets();
     document.getElementById('mainContent').style.display = '';
     if (json.updated) {
       const d = new Date(json.updated);
@@ -646,6 +751,7 @@ function doSort() {
 function tierBadge(t) {
   if (t === '最速') return '<span class="badge tier-max">Max Speed</span>';
   if (t === '準速') return '<span class="badge tier-near">Neutral</span>';
+  if (t === 'custom') return '<span class="badge tier-custom">Custom</span>';
   return '<span class="badge tier-none">No EVs</span>';
 }
 function multBadge(m) {
@@ -682,13 +788,16 @@ function render() {
     const displaySpeed = applyCondition(r.actual);
     const speedCls = condition === 'tailwind' ? ' speed-modified' : condition === 'para' ? ' speed-modified para' : '';
     const selCls = compareA === r ? ' cmp-sel-a' : compareB === r ? ' cmp-sel-b' : '';
+    const deleteBtn = r.isCustom
+      ? `<button class="btn-delete-custom" onclick="deleteCustomSet('${r.customId}',event)" title="Delete custom set">×</button>`
+      : '';
     return `<tr class="${selCls}" onclick="selectForCompare(${idx})">
       <td><div class="pkmn-cell">${sprite}<div>${pkmn}</div></div></td>
       <td><span class="speed-val${speedCls}">${displaySpeed}</span></td>
       <td><span class="base-stat">${r.base}</span></td>
       <td>${tierBadge(r.tier)}</td>
       <td>${multBadge(r.mult)}</td>
-      <td><div class="ability-list">${abilityChips(r.abilities)}</div></td>
+      <td><div class="ability-list">${abilityChips(r.abilities)}${deleteBtn}</div></td>
     </tr>`;
   }).join('');
 }
@@ -745,7 +854,9 @@ function renderCmpCol(r, side) {
     onerror="this._spriteQ=JSON.parse(this.dataset.queue||'[]');nextSprite(this)"
     alt="${esc(r.pokemon)}">`;
 
-  const tierLabel = r.tier === '最速' ? 'Max Speed' : r.tier === '準速' ? 'Neutral' : 'No EVs';
+  const tierLabel = r.isCustom
+    ? `Custom (${r.statPoints}pts, ${r.nature})`
+    : r.tier === '最速' ? 'Max Speed' : r.tier === '準速' ? 'Neutral' : 'No EVs';
   const multLabel = r.mult === '×2' ? '×2' : r.mult === '×1.5' ? '×1.5' : '×1';
   const tw = cond === 'tailwind';
   const pa = cond === 'para';
@@ -832,7 +943,157 @@ function closeCmpOverlay(e) {
   if (e.target === document.getElementById('cmpOverlay')) closeCmp();
 }
 
-document.addEventListener('keydown', e => { if (e.key === 'Escape') closeCmp(); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeCmp(); closeCustomModal(); } });
+
+// ── Custom sets ──────────────────────────────────────────────────
+const CUSTOM_KEY = 'champions_custom_sets';
+function loadCustomSets() { return JSON.parse(localStorage.getItem(CUSTOM_KEY) || '[]'); }
+function saveCustomSets(sets) { localStorage.setItem(CUSTOM_KEY, JSON.stringify(sets)); }
+
+function calcChampionsSpeed(base, statPoints, nature) {
+  const mult = nature === 'plus' ? 1.1 : nature === 'minus' ? 0.9 : 1.0;
+  return Math.floor(Math.floor((2 * base + 31) * 50 / 100 + 5) * mult) + Number(statPoints);
+}
+
+const ABILITY_MULTS = {
+  'Swift Swim': '×2', 'Chlorophyll': '×2', 'Sand Rush': '×2', 'Slush Rush': '×2',
+  'Unburden': '×2', 'Speed Boost': '×2', 'Weak Armor': '×2', 'Surge Surfer': '×2',
+  'Electric Engine': '×2', 'Quick Feet': '×1.5',
+};
+
+function buildCustomEntry(s) {
+  let actual = calcChampionsSpeed(s.base, s.statPoints, s.nature);
+  let mult = '';
+  let abilities = [];
+  if (s.speedAbility) {
+    const m = ABILITY_MULTS[s.speedAbility] || '×2';
+    mult = m;
+    abilities = [s.speedAbility];
+    actual = m === '×2' ? actual * 2 : Math.floor(actual * 1.5);
+  } else if (s.useScarf) {
+    mult = '×1.5';
+    abilities = ['Choice Scarf'];
+    actual = Math.floor(actual * 1.5);
+  }
+  return {
+    actual,
+    base: s.base,
+    tier: 'custom',
+    mult,
+    pokemon: s.pokemon,
+    dex_id: s.dex_id,
+    abilities,
+    abilityText: abilities.map(a => a.toLowerCase()).join(' '),
+    isCustom: true,
+    customId: s.id,
+    statPoints: s.statPoints,
+    nature: s.nature,
+  };
+}
+
+function injectCustomSets() {
+  loadCustomSets().forEach(s => ALL_DATA.push(buildCustomEntry(s)));
+}
+
+// ── Custom modal state ───────────────────────────────────────────
+let cmBase = 0, cmDexId = '';
+
+function openCustomModal() {
+  const names = [...new Set(ALL_DATA.filter(r => !r.isCustom).map(r => r.pokemon))].sort();
+  document.getElementById('cmPkmnList').innerHTML = names.map(n => `<option value="${esc(n)}">`).join('');
+  document.getElementById('cmPkmn').value = '';
+  document.getElementById('cmSlider').value = 0;
+  document.getElementById('cmSPNum').value = 0;
+  document.querySelector('input[name="cmNature"][value="neutral"]').checked = true;
+  document.getElementById('cmScarf').checked = false;
+  document.getElementById('cmScarf').disabled = false;
+  document.getElementById('cmAbilityField').style.display = 'none';
+  document.getElementById('cmAbilityList').innerHTML = '';
+  document.getElementById('cmPreviewSpeed').textContent = '—';
+  cmBase = 0; cmDexId = '';
+  document.getElementById('customOverlay').classList.add('open');
+}
+
+function closeCustomModal() {
+  document.getElementById('customOverlay').classList.remove('open');
+}
+
+function closeCustomOverlay(e) {
+  if (e.target === document.getElementById('customOverlay')) closeCustomModal();
+}
+
+function cmOnPkmnChange() {
+  const name = document.getElementById('cmPkmn').value.trim();
+  const entry = ALL_DATA.find(r => !r.isCustom && r.pokemon === name);
+  if (!entry) { cmBase = 0; cmDexId = ''; document.getElementById('cmPreviewSpeed').textContent = '—'; return; }
+  cmBase = entry.base;
+  cmDexId = entry.dex_id;
+
+  // Speed abilities for this Pokémon (exclude Choice Scarf, handled separately)
+  const speedAbilities = [...new Set(
+    ALL_DATA.filter(r => !r.isCustom && r.pokemon === name && r.abilities.length > 0 && !r.abilities.includes('Choice Scarf'))
+            .flatMap(r => r.abilities)
+  )];
+
+  const abilityList = document.getElementById('cmAbilityList');
+  abilityList.innerHTML =
+    `<label class="ability-opt"><input type="radio" name="cmAbility" value="" checked onchange="cmUpdatePreview()"> None</label>` +
+    speedAbilities.map(a => {
+      const m = ABILITY_MULTS[a] ? ` ${ABILITY_MULTS[a]}` : '';
+      return `<label class="ability-opt"><input type="radio" name="cmAbility" value="${esc(a)}" onchange="cmUpdatePreview()"> ${esc(a)}${m}</label>`;
+    }).join('');
+
+  document.getElementById('cmAbilityField').style.display = speedAbilities.length > 0 ? '' : 'none';
+  cmUpdatePreview();
+}
+
+function cmOnSPChange(val) {
+  const v = Math.max(0, Math.min(32, parseInt(val) || 0));
+  document.getElementById('cmSlider').value = v;
+  document.getElementById('cmSPNum').value = v;
+  cmUpdatePreview();
+}
+
+function cmUpdatePreview() {
+  if (!cmBase) return;
+  const sp     = parseInt(document.getElementById('cmSPNum').value) || 0;
+  const nature = document.querySelector('input[name="cmNature"]:checked')?.value || 'neutral';
+  const ability = document.querySelector('input[name="cmAbility"]:checked')?.value || '';
+  const scarf   = document.getElementById('cmScarf').checked;
+
+  document.getElementById('cmScarf').disabled = !!ability;
+
+  let speed = calcChampionsSpeed(cmBase, sp, nature);
+  if (ability) {
+    speed = ABILITY_MULTS[ability] === '×1.5' ? Math.floor(speed * 1.5) : speed * 2;
+  } else if (scarf) {
+    speed = Math.floor(speed * 1.5);
+  }
+  document.getElementById('cmPreviewSpeed').textContent = speed;
+}
+
+function saveCustomSet() {
+  const name = document.getElementById('cmPkmn').value.trim();
+  if (!name || !cmBase) { alert('Please select a valid Pokémon.'); return; }
+  const sp          = Math.max(0, Math.min(32, parseInt(document.getElementById('cmSPNum').value) || 0));
+  const nature      = document.querySelector('input[name="cmNature"]:checked')?.value || 'neutral';
+  const speedAbility = document.querySelector('input[name="cmAbility"]:checked')?.value || '';
+  const useScarf    = !speedAbility && document.getElementById('cmScarf').checked;
+  const set = { id: String(Date.now()), pokemon: name, dex_id: cmDexId, base: cmBase, statPoints: sp, nature, speedAbility, useScarf };
+  const sets = loadCustomSets();
+  sets.push(set);
+  saveCustomSets(sets);
+  ALL_DATA.push(buildCustomEntry(set));
+  applyFilters();
+  closeCustomModal();
+}
+
+function deleteCustomSet(customId, event) {
+  event.stopPropagation();
+  saveCustomSets(loadCustomSets().filter(s => s.id !== customId));
+  ALL_DATA = ALL_DATA.filter(r => r.customId !== customId);
+  applyFilters();
+}
 
 </script>
 </body>
