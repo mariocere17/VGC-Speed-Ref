@@ -26,6 +26,7 @@ const TIERS = [
 ];
 
 const SCARF_MIN_BASE = 60; // Skip Choice Scarf for very slow Pokémon
+const TR_MAX_BASE    = 60; // Only add Trick Room tier for slow Pokémon (base < 60)
 
 // Level-50 speed formula (matching in-game calculation)
 function calcSpeed(base, evs, nature) {
@@ -88,6 +89,7 @@ async function processPokemon(entry) {
 
   // --- Base tiers (no multiplier) ---
   for (const tier of TIERS) {
+    if (tier.key === 'minus' && base >= TR_MAX_BASE) continue; // TR only for slow Pokémon
     rows.push({
       pokemon: name,
       dex_id,
@@ -118,7 +120,8 @@ async function processPokemon(entry) {
   // --- Speed-boosting abilities ---
   for (const slug of abilities) {
     const { mult, en } = SPEED_ABILITIES[slug];
-    const tierList = mult === '×2' ? TIERS : TIERS.filter(t => t.key !== 'none' && t.key !== 'minus');
+    const baseTiers = base < TR_MAX_BASE ? TIERS : TIERS.filter(t => t.key !== 'minus');
+    const tierList = mult === '×2' ? baseTiers : baseTiers.filter(t => t.key !== 'none' && t.key !== 'minus');
     for (const tier of tierList) {
       const raw = calcSpeed(base, tier.evs, tier.nature);
       rows.push({
