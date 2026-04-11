@@ -1,8 +1,8 @@
 const fs   = require('fs');
 const path = require('path');
 
-const POOL_FILE = path.join(__dirname, '..', 'champions', 'pool.json');
-const OUT_FILE  = path.join(__dirname, '..', 'champions', 'data.json');
+const POOL_FILE = path.join(__dirname, '..', 'pool.json');
+const OUT_FILE  = path.join(__dirname, '..', 'data.json');
 
 // Speed-boosting abilities recognised from PokeAPI ability slugs
 const SPEED_ABILITIES = {

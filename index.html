@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pokemon VGC — Speed Reference</title>
+<title>Pokemon Champions — Speed Reference</title>
 <link rel="icon" type="image/png" href="https://img.pokemondb.net/sprites/home/normal/weavile.png">
 <style>
 :root {
@@ -53,7 +53,7 @@ input[type="text"] { width: 160px; }
 .conditions label { font-size: 0.7rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; }
 .toggle-group { display: flex; gap: 6px; }
 .btn-toggle {
-  padding: 5px 12px; border-radius: 6px; font-size: 0.8rem; font-weight: 600;
+  padding: 7px 12px; border-radius: 6px; font-size: 0.85rem; font-weight: 600;
   cursor: pointer; border: 1px solid var(--border); background: var(--bg); color: var(--muted);
   transition: all .15s;
 }
@@ -221,10 +221,9 @@ tbody tr { cursor: pointer; }
 <body>
 
 <header>
-  <h1>⚡ VGC — Speed Reference</h1>
+  <h1>⚡ Pokemon Champions — Speed Reference</h1>
   <p class="subtitle">
-    Source: <a href="https://mattari-kura.com/champ/speed/?rule=1" target="_blank">mattari-kura.com</a>
-    · Rule 1 · Auto-updated daily via GitHub Actions
+    Pokemon Champions VGC 2026 · Auto-updated daily via GitHub Actions
     · <span id="lastUpdated" style="color:var(--muted)">Loading…</span>
   </p>
 </header>
@@ -258,7 +257,7 @@ tbody tr { cursor: pointer; }
   <div class="filters">
     <div class="filter-group">
       <label>Pokemon</label>
-      <input type="text" id="pkmnFilter" placeholder="e.g. Dragapult">
+      <input type="text" id="pkmnFilter" placeholder="e.g. Sneasler">
     </div>
     <div class="filter-group">
       <label>Min Speed</label>
@@ -270,7 +269,7 @@ tbody tr { cursor: pointer; }
     </div>
     <div class="filter-group">
       <label>Base Stat</label>
-      <input type="number" id="baseFilter" placeholder="e.g. 130">
+      <input type="number" id="baseFilter" placeholder="e.g. 120">
     </div>
     <div class="filter-group">
       <label>EV Investment</label>
@@ -334,7 +333,7 @@ tbody tr { cursor: pointer; }
 </div>
 
 <script>
-// ── Translations ────────────────────────────────────────────────
+// ── Translations (Japanese → English, for legacy data compatibility) ─────────
 const T = {
   'かるわざ':            'Unburden',
   'ようりょくそ':        'Chlorophyll',
@@ -350,7 +349,8 @@ const T = {
   'サーフテール':        'Surge Surfer',
   'ゆきかき / すいすい': 'Slush Rush / Swift Swim',
 };
-const ITEMS = new Set(['こだわりスカーフ']);
+// Items get a different chip color — includes both Japanese and English names
+const ITEMS = new Set(['こだわりスカーフ', 'Choice Scarf']);
 
 const DESC = {
   'Unburden':              'Doubles Speed when the held item is lost or consumed',
@@ -368,7 +368,7 @@ const DESC = {
   'Slush Rush / Swift Swim': 'Doubles Speed in snow/hail or rain (depending on form)',
 };
 
-// Known abilities ordered longest-first for greedy prefix matching
+// Known Japanese abilities ordered longest-first for greedy prefix matching (legacy support)
 const ABILITY_LIST = [
   'ゆきかき / すいすい', 'こだわりスカーフ', 'ふくつのこころ',
   'でんきエンジン', 'サーフテール', 'ようりょくそ', 'くだけるよろい',
@@ -378,6 +378,9 @@ const ABILITY_LIST = [
 function splitAbilities(raw) {
   if (!raw) return [];
   const first = raw.split('\n')[0].trim();
+  // New English format: ability is already a plain English string
+  if (/^[A-Z]/.test(first)) return [first];
+  // Legacy Japanese format: greedy prefix matching
   const result = [];
   let s = first;
   while (s.length > 0) {
@@ -404,16 +407,45 @@ function esc(s) {
 
 // ── Name / Sprite helpers ────────────────────────────────────────
 function nameToSlug(name) {
-  return name.toLowerCase().replace(/ /g, '-');
+  let n = name.trim();
+
+  // Rotom appliance forms: "Heat Rotom" → "rotom-heat"
+  const rotomM = n.match(/^(Heat|Wash|Frost|Fan|Mow)\s+Rotom$/i);
+  if (rotomM) return 'rotom-' + rotomM[1].toLowerCase();
+
+  // Mega forms: "Mega Venusaur" → "venusaur-mega", "Mega Charizard X" → "charizard-mega-x"
+  const megaM = n.match(/^Mega\s+(.+?)(?:\s+([XY]))?$/i);
+  if (megaM) {
+    const base = megaM[1].toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-+/g, '-').replace(/-$/, '');
+    return base + '-mega' + (megaM[2] ? '-' + megaM[2].toLowerCase() : '');
+  }
+
+  // Regional forms: "Alolan X" → "x-alola", "Paldean X (Form)" → "x-paldea-form"
+  const regionMap = { Alolan: 'alola', Hisuian: 'hisui', Galarian: 'galar', Paldean: 'paldea' };
+  for (const [prefix, suffix] of Object.entries(regionMap)) {
+    if (n.startsWith(prefix + ' ')) {
+      const rest = n.slice(prefix.length + 1);
+      const formM = rest.match(/^(.+?)\s*\(([^)]+)\)$/);
+      if (formM) {
+        const base = formM[1].toLowerCase().replace(/[^a-z0-9]+/g, '-');
+        const form = formM[2].toLowerCase().replace(/[^a-z0-9]+/g, '-');
+        return `${base}-${suffix}-${form}`;
+      }
+      return rest.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-+/g, '-').replace(/-$/, '') + '-' + suffix;
+    }
+  }
+
+  // Parenthetical form suffix: "Gourgeist (Small)" → "gourgeist-small"
+  n = n.replace(/\s*\(([^)]+)\)\s*$/, (_, f) => '-' + f);
+
+  return n.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '');
 }
 
-// Builds an ordered list of URLs to try for a given pokemon name.
-// Strategy: full slug → last-segment stripped → first word only
 function spriteQueue(name) {
   const slug  = nameToSlug(name);
   const parts = slug.split('-');
-  const last  = parts.length > 1 ? parts.slice(0, -1).join('-') : null;  // strip last segment
-  const first = parts.length > 1 ? parts[0] : null;                      // first word only
+  const last  = parts.length > 1 ? parts.slice(0, -1).join('-') : null;
+  const first = parts.length > 1 ? parts[0] : null;
   const pdb   = s => `https://img.pokemondb.net/sprites/home/normal/${s}.png`;
   const sd    = s => `https://play.pokemonshowdown.com/sprites/gen5/${s}.png`;
   const seen  = new Set([slug]);
@@ -423,7 +455,6 @@ function spriteQueue(name) {
   return q;
 }
 
-// Called by onerror chain on the img element
 function nextSprite(img) {
   const q = img._spriteQ;
   if (!q || !q.length) { img.style.opacity = '0.12'; img.onerror = null; return; }
@@ -432,10 +463,20 @@ function nextSprite(img) {
 }
 
 // ── Data processing ──────────────────────────────────────────────
+// Supports both new English format (base is a number, tier is "max"/"neutral"/"none")
+// and legacy Japanese format (base is a string like "120族(最速)")
 function processEntry(e) {
-  const baseMatch = (e.base || '').match(/(\d+)/);
-  const base = baseMatch ? parseInt(baseMatch[1]) : 0;
-  const tier = e.base.includes('最速') ? '最速' : e.base.includes('準速') ? '準速' : '無振';
+  let base, tier;
+  if (typeof e.base === 'number') {
+    // New English format from generator/generate.js
+    base = e.base;
+    tier = e.tier === 'max' ? '最速' : e.tier === 'neutral' ? '準速' : '無振';
+  } else {
+    // Legacy Japanese format from scraper
+    const m = (e.base || '').match(/(\d+)/);
+    base = m ? parseInt(m[1]) : 0;
+    tier = (e.base || '').includes('最速') ? '最速' : (e.base || '').includes('準速') ? '準速' : '無振';
+  }
   const abilities = splitAbilities(e.ability || '');
   return {
     actual:    parseInt(e.actual) || 0,
@@ -445,8 +486,7 @@ function processEntry(e) {
     pokemon:   e.pokemon || '',
     dex_id:    e.dex_id || '',
     abilities,
-    // for filtering
-    abilityText: abilities.map(a => (T[a] || '') + ' ' + a).join(' ').toLowerCase(),
+    abilityText: abilities.map(a => (T[a] || a) + ' ' + a).join(' ').toLowerCase(),
   };
 }
 
@@ -463,14 +503,13 @@ let cmpCondA = null, cmpCondB = null;
 let cmpWeather = null; // 'sun' | 'rain' | 'sand' | 'snow' | null
 
 const WEATHER_ABILITIES = {
-  sun:  ['ようりょくそ'],
-  rain: ['すいすい', 'ゆきかき / すいすい'],
-  sand: ['すなかき'],
-  snow: ['ゆきかき', 'ゆきかき / すいすい'],
+  sun:  ['ようりょくそ', 'Chlorophyll'],
+  rain: ['すいすい', 'ゆきかき / すいすい', 'Swift Swim', 'Slush Rush / Swift Swim'],
+  sand: ['すなかき', 'Sand Rush'],
+  snow: ['ゆきかき', 'ゆきかき / すいすい', 'Slush Rush', 'Slush Rush / Swift Swim'],
 };
 
 function getWeatherAbility(r) {
-  // Returns which weather this entry's ability needs, or null
   for (const [w, list] of Object.entries(WEATHER_ABILITIES)) {
     if (r.abilities.some(a => list.includes(a))) return w;
   }
@@ -478,7 +517,6 @@ function getWeatherAbility(r) {
 }
 
 function isWeatherEntry(r) {
-  // True if this entry's ×2 comes from a weather ability
   return r.mult === '×2' && getWeatherAbility(r) !== null;
 }
 
@@ -487,8 +525,8 @@ function calcFinalSpeedWeather(r, cond, weather) {
   const abilityWeather = getWeatherAbility(r);
   if (abilityWeather) {
     const alreadyBoosted = isWeatherEntry(r);
-    if (weather === abilityWeather && !alreadyBoosted) speed *= 2;        // boost not yet applied
-    if (weather !== abilityWeather && alreadyBoosted)  speed = Math.floor(speed / 2); // wrong weather
+    if (weather === abilityWeather && !alreadyBoosted) speed *= 2;
+    if (weather !== abilityWeather && alreadyBoosted)  speed = Math.floor(speed / 2);
   }
   return calcFinalSpeed(speed, cond);
 }
@@ -524,7 +562,7 @@ function applyCondition(speed) {
     const res = await fetch('./data.json');
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const json = await res.json();
-    const rows = json.data || json; // support both {data:[]} and plain array
+    const rows = json.data || json;
     ALL_DATA = rows.map(processEntry);
     document.getElementById('mainContent').style.display = '';
     if (json.updated) {
@@ -694,7 +732,6 @@ function renderCmpCol(r, side) {
   const outcome  = finalSpd > otherSpd ? 'winner' : finalSpd < otherSpd ? 'loser' : 'draw';
   const outcomeLabel = outcome === 'winner' ? 'FASTER' : outcome === 'loser' ? 'SLOWER' : 'TIE';
 
-  // Weather boost indicator
   const abilityWeather = getWeatherAbility(r);
   let weatherBadge = '';
   if (abilityWeather && cmpWeather === abilityWeather) {
@@ -713,7 +750,6 @@ function renderCmpCol(r, side) {
   const tw = cond === 'tailwind';
   const pa = cond === 'para';
 
-  // Variant selector: all entries in ALL_DATA with the same dex_id
   const currentIdx = ALL_DATA.indexOf(r);
   const variants = ALL_DATA.map((e, i) => ({ e, i })).filter(({ e }) => e.dex_id === r.dex_id);
   const variantSelect = variants.length > 1 ? `
