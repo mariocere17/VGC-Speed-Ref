@@ -101,8 +101,8 @@ async function processPokemon(entry) {
     });
   }
 
-  // --- Choice Scarf (×1.5) — max + neutral only, base ≥ threshold ---
-  if (base >= SCARF_MIN_BASE) {
+  // --- Choice Scarf (×1.5) — max + neutral only, base ≥ threshold, no Megas ---
+  if (base >= SCARF_MIN_BASE && !name.startsWith('Mega ')) {
     for (const tier of TIERS.filter(t => t.key !== 'none' && t.key !== 'minus')) {
       const raw = calcSpeed(base, tier.evs, tier.nature);
       rows.push({
@@ -169,7 +169,7 @@ async function generate() {
   };
 
   fs.writeFileSync(OUT_FILE, JSON.stringify(output, null, 2));
-  console.log(`✅ ${all.length} entries written to champions/data.json`);
+  console.log(`✅ ${all.length} entries written to data.json`);
 }
 
 generate().catch(e => { console.error(e); process.exit(1); });

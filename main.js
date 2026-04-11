@@ -1,21 +1,5 @@
-// ── Translations (Japanese → English, for legacy data compatibility) ─────────
-const T = {
-  'かるわざ':            'Unburden',
-  'ようりょくそ':        'Chlorophyll',
-  'すなかき':            'Sand Rush',
-  'かそく':              'Speed Boost',
-  'こだわりスカーフ':    'Choice Scarf',
-  'はやあし':            'Quick Feet',
-  'くだけるよろい':      'Weak Armor',
-  'すいすい':            'Swift Swim',
-  'ゆきかき':            'Slush Rush',
-  'でんきエンジン':      'Electric Engine',
-  'ふくつのこころ':      'Steadfast',
-  'サーフテール':        'Surge Surfer',
-  'ゆきかき / すいすい': 'Slush Rush / Swift Swim',
-};
-// Items get a different chip color — includes both Japanese and English names
-const ITEMS = new Set(['こだわりスカーフ', 'Choice Scarf']);
+// Items get a different chip color
+const ITEMS = new Set(['Choice Scarf']);
 
 const DESC = {
   'Unburden':              'Doubles Speed when the held item is lost or consumed',
@@ -33,35 +17,15 @@ const DESC = {
   'Slush Rush / Swift Swim': 'Doubles Speed in snow/hail or rain (depending on form)',
 };
 
-// Known Japanese abilities ordered longest-first for greedy prefix matching (legacy support)
-const ABILITY_LIST = [
-  'ゆきかき / すいすい', 'こだわりスカーフ', 'ふくつのこころ',
-  'でんきエンジン', 'サーフテール', 'ようりょくそ', 'くだけるよろい',
-  'かるわざ', 'すなかき', 'すいすい', 'ゆきかき', 'はやあし', 'かそく',
-];
-
 function splitAbilities(raw) {
-  if (!raw) return [];
-  const first = raw.split('\n')[0].trim();
-  // New English format: ability is already a plain English string
-  if (/^[A-Z]/.test(first)) return [first];
-  // Legacy Japanese format: greedy prefix matching
-  const result = [];
-  let s = first;
-  while (s.length > 0) {
-    const match = ABILITY_LIST.find(a => s.startsWith(a));
-    if (match) { result.push(match); s = s.slice(match.length); }
-    else { result.push(s); break; }
-  }
-  return result.filter(Boolean);
+  return raw ? [raw.trim()] : [];
 }
 
 function abilityChips(abilities) {
   return abilities.map(a => {
-    const en = T[a] || a;
     const cls = ITEMS.has(a) ? 'chip-item' : 'chip-ability';
-    const tip = DESC[en] ? ` data-tip="${esc(DESC[en])}"` : '';
-    return `<span class="chip ${cls}"${tip}>${esc(en)}</span>`;
+    const tip = DESC[a] ? ` data-tip="${esc(DESC[a])}"` : '';
+    return `<span class="chip ${cls}"${tip}>${esc(a)}</span>`;
   }).join('');
 }
 
@@ -128,30 +92,17 @@ function nextSprite(img) {
 }
 
 // ── Data processing ──────────────────────────────────────────────
-// Supports both new English format (base is a number, tier is "max"/"neutral"/"none")
-// and legacy Japanese format (base is a string like "120族(最速)")
 function processEntry(e) {
-  let base, tier;
-  if (typeof e.base === 'number') {
-    // New English format from generator/generate.js
-    base = e.base;
-    tier = e.tier === 'max' ? '最速' : e.tier === 'neutral' ? '準速' : e.tier === 'minus' ? 'minus' : '無振';
-  } else {
-    // Legacy Japanese format from scraper
-    const m = (e.base || '').match(/(\d+)/);
-    base = m ? parseInt(m[1]) : 0;
-    tier = (e.base || '').includes('最速') ? '最速' : (e.base || '').includes('準速') ? '準速' : '無振';
-  }
   const abilities = splitAbilities(e.ability || '');
   return {
-    actual:    parseInt(e.actual) || 0,
-    base,
-    tier,
-    mult:      e.mult || '',
-    pokemon:   e.pokemon || '',
-    dex_id:    e.dex_id || '',
+    actual:      parseInt(e.actual) || 0,
+    base:        e.base || 0,
+    tier:        e.tier || 'none',
+    mult:        e.mult || '',
+    pokemon:     e.pokemon || '',
+    dex_id:      e.dex_id || '',
     abilities,
-    abilityText: abilities.map(a => (T[a] || a) + ' ' + a).join(' ').toLowerCase(),
+    abilityText: abilities.map(a => a.toLowerCase()).join(' '),
   };
 }
 
@@ -168,10 +119,10 @@ let cmpCondA = null, cmpCondB = null;
 let cmpWeather = null; // 'sun' | 'rain' | 'sand' | 'snow' | null
 
 const WEATHER_ABILITIES = {
-  sun:  ['ようりょくそ', 'Chlorophyll'],
-  rain: ['すいすい', 'ゆきかき / すいすい', 'Swift Swim', 'Slush Rush / Swift Swim'],
-  sand: ['すなかき', 'Sand Rush'],
-  snow: ['ゆきかき', 'ゆきかき / すいすい', 'Slush Rush', 'Slush Rush / Swift Swim'],
+  sun:  ['Chlorophyll'],
+  rain: ['Swift Swim', 'Slush Rush / Swift Swim'],
+  sand: ['Sand Rush'],
+  snow: ['Slush Rush', 'Slush Rush / Swift Swim'],
 };
 
 function getWeatherAbility(r) {
@@ -310,9 +261,9 @@ function doSort() {
 
 // ── Render ───────────────────────────────────────────────────────
 function tierBadge(t) {
-  if (t === '最速') return '<span class="badge tier-max">Max Speed</span>';
-  if (t === '準速') return '<span class="badge tier-near">Neutral</span>';
-  if (t === 'minus') return '<span class="badge tier-tr">Trick Room</span>';
+  if (t === 'max')    return '<span class="badge tier-max">Max Speed</span>';
+  if (t === 'neutral') return '<span class="badge tier-near">Neutral</span>';
+  if (t === 'minus')  return '<span class="badge tier-tr">Trick Room</span>';
   if (t === 'custom') return '<span class="badge tier-custom">Custom</span>';
   return '<span class="badge tier-none">No EVs</span>';
 }
@@ -421,7 +372,7 @@ function renderCmpCol(r, side) {
 
   const tierLabel = r.isCustom
     ? `Custom (${r.statPoints}pts, ${r.nature})`
-    : r.tier === '最速' ? 'Max Speed' : r.tier === '準速' ? 'Neutral' : r.tier === 'minus' ? 'Trick Room' : 'No EVs';
+    : r.tier === 'max' ? 'Max Speed' : r.tier === 'neutral' ? 'Neutral' : r.tier === 'minus' ? 'Trick Room' : 'No EVs';
   const multLabel = r.mult === '×2' ? '×2' : r.mult === '×1.5' ? '×1.5' : r.mult === '×3' ? '×3' : '×1';
   const tw = cond === 'tailwind';
   const pa = cond === 'para';
@@ -431,9 +382,9 @@ function renderCmpCol(r, side) {
   const variantSelect = variants.length > 1 ? `
     <select class="cmp-variant-select" onchange="changeCmpEntry('${side}', this.value)">
       ${variants.map(({ e, i }) => {
-        const tl = e.isCustom ? (e.label || 'Custom') : e.tier === '最速' ? 'Max' : e.tier === '準速' ? 'Neutral' : e.tier === 'minus' ? 'TR Min' : 'No EVs';
+        const tl = e.isCustom ? (e.label || 'Custom') : e.tier === 'max' ? 'Max' : e.tier === 'neutral' ? 'Neutral' : e.tier === 'minus' ? 'TR Min' : 'No EVs';
         const ml = e.mult ? ' ' + e.mult : '';
-        const al = e.abilities.map(a => T[a] || a).join('+');
+        const al = e.abilities.join('+');
         const label = `${tl}${ml} → ${e.actual}${al ? ' · ' + al : ''}`;
         return `<option value="${i}" ${i === currentIdx ? 'selected' : ''}>${esc(label)}</option>`;
       }).join('')}
