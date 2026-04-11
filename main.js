@@ -519,6 +519,13 @@ function injectCustomSets() {
 
 // ── Custom sets section ──────────────────────────────────────────
 const CUSTOM_SECTION_KEY = 'champions_custom_section_open';
+let customSortCol = 'actual', customSortDir = 'desc';
+
+function sortCustomBy(col) {
+  if (customSortCol === col) customSortDir = customSortDir === 'asc' ? 'desc' : 'asc';
+  else { customSortCol = col; customSortDir = col === 'actual' ? 'desc' : 'asc'; }
+  renderCustomSection();
+}
 
 function renderCustomSection() {
   const customs = ALL_DATA.filter(r => r.isCustom);
@@ -526,6 +533,22 @@ function renderCustomSection() {
   section.style.display = customs.length ? '' : 'none';
   if (!customs.length) return;
   document.getElementById('customCount').textContent = customs.length;
+
+  // Sort
+  const d = customSortDir === 'asc' ? 1 : -1;
+  customs.sort((a, b) => {
+    if (customSortCol === 'actual')  return (a.actual - b.actual) * d;
+    if (customSortCol === 'base')    return (a.base   - b.base)   * d;
+    if (customSortCol === 'pokemon') return a.pokemon.localeCompare(b.pokemon) * d;
+    return 0;
+  });
+
+  // Sort header indicators
+  ['pokemon','actual','base'].forEach(c => {
+    const el = document.getElementById('cth-' + c);
+    if (el) el.className = c === customSortCol ? ('sort-' + customSortDir) : '';
+  });
+
   // Restore collapsed state (open by default)
   const isOpen = localStorage.getItem(CUSTOM_SECTION_KEY) !== '0';
   document.getElementById('customSectionBody').classList.toggle('collapsed', !isOpen);
