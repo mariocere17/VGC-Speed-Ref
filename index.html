@@ -146,6 +146,27 @@
 
   <div class="info-bar" id="infoBar"></div>
 
+  <div class="custom-section" id="customSection" style="display:none">
+    <div class="custom-section-header" onclick="toggleCustomSection()">
+      <span class="custom-section-title">
+        My Custom Sets
+        <span class="custom-count-badge" id="customCount">0</span>
+      </span>
+      <span class="custom-section-chevron" id="customChevron">▾</span>
+    </div>
+    <div class="custom-section-body" id="customSectionBody">
+      <table>
+        <thead>
+          <tr>
+            <th>Pokemon</th><th>Actual Speed</th><th>Base Stat</th>
+            <th>Investment</th><th>Multiplier</th><th>Ability / Item</th>
+          </tr>
+        </thead>
+        <tbody id="customTableBody"></tbody>
+      </table>
+    </div>
+  </div>
+
   <div class="table-wrap">
     <table>
       <thead>

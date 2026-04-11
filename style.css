@@ -212,6 +212,37 @@ tbody tr { cursor: pointer; }
 .legend strong { color: var(--text); }
 .legend-item { display: flex; align-items: center; gap: 5px; }
 
+/* ── CUSTOM SECTION ── */
+.custom-section {
+  margin: 0.5rem 1.5rem 0;
+  border: 1px solid #1a3a3a;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.custom-section-header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0.55rem 1rem;
+  background: #0b1f1f;
+  cursor: pointer; user-select: none;
+}
+.custom-section-header:hover { background: #112828; }
+.custom-section-title {
+  font-size: 0.8rem; font-weight: 600; color: #4dd0e1;
+  letter-spacing: .05em; text-transform: uppercase;
+}
+.custom-count-badge {
+  display: inline-flex; align-items: center; justify-content: center;
+  background: #4dd0e1; color: #0a1a1a;
+  border-radius: 10px; font-size: 0.68rem; font-weight: 700;
+  padding: 0 6px; min-width: 18px; height: 18px; margin-left: 6px;
+}
+.custom-section-chevron { color: #4dd0e1; font-size: 0.85rem; transition: transform 0.2s; }
+.custom-section-chevron.collapsed { transform: rotate(-90deg); }
+.custom-section-body { border-top: 1px solid #1a3a3a; }
+.custom-section-body.collapsed { display: none; }
+.custom-section-body table { width: 100%; border-collapse: collapse; }
+.custom-section-body thead { position: static; }
+
 /* ── CUSTOM SETS ── */
 .tier-custom { background: #003333; color: #4dd0e1; }
 .btn-delete-custom {

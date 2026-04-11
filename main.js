@@ -188,6 +188,7 @@ function applyCondition(speed) {
       lastUpdated.style.color = '#3fb950';
     }
     applyFilters();
+    renderCustomSection();
   } catch (e) {
     lastUpdated.textContent = `Failed to load data: ${e.message}`;
     lastUpdated.style.color = '#f85149';
@@ -275,6 +276,36 @@ function multBadge(m) {
   return '<span class="badge mult-none">×1</span>';
 }
 
+function buildRow(r, onClickAttr) {
+  const q = spriteQueue(r.pokemon);
+  const firstSrc = q.shift();
+  const sprite = r.pokemon
+    ? `<img class="pkmn-sprite" src="${esc(firstSrc)}" alt="${esc(r.pokemon)}"
+            data-queue='${esc(JSON.stringify(q))}'
+            onerror="this._spriteQ=JSON.parse(this.dataset.queue||'[]');nextSprite(this)"
+            loading="lazy">`
+    : `<div class="pkmn-sprite-placeholder"></div>`;
+  const setLabel = r.isCustom && r.label ? `<div class="pkmn-set-label">${esc(r.label)}</div>` : '';
+  const pkmn = r.pokemon
+    ? `<div class="pkmn-name">${esc(r.pokemon)}</div>
+       <div class="pkmn-dex">#${esc(r.dex_id)}</div>${setLabel}`
+    : `<div class="pkmn-name" style="color:var(--muted)">—</div>`;
+  const displaySpeed = applyCondition(r.actual);
+  const speedCls = condition === 'tailwind' ? ' speed-modified' : condition === 'para' ? ' speed-modified para' : '';
+  const selCls = compareA === r ? ' cmp-sel-a' : compareB === r ? ' cmp-sel-b' : '';
+  const deleteBtn = r.isCustom
+    ? `<button class="btn-delete-custom" onclick="deleteCustomSet('${r.customId}',event)" title="Delete custom set">×</button>`
+    : '';
+  return `<tr class="${selCls}" ${onClickAttr}>
+    <td><div class="pkmn-cell">${sprite}<div>${pkmn}</div></div></td>
+    <td><span class="speed-val${speedCls}">${displaySpeed}</span></td>
+    <td><span class="base-stat">${r.base}</span></td>
+    <td>${tierBadge(r.tier)}</td>
+    <td>${multBadge(r.mult)}</td>
+    <td><div class="ability-list">${abilityChips(r.abilities)}${deleteBtn}</div></td>
+  </tr>`;
+}
+
 function render() {
   document.getElementById('infoBar').innerHTML =
     `Showing <strong>${filtered.length}</strong> of <strong>${ALL_DATA.length}</strong> entries`;
@@ -286,36 +317,9 @@ function render() {
     return;
   }
 
-  tbody.innerHTML = filtered.map((r, idx) => {
-    const q = spriteQueue(r.pokemon);
-    const firstSrc = q.shift();
-    const sprite = r.pokemon
-      ? `<img class="pkmn-sprite" src="${esc(firstSrc)}" alt="${esc(r.pokemon)}"
-              data-queue='${esc(JSON.stringify(q))}'
-              onerror="this._spriteQ=JSON.parse(this.dataset.queue||'[]');nextSprite(this)"
-              loading="lazy">`
-      : `<div class="pkmn-sprite-placeholder"></div>`;
-    const setLabel = r.isCustom && r.label ? `<div class="pkmn-set-label">${esc(r.label)}</div>` : '';
-    const pkmn = r.pokemon
-      ? `<div class="pkmn-name">${esc(r.pokemon)}</div>
-         <div class="pkmn-dex">#${esc(r.dex_id)}</div>${setLabel}`
-      : `<div class="pkmn-name" style="color:var(--muted)">—</div>`;
-
-    const displaySpeed = applyCondition(r.actual);
-    const speedCls = condition === 'tailwind' ? ' speed-modified' : condition === 'para' ? ' speed-modified para' : '';
-    const selCls = compareA === r ? ' cmp-sel-a' : compareB === r ? ' cmp-sel-b' : '';
-    const deleteBtn = r.isCustom
-      ? `<button class="btn-delete-custom" onclick="deleteCustomSet('${r.customId}',event)" title="Delete custom set">×</button>`
-      : '';
-    return `<tr class="${selCls}" onclick="selectForCompare(${idx})">
-      <td><div class="pkmn-cell">${sprite}<div>${pkmn}</div></div></td>
-      <td><span class="speed-val${speedCls}">${displaySpeed}</span></td>
-      <td><span class="base-stat">${r.base}</span></td>
-      <td>${tierBadge(r.tier)}</td>
-      <td>${multBadge(r.mult)}</td>
-      <td><div class="ability-list">${abilityChips(r.abilities)}${deleteBtn}</div></td>
-    </tr>`;
-  }).join('');
+  tbody.innerHTML = filtered.map((r, idx) =>
+    buildRow(r, `onclick="selectForCompare(${idx})"`)
+  ).join('');
 }
 
 // ── Wire filters ─────────────────────────────────────────────────
@@ -327,13 +331,14 @@ function selectForCompare(idx) {
   const entry = filtered[idx];
   if (!entry) return;
 
-  if (compareA === entry) { compareA = null; render(); return; }
-  if (compareB === entry) { compareB = null; render(); return; }
+  if (compareA === entry) { compareA = null; render(); renderCustomSection(); return; }
+  if (compareB === entry) { compareB = null; render(); renderCustomSection(); return; }
 
   if (!compareA) compareA = entry;
   else compareB = entry;
 
   render();
+  renderCustomSection();
   if (compareA && compareB) openCmp();
 }
 
@@ -511,6 +516,44 @@ function injectCustomSets() {
   loadCustomSets().forEach(s => ALL_DATA.push(buildCustomEntry(s)));
 }
 
+// ── Custom sets section ──────────────────────────────────────────
+const CUSTOM_SECTION_KEY = 'champions_custom_section_open';
+
+function renderCustomSection() {
+  const customs = ALL_DATA.filter(r => r.isCustom);
+  const section = document.getElementById('customSection');
+  section.style.display = customs.length ? '' : 'none';
+  if (!customs.length) return;
+  document.getElementById('customCount').textContent = customs.length;
+  // Restore collapsed state (open by default)
+  const isOpen = localStorage.getItem(CUSTOM_SECTION_KEY) !== '0';
+  document.getElementById('customSectionBody').classList.toggle('collapsed', !isOpen);
+  document.getElementById('customChevron').classList.toggle('collapsed', !isOpen);
+  document.getElementById('customTableBody').innerHTML =
+    customs.map(r => buildRow(r, `onclick="selectForCompareFromCustom('${r.customId}')"`)).join('');
+}
+
+function toggleCustomSection() {
+  const body    = document.getElementById('customSectionBody');
+  const chevron = document.getElementById('customChevron');
+  const isOpen  = !body.classList.contains('collapsed');
+  body.classList.toggle('collapsed', isOpen);
+  chevron.classList.toggle('collapsed', isOpen);
+  localStorage.setItem(CUSTOM_SECTION_KEY, isOpen ? '0' : '1');
+}
+
+function selectForCompareFromCustom(customId) {
+  const entry = ALL_DATA.find(r => r.customId === customId);
+  if (!entry) return;
+  if (compareA === entry) { compareA = null; render(); renderCustomSection(); return; }
+  if (compareB === entry) { compareB = null; render(); renderCustomSection(); return; }
+  if (!compareA) compareA = entry;
+  else           compareB = entry;
+  render();
+  renderCustomSection();
+  if (compareA && compareB) openCmp();
+}
+
 // ── Custom modal state ───────────────────────────────────────────
 let cmBase = 0, cmDexId = '';
 
@@ -605,6 +648,7 @@ function saveCustomSet() {
   saveCustomSets(sets);
   ALL_DATA.push(buildCustomEntry(set));
   applyFilters();
+  renderCustomSection();
   closeCustomModal();
 }
 
@@ -613,4 +657,5 @@ function deleteCustomSet(customId, event) {
   saveCustomSets(loadCustomSets().filter(s => s.id !== customId));
   ALL_DATA = ALL_DATA.filter(r => r.customId !== customId);
   applyFilters();
+  renderCustomSection();
 }
