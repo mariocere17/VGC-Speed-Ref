@@ -881,7 +881,7 @@ function renderCmpCol(r, side) {
   const variantSelect = variants.length > 1 ? `
     <select class="cmp-variant-select" onchange="changeCmpEntry('${side}', this.value)">
       ${variants.map(({ e, i }) => {
-        const tl = e.isCustom ? 'Custom' : e.tier === '最速' ? 'Max' : e.tier === '準速' ? 'Neutral' : e.tier === 'minus' ? 'TR Min' : 'No EVs';
+        const tl = e.isCustom ? (e.label || 'Custom') : e.tier === '最速' ? 'Max' : e.tier === '準速' ? 'Neutral' : e.tier === 'minus' ? 'TR Min' : 'No EVs';
         const ml = e.mult ? ' ' + e.mult : '';
         const al = e.abilities.map(a => T[a] || a).join('+');
         const label = `${tl}${ml} → ${e.actual}${al ? ' · ' + al : ''}`;
