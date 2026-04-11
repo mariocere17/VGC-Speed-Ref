@@ -96,6 +96,7 @@ tr:hover td { background: var(--surface2); }
 .tier-none { background: var(--tier-no-bg);   color: var(--tier-no-fg); }
 .mult-x2   { background: var(--mult2-bg);  color: var(--mult2-fg); }
 .mult-x15  { background: var(--mult15-bg); color: var(--mult15-fg); }
+.mult-x3   { background: #1a0d3d; color: #d0aaff; }
 .mult-none { background: #1c2128; color: var(--muted); }
 
 /* ── ABILITY CHIPS ── */
@@ -404,7 +405,7 @@ tbody tr { cursor: pointer; }
       </div>
     </div>
     <button class="btn-reset" onclick="resetFilters()">Reset</button>
-    <button class="btn-add-custom" onclick="openCustomModal()">＋ Custom</button>
+    <button class="btn-add-custom" onclick="openCustomModal()">＋ Add Custom Set</button>
   </div>
 
   <div class="info-bar" id="infoBar"></div>
@@ -757,6 +758,7 @@ function tierBadge(t) {
 function multBadge(m) {
   if (m === '×2')   return '<span class="badge mult-x2">×2</span>';
   if (m === '×1.5') return '<span class="badge mult-x15">×1.5</span>';
+  if (m === '×3')   return '<span class="badge mult-x3">×3</span>';
   return '<span class="badge mult-none">×1</span>';
 }
 
@@ -866,7 +868,7 @@ function renderCmpCol(r, side) {
   const variantSelect = variants.length > 1 ? `
     <select class="cmp-variant-select" onchange="changeCmpEntry('${side}', this.value)">
       ${variants.map(({ e, i }) => {
-        const tl = e.tier === '最速' ? 'Max' : e.tier === '準速' ? 'Neutral' : 'No EVs';
+        const tl = e.isCustom ? 'Custom' : e.tier === '最速' ? 'Max' : e.tier === '準速' ? 'Neutral' : 'No EVs';
         const ml = e.mult ? ' ' + e.mult : '';
         const al = e.abilities.map(a => T[a] || a).join('+');
         const label = `${tl}${ml} → ${e.actual}${al ? ' · ' + al : ''}`;
@@ -960,12 +962,19 @@ const ABILITY_MULTS = {
   'Unburden': '×2', 'Speed Boost': '×2', 'Weak Armor': '×2', 'Surge Surfer': '×2',
   'Electric Engine': '×2', 'Quick Feet': '×1.5',
 };
+// These abilities can stack with Choice Scarf (external condition, not item-based)
+const SCARF_COMPATIBLE = new Set(['Swift Swim', 'Chlorophyll', 'Sand Rush', 'Slush Rush', 'Surge Surfer', 'Electric Engine']);
 
 function buildCustomEntry(s) {
   let actual = calcChampionsSpeed(s.base, s.statPoints, s.nature);
   let mult = '';
   let abilities = [];
-  if (s.speedAbility) {
+  if (s.speedAbility && s.useScarf && SCARF_COMPATIBLE.has(s.speedAbility)) {
+    // Weather ability + Choice Scarf combo (×3 total)
+    mult = '×3';
+    abilities = [s.speedAbility, 'Choice Scarf'];
+    actual = Math.floor(actual * 2 * 1.5);
+  } else if (s.speedAbility) {
     const m = ABILITY_MULTS[s.speedAbility] || '×2';
     mult = m;
     abilities = [s.speedAbility];
@@ -1061,10 +1070,13 @@ function cmUpdatePreview() {
   const ability = document.querySelector('input[name="cmAbility"]:checked')?.value || '';
   const scarf   = document.getElementById('cmScarf').checked;
 
-  document.getElementById('cmScarf').disabled = !!ability;
+  // Allow Scarf only when no ability selected, or ability is weather-based (externally triggered)
+  document.getElementById('cmScarf').disabled = !!ability && !SCARF_COMPATIBLE.has(ability);
 
   let speed = calcChampionsSpeed(cmBase, sp, nature);
-  if (ability) {
+  if (ability && scarf && SCARF_COMPATIBLE.has(ability)) {
+    speed = Math.floor(speed * 2 * 1.5);
+  } else if (ability) {
     speed = ABILITY_MULTS[ability] === '×1.5' ? Math.floor(speed * 1.5) : speed * 2;
   } else if (scarf) {
     speed = Math.floor(speed * 1.5);
