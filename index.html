@@ -15,6 +15,7 @@
   --tier-max-bg: #1b3d1b; --tier-max-fg: #81c784;
   --tier-near-bg: #4a3500; --tier-near-fg: #ffe082;
   --tier-no-bg: #222; --tier-no-fg: #999;
+  --tier-tr-bg: #1a0a2e; --tier-tr-fg: #ce93d8;
   --item-fg: #80cbc4; --ability-fg: #ce93d8;
 }
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -94,6 +95,7 @@ tr:hover td { background: var(--surface2); }
 .tier-max  { background: var(--tier-max-bg);  color: var(--tier-max-fg); }
 .tier-near { background: var(--tier-near-bg); color: var(--tier-near-fg); }
 .tier-none { background: var(--tier-no-bg);   color: var(--tier-no-fg); }
+.tier-tr   { background: var(--tier-tr-bg);   color: var(--tier-tr-fg); }
 .mult-x2   { background: var(--mult2-bg);  color: var(--mult2-fg); }
 .mult-x15  { background: var(--mult15-bg); color: var(--mult15-fg); }
 .mult-x3   { background: #1a0d3d; color: #d0aaff; }
@@ -384,6 +386,7 @@ tbody tr { cursor: pointer; }
         <option value="最速">Max Speed (Timid/Jolly)</option>
         <option value="準速">Neutral (Neutral +252)</option>
         <option value="無振">No EVs</option>
+        <option value="minus">Trick Room (−Spd)</option>
         <option value="custom">Custom</option>
       </select>
     </div>
@@ -433,6 +436,7 @@ tbody tr { cursor: pointer; }
     <span class="legend-item"><span class="badge tier-max">Max Speed</span> Timid/Jolly +252 EVs</span>
     <span class="legend-item"><span class="badge tier-near">Neutral</span> Neutral nature +252 EVs</span>
     <span class="legend-item"><span class="badge tier-none">No EVs</span> 0 speed EVs</span>
+    <span class="legend-item"><span class="badge tier-tr">Trick Room</span> 0 EVs, −nature</span>
     <span class="legend-item"><span class="badge mult-x2">×2</span> Weather/condition double</span>
     <span class="legend-item"><span class="badge mult-x15">×1.5</span> Choice Scarf or ability</span>
     <span class="legend-item"><span class="chip chip-ability">Ability</span> <span class="chip chip-item">Item</span></span>
@@ -577,7 +581,7 @@ function processEntry(e) {
   if (typeof e.base === 'number') {
     // New English format from generator/generate.js
     base = e.base;
-    tier = e.tier === 'max' ? '最速' : e.tier === 'neutral' ? '準速' : '無振';
+    tier = e.tier === 'max' ? '最速' : e.tier === 'neutral' ? '準速' : e.tier === 'minus' ? 'minus' : '無振';
   } else {
     // Legacy Japanese format from scraper
     const m = (e.base || '').match(/(\d+)/);
@@ -754,6 +758,7 @@ function doSort() {
 function tierBadge(t) {
   if (t === '最速') return '<span class="badge tier-max">Max Speed</span>';
   if (t === '準速') return '<span class="badge tier-near">Neutral</span>';
+  if (t === 'minus') return '<span class="badge tier-tr">Trick Room</span>';
   if (t === 'custom') return '<span class="badge tier-custom">Custom</span>';
   return '<span class="badge tier-none">No EVs</span>';
 }
@@ -860,7 +865,7 @@ function renderCmpCol(r, side) {
 
   const tierLabel = r.isCustom
     ? `Custom (${r.statPoints}pts, ${r.nature})`
-    : r.tier === '最速' ? 'Max Speed' : r.tier === '準速' ? 'Neutral' : 'No EVs';
+    : r.tier === '最速' ? 'Max Speed' : r.tier === '準速' ? 'Neutral' : r.tier === 'minus' ? 'Trick Room' : 'No EVs';
   const multLabel = r.mult === '×2' ? '×2' : r.mult === '×1.5' ? '×1.5' : '×1';
   const tw = cond === 'tailwind';
   const pa = cond === 'para';
@@ -870,7 +875,7 @@ function renderCmpCol(r, side) {
   const variantSelect = variants.length > 1 ? `
     <select class="cmp-variant-select" onchange="changeCmpEntry('${side}', this.value)">
       ${variants.map(({ e, i }) => {
-        const tl = e.isCustom ? 'Custom' : e.tier === '最速' ? 'Max' : e.tier === '準速' ? 'Neutral' : 'No EVs';
+        const tl = e.isCustom ? 'Custom' : e.tier === '最速' ? 'Max' : e.tier === '準速' ? 'Neutral' : e.tier === 'minus' ? 'TR Min' : 'No EVs';
         const ml = e.mult ? ' ' + e.mult : '';
         const al = e.abilities.map(a => T[a] || a).join('+');
         const label = `${tl}${ml} → ${e.actual}${al ? ' · ' + al : ''}`;

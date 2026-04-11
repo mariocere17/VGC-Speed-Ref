@@ -22,6 +22,7 @@ const TIERS = [
   { key: 'max',     evs: 252, nature: 1.1 },
   { key: 'neutral', evs: 252, nature: 1.0 },
   { key: 'none',    evs: 0,   nature: 1.0 },
+  { key: 'minus',   evs: 0,   nature: 0.9 }, // Trick Room: 0 EVs, −speed nature
 ];
 
 const SCARF_MIN_BASE = 60; // Skip Choice Scarf for very slow Pokémon
@@ -100,7 +101,7 @@ async function processPokemon(entry) {
 
   // --- Choice Scarf (×1.5) — max + neutral only, base ≥ threshold ---
   if (base >= SCARF_MIN_BASE) {
-    for (const tier of TIERS.filter(t => t.key !== 'none')) {
+    for (const tier of TIERS.filter(t => t.key !== 'none' && t.key !== 'minus')) {
       const raw = calcSpeed(base, tier.evs, tier.nature);
       rows.push({
         pokemon: name,
@@ -117,7 +118,7 @@ async function processPokemon(entry) {
   // --- Speed-boosting abilities ---
   for (const slug of abilities) {
     const { mult, en } = SPEED_ABILITIES[slug];
-    const tierList = mult === '×2' ? TIERS : TIERS.filter(t => t.key !== 'none');
+    const tierList = mult === '×2' ? TIERS : TIERS.filter(t => t.key !== 'none' && t.key !== 'minus');
     for (const tier of tierList) {
       const raw = calcSpeed(base, tier.evs, tier.nature);
       rows.push({
@@ -150,7 +151,7 @@ async function generate() {
   }
 
   // Sort by actual speed descending, then tier order (max > neutral > none), then name
-  const TIER_ORDER = { max: 0, neutral: 1, none: 2 };
+  const TIER_ORDER = { max: 0, neutral: 1, none: 2, minus: 3 };
   all.sort((a, b) =>
     b.actual - a.actual ||
     (TIER_ORDER[a.tier] ?? 9) - (TIER_ORDER[b.tier] ?? 9) ||
