@@ -61,6 +61,13 @@ input[type="text"] { width: 160px; }
 .info-bar strong { color: var(--text); }
 .table-wrap { overflow-x: auto; border-radius: 8px; border: 1px solid var(--border); }
 table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+.speed-table { table-layout: fixed; }
+.col-pokemon { width: 28%; }
+.col-speed   { width: 14%; }
+.col-base    { width: 10%; }
+.col-tier    { width: 14%; }
+.col-mult    { width: 11%; }
+.col-ability { width: 23%; }
 thead { background: var(--surface2); position: sticky; top: 0; z-index: 5; }
 th {
   padding: 10px 14px; text-align: left; font-weight: 600; color: var(--muted);
@@ -242,6 +249,7 @@ tbody tr { cursor: pointer; }
 .custom-section-body.collapsed { display: none; }
 .custom-section-body table { width: 100%; border-collapse: collapse; }
 .custom-section-body thead { position: static; }
+.custom-section { margin-bottom: 0.75rem; }
 
 /* ── CUSTOM SETS ── */
 .tier-custom { background: #003333; color: #4dd0e1; }

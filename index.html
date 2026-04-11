@@ -155,7 +155,11 @@
       <span class="custom-section-chevron" id="customChevron">▾</span>
     </div>
     <div class="custom-section-body" id="customSectionBody">
-      <table>
+      <table class="speed-table">
+        <colgroup>
+          <col class="col-pokemon"><col class="col-speed"><col class="col-base">
+          <col class="col-tier"><col class="col-mult"><col class="col-ability">
+        </colgroup>
         <thead>
           <tr>
             <th>Pokemon</th><th>Actual Speed</th><th>Base Stat</th>
@@ -168,7 +172,11 @@
   </div>
 
   <div class="table-wrap">
-    <table>
+    <table class="speed-table">
+      <colgroup>
+        <col class="col-pokemon"><col class="col-speed"><col class="col-base">
+        <col class="col-tier"><col class="col-mult"><col class="col-ability">
+      </colgroup>
       <thead>
         <tr>
           <th onclick="sortBy('pokemon')" id="th-pokemon">Pokemon</th>
