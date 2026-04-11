@@ -221,7 +221,7 @@ tbody tr { cursor: pointer; }
 
 /* ── CUSTOM SECTION ── */
 .custom-section {
-  margin: 0.5rem 1.5rem 0;
+  margin: 0 0 0.75rem;
   border: 1px solid #1a3a3a;
   border-radius: 8px;
   overflow: hidden;
@@ -249,7 +249,6 @@ tbody tr { cursor: pointer; }
 .custom-section-body.collapsed { display: none; }
 .custom-section-body table { width: 100%; border-collapse: collapse; }
 .custom-section-body thead { position: static; }
-.custom-section { margin-bottom: 0.75rem; }
 
 /* ── CUSTOM SETS ── */
 .tier-custom { background: #003333; color: #4dd0e1; }
