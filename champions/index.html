@@ -407,7 +407,38 @@ function esc(s) {
 
 // ── Name / Sprite helpers ────────────────────────────────────────
 function nameToSlug(name) {
-  return name.toLowerCase().replace(/ /g, '-');
+  let n = name.trim();
+
+  // Rotom appliance forms: "Heat Rotom" → "rotom-heat"
+  const rotomM = n.match(/^(Heat|Wash|Frost|Fan|Mow)\s+Rotom$/i);
+  if (rotomM) return 'rotom-' + rotomM[1].toLowerCase();
+
+  // Mega forms: "Mega Venusaur" → "venusaur-mega", "Mega Charizard X" → "charizard-mega-x"
+  const megaM = n.match(/^Mega\s+(.+?)(?:\s+([XY]))?$/i);
+  if (megaM) {
+    const base = megaM[1].toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-+/g, '-').replace(/-$/, '');
+    return base + '-mega' + (megaM[2] ? '-' + megaM[2].toLowerCase() : '');
+  }
+
+  // Regional forms: "Alolan X" → "x-alola", "Paldean X (Form)" → "x-paldea-form"
+  const regionMap = { Alolan: 'alola', Hisuian: 'hisui', Galarian: 'galar', Paldean: 'paldea' };
+  for (const [prefix, suffix] of Object.entries(regionMap)) {
+    if (n.startsWith(prefix + ' ')) {
+      const rest = n.slice(prefix.length + 1);
+      const formM = rest.match(/^(.+?)\s*\(([^)]+)\)$/);
+      if (formM) {
+        const base = formM[1].toLowerCase().replace(/[^a-z0-9]+/g, '-');
+        const form = formM[2].toLowerCase().replace(/[^a-z0-9]+/g, '-');
+        return `${base}-${suffix}-${form}`;
+      }
+      return rest.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-+/g, '-').replace(/-$/, '') + '-' + suffix;
+    }
+  }
+
+  // Parenthetical form suffix: "Gourgeist (Small)" → "gourgeist-small"
+  n = n.replace(/\s*\(([^)]+)\)\s*$/, (_, f) => '-' + f);
+
+  return n.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '');
 }
 
 function spriteQueue(name) {
