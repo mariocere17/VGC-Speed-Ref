@@ -25,7 +25,7 @@ const TIERS = [
   { key: 'minus',   evs: 0,   nature: 0.9 }, // Trick Room: 0 EVs, −speed nature
 ];
 
-const SCARF_MIN_BASE = 60; // Skip Choice Scarf for very slow Pokémon
+const SCARF_MIN_BASE = 61; // Skip Choice Scarf for very slow Pokémon
 const TR_MAX_BASE    = 60; // Only add Trick Room tier for slow Pokémon (base < 60)
 
 // Level-50 speed formula (matching in-game calculation)
