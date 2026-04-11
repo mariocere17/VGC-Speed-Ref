@@ -87,6 +87,7 @@ tr:hover td { background: var(--surface2); }
 .pkmn-sprite-placeholder { width: 36px; height: 36px; flex-shrink: 0; }
 .pkmn-name { font-weight: 600; color: #c9d1d9; white-space: nowrap; }
 .pkmn-dex { font-size: 0.72rem; color: var(--muted); }
+.pkmn-set-label { font-size: 0.68rem; color: #4dd0e1; font-style: italic; white-space: nowrap; }
 
 /* ── BADGES ── */
 .speed-val { font-size: 1.05rem; font-weight: 700; color: #f0f6fc; }
@@ -286,7 +287,7 @@ tbody tr { cursor: pointer; }
   <div>
     <h1>⚡ Pokemon Champions — Speed Reference</h1>
     <p class="subtitle">
-      Pokemon Champions VGC 2026 · Auto-updated daily via GitHub Actions
+      Pokemon Champions VGC 2026 · Auto-updated daily
       · <span id="lastUpdated" style="color:var(--muted)">Loading…</span>
     </p>
   </div>
@@ -348,6 +349,10 @@ tbody tr { cursor: pointer; }
     <div class="scarf-row">
       <input type="checkbox" id="cmScarf" onchange="cmUpdatePreview()">
       <label for="cmScarf">Choice Scarf ×1.5</label>
+    </div>
+    <div class="custom-field">
+      <label>Set Name <span style="color:var(--muted);font-size:0.65rem;text-transform:none;letter-spacing:0">(optional)</span></label>
+      <input type="text" id="cmLabel" placeholder="e.g. Speed creep set" maxlength="40">
     </div>
     <div class="custom-preview">
       <div class="custom-preview-label">Preview Speed</div>
@@ -789,9 +794,10 @@ function render() {
               onerror="this._spriteQ=JSON.parse(this.dataset.queue||'[]');nextSprite(this)"
               loading="lazy">`
       : `<div class="pkmn-sprite-placeholder"></div>`;
+    const setLabel = r.isCustom && r.label ? `<div class="pkmn-set-label">${esc(r.label)}</div>` : '';
     const pkmn = r.pokemon
       ? `<div class="pkmn-name">${esc(r.pokemon)}</div>
-         <div class="pkmn-dex">#${esc(r.dex_id)}</div>`
+         <div class="pkmn-dex">#${esc(r.dex_id)}</div>${setLabel}`
       : `<div class="pkmn-name" style="color:var(--muted)">—</div>`;
 
     const displaySpeed = applyCondition(r.actual);
@@ -888,7 +894,7 @@ function renderCmpCol(r, side) {
       ${sprite}
       <div class="cmp-pkmn-info">
         <div class="cmp-pkmn-name">${esc(r.pokemon)}</div>
-        <div class="cmp-pkmn-dex">#${esc(r.dex_id)}</div>
+        <div class="cmp-pkmn-dex">#${esc(r.dex_id)}${r.label ? ` · <span style="color:#4dd0e1;font-style:italic">${esc(r.label)}</span>` : ''}</div>
       </div>
     </div>
     ${variantSelect}
@@ -1004,6 +1010,7 @@ function buildCustomEntry(s) {
     customId: s.id,
     statPoints: s.statPoints,
     nature: s.nature,
+    label: s.label || '',
   };
 }
 
@@ -1018,6 +1025,7 @@ function openCustomModal() {
   const names = [...new Set(ALL_DATA.filter(r => !r.isCustom).map(r => r.pokemon))].sort();
   document.getElementById('cmPkmnList').innerHTML = names.map(n => `<option value="${esc(n)}">`).join('');
   document.getElementById('cmPkmn').value = '';
+  document.getElementById('cmLabel').value = '';
   document.getElementById('cmSlider').value = 0;
   document.getElementById('cmSPNum').value = 0;
   document.querySelector('input[name="cmNature"][value="neutral"]').checked = true;
@@ -1098,7 +1106,8 @@ function saveCustomSet() {
   const nature      = document.querySelector('input[name="cmNature"]:checked')?.value || 'neutral';
   const speedAbility = document.querySelector('input[name="cmAbility"]:checked')?.value || '';
   const useScarf    = !speedAbility && document.getElementById('cmScarf').checked;
-  const set = { id: String(Date.now()), pokemon: name, dex_id: cmDexId, base: cmBase, statPoints: sp, nature, speedAbility, useScarf };
+  const label = document.getElementById('cmLabel').value.trim();
+  const set = { id: String(Date.now()), pokemon: name, dex_id: cmDexId, base: cmBase, statPoints: sp, nature, speedAbility, useScarf, label };
   const sets = loadCustomSets();
   sets.push(set);
   saveCustomSets(sets);
