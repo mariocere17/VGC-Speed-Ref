@@ -21,7 +21,7 @@
 body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); padding: 20px; min-height: 100vh; }
 
 /* ── HEADER ── */
-header { margin-bottom: 20px; }
+header { margin-bottom: 20px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
 h1 { font-size: 1.5rem; color: #c9d1d9; margin-bottom: 3px; }
 .subtitle { color: var(--muted); font-size: 0.8rem; }
 .subtitle a { color: var(--accent); text-decoration: none; }
@@ -229,9 +229,9 @@ tbody tr { cursor: pointer; }
 }
 .btn-delete-custom:hover { color: #f85149; }
 .btn-add-custom {
-  align-self: flex-end; padding: 7px 14px; background: #003333;
+  padding: 8px 16px; background: #003333; flex-shrink: 0;
   border: 1px solid #1a5454; color: #4dd0e1; border-radius: 6px;
-  cursor: pointer; font-size: 0.82rem; transition: all .15s;
+  cursor: pointer; font-size: 0.85rem; font-weight: 600; transition: all .15s;
 }
 .btn-add-custom:hover { background: #004444; border-color: #4dd0e1; }
 .custom-overlay {
@@ -281,11 +281,14 @@ tbody tr { cursor: pointer; }
 <body>
 
 <header>
-  <h1>⚡ Pokemon Champions — Speed Reference</h1>
-  <p class="subtitle">
-    Pokemon Champions VGC 2026 · Auto-updated daily via GitHub Actions
-    · <span id="lastUpdated" style="color:var(--muted)">Loading…</span>
-  </p>
+  <div>
+    <h1>⚡ Pokemon Champions — Speed Reference</h1>
+    <p class="subtitle">
+      Pokemon Champions VGC 2026 · Auto-updated daily via GitHub Actions
+      · <span id="lastUpdated" style="color:var(--muted)">Loading…</span>
+    </p>
+  </div>
+  <button class="btn-add-custom" onclick="openCustomModal()">＋ Add Custom Set</button>
 </header>
 
 <!-- COMPARE MODAL -->
@@ -405,7 +408,6 @@ tbody tr { cursor: pointer; }
       </div>
     </div>
     <button class="btn-reset" onclick="resetFilters()">Reset</button>
-    <button class="btn-add-custom" onclick="openCustomModal()">＋ Add Custom Set</button>
   </div>
 
   <div class="info-bar" id="infoBar"></div>
