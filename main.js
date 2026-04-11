@@ -206,6 +206,7 @@ function applyFilters() {
   const abilQ  = document.getElementById('abilityFilter').value.toLowerCase();
 
   filtered = ALL_DATA.filter(r => {
+    if (r.isCustom) return false;
     if (pkmnQ && !r.pokemon.toLowerCase().includes(pkmnQ)) return false;
     if (r.actual < minS || r.actual > maxS) return false;
     if (baseF && r.base !== baseF) return false;
