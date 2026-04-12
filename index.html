@@ -173,14 +173,14 @@
       <table class="speed-table">
         <colgroup>
           <col class="col-pokemon"><col class="col-speed"><col class="col-base">
-          <col class="col-tier"><col class="col-mult"><col class="col-usage"><col class="col-ability">
+          <col class="col-tier"><col class="col-mult"><col class="col-usage"><col class="col-tourney"><col class="col-ability">
         </colgroup>
         <thead>
           <tr>
             <th onclick="sortCustomBy('pokemon')" id="cth-pokemon">Pokemon</th>
             <th onclick="sortCustomBy('actual')"  id="cth-actual">Actual Speed</th>
             <th onclick="sortCustomBy('base')"    id="cth-base">Base Stat</th>
-            <th>Investment</th><th>Multiplier</th><th>Ladder %</th><th>Ability / Item</th>
+            <th>Investment</th><th>Multiplier</th><th>Ladder %</th><th>Tourney %</th><th>Ability / Item</th>
           </tr>
         </thead>
         <tbody id="customTableBody"></tbody>
@@ -194,7 +194,7 @@
     <table class="speed-table">
       <colgroup>
         <col class="col-pokemon"><col class="col-speed"><col class="col-base">
-        <col class="col-tier"><col class="col-mult"><col class="col-usage"><col class="col-ability">
+        <col class="col-tier"><col class="col-mult"><col class="col-usage"><col class="col-tourney"><col class="col-ability">
       </colgroup>
       <thead>
         <tr>
@@ -204,6 +204,7 @@
           <th>EV Investment</th>
           <th onclick="sortBy('mult')"    id="th-mult">Multiplier</th>
           <th onclick="sortBy('usage')"   id="th-usage">Ladder %</th>
+          <th onclick="sortBy('tourney')" id="th-tourney">Tourney %</th>
           <th>Ability / Item</th>
         </tr>
       </thead>

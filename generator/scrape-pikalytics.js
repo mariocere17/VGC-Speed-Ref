@@ -3,7 +3,7 @@ const fs   = require('fs');
 const path = require('path');
 
 const BASE_AI_URL = 'https://www.pikalytics.com/ai/pokedex/championstournaments';
-const MIN_USAGE   = 2.0;
+const MIN_USAGE   = 1.0;
 const DELAY_MS    = 500;
 const OUT_FILE    = path.join(__dirname, '..', 'pikalytics.json');
 

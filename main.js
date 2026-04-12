@@ -252,7 +252,7 @@ function resetFilters() {
 // ── Sort ─────────────────────────────────────────────────────────
 function sortBy(col) {
   if (sortCol === col) sortDir = sortDir === 'asc' ? 'desc' : 'asc';
-  else { sortCol = col; sortDir = (col === 'actual' || col === 'usage') ? 'desc' : 'asc'; }
+  else { sortCol = col; sortDir = (col === 'actual' || col === 'usage' || col === 'tourney') ? 'desc' : 'asc'; }
   doSort();
   render();
 }
@@ -272,9 +272,14 @@ function doSort() {
       const ub = PIKALYTICS[b.pokemon]?.usage ?? -1;
       return (ua - ub) * d;
     }
+    if (sortCol === 'tourney') {
+      const ta = LIMITLESS[a.pokemon]?.usage_pct ?? -1;
+      const tb = LIMITLESS[b.pokemon]?.usage_pct ?? -1;
+      return (ta - tb) * d;
+    }
     return 0;
   });
-  ['actual','base','pokemon','mult','usage'].forEach(c => {
+  ['actual','base','pokemon','mult','usage','tourney'].forEach(c => {
     const el = document.getElementById('th-' + c);
     if (el) el.className = c === sortCol ? ('sort-' + sortDir) : '';
   });
@@ -326,6 +331,7 @@ function buildRow(r, onClickAttr) {
     <td>${tierBadge(r.tier)}</td>
     <td>${multBadge(r.mult)}</td>
     <td>${r.isCustom ? '' : (() => { const u = PIKALYTICS[r.pokemon]?.usage; return u != null ? `<span class="usage-pct">${u}%</span>` : '<span class="usage-pct muted">—</span>'; })()}</td>
+    <td>${r.isCustom ? '' : (() => { const t = LIMITLESS[r.pokemon]?.usage_pct; return t != null ? `<span class="usage-pct">${t.toFixed(1)}%</span>` : '<span class="usage-pct muted">—</span>'; })()}</td>
     <td><div class="ability-list">${abilityChips(r.abilities)}</div></td>
   </tr>`;
 }

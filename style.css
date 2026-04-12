@@ -62,13 +62,14 @@ input[type="text"] { width: 160px; }
 .table-wrap { overflow-x: auto; border-radius: 8px; border: 1px solid var(--border); }
 table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
 .speed-table { table-layout: fixed; }
-.col-pokemon { width: 24%; }
-.col-speed   { width: 13%; }
-.col-base    { width: 9%; }
-.col-tier    { width: 13%; }
-.col-mult    { width: 10%; }
-.col-usage   { width: 9%; }
-.col-ability { width: 22%; }
+.col-pokemon { width: 22%; }
+.col-speed   { width: 12%; }
+.col-base    { width: 8%; }
+.col-tier    { width: 12%; }
+.col-mult    { width: 9%; }
+.col-usage   { width: 8%; }
+.col-tourney { width: 8%; }
+.col-ability { width: 21%; }
 thead { background: var(--surface2); position: sticky; top: 0; z-index: 5; }
 th {
   padding: 10px 14px; text-align: left; font-weight: 600; color: var(--muted);
