@@ -252,7 +252,7 @@ function resetFilters() {
 // ── Sort ─────────────────────────────────────────────────────────
 function sortBy(col) {
   if (sortCol === col) sortDir = sortDir === 'asc' ? 'desc' : 'asc';
-  else { sortCol = col; sortDir = col === 'actual' ? 'desc' : 'asc'; }
+  else { sortCol = col; sortDir = (col === 'actual' || col === 'usage') ? 'desc' : 'asc'; }
   doSort();
   render();
 }
@@ -267,9 +267,14 @@ function doSort() {
       const v = m => m === '×2' ? 2 : m === '×1.5' ? 1.5 : 1;
       return (v(a.mult) - v(b.mult)) * d;
     }
+    if (sortCol === 'usage') {
+      const ua = PIKALYTICS[a.pokemon]?.usage ?? -1;
+      const ub = PIKALYTICS[b.pokemon]?.usage ?? -1;
+      return (ua - ub) * d;
+    }
     return 0;
   });
-  ['actual','base','pokemon','mult'].forEach(c => {
+  ['actual','base','pokemon','mult','usage'].forEach(c => {
     const el = document.getElementById('th-' + c);
     if (el) el.className = c === sortCol ? ('sort-' + sortDir) : '';
   });
@@ -320,6 +325,7 @@ function buildRow(r, onClickAttr) {
     <td><span class="base-stat">${r.base}</span></td>
     <td>${tierBadge(r.tier)}</td>
     <td>${multBadge(r.mult)}</td>
+    <td>${r.isCustom ? '' : (() => { const u = PIKALYTICS[r.pokemon]?.usage; return u != null ? `<span class="usage-pct">${u}%</span>` : '<span class="usage-pct muted">—</span>'; })()}</td>
     <td><div class="ability-list">${abilityChips(r.abilities)}</div></td>
   </tr>`;
 }
@@ -509,8 +515,8 @@ function openMetaModal(name, event) {
   const usageEl = document.getElementById('metaUsage');
   if (pikData) {
     usageEl.textContent = dataSource !== name
-      ? `${pikData.usage}% usage (as ${dataSource})`
-      : `${pikData.usage}% usage`;
+      ? `${pikData.usage}% ladder usage (as ${dataSource})`
+      : `${pikData.usage}% ladder usage`;
     usageEl.style.display = '';
   } else {
     usageEl.style.display = 'none';
@@ -548,13 +554,12 @@ function buildMetaBody(pikData, limData) {
             section('Abilities', pikData.abilities);
   }
   if (limData) {
-    const record = `${limData.wins} - ${limData.losses}${limData.draws ? ' - ' + limData.draws : ''}`;
     html += section('Tournament Results',
       [
         { name: 'Usage in tournaments', pct: limData.usage_pct },
         { name: 'Win rate',             pct: limData.win_rate  },
       ],
-      `${record} · ${limData.teams} teams`
+      `${limData.teams} teams tracked`
     );
   }
   return html;

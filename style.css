@@ -62,12 +62,13 @@ input[type="text"] { width: 160px; }
 .table-wrap { overflow-x: auto; border-radius: 8px; border: 1px solid var(--border); }
 table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
 .speed-table { table-layout: fixed; }
-.col-pokemon { width: 28%; }
-.col-speed   { width: 14%; }
-.col-base    { width: 10%; }
-.col-tier    { width: 14%; }
-.col-mult    { width: 11%; }
-.col-ability { width: 23%; }
+.col-pokemon { width: 24%; }
+.col-speed   { width: 13%; }
+.col-base    { width: 9%; }
+.col-tier    { width: 13%; }
+.col-mult    { width: 10%; }
+.col-usage   { width: 9%; }
+.col-ability { width: 22%; }
 thead { background: var(--surface2); position: sticky; top: 0; z-index: 5; }
 th {
   padding: 10px 14px; text-align: left; font-weight: 600; color: var(--muted);
@@ -347,3 +348,5 @@ tbody tr { cursor: pointer; }
 .pkmn-sprite.has-meta { cursor: pointer; }
 .pkmn-sprite.has-meta:hover { opacity: 0.8; }
 .meta-footer { font-size: 0.72rem; color: var(--muted); padding: 4px 0 2px; text-align: right; }
+.usage-pct { font-size: 0.8rem; color: #b39ddb; }
+.usage-pct.muted { color: var(--muted); }
