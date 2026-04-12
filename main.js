@@ -481,7 +481,15 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeCmp()
 // ── Meta modal (Pikalytics data) ─────────────────────────────────
 function openMetaModal(name, event) {
   event.stopPropagation();
-  const data = PIKALYTICS[name];
+  let data = PIKALYTICS[name];
+  let dataSource = name;
+
+  // Fallback: Mega Pokémon → use base form data (Pikalytics lists them with Mega Stone as item)
+  if (!data && name.startsWith('Mega ')) {
+    const baseName = name.slice(5); // strip "Mega "
+    if (PIKALYTICS[baseName]) { data = PIKALYTICS[baseName]; dataSource = baseName; }
+  }
+
   const q = spriteQueue(name);
   const src = q.shift();
   document.getElementById('metaSprite').src = src;
@@ -490,7 +498,9 @@ function openMetaModal(name, event) {
 
   const usageEl = document.getElementById('metaUsage');
   if (data) {
-    usageEl.textContent = `${data.usage}% usage`;
+    usageEl.textContent = dataSource !== name
+      ? `${data.usage}% usage (as ${dataSource})`
+      : `${data.usage}% usage`;
     usageEl.style.display = '';
   } else {
     usageEl.style.display = 'none';
