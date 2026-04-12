@@ -109,6 +109,7 @@ function processEntry(e) {
 // ── State ────────────────────────────────────────────────────────
 let ALL_DATA = [];
 let filtered = [];
+let PIKALYTICS = {};
 let sortCol = 'actual';
 let sortDir = 'desc';
 let condition = null; // 'tailwind' | 'para' | null
@@ -171,16 +172,23 @@ function applyCondition(speed) {
   return speed;
 }
 
-// ── Auto-load data.json ──────────────────────────────────────────
+// ── Auto-load data.json + pikalytics.json ───────────────────────
 (async function loadData() {
   const lastUpdated = document.getElementById('lastUpdated');
   try {
-    const res = await fetch('./data.json');
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    const json = await res.json();
+    const [dataRes, pikRes] = await Promise.all([
+      fetch('./data.json'),
+      fetch('./pikalytics.json').catch(() => null),
+    ]);
+    if (!dataRes.ok) throw new Error(`HTTP ${dataRes.status}`);
+    const json = await dataRes.json();
     const rows = json.data || json;
     ALL_DATA = rows.map(processEntry);
     injectCustomSets();
+    if (pikRes?.ok) {
+      const pik = await pikRes.json();
+      PIKALYTICS = pik.pokemon || {};
+    }
     document.getElementById('mainContent').style.display = '';
     if (json.updated) {
       const d = new Date(json.updated);
@@ -280,11 +288,14 @@ function multBadge(m) {
 function buildRow(r, onClickAttr) {
   const q = spriteQueue(r.pokemon);
   const firstSrc = q.shift();
+  const hasMeta = !r.isCustom && !!PIKALYTICS[r.pokemon];
+  const spriteCls = hasMeta ? 'pkmn-sprite has-meta' : 'pkmn-sprite';
+  const spriteClick = r.pokemon ? `onclick="openMetaModal('${esc(r.pokemon)}',event)"` : '';
   const sprite = r.pokemon
-    ? `<img class="pkmn-sprite" src="${esc(firstSrc)}" alt="${esc(r.pokemon)}"
+    ? `<img class="${spriteCls}" src="${esc(firstSrc)}" alt="${esc(r.pokemon)}"
             data-queue='${esc(JSON.stringify(q))}'
             onerror="this._spriteQ=JSON.parse(this.dataset.queue||'[]');nextSprite(this)"
-            loading="lazy">`
+            loading="lazy" ${spriteClick}>`
     : `<div class="pkmn-sprite-placeholder"></div>`;
   const setLabel = r.isCustom && r.label ? `<div class="pkmn-set-label">${esc(r.label)}</div>` : '';
   const pkmn = r.pokemon
@@ -465,7 +476,53 @@ function closeCmpOverlay(e) {
   if (e.target === document.getElementById('cmpOverlay')) closeCmp();
 }
 
-document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeCmp(); closeCustomModal(); } });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeCmp(); closeCustomModal(); closeMetaModal(); } });
+
+// ── Meta modal (Pikalytics data) ─────────────────────────────────
+function openMetaModal(name, event) {
+  event.stopPropagation();
+  const data = PIKALYTICS[name];
+  const q = spriteQueue(name);
+  const src = q.shift();
+  document.getElementById('metaSprite').src = src;
+  document.getElementById('metaSprite').dataset.queue = JSON.stringify(q);
+  document.getElementById('metaName').textContent = name;
+
+  const usageEl = document.getElementById('metaUsage');
+  if (data) {
+    usageEl.textContent = `${data.usage}% usage`;
+    usageEl.style.display = '';
+  } else {
+    usageEl.style.display = 'none';
+  }
+
+  document.getElementById('metaBody').innerHTML = data
+    ? buildMetaBody(data)
+    : '<p class="meta-no-data">No tournament data available for this Pokémon (usage &lt;2%).</p>';
+
+  document.getElementById('metaOverlay').classList.add('open');
+}
+
+function buildMetaBody(data) {
+  function section(title, entries) {
+    if (!entries || !entries.length) return '';
+    const rows = entries.map(e =>
+      `<div class="meta-row"><span>${esc(e.name)}</span><span class="meta-pct">${e.pct.toFixed(1)}%</span></div>`
+    ).join('');
+    return `<div class="meta-section"><div class="meta-section-title">${title}</div>${rows}</div>`;
+  }
+  return section('Moves', data.moves) +
+         section('Items', data.items) +
+         section('Abilities', data.abilities);
+}
+
+function closeMetaModal() {
+  document.getElementById('metaOverlay').classList.remove('open');
+}
+
+function closeMetaOverlay(event) {
+  if (event.target === document.getElementById('metaOverlay')) closeMetaModal();
+}
 
 // ── Custom sets ──────────────────────────────────────────────────
 const CUSTOM_KEY = 'champions_custom_sets';

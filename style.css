@@ -308,3 +308,37 @@ tbody tr { cursor: pointer; }
   color: #4dd0e1; border-radius: 6px; cursor: pointer; font-size: 0.85rem; font-weight: 600;
 }
 .btn-custom-save:hover { background: #004444; }
+
+/* ── META MODAL (Pikalytics data) ── */
+.meta-modal {
+  max-width: 480px; width: 92vw; background: #0f2020;
+  border-radius: 12px; border: 1px solid #1a3a3a; padding: 1.25rem;
+}
+.meta-modal-title { display: flex; align-items: center; gap: 12px; }
+.meta-usage-badge {
+  display: inline-block; background: #4dd0e1; color: #0a1a1a;
+  border-radius: 6px; padding: 2px 8px; font-size: 0.72rem; font-weight: 700;
+  margin-top: 4px;
+}
+.meta-modal-body { margin-top: 1rem; }
+.meta-section { margin-top: 0.9rem; }
+.meta-section:first-child { margin-top: 0; }
+.meta-section-title {
+  font-size: 0.68rem; font-weight: 700; color: var(--muted);
+  text-transform: uppercase; letter-spacing: .07em; margin-bottom: 0.35rem;
+}
+.meta-row {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 4px 0; border-bottom: 1px solid #1a3a3a; font-size: 0.82rem;
+}
+.meta-row:last-child { border-bottom: none; }
+.meta-pct { color: #4dd0e1; font-weight: 600; min-width: 48px; text-align: right; }
+.meta-no-data { color: var(--muted); font-size: 0.85rem; text-align: center; padding: 1rem 0; }
+
+/* Sprite indicator for Pokémon with meta data */
+.pkmn-sprite.has-meta {
+  cursor: pointer;
+  box-shadow: 0 0 0 2px #4dd0e1;
+  border-radius: 4px;
+}
+.pkmn-sprite.has-meta:hover { box-shadow: 0 0 0 2px #80deea; }

@@ -44,6 +44,24 @@
   </div>
 </div>
 
+<!-- META MODAL (Pikalytics usage data) -->
+<div class="cmp-overlay" id="metaOverlay" onclick="closeMetaOverlay(event)">
+  <div class="meta-modal">
+    <div class="cmp-header">
+      <div class="meta-modal-title">
+        <img id="metaSprite" class="pkmn-sprite" style="width:48px;height:48px"
+             onerror="this._spriteQ=JSON.parse(this.dataset.queue||'[]');nextSprite(this)" alt="">
+        <div>
+          <h2 id="metaName" style="margin:0;font-size:1.1rem"></h2>
+          <span class="meta-usage-badge" id="metaUsage"></span>
+        </div>
+      </div>
+      <button class="cmp-close" onclick="closeMetaModal()">×</button>
+    </div>
+    <div class="meta-modal-body" id="metaBody"></div>
+  </div>
+</div>
+
 <!-- CUSTOM MODAL -->
 <div class="custom-overlay" id="customOverlay" onclick="closeCustomOverlay(event)">
   <div class="custom-modal">
