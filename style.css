@@ -257,7 +257,7 @@ tbody tr { cursor: pointer; }
   background: transparent; color: var(--muted); cursor: pointer;
   font-size: 0.9rem; line-height: 1; padding: 0; flex-shrink: 0;
   display: inline-flex; align-items: center; justify-content: center;
-  transition: color .15s;
+  transition: color .15s; margin-left: auto;
 }
 .btn-delete-custom:hover { color: #f85149; }
 .btn-add-custom {

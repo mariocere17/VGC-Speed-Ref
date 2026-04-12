@@ -298,12 +298,12 @@ function buildRow(r, onClickAttr) {
     ? `<button class="btn-delete-custom" onclick="deleteCustomSet('${r.customId}',event)" title="Delete custom set">×</button>`
     : '';
   return `<tr class="${selCls}" ${onClickAttr}>
-    <td><div class="pkmn-cell">${sprite}<div>${pkmn}</div></div></td>
+    <td><div class="pkmn-cell">${sprite}<div>${pkmn}</div>${deleteBtn}</div></td>
     <td><span class="speed-val${speedCls}">${displaySpeed}</span></td>
     <td><span class="base-stat">${r.base}</span></td>
     <td>${tierBadge(r.tier)}</td>
     <td>${multBadge(r.mult)}</td>
-    <td><div class="ability-list">${abilityChips(r.abilities)}${deleteBtn}</div></td>
+    <td><div class="ability-list">${abilityChips(r.abilities)}</div></td>
   </tr>`;
 }
 
