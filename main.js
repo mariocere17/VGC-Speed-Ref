@@ -304,7 +304,7 @@ function multBadge(m) {
 function buildRow(r, onClickAttr) {
   const q = spriteQueue(r.pokemon);
   const firstSrc = q.shift();
-  const hasMeta = !r.isCustom && !!PIKALYTICS[r.pokemon];
+  const hasMeta = !r.isCustom && (!!PIKALYTICS[r.pokemon] || !!LIMITLESS[r.pokemon]);
   const spriteCls = hasMeta ? 'pkmn-sprite has-meta' : 'pkmn-sprite';
   const spriteClick = r.pokemon ? `onclick="openMetaModal('${esc(r.pokemon)}',event)"` : '';
   const sprite = r.pokemon
