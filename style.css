@@ -346,3 +346,4 @@ tbody tr { cursor: pointer; }
 /* Sprite indicator for Pokémon with meta data */
 .pkmn-sprite.has-meta { cursor: pointer; }
 .pkmn-sprite.has-meta:hover { opacity: 0.8; }
+.meta-footer { font-size: 0.72rem; color: var(--muted); padding: 4px 0 2px; text-align: right; }

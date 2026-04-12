@@ -110,6 +110,7 @@ function processEntry(e) {
 let ALL_DATA = [];
 let filtered = [];
 let PIKALYTICS = {};
+let LIMITLESS  = {};
 let sortCol = 'actual';
 let sortDir = 'desc';
 let condition = null; // 'tailwind' | 'para' | null
@@ -176,9 +177,10 @@ function applyCondition(speed) {
 (async function loadData() {
   const lastUpdated = document.getElementById('lastUpdated');
   try {
-    const [dataRes, pikRes] = await Promise.all([
+    const [dataRes, pikRes, limRes] = await Promise.all([
       fetch('./data.json'),
       fetch('./pikalytics.json').catch(() => null),
+      fetch('./limitless.json').catch(() => null),
     ]);
     if (!dataRes.ok) throw new Error(`HTTP ${dataRes.status}`);
     const json = await dataRes.json();
@@ -188,6 +190,10 @@ function applyCondition(speed) {
     if (pikRes?.ok) {
       const pik = await pikRes.json();
       PIKALYTICS = pik.pokemon || {};
+    }
+    if (limRes?.ok) {
+      const lim = await limRes.json();
+      LIMITLESS = lim.aggregate?.pokemon || {};
     }
     document.getElementById('mainContent').style.display = '';
     if (json.updated) {
@@ -481,14 +487,18 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeCmp()
 // ── Meta modal (Pikalytics data) ─────────────────────────────────
 function openMetaModal(name, event) {
   event.stopPropagation();
-  let data = PIKALYTICS[name];
-  let dataSource = name;
 
-  // Fallback: Mega Pokémon → use base form data (Pikalytics lists them with Mega Stone as item)
-  if (!data && name.startsWith('Mega ')) {
-    const baseName = name.slice(5); // strip "Mega "
-    if (PIKALYTICS[baseName]) { data = PIKALYTICS[baseName]; dataSource = baseName; }
+  // Pikalytics data (ladder usage)
+  let pikData = PIKALYTICS[name];
+  let dataSource = name;
+  if (!pikData && name.startsWith('Mega ')) {
+    const base = name.slice(5);
+    if (PIKALYTICS[base]) { pikData = PIKALYTICS[base]; dataSource = base; }
   }
+
+  // Limitless data (tournament results)
+  let limData = LIMITLESS[name];
+  if (!limData && name.startsWith('Mega ')) limData = LIMITLESS[name.slice(5)];
 
   const q = spriteQueue(name);
   const src = q.shift();
@@ -497,40 +507,57 @@ function openMetaModal(name, event) {
   document.getElementById('metaName').textContent = name;
 
   const usageEl = document.getElementById('metaUsage');
-  if (data) {
+  if (pikData) {
     usageEl.textContent = dataSource !== name
-      ? `${data.usage}% usage (as ${dataSource})`
-      : `${data.usage}% usage`;
+      ? `${pikData.usage}% usage (as ${dataSource})`
+      : `${pikData.usage}% usage`;
     usageEl.style.display = '';
   } else {
     usageEl.style.display = 'none';
   }
 
-  document.getElementById('metaBody').innerHTML = data
-    ? buildMetaBody(data)
-    : '<p class="meta-no-data">No tournament data available for this Pokémon (usage &lt;2%).</p>';
+  const hasAnyData = pikData || limData;
+  document.getElementById('metaBody').innerHTML = hasAnyData
+    ? buildMetaBody(pikData, limData)
+    : '<p class="meta-no-data">No data available for this Pokémon.</p>';
 
   document.getElementById('metaOverlay').classList.add('open');
 }
 
-function buildMetaBody(data) {
+function buildMetaBody(pikData, limData) {
   let sectionIdx = 0;
-  function section(title, entries) {
+  function section(title, entries, footer) {
     if (!entries || !entries.length) return '';
     const id = `metaSec${sectionIdx++}`;
     const rows = entries.map(e =>
       `<div class="meta-row"><span>${esc(e.name)}</span><span class="meta-pct">${e.pct.toFixed(1)}%</span></div>`
     ).join('');
+    const footerHtml = footer ? `<div class="meta-footer">${footer}</div>` : '';
     return `<div class="meta-section">
       <div class="meta-section-title" onclick="toggleMetaSection('${id}')">
         <span>${title}</span><span class="meta-section-chevron" id="${id}chv">▾</span>
       </div>
-      <div class="meta-section-body" id="${id}">${rows}</div>
+      <div class="meta-section-body" id="${id}">${rows}${footerHtml}</div>
     </div>`;
   }
-  return section('Moves', data.moves) +
-         section('Items', data.items) +
-         section('Abilities', data.abilities);
+
+  let html = '';
+  if (pikData) {
+    html += section('Moves', pikData.moves) +
+            section('Items', pikData.items) +
+            section('Abilities', pikData.abilities);
+  }
+  if (limData) {
+    const record = `${limData.wins} - ${limData.losses}${limData.draws ? ' - ' + limData.draws : ''}`;
+    html += section('Tournament Results',
+      [
+        { name: 'Usage in tournaments', pct: limData.usage_pct },
+        { name: 'Win rate',             pct: limData.win_rate  },
+      ],
+      `${record} · ${limData.teams} teams`
+    );
+  }
+  return html;
 }
 
 function toggleMetaSection(id) {

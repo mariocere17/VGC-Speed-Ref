@@ -1,0 +1,47 @@
+name: Update Limitless Tournament Data
+
+on:
+  schedule:
+    - cron: '0 3 * * *'   # 3am UTC daily, 1h after main workflow
+  workflow_dispatch:
+    inputs:
+      date:
+        description: 'Date to scrape (YYYY-MM-DD). Defaults to yesterday.'
+        required: false
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+
+      - name: Scrape Limitless tournament data
+        run: |
+          DATE="${{ github.event.inputs.date }}"
+          if [ -z "$DATE" ]; then
+            DATE=$(date -u -d 'yesterday' '+%Y-%m-%d')
+          fi
+          echo "Scraping tournaments for $DATE"
+          node generator/scrape-limitless.js "$DATE"
+
+      - name: Commit and push if data changed
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add limitless.json
+          git diff --staged --quiet && echo "No changes" || (
+            git commit -m "chore: update limitless tournament data $(date -u '+%Y-%m-%d')" &&
+            git push
+          )
