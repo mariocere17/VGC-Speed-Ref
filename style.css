@@ -311,36 +311,36 @@ tbody tr { cursor: pointer; }
 
 /* ── META MODAL (Pikalytics data) ── */
 .meta-modal {
-  max-width: 480px; width: 92vw; background: #0f2020;
-  border-radius: 12px; border: 1px solid #1a3a3a; padding: 1.25rem;
+  max-width: 480px; width: 92vw; background: #1a1030;
+  border-radius: 12px; border: 1px solid #3d2080; padding: 1.25rem;
 }
 .meta-modal-title { display: flex; align-items: center; gap: 12px; }
 .meta-usage-badge {
-  display: inline-block; background: #4dd0e1; color: #0a1a1a;
+  display: inline-block; background: #7c4dff; color: #fff;
   border-radius: 6px; padding: 2px 8px; font-size: 0.72rem; font-weight: 700;
   margin-top: 4px;
 }
 .meta-modal-body { margin-top: 1rem; }
-.meta-section { margin-top: 0.75rem; border: 1px solid #1a3a3a; border-radius: 6px; overflow: hidden; }
+.meta-section { margin-top: 0.75rem; border: 1px solid #3d2080; border-radius: 6px; overflow: hidden; }
 .meta-section:first-child { margin-top: 0; }
 .meta-section-title {
   display: flex; align-items: center; justify-content: space-between;
-  font-size: 0.68rem; font-weight: 700; color: var(--muted);
+  font-size: 0.68rem; font-weight: 700; color: #9e7fff;
   text-transform: uppercase; letter-spacing: .07em;
   padding: 6px 10px; cursor: pointer; user-select: none;
-  background: #0b1f1f;
+  background: #130c24;
 }
-.meta-section-title:hover { background: #112828; color: var(--text); }
+.meta-section-title:hover { background: #1d1240; color: var(--text); }
 .meta-section-chevron { font-size: 0.75rem; transition: transform 0.2s; }
 .meta-section-chevron.collapsed { transform: rotate(-90deg); }
 .meta-section-body { padding: 0 10px; }
 .meta-section-body.collapsed { display: none; }
 .meta-row {
   display: flex; justify-content: space-between; align-items: center;
-  padding: 5px 0; border-bottom: 1px solid #1a3a3a; font-size: 0.82rem;
+  padding: 5px 0; border-bottom: 1px solid #2d1a60; font-size: 0.82rem;
 }
 .meta-row:last-child { border-bottom: none; }
-.meta-pct { color: #4dd0e1; font-weight: 600; min-width: 48px; text-align: right; }
+.meta-pct { color: #b39ddb; font-weight: 600; min-width: 48px; text-align: right; }
 .meta-no-data { color: var(--muted); font-size: 0.85rem; text-align: center; padding: 1rem 0; }
 
 /* Sprite indicator for Pokémon with meta data */
