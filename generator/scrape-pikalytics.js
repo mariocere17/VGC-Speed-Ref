@@ -19,6 +19,33 @@ async function fetchText(url) {
   return res.text();
 }
 
+// Levenshtein distance (fast: early exit if lengths differ too much)
+function editDist(a, b) {
+  if (Math.abs(a.length - b.length) > 3) return 99;
+  const dp = Array.from({length: a.length + 1}, (_, i) => i);
+  for (let j = 1; j <= b.length; j++) {
+    let prev = dp[0]; dp[0] = j;
+    for (let i = 1; i <= a.length; i++) {
+      const tmp = dp[i];
+      dp[i] = a[i-1] === b[j-1] ? prev : 1 + Math.min(prev, dp[i], dp[i-1]);
+      prev = tmp;
+    }
+  }
+  return dp[a.length];
+}
+
+// Remove entries whose name is a near-duplicate (edit dist ≤ 2) of an earlier entry.
+// Entries are assumed to arrive sorted desc by pct, so we keep the highest-% variant.
+function dedupeByName(entries) {
+  const seen = [];
+  return entries.filter(e => {
+    const name = e.name.toLowerCase();
+    const isDupe = seen.some(s => editDist(name, s) <= 2);
+    if (!isDupe) seen.push(name);
+    return !isDupe;
+  });
+}
+
 // Parse "## Section Title\n- **Name**: XX.XX%\n..." blocks
 function parseSection(md, sectionTitle) {
   const re = new RegExp(`## ${sectionTitle}\\n([\\s\\S]*?)(?=\\n## |$)`);
@@ -49,9 +76,9 @@ async function scrapeIndividual(name) {
   const url = `${BASE_AI_URL}/${encodeURIComponent(name)}`;
   const md  = await fetchText(url);
   return {
-    moves:     parseSection(md, 'Common Moves').slice(0, 8),
-    items:     parseSection(md, 'Common Items').slice(0, 6),
-    abilities: parseSection(md, 'Common Abilities').slice(0, 4),
+    moves:     dedupeByName(parseSection(md, 'Common Moves')).slice(0, 8),
+    items:     dedupeByName(parseSection(md, 'Common Items')).slice(0, 6),
+    abilities: dedupeByName(parseSection(md, 'Common Abilities')).slice(0, 4),
   };
 }
 
