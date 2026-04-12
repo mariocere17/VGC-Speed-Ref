@@ -504,16 +504,31 @@ function openMetaModal(name, event) {
 }
 
 function buildMetaBody(data) {
+  let sectionIdx = 0;
   function section(title, entries) {
     if (!entries || !entries.length) return '';
+    const id = `metaSec${sectionIdx++}`;
     const rows = entries.map(e =>
       `<div class="meta-row"><span>${esc(e.name)}</span><span class="meta-pct">${e.pct.toFixed(1)}%</span></div>`
     ).join('');
-    return `<div class="meta-section"><div class="meta-section-title">${title}</div>${rows}</div>`;
+    return `<div class="meta-section">
+      <div class="meta-section-title" onclick="toggleMetaSection('${id}')">
+        <span>${title}</span><span class="meta-section-chevron" id="${id}chv">▾</span>
+      </div>
+      <div class="meta-section-body" id="${id}">${rows}</div>
+    </div>`;
   }
   return section('Moves', data.moves) +
          section('Items', data.items) +
          section('Abilities', data.abilities);
+}
+
+function toggleMetaSection(id) {
+  const body = document.getElementById(id);
+  const chv  = document.getElementById(id + 'chv');
+  if (!body) return;
+  const collapsed = body.classList.toggle('collapsed');
+  chv.classList.toggle('collapsed', collapsed);
 }
 
 function closeMetaModal() {

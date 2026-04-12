@@ -321,24 +321,28 @@ tbody tr { cursor: pointer; }
   margin-top: 4px;
 }
 .meta-modal-body { margin-top: 1rem; }
-.meta-section { margin-top: 0.9rem; }
+.meta-section { margin-top: 0.75rem; border: 1px solid #1a3a3a; border-radius: 6px; overflow: hidden; }
 .meta-section:first-child { margin-top: 0; }
 .meta-section-title {
+  display: flex; align-items: center; justify-content: space-between;
   font-size: 0.68rem; font-weight: 700; color: var(--muted);
-  text-transform: uppercase; letter-spacing: .07em; margin-bottom: 0.35rem;
+  text-transform: uppercase; letter-spacing: .07em;
+  padding: 6px 10px; cursor: pointer; user-select: none;
+  background: #0b1f1f;
 }
+.meta-section-title:hover { background: #112828; color: var(--text); }
+.meta-section-chevron { font-size: 0.75rem; transition: transform 0.2s; }
+.meta-section-chevron.collapsed { transform: rotate(-90deg); }
+.meta-section-body { padding: 0 10px; }
+.meta-section-body.collapsed { display: none; }
 .meta-row {
   display: flex; justify-content: space-between; align-items: center;
-  padding: 4px 0; border-bottom: 1px solid #1a3a3a; font-size: 0.82rem;
+  padding: 5px 0; border-bottom: 1px solid #1a3a3a; font-size: 0.82rem;
 }
 .meta-row:last-child { border-bottom: none; }
 .meta-pct { color: #4dd0e1; font-weight: 600; min-width: 48px; text-align: right; }
 .meta-no-data { color: var(--muted); font-size: 0.85rem; text-align: center; padding: 1rem 0; }
 
 /* Sprite indicator for Pokémon with meta data */
-.pkmn-sprite.has-meta {
-  cursor: pointer;
-  box-shadow: 0 0 0 2px #4dd0e1;
-  border-radius: 4px;
-}
-.pkmn-sprite.has-meta:hover { box-shadow: 0 0 0 2px #80deea; }
+.pkmn-sprite.has-meta { cursor: pointer; }
+.pkmn-sprite.has-meta:hover { opacity: 0.8; }
