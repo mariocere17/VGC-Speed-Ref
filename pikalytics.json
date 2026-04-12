@@ -1,7 +1,7 @@
 {
-  "updated": "2026-04-12T11:37:29.418Z",
+  "updated": "2026-04-12T20:03:50.122Z",
   "format": "championstournaments",
-  "count": 48,
+  "count": 50,
   "pokemon": {
     "Incineroar": {
       "usage": 53.21,
@@ -3464,6 +3464,152 @@
         {
           "name": "Insomnia",
           "pct": 3.571
+        }
+      ]
+    },
+    "Orthworm": {
+      "usage": 1.81,
+      "moves": [
+        {
+          "name": "Body Press",
+          "pct": 95.833
+        },
+        {
+          "name": "Heavy Slam",
+          "pct": 83.333
+        },
+        {
+          "name": "Shed Tail",
+          "pct": 83.333
+        },
+        {
+          "name": "Protect",
+          "pct": 70.833
+        },
+        {
+          "name": "Iron Defense",
+          "pct": 37.5
+        },
+        {
+          "name": "Iron Head",
+          "pct": 12.5
+        },
+        {
+          "name": "Helping Hand",
+          "pct": 8.333
+        },
+        {
+          "name": "Smack Down",
+          "pct": 4.167
+        }
+      ],
+      "items": [
+        {
+          "name": "Sitrus Berry",
+          "pct": 75
+        },
+        {
+          "name": "Leftovers",
+          "pct": 12.5
+        },
+        {
+          "name": "Chople Berry",
+          "pct": 4.167
+        },
+        {
+          "name": "Occa Berry",
+          "pct": 4.167
+        },
+        {
+          "name": "Black Belt",
+          "pct": 4.167
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Earth Eater",
+          "pct": 100
+        }
+      ]
+    },
+    "Mamoswine": {
+      "usage": 1.74,
+      "moves": [
+        {
+          "name": "Icicle Crash",
+          "pct": 82.609
+        },
+        {
+          "name": "High Horsepower",
+          "pct": 69.565
+        },
+        {
+          "name": "Ice Shard",
+          "pct": 65.217
+        },
+        {
+          "name": "Protect",
+          "pct": 56.522
+        },
+        {
+          "name": "Earthquake",
+          "pct": 52.174
+        },
+        {
+          "name": "Rock Slide",
+          "pct": 34.783
+        },
+        {
+          "name": "Stomping Tantrum",
+          "pct": 13.043
+        },
+        {
+          "name": "Superpower",
+          "pct": 8.696
+        }
+      ],
+      "items": [
+        {
+          "name": "Choice Scarf",
+          "pct": 43.478
+        },
+        {
+          "name": "Focus Sash",
+          "pct": 30.435
+        },
+        {
+          "name": "Sitrus Berry",
+          "pct": 13.043
+        },
+        {
+          "name": "Soft Sand",
+          "pct": 4.348
+        },
+        {
+          "name": "Never-Melt Ice",
+          "pct": 4.348
+        },
+        {
+          "name": "Chople Berry",
+          "pct": 4.348
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Oblivious",
+          "pct": 82.609
+        },
+        {
+          "name": "Thick Fat",
+          "pct": 8.696
+        },
+        {
+          "name": "oblius",
+          "pct": 4.348
+        },
+        {
+          "name": "Snow Cloak",
+          "pct": 4.348
         }
       ]
     }
