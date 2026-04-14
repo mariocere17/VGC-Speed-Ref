@@ -215,6 +215,38 @@
 
     </div><!-- .calc-panels -->
 
+    <!-- ── FIELD (weather / terrain / screens) ─────────── -->
+    <div class="calc-field">
+      <div class="field-block">
+        <span class="field-block-label">Weather</span>
+        <select id="fldWeather" class="field-select">
+          <option value="">None</option>
+          <option value="sun">☀️ Sun</option>
+          <option value="rain">🌧️ Rain</option>
+          <option value="sand">🌪️ Sand</option>
+          <option value="snow">❄️ Snow</option>
+        </select>
+      </div>
+      <div class="field-block">
+        <span class="field-block-label">Terrain</span>
+        <select id="fldTerrain" class="field-select">
+          <option value="">None</option>
+          <option value="electric">⚡ Electric</option>
+          <option value="grassy">🌱 Grassy</option>
+          <option value="psychic">🔮 Psychic</option>
+          <option value="misty">🌸 Misty</option>
+        </select>
+      </div>
+      <div class="field-block">
+        <span class="field-block-label">Screens (def side)</span>
+        <div class="field-checks">
+          <label><input type="checkbox" id="fldReflect"> Reflect</label>
+          <label><input type="checkbox" id="fldLightScreen"> Light Screen</label>
+          <label><input type="checkbox" id="fldAuroraVeil"> Aurora Veil</label>
+        </div>
+      </div>
+    </div>
+
     <!-- ── RESULTS ─────────────────────────────────────── -->
     <div class="calc-results">
       <div id="dmgBlock">

@@ -104,6 +104,9 @@ const ATK_ABILITIES = [
   { id:'guts',         label:'Guts (statused Atk ×1.5)' },
 ];
 
+// Moves halved by Grassy Terrain (earthquake-family hits grounded Pokémon softer)
+const GRASSY_HALVED_MOVES = new Set(['Earthquake', 'Bulldoze', 'Magnitude']);
+
 const DEF_ABILITIES = [
   { id:'',              label:'None' },
   { id:'intimidate',    label:'Intimidate (Atk −1 stage)' },
@@ -238,7 +241,22 @@ function readState() {
     defItem:    document.getElementById('defItem').value,
     defAbility: document.getElementById('defAbility').value,
     defHPPct:   parseInt(document.getElementById('defHPPctSlider')?.value) || 100,
+
+    weather:     document.getElementById('fldWeather')?.value     || '',
+    terrain:     document.getElementById('fldTerrain')?.value     || '',
+    reflect:     document.getElementById('fldReflect')?.checked     || false,
+    lightScreen: document.getElementById('fldLightScreen')?.checked || false,
+    auroraVeil:  document.getElementById('fldAuroraVeil')?.checked  || false,
   };
+}
+
+// A Pokémon is "grounded" if it has no Flying type and no Levitate.
+// Used for terrain effects (terrains only affect grounded Pokémon).
+function isGrounded(pkmnData, ability) {
+  if (!pkmnData) return false;
+  if (pkmnData.types.includes('flying')) return false;
+  if (ability === 'levitate') return false;
+  return true;
 }
 
 // ═══════════════════════════════════════════════════════════
@@ -296,6 +314,12 @@ function buildDefStat(s, moveData, isPhysical) {
   if (s.defItem === 'assault-vest' && !isPhysical) def = Math.floor(def * 1.5);
   if (s.defItem === 'eviolite')                    def = Math.floor(def * 1.5);
 
+  // Weather-boosted stats (applied before stage mods, like items)
+  if (s.weather === 'sand' && !isPhysical && pkmnData.types.includes('rock'))
+    def = Math.floor(def * 1.5);
+  if (s.weather === 'snow' && isPhysical && pkmnData.types.includes('ice'))
+    def = Math.floor(def * 1.5);
+
   // Stat stage modifier (+6 to -6)
   const defStage = isPhysical ? s.defDefStage : s.defSpdStage;
   if (defStage) def = Math.floor(def * getStageMult(defStage));
@@ -334,6 +358,47 @@ function applyPostMods(rolls, s, moveData, isPhysical, typeEff) {
     r = r.map(d => Math.floor(d * 1.5));
   if (s.atkItem === 'life-orb')  r = r.map(d => Math.floor(d * 1.3));
   if (s.atkItem === 'expert-belt' && typeEff > 1) r = r.map(d => Math.floor(d * 1.2));
+
+  // ── Weather ──
+  if (s.weather === 'sun') {
+    if (moveData.type === 'fire')  r = r.map(d => Math.floor(d * 1.5));
+    if (moveData.type === 'water') r = r.map(d => Math.floor(d * 0.5));
+  } else if (s.weather === 'rain') {
+    if (moveData.type === 'water') r = r.map(d => Math.floor(d * 1.5));
+    if (moveData.type === 'fire')  r = r.map(d => Math.floor(d * 0.5));
+  }
+
+  // ── Terrain (only affects grounded Pokémon) ──
+  const atkData = PKMN[s.atkPkmn];
+  const defData = PKMN[s.defPkmn];
+  const atkGrounded = isGrounded(atkData, s.atkAbility);
+  const defGrounded = isGrounded(defData, effDefAbility(s));
+  if (atkGrounded) {
+    if (s.terrain === 'electric' && moveData.type === 'electric')
+      r = r.map(d => Math.floor(d * 1.3));
+    if (s.terrain === 'grassy'   && moveData.type === 'grass')
+      r = r.map(d => Math.floor(d * 1.3));
+    if (s.terrain === 'psychic'  && moveData.type === 'psychic')
+      r = r.map(d => Math.floor(d * 1.3));
+  }
+  if (defGrounded) {
+    if (s.terrain === 'grassy' && GRASSY_HALVED_MOVES.has(s.atkMove))
+      r = r.map(d => Math.floor(d * 0.5));
+    if (s.terrain === 'misty'  && moveData.type === 'dragon')
+      r = r.map(d => Math.floor(d * 0.5));
+  }
+
+  // ── Screens (VGC doubles: ×2732/4096 ≈ ×0.6670) ──
+  // Screens don't apply on critical hits, but we don't model crits yet.
+  const screenMult = 2732 / 4096;
+  const hasVeil = s.auroraVeil;
+  if (!hasVeil) {
+    if (s.reflect && isPhysical)      r = r.map(d => Math.floor(d * screenMult));
+    if (s.lightScreen && !isPhysical) r = r.map(d => Math.floor(d * screenMult));
+  } else {
+    r = r.map(d => Math.floor(d * screenMult));
+  }
+
   return r;
 }
 
@@ -1045,6 +1110,12 @@ function bindEvents() {
       updateDefHPPctVisibility();
       computeAll();
     });
+  }
+
+  // Field controls (weather / terrain / screens)
+  for (const id of ['fldWeather', 'fldTerrain', 'fldReflect', 'fldLightScreen', 'fldAuroraVeil']) {
+    const el = document.getElementById(id);
+    if (el) el.addEventListener('change', computeAll);
   }
 
   // Defender current HP% slider
