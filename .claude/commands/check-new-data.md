@@ -13,7 +13,8 @@ Limitless and Showdown that isn't yet in our local JSON files.
 2. Read the output carefully and report to the user:
    - **Pikalytics**: new Pokémon that entered the top-50 ladder index
    - **Limitless**: new Champions-format tournaments from the last 7 days
-   - **Showdown**: whether Smogon has published new monthly VGC stats
+   - **EV spreads & natures**: whether Pikalytics or Smogon now have spread data
+     for the Champions format (currently neither source has it)
 
 3. If new data is found, ask the user whether they want to run the relevant
    scraper(s) now:
