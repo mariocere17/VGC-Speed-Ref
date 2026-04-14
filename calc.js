@@ -780,38 +780,50 @@ function bindEvents() {
 // ═══════════════════════════════════════════════════════════
 
 async function loadData() {
+  // Phase 1: critical data (Pokémon stats + moves)
   try {
-    const [pkmnRes, movesRes, pikalyticsRes, limitlessRes] = await Promise.all([
+    const [pkmnRes, movesRes] = await Promise.all([
       fetch('./pokemon-stats.json'),
       fetch('./moves.json'),
-      fetch('./pikalytics.json'),
-      fetch('./limitless.json'),
     ]);
-
     PKMN  = await pkmnRes.json();
     MOVES = await movesRes.json();
-    const pikalytics = await pikalyticsRes.json();
-    const limitless  = await limitlessRes.json();
-
-    // Build Champions Pokémon set (union of Pikalytics + Limitless)
-    CHAMPIONS = new Set();
-    Object.keys(pikalytics.pokemon || {}).forEach(k => CHAMPIONS.add(k.toLowerCase()));
-    Object.keys((limitless.aggregate || {}).pokemon || {}).forEach(k => CHAMPIONS.add(k.toLowerCase()));
-
-    document.getElementById('loadMsg').style.display = 'none';
-    document.getElementById('calcApp').style.display = '';
-
-    populateNatureSelects();
-    populateSelect('atkItem',    ATK_ITEMS);
-    populateSelect('atkAbility', ATK_ABILITIES);
-    populateSelect('defItem',    DEF_ITEMS);
-    populateSelect('defAbility', DEF_ABILITIES);
-    populateDataLists();
-    bindEvents();
   } catch (err) {
     document.getElementById('loadMsg').textContent = 'Error loading data: ' + err.message;
     console.error(err);
+    return;
   }
+
+  // Phase 2: Champions filter (non-critical — fall back to all Pokémon if unavailable)
+  try {
+    const [pikalyticsRes, limitlessRes] = await Promise.all([
+      fetch('./pikalytics.json'),
+      fetch('./limitless.json'),
+    ]);
+    const pikalytics = await pikalyticsRes.json();
+    const limitless  = await limitlessRes.json();
+
+    CHAMPIONS = new Set();
+    // Keys are display names ("Garchomp", "Incineroar") — lowercase to match PKMN filter
+    Object.keys(pikalytics.pokemon || {}).forEach(k => CHAMPIONS.add(k.toLowerCase()));
+    Object.keys((limitless.aggregate || {}).pokemon || {}).forEach(k => CHAMPIONS.add(k.toLowerCase()));
+  } catch (err) {
+    console.warn('Champions filter unavailable, showing all Pokémon:', err.message);
+    CHAMPIONS = new Set(); // stays empty → populateDataLists shows all
+  }
+
+  // Show UI
+  document.getElementById('loadMsg').style.display = 'none';
+  document.getElementById('calcApp').style.display = '';
+
+  populateSelect('atkItem',    ATK_ITEMS);
+  populateSelect('atkAbility', ATK_ABILITIES);
+  populateSelect('defItem',    DEF_ITEMS);
+  populateSelect('defAbility', DEF_ABILITIES);
+  populateDataLists();
+  bindEvents();
 }
 
+// Populate natures immediately (they don't need fetched data)
+populateNatureSelects();
 loadData();

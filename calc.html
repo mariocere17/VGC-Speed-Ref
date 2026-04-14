@@ -24,6 +24,11 @@
   <div id="loadMsg" class="load-msg">Loading Pokémon data...</div>
 
   <div id="calcApp" style="display:none">
+    <!-- ── SWAP BUTTON (above panels) ───────────────────── -->
+    <div class="swap-bar">
+      <button class="btn-swap" onclick="swapPanels()" title="Swap attacker and defender">⇄ Swap</button>
+    </div>
+
     <div class="calc-panels">
 
       <!-- ── ATTACKER ─────────────────────────────────── -->
@@ -106,11 +111,6 @@
           <select id="atkAbility" class="field-select"></select>
         </div>
       </section>
-
-      <!-- ── SWAP BUTTON ─────────────────────────────── -->
-      <div class="calc-swap-col">
-        <button class="btn-swap" onclick="swapPanels()" title="Swap attacker and defender">⇄</button>
-      </div>
 
       <!-- ── DEFENDER ─────────────────────────────────── -->
       <section class="calc-panel">
