@@ -108,6 +108,9 @@ const ATK_ABILITIES = [
 // Moves halved by Grassy Terrain (earthquake-family hits grounded Pokémon softer)
 const GRASSY_HALVED_MOVES = new Set(['Earthquake', 'Bulldoze', 'Magnitude']);
 
+// localStorage key. Bump the suffix when the state schema changes incompatibly.
+const STORAGE_KEY = 'champions-calc-state-v1';
+
 const DEF_ABILITIES = [
   { id:'',              label:'None' },
   { id:'intimidate',    label:'Intimidate (Atk −1 stage)' },
@@ -469,6 +472,96 @@ function computeAll() {
   document.getElementById('dmgBlock').innerHTML =
     renderDamage(rolls, hp, curHP, s, moveData, atkData, defData, atkStat, defStat, stabMult, typeEff, isPhysical);
   document.getElementById('optOutput').innerHTML = '';
+
+  saveState(s);
+}
+
+// ═══════════════════════════════════════════════════════════
+//  PERSISTENCE (localStorage)
+// ═══════════════════════════════════════════════════════════
+function saveState(s) {
+  try { localStorage.setItem(STORAGE_KEY, JSON.stringify(s)); }
+  catch (_) { /* quota / privacy mode — fail silently */ }
+}
+
+/**
+ * Restore saved state into the DOM. Order matters because some selects are
+ * rebuilt when the corresponding Pokémon changes (ability filter, move list).
+ *
+ * Flow per side:
+ *   1. Set Pokémon input → triggers ability/move repopulation.
+ *   2. Set ability (after the ability select has been repopulated).
+ *   3. Set nature, item, SP sliders, stages.
+ */
+function restoreState() {
+  let saved;
+  try { saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || 'null'); }
+  catch (_) { saved = null; }
+  if (!saved) return;
+
+  const setVal   = (id, v) => { const el = document.getElementById(id); if (el) el.value = v; };
+  const setCheck = (id, v) => { const el = document.getElementById(id); if (el) el.checked = !!v; };
+  const setSlider = (id, v, valSpanId) => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    el.value = v;
+    const valSpan = document.getElementById(valSpanId || (id + 'Val'));
+    if (valSpan) valSpan.textContent = v;
+  };
+  const setStage = (id, v) => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    const n = parseInt(v) || 0;
+    el.value = n;
+    // Keep the colour class in sync (normally applied by onStageChange)
+    el.className = 'stage-select' + (n > 0 ? ' pos' : n < 0 ? ' neg' : '');
+  };
+
+  // --- ATTACKER ---
+  const atkPkmnEl = document.getElementById('atkPkmn');
+  if (atkPkmnEl && saved.atkPkmn) {
+    atkPkmnEl.value = PKMN[saved.atkPkmn]?.displayName || saved.atkPkmn;
+    updateMoveDatalist(saved.atkPkmn);
+    updateAbilitySelect('atk', saved.atkPkmn);
+    updateSprite('atk', saved.atkPkmn);
+    updateTypeBadges(saved.atkPkmn, 'atkTypeRow');
+  }
+  if (saved.atkMove) setVal('atkMove', saved.atkMove);
+  setVal('atkNature',  saved.atkNature  || 'hardy');
+  setVal('atkItem',    saved.atkItem    || '');
+  setVal('atkAbility', saved.atkAbility || '');
+  for (const stat of STAT_IDS) {
+    setSlider('atk' + stat + 'SP', saved['atk' + stat + 'SP'] || 0);
+    if (stat !== 'Hp') setStage('atk' + stat + 'Stage', saved['atk' + stat + 'Stage']);
+  }
+
+  // --- DEFENDER ---
+  const defPkmnEl = document.getElementById('defPkmn');
+  if (defPkmnEl && saved.defPkmn) {
+    defPkmnEl.value = PKMN[saved.defPkmn]?.displayName || saved.defPkmn;
+    updateAbilitySelect('def', saved.defPkmn);
+    updateSprite('def', saved.defPkmn);
+    updateTypeBadges(saved.defPkmn, 'defTypeRow');
+  }
+  setVal('defNature',  saved.defNature  || 'hardy');
+  setVal('defItem',    saved.defItem    || '');
+  setVal('defAbility', saved.defAbility || '');
+  for (const stat of STAT_IDS) {
+    setSlider('def' + stat + 'SP', saved['def' + stat + 'SP'] || 0);
+    if (stat !== 'Hp') setStage('def' + stat + 'Stage', saved['def' + stat + 'Stage']);
+  }
+
+  // --- Defender HP% (slider and its val span use non-standard id pairing) ---
+  updateDefHPPctVisibility();
+  if (saved.defHPPct) setSlider('defHPPctSlider', saved.defHPPct, 'defHPPctVal');
+
+  // --- Field state ---
+  setVal('fldWeather', saved.weather || '');
+  setVal('fldTerrain', saved.terrain || '');
+  setCheck('fldReflect',     saved.reflect);
+  setCheck('fldLightScreen', saved.lightScreen);
+  setCheck('fldAuroraVeil',  saved.auroraVeil);
+  setCheck('fldCrit',        saved.crit);
 }
 
 // ═══════════════════════════════════════════════════════════
@@ -1195,6 +1288,11 @@ async function loadData() {
   populateSelect('defAbility', DEF_ABILITIES);
   populateDataLists();
   bindEvents();
+
+  // Restore the last saved session (if any) and compute once so the user
+  // sees their previous calculation instead of the empty placeholder.
+  restoreState();
+  computeAll();
 }
 
 // Populate natures and stages immediately (no fetched data needed)
