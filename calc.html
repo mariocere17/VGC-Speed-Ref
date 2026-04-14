@@ -202,6 +202,15 @@
           <span class="field-label">Ability</span>
           <select id="defAbility" class="field-select"></select>
         </div>
+
+        <div class="field-row" id="defHPPctRow" style="display:none">
+          <span class="field-label">Current HP</span>
+          <div class="slider-wrap">
+            <input type="range" class="sp-slider" id="defHPPctSlider" min="1" max="100" value="100">
+            <span class="sp-val" id="defHPPctVal">100</span>
+            <span style="color:var(--muted);font-size:0.82rem">%</span>
+          </div>
+        </div>
       </section>
 
     </div><!-- .calc-panels -->

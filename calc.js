@@ -240,6 +240,7 @@ function readState() {
     defSpeStage: stageVal('defSpeStage'),
     defItem:    document.getElementById('defItem').value,
     defAbility: document.getElementById('defAbility').value,
+    defHPPct:   parseInt(document.getElementById('defHPPctSlider')?.value) || 100,
   };
 }
 
@@ -311,7 +312,7 @@ function applyPostMods(rolls, s, moveData, isPhysical, typeEff) {
     r = r.map(d => Math.floor(d * 0.5));
   if ((s.defAbility === 'solid-rock' || s.defAbility === 'filter') && typeEff > 1)
     r = r.map(d => Math.floor(d * 3 / 4));
-  if (s.defAbility === 'multiscale' || s.defAbility === 'shadow-shield')
+  if ((s.defAbility === 'multiscale' || s.defAbility === 'shadow-shield') && s.defHPPct >= 100)
     r = r.map(d => Math.floor(d * 0.5));
   if (s.defAbility === 'fur-coat' && isPhysical)
     r = r.map(d => Math.floor(d * 0.5));
@@ -939,6 +940,24 @@ function updateAbilitySelect(prefix, pkmnKey) {
     const firstRelevant = filtered.find(a => a.id !== '');
     sel.value = firstRelevant ? firstRelevant.id : '';
   }
+
+  // Show/hide Current HP slider for abilities that depend on full HP
+  if (prefix === 'def') updateDefHPPctVisibility();
+}
+
+/** Show the "Current HP %" slider only for Multiscale / Shadow Shield */
+function updateDefHPPctVisibility() {
+  const ability = document.getElementById('defAbility')?.value;
+  const row     = document.getElementById('defHPPctRow');
+  if (!row) return;
+  const needsHP = ability === 'multiscale' || ability === 'shadow-shield';
+  row.style.display = needsHP ? '' : 'none';
+  if (!needsHP) {
+    const slider = document.getElementById('defHPPctSlider');
+    const val    = document.getElementById('defHPPctVal');
+    if (slider) slider.value = 100;
+    if (val)    val.textContent = '100';
+  }
 }
 
 // ═══════════════════════════════════════════════════════════
@@ -993,6 +1012,25 @@ function bindEvents() {
         computeAll();
       });
     }
+  }
+
+  // Defender ability select — update HP% visibility when changed manually
+  const defAbilityEl = document.getElementById('defAbility');
+  if (defAbilityEl) {
+    defAbilityEl.addEventListener('change', () => {
+      updateDefHPPctVisibility();
+      computeAll();
+    });
+  }
+
+  // Defender current HP% slider
+  const hpPctSlider = document.getElementById('defHPPctSlider');
+  const hpPctVal    = document.getElementById('defHPPctVal');
+  if (hpPctSlider) {
+    hpPctSlider.addEventListener('input', () => {
+      if (hpPctVal) hpPctVal.textContent = hpPctSlider.value;
+      computeAll();
+    });
   }
 }
 
