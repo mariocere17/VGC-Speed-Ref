@@ -145,14 +145,6 @@ function calcHP(base, sp) {
   return Math.floor((2 * base + 31) * 50 / 100) + 60 + sp;
 }
 
-function getTypeEff(atkType, defTypes) {
-  if (!atkType || !defTypes) return 1;
-  const chart = TYPE_CHART[atkType] || {};
-  let eff = 1;
-  for (const dt of defTypes) eff = Math.floor(eff * (chart[dt] ?? 1) * 4096) / 4096;
-  return eff;
-}
-
 function getTypeEffRaw(atkType, defTypes) {
   const chart = TYPE_CHART[atkType] || {};
   return (chart[defTypes[0]] ?? 1) * (defTypes[1] ? (chart[defTypes[1]] ?? 1) : 1);
@@ -372,12 +364,13 @@ function computeAll() {
   const effBP    = buildEffBP(s, moveData);
   const stabMult = buildStabMult(s, moveData, atkData);
   const { hp, def: defStat } = buildDefStat(s, moveData, isPhysical);
+  const curHP    = Math.floor(hp * (s.defHPPct || 100) / 100);
 
   let rolls = calcRolls(atkStat, defStat, effBP, stabMult, moveData.type, defData.types);
   rolls = applyPostMods(rolls, s, moveData, isPhysical, typeEff);
 
   document.getElementById('dmgBlock').innerHTML =
-    renderDamage(rolls, hp, s, moveData, atkData, defData, atkStat, defStat, stabMult, typeEff, isPhysical);
+    renderDamage(rolls, hp, curHP, s, moveData, atkData, defData, atkStat, defStat, stabMult, typeEff, isPhysical);
   document.getElementById('optOutput').innerHTML = '';
 }
 
@@ -399,22 +392,22 @@ window.findMinSurvive = function () {
   const atkStat  = buildAtkStat(s, moveData, isPhysical, s.defAbility);
   const effBP    = buildEffBP(s, moveData);
   const stabMult = buildStabMult(s, moveData, atkData);
-  const statKey  = isPhysical ? 'def' : 'spd';
 
-  const defStage = isPhysical ? s.defDefStage : s.defSpdStage;
   const solutions = [];
   for (let hpSP = 0; hpSP <= 32; hpSP++) {
     for (let defSP = 0; defSP <= 32; defSP++) {
-      const hp  = calcHP(defData.hp, hpSP);
-      const nat = getNatureMult(s.defNature, statKey);
-      let def   = calcStat(defData[statKey], defSP, nat);
-      if (s.defItem === 'assault-vest' && !isPhysical) def = Math.floor(def * 1.5);
-      if (s.defItem === 'eviolite')                    def = Math.floor(def * 1.5);
-      if (defStage) def = Math.floor(def * getStageMult(defStage));
+      // Reuse buildDefStat by overriding SP values in a state copy
+      const sCopy = { ...s, defHpSP: hpSP };
+      if (isPhysical) sCopy.defDefSP = defSP;
+      else            sCopy.defSpdSP = defSP;
+      const { hp, def } = buildDefStat(sCopy, moveData, isPhysical);
 
       let rolls = calcRolls(atkStat, def, effBP, stabMult, moveData.type, defData.types);
-      rolls = applyPostMods(rolls, s, moveData, isPhysical, typeEff);
-      if (rolls[0] < hp) solutions.push({ hpSP, defSP, total: hpSP + defSP, rolls, hp });
+      rolls = applyPostMods(rolls, sCopy, moveData, isPhysical, typeEff);
+
+      // Survival is checked against current HP (HP% × max HP), not max HP
+      const curHP = Math.floor(hp * (s.defHPPct || 100) / 100);
+      if (rolls[0] < curHP) solutions.push({ hpSP, defSP, total: hpSP + defSP, rolls, hp, curHP });
     }
   }
   solutions.sort((a, b) => a.total - b.total || a.defSP - b.defSP);
@@ -431,7 +424,8 @@ window.findMinSurvive = function () {
   }
 
   function renderSurviveResult(sol, title) {
-    const koCount = sol.rolls.filter(r => r >= sol.hp).length;
+    // KO chance is computed against current HP (curHP), but % is shown vs max HP
+    const koCount = sol.rolls.filter(r => r >= sol.curHP).length;
     const koLabel = koCount === 0 ? '0%' : `${(koCount / 16 * 100).toFixed(2)}%`;
     const minPct  = (sol.rolls[0]  / sol.hp * 100).toFixed(1);
     const maxPct  = (sol.rolls[15] / sol.hp * 100).toFixed(1);
@@ -448,7 +442,7 @@ window.findMinSurvive = function () {
   }
 
   const best = solutions[0];
-  const safe = solutions.find(sol => sol.rolls[15] < sol.hp) || null;
+  const safe = solutions.find(sol => sol.rolls[15] < sol.curHP) || null;
 
   // If best already guarantees 0% OHKO, show a single block
   if (safe && safe.hpSP === best.hpSP && safe.defSP === best.defSP) {
@@ -482,7 +476,7 @@ window.findMinOHKO = function () {
   const effBP    = buildEffBP(s, moveData);
   const stabMult = buildStabMult(s, moveData, atkData);
   const { hp, def: defStat } = buildDefStat(s, moveData, isPhysical);
-  const statKey  = isPhysical ? 'atk' : 'spa';
+  const curHP    = Math.floor(hp * (s.defHPPct || 100) / 100);
   const curSP    = isPhysical ? s.atkAtkSP : s.atkSpaSP;
 
   const THRESHOLDS = [
@@ -496,26 +490,15 @@ window.findMinOHKO = function () {
   for (const thresh of THRESHOLDS) {
     let found = null;
     for (let sp = 0; sp <= 32; sp++) {
-      const nat = getNatureMult(s.atkNature, statKey);
-      let atkStat = calcStat(atkData[statKey], sp, nat);
-      if (s.atkItem === 'choice-band'  && isPhysical)  atkStat = Math.floor(atkStat * 1.5);
-      if (s.atkItem === 'choice-specs' && !isPhysical) atkStat = Math.floor(atkStat * 1.5);
-      if (s.atkItem === 'muscle-band'  && isPhysical)  atkStat = Math.floor(atkStat * 1.1);
-      if (s.atkItem === 'wise-glasses' && !isPhysical) atkStat = Math.floor(atkStat * 1.1);
-      if (s.atkItem.startsWith('type-')) {
-        const itemDef = ATK_ITEMS.find(i => i.id === s.atkItem);
-        if (itemDef && itemDef.moveType === moveData.type) atkStat = Math.floor(atkStat * 1.2);
-      }
-      if ((s.atkAbility === 'huge-power' || s.atkAbility === 'pure-power') && isPhysical)
-        atkStat = Math.floor(atkStat * 2);
-      if (s.defAbility === 'intimidate' && isPhysical)
-        atkStat = Math.floor(atkStat * 2 / 3);
-      const atkStage = isPhysical ? s.atkAtkStage : s.atkSpaStage;
-      if (atkStage) atkStat = Math.floor(atkStat * getStageMult(atkStage));
+      // Reuse buildAtkStat by overriding the relevant SP value in a state copy
+      const sCopy = { ...s };
+      if (isPhysical) sCopy.atkAtkSP = sp;
+      else            sCopy.atkSpaSP = sp;
+      const atkStat = buildAtkStat(sCopy, moveData, isPhysical, s.defAbility);
 
       let rolls = calcRolls(atkStat, defStat, effBP, stabMult, moveData.type, defData.types);
       rolls = applyPostMods(rolls, s, moveData, isPhysical, typeEff);
-      const koRolls = rolls.filter(r => r >= hp).length;
+      const koRolls = rolls.filter(r => r >= curHP).length;
       if (koRolls >= thresh.rolls) { found = { sp, atkStat, koRolls, rolls }; break; }
     }
     results.push({ ...thresh, found });
@@ -595,21 +578,22 @@ window.swapPanels = function () {
 //  DISPLAY
 // ═══════════════════════════════════════════════════════════
 
-function renderDamage(rolls, hp, s, moveData, atkData, defData, atkStat, defStat, stabMult, typeEff, isPhysical) {
+function renderDamage(rolls, hp, curHP, s, moveData, atkData, defData, atkStat, defStat, stabMult, typeEff, isPhysical) {
   const minDmg = rolls[0], maxDmg = rolls[15];
+  // Damage % is shown vs MAX HP (Showdown convention), but KO chances use CURRENT HP
   const minPct = (minDmg / hp * 100).toFixed(1);
   const maxPct = (maxDmg / hp * 100).toFixed(1);
-  const koCount = rolls.filter(r => r >= hp).length;
+  const koCount = rolls.filter(r => r >= curHP).length;
 
   let koClass = 'ko-0', koText = '0% chance to OHKO';
   if (koCount === 16)     { koClass = 'ko-full'; koText = 'Guaranteed OHKO'; }
   else if (koCount >= 8)  { koClass = 'ko-high'; koText = `${(koCount/16*100).toFixed(2)}% chance to OHKO`; }
   else if (koCount >= 1)  { koClass = 'ko-low';  koText = `${(koCount/16*100).toFixed(2)}% chance to OHKO`; }
 
-  // nHKO suffix (2HKO → 3HKO → 4HKO), only when not guaranteed OHKO
+  // nHKO suffix (2HKO → 3HKO → 4HKO), only when not guaranteed OHKO. Uses current HP.
   if (koCount < 16) {
     for (let n = 2; n <= 4; n++) {
-      const chance = calcNHKOChance(rolls, hp, n);
+      const chance = calcNHKOChance(rolls, curHP, n);
       if (chance >= 1) {
         koText += ` — Guaranteed ${n}HKO`;
         break;
@@ -846,7 +830,7 @@ function populateSelect(elId, items) {
   const sel = document.getElementById(elId);
   if (!sel) return;
   sel.innerHTML = items.map(i => `<option value="${i.id}">${i.label}</option>`).join('');
-  sel.addEventListener('change', computeAll);
+  // Listener bound centrally in bindEvents()
 }
 
 function populateStageSelects() {
@@ -1014,7 +998,12 @@ function bindEvents() {
     }
   }
 
-  // Defender ability select — update HP% visibility when changed manually
+  // Item / ability selects (atkItem, atkAbility, defItem, defAbility)
+  for (const id of ['atkItem', 'atkAbility', 'defItem']) {
+    const el = document.getElementById(id);
+    if (el) el.addEventListener('change', computeAll);
+  }
+  // Defender ability also updates HP% slider visibility
   const defAbilityEl = document.getElementById('defAbility');
   if (defAbilityEl) {
     defAbilityEl.addEventListener('change', () => {
