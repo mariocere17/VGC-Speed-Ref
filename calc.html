@@ -6,7 +6,7 @@
   <title>Pokemon Champions — Damage Calc</title>
   <link rel="icon" type="image/png" href="https://img.pokemondb.net/sprites/home/normal/weavile.png">
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="calc.css?v=7">
+  <link rel="stylesheet" href="calc.css?v=8">
 </head>
 <body>
 
@@ -16,9 +16,33 @@
     <p class="subtitle">Pokemon Champions VGC 2026 · SP system (max 32/stat, 66 total)</p>
   </div>
   <div class="header-nav">
+    <button class="btn-nav" onclick="openSetsModal()">📋 Sets</button>
     <a href="index.html" class="btn-nav">⚡ Speed Reference</a>
   </div>
 </header>
+
+<!-- ── SETS MODAL ──────────────────────────────────────── -->
+<div class="sets-overlay" id="setsOverlay" onclick="closeSetsOverlay(event)" style="display:none">
+  <div class="sets-modal">
+    <div class="sets-modal-header">
+      <h2>Custom Sets</h2>
+      <button class="sets-modal-close" onclick="closeSetsModal()">×</button>
+    </div>
+
+    <div class="sets-import-area">
+      <label class="sets-label">Paste Showdown format (one or multiple sets)</label>
+      <textarea id="setsImportText" class="sets-textarea"
+        placeholder="Milotic @ Leftovers&#10;Ability: Competitive&#10;Level: 50&#10;EVs: 32 HP / 16 Def / 5 SpD / 13 Spe&#10;Bold Nature&#10;- Icy Wind&#10;- Scald&#10;- Protect&#10;- Recover"></textarea>
+      <div class="sets-import-row">
+        <button class="btn-sets-import" onclick="importSets()">Import</button>
+        <span class="sets-import-result" id="setsImportResult"></span>
+      </div>
+    </div>
+
+    <div class="sets-list-title">Saved Sets</div>
+    <div id="setsModalList" class="sets-list"></div>
+  </div>
+</div>
 
 <main>
   <div id="loadMsg" class="load-msg">Loading Pokémon data...</div>
@@ -34,6 +58,13 @@
       <!-- ── ATTACKER ─────────────────────────────────── -->
       <section class="calc-panel">
         <h2 class="panel-title atk-title">Attacker</h2>
+
+        <div class="field-row">
+          <span class="field-label">Set</span>
+          <select id="atkSet" class="field-select" onchange="loadSetIntoPanel('atk', this.value)">
+            <option value="">— blank set —</option>
+          </select>
+        </div>
 
         <div class="field-row">
           <span class="field-label">Pokémon</span>
@@ -52,6 +83,9 @@
             <span class="cat-badge" id="moveCatBadge"></span>
           </div>
         </div>
+
+        <!-- quick-pick move buttons, shown only when a set is loaded -->
+        <div class="set-moves-row" id="atkSetMoves" style="display:none"></div>
 
         <div class="field-row">
           <span class="field-label">Nature</span>
@@ -125,6 +159,13 @@
         <h2 class="panel-title def-title">Defender</h2>
 
         <div class="field-row">
+          <span class="field-label">Set</span>
+          <select id="defSet" class="field-select" onchange="loadSetIntoPanel('def', this.value)">
+            <option value="">— blank set —</option>
+          </select>
+        </div>
+
+        <div class="field-row">
           <span class="field-label">Pokémon</span>
           <div class="field-input-wrap">
             <input type="text" id="defPkmn" list="pkmnList" placeholder="Garchomp…" class="pkmn-input">
@@ -134,7 +175,8 @@
                onerror="nextSprite(this)">
         </div>
 
-        <!-- spacer aligns with move row -->
+        <!-- spacer aligns with move+set-moves rows in attacker panel -->
+        <div class="field-row field-placeholder"></div>
         <div class="field-row field-placeholder"></div>
 
         <div class="field-row">
@@ -273,6 +315,6 @@
 <datalist id="pkmnList"></datalist>
 <datalist id="moveList"></datalist>
 
-<script src="calc.js?v=7"></script>
+<script src="calc.js?v=8"></script>
 </body>
 </html>

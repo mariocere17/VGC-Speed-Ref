@@ -1319,6 +1319,9 @@ async function loadData() {
   populateDataLists();
   bindEvents();
 
+  // Populate set selectors from localStorage (sets persist across visits).
+  refreshSetSelectors();
+
   // Restore the last saved session (if any) and compute once so the user
   // sees their previous calculation instead of the empty placeholder.
   restoreState();
@@ -1329,3 +1332,403 @@ async function loadData() {
 populateNatureSelects();
 populateStageSelects();
 loadData();
+
+// ═══════════════════════════════════════════════════════════
+//  SHOWDOWN SET PARSER
+// ═══════════════════════════════════════════════════════════
+
+/**
+ * Normalise a species/move name from Showdown format to our PKMN key.
+ * Showdown: "Rotom-Wash", "Urshifu-Rapid-Strike", "Garchomp-Mega"
+ * Our keys: "rotom wash", "urshifu rapid strike", "mega garchomp"
+ *
+ * Strategy:
+ *  1. Try exact lowercase+hyphen→space.
+ *  2. Try Mega prefix swap ("X-Mega" → "Mega X", "X-Mega-Y" → "Mega X Y").
+ *  3. Try Primal prefix swap.
+ *  Otherwise return null.
+ */
+function normalisePkmnKey(raw) {
+  if (!raw) return null;
+  // Strip whitespace
+  const s = raw.trim();
+
+  // Direct: "Rotom-Wash" → "rotom wash"
+  const direct = s.replace(/-/g, ' ').toLowerCase();
+  if (PKMN[direct]) return direct;
+
+  // Mega X / Mega X-Y  (Showdown: "Charizard-Mega-X" → us: "Mega Charizard X")
+  const megaXY = s.match(/^(.+?)-Mega-([XY])$/i);
+  if (megaXY) {
+    const k = `mega ${megaXY[1].replace(/-/g, ' ').toLowerCase()} ${megaXY[2].toUpperCase()}`;
+    if (PKMN[k]) return k;
+  }
+  const mega = s.match(/^(.+?)-Mega$/i);
+  if (mega) {
+    const k = `mega ${mega[1].replace(/-/g, ' ').toLowerCase()}`;
+    if (PKMN[k]) return k;
+  }
+
+  // Primal
+  const primal = s.match(/^(.+?)-Primal$/i);
+  if (primal) {
+    const k = `primal ${primal[1].toLowerCase()}`;
+    if (PKMN[k]) return k;
+  }
+
+  return null;
+}
+
+/**
+ * Parse EVs/SP line: "32 HP / 16 Def / 5 SpD / 13 Spe"
+ * Returns { hp, atk, def, spa, spd, spe } with values clamped to 0-32.
+ * Returns a `clamped` flag if any value exceeded 32.
+ */
+function parseEVs(line) {
+  const sp = { hp: 0, atk: 0, def: 0, spa: 0, spd: 0, spe: 0 };
+  const SD_MAP = { HP: 'hp', Atk: 'atk', Def: 'def', SpA: 'spa', SpD: 'spd', Spe: 'spe' };
+  let clamped = false;
+  const pairs = line.replace(/^EVs?:\s*/i, '').split('/');
+  for (const pair of pairs) {
+    const m = pair.trim().match(/^(\d+)\s+(\w+)$/);
+    if (!m) continue;
+    const key = SD_MAP[m[2]];
+    if (!key) continue;
+    const val = parseInt(m[1], 10);
+    if (val > 32) clamped = true;
+    sp[key] = Math.min(32, Math.max(0, val));
+  }
+  return { sp, clamped };
+}
+
+/**
+ * Normalise an ability string to one of our ATK/DEF ability ids.
+ * Returns the id if found, or the raw lowercase-hyphenated string (stored
+ * for future use, rendered as "" in the select).
+ */
+function normaliseAbilityId(raw) {
+  if (!raw) return '';
+  const id = raw.trim().toLowerCase().replace(/\s+/g, '-');
+  const all = [...ATK_ABILITIES, ...DEF_ABILITIES];
+  return all.find(a => a.id === id) ? id : id; // always store, even if unknown
+}
+
+/**
+ * Normalise an item string to one of our ATK/DEF item ids.
+ * Returns the id if found, or the raw lowercase-hyphenated string.
+ */
+function normaliseItemId(raw) {
+  if (!raw) return '';
+  const id = raw.trim().toLowerCase().replace(/\s+/g, '-');
+  const all = [...ATK_ITEMS, ...DEF_ITEMS];
+  return all.find(i => i.id === id) ? id : id;
+}
+
+/**
+ * Parse a single Showdown set block (no blank lines inside).
+ * Returns a set object or null if the species cannot be resolved.
+ */
+function parseShowdownSet(block) {
+  const lines = block.split('\n').map(l => l.trim()).filter(Boolean);
+  if (!lines.length) return null;
+
+  // ── Line 1: [Nickname (]Species[)] [(Gender)] [@ Item] ──────
+  let species = '', itemRaw = '', nickname = '';
+  const firstLine = lines[0];
+
+  // Split off item
+  const atIdx = firstLine.indexOf(' @ ');
+  const nameAndGender = atIdx >= 0 ? firstLine.slice(0, atIdx).trim() : firstLine.trim();
+  itemRaw = atIdx >= 0 ? firstLine.slice(atIdx + 3).trim() : '';
+
+  // Extract inner parens — could be gender (M/F), form, or species if nickname
+  const parenMatch = nameAndGender.match(/^(.+?)\s*\(([^)]+)\)\s*(?:\([MF]\))?$/);
+  if (parenMatch) {
+    const outer = parenMatch[1].trim();
+    const inner = parenMatch[2].trim();
+    if (/^[MF]$/.test(inner)) {
+      // gender marker only
+      species = outer;
+    } else {
+      // "Nickname (Species)" format
+      nickname = outer;
+      species  = inner;
+    }
+  } else {
+    // Strip trailing gender "(M)" / "(F)" if present
+    species = nameAndGender.replace(/\s*\([MF]\)\s*$/, '').trim();
+  }
+
+  const pkmnKey = normalisePkmnKey(species);
+  if (!pkmnKey) return null; // unknown species
+
+  // ── Remaining lines ──────────────────────────────────────────
+  let abilityRaw = '', nature = '', moves = [];
+  let sp = { hp: 0, atk: 0, def: 0, spa: 0, spd: 0, spe: 0 };
+  let clamped = false;
+
+  for (const line of lines.slice(1)) {
+    if (line.startsWith('- ')) {
+      const moveName = line.slice(2).replace(/\s*\(.*\)$/, '').trim(); // strip "(Hidden Power type)"
+      if (moves.length < 4) moves.push(moveName);
+    } else if (/^Ability:/i.test(line)) {
+      abilityRaw = line.replace(/^Ability:\s*/i, '').trim();
+    } else if (/^EVs:/i.test(line)) {
+      const parsed = parseEVs(line);
+      sp      = parsed.sp;
+      clamped = parsed.clamped;
+    } else if (/Nature$/.test(line)) {
+      // "Bold Nature" or "Adamant Nature"
+      nature = line.replace(/\s+Nature$/i, '').trim();
+    }
+    // Level, IVs, Tera Type — intentionally ignored
+  }
+
+  const pkmnDisplay = PKMN[pkmnKey]?.displayName || species;
+  const label = (nickname || pkmnDisplay) + (nature ? ` ${nature}` : '') +
+                (abilityRaw ? ` (${abilityRaw})` : '');
+
+  return {
+    id:       Date.now() + Math.random().toString(36).slice(2),
+    label,
+    pokemon:  pkmnKey,
+    item:     normaliseItemId(itemRaw),
+    ability:  normaliseAbilityId(abilityRaw),
+    nature:   nature || 'Hardy',
+    sp,
+    moves,
+    raw:      block.trim(),
+    clamped,
+  };
+}
+
+/**
+ * Parse a text block that may contain multiple sets separated by blank lines.
+ * Returns { sets: [...], warnings: [...] }.
+ */
+function parseShowdownText(text) {
+  const blocks = text.trim().split(/\n\s*\n+/);
+  const sets = [], warnings = [];
+  for (const block of blocks) {
+    const s = parseShowdownSet(block);
+    if (!s) {
+      const firstLine = block.trim().split('\n')[0];
+      warnings.push(`Could not resolve species for: "${firstLine.slice(0, 40)}"`);
+    } else {
+      if (s.clamped) warnings.push(`${s.label}: some SP values exceeded 32 and were clamped.`);
+      sets.push(s);
+    }
+  }
+  return { sets, warnings };
+}
+
+// ═══════════════════════════════════════════════════════════
+//  SET STORAGE
+// ═══════════════════════════════════════════════════════════
+
+const STORAGE_KEY_SETS = 'champions-calc-sets-v1';
+
+function loadSets() {
+  try { return JSON.parse(localStorage.getItem(STORAGE_KEY_SETS) || '[]'); }
+  catch (_) { return []; }
+}
+
+function saveSetsToStorage(sets) {
+  try { localStorage.setItem(STORAGE_KEY_SETS, JSON.stringify(sets)); }
+  catch (_) { /* quota / privacy mode */ }
+}
+
+function addSets(newSets) {
+  const sets = loadSets();
+  sets.push(...newSets);
+  saveSetsToStorage(sets);
+  return sets;
+}
+
+function removeSet(id) {
+  const sets = loadSets().filter(s => s.id !== id);
+  saveSetsToStorage(sets);
+  return sets;
+}
+
+function renameSet(id, newLabel) {
+  const sets = loadSets().map(s => s.id === id ? { ...s, label: newLabel } : s);
+  saveSetsToStorage(sets);
+  return sets;
+}
+
+// ═══════════════════════════════════════════════════════════
+//  SET → PANEL
+// ═══════════════════════════════════════════════════════════
+
+/**
+ * Load a saved set into the attacker or defender panel.
+ * @param {'atk'|'def'} prefix
+ * @param {string} setId
+ */
+window.loadSetIntoPanel = function (prefix, setId) {
+  if (!setId) return; // blank selection — do nothing
+  const set = loadSets().find(s => s.id === setId);
+  if (!set) return;
+
+  const pkmnEl = document.getElementById(prefix + 'Pkmn');
+  if (pkmnEl) {
+    pkmnEl.value = PKMN[set.pokemon]?.displayName || set.pokemon;
+    if (prefix === 'atk') updateMoveDatalist(set.pokemon);
+    updateAbilitySelect(prefix, set.pokemon);
+    updateSprite(prefix, set.pokemon);
+    updateTypeBadges(set.pokemon, prefix + 'TypeRow');
+  }
+
+  document.getElementById(prefix + 'Nature').value = set.nature;
+
+  // SP sliders
+  const statMap = { Hp: 'hp', Atk: 'atk', Def: 'def', Spa: 'spa', Spd: 'spd', Spe: 'spe' };
+  for (const [id, key] of Object.entries(statMap)) {
+    const slider = document.getElementById(prefix + id + 'SP');
+    const valSpan = document.getElementById(prefix + id + 'SPVal');
+    const val = set.sp[key] || 0;
+    if (slider)  slider.value = val;
+    if (valSpan) valSpan.textContent = val;
+  }
+
+  // Item
+  const itemEl = document.getElementById(prefix + 'Item');
+  if (itemEl) {
+    const allItems = prefix === 'atk' ? ATK_ITEMS : DEF_ITEMS;
+    const matched = allItems.find(i => i.id === set.item);
+    itemEl.value = matched ? set.item : '';
+  }
+
+  // Ability
+  const abilityEl = document.getElementById(prefix + 'Ability');
+  if (abilityEl) {
+    // ability select was repopulated for this Pokémon; try to set it
+    const opt = abilityEl.querySelector(`option[value="${CSS.escape(set.ability)}"]`);
+    abilityEl.value = opt ? set.ability : '';
+  }
+
+  if (prefix === 'def') updateDefHPPctVisibility();
+
+  // For attacker: populate the move with the first move of the set; also
+  // refresh the quick-pick move buttons row.
+  if (prefix === 'atk') {
+    const moveEl = document.getElementById('atkMove');
+    if (moveEl && set.moves.length) {
+      moveEl.value = set.moves[0];
+      updateMoveCat(MOVES[set.moves[0]]);
+    }
+    renderSetMoveButtons(set.moves);
+  }
+
+  computeAll();
+};
+
+/**
+ * Render 4 quick-pick move buttons below the Move input (attacker only).
+ * If moves is empty or null, hide the row.
+ */
+function renderSetMoveButtons(moves) {
+  const row = document.getElementById('atkSetMoves');
+  if (!row) return;
+  if (!moves || !moves.length) { row.style.display = 'none'; return; }
+  row.style.display = 'flex';
+  row.innerHTML = moves.map(m => {
+    const known = MOVES[m];
+    const cls   = known ? (known.category === 'physical' ? 'btn-setmove-p' :
+                           known.category === 'special'  ? 'btn-setmove-s' : 'btn-setmove-t')
+                        : 'btn-setmove-u';
+    return `<button class="btn-setmove ${cls}" onclick="pickSetMove('${m.replace(/'/g, "\\'")}')">${m}</button>`;
+  }).join('');
+}
+
+window.pickSetMove = function (moveName) {
+  const moveEl = document.getElementById('atkMove');
+  if (moveEl) {
+    moveEl.value = moveName;
+    updateMoveCat(MOVES[moveName]);
+  }
+  computeAll();
+};
+
+// ═══════════════════════════════════════════════════════════
+//  SETS MODAL (open / close / import / render list)
+// ═══════════════════════════════════════════════════════════
+
+function refreshSetSelectors() {
+  const sets  = loadSets();
+  const blank = '<option value="">— blank set —</option>';
+  const opts  = sets.map(s =>
+    `<option value="${s.id}">${s.label.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}</option>`
+  ).join('');
+  for (const id of ['atkSet', 'defSet']) {
+    const el = document.getElementById(id);
+    if (el) el.innerHTML = blank + opts;
+  }
+}
+
+function renderSetsList() {
+  const sets = loadSets();
+  const listEl = document.getElementById('setsModalList');
+  if (!listEl) return;
+  if (!sets.length) {
+    listEl.innerHTML = '<p class="sets-empty">No saved sets yet. Paste Showdown text above and click Import.</p>';
+    return;
+  }
+  listEl.innerHTML = sets.map(s => {
+    const pkmnData = PKMN[s.pokemon];
+    const spriteUrl = pkmnData ? spriteUrl_for(s.pokemon) : '';
+    const safeName = s.label.replace(/&/g,'&amp;').replace(/</g,'&lt;');
+    return `
+      <div class="set-row" data-id="${s.id}">
+        ${spriteUrl ? `<img class="set-sprite" src="${spriteUrl}" onerror="this.style.display='none'" alt="">` : '<span class="set-sprite-placeholder"></span>'}
+        <span class="set-label">${safeName}</span>
+        <button class="btn-set-delete" onclick="window.deleteSetFromModal('${s.id}')" title="Delete">×</button>
+      </div>
+    `;
+  }).join('');
+}
+
+// Helper: reuse the existing sprite-URL logic from updateSprite
+function spriteUrl_for(pkmnKey) {
+  const display = PKMN[pkmnKey]?.displayName || '';
+  const slug    = display.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
+  return `https://img.pokemondb.net/sprites/home/normal/${slug}.png`;
+}
+
+window.openSetsModal = function () {
+  renderSetsList();
+  document.getElementById('setsOverlay').style.display = 'flex';
+};
+
+window.closeSetsModal = function () {
+  document.getElementById('setsOverlay').style.display = 'none';
+};
+
+window.closeSetsOverlay = function (e) {
+  if (e.target === document.getElementById('setsOverlay')) window.closeSetsModal();
+};
+
+window.importSets = function () {
+  const textarea = document.getElementById('setsImportText');
+  if (!textarea || !textarea.value.trim()) return;
+  const { sets, warnings } = parseShowdownText(textarea.value);
+  const resultEl = document.getElementById('setsImportResult');
+  if (!sets.length && !warnings.length) {
+    resultEl.textContent = 'Nothing imported.';
+    return;
+  }
+  addSets(sets);
+  textarea.value = '';
+  refreshSetSelectors();
+  renderSetsList();
+  let msg = sets.length ? `Imported ${sets.length} set${sets.length > 1 ? 's' : ''}.` : '';
+  if (warnings.length) msg += ' ⚠ ' + warnings.join(' ');
+  resultEl.textContent = msg;
+};
+
+window.deleteSetFromModal = function (id) {
+  removeSet(id);
+  refreshSetSelectors();
+  renderSetsList();
+};

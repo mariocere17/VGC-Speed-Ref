@@ -317,6 +317,97 @@ test('Electric vs Garchomp → 0×', () => {
   assertEq(fns.getTypeEffRaw('electric', ['dragon', 'ground']), 0);
 });
 
+// ─── Parser tests ──────────────────────────────────────────
+// Export parser functions via vm the same way as the math functions.
+vm.runInContext(`
+  globalThis.__parser = { parseShowdownSet, parseShowdownText, parseEVs, normalisePkmnKey };
+`, ctx);
+const parser = ctx.__parser;
+
+console.log('\nShowdown parser tests');
+
+test('Milotic basic set', () => {
+  const s = parser.parseShowdownSet([
+    'Milotic @ Leftovers',
+    'Ability: Competitive',
+    'Level: 50',
+    'EVs: 32 HP / 16 Def / 5 SpD / 13 Spe',
+    'Bold Nature',
+    '- Icy Wind',
+    '- Scald',
+    '- Protect',
+    '- Recover',
+  ].join('\n'));
+  if (!s) throw new Error('parseShowdownSet returned null');
+  assertEq(s.pokemon, 'milotic', 'pokemon key');
+  assertEq(s.nature,  'Bold',    'nature');
+  assertEq(s.sp.hp,   32,        'HP SP');
+  assertEq(s.sp.def,  16,        'Def SP');
+  assertEq(s.sp.spd,  5,         'SpD SP');
+  assertEq(s.sp.spe,  13,        'Spe SP');
+  assertEq(s.sp.atk,  0,         'Atk SP');
+  assertEq(s.moves.length, 4,    'moves count');
+  assertEq(s.moves[0], 'Icy Wind', 'first move');
+  assertEq(s.clamped,  false,    'no clamping');
+});
+
+test('Set with nickname (Showdown: "Nickname (Species) @ Item")', () => {
+  const s = parser.parseShowdownSet([
+    'Fishy (Milotic) @ Sitrus Berry',
+    'Ability: Marvel Scale',
+    'EVs: 0 HP / 0 Def',
+    'Timid Nature',
+    '- Surf',
+  ].join('\n'));
+  if (!s) throw new Error('parseShowdownSet returned null');
+  assertEq(s.pokemon, 'milotic', 'species resolved despite nickname');
+});
+
+test('Rotom-Wash form normalisation', () => {
+  const key = parser.normalisePkmnKey('Rotom-Wash');
+  if (!pkmnData[key]) throw new Error(`normalisePkmnKey('Rotom-Wash') → '${key}' not in PKMN`);
+});
+
+test('Multi-set import (2 sets separated by blank line)', () => {
+  const text = [
+    'Milotic @ Leftovers',
+    'Ability: Competitive',
+    'EVs: 32 HP / 0 Def',
+    'Bold Nature',
+    '- Scald',
+    '',
+    'Garchomp @ Choice Scarf',
+    'Ability: Rough Skin',
+    'EVs: 0 HP / 32 Atk',
+    'Jolly Nature',
+    '- Earthquake',
+  ].join('\n');
+  const { sets, warnings } = parser.parseShowdownText(text);
+  assertEq(sets.length, 2, 'two sets parsed');
+  assertEq(sets[0].pokemon, 'milotic',  'first set');
+  assertEq(sets[1].pokemon, 'garchomp', 'second set');
+  assertEq(warnings.length, 0, 'no warnings');
+});
+
+test('SP values >32 are clamped and flagged', () => {
+  const s = parser.parseShowdownSet([
+    'Garchomp @ Choice Band',
+    'Ability: Rough Skin',
+    'EVs: 252 HP / 252 Atk / 4 Spe',
+    'Jolly Nature',
+    '- Earthquake',
+  ].join('\n'));
+  if (!s) throw new Error('null');
+  assertEq(s.sp.hp,  32, 'HP clamped to 32');
+  assertEq(s.sp.atk, 32, 'Atk clamped to 32');
+  assertEq(s.clamped, true, 'clamped flag set');
+});
+
+test('Unknown species returns null', () => {
+  const s = parser.parseShowdownSet('NotARealPokemon @ Leftovers\nBold Nature\n- Tackle');
+  if (s !== null) throw new Error(`Expected null, got set for "${s?.pokemon}"`);
+});
+
 // ─── Report ────────────────────────────────────────────────
 console.log(`\n${passed} passed, ${failed} failed`);
 process.exit(failed ? 1 : 0);
