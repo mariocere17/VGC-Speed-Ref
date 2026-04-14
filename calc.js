@@ -95,6 +95,8 @@ const ATK_ABILITIES = [
   { id:'huge-power',   label:'Huge Power (Atk ×2)' },
   { id:'pure-power',   label:'Pure Power (Atk ×2)' },
   { id:'adaptability', label:'Adaptability (STAB ×2)' },
+  { id:'tinted-lens',  label:'Tinted Lens (NVE ×2)' },
+  { id:'mold-breaker', label:'Mold Breaker (ignore def ability)' },
   { id:'tough-claws',  label:'Tough Claws (contact ×1.3)' },
   { id:'technician',   label:'Technician (BP≤60 ×1.5)' },
   { id:'iron-fist',    label:'Iron Fist (punch ×1.2)' },
@@ -106,6 +108,7 @@ const DEF_ABILITIES = [
   { id:'',              label:'None' },
   { id:'intimidate',    label:'Intimidate (Atk −1 stage)' },
   { id:'thick-fat',     label:'Thick Fat (Fire/Ice ×0.5)' },
+  { id:'ice-scales',    label:'Ice Scales (special ×0.5)' },
   { id:'solid-rock',    label:'Solid Rock (SE ×0.75)' },
   { id:'filter',        label:'Filter (SE ×0.75)' },
   { id:'multiscale',    label:'Multiscale (full HP ×0.5)' },
@@ -300,16 +303,27 @@ function buildDefStat(s, moveData, isPhysical) {
   return { hp, def };
 }
 
+// Mold Breaker ignores damage-affecting defender abilities (not Intimidate,
+// which already triggered on switch-in and is applied in buildAtkStat).
+function effDefAbility(s) {
+  return s.atkAbility === 'mold-breaker' ? '' : s.defAbility;
+}
+
 function applyPostMods(rolls, s, moveData, isPhysical, typeEff) {
   let r = rolls;
-  if (s.defAbility === 'thick-fat' && (moveData.type === 'fire' || moveData.type === 'ice'))
+  const defAb = effDefAbility(s);
+  if (defAb === 'thick-fat' && (moveData.type === 'fire' || moveData.type === 'ice'))
     r = r.map(d => Math.floor(d * 0.5));
-  if ((s.defAbility === 'solid-rock' || s.defAbility === 'filter') && typeEff > 1)
+  if (defAb === 'ice-scales' && !isPhysical)
+    r = r.map(d => Math.floor(d * 0.5));
+  if ((defAb === 'solid-rock' || defAb === 'filter') && typeEff > 1)
     r = r.map(d => Math.floor(d * 3 / 4));
-  if ((s.defAbility === 'multiscale' || s.defAbility === 'shadow-shield') && s.defHPPct >= 100)
+  if ((defAb === 'multiscale' || defAb === 'shadow-shield') && s.defHPPct >= 100)
     r = r.map(d => Math.floor(d * 0.5));
-  if (s.defAbility === 'fur-coat' && isPhysical)
+  if (defAb === 'fur-coat' && isPhysical)
     r = r.map(d => Math.floor(d * 0.5));
+  if (s.atkAbility === 'tinted-lens' && typeEff > 0 && typeEff < 1)
+    r = r.map(d => Math.floor(d * 2));
   if (s.atkAbility === 'sheer-force' && moveData.hasSecondary)
     r = r.map(d => Math.floor(d * 1.3));
   if (s.atkAbility === 'tough-claws' && moveData.makesContact)
@@ -323,7 +337,8 @@ function applyPostMods(rolls, s, moveData, isPhysical, typeEff) {
   return r;
 }
 
-function isImmune(moveType, defAbility) {
+function isImmune(moveType, s) {
+  const defAbility = effDefAbility(s);
   if (defAbility === 'levitate'    && moveType === 'ground')   return true;
   if (defAbility === 'flash-fire'  && moveType === 'fire')     return true;
   if (defAbility === 'volt-absorb' && moveType === 'electric') return true;
@@ -356,7 +371,7 @@ function computeAll() {
   const isPhysical = moveData.category === 'physical';
   const typeEff    = getTypeEffRaw(moveData.type, defData.types);
 
-  if (isImmune(moveData.type, s.defAbility)) {
+  if (isImmune(moveData.type, s)) {
     document.getElementById('dmgBlock').innerHTML = renderImmune(moveData, defData, s.defAbility);
     document.getElementById('optOutput').innerHTML = '';
     return;
@@ -389,7 +404,7 @@ window.findMinSurvive = function () {
 
   const isPhysical = moveData.category === 'physical';
   const typeEff    = getTypeEffRaw(moveData.type, defData.types);
-  if (isImmune(moveData.type, s.defAbility)) return;
+  if (isImmune(moveData.type, s)) return;
 
   const atkStat  = buildAtkStat(s, moveData, isPhysical, s.defAbility);
   const effBP    = buildEffBP(s, moveData);
@@ -483,7 +498,7 @@ window.findMinOHKO = function () {
 
   const isPhysical = moveData.category === 'physical';
   const typeEff    = getTypeEffRaw(moveData.type, defData.types);
-  if (isImmune(moveData.type, s.defAbility)) return;
+  if (isImmune(moveData.type, s)) return;
 
   const effBP    = buildEffBP(s, moveData);
   const stabMult = buildStabMult(s, moveData, atkData);
