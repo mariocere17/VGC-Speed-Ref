@@ -179,6 +179,12 @@
 /* ── NATURE SELECT ── */
 .nature-select { font-size: 0.8rem; }
 
+/* ── PANEL SPRITE ── */
+.panel-sprite {
+  width: 56px; height: 56px; object-fit: contain;
+  flex-shrink: 0; image-rendering: auto;
+}
+
 /* ── STAT PILL (kept for compatibility, now unused) ── */
 .stat-pill { display: none; }
 

@@ -500,12 +500,14 @@ window.swapPanels = function () {
     if (bVal) bVal.textContent = document.getElementById('def' + id + 'SP').value;
   }
 
-  // Update move datalist and ability selects for the new roles
+  // Update move datalist, ability selects, and sprites for the new roles
   const newAtkKey = document.getElementById('atkPkmn').value.toLowerCase().trim();
   const newDefKey = document.getElementById('defPkmn').value.toLowerCase().trim();
   updateMoveDatalist(newAtkKey);
   updateAbilitySelect('atk', newAtkKey);
   updateAbilitySelect('def', newDefKey);
+  updateSprite('atk', newAtkKey);
+  updateSprite('def', newDefKey);
 
   computeAll();
 };
@@ -653,6 +655,68 @@ function updateMoveCat(moveData) {
 }
 
 // ═══════════════════════════════════════════════════════════
+//  SPRITES  (same logic as main.js)
+// ═══════════════════════════════════════════════════════════
+
+function nameToSlug(name) {
+  let n = name.trim();
+  const rotomM = n.match(/^(Heat|Wash|Frost|Fan|Mow)\s+Rotom$/i);
+  if (rotomM) return 'rotom-' + rotomM[1].toLowerCase();
+  const megaM = n.match(/^Mega\s+(.+?)(?:\s+([XY]))?$/i);
+  if (megaM) {
+    const base = megaM[1].toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-+/g, '-').replace(/-$/, '');
+    return base + '-mega' + (megaM[2] ? '-' + megaM[2].toLowerCase() : '');
+  }
+  const regionMap = { Alolan: 'alola', Hisuian: 'hisui', Galarian: 'galar', Paldean: 'paldea' };
+  for (const [pfx, sfx] of Object.entries(regionMap)) {
+    if (n.startsWith(pfx + ' ')) {
+      const rest = n.slice(pfx.length + 1);
+      return rest.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-+/g, '-').replace(/-$/, '') + '-' + sfx;
+    }
+  }
+  n = n.replace(/\s*\(([^)]+)\)\s*$/, (_, f) => '-' + f);
+  return n.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '');
+}
+
+function spriteQueue(name) {
+  const slug  = nameToSlug(name);
+  const parts = slug.split('-');
+  const last  = parts.length > 1 ? parts.slice(0, -1).join('-') : null;
+  const first = parts.length > 1 ? parts[0] : null;
+  const pdb   = s => `https://img.pokemondb.net/sprites/home/normal/${s}.png`;
+  const sd    = s => `https://play.pokemonshowdown.com/sprites/gen5/${s}.png`;
+  const seen  = new Set([slug]);
+  const q     = [pdb(slug), sd(slug)];
+  if (last  && !seen.has(last))  { seen.add(last);  q.push(pdb(last),  sd(last));  }
+  if (first && !seen.has(first)) { seen.add(first); q.push(pdb(first), sd(first)); }
+  return q;
+}
+
+function nextSprite(img) {
+  const q = img._spriteQ;
+  if (!q || !q.length) { img.style.opacity = '0'; img.onerror = null; return; }
+  img.onerror = () => nextSprite(img);
+  img.src = q.shift();
+}
+
+function updateSprite(prefix, pkmnKey) {
+  const img = document.getElementById(prefix + 'Sprite');
+  if (!img) return;
+  const pkmnData = PKMN[pkmnKey];
+  if (!pkmnData) {
+    img.style.display = 'none';
+    img.src = '';
+    return;
+  }
+  const q = spriteQueue(pkmnData.displayName);
+  img._spriteQ = q.slice(1);
+  img.onerror  = () => nextSprite(img);
+  img.src      = q[0];
+  img.style.display  = '';
+  img.style.opacity  = '1';
+}
+
+// ═══════════════════════════════════════════════════════════
 //  MOVE DATALIST FILTER
 // ═══════════════════════════════════════════════════════════
 
@@ -767,17 +831,20 @@ function bindEvents() {
     const prefix = id === 'atkPkmn' ? 'atk' : 'def';
     const el = document.getElementById(id);
     if (!el) return;
+
+    // input: ONLY type badges — do NOT touch any datalist/select DOM or the
+    // browser will dismiss the autocomplete dropdown while the user is typing
     el.addEventListener('input', () => {
       const key = el.value.toLowerCase().trim();
-      if (prefix === 'atk') updateMoveDatalist(key);
-      updateAbilitySelect(prefix, key);
       updateTypeBadges(key, prefix + 'TypeRow');
-      if (PKMN[key]) computeAll();
     });
+
+    // change: fires when user picks from datalist OR leaves the field
     el.addEventListener('change', () => {
       const key = el.value.toLowerCase().trim();
       if (prefix === 'atk') updateMoveDatalist(key);
       updateAbilitySelect(prefix, key);
+      updateSprite(prefix, key);
       computeAll();
     });
   });

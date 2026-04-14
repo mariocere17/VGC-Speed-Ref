@@ -38,9 +38,11 @@
         <div class="field-row">
           <span class="field-label">Pokémon</span>
           <div class="field-input-wrap">
-            <input type="text" id="atkPkmn" list="pkmnList" placeholder="Garchomp…" autocomplete="off" class="pkmn-input">
+            <input type="text" id="atkPkmn" list="pkmnList" placeholder="Garchomp…" class="pkmn-input">
             <div class="type-row" id="atkTypeRow"></div>
           </div>
+          <img id="atkSprite" class="panel-sprite" alt="" style="display:none"
+               onerror="nextSprite(this)">
         </div>
 
         <div class="field-row">
@@ -119,9 +121,11 @@
         <div class="field-row">
           <span class="field-label">Pokémon</span>
           <div class="field-input-wrap">
-            <input type="text" id="defPkmn" list="pkmnList" placeholder="Garchomp…" autocomplete="off" class="pkmn-input">
+            <input type="text" id="defPkmn" list="pkmnList" placeholder="Garchomp…" class="pkmn-input">
             <div class="type-row" id="defTypeRow"></div>
           </div>
+          <img id="defSprite" class="panel-sprite" alt="" style="display:none"
+               onerror="nextSprite(this)">
         </div>
 
         <!-- spacer aligns with move row -->
