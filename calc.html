@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pokemon Champions — Damage Calc</title>
+  <link rel="icon" type="image/png" href="https://img.pokemondb.net/sprites/home/normal/weavile.png">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="calc.css">
+</head>
+<body>
+
+<header>
+  <div>
+    <h1>⚔ Damage Calculator</h1>
+    <p class="subtitle">Pokemon Champions VGC 2026 · SP system (max 32/stat, 66 total)</p>
+  </div>
+  <div class="header-nav">
+    <a href="index.html" class="btn-nav">⚡ Speed Reference</a>
+  </div>
+</header>
+
+<main>
+  <div id="loadMsg" class="load-msg">Loading Pokémon data...</div>
+
+  <div id="calcApp" style="display:none">
+    <div class="calc-panels">
+
+      <!-- ── ATTACKER ─────────────────────────────────── -->
+      <section class="calc-panel">
+        <h2 class="panel-title atk-title">Attacker</h2>
+
+        <div class="field-row">
+          <span class="field-label">Pokémon</span>
+          <div class="field-input-wrap">
+            <input type="text" id="atkPkmn" list="pkmnList" placeholder="Garchomp…" autocomplete="off" class="pkmn-input">
+            <div class="type-row" id="atkTypeRow"></div>
+          </div>
+        </div>
+
+        <div class="field-row">
+          <span class="field-label">Move</span>
+          <div class="field-input-wrap">
+            <input type="text" id="atkMove" list="moveList" placeholder="Dragon Claw…" autocomplete="off" class="pkmn-input">
+            <span class="cat-badge" id="moveCatBadge"></span>
+          </div>
+        </div>
+
+        <div class="field-row">
+          <span class="field-label" id="atkNatLbl">Atk nature</span>
+          <div class="nature-group">
+            <label class="nat-opt"><input type="radio" name="atkNat" value="0.9"><span>−</span></label>
+            <label class="nat-opt"><input type="radio" name="atkNat" value="1.0" checked><span>●</span></label>
+            <label class="nat-opt"><input type="radio" name="atkNat" value="1.1"><span>＋</span></label>
+          </div>
+        </div>
+
+        <div class="field-row">
+          <span class="field-label" id="atkSpLbl">Atk SP</span>
+          <div class="slider-wrap">
+            <input type="range" id="atkSP" min="0" max="32" value="0" class="sp-slider">
+            <span class="sp-val" id="atkSPVal">0</span>
+          </div>
+        </div>
+
+        <div class="field-row">
+          <span class="field-label">Item</span>
+          <select id="atkItem" class="field-select"></select>
+        </div>
+
+        <div class="field-row">
+          <span class="field-label">Ability</span>
+          <select id="atkAbility" class="field-select"></select>
+        </div>
+
+        <div class="stat-pill" id="atkStatPill"></div>
+      </section>
+
+      <!-- ── DEFENDER ─────────────────────────────────── -->
+      <section class="calc-panel">
+        <h2 class="panel-title def-title">Defender</h2>
+
+        <div class="field-row">
+          <span class="field-label">Pokémon</span>
+          <div class="field-input-wrap">
+            <input type="text" id="defPkmn" list="pkmnList" placeholder="Garchomp…" autocomplete="off" class="pkmn-input">
+            <div class="type-row" id="defTypeRow"></div>
+          </div>
+        </div>
+
+        <!-- spacer aligns with move row -->
+        <div class="field-row field-placeholder"></div>
+
+        <div class="field-row">
+          <span class="field-label" id="defNatLbl">Def nature</span>
+          <div class="nature-group">
+            <label class="nat-opt"><input type="radio" name="defNat" value="0.9"><span>−</span></label>
+            <label class="nat-opt"><input type="radio" name="defNat" value="1.0" checked><span>●</span></label>
+            <label class="nat-opt"><input type="radio" name="defNat" value="1.1"><span>＋</span></label>
+          </div>
+        </div>
+
+        <div class="field-row">
+          <span class="field-label">HP SP</span>
+          <div class="slider-wrap">
+            <input type="range" id="defHpSP" min="0" max="32" value="0" class="sp-slider">
+            <span class="sp-val" id="defHpSPVal">0</span>
+          </div>
+        </div>
+
+        <div class="field-row">
+          <span class="field-label" id="defSpLbl">Def SP</span>
+          <div class="slider-wrap">
+            <input type="range" id="defSP" min="0" max="32" value="0" class="sp-slider">
+            <span class="sp-val" id="defSPVal">0</span>
+          </div>
+        </div>
+
+        <div class="field-row">
+          <span class="field-label">Item</span>
+          <select id="defItem" class="field-select"></select>
+        </div>
+
+        <div class="field-row">
+          <span class="field-label">Ability</span>
+          <select id="defAbility" class="field-select"></select>
+        </div>
+
+        <div class="stat-pill" id="defStatPill"></div>
+      </section>
+
+    </div><!-- .calc-panels -->
+
+    <!-- ── RESULTS ─────────────────────────────────────── -->
+    <div class="calc-results">
+      <div id="dmgBlock">
+        <p class="dmg-placeholder">Enter a Pokémon, move, and defender above to calculate damage.</p>
+      </div>
+
+      <div class="opt-row">
+        <button class="btn-opt btn-survive" onclick="findMinSurvive()">🛡 Min SP to survive</button>
+        <button class="btn-opt btn-ohko" onclick="findMinOHKO()">⚔ Min SP to OHKO</button>
+      </div>
+
+      <div class="opt-output" id="optOutput"></div>
+    </div>
+
+  </div><!-- #calcApp -->
+</main>
+
+<datalist id="pkmnList"></datalist>
+<datalist id="moveList"></datalist>
+
+<script src="calc.js"></script>
+</body>
+</html>

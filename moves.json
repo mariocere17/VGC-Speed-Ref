@@ -1,0 +1,4658 @@
+{
+  "10 000 000 Volt Thunderbolt": {
+    "bp": 195,
+    "type": "electric",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Absorb": {
+    "bp": 20,
+    "type": "grass",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Accelerock": {
+    "bp": 40,
+    "type": "rock",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Acid": {
+    "bp": 40,
+    "type": "poison",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Acid Spray": {
+    "bp": 40,
+    "type": "poison",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Acrobatics": {
+    "bp": 55,
+    "type": "flying",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Aerial Ace": {
+    "bp": 60,
+    "type": "flying",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Aeroblast": {
+    "bp": 100,
+    "type": "flying",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Air Cutter": {
+    "bp": 60,
+    "type": "flying",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Air Slash": {
+    "bp": 75,
+    "type": "flying",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Alluring Voice": {
+    "bp": 80,
+    "type": "fairy",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Anchor Shot": {
+    "bp": 80,
+    "type": "steel",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Ancient Power": {
+    "bp": 60,
+    "type": "rock",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Apple Acid": {
+    "bp": 80,
+    "type": "grass",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Aqua Cutter": {
+    "bp": 70,
+    "type": "water",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Aqua Jet": {
+    "bp": 40,
+    "type": "water",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Aqua Step": {
+    "bp": 80,
+    "type": "water",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Aqua Tail": {
+    "bp": 90,
+    "type": "water",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Arm Thrust": {
+    "bp": 15,
+    "type": "fighting",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Armor Cannon": {
+    "bp": 120,
+    "type": "fire",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Assurance": {
+    "bp": 60,
+    "type": "dark",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Astonish": {
+    "bp": 30,
+    "type": "ghost",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Astral Barrage": {
+    "bp": 120,
+    "type": "ghost",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Attack Order": {
+    "bp": 90,
+    "type": "bug",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Aura Sphere": {
+    "bp": 80,
+    "type": "fighting",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Aura Wheel": {
+    "bp": 110,
+    "type": "electric",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Aurora Beam": {
+    "bp": 65,
+    "type": "ice",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Avalanche": {
+    "bp": 60,
+    "type": "ice",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Axe Kick": {
+    "bp": 120,
+    "type": "fighting",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Baddy Bad": {
+    "bp": 80,
+    "type": "dark",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Barb Barrage": {
+    "bp": 60,
+    "type": "poison",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Barrage": {
+    "bp": 15,
+    "type": "normal",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Beak Blast": {
+    "bp": 100,
+    "type": "flying",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Behemoth Bash": {
+    "bp": 100,
+    "type": "steel",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Behemoth Blade": {
+    "bp": 100,
+    "type": "steel",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Belch": {
+    "bp": 120,
+    "type": "poison",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Bind": {
+    "bp": 15,
+    "type": "normal",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Bite": {
+    "bp": 60,
+    "type": "dark",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Bitter Blade": {
+    "bp": 90,
+    "type": "fire",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Bitter Malice": {
+    "bp": 75,
+    "type": "ghost",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Blast Burn": {
+    "bp": 150,
+    "type": "fire",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Blaze Kick": {
+    "bp": 85,
+    "type": "fire",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Blazing Torque": {
+    "bp": 80,
+    "type": "fire",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Bleakwind Storm": {
+    "bp": 100,
+    "type": "flying",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Blizzard": {
+    "bp": 110,
+    "type": "ice",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Blood Moon": {
+    "bp": 140,
+    "type": "normal",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Blue Flare": {
+    "bp": 130,
+    "type": "fire",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Body Press": {
+    "bp": 80,
+    "type": "fighting",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Body Slam": {
+    "bp": 85,
+    "type": "normal",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Bolt Beak": {
+    "bp": 85,
+    "type": "electric",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Bolt Strike": {
+    "bp": 130,
+    "type": "electric",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Bone Club": {
+    "bp": 65,
+    "type": "ground",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Bone Rush": {
+    "bp": 25,
+    "type": "ground",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Bonemerang": {
+    "bp": 50,
+    "type": "ground",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Boomburst": {
+    "bp": 140,
+    "type": "normal",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Bounce": {
+    "bp": 85,
+    "type": "flying",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Bouncy Bubble": {
+    "bp": 60,
+    "type": "water",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Branch Poke": {
+    "bp": 40,
+    "type": "grass",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Brave Bird": {
+    "bp": 120,
+    "type": "flying",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Breaking Swipe": {
+    "bp": 60,
+    "type": "dragon",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Brick Break": {
+    "bp": 75,
+    "type": "fighting",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Brine": {
+    "bp": 65,
+    "type": "water",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Brutal Swing": {
+    "bp": 60,
+    "type": "dark",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Bubble": {
+    "bp": 40,
+    "type": "water",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Bubble Beam": {
+    "bp": 65,
+    "type": "water",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Bug Bite": {
+    "bp": 60,
+    "type": "bug",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Bug Buzz": {
+    "bp": 90,
+    "type": "bug",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Bulldoze": {
+    "bp": 60,
+    "type": "ground",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Bullet Punch": {
+    "bp": 40,
+    "type": "steel",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": true
+  },
+  "Bullet Seed": {
+    "bp": 25,
+    "type": "grass",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Burn Up": {
+    "bp": 130,
+    "type": "fire",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Burning Jealousy": {
+    "bp": 70,
+    "type": "fire",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Buzzy Buzz": {
+    "bp": 60,
+    "type": "electric",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Catastropika": {
+    "bp": 210,
+    "type": "electric",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Ceaseless Edge": {
+    "bp": 65,
+    "type": "dark",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Charge Beam": {
+    "bp": 50,
+    "type": "electric",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Chatter": {
+    "bp": 65,
+    "type": "flying",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Chilling Water": {
+    "bp": 50,
+    "type": "water",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Chip Away": {
+    "bp": 70,
+    "type": "normal",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Chloroblast": {
+    "bp": 150,
+    "type": "grass",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Circle Throw": {
+    "bp": 60,
+    "type": "fighting",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Clamp": {
+    "bp": 35,
+    "type": "water",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Clanging Scales": {
+    "bp": 110,
+    "type": "dragon",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Clangorous Soulblaze": {
+    "bp": 185,
+    "type": "dragon",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Clear Smog": {
+    "bp": 50,
+    "type": "poison",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Close Combat": {
+    "bp": 120,
+    "type": "fighting",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Collision Course": {
+    "bp": 100,
+    "type": "fighting",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Combat Torque": {
+    "bp": 100,
+    "type": "fighting",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Comet Punch": {
+    "bp": 18,
+    "type": "normal",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": true
+  },
+  "Comeuppance": {
+    "bp": 1,
+    "type": "dark",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Confusion": {
+    "bp": 50,
+    "type": "psychic",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Constrict": {
+    "bp": 10,
+    "type": "normal",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Core Enforcer": {
+    "bp": 100,
+    "type": "dragon",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Covet": {
+    "bp": 60,
+    "type": "normal",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Crabhammer": {
+    "bp": 100,
+    "type": "water",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Cross Chop": {
+    "bp": 100,
+    "type": "fighting",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Cross Poison": {
+    "bp": 70,
+    "type": "poison",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Crunch": {
+    "bp": 80,
+    "type": "dark",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Crush Claw": {
+    "bp": 75,
+    "type": "normal",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Cut": {
+    "bp": 50,
+    "type": "normal",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Dark Pulse": {
+    "bp": 80,
+    "type": "dark",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Darkest Lariat": {
+    "bp": 85,
+    "type": "dark",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Dazzling Gleam": {
+    "bp": 80,
+    "type": "fairy",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Diamond Storm": {
+    "bp": 100,
+    "type": "rock",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Dig": {
+    "bp": 80,
+    "type": "ground",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Dire Claw": {
+    "bp": 80,
+    "type": "poison",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Disarming Voice": {
+    "bp": 40,
+    "type": "fairy",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Discharge": {
+    "bp": 80,
+    "type": "electric",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Dive": {
+    "bp": 80,
+    "type": "water",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Dizzy Punch": {
+    "bp": 70,
+    "type": "normal",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": true
+  },
+  "Doom Desire": {
+    "bp": 140,
+    "type": "steel",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Double Edge": {
+    "bp": 120,
+    "type": "normal",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Double Hit": {
+    "bp": 35,
+    "type": "normal",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Double Iron Bash": {
+    "bp": 60,
+    "type": "steel",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Double Kick": {
+    "bp": 30,
+    "type": "fighting",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Double Shock": {
+    "bp": 120,
+    "type": "electric",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Double Slap": {
+    "bp": 15,
+    "type": "normal",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Draco Meteor": {
+    "bp": 130,
+    "type": "dragon",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Dragon Ascent": {
+    "bp": 120,
+    "type": "flying",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Dragon Breath": {
+    "bp": 60,
+    "type": "dragon",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Dragon Claw": {
+    "bp": 80,
+    "type": "dragon",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Dragon Darts": {
+    "bp": 50,
+    "type": "dragon",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Dragon Energy": {
+    "bp": 150,
+    "type": "dragon",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Dragon Hammer": {
+    "bp": 90,
+    "type": "dragon",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Dragon Pulse": {
+    "bp": 85,
+    "type": "dragon",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Dragon Rush": {
+    "bp": 100,
+    "type": "dragon",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Dragon Tail": {
+    "bp": 60,
+    "type": "dragon",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Drain Punch": {
+    "bp": 75,
+    "type": "fighting",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": true
+  },
+  "Draining Kiss": {
+    "bp": 50,
+    "type": "fairy",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Dream Eater": {
+    "bp": 100,
+    "type": "psychic",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Drill Peck": {
+    "bp": 80,
+    "type": "flying",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Drill Run": {
+    "bp": 80,
+    "type": "ground",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Drum Beating": {
+    "bp": 80,
+    "type": "grass",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Dual Chop": {
+    "bp": 40,
+    "type": "dragon",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Dual Wingbeat": {
+    "bp": 40,
+    "type": "flying",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Dynamax Cannon": {
+    "bp": 100,
+    "type": "dragon",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Dynamic Punch": {
+    "bp": 100,
+    "type": "fighting",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": true
+  },
+  "Earth Power": {
+    "bp": 90,
+    "type": "ground",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Earthquake": {
+    "bp": 100,
+    "type": "ground",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Echoed Voice": {
+    "bp": 40,
+    "type": "normal",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Eerie Spell": {
+    "bp": 80,
+    "type": "psychic",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Egg Bomb": {
+    "bp": 100,
+    "type": "normal",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Electro Drift": {
+    "bp": 100,
+    "type": "electric",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Electro Shot": {
+    "bp": 130,
+    "type": "electric",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Electroweb": {
+    "bp": 55,
+    "type": "electric",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Ember": {
+    "bp": 40,
+    "type": "fire",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Energy Ball": {
+    "bp": 90,
+    "type": "grass",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Eruption": {
+    "bp": 150,
+    "type": "fire",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Esper Wing": {
+    "bp": 80,
+    "type": "psychic",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Eternabeam": {
+    "bp": 160,
+    "type": "dragon",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Expanding Force": {
+    "bp": 80,
+    "type": "psychic",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Explosion": {
+    "bp": 250,
+    "type": "normal",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Extrasensory": {
+    "bp": 80,
+    "type": "psychic",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Extreme Speed": {
+    "bp": 80,
+    "type": "normal",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Facade": {
+    "bp": 70,
+    "type": "normal",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Fairy Wind": {
+    "bp": 40,
+    "type": "fairy",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Fake Out": {
+    "bp": 40,
+    "type": "normal",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "False Surrender": {
+    "bp": 80,
+    "type": "dark",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "False Swipe": {
+    "bp": 40,
+    "type": "normal",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Feint": {
+    "bp": 30,
+    "type": "normal",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Feint Attack": {
+    "bp": 60,
+    "type": "dark",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Fell Stinger": {
+    "bp": 50,
+    "type": "bug",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Fickle Beam": {
+    "bp": 80,
+    "type": "dragon",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Fiery Dance": {
+    "bp": 80,
+    "type": "fire",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Fiery Wrath": {
+    "bp": 90,
+    "type": "dark",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Fire Blast": {
+    "bp": 110,
+    "type": "fire",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Fire Fang": {
+    "bp": 65,
+    "type": "fire",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Fire Lash": {
+    "bp": 80,
+    "type": "fire",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Fire Pledge": {
+    "bp": 80,
+    "type": "fire",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Fire Punch": {
+    "bp": 75,
+    "type": "fire",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": true
+  },
+  "Fire Spin": {
+    "bp": 35,
+    "type": "fire",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "First Impression": {
+    "bp": 90,
+    "type": "bug",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Fishious Rend": {
+    "bp": 85,
+    "type": "water",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Flame Burst": {
+    "bp": 70,
+    "type": "fire",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Flame Charge": {
+    "bp": 50,
+    "type": "fire",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Flame Wheel": {
+    "bp": 60,
+    "type": "fire",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Flamethrower": {
+    "bp": 90,
+    "type": "fire",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Flare Blitz": {
+    "bp": 120,
+    "type": "fire",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Flash Cannon": {
+    "bp": 80,
+    "type": "steel",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Fleur Cannon": {
+    "bp": 130,
+    "type": "fairy",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Flip Turn": {
+    "bp": 60,
+    "type": "water",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Floaty Fall": {
+    "bp": 90,
+    "type": "flying",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Flower Trick": {
+    "bp": 70,
+    "type": "grass",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Fly": {
+    "bp": 90,
+    "type": "flying",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Flying Press": {
+    "bp": 100,
+    "type": "fighting",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Focus Blast": {
+    "bp": 120,
+    "type": "fighting",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Focus Punch": {
+    "bp": 150,
+    "type": "fighting",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": true
+  },
+  "Force Palm": {
+    "bp": 60,
+    "type": "fighting",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Foul Play": {
+    "bp": 95,
+    "type": "dark",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Freeze Dry": {
+    "bp": 70,
+    "type": "ice",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Freeze Shock": {
+    "bp": 140,
+    "type": "ice",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Freezing Glare": {
+    "bp": 90,
+    "type": "psychic",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Freezy Frost": {
+    "bp": 100,
+    "type": "ice",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Frenzy Plant": {
+    "bp": 150,
+    "type": "grass",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Frost Breath": {
+    "bp": 60,
+    "type": "ice",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Fury Attack": {
+    "bp": 15,
+    "type": "normal",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Fury Cutter": {
+    "bp": 40,
+    "type": "bug",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Fury Swipes": {
+    "bp": 18,
+    "type": "normal",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Fusion Bolt": {
+    "bp": 100,
+    "type": "electric",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Fusion Flare": {
+    "bp": 100,
+    "type": "fire",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Future Sight": {
+    "bp": 120,
+    "type": "psychic",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Gear Grind": {
+    "bp": 50,
+    "type": "steel",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Genesis Supernova": {
+    "bp": 185,
+    "type": "psychic",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Giga Drain": {
+    "bp": 75,
+    "type": "grass",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Giga Impact": {
+    "bp": 150,
+    "type": "normal",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Gigaton Hammer": {
+    "bp": 160,
+    "type": "steel",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Glacial Lance": {
+    "bp": 120,
+    "type": "ice",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Glaciate": {
+    "bp": 65,
+    "type": "ice",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Glaive Rush": {
+    "bp": 120,
+    "type": "dragon",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Glitzy Glow": {
+    "bp": 80,
+    "type": "psychic",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Grass Pledge": {
+    "bp": 80,
+    "type": "grass",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Grassy Glide": {
+    "bp": 55,
+    "type": "grass",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Grav Apple": {
+    "bp": 80,
+    "type": "grass",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Gunk Shot": {
+    "bp": 120,
+    "type": "poison",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Gust": {
+    "bp": 40,
+    "type": "flying",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Hammer Arm": {
+    "bp": 100,
+    "type": "fighting",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Head Charge": {
+    "bp": 120,
+    "type": "normal",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Head Smash": {
+    "bp": 150,
+    "type": "rock",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Headbutt": {
+    "bp": 70,
+    "type": "normal",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Headlong Rush": {
+    "bp": 120,
+    "type": "ground",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Heart Stamp": {
+    "bp": 60,
+    "type": "psychic",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Heat Wave": {
+    "bp": 95,
+    "type": "fire",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Hex": {
+    "bp": 65,
+    "type": "ghost",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Hidden Power": {
+    "bp": 60,
+    "type": "normal",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "High Horsepower": {
+    "bp": 95,
+    "type": "ground",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "High Jump Kick": {
+    "bp": 130,
+    "type": "fighting",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Hold Back": {
+    "bp": 40,
+    "type": "normal",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Horn Attack": {
+    "bp": 65,
+    "type": "normal",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Horn Leech": {
+    "bp": 75,
+    "type": "grass",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Hurricane": {
+    "bp": 110,
+    "type": "flying",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Hydro Cannon": {
+    "bp": 150,
+    "type": "water",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Hydro Pump": {
+    "bp": 110,
+    "type": "water",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Hydro Steam": {
+    "bp": 80,
+    "type": "water",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Hyper Beam": {
+    "bp": 150,
+    "type": "normal",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Hyper Drill": {
+    "bp": 100,
+    "type": "normal",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Hyper Fang": {
+    "bp": 80,
+    "type": "normal",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Hyper Voice": {
+    "bp": 90,
+    "type": "normal",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Hyperspace Fury": {
+    "bp": 100,
+    "type": "dark",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Hyperspace Hole": {
+    "bp": 80,
+    "type": "psychic",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Ice Ball": {
+    "bp": 30,
+    "type": "ice",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Ice Beam": {
+    "bp": 90,
+    "type": "ice",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Ice Burn": {
+    "bp": 140,
+    "type": "ice",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Ice Fang": {
+    "bp": 65,
+    "type": "ice",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Ice Hammer": {
+    "bp": 100,
+    "type": "ice",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Ice Punch": {
+    "bp": 75,
+    "type": "ice",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": true
+  },
+  "Ice Shard": {
+    "bp": 40,
+    "type": "ice",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Ice Spinner": {
+    "bp": 80,
+    "type": "ice",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Icicle Crash": {
+    "bp": 85,
+    "type": "ice",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Icicle Spear": {
+    "bp": 25,
+    "type": "ice",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Icy Wind": {
+    "bp": 55,
+    "type": "ice",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Incinerate": {
+    "bp": 60,
+    "type": "fire",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Infernal Parade": {
+    "bp": 60,
+    "type": "ghost",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Inferno": {
+    "bp": 100,
+    "type": "fire",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Infestation": {
+    "bp": 20,
+    "type": "bug",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Iron Head": {
+    "bp": 80,
+    "type": "steel",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Iron Tail": {
+    "bp": 100,
+    "type": "steel",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Ivy Cudgel": {
+    "bp": 100,
+    "type": "grass",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Jaw Lock": {
+    "bp": 80,
+    "type": "dark",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Jet Punch": {
+    "bp": 60,
+    "type": "water",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": true
+  },
+  "Judgment": {
+    "bp": 100,
+    "type": "normal",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Jump Kick": {
+    "bp": 100,
+    "type": "fighting",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Karate Chop": {
+    "bp": 50,
+    "type": "fighting",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Knock Off": {
+    "bp": 65,
+    "type": "dark",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Kowtow Cleave": {
+    "bp": 85,
+    "type": "dark",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Lands Wrath": {
+    "bp": 90,
+    "type": "ground",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Lash Out": {
+    "bp": 75,
+    "type": "dark",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Last Resort": {
+    "bp": 140,
+    "type": "normal",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Last Respects": {
+    "bp": 50,
+    "type": "ghost",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Lava Plume": {
+    "bp": 80,
+    "type": "fire",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Leaf Blade": {
+    "bp": 90,
+    "type": "grass",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Leaf Storm": {
+    "bp": 130,
+    "type": "grass",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Leaf Tornado": {
+    "bp": 65,
+    "type": "grass",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Leafage": {
+    "bp": 40,
+    "type": "grass",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Leech Life": {
+    "bp": 80,
+    "type": "bug",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Lets Snuggle Forever": {
+    "bp": 190,
+    "type": "fairy",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Lick": {
+    "bp": 30,
+    "type": "ghost",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Light Of Ruin": {
+    "bp": 140,
+    "type": "fairy",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Light That Burns The Sky": {
+    "bp": 200,
+    "type": "psychic",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Liquidation": {
+    "bp": 85,
+    "type": "water",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Low Sweep": {
+    "bp": 65,
+    "type": "fighting",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Lumina Crash": {
+    "bp": 80,
+    "type": "psychic",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Lunge": {
+    "bp": 80,
+    "type": "bug",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Luster Purge": {
+    "bp": 95,
+    "type": "psychic",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Mach Punch": {
+    "bp": 40,
+    "type": "fighting",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": true
+  },
+  "Magical Leaf": {
+    "bp": 60,
+    "type": "grass",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Magical Torque": {
+    "bp": 100,
+    "type": "fairy",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Magma Storm": {
+    "bp": 100,
+    "type": "fire",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Magnet Bomb": {
+    "bp": 60,
+    "type": "steel",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Make It Rain": {
+    "bp": 120,
+    "type": "steel",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Malicious Moonsault": {
+    "bp": 180,
+    "type": "dark",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Malignant Chain": {
+    "bp": 100,
+    "type": "poison",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Matcha Gotcha": {
+    "bp": 80,
+    "type": "grass",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Max Airstream": {
+    "bp": 10,
+    "type": "flying",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Max Darkness": {
+    "bp": 10,
+    "type": "dark",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Max Flare": {
+    "bp": 100,
+    "type": "fire",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Max Flutterby": {
+    "bp": 10,
+    "type": "bug",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Max Geyser": {
+    "bp": 10,
+    "type": "water",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Max Hailstorm": {
+    "bp": 10,
+    "type": "ice",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Max Knuckle": {
+    "bp": 10,
+    "type": "fighting",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Max Lightning": {
+    "bp": 10,
+    "type": "electric",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Max Mindstorm": {
+    "bp": 10,
+    "type": "psychic",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Max Ooze": {
+    "bp": 10,
+    "type": "poison",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Max Overgrowth": {
+    "bp": 10,
+    "type": "grass",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Max Phantasm": {
+    "bp": 10,
+    "type": "ghost",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Max Quake": {
+    "bp": 10,
+    "type": "ground",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Max Rockfall": {
+    "bp": 10,
+    "type": "rock",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Max Starfall": {
+    "bp": 10,
+    "type": "fairy",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Max Steelspike": {
+    "bp": 10,
+    "type": "steel",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Max Strike": {
+    "bp": 10,
+    "type": "normal",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Max Wyrmwind": {
+    "bp": 10,
+    "type": "dragon",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Mega Drain": {
+    "bp": 40,
+    "type": "grass",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Mega Kick": {
+    "bp": 120,
+    "type": "normal",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Mega Punch": {
+    "bp": 80,
+    "type": "normal",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": true
+  },
+  "Megahorn": {
+    "bp": 120,
+    "type": "bug",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Menacing Moonraze Maelstrom": {
+    "bp": 200,
+    "type": "ghost",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Metal Claw": {
+    "bp": 50,
+    "type": "steel",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Meteor Assault": {
+    "bp": 150,
+    "type": "fighting",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Meteor Beam": {
+    "bp": 120,
+    "type": "rock",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Meteor Mash": {
+    "bp": 90,
+    "type": "steel",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Mighty Cleave": {
+    "bp": 95,
+    "type": "rock",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Mind Blown": {
+    "bp": 150,
+    "type": "fire",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Mirror Shot": {
+    "bp": 65,
+    "type": "steel",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Mist Ball": {
+    "bp": 95,
+    "type": "psychic",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Misty Explosion": {
+    "bp": 100,
+    "type": "fairy",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Moonblast": {
+    "bp": 95,
+    "type": "fairy",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Moongeist Beam": {
+    "bp": 100,
+    "type": "ghost",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Mortal Spin": {
+    "bp": 30,
+    "type": "poison",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Mountain Gale": {
+    "bp": 100,
+    "type": "ice",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Mud Bomb": {
+    "bp": 65,
+    "type": "ground",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Mud Shot": {
+    "bp": 55,
+    "type": "ground",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Mud Slap": {
+    "bp": 20,
+    "type": "ground",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Muddy Water": {
+    "bp": 90,
+    "type": "water",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Multi Attack": {
+    "bp": 120,
+    "type": "normal",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Mystical Fire": {
+    "bp": 75,
+    "type": "fire",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Mystical Power": {
+    "bp": 70,
+    "type": "psychic",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Needle Arm": {
+    "bp": 60,
+    "type": "grass",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Night Daze": {
+    "bp": 85,
+    "type": "dark",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Night Slash": {
+    "bp": 70,
+    "type": "dark",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Noxious Torque": {
+    "bp": 100,
+    "type": "poison",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Nuzzle": {
+    "bp": 20,
+    "type": "electric",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Oblivion Wing": {
+    "bp": 80,
+    "type": "flying",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Oceanic Operetta": {
+    "bp": 195,
+    "type": "water",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Octazooka": {
+    "bp": 65,
+    "type": "water",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Ominous Wind": {
+    "bp": 60,
+    "type": "ghost",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Order Up": {
+    "bp": 80,
+    "type": "dragon",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Origin Pulse": {
+    "bp": 110,
+    "type": "water",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Outrage": {
+    "bp": 120,
+    "type": "dragon",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Overdrive": {
+    "bp": 80,
+    "type": "electric",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Overheat": {
+    "bp": 130,
+    "type": "fire",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Parabolic Charge": {
+    "bp": 65,
+    "type": "electric",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Pay Day": {
+    "bp": 40,
+    "type": "normal",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Payback": {
+    "bp": 50,
+    "type": "dark",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Peck": {
+    "bp": 35,
+    "type": "flying",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Petal Blizzard": {
+    "bp": 90,
+    "type": "grass",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Petal Dance": {
+    "bp": 120,
+    "type": "grass",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Phantom Force": {
+    "bp": 90,
+    "type": "ghost",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Photon Geyser": {
+    "bp": 100,
+    "type": "psychic",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Pin Missile": {
+    "bp": 25,
+    "type": "bug",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Plasma Fists": {
+    "bp": 100,
+    "type": "electric",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Play Rough": {
+    "bp": 90,
+    "type": "fairy",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Pluck": {
+    "bp": 60,
+    "type": "flying",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Poison Fang": {
+    "bp": 50,
+    "type": "poison",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Poison Jab": {
+    "bp": 80,
+    "type": "poison",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Poison Sting": {
+    "bp": 15,
+    "type": "poison",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Poison Tail": {
+    "bp": 50,
+    "type": "poison",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Pollen Puff": {
+    "bp": 90,
+    "type": "bug",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Poltergeist": {
+    "bp": 110,
+    "type": "ghost",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Population Bomb": {
+    "bp": 20,
+    "type": "normal",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Pounce": {
+    "bp": 50,
+    "type": "bug",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Pound": {
+    "bp": 40,
+    "type": "normal",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Powder Snow": {
+    "bp": 40,
+    "type": "ice",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Power Gem": {
+    "bp": 80,
+    "type": "rock",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Power Trip": {
+    "bp": 20,
+    "type": "dark",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Power Up Punch": {
+    "bp": 40,
+    "type": "fighting",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": true
+  },
+  "Power Whip": {
+    "bp": 120,
+    "type": "grass",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Precipice Blades": {
+    "bp": 120,
+    "type": "ground",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Prismatic Laser": {
+    "bp": 160,
+    "type": "psychic",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Psybeam": {
+    "bp": 65,
+    "type": "psychic",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Psyblade": {
+    "bp": 80,
+    "type": "psychic",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Psychic": {
+    "bp": 90,
+    "type": "psychic",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Psychic Fangs": {
+    "bp": 85,
+    "type": "psychic",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Psychic Noise": {
+    "bp": 75,
+    "type": "psychic",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Psycho Boost": {
+    "bp": 140,
+    "type": "psychic",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Psycho Cut": {
+    "bp": 70,
+    "type": "psychic",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Psyshield Bash": {
+    "bp": 70,
+    "type": "psychic",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Psyshock": {
+    "bp": 80,
+    "type": "psychic",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Psystrike": {
+    "bp": 100,
+    "type": "psychic",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Pulverizing Pancake": {
+    "bp": 210,
+    "type": "normal",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Pursuit": {
+    "bp": 40,
+    "type": "dark",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Pyro Ball": {
+    "bp": 120,
+    "type": "fire",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Quick Attack": {
+    "bp": 40,
+    "type": "normal",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Rage": {
+    "bp": 20,
+    "type": "normal",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Rage Fist": {
+    "bp": 50,
+    "type": "ghost",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Raging Bull": {
+    "bp": 90,
+    "type": "normal",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Raging Fury": {
+    "bp": 120,
+    "type": "fire",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Rapid Spin": {
+    "bp": 50,
+    "type": "normal",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Razor Leaf": {
+    "bp": 55,
+    "type": "grass",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Razor Shell": {
+    "bp": 75,
+    "type": "water",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Razor Wind": {
+    "bp": 80,
+    "type": "normal",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Relic Song": {
+    "bp": 75,
+    "type": "normal",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Retaliate": {
+    "bp": 70,
+    "type": "normal",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Revelation Dance": {
+    "bp": 90,
+    "type": "normal",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Revenge": {
+    "bp": 60,
+    "type": "fighting",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Rising Voltage": {
+    "bp": 70,
+    "type": "electric",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Roar Of Time": {
+    "bp": 150,
+    "type": "dragon",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Rock Blast": {
+    "bp": 25,
+    "type": "rock",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Rock Climb": {
+    "bp": 90,
+    "type": "normal",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Rock Slide": {
+    "bp": 75,
+    "type": "rock",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Rock Smash": {
+    "bp": 40,
+    "type": "fighting",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Rock Throw": {
+    "bp": 50,
+    "type": "rock",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Rock Tomb": {
+    "bp": 60,
+    "type": "rock",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Rock Wrecker": {
+    "bp": 150,
+    "type": "rock",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Rolling Kick": {
+    "bp": 60,
+    "type": "fighting",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Rollout": {
+    "bp": 30,
+    "type": "rock",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Round": {
+    "bp": 60,
+    "type": "normal",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Ruination": {
+    "bp": 1,
+    "type": "dark",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Sacred Fire": {
+    "bp": 100,
+    "type": "fire",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Sacred Sword": {
+    "bp": 90,
+    "type": "fighting",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Salt Cure": {
+    "bp": 40,
+    "type": "rock",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Sand Tomb": {
+    "bp": 35,
+    "type": "ground",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Sandsear Storm": {
+    "bp": 100,
+    "type": "ground",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Sappy Seed": {
+    "bp": 100,
+    "type": "grass",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Scald": {
+    "bp": 80,
+    "type": "water",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Scale Shot": {
+    "bp": 25,
+    "type": "dragon",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Scorching Sands": {
+    "bp": 70,
+    "type": "ground",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Scratch": {
+    "bp": 40,
+    "type": "normal",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Searing Shot": {
+    "bp": 100,
+    "type": "fire",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Searing Sunraze Smash": {
+    "bp": 200,
+    "type": "steel",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Secret Power": {
+    "bp": 70,
+    "type": "normal",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Secret Sword": {
+    "bp": 85,
+    "type": "fighting",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Seed Bomb": {
+    "bp": 80,
+    "type": "grass",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Seed Flare": {
+    "bp": 120,
+    "type": "grass",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Self Destruct": {
+    "bp": 200,
+    "type": "normal",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Shadow Ball": {
+    "bp": 80,
+    "type": "ghost",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Shadow Blast": {
+    "bp": 80,
+    "type": "shadow",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Shadow Blitz": {
+    "bp": 40,
+    "type": "shadow",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Shadow Bolt": {
+    "bp": 75,
+    "type": "shadow",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Shadow Bone": {
+    "bp": 85,
+    "type": "ghost",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Shadow Break": {
+    "bp": 75,
+    "type": "shadow",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Shadow Chill": {
+    "bp": 75,
+    "type": "shadow",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Shadow Claw": {
+    "bp": 70,
+    "type": "ghost",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Shadow End": {
+    "bp": 120,
+    "type": "shadow",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Shadow Fire": {
+    "bp": 75,
+    "type": "shadow",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Shadow Force": {
+    "bp": 120,
+    "type": "ghost",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Shadow Punch": {
+    "bp": 60,
+    "type": "ghost",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": true
+  },
+  "Shadow Rave": {
+    "bp": 70,
+    "type": "shadow",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Shadow Rush": {
+    "bp": 55,
+    "type": "shadow",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Shadow Sneak": {
+    "bp": 40,
+    "type": "ghost",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Shadow Storm": {
+    "bp": 95,
+    "type": "shadow",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Shadow Wave": {
+    "bp": 50,
+    "type": "shadow",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Shell Side Arm": {
+    "bp": 90,
+    "type": "poison",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Shell Trap": {
+    "bp": 150,
+    "type": "fire",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Shock Wave": {
+    "bp": 60,
+    "type": "electric",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Signal Beam": {
+    "bp": 75,
+    "type": "bug",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Silver Wind": {
+    "bp": 60,
+    "type": "bug",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Sinister Arrow Raid": {
+    "bp": 180,
+    "type": "ghost",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Sizzly Slide": {
+    "bp": 60,
+    "type": "fire",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Skitter Smack": {
+    "bp": 70,
+    "type": "bug",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Skull Bash": {
+    "bp": 130,
+    "type": "normal",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Sky Attack": {
+    "bp": 140,
+    "type": "flying",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Sky Drop": {
+    "bp": 60,
+    "type": "flying",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Sky Uppercut": {
+    "bp": 85,
+    "type": "fighting",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": true
+  },
+  "Slam": {
+    "bp": 80,
+    "type": "normal",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Slash": {
+    "bp": 70,
+    "type": "normal",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Sludge": {
+    "bp": 65,
+    "type": "poison",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Sludge Bomb": {
+    "bp": 90,
+    "type": "poison",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Sludge Wave": {
+    "bp": 95,
+    "type": "poison",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Smack Down": {
+    "bp": 50,
+    "type": "rock",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Smart Strike": {
+    "bp": 70,
+    "type": "steel",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Smelling Salts": {
+    "bp": 70,
+    "type": "normal",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Smog": {
+    "bp": 30,
+    "type": "poison",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Snap Trap": {
+    "bp": 35,
+    "type": "grass",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Snarl": {
+    "bp": 55,
+    "type": "dark",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Snipe Shot": {
+    "bp": 80,
+    "type": "water",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Snore": {
+    "bp": 50,
+    "type": "normal",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Solar Beam": {
+    "bp": 120,
+    "type": "grass",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Solar Blade": {
+    "bp": 125,
+    "type": "grass",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Soul Stealing 7 Star Strike": {
+    "bp": 195,
+    "type": "ghost",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Spacial Rend": {
+    "bp": 100,
+    "type": "dragon",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Spark": {
+    "bp": 65,
+    "type": "electric",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Sparkling Aria": {
+    "bp": 90,
+    "type": "water",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Sparkly Swirl": {
+    "bp": 120,
+    "type": "fairy",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Spectral Thief": {
+    "bp": 90,
+    "type": "ghost",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Spike Cannon": {
+    "bp": 20,
+    "type": "normal",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Spin Out": {
+    "bp": 100,
+    "type": "steel",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Spirit Break": {
+    "bp": 75,
+    "type": "fairy",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Spirit Shackle": {
+    "bp": 80,
+    "type": "ghost",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Splintered Stormshards": {
+    "bp": 190,
+    "type": "rock",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Splishy Splash": {
+    "bp": 90,
+    "type": "water",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Springtide Storm": {
+    "bp": 100,
+    "type": "fairy",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Steam Eruption": {
+    "bp": 110,
+    "type": "water",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Steamroller": {
+    "bp": 65,
+    "type": "bug",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Steel Beam": {
+    "bp": 140,
+    "type": "steel",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Steel Roller": {
+    "bp": 130,
+    "type": "steel",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Steel Wing": {
+    "bp": 70,
+    "type": "steel",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Stoked Sparksurfer": {
+    "bp": 175,
+    "type": "electric",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Stomp": {
+    "bp": 65,
+    "type": "normal",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Stomping Tantrum": {
+    "bp": 75,
+    "type": "ground",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Stone Axe": {
+    "bp": 65,
+    "type": "rock",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Stone Edge": {
+    "bp": 100,
+    "type": "rock",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Stored Power": {
+    "bp": 20,
+    "type": "psychic",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Storm Throw": {
+    "bp": 60,
+    "type": "fighting",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Strange Steam": {
+    "bp": 90,
+    "type": "fairy",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Strength": {
+    "bp": 80,
+    "type": "normal",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Struggle": {
+    "bp": 50,
+    "type": "normal",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Struggle Bug": {
+    "bp": 50,
+    "type": "bug",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Submission": {
+    "bp": 80,
+    "type": "fighting",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Sucker Punch": {
+    "bp": 70,
+    "type": "dark",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": true
+  },
+  "Sunsteel Strike": {
+    "bp": 100,
+    "type": "steel",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Supercell Slam": {
+    "bp": 100,
+    "type": "electric",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Superpower": {
+    "bp": 120,
+    "type": "fighting",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Surf": {
+    "bp": 90,
+    "type": "water",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Surging Strikes": {
+    "bp": 25,
+    "type": "water",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Swift": {
+    "bp": 60,
+    "type": "normal",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Synchronoise": {
+    "bp": 120,
+    "type": "psychic",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Syrup Bomb": {
+    "bp": 60,
+    "type": "grass",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Tachyon Cutter": {
+    "bp": 50,
+    "type": "steel",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Tackle": {
+    "bp": 40,
+    "type": "normal",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Tail Slap": {
+    "bp": 25,
+    "type": "normal",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Take Down": {
+    "bp": 90,
+    "type": "normal",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Techno Blast": {
+    "bp": 120,
+    "type": "normal",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Temper Flare": {
+    "bp": 75,
+    "type": "fire",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Tera Blast": {
+    "bp": 80,
+    "type": "normal",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Tera Starstorm": {
+    "bp": 120,
+    "type": "normal",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Terrain Pulse": {
+    "bp": 50,
+    "type": "normal",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Thief": {
+    "bp": 60,
+    "type": "dark",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Thousand Arrows": {
+    "bp": 90,
+    "type": "ground",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Thousand Waves": {
+    "bp": 90,
+    "type": "ground",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Thrash": {
+    "bp": 120,
+    "type": "normal",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Throat Chop": {
+    "bp": 80,
+    "type": "dark",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Thunder": {
+    "bp": 110,
+    "type": "electric",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Thunder Cage": {
+    "bp": 80,
+    "type": "electric",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Thunder Fang": {
+    "bp": 65,
+    "type": "electric",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Thunder Punch": {
+    "bp": 75,
+    "type": "electric",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": true
+  },
+  "Thunder Shock": {
+    "bp": 40,
+    "type": "electric",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Thunderbolt": {
+    "bp": 90,
+    "type": "electric",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Thunderclap": {
+    "bp": 70,
+    "type": "electric",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Thunderous Kick": {
+    "bp": 90,
+    "type": "fighting",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Torch Song": {
+    "bp": 80,
+    "type": "fire",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Trailblaze": {
+    "bp": 50,
+    "type": "grass",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Tri Attack": {
+    "bp": 80,
+    "type": "normal",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Triple Arrows": {
+    "bp": 90,
+    "type": "fighting",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Triple Axel": {
+    "bp": 20,
+    "type": "ice",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Triple Dive": {
+    "bp": 30,
+    "type": "water",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Triple Kick": {
+    "bp": 10,
+    "type": "fighting",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Trop Kick": {
+    "bp": 70,
+    "type": "grass",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Twin Beam": {
+    "bp": 40,
+    "type": "psychic",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Twineedle": {
+    "bp": 25,
+    "type": "bug",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Twister": {
+    "bp": 40,
+    "type": "dragon",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "U Turn": {
+    "bp": 70,
+    "type": "bug",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Upper Hand": {
+    "bp": 65,
+    "type": "fighting",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Uproar": {
+    "bp": 90,
+    "type": "normal",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "V Create": {
+    "bp": 180,
+    "type": "fire",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Vacuum Wave": {
+    "bp": 40,
+    "type": "fighting",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Venoshock": {
+    "bp": 65,
+    "type": "poison",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Vice Grip": {
+    "bp": 55,
+    "type": "normal",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Vine Whip": {
+    "bp": 45,
+    "type": "grass",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Vital Throw": {
+    "bp": 70,
+    "type": "fighting",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Volt Switch": {
+    "bp": 70,
+    "type": "electric",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Volt Tackle": {
+    "bp": 120,
+    "type": "electric",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Wake Up Slap": {
+    "bp": 70,
+    "type": "fighting",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Water Gun": {
+    "bp": 40,
+    "type": "water",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Water Pledge": {
+    "bp": 80,
+    "type": "water",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Water Pulse": {
+    "bp": 60,
+    "type": "water",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Water Shuriken": {
+    "bp": 15,
+    "type": "water",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Water Spout": {
+    "bp": 150,
+    "type": "water",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Waterfall": {
+    "bp": 80,
+    "type": "water",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Wave Crash": {
+    "bp": 120,
+    "type": "water",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Weather Ball": {
+    "bp": 50,
+    "type": "normal",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Whirlpool": {
+    "bp": 35,
+    "type": "water",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Wicked Blow": {
+    "bp": 75,
+    "type": "dark",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Wicked Torque": {
+    "bp": 80,
+    "type": "dark",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Wild Charge": {
+    "bp": 90,
+    "type": "electric",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Wildbolt Storm": {
+    "bp": 100,
+    "type": "electric",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Wing Attack": {
+    "bp": 60,
+    "type": "flying",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Wood Hammer": {
+    "bp": 120,
+    "type": "grass",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Wrap": {
+    "bp": 15,
+    "type": "normal",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "X Scissor": {
+    "bp": 80,
+    "type": "bug",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false
+  },
+  "Zap Cannon": {
+    "bp": 120,
+    "type": "electric",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Zen Headbutt": {
+    "bp": 80,
+    "type": "psychic",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Zing Zap": {
+    "bp": 80,
+    "type": "electric",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  },
+  "Zippy Zap": {
+    "bp": 80,
+    "type": "electric",
+    "category": "physical",
+    "makesContact": false,
+    "hasSecondary": true,
+    "isPunch": false
+  }
+}

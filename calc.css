@@ -1,0 +1,217 @@
+/* calc.css — Damage Calculator styles (extends style.css) */
+
+/* ── HEADER NAV ── */
+.btn-nav {
+  padding: 8px 16px; border-radius: 6px; font-size: 0.85rem; font-weight: 600;
+  text-decoration: none; border: 1px solid var(--border); color: var(--text);
+  background: var(--surface); transition: all .15s; white-space: nowrap;
+}
+.btn-nav:hover { border-color: var(--accent); color: var(--accent); }
+
+/* ── LOAD STATE ── */
+.load-msg { color: var(--muted); padding: 40px; text-align: center; font-size: 0.9rem; }
+
+/* ── PANELS ── */
+.calc-panels {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+@media (max-width: 720px) { .calc-panels { grid-template-columns: 1fr; } }
+
+.calc-panel {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 10px; padding: 18px; display: flex; flex-direction: column; gap: 10px;
+}
+.panel-title {
+  font-size: 0.9rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 1px; margin-bottom: 4px;
+}
+.atk-title { color: #ef5350; }
+.def-title { color: #42a5f5; }
+
+/* ── FIELD ROWS ── */
+.field-row {
+  display: flex; align-items: center; gap: 10px;
+  min-height: 32px;
+}
+.field-placeholder { min-height: 32px; }
+
+.field-label {
+  font-size: 0.72rem; color: var(--muted); text-transform: uppercase;
+  letter-spacing: 0.5px; width: 72px; flex-shrink: 0;
+}
+.field-input-wrap { display: flex; flex-direction: column; gap: 4px; flex: 1; }
+
+.pkmn-input {
+  background: var(--bg); border: 1px solid var(--border); color: var(--text);
+  padding: 6px 10px; border-radius: 6px; font-size: 0.85rem; outline: none; width: 100%;
+}
+.pkmn-input:focus { border-color: var(--accent); }
+
+.field-select {
+  background: var(--bg); border: 1px solid var(--border); color: var(--text);
+  padding: 6px 8px; border-radius: 6px; font-size: 0.82rem; outline: none;
+  width: 100%; cursor: pointer;
+}
+.field-select:focus { border-color: var(--accent); }
+
+/* ── TYPE BADGES ── */
+.type-row { display: flex; gap: 5px; flex-wrap: wrap; }
+.type-badge {
+  font-size: 0.68rem; font-weight: 700; padding: 2px 7px; border-radius: 10px;
+  text-transform: uppercase; letter-spacing: 0.5px;
+}
+.type-normal   { background:#9e9e9e; color:#fff; }
+.type-fire     { background:#ef5350; color:#fff; }
+.type-water    { background:#42a5f5; color:#fff; }
+.type-grass    { background:#66bb6a; color:#fff; }
+.type-electric { background:#fdd835; color:#333; }
+.type-ice      { background:#80deea; color:#333; }
+.type-fighting { background:#e53935; color:#fff; }
+.type-poison   { background:#ab47bc; color:#fff; }
+.type-ground   { background:#a1887f; color:#fff; }
+.type-flying   { background:#90caf9; color:#333; }
+.type-psychic  { background:#f06292; color:#fff; }
+.type-bug      { background:#8bc34a; color:#fff; }
+.type-rock     { background:#8d6e63; color:#fff; }
+.type-ghost    { background:#5e35b1; color:#fff; }
+.type-dragon   { background:#512da8; color:#fff; }
+.type-dark     { background:#4e342e; color:#fff; }
+.type-steel    { background:#78909c; color:#fff; }
+.type-fairy    { background:#f48fb1; color:#fff; }
+
+/* ── CATEGORY BADGE ── */
+.cat-badge {
+  font-size: 0.7rem; font-weight: 700; padding: 2px 8px; border-radius: 10px;
+  text-transform: uppercase; letter-spacing: 0.5px;
+}
+.cat-physical { background: #ef5350; color: #fff; }
+.cat-special  { background: #42a5f5; color: #fff; }
+.cat-status   { background: #78909c; color: #fff; }
+
+/* ── NATURE RADIOS ── */
+.nature-group { display: flex; gap: 6px; }
+.nat-opt {
+  display: flex; align-items: center; gap: 4px;
+  cursor: pointer; font-size: 0.85rem; color: var(--muted);
+}
+.nat-opt input[type="radio"] { display: none; }
+.nat-opt span {
+  padding: 4px 10px; border-radius: 6px; border: 1px solid var(--border);
+  background: var(--bg); font-weight: 700; transition: all .12s;
+}
+.nat-opt input[type="radio"]:checked + span {
+  border-color: var(--accent); background: #1a0a3a; color: var(--accent);
+}
+
+/* ── SP SLIDER ── */
+.slider-wrap { display: flex; align-items: center; gap: 10px; flex: 1; }
+.sp-slider {
+  flex: 1; height: 4px; -webkit-appearance: none; appearance: none;
+  border-radius: 2px; background: var(--border); outline: none; cursor: pointer;
+}
+.sp-slider::-webkit-slider-thumb {
+  -webkit-appearance: none; width: 16px; height: 16px;
+  border-radius: 50%; background: var(--accent); cursor: pointer;
+}
+.sp-slider::-moz-range-thumb {
+  width: 16px; height: 16px; border-radius: 50%; background: var(--accent);
+  border: none; cursor: pointer;
+}
+.sp-val {
+  width: 28px; text-align: right; font-size: 0.85rem;
+  font-weight: 700; color: var(--accent);
+}
+
+/* ── STAT PILL ── */
+.stat-pill {
+  font-size: 0.75rem; color: var(--muted); margin-top: 2px;
+  min-height: 20px; line-height: 1.5;
+}
+.stat-pill strong { color: var(--text); }
+
+/* ── RESULTS ── */
+.calc-results {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 10px; padding: 20px;
+}
+.dmg-placeholder { color: var(--muted); font-size: 0.9rem; text-align: center; padding: 20px 0; }
+
+/* Damage header line */
+.dmg-header {
+  font-size: 1.1rem; font-weight: 700; margin-bottom: 6px;
+  display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+}
+.dmg-range { color: var(--text); }
+.dmg-pct   { color: var(--muted); font-size: 0.85rem; font-weight: 400; }
+.dmg-ko    { font-size: 0.85rem; }
+.ko-0      { color: var(--muted); }
+.ko-low    { color: #ffd54f; }
+.ko-mid    { color: #ffb300; }
+.ko-high   { color: #ef5350; }
+.ko-full   { color: #ef5350; font-weight: 700; }
+
+/* Modifier tags */
+.dmg-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 10px; }
+.dmg-tag {
+  font-size: 0.72rem; font-weight: 700; padding: 2px 8px; border-radius: 10px;
+  text-transform: uppercase; letter-spacing: 0.5px;
+}
+.tag-stab  { background: #1b3d1b; color: #81c784; }
+.tag-se2   { background: #0d3460; color: #90caf9; }
+.tag-se4   { background: #1a0a2e; color: #ce93d8; }
+.tag-nve   { background: #222; color: #999; }
+.tag-imm   { background: #3d1515; color: #ef9a9a; }
+
+/* Rolls visualization */
+.rolls-row {
+  display: flex; gap: 3px; flex-wrap: wrap; margin-bottom: 12px;
+}
+.roll-cell {
+  width: 18px; height: 18px; border-radius: 3px; font-size: 0.6rem;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--border); color: var(--muted);
+}
+.roll-cell.ko { background: #b71c1c; color: #fff; }
+
+/* Stat summary line */
+.dmg-stats {
+  font-size: 0.78rem; color: var(--muted);
+  padding-top: 8px; border-top: 1px solid var(--border);
+}
+.dmg-stats strong { color: #b39ddb; }
+
+/* ── OPT BUTTONS ── */
+.opt-row { display: flex; gap: 10px; margin-top: 16px; flex-wrap: wrap; }
+.btn-opt {
+  padding: 8px 18px; border-radius: 8px; font-size: 0.85rem; font-weight: 600;
+  cursor: pointer; border: 1px solid; transition: all .15s;
+}
+.btn-survive { background: #0a2a1a; border-color: #2e7d32; color: #81c784; }
+.btn-survive:hover { background: #1b3d1b; }
+.btn-ohko { background: #2a0a0a; border-color: #b71c1c; color: #ef9a9a; }
+.btn-ohko:hover { background: #3d1515; }
+.btn-opt:disabled { opacity: 0.4; cursor: default; }
+
+/* ── OPT OUTPUT ── */
+.opt-output { margin-top: 14px; }
+.opt-section {
+  background: var(--surface2); border: 1px solid var(--border);
+  border-radius: 8px; padding: 14px; margin-bottom: 10px;
+}
+.opt-title { font-size: 0.78rem; color: var(--muted); text-transform: uppercase;
+  letter-spacing: 0.5px; margin-bottom: 8px; }
+.opt-result { font-size: 0.9rem; line-height: 1.6; }
+.opt-sp     { color: var(--accent); font-weight: 700; }
+.opt-none   { color: var(--muted); font-style: italic; }
+
+/* OHKO table */
+.ohko-table { width: 100%; border-collapse: collapse; font-size: 0.82rem; }
+.ohko-table td { padding: 4px 8px; border-bottom: 1px solid var(--border); }
+.ohko-table td:first-child { color: var(--muted); width: 120px; }
+.ohko-table td:nth-child(2) { color: var(--accent); font-weight: 700; width: 80px; }
+.ohko-table td:last-child { color: var(--muted); }
+.ohko-table tr.ohko-current td { color: var(--text); }
+.ohko-table tr.ohko-current td:nth-child(2) { color: #81c784; }
