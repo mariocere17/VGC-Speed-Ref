@@ -88,15 +88,17 @@ const DEF_ITEMS = [
   { id:'eviolite',     label:'Eviolite (Def/SpD ×1.5)' },
 ];
 
+// Ordered by auto-select priority: the first matching ability is picked when the
+// user selects a Pokémon. More impactful / unconditional abilities come first.
 const ATK_ABILITIES = [
   { id:'',             label:'None' },
-  { id:'adaptability', label:'Adaptability (STAB ×2)' },
   { id:'huge-power',   label:'Huge Power (Atk ×2)' },
   { id:'pure-power',   label:'Pure Power (Atk ×2)' },
-  { id:'technician',   label:'Technician (BP≤60 ×1.5)' },
-  { id:'sheer-force',  label:'Sheer Force (secondary ×1.3)' },
+  { id:'adaptability', label:'Adaptability (STAB ×2)' },
   { id:'tough-claws',  label:'Tough Claws (contact ×1.3)' },
+  { id:'technician',   label:'Technician (BP≤60 ×1.5)' },
   { id:'iron-fist',    label:'Iron Fist (punch ×1.2)' },
+  { id:'sheer-force',  label:'Sheer Force (secondary ×1.3)' },
   { id:'guts',         label:'Guts (statused Atk ×1.5)' },
 ];
 
@@ -415,6 +417,12 @@ window.findMinSurvive = function () {
   const out = document.getElementById('optOutput');
   const defLabel = isPhysical ? 'Def' : 'SpD';
 
+  // SP already spent in other stats — constrains the 66-SP budget
+  const defStatKey = isPhysical ? 'Def' : 'Spd';
+  const otherSP = STAT_IDS.reduce((sum, id) =>
+    (id === 'Hp' || id === defStatKey) ? sum : sum + spVal('def' + id + 'SP'), 0);
+  const budget = 66 - otherSP;
+
   if (!solutions.length) {
     out.innerHTML = `<div class="opt-section">
       <div class="opt-title">🛡 Min SP to survive</div>
@@ -430,11 +438,15 @@ window.findMinSurvive = function () {
     const minPct  = (sol.rolls[0]  / sol.hp * 100).toFixed(1);
     const maxPct  = (sol.rolls[15] / sol.hp * 100).toFixed(1);
     const koColor = koCount === 0 ? '#81c784' : '#ffd54f';
+    const over    = sol.total > budget;
+    const overWarn = over
+      ? ` <span style="color:#ef5350" title="Excede el presupuesto de 66 SP dados los ${otherSP} SP ya usados en otras stats">⚠ excede budget</span>`
+      : '';
     return `<div class="opt-section">
       <div class="opt-title">${title}</div>
       <div class="opt-result">
         <span class="opt-sp">+${sol.hpSP} HP SP + ${sol.defSP} ${defLabel} SP</span>
-        <span style="color:var(--muted)"> (${sol.total} SP total)</span><br>
+        <span style="color:var(--muted)"> (${sol.total} SP total)</span>${overWarn}<br>
         After: ${sol.rolls[0]}–${sol.rolls[15]} (${minPct}%–${maxPct}%)
         &nbsp;·&nbsp; <span style="color:${koColor}">${koLabel} OHKO</span>
       </div>
@@ -507,12 +519,20 @@ window.findMinOHKO = function () {
   const statLabel = isPhysical ? 'Atk' : 'SpA';
   const defLabel  = isPhysical ? 'Def' : 'SpD';
 
+  // Budget check: how much SP the attacker has already spent in OTHER stats
+  const atkStatId  = isPhysical ? 'Atk' : 'Spa';
+  const otherAtkSP = STAT_IDS.reduce((sum, id) =>
+    id === atkStatId ? sum : sum + spVal('atk' + id + 'SP'), 0);
+  const atkBudget  = 66 - otherAtkSP;
+
   let rows = '';
   for (const r of results) {
     const isCurrent = r.found && r.found.sp === curSP;
+    const over      = r.found && r.found.sp > atkBudget;
+    const overMark  = over ? ' <span style="color:#ef5350" title="Excede 66 SP con el resto de stats">⚠</span>' : '';
     rows += `<tr class="${isCurrent ? 'ohko-current' : ''}">
       <td>${r.label}</td>
-      <td>${r.found ? r.found.sp + ' ' + statLabel + ' SP' : '—'}</td>
+      <td>${r.found ? r.found.sp + ' ' + statLabel + ' SP' + overMark : '—'}</td>
       <td>${r.found
         ? `${r.found.rolls[0]}–${r.found.rolls[15]} · ${(r.found.koRolls/16*100).toFixed(2)}% KO`
         : 'Cannot reach'}</td>
