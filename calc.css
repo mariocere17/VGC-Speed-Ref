@@ -147,10 +147,22 @@
 
 .stat-row {
   display: grid;
-  grid-template-columns: 30px 1fr 26px 44px;
+  grid-template-columns: 30px 1fr 26px 44px 46px;
   align-items: center;
   gap: 6px;
 }
+
+/* ── STAGE SELECT ── */
+.stage-select {
+  width: 100%; padding: 2px 1px; border-radius: 4px; font-size: 0.72rem;
+  background: var(--bg); border: 1px solid var(--border); color: var(--muted);
+  outline: none; cursor: pointer; text-align: center;
+  -webkit-appearance: none; appearance: none; text-align-last: center;
+}
+.stage-select:focus  { border-color: var(--accent); }
+.stage-select.pos    { border-color: #4caf50; color: #81c784; }
+.stage-select.neg    { border-color: #e53935; color: #ef9a9a; }
+.stage-spacer        { /* alignment placeholder for HP row */ }
 
 .stat-label {
   font-size: 0.68rem; color: var(--muted); text-transform: uppercase;

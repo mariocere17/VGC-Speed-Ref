@@ -127,6 +127,12 @@ let CHAMPIONS = new Set();  // lowercase keys of Champions Pokémon
 //  MATH — stat formulas (SP system, Champions)
 // ═══════════════════════════════════════════════════════════
 
+// Stat stage multiplier: +1 = ×1.5, +2 = ×2, … +6 = ×4; -1 = ×2/3, -2 = ×1/2, … -6 = ×1/4
+function getStageMult(stage) {
+  if (!stage) return 1;
+  return stage > 0 ? (2 + stage) / 2 : 2 / (2 - stage);
+}
+
 // Non-HP stats: SP is added inside nature multiplication
 // Verified: Garchomp 130 Atk, 32 SP, Adamant → floor((145+5+32)*1.1) = 200
 function calcStat(base, sp, nat) {
@@ -184,6 +190,8 @@ function calcRolls(atkStat, defStat, bp, stabMult, atkType, defTypes) {
 // ═══════════════════════════════════════════════════════════
 function spVal(id) { return parseInt(document.getElementById(id)?.value) || 0; }
 
+function stageVal(id) { return parseInt(document.getElementById(id)?.value) || 0; }
+
 function readState() {
   return {
     atkPkmn:    document.getElementById('atkPkmn').value.toLowerCase().trim(),
@@ -195,6 +203,11 @@ function readState() {
     atkSpaSP:   spVal('atkSpaSP'),
     atkSpdSP:   spVal('atkSpdSP'),
     atkSpeSP:   spVal('atkSpeSP'),
+    atkAtkStage: stageVal('atkAtkStage'),
+    atkDefStage: stageVal('atkDefStage'),
+    atkSpaStage: stageVal('atkSpaStage'),
+    atkSpdStage: stageVal('atkSpdStage'),
+    atkSpeStage: stageVal('atkSpeStage'),
     atkItem:    document.getElementById('atkItem').value,
     atkAbility: document.getElementById('atkAbility').value,
 
@@ -206,6 +219,11 @@ function readState() {
     defSpaSP:   spVal('defSpaSP'),
     defSpdSP:   spVal('defSpdSP'),
     defSpeSP:   spVal('defSpeSP'),
+    defAtkStage: stageVal('defAtkStage'),
+    defDefStage: stageVal('defDefStage'),
+    defSpaStage: stageVal('defSpaStage'),
+    defSpdStage: stageVal('defSpdStage'),
+    defSpeStage: stageVal('defSpeStage'),
     defItem:    document.getElementById('defItem').value,
     defAbility: document.getElementById('defAbility').value,
   };
@@ -236,6 +254,10 @@ function buildAtkStat(s, moveData, isPhysical, defAbility) {
   if (defAbility === 'intimidate' && isPhysical)
     stat = Math.floor(stat * 2 / 3);
 
+  // Stat stage modifier (+6 to -6)
+  const stage = isPhysical ? s.atkAtkStage : s.atkSpaStage;
+  if (stage) stat = Math.floor(stat * getStageMult(stage));
+
   return stat;
 }
 
@@ -261,6 +283,10 @@ function buildDefStat(s, moveData, isPhysical) {
 
   if (s.defItem === 'assault-vest' && !isPhysical) def = Math.floor(def * 1.5);
   if (s.defItem === 'eviolite')                    def = Math.floor(def * 1.5);
+
+  // Stat stage modifier (+6 to -6)
+  const defStage = isPhysical ? s.defDefStage : s.defSpdStage;
+  if (defStage) def = Math.floor(def * getStageMult(defStage));
 
   return { hp, def };
 }
@@ -360,6 +386,7 @@ window.findMinSurvive = function () {
   const stabMult = buildStabMult(s, moveData, atkData);
   const statKey  = isPhysical ? 'def' : 'spd';
 
+  const defStage = isPhysical ? s.defDefStage : s.defSpdStage;
   const solutions = [];
   for (let hpSP = 0; hpSP <= 32; hpSP++) {
     for (let defSP = 0; defSP <= 32; defSP++) {
@@ -368,6 +395,7 @@ window.findMinSurvive = function () {
       let def   = calcStat(defData[statKey], defSP, nat);
       if (s.defItem === 'assault-vest' && !isPhysical) def = Math.floor(def * 1.5);
       if (s.defItem === 'eviolite')                    def = Math.floor(def * 1.5);
+      if (defStage) def = Math.floor(def * getStageMult(defStage));
 
       let rolls = calcRolls(atkStat, def, effBP, stabMult, moveData.type, defData.types);
       rolls = applyPostMods(rolls, s, moveData, isPhysical, typeEff);
@@ -445,6 +473,8 @@ window.findMinOHKO = function () {
         atkStat = Math.floor(atkStat * 2);
       if (s.defAbility === 'intimidate' && isPhysical)
         atkStat = Math.floor(atkStat * 2 / 3);
+      const atkStage = isPhysical ? s.atkAtkStage : s.atkSpaStage;
+      if (atkStage) atkStat = Math.floor(atkStat * getStageMult(atkStage));
 
       let rolls = calcRolls(atkStat, defStat, effBP, stabMult, moveData.type, defData.types);
       rolls = applyPostMods(rolls, s, moveData, isPhysical, typeEff);
@@ -498,6 +528,18 @@ window.swapPanels = function () {
     const bVal = document.getElementById('def' + id + 'SPVal');
     if (aVal) aVal.textContent = document.getElementById('atk' + id + 'SP').value;
     if (bVal) bVal.textContent = document.getElementById('def' + id + 'SP').value;
+  }
+
+  // Swap all stage selects (all except HP)
+  for (const id of ['Atk', 'Def', 'Spa', 'Spd', 'Spe']) {
+    swapVals('atk' + id + 'Stage', 'def' + id + 'Stage');
+    for (const prefix of ['atk', 'def']) {
+      const sel = document.getElementById(prefix + id + 'Stage');
+      if (sel) {
+        const v = parseInt(sel.value) || 0;
+        sel.className = 'stage-select' + (v > 0 ? ' pos' : v < 0 ? ' neg' : '');
+      }
+    }
   }
 
   // Update move datalist, ability selects, and sprites for the new roles
@@ -609,6 +651,10 @@ function updateStatDisplays(prefix, s, pkmnData, moveData) {
       val = calcHP(pkmnData.hp, sp);
     } else {
       val = calcStat(pkmnData[statKey], sp, getNatureMult(nature, statKey));
+      // Apply stage modifier to displayed value
+      const stageEl = document.getElementById(prefix + statId + 'Stage');
+      const stage   = stageEl ? parseInt(stageEl.value) || 0 : 0;
+      if (stage) val = Math.floor(val * getStageMult(stage));
     }
     compEl.textContent = val;
 
@@ -752,6 +798,18 @@ function populateSelect(elId, items) {
   sel.addEventListener('change', computeAll);
 }
 
+function populateStageSelects() {
+  const opts = [];
+  for (let s = 6; s >= -6; s--) {
+    opts.push(`<option value="${s}"${s === 0 ? ' selected' : ''}>${s > 0 ? '+' + s : s}</option>`);
+  }
+  const html = opts.join('');
+  document.querySelectorAll('.stage-select').forEach(sel => {
+    sel.innerHTML = html;
+    sel.value = '0';
+  });
+}
+
 function populateNatureSelects() {
   const natures = Object.keys(NATURES).sort();
   const opts = natures.map(n => {
@@ -790,6 +848,13 @@ function populateDataLists() {
 
 // Called when nature select changes
 window.onNatureChange = function (prefix) {
+  computeAll();
+};
+
+// Called when a stage select changes — update color + recalculate
+window.onStageChange = function (sel) {
+  const v = parseInt(sel.value) || 0;
+  sel.className = 'stage-select' + (v > 0 ? ' pos' : v < 0 ? ' neg' : '');
   computeAll();
 };
 
@@ -925,6 +990,7 @@ async function loadData() {
   bindEvents();
 }
 
-// Populate natures immediately (they don't need fetched data)
+// Populate natures and stages immediately (no fetched data needed)
 populateNatureSelects();
+populateStageSelects();
 loadData();
