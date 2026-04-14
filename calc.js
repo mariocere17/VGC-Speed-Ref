@@ -931,8 +931,8 @@ function updateAbilitySelect(prefix, pkmnKey) {
   const prevVal = sel.value;
   sel.innerHTML = filtered.map(a => `<option value="${a.id}">${a.label}</option>`).join('');
 
-  if (filtered.some(a => a.id === prevVal)) {
-    // Restore previous selection if still valid for this Pokémon
+  if (prevVal && filtered.some(a => a.id === prevVal)) {
+    // Restore a non-None ability that's still valid for this Pokémon
     sel.value = prevVal;
   } else {
     // Auto-select the first relevant ability for this Pokémon (skip 'None')
