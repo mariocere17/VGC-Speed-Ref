@@ -102,6 +102,7 @@ const ATK_ABILITIES = [
   { id:'iron-fist',    label:'Iron Fist (punch ×1.2)' },
   { id:'sheer-force',  label:'Sheer Force (secondary ×1.3)' },
   { id:'guts',         label:'Guts (statused Atk ×1.5)' },
+  { id:'sniper',       label:'Sniper (crit ×2.25)' },
 ];
 
 // Moves halved by Grassy Terrain (earthquake-family hits grounded Pokémon softer)
@@ -247,6 +248,7 @@ function readState() {
     reflect:     document.getElementById('fldReflect')?.checked     || false,
     lightScreen: document.getElementById('fldLightScreen')?.checked || false,
     auroraVeil:  document.getElementById('fldAuroraVeil')?.checked  || false,
+    crit:        document.getElementById('fldCrit')?.checked        || false,
   };
 }
 
@@ -285,7 +287,9 @@ function buildAtkStat(s, moveData, isPhysical, defAbility) {
     stat = Math.floor(stat * 2 / 3);
 
   // Stat stage modifier (+6 to -6)
-  const stage = isPhysical ? s.atkAtkStage : s.atkSpaStage;
+  // On a crit, negative attacker stages are ignored.
+  let stage = isPhysical ? s.atkAtkStage : s.atkSpaStage;
+  if (s.crit && stage < 0) stage = 0;
   if (stage) stat = Math.floor(stat * getStageMult(stage));
 
   return stat;
@@ -321,7 +325,9 @@ function buildDefStat(s, moveData, isPhysical) {
     def = Math.floor(def * 1.5);
 
   // Stat stage modifier (+6 to -6)
-  const defStage = isPhysical ? s.defDefStage : s.defSpdStage;
+  // On a crit, positive defender stages are ignored.
+  let defStage = isPhysical ? s.defDefStage : s.defSpdStage;
+  if (s.crit && defStage > 0) defStage = 0;
   if (defStage) def = Math.floor(def * getStageMult(defStage));
 
   return { hp, def };
@@ -342,7 +348,8 @@ function applyPostMods(rolls, s, moveData, isPhysical, typeEff) {
     r = r.map(d => Math.floor(d * 0.5));
   if ((defAb === 'solid-rock' || defAb === 'filter') && typeEff > 1)
     r = r.map(d => Math.floor(d * 3 / 4));
-  if ((defAb === 'multiscale' || defAb === 'shadow-shield') && s.defHPPct >= 100)
+  // Multiscale/Shadow Shield are bypassed on crits
+  if ((defAb === 'multiscale' || defAb === 'shadow-shield') && s.defHPPct >= 100 && !s.crit)
     r = r.map(d => Math.floor(d * 0.5));
   if (defAb === 'fur-coat' && isPhysical)
     r = r.map(d => Math.floor(d * 0.5));
@@ -389,14 +396,22 @@ function applyPostMods(rolls, s, moveData, isPhysical, typeEff) {
   }
 
   // ── Screens (VGC doubles: ×2732/4096 ≈ ×0.6670) ──
-  // Screens don't apply on critical hits, but we don't model crits yet.
-  const screenMult = 2732 / 4096;
-  const hasVeil = s.auroraVeil;
-  if (!hasVeil) {
-    if (s.reflect && isPhysical)      r = r.map(d => Math.floor(d * screenMult));
-    if (s.lightScreen && !isPhysical) r = r.map(d => Math.floor(d * screenMult));
-  } else {
-    r = r.map(d => Math.floor(d * screenMult));
+  // Screens are bypassed on crits.
+  if (!s.crit) {
+    const screenMult = 2732 / 4096;
+    if (s.auroraVeil) {
+      r = r.map(d => Math.floor(d * screenMult));
+    } else {
+      if (s.reflect && isPhysical)      r = r.map(d => Math.floor(d * screenMult));
+      if (s.lightScreen && !isPhysical) r = r.map(d => Math.floor(d * screenMult));
+    }
+  }
+
+  // ── Critical hit ──
+  // Base damage ×1.5 (or ×2.25 with Sniper).
+  if (s.crit) {
+    const critMult = s.atkAbility === 'sniper' ? 2.25 : 1.5;
+    r = r.map(d => Math.floor(d * critMult));
   }
 
   return r;
@@ -714,6 +729,10 @@ function renderDamage(rolls, hp, curHP, s, moveData, atkData, defData, atkStat, 
     ? `<span class="dmg-tag tag-stab">${stabMult === 2 ? 'Adaptability' : 'STAB'}</span>`
     : '';
 
+  const critTag = s.crit
+    ? `<span class="dmg-tag tag-crit">💥 ${s.atkAbility === 'sniper' ? 'Sniper Crit' : 'Crit'}</span>`
+    : '';
+
   const cells = rolls.map(d =>
     `<div class="roll-cell${d >= hp ? ' ko' : ''}" title="${d}"></div>`
   ).join('');
@@ -733,7 +752,7 @@ function renderDamage(rolls, hp, curHP, s, moveData, atkData, defData, atkStat, 
       <span class="dmg-pct">(${minPct}%–${maxPct}%)</span>
       <span class="dmg-ko ${koClass}">${koText}</span>
     </div>
-    <div class="dmg-tags">${stabTag}${typeTag}</div>
+    <div class="dmg-tags">${stabTag}${typeTag}${critTag}</div>
     <div class="rolls-row">${cells}</div>
     <div class="dmg-stats">
       <strong>${atkData.displayName}</strong> ${isPhysLabel} <strong>${atkStat}</strong>
@@ -1112,8 +1131,8 @@ function bindEvents() {
     });
   }
 
-  // Field controls (weather / terrain / screens)
-  for (const id of ['fldWeather', 'fldTerrain', 'fldReflect', 'fldLightScreen', 'fldAuroraVeil']) {
+  // Field controls (weather / terrain / screens / crit)
+  for (const id of ['fldWeather', 'fldTerrain', 'fldReflect', 'fldLightScreen', 'fldAuroraVeil', 'fldCrit']) {
     const el = document.getElementById(id);
     if (el) el.addEventListener('change', computeAll);
   }
