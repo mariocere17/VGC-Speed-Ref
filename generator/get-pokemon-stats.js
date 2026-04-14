@@ -1,6 +1,6 @@
 'use strict';
 // generator/get-pokemon-stats.js
-// Downloads base stats + types for all Pokémon from PokeAPI.
+// Downloads base stats + types + SV learnset for all Pokémon from PokeAPI.
 // Generates pokemon-stats.json used by the damage calculator.
 // Run once: node generator/get-pokemon-stats.js
 
@@ -41,6 +41,11 @@ function words(s) {
   return s.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
 }
 
+/** Convert PokeAPI move name to display name ("dragon-claw" → "Dragon Claw") */
+function moveDisplayName(name) {
+  return name.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+}
+
 async function fetchJSON(url) {
   const res = await fetch(url);
   if (!res.ok) throw new Error(`HTTP ${res.status}`);
@@ -70,6 +75,15 @@ async function main() {
         .sort((a, b) => a.slot - b.slot)
         .map(t => t.type.name);
 
+      // Extract moves learnable in Scarlet/Violet (scarlet-violet version group)
+      const svMoves = [];
+      for (const moveEntry of (pkmn.moves || [])) {
+        const hasSV = moveEntry.version_group_details.some(
+          vgd => vgd.version_group.name === 'scarlet-violet'
+        );
+        if (hasSV) svMoves.push(moveDisplayName(moveEntry.move.name));
+      }
+
       const key = displayName.toLowerCase();
       result[key] = {
         displayName,
@@ -80,6 +94,7 @@ async function main() {
         spd: statsMap['special-defense'],
         spe: statsMap['speed'],
         types,
+        moves: svMoves,
       };
     } catch (err) {
       console.warn(`  WARN: ${entry.name} — ${err.message}`);

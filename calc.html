@@ -47,20 +47,53 @@
         </div>
 
         <div class="field-row">
-          <span class="field-label" id="atkNatLbl">Atk nature</span>
-          <div class="nature-group">
-            <label class="nat-opt"><input type="radio" name="atkNat" value="0.9"><span>−</span></label>
-            <label class="nat-opt"><input type="radio" name="atkNat" value="1.0" checked><span>●</span></label>
-            <label class="nat-opt"><input type="radio" name="atkNat" value="1.1"><span>＋</span></label>
+          <span class="field-label">Nature</span>
+          <select id="atkNature" class="field-select nature-select" onchange="onNatureChange('atk')"></select>
+        </div>
+
+        <div class="stats-grid" id="atkStatsGrid">
+          <div class="stat-row">
+            <span class="stat-label" id="atkLblHp">HP</span>
+            <input type="range" class="sp-slider" id="atkHpSP" min="0" max="32" value="0">
+            <span class="sp-val" id="atkHpSPVal">0</span>
+            <span class="stat-computed" id="atkHpComp">—</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-label" id="atkLblAtk">Atk</span>
+            <input type="range" class="sp-slider" id="atkAtkSP" min="0" max="32" value="0">
+            <span class="sp-val" id="atkAtkSPVal">0</span>
+            <span class="stat-computed" id="atkAtkComp">—</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-label" id="atkLblDef">Def</span>
+            <input type="range" class="sp-slider" id="atkDefSP" min="0" max="32" value="0">
+            <span class="sp-val" id="atkDefSPVal">0</span>
+            <span class="stat-computed" id="atkDefComp">—</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-label" id="atkLblSpa">SpA</span>
+            <input type="range" class="sp-slider" id="atkSpaSP" min="0" max="32" value="0">
+            <span class="sp-val" id="atkSpaSPVal">0</span>
+            <span class="stat-computed" id="atkSpaComp">—</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-label" id="atkLblSpd">SpD</span>
+            <input type="range" class="sp-slider" id="atkSpdSP" min="0" max="32" value="0">
+            <span class="sp-val" id="atkSpdSPVal">0</span>
+            <span class="stat-computed" id="atkSpdComp">—</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-label" id="atkLblSpe">Spe</span>
+            <input type="range" class="sp-slider" id="atkSpeSP" min="0" max="32" value="0">
+            <span class="sp-val" id="atkSpeSPVal">0</span>
+            <span class="stat-computed" id="atkSpeComp">—</span>
           </div>
         </div>
 
-        <div class="field-row">
-          <span class="field-label" id="atkSpLbl">Atk SP</span>
-          <div class="slider-wrap">
-            <input type="range" id="atkSP" min="0" max="32" value="0" class="sp-slider">
-            <span class="sp-val" id="atkSPVal">0</span>
-          </div>
+        <div class="sp-total-row">
+          <span class="sp-total-label">SP used</span>
+          <span class="sp-total-val" id="atkSpTotal">0</span>
+          <span class="sp-total-max">/66</span>
         </div>
 
         <div class="field-row">
@@ -72,9 +105,12 @@
           <span class="field-label">Ability</span>
           <select id="atkAbility" class="field-select"></select>
         </div>
-
-        <div class="stat-pill" id="atkStatPill"></div>
       </section>
+
+      <!-- ── SWAP BUTTON ─────────────────────────────── -->
+      <div class="calc-swap-col">
+        <button class="btn-swap" onclick="swapPanels()" title="Swap attacker and defender">⇄</button>
+      </div>
 
       <!-- ── DEFENDER ─────────────────────────────────── -->
       <section class="calc-panel">
@@ -92,28 +128,53 @@
         <div class="field-row field-placeholder"></div>
 
         <div class="field-row">
-          <span class="field-label" id="defNatLbl">Def nature</span>
-          <div class="nature-group">
-            <label class="nat-opt"><input type="radio" name="defNat" value="0.9"><span>−</span></label>
-            <label class="nat-opt"><input type="radio" name="defNat" value="1.0" checked><span>●</span></label>
-            <label class="nat-opt"><input type="radio" name="defNat" value="1.1"><span>＋</span></label>
-          </div>
+          <span class="field-label">Nature</span>
+          <select id="defNature" class="field-select nature-select" onchange="onNatureChange('def')"></select>
         </div>
 
-        <div class="field-row">
-          <span class="field-label">HP SP</span>
-          <div class="slider-wrap">
-            <input type="range" id="defHpSP" min="0" max="32" value="0" class="sp-slider">
+        <div class="stats-grid" id="defStatsGrid">
+          <div class="stat-row">
+            <span class="stat-label" id="defLblHp">HP</span>
+            <input type="range" class="sp-slider" id="defHpSP" min="0" max="32" value="0">
             <span class="sp-val" id="defHpSPVal">0</span>
+            <span class="stat-computed" id="defHpComp">—</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-label" id="defLblAtk">Atk</span>
+            <input type="range" class="sp-slider" id="defAtkSP" min="0" max="32" value="0">
+            <span class="sp-val" id="defAtkSPVal">0</span>
+            <span class="stat-computed" id="defAtkComp">—</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-label" id="defLblDef">Def</span>
+            <input type="range" class="sp-slider" id="defDefSP" min="0" max="32" value="0">
+            <span class="sp-val" id="defDefSPVal">0</span>
+            <span class="stat-computed" id="defDefComp">—</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-label" id="defLblSpa">SpA</span>
+            <input type="range" class="sp-slider" id="defSpaSP" min="0" max="32" value="0">
+            <span class="sp-val" id="defSpaSPVal">0</span>
+            <span class="stat-computed" id="defSpaComp">—</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-label" id="defLblSpd">SpD</span>
+            <input type="range" class="sp-slider" id="defSpdSP" min="0" max="32" value="0">
+            <span class="sp-val" id="defSpdSPVal">0</span>
+            <span class="stat-computed" id="defSpdComp">—</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-label" id="defLblSpe">Spe</span>
+            <input type="range" class="sp-slider" id="defSpeSP" min="0" max="32" value="0">
+            <span class="sp-val" id="defSpeSPVal">0</span>
+            <span class="stat-computed" id="defSpeComp">—</span>
           </div>
         </div>
 
-        <div class="field-row">
-          <span class="field-label" id="defSpLbl">Def SP</span>
-          <div class="slider-wrap">
-            <input type="range" id="defSP" min="0" max="32" value="0" class="sp-slider">
-            <span class="sp-val" id="defSPVal">0</span>
-          </div>
+        <div class="sp-total-row">
+          <span class="sp-total-label">SP used</span>
+          <span class="sp-total-val" id="defSpTotal">0</span>
+          <span class="sp-total-max">/66</span>
         </div>
 
         <div class="field-row">
@@ -125,8 +186,6 @@
           <span class="field-label">Ability</span>
           <select id="defAbility" class="field-select"></select>
         </div>
-
-        <div class="stat-pill" id="defStatPill"></div>
       </section>
 
     </div><!-- .calc-panels -->
