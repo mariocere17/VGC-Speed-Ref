@@ -405,30 +405,52 @@ window.findMinSurvive = function () {
   solutions.sort((a, b) => a.total - b.total || a.defSP - b.defSP);
 
   const out = document.getElementById('optOutput');
+  const defLabel = isPhysical ? 'Def' : 'SpD';
+
   if (!solutions.length) {
     out.innerHTML = `<div class="opt-section">
       <div class="opt-title">🛡 Min SP to survive</div>
-      <div class="opt-result opt-none">Cannot guarantee survival with up to 32 HP SP + 32 ${isPhysical?'Def':'SpD'} SP.</div>
+      <div class="opt-result opt-none">Cannot guarantee survival with up to 32 HP SP + 32 ${defLabel} SP.</div>
     </div>`;
     return;
   }
 
-  const best     = solutions[0];
-  const koCount  = best.rolls.filter(r => r >= best.hp).length;
-  const koLabel  = koCount === 0 ? '0%' : `${(koCount / 16 * 100).toFixed(2)}%`;
-  const minPct   = (best.rolls[0] / best.hp * 100).toFixed(1);
-  const maxPct   = (best.rolls[15] / best.hp * 100).toFixed(1);
-  const defLabel = isPhysical ? 'Def' : 'SpD';
+  function renderSurviveResult(sol, title) {
+    const koCount = sol.rolls.filter(r => r >= sol.hp).length;
+    const koLabel = koCount === 0 ? '0%' : `${(koCount / 16 * 100).toFixed(2)}%`;
+    const minPct  = (sol.rolls[0]  / sol.hp * 100).toFixed(1);
+    const maxPct  = (sol.rolls[15] / sol.hp * 100).toFixed(1);
+    const koColor = koCount === 0 ? '#81c784' : '#ffd54f';
+    return `<div class="opt-section">
+      <div class="opt-title">${title}</div>
+      <div class="opt-result">
+        <span class="opt-sp">+${sol.hpSP} HP SP + ${sol.defSP} ${defLabel} SP</span>
+        <span style="color:var(--muted)"> (${sol.total} SP total)</span><br>
+        After: ${sol.rolls[0]}–${sol.rolls[15]} (${minPct}%–${maxPct}%)
+        &nbsp;·&nbsp; <span style="color:${koColor}">${koLabel} OHKO</span>
+      </div>
+    </div>`;
+  }
 
-  out.innerHTML = `<div class="opt-section">
-    <div class="opt-title">🛡 Min SP to survive</div>
-    <div class="opt-result">
-      <span class="opt-sp">+${best.hpSP} HP SP + ${best.defSP} ${defLabel} SP</span>
-      <span style="color:var(--muted)"> (${best.total} SP total)</span><br>
-      After: ${best.rolls[0]}–${best.rolls[15]} (${minPct}%–${maxPct}%)
-      &nbsp;·&nbsp; ${koLabel} OHKO
-    </div>
-  </div>`;
+  const best = solutions[0];
+  const safe = solutions.find(sol => sol.rolls[15] < sol.hp) || null;
+
+  // If best already guarantees 0% OHKO, show a single block
+  if (safe && safe.hpSP === best.hpSP && safe.defSP === best.defSP) {
+    out.innerHTML = renderSurviveResult(best, '🛡 Min SP to survive (0% OHKO)');
+    return;
+  }
+
+  let html = renderSurviveResult(best, '🛡 Min SP to survive (any roll)');
+  if (safe) {
+    html += renderSurviveResult(safe, '🛡 Min SP for 0% OHKO (guaranteed survival)');
+  } else {
+    html += `<div class="opt-section">
+      <div class="opt-title">🛡 Min SP for 0% OHKO (guaranteed survival)</div>
+      <div class="opt-result opt-none">Cannot guarantee 0% OHKO with up to 32 HP SP + 32 ${defLabel} SP.</div>
+    </div>`;
+  }
+  out.innerHTML = html;
 };
 
 window.findMinOHKO = function () {
