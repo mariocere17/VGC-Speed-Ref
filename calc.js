@@ -86,6 +86,26 @@ const DEF_ITEMS = [
   { id:'',             label:'None' },
   { id:'assault-vest', label:'Assault Vest (SpD ×1.5)' },
   { id:'eviolite',     label:'Eviolite (Def/SpD ×1.5)' },
+  // Type-resist berries: halve damage from a move of the matching type.
+  // All berries except Chilan require the hit to be super-effective.
+  { id:'berry-normal',   label:'Chilan Berry (Normal ×0.5)',      berryType:'normal' },
+  { id:'berry-fire',     label:'Occa Berry (SE Fire ×0.5)',       berryType:'fire' },
+  { id:'berry-water',    label:'Passho Berry (SE Water ×0.5)',    berryType:'water' },
+  { id:'berry-electric', label:'Wacan Berry (SE Electric ×0.5)',  berryType:'electric' },
+  { id:'berry-grass',    label:'Rindo Berry (SE Grass ×0.5)',     berryType:'grass' },
+  { id:'berry-ice',      label:'Yache Berry (SE Ice ×0.5)',       berryType:'ice' },
+  { id:'berry-fighting', label:'Chople Berry (SE Fighting ×0.5)', berryType:'fighting' },
+  { id:'berry-poison',   label:'Kebia Berry (SE Poison ×0.5)',    berryType:'poison' },
+  { id:'berry-ground',   label:'Shuca Berry (SE Ground ×0.5)',    berryType:'ground' },
+  { id:'berry-flying',   label:'Coba Berry (SE Flying ×0.5)',     berryType:'flying' },
+  { id:'berry-psychic',  label:'Payapa Berry (SE Psychic ×0.5)',  berryType:'psychic' },
+  { id:'berry-bug',      label:'Tanga Berry (SE Bug ×0.5)',       berryType:'bug' },
+  { id:'berry-rock',     label:'Charti Berry (SE Rock ×0.5)',     berryType:'rock' },
+  { id:'berry-ghost',    label:'Kasib Berry (SE Ghost ×0.5)',     berryType:'ghost' },
+  { id:'berry-dragon',   label:'Haban Berry (SE Dragon ×0.5)',    berryType:'dragon' },
+  { id:'berry-dark',     label:'Colbur Berry (SE Dark ×0.5)',     berryType:'dark' },
+  { id:'berry-steel',    label:'Babiri Berry (SE Steel ×0.5)',    berryType:'steel' },
+  { id:'berry-fairy',    label:'Roseli Berry (SE Fairy ×0.5)',    berryType:'fairy' },
 ];
 
 // Ordered by auto-select priority: the first matching ability is picked when the
@@ -368,6 +388,16 @@ function applyPostMods(rolls, s, moveData, isPhysical, typeEff) {
     r = r.map(d => Math.floor(d * 1.5));
   if (s.atkItem === 'life-orb')  r = r.map(d => Math.floor(d * 1.3));
   if (s.atkItem === 'expert-belt' && typeEff > 1) r = r.map(d => Math.floor(d * 1.2));
+
+  // Type-resist berries: halve damage from a matching move type.
+  // Non-Normal berries only activate on super-effective hits.
+  if (s.defItem && s.defItem.startsWith('berry-')) {
+    const itemDef = DEF_ITEMS.find(i => i.id === s.defItem);
+    if (itemDef && itemDef.berryType === moveData.type) {
+      const activates = itemDef.berryType === 'normal' || typeEff > 1;
+      if (activates) r = r.map(d => Math.floor(d * 0.5));
+    }
+  }
 
   // ── Weather ──
   if (s.weather === 'sun') {

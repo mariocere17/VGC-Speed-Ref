@@ -244,6 +244,51 @@ test('Sun boosts Fire-type damage ×1.5', () => {
   assertRange(sun[0] / nonSun[0], 1.49, 1.51, 'Sun ratio');
 });
 
+test('Yache Berry halves SE Ice damage, does nothing to non-SE', () => {
+  const s = makeState({
+    atkPkmn: 'alakazam', defPkmn: 'garchomp',
+    atkMove: 'Ice Beam', atkNature: 'Modest', atkSpaSP: 32,
+    defItem: 'berry-ice',
+  });
+  const moveData = movesData['Ice Beam'];
+  const atkStat  = fns.buildAtkStat(s, moveData, false, '');
+  const { def }  = fns.buildDefStat(s, moveData, false);
+  const stab     = fns.buildStabMult(s, moveData, pkmnData['alakazam']);
+  const rolls    = fns.calcRolls(atkStat, def, moveData.bp, stab, moveData.type, pkmnData['garchomp'].types);
+  const typeEff  = fns.getTypeEffRaw(moveData.type, pkmnData['garchomp'].types); // 4×
+  const withBerry = fns.applyPostMods(rolls, s, moveData, false, typeEff);
+  const noBerry   = fns.applyPostMods(rolls, Object.assign({}, s, { defItem: '' }), moveData, false, typeEff);
+  assertRange(withBerry[0] / noBerry[0], 0.49, 0.51, 'Yache halving on 4× Ice');
+
+  // Same berry vs a non-matching type → should NOT activate
+  const sOther = Object.assign({}, s, { atkMove: 'Tackle' });
+  const moveN  = movesData['Tackle'];
+  const atk2   = fns.buildAtkStat(sOther, moveN, true, '');
+  const def2   = fns.buildDefStat(sOther, moveN, true).def;
+  const stab2  = fns.buildStabMult(sOther, moveN, pkmnData['alakazam']);
+  const rollsN = fns.calcRolls(atk2, def2, moveN.bp, stab2, moveN.type, pkmnData['garchomp'].types);
+  const typeN  = fns.getTypeEffRaw(moveN.type, pkmnData['garchomp'].types);
+  const afterBerry = fns.applyPostMods(rollsN, sOther, moveN, true, typeN);
+  assertEq(afterBerry[0], rollsN[0], 'Ice berry should not react to Normal move');
+});
+
+test('Chilan Berry halves Normal damage at neutral effectiveness', () => {
+  const s = makeState({
+    atkPkmn: 'snorlax', defPkmn: 'alakazam',
+    atkMove: 'Body Slam', atkNature: 'Adamant', atkAtkSP: 32,
+    defItem: 'berry-normal',
+  });
+  const moveData = movesData['Body Slam'];
+  const atkStat  = fns.buildAtkStat(s, moveData, true, '');
+  const { def }  = fns.buildDefStat(s, moveData, true);
+  const stab     = fns.buildStabMult(s, moveData, pkmnData['snorlax']);
+  const rolls    = fns.calcRolls(atkStat, def, moveData.bp, stab, moveData.type, pkmnData['alakazam'].types);
+  const typeEff  = fns.getTypeEffRaw(moveData.type, pkmnData['alakazam'].types); // 1×
+  const withBerry = fns.applyPostMods(rolls, s, moveData, true, typeEff);
+  const noBerry   = fns.applyPostMods(rolls, Object.assign({}, s, { defItem: '' }), moveData, true, typeEff);
+  assertRange(withBerry[0] / noBerry[0], 0.49, 0.51, 'Chilan halving on neutral Normal');
+});
+
 test('Critical hit ignores positive Def stages', () => {
   const s = makeState({
     atkPkmn: 'garchomp', defPkmn: 'garchomp',
