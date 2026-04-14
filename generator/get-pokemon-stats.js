@@ -84,6 +84,9 @@ async function main() {
         if (hasSV) svMoves.push(moveDisplayName(moveEntry.move.name));
       }
 
+      // Extract abilities (slot 1, slot 2, hidden) — PokeAPI names match our ability ids
+      const abilities = pkmn.abilities.map(a => a.ability.name);
+
       const key = displayName.toLowerCase();
       result[key] = {
         displayName,
@@ -94,6 +97,7 @@ async function main() {
         spd: statsMap['special-defense'],
         spe: statsMap['speed'],
         types,
+        abilities,
         moves: svMoves,
       };
     } catch (err) {

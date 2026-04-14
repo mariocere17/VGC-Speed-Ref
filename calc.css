@@ -30,7 +30,7 @@
   grid-template-columns: 1fr 1fr;
   gap: 16px;
   margin-bottom: 16px;
-  align-items: start;
+  /* stretch (default) makes both panels the same height */
 }
 @media (max-width: 720px) { .calc-panels { grid-template-columns: 1fr; } }
 

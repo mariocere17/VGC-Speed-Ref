@@ -500,9 +500,12 @@ window.swapPanels = function () {
     if (bVal) bVal.textContent = document.getElementById('def' + id + 'SP').value;
   }
 
-  // Update move datalist for the new attacker
+  // Update move datalist and ability selects for the new roles
   const newAtkKey = document.getElementById('atkPkmn').value.toLowerCase().trim();
+  const newDefKey = document.getElementById('defPkmn').value.toLowerCase().trim();
   updateMoveDatalist(newAtkKey);
+  updateAbilitySelect('atk', newAtkKey);
+  updateAbilitySelect('def', newDefKey);
 
   computeAll();
 };
@@ -727,23 +730,54 @@ window.onNatureChange = function (prefix) {
 };
 
 // ═══════════════════════════════════════════════════════════
+//  ABILITY SELECT FILTER
+// ═══════════════════════════════════════════════════════════
+
+/**
+ * Filter the ability <select> for a panel to only show abilities
+ * that the selected Pokémon can actually have (plus "None").
+ * Falls back to showing all abilities when no Pokémon is selected.
+ */
+function updateAbilitySelect(prefix, pkmnKey) {
+  const sel = document.getElementById(prefix + 'Ability');
+  if (!sel) return;
+
+  const pkmnData   = PKMN[pkmnKey];
+  const pkmnAbs    = pkmnData?.abilities ? new Set(pkmnData.abilities) : null;
+  const allOptions = prefix === 'atk' ? ATK_ABILITIES : DEF_ABILITIES;
+
+  // Keep "None" (id === '') always; keep ability if Pokémon has it or no data yet
+  const filtered = allOptions.filter(a => !a.id || !pkmnAbs || pkmnAbs.has(a.id));
+
+  const prevVal = sel.value;
+  sel.innerHTML = filtered.map(a => `<option value="${a.id}">${a.label}</option>`).join('');
+
+  // Restore previous selection if still available, else reset to None
+  if (filtered.some(a => a.id === prevVal)) sel.value = prevVal;
+  else sel.value = '';
+}
+
+// ═══════════════════════════════════════════════════════════
 //  EVENT BINDING
 // ═══════════════════════════════════════════════════════════
 
 function bindEvents() {
   // Pokémon inputs
   ['atkPkmn', 'defPkmn'].forEach(id => {
+    const prefix = id === 'atkPkmn' ? 'atk' : 'def';
     const el = document.getElementById(id);
     if (!el) return;
     el.addEventListener('input', () => {
       const key = el.value.toLowerCase().trim();
-      if (id === 'atkPkmn') updateMoveDatalist(key);
-      updateTypeBadges(key, id === 'atkPkmn' ? 'atkTypeRow' : 'defTypeRow');
+      if (prefix === 'atk') updateMoveDatalist(key);
+      updateAbilitySelect(prefix, key);
+      updateTypeBadges(key, prefix + 'TypeRow');
       if (PKMN[key]) computeAll();
     });
     el.addEventListener('change', () => {
       const key = el.value.toLowerCase().trim();
-      if (id === 'atkPkmn') updateMoveDatalist(key);
+      if (prefix === 'atk') updateMoveDatalist(key);
+      updateAbilitySelect(prefix, key);
       computeAll();
     });
   });
