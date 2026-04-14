@@ -162,6 +162,20 @@ function isSTAB(moveType, pkmnTypes) {
   return pkmnTypes && pkmnTypes.includes(moveType);
 }
 
+// nHKO probability: fraction of all n-roll combinations where cumulative damage >= hp
+// Early exit optimization: once sum >= hp, all remaining roll permutations are KOs
+function calcNHKOChance(rolls, hp, n) {
+  const total = Math.pow(16, n);
+  let ko = 0;
+  function recurse(depth, sum) {
+    if (sum >= hp) { ko += Math.pow(16, n - depth); return; }
+    if (depth === n) return;
+    for (const r of rolls) recurse(depth + 1, sum + r);
+  }
+  recurse(0, 0);
+  return ko / total;
+}
+
 // 16 damage rolls (r = 85..100)
 // Order: BASE → random → STAB → type (each floored)
 function calcRolls(atkStat, defStat, bp, stabMult, atkType, defTypes) {
@@ -591,6 +605,20 @@ function renderDamage(rolls, hp, s, moveData, atkData, defData, atkStat, defStat
   else if (koCount >= 8)  { koClass = 'ko-high'; koText = `${(koCount/16*100).toFixed(2)}% chance to OHKO`; }
   else if (koCount >= 1)  { koClass = 'ko-low';  koText = `${(koCount/16*100).toFixed(2)}% chance to OHKO`; }
 
+  // nHKO suffix (2HKO → 3HKO → 4HKO), only when not guaranteed OHKO
+  if (koCount < 16) {
+    for (let n = 2; n <= 4; n++) {
+      const chance = calcNHKOChance(rolls, hp, n);
+      if (chance >= 1) {
+        koText += ` — Guaranteed ${n}HKO`;
+        break;
+      } else if (chance > 0) {
+        koText += ` — ${(chance * 100).toFixed(2)}% chance to ${n}HKO`;
+        break;
+      }
+    }
+  }
+
   let typeTag = '';
   if (typeEff === 0)        typeTag = '<span class="dmg-tag tag-imm">Immune</span>';
   else if (typeEff >= 4)    typeTag = `<span class="dmg-tag tag-se4">4× ${moveData.type}</span>`;
@@ -903,9 +931,14 @@ function updateAbilitySelect(prefix, pkmnKey) {
   const prevVal = sel.value;
   sel.innerHTML = filtered.map(a => `<option value="${a.id}">${a.label}</option>`).join('');
 
-  // Restore previous selection if still available, else reset to None
-  if (filtered.some(a => a.id === prevVal)) sel.value = prevVal;
-  else sel.value = '';
+  if (filtered.some(a => a.id === prevVal)) {
+    // Restore previous selection if still valid for this Pokémon
+    sel.value = prevVal;
+  } else {
+    // Auto-select the first relevant ability for this Pokémon (skip 'None')
+    const firstRelevant = filtered.find(a => a.id !== '');
+    sel.value = firstRelevant ? firstRelevant.id : '';
+  }
 }
 
 // ═══════════════════════════════════════════════════════════
