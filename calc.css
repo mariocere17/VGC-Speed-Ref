@@ -2,6 +2,7 @@
 
 /* ── HEADER NAV ── */
 .btn-nav {
+  display: inline-flex; align-items: center; gap: 6px;
   padding: 8px 16px; border-radius: 6px; font-size: 0.85rem; font-weight: 600;
   text-decoration: none; border: 1px solid var(--border); color: var(--text);
   background: var(--surface); transition: all .15s; white-space: nowrap;
