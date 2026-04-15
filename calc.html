@@ -6,7 +6,7 @@
   <title>Pokemon Champions — Damage Calc</title>
   <link rel="icon" type="image/png" href="https://img.pokemondb.net/sprites/home/normal/weavile.png">
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="calc.css?v=12">
+  <link rel="stylesheet" href="calc.css?v=13">
 </head>
 <body>
 
@@ -33,6 +33,11 @@
       <label class="sets-label">Paste Showdown format (one or multiple sets)</label>
       <textarea id="setsImportText" class="sets-textarea"
         placeholder="Milotic @ Leftovers&#10;Ability: Competitive&#10;Level: 50&#10;EVs: 32 HP / 16 Def / 5 SpD / 13 Spe&#10;Bold Nature&#10;- Icy Wind&#10;- Scald&#10;- Protect&#10;- Recover"></textarea>
+      <div class="sets-mote-row">
+        <label class="sets-label-sm">Set name <span class="sets-label-opt">(optional — overrides auto-name)</span></label>
+        <input type="text" id="setsImportLabel" class="sets-mote-input"
+          placeholder="e.g. Ofensivo, SpeedCreep, Anti-Scarf…" maxlength="40">
+      </div>
       <div class="sets-import-row">
         <button class="btn-sets-import" onclick="importSets()">Import</button>
         <span class="sets-import-result" id="setsImportResult"></span>
@@ -348,6 +353,6 @@
 <datalist id="moveList"></datalist>
 <datalist id="defMoveList"></datalist>
 
-<script src="calc.js?v=12"></script>
+<script src="calc.js?v=13"></script>
 </body>
 </html>

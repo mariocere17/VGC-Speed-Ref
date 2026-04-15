@@ -1886,12 +1886,15 @@ function renderSetsList() {
   listEl.innerHTML = sets.map(s => {
     const pkmnData = PKMN[s.pokemon];
     const spriteUrl = pkmnData ? spriteUrl_for(s.pokemon) : '';
-    const safeName = s.label.replace(/&/g,'&amp;').replace(/</g,'&lt;');
+    const safeLabel = s.label.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/"/g,'&quot;');
+    const safeId    = s.id.replace(/'/g, "\\'");
     return `
       <div class="set-row" data-id="${s.id}">
         ${spriteUrl ? `<img class="set-sprite" src="${spriteUrl}" onerror="this.style.display='none'" alt="">` : '<span class="set-sprite-placeholder"></span>'}
-        <span class="set-label">${safeName}</span>
-        <button class="btn-set-delete" onclick="window.deleteSetFromModal('${s.id}')" title="Delete">×</button>
+        <input class="set-label-input" value="${safeLabel}" title="Click to rename"
+          onblur="window.renameSetInline('${safeId}', this.value)"
+          onkeydown="if(event.key==='Enter'){this.blur();event.preventDefault()}">
+        <button class="btn-set-delete" onclick="window.deleteSetFromModal('${safeId}')" title="Delete">×</button>
       </div>
     `;
   }).join('');
@@ -1918,7 +1921,8 @@ window.closeSetsOverlay = function (e) {
 };
 
 window.importSets = function () {
-  const textarea = document.getElementById('setsImportText');
+  const textarea  = document.getElementById('setsImportText');
+  const labelInput = document.getElementById('setsImportLabel');
   if (!textarea || !textarea.value.trim()) return;
   const { sets, warnings } = parseShowdownText(textarea.value);
   const resultEl = document.getElementById('setsImportResult');
@@ -1926,8 +1930,18 @@ window.importSets = function () {
     resultEl.textContent = 'Nothing imported.';
     return;
   }
+  // If the user provided a mote, apply it as label.
+  // Single set: the mote IS the full label.
+  // Multiple sets: append " — N" suffix so they stay distinguishable.
+  const mote = labelInput?.value.trim() || '';
+  if (mote) {
+    sets.forEach((s, i) => {
+      s.label = sets.length === 1 ? mote : `${mote} — ${i + 1}`;
+    });
+  }
   addSets(sets);
   textarea.value = '';
+  if (labelInput) labelInput.value = '';
   refreshSetSelectors();
   renderSetsList();
   let msg = sets.length ? `Imported ${sets.length} set${sets.length > 1 ? 's' : ''}.` : '';
@@ -1939,4 +1953,12 @@ window.deleteSetFromModal = function (id) {
   removeSet(id);
   refreshSetSelectors();
   renderSetsList();
+};
+
+window.renameSetInline = function (id, newLabel) {
+  const trimmed = newLabel.trim();
+  if (!trimmed) return; // don't allow blank label
+  renameSet(id, trimmed);
+  refreshSetSelectors();
+  // Don't re-render the list — would lose focus and feel jumpy
 };
