@@ -918,7 +918,7 @@ function clearPanelStats(prefix) {
   if (moveEl) moveEl.value = '';
   if (prefix === 'atk') updateMoveCat(null);
   const setMovesEl = document.getElementById(prefix + 'SetMoves');
-  if (setMovesEl) { setMovesEl.style.display = 'none'; setMovesEl.innerHTML = ''; }
+  if (setMovesEl) setMovesEl.innerHTML = '';
   updateHPPctVisibility(prefix);
 }
 
@@ -1832,8 +1832,7 @@ window.loadSetIntoPanel = function (prefix, setId) {
 function renderSetMoveButtons(prefix, moves) {
   const row = document.getElementById(prefix + 'SetMoves');
   if (!row) return;
-  if (!moves || !moves.length) { row.style.display = 'none'; return; }
-  row.style.display = 'flex';
+  if (!moves || !moves.length) { row.innerHTML = ''; return; }
   row.innerHTML = moves.map(m => {
     const known = MOVES[m];
     const cls   = known ? (known.category === 'physical' ? 'btn-setmove-p' :
