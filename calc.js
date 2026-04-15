@@ -123,6 +123,9 @@ const ATK_ABILITIES = [
   { id:'sheer-force',  label:'Sheer Force (secondary ×1.3)' },
   { id:'guts',         label:'Guts (statused Atk ×1.5)' },
   { id:'sniper',       label:'Sniper (crit ×2.25)' },
+  // Weather-conditional
+  { id:'sand-force',   label:'Sand Force (Rock/Ground/Steel ×1.3 in Sand)' },
+  { id:'solar-power',  label:'Solar Power (SpA ×1.5 in Sun)' },
 ];
 
 // Moves halved by Grassy Terrain (earthquake-family hits grounded Pokémon softer)
@@ -353,6 +356,8 @@ function buildAtkStat(s, moveData, isPhysical, defAbility) {
   }
   if ((s.atkAbility === 'huge-power' || s.atkAbility === 'pure-power') && isPhysical)
     stat = Math.floor(stat * 2);
+  if (s.atkAbility === 'solar-power' && !isPhysical && s.weather === 'sun')
+    stat = Math.floor(stat * 1.5);
   if (defAbility === 'intimidate' && isPhysical)
     stat = Math.floor(stat * 2 / 3);
 
@@ -425,6 +430,9 @@ function applyPostMods(rolls, s, moveData, isPhysical, typeEff) {
     r = r.map(d => Math.floor(d * 0.5));
   if (s.atkAbility === 'tinted-lens' && typeEff > 0 && typeEff < 1)
     r = r.map(d => Math.floor(d * 2));
+  if (s.atkAbility === 'sand-force' && s.weather === 'sand' &&
+      ['rock', 'ground', 'steel'].includes(moveData.type))
+    r = r.map(d => Math.floor(d * 1.3));
   if (s.atkAbility === 'sheer-force' && moveData.hasSecondary)
     r = r.map(d => Math.floor(d * 1.3));
   if (s.atkAbility === 'tough-claws' && moveData.makesContact)
@@ -831,6 +839,48 @@ window.findMinOHKO = function (dir) {
     <div class="opt-title">⚔ Min SP to OHKO (defender: ${s.defHpSP} HP SP · ${isPhysical?s.defDefSP:s.defSpdSP} ${defLabel} SP)</div>
     <table class="ohko-table"><tbody>${rows}</tbody></table>
   </div>`;
+};
+
+// ═══════════════════════════════════════════════════════════
+//  RESET / CLEAR PANEL
+// ═══════════════════════════════════════════════════════════
+
+/** Clear SP, stages, nature, move, and set-move buttons for a panel.
+ *  Does NOT touch the Pokémon input, sprite, or item. */
+function clearPanelStats(prefix) {
+  for (const stat of STAT_IDS) {
+    const slider = document.getElementById(prefix + stat + 'SP');
+    const valSpan = document.getElementById(prefix + stat + 'SPVal');
+    if (slider)  slider.value = 0;
+    if (valSpan) valSpan.textContent = 0;
+  }
+  for (const stat of ['Atk', 'Def', 'Spa', 'Spd', 'Spe']) {
+    const stageEl = document.getElementById(prefix + stat + 'Stage');
+    if (stageEl) { stageEl.value = 0; stageEl.className = 'stage-select'; }
+  }
+  const natureEl = document.getElementById(prefix + 'Nature');
+  if (natureEl) natureEl.value = prefix === 'atk' ? 'Jolly' : 'Hardy';
+  const moveEl = document.getElementById(prefix + 'Move');
+  if (moveEl) moveEl.value = '';
+  if (prefix === 'atk') updateMoveCat(null);
+  const setMovesEl = document.getElementById(prefix + 'SetMoves');
+  if (setMovesEl) { setMovesEl.style.display = 'none'; setMovesEl.innerHTML = ''; }
+  updateHPPctVisibility(prefix);
+}
+
+/** Full panel reset: Pokémon + sprite + type badges + stats + item + ability. */
+window.resetPanel = function (prefix) {
+  const pkmnEl = document.getElementById(prefix + 'Pkmn');
+  if (pkmnEl) { pkmnEl.value = ''; pkmnEl.dataset.currentKey = ''; }
+  updateSprite(prefix, '');
+  updateTypeBadges('', prefix + 'TypeRow');
+  updateMoveDatalist(prefix, '');
+  updateAbilitySelect(prefix, '');
+  document.getElementById(prefix + 'Item').value = '';
+  const setEl = document.getElementById(prefix + 'Set');
+  if (setEl) setEl.value = '';
+  clearPanelStats(prefix);
+  computeAll();
 };
 
 // ═══════════════════════════════════════════════════════════
@@ -1292,6 +1342,10 @@ function bindEvents() {
     // change: fires when user picks from datalist OR leaves the field
     el.addEventListener('change', () => {
       const key = el.value.toLowerCase().trim();
+      const prevKey = el.dataset.currentKey || '';
+      // When switching to a different valid Pokémon, reset SP/stages/nature/move
+      if (key !== prevKey && PKMN[key]) clearPanelStats(prefix);
+      el.dataset.currentKey = key;
       updateMoveDatalist(prefix, key);
       updateAbilitySelect(prefix, key);
       updateSprite(prefix, key);

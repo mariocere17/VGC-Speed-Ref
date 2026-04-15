@@ -362,11 +362,28 @@
 .btn-set-delete:hover { color: #ef5350; }
 .sets-empty { color: var(--muted); font-size: 0.85rem; font-style: italic; }
 
+/* ── PANEL HEADER (title + reset button) ── */
+.panel-header {
+  display: flex; align-items: center; justify-content: space-between; margin-bottom: 4px;
+}
+.btn-reset {
+  background: none; border: 1px solid var(--border); color: var(--muted);
+  font-size: 0.72rem; padding: 3px 9px; border-radius: 5px;
+  cursor: pointer; transition: all .12s; white-space: nowrap;
+}
+.btn-reset:hover { border-color: #ef5350; color: #ef5350; }
+
 /* ── BIDIRECTIONAL RESULTS ── */
 .results-cols {
   display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+  align-items: start; /* don't stretch columns to equal height */
 }
 @media (max-width: 860px) { .results-cols { grid-template-columns: 1fr; } }
+.results-col {
+  display: flex; flex-direction: column;
+}
+/* dmgBlock expands so opt-row buttons are always at the same vertical position */
+.results-col > div:nth-child(2) { flex: 1; min-height: 80px; }
 .results-col-title {
   font-size: 0.72rem; font-weight: 700; text-transform: uppercase;
   letter-spacing: 0.5px; margin-bottom: 10px;
