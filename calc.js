@@ -125,6 +125,20 @@ const ATK_ABILITIES = [
   { id:'sniper',       label:'Sniper (crit ×2.25)' },
 ];
 
+// Combined item list used by both panels (bidirectional calc)
+const ALL_ITEMS = [
+  ATK_ITEMS[0], // None (single entry)
+  ...ATK_ITEMS.slice(1),
+  ...DEF_ITEMS.slice(1),
+];
+
+// Combined ability list used by both panels (bidirectional calc)
+const ALL_ABILITIES = [
+  ATK_ABILITIES[0], // None
+  ...ATK_ABILITIES.slice(1),
+  ...DEF_ABILITIES.slice(1),
+];
+
 // Moves halved by Grassy Terrain (earthquake-family hits grounded Pokémon softer)
 const GRASSY_HALVED_MOVES = new Set(['Earthquake', 'Bulldoze', 'Magnitude']);
 
@@ -248,8 +262,10 @@ function readState() {
     atkSpeStage: stageVal('atkSpeStage'),
     atkItem:    document.getElementById('atkItem').value,
     atkAbility: document.getElementById('atkAbility').value,
+    atkHPPct:   parseInt(document.getElementById('atkHPPctSlider')?.value) || 100,
 
     defPkmn:    document.getElementById('defPkmn').value.toLowerCase().trim(),
+    defMove:    document.getElementById('defMove').value.trim(),
     defNature:  document.getElementById('defNature').value,
     defHpSP:    spVal('defHpSP'),
     defAtkSP:   spVal('defAtkSP'),
@@ -282,6 +298,37 @@ function isGrounded(pkmnData, ability) {
   if (pkmnData.types.includes('flying')) return false;
   if (ability === 'levitate') return false;
   return true;
+}
+
+/** Build the state for the B→A direction by swapping all atk/def fields. */
+function buildReversedState(s) {
+  return {
+    atkPkmn:    s.defPkmn,
+    atkMove:    s.defMove,
+    atkNature:  s.defNature,
+    atkHpSP:    s.defHpSP,  atkAtkSP:  s.defAtkSP,  atkDefSP:  s.defDefSP,
+    atkSpaSP:   s.defSpaSP, atkSpdSP:  s.defSpdSP,  atkSpeSP:  s.defSpeSP,
+    atkAtkStage: s.defAtkStage, atkDefStage: s.defDefStage,
+    atkSpaStage: s.defSpaStage, atkSpdStage: s.defSpdStage, atkSpeStage: s.defSpeStage,
+    atkItem:    s.defItem,
+    atkAbility: s.defAbility,  // B's ability used offensively
+    atkHPPct:   s.atkHPPct,    // not used by reversed (it's A's HP%, but we pass it along)
+
+    defPkmn:    s.atkPkmn,
+    defMove:    s.atkMove,
+    defNature:  s.atkNature,
+    defHpSP:    s.atkHpSP,  defAtkSP:  s.atkAtkSP,  defDefSP:  s.atkDefSP,
+    defSpaSP:   s.atkSpaSP, defSpdSP:  s.atkSpdSP,  defSpeSP:  s.atkSpeSP,
+    defAtkStage: s.atkAtkStage, defDefStage: s.atkDefStage,
+    defSpaStage: s.atkSpaStage, defSpdStage: s.atkSpdStage, defSpeStage: s.atkSpeStage,
+    defItem:    s.atkItem,
+    defAbility: s.atkAbility,  // A's ability used defensively
+    defHPPct:   s.atkHPPct,    // A's current HP% (for Multiscale when B attacks A)
+
+    weather: s.weather, terrain: s.terrain,
+    reflect: s.reflect, lightScreen: s.lightScreen,
+    auroraVeil: s.auroraVeil, crit: s.crit,
+  };
 }
 
 // ═══════════════════════════════════════════════════════════
@@ -462,22 +509,20 @@ function isImmune(moveType, s) {
 // ═══════════════════════════════════════════════════════════
 //  MAIN COMPUTE
 // ═══════════════════════════════════════════════════════════
-function computeAll() {
-  const s = readState();
+
+/** Compute one direction and render into dmgBlock{suffix} / optOutput{suffix}. */
+function computeDirection(s, suffix) {
   const atkData  = PKMN[s.atkPkmn];
   const defData  = PKMN[s.defPkmn];
   const moveData = MOVES[s.atkMove];
 
-  updateTypeBadges(s.atkPkmn, 'atkTypeRow');
-  updateTypeBadges(s.defPkmn, 'defTypeRow');
-  updateMoveCat(moveData);
-  updateStatDisplays('atk', s, atkData, moveData);
-  updateStatDisplays('def', s, defData, moveData);
+  const dmgEl = document.getElementById('dmgBlock' + suffix);
+  const optEl = document.getElementById('optOutput' + suffix);
+  if (!dmgEl) return;
 
   if (!atkData || !defData || !moveData || moveData.category === 'status') {
-    document.getElementById('dmgBlock').innerHTML =
-      '<p class="dmg-placeholder">Enter a Pokémon, move, and defender above to calculate damage.</p>';
-    document.getElementById('optOutput').innerHTML = '';
+    dmgEl.innerHTML = '<p class="dmg-placeholder">Enter Pokémon, move, and stats above.</p>';
+    if (optEl) optEl.innerHTML = '';
     return;
   }
 
@@ -485,8 +530,8 @@ function computeAll() {
   const typeEff    = getTypeEffRaw(moveData.type, defData.types);
 
   if (isImmune(moveData.type, s)) {
-    document.getElementById('dmgBlock').innerHTML = renderImmune(moveData, defData, s.defAbility);
-    document.getElementById('optOutput').innerHTML = '';
+    dmgEl.innerHTML = renderImmune(moveData, defData, s.defAbility);
+    if (optEl) optEl.innerHTML = '';
     return;
   }
 
@@ -499,9 +544,27 @@ function computeAll() {
   let rolls = calcRolls(atkStat, defStat, effBP, stabMult, moveData.type, defData.types);
   rolls = applyPostMods(rolls, s, moveData, isPhysical, typeEff);
 
-  document.getElementById('dmgBlock').innerHTML =
+  dmgEl.innerHTML =
     renderDamage(rolls, hp, curHP, s, moveData, atkData, defData, atkStat, defStat, stabMult, typeEff, isPhysical);
-  document.getElementById('optOutput').innerHTML = '';
+  if (optEl) optEl.innerHTML = '';
+}
+
+function computeAll() {
+  const s  = readState();
+  const sr = buildReversedState(s);
+
+  const atkData  = PKMN[s.atkPkmn];
+  const defData  = PKMN[s.defPkmn];
+  const moveAB   = MOVES[s.atkMove];
+
+  updateTypeBadges(s.atkPkmn, 'atkTypeRow');
+  updateTypeBadges(s.defPkmn, 'defTypeRow');
+  updateMoveCat(moveAB);
+  updateStatDisplays('atk', s, atkData, moveAB);
+  updateStatDisplays('def', s, defData, moveAB);
+
+  computeDirection(s,  'AB');
+  computeDirection(sr, 'BA');
 
   saveState(s);
 }
@@ -551,29 +614,33 @@ function restoreState() {
   const atkPkmnEl = document.getElementById('atkPkmn');
   if (atkPkmnEl && saved.atkPkmn) {
     atkPkmnEl.value = PKMN[saved.atkPkmn]?.displayName || saved.atkPkmn;
-    updateMoveDatalist(saved.atkPkmn);
+    updateMoveDatalist('atk', saved.atkPkmn);
     updateAbilitySelect('atk', saved.atkPkmn);
     updateSprite('atk', saved.atkPkmn);
     updateTypeBadges(saved.atkPkmn, 'atkTypeRow');
   }
   if (saved.atkMove) setVal('atkMove', saved.atkMove);
-  setVal('atkNature',  saved.atkNature  || 'hardy');
+  setVal('atkNature',  saved.atkNature  || 'Hardy');
   setVal('atkItem',    saved.atkItem    || '');
   setVal('atkAbility', saved.atkAbility || '');
   for (const stat of STAT_IDS) {
     setSlider('atk' + stat + 'SP', saved['atk' + stat + 'SP'] || 0);
     if (stat !== 'Hp') setStage('atk' + stat + 'Stage', saved['atk' + stat + 'Stage']);
   }
+  updateHPPctVisibility('atk');
+  if (saved.atkHPPct) setSlider('atkHPPctSlider', saved.atkHPPct, 'atkHPPctVal');
 
   // --- DEFENDER ---
   const defPkmnEl = document.getElementById('defPkmn');
   if (defPkmnEl && saved.defPkmn) {
     defPkmnEl.value = PKMN[saved.defPkmn]?.displayName || saved.defPkmn;
+    updateMoveDatalist('def', saved.defPkmn);
     updateAbilitySelect('def', saved.defPkmn);
     updateSprite('def', saved.defPkmn);
     updateTypeBadges(saved.defPkmn, 'defTypeRow');
   }
-  setVal('defNature',  saved.defNature  || 'hardy');
+  if (saved.defMove) setVal('defMove', saved.defMove);
+  setVal('defNature',  saved.defNature  || 'Hardy');
   setVal('defItem',    saved.defItem    || '');
   setVal('defAbility', saved.defAbility || '');
   for (const stat of STAT_IDS) {
@@ -581,8 +648,8 @@ function restoreState() {
     if (stat !== 'Hp') setStage('def' + stat + 'Stage', saved['def' + stat + 'Stage']);
   }
 
-  // --- Defender HP% (slider and its val span use non-standard id pairing) ---
-  updateDefHPPctVisibility();
+  // --- HP% sliders ---
+  updateHPPctVisibility('def');
   if (saved.defHPPct) setSlider('defHPPctSlider', saved.defHPPct, 'defHPPctVal');
 
   // --- Field state ---
@@ -598,8 +665,9 @@ function restoreState() {
 //  OPTIMIZATION
 // ═══════════════════════════════════════════════════════════
 
-window.findMinSurvive = function () {
-  const s = readState();
+window.findMinSurvive = function (dir) {
+  const base = readState();
+  const s = dir === 'BA' ? buildReversedState(base) : base;
   const atkData  = PKMN[s.atkPkmn];
   const defData  = PKMN[s.defPkmn];
   const moveData = MOVES[s.atkMove];
@@ -632,13 +700,14 @@ window.findMinSurvive = function () {
   }
   solutions.sort((a, b) => a.total - b.total || a.defSP - b.defSP);
 
-  const out = document.getElementById('optOutput');
+  const out = document.getElementById('optOutput' + (dir || 'AB'));
   const defLabel = isPhysical ? 'Def' : 'SpD';
 
-  // SP already spent in other stats — constrains the 66-SP budget
+  // SP already spent in other stats — constrains the 66-SP budget.
+  // For BA direction the "def" panel in state s is actually panel A's stats.
   const defStatKey = isPhysical ? 'Def' : 'Spd';
   const otherSP = STAT_IDS.reduce((sum, id) =>
-    (id === 'Hp' || id === defStatKey) ? sum : sum + spVal('def' + id + 'SP'), 0);
+    (id === 'Hp' || id === defStatKey) ? sum : sum + (s['def' + id + 'SP'] || 0), 0);
   const budget = 66 - otherSP;
 
   if (!solutions.length) {
@@ -692,8 +761,9 @@ window.findMinSurvive = function () {
   out.innerHTML = html;
 };
 
-window.findMinOHKO = function () {
-  const s = readState();
+window.findMinOHKO = function (dir) {
+  const base = readState();
+  const s = dir === 'BA' ? buildReversedState(base) : base;
   const atkData  = PKMN[s.atkPkmn];
   const defData  = PKMN[s.defPkmn];
   const moveData = MOVES[s.atkMove];
@@ -740,7 +810,7 @@ window.findMinOHKO = function () {
   // Budget check: how much SP the attacker has already spent in OTHER stats
   const atkStatId  = isPhysical ? 'Atk' : 'Spa';
   const otherAtkSP = STAT_IDS.reduce((sum, id) =>
-    id === atkStatId ? sum : sum + spVal('atk' + id + 'SP'), 0);
+    id === atkStatId ? sum : sum + (s['atk' + id + 'SP'] || 0), 0);
   const atkBudget  = 66 - otherAtkSP;
 
   let rows = '';
@@ -757,7 +827,7 @@ window.findMinOHKO = function () {
     </tr>`;
   }
 
-  document.getElementById('optOutput').innerHTML = `<div class="opt-section">
+  document.getElementById('optOutput' + (dir || 'AB')).innerHTML = `<div class="opt-section">
     <div class="opt-title">⚔ Min SP to OHKO (defender: ${s.defHpSP} HP SP · ${isPhysical?s.defDefSP:s.defSpdSP} ${defLabel} SP)</div>
     <table class="ohko-table"><tbody>${rows}</tbody></table>
   </div>`;
@@ -775,9 +845,17 @@ window.swapPanels = function () {
   }
 
   swapVals('atkPkmn', 'defPkmn');
+  swapVals('atkMove', 'defMove');
   swapVals('atkNature', 'defNature');
   swapVals('atkItem', 'defItem');
   swapVals('atkAbility', 'defAbility');
+
+  // Swap HP% sliders
+  swapVals('atkHPPctSlider', 'defHPPctSlider');
+  const atkPctVal = document.getElementById('atkHPPctVal');
+  const defPctVal = document.getElementById('defHPPctVal');
+  if (atkPctVal) atkPctVal.textContent = document.getElementById('atkHPPctSlider')?.value || 100;
+  if (defPctVal) defPctVal.textContent = document.getElementById('defHPPctSlider')?.value || 100;
 
   // Swap all 6 SP sliders and their display spans
   for (const id of STAT_IDS) {
@@ -800,14 +878,17 @@ window.swapPanels = function () {
     }
   }
 
-  // Update move datalist, ability selects, and sprites for the new roles
+  // Update move datalists, ability selects, sprites and HP% visibility for new roles
   const newAtkKey = document.getElementById('atkPkmn').value.toLowerCase().trim();
   const newDefKey = document.getElementById('defPkmn').value.toLowerCase().trim();
-  updateMoveDatalist(newAtkKey);
+  updateMoveDatalist('atk', newAtkKey);
+  updateMoveDatalist('def', newDefKey);
   updateAbilitySelect('atk', newAtkKey);
   updateAbilitySelect('def', newDefKey);
   updateSprite('atk', newAtkKey);
   updateSprite('def', newDefKey);
+  updateHPPctVisibility('atk');
+  updateHPPctVisibility('def');
 
   computeAll();
 };
@@ -1043,8 +1124,9 @@ function updateSprite(prefix, pkmnKey) {
 //  MOVE DATALIST FILTER
 // ═══════════════════════════════════════════════════════════
 
-function updateMoveDatalist(pkmnKey) {
-  const moveList = document.getElementById('moveList');
+function updateMoveDatalist(prefix, pkmnKey) {
+  const listId = prefix === 'def' ? 'defMoveList' : 'moveList';
+  const moveList = document.getElementById(listId);
   if (!moveList) return;
   const pkmnData = PKMN[pkmnKey];
 
@@ -1115,11 +1197,11 @@ function populateDataLists() {
     .map(p => `<option value="${p.displayName}">`);
   pkmnList.innerHTML = pkmnNames.join('');
 
-  // Initial move list (all moves; filtered per Pokémon on selection)
-  const moveList = document.getElementById('moveList');
-  if (moveList) {
-    const moveNames = Object.keys(MOVES).sort().map(m => `<option value="${m}">`);
-    moveList.innerHTML = moveNames.join('');
+  // Initial move lists (all moves; filtered per Pokémon on selection)
+  const allMoveOpts = Object.keys(MOVES).sort().map(m => `<option value="${m}">`).join('');
+  for (const listId of ['moveList', 'defMoveList']) {
+    const el = document.getElementById(listId);
+    if (el) el.innerHTML = allMoveOpts;
   }
 }
 
@@ -1150,7 +1232,7 @@ function updateAbilitySelect(prefix, pkmnKey) {
 
   const pkmnData   = PKMN[pkmnKey];
   const pkmnAbs    = pkmnData?.abilities ? new Set(pkmnData.abilities) : null;
-  const allOptions = prefix === 'atk' ? ATK_ABILITIES : DEF_ABILITIES;
+  const allOptions = ALL_ABILITIES;
 
   // Keep "None" (id === '') always; keep ability if Pokémon has it or no data yet
   const filtered = allOptions.filter(a => !a.id || !pkmnAbs || pkmnAbs.has(a.id));
@@ -1168,23 +1250,26 @@ function updateAbilitySelect(prefix, pkmnKey) {
   }
 
   // Show/hide Current HP slider for abilities that depend on full HP
-  if (prefix === 'def') updateDefHPPctVisibility();
+  updateHPPctVisibility(prefix);
 }
 
-/** Show the "Current HP %" slider only for Multiscale / Shadow Shield */
-function updateDefHPPctVisibility() {
-  const ability = document.getElementById('defAbility')?.value;
-  const row     = document.getElementById('defHPPctRow');
+/** Show the "Current HP %" slider only for Multiscale / Shadow Shield. Works for both panels. */
+function updateHPPctVisibility(prefix) {
+  const ability = document.getElementById(prefix + 'Ability')?.value;
+  const row     = document.getElementById(prefix + 'HPPctRow');
   if (!row) return;
   const needsHP = ability === 'multiscale' || ability === 'shadow-shield';
   row.style.display = needsHP ? '' : 'none';
   if (!needsHP) {
-    const slider = document.getElementById('defHPPctSlider');
-    const val    = document.getElementById('defHPPctVal');
+    const slider = document.getElementById(prefix + 'HPPctSlider');
+    const val    = document.getElementById(prefix + 'HPPctVal');
     if (slider) slider.value = 100;
     if (val)    val.textContent = '100';
   }
 }
+
+/** Legacy wrapper — keep existing call sites working */
+function updateDefHPPctVisibility() { updateHPPctVisibility('def'); }
 
 // ═══════════════════════════════════════════════════════════
 //  EVENT BINDING
@@ -1207,14 +1292,14 @@ function bindEvents() {
     // change: fires when user picks from datalist OR leaves the field
     el.addEventListener('change', () => {
       const key = el.value.toLowerCase().trim();
-      if (prefix === 'atk') updateMoveDatalist(key);
+      updateMoveDatalist(prefix, key);
       updateAbilitySelect(prefix, key);
       updateSprite(prefix, key);
       computeAll();
     });
   });
 
-  // Move input
+  // Move inputs (atk + def)
   const moveEl = document.getElementById('atkMove');
   if (moveEl) {
     moveEl.addEventListener('input', () => {
@@ -1223,6 +1308,11 @@ function bindEvents() {
       if (m) computeAll();
     });
     moveEl.addEventListener('change', computeAll);
+  }
+  const defMoveEl = document.getElementById('defMove');
+  if (defMoveEl) {
+    defMoveEl.addEventListener('input', () => { if (MOVES[defMoveEl.value.trim()]) computeAll(); });
+    defMoveEl.addEventListener('change', computeAll);
   }
 
   // Bind all stat sliders for both panels
@@ -1240,18 +1330,20 @@ function bindEvents() {
     }
   }
 
-  // Item / ability selects (atkItem, atkAbility, defItem, defAbility)
-  for (const id of ['atkItem', 'atkAbility', 'defItem']) {
+  // Item / ability selects
+  for (const id of ['atkItem', 'defItem']) {
     const el = document.getElementById(id);
     if (el) el.addEventListener('change', computeAll);
   }
-  // Defender ability also updates HP% slider visibility
-  const defAbilityEl = document.getElementById('defAbility');
-  if (defAbilityEl) {
-    defAbilityEl.addEventListener('change', () => {
-      updateDefHPPctVisibility();
-      computeAll();
-    });
+  // Ability selects also update HP% slider visibility for their respective panel
+  for (const prefix of ['atk', 'def']) {
+    const abilityEl = document.getElementById(prefix + 'Ability');
+    if (abilityEl) {
+      abilityEl.addEventListener('change', () => {
+        updateHPPctVisibility(prefix);
+        computeAll();
+      });
+    }
   }
 
   // Field controls (weather / terrain / screens / crit)
@@ -1260,14 +1352,16 @@ function bindEvents() {
     if (el) el.addEventListener('change', computeAll);
   }
 
-  // Defender current HP% slider
-  const hpPctSlider = document.getElementById('defHPPctSlider');
-  const hpPctVal    = document.getElementById('defHPPctVal');
-  if (hpPctSlider) {
-    hpPctSlider.addEventListener('input', () => {
-      if (hpPctVal) hpPctVal.textContent = hpPctSlider.value;
-      computeAll();
-    });
+  // HP% sliders for both panels
+  for (const prefix of ['atk', 'def']) {
+    const slider = document.getElementById(prefix + 'HPPctSlider');
+    const valEl  = document.getElementById(prefix + 'HPPctVal');
+    if (slider) {
+      slider.addEventListener('input', () => {
+        if (valEl) valEl.textContent = slider.value;
+        computeAll();
+      });
+    }
   }
 }
 
@@ -1312,10 +1406,10 @@ async function loadData() {
   document.getElementById('loadMsg').style.display = 'none';
   document.getElementById('calcApp').style.display = '';
 
-  populateSelect('atkItem',    ATK_ITEMS);
-  populateSelect('atkAbility', ATK_ABILITIES);
-  populateSelect('defItem',    DEF_ITEMS);
-  populateSelect('defAbility', DEF_ABILITIES);
+  populateSelect('atkItem',    ALL_ITEMS);
+  populateSelect('atkAbility', ALL_ABILITIES);
+  populateSelect('defItem',    ALL_ITEMS);
+  populateSelect('defAbility', ALL_ABILITIES);
   populateDataLists();
   bindEvents();
 
@@ -1574,7 +1668,7 @@ window.loadSetIntoPanel = function (prefix, setId) {
   const pkmnEl = document.getElementById(prefix + 'Pkmn');
   if (pkmnEl) {
     pkmnEl.value = PKMN[set.pokemon]?.displayName || set.pokemon;
-    if (prefix === 'atk') updateMoveDatalist(set.pokemon);
+    updateMoveDatalist(prefix, set.pokemon);
     updateAbilitySelect(prefix, set.pokemon);
     updateSprite(prefix, set.pokemon);
     updateTypeBadges(set.pokemon, prefix + 'TypeRow');
@@ -1592,44 +1686,40 @@ window.loadSetIntoPanel = function (prefix, setId) {
     if (valSpan) valSpan.textContent = val;
   }
 
-  // Item
+  // Item (ALL_ITEMS available on both panels)
   const itemEl = document.getElementById(prefix + 'Item');
   if (itemEl) {
-    const allItems = prefix === 'atk' ? ATK_ITEMS : DEF_ITEMS;
-    const matched = allItems.find(i => i.id === set.item);
+    const matched = ALL_ITEMS.find(i => i.id === set.item);
     itemEl.value = matched ? set.item : '';
   }
 
-  // Ability
+  // Ability (ALL_ABILITIES available on both panels)
   const abilityEl = document.getElementById(prefix + 'Ability');
   if (abilityEl) {
-    // ability select was repopulated for this Pokémon; try to set it
     const opt = abilityEl.querySelector(`option[value="${CSS.escape(set.ability)}"]`);
     abilityEl.value = opt ? set.ability : '';
   }
 
-  if (prefix === 'def') updateDefHPPctVisibility();
+  updateHPPctVisibility(prefix);
 
-  // For attacker: populate the move with the first move of the set; also
-  // refresh the quick-pick move buttons row.
-  if (prefix === 'atk') {
-    const moveEl = document.getElementById('atkMove');
-    if (moveEl && set.moves.length) {
-      moveEl.value = set.moves[0];
-      updateMoveCat(MOVES[set.moves[0]]);
-    }
-    renderSetMoveButtons(set.moves);
+  // Populate the move input with the first move of the set and refresh quick-pick buttons
+  const moveInputId = prefix + 'Move';
+  const moveEl = document.getElementById(moveInputId);
+  if (moveEl && set.moves.length) {
+    moveEl.value = set.moves[0];
+    if (prefix === 'atk') updateMoveCat(MOVES[set.moves[0]]);
   }
+  renderSetMoveButtons(prefix, set.moves);
 
   computeAll();
 };
 
 /**
- * Render 4 quick-pick move buttons below the Move input (attacker only).
+ * Render 4 quick-pick move buttons below the Move input for the given panel.
  * If moves is empty or null, hide the row.
  */
-function renderSetMoveButtons(moves) {
-  const row = document.getElementById('atkSetMoves');
+function renderSetMoveButtons(prefix, moves) {
+  const row = document.getElementById(prefix + 'SetMoves');
   if (!row) return;
   if (!moves || !moves.length) { row.style.display = 'none'; return; }
   row.style.display = 'flex';
@@ -1638,15 +1728,16 @@ function renderSetMoveButtons(moves) {
     const cls   = known ? (known.category === 'physical' ? 'btn-setmove-p' :
                            known.category === 'special'  ? 'btn-setmove-s' : 'btn-setmove-t')
                         : 'btn-setmove-u';
-    return `<button class="btn-setmove ${cls}" onclick="pickSetMove('${m.replace(/'/g, "\\'")}')">${m}</button>`;
+    const safe = m.replace(/'/g, "\\'");
+    return `<button class="btn-setmove ${cls}" onclick="pickSetMove('${safe}','${prefix}')">${m}</button>`;
   }).join('');
 }
 
-window.pickSetMove = function (moveName) {
-  const moveEl = document.getElementById('atkMove');
+window.pickSetMove = function (moveName, prefix) {
+  const moveEl = document.getElementById((prefix || 'atk') + 'Move');
   if (moveEl) {
     moveEl.value = moveName;
-    updateMoveCat(MOVES[moveName]);
+    if ((prefix || 'atk') === 'atk') updateMoveCat(MOVES[moveName]);
   }
   computeAll();
 };

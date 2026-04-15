@@ -362,6 +362,19 @@
 .btn-set-delete:hover { color: #ef5350; }
 .sets-empty { color: var(--muted); font-size: 0.85rem; font-style: italic; }
 
+/* ── BIDIRECTIONAL RESULTS ── */
+.results-cols {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+}
+@media (max-width: 860px) { .results-cols { grid-template-columns: 1fr; } }
+.results-col-title {
+  font-size: 0.72rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.5px; margin-bottom: 10px;
+  padding-bottom: 6px; border-bottom: 1px solid var(--border);
+}
+.results-col-title.col-ab { color: #ef9a9a; border-color: #ef535044; }
+.results-col-title.col-ba { color: #90caf9; border-color: #42a5f544; }
+
 /* ── SET MOVES QUICK-PICK ── */
 /* Ahora dentro de field-input-wrap — no padding lateral extra */
 .set-moves-row { display: flex; gap: 5px; }

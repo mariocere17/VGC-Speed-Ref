@@ -6,7 +6,7 @@
   <title>Pokemon Champions — Damage Calc</title>
   <link rel="icon" type="image/png" href="https://img.pokemondb.net/sprites/home/normal/weavile.png">
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="calc.css?v=9">
+  <link rel="stylesheet" href="calc.css?v=10">
 </head>
 <body>
 
@@ -150,6 +150,15 @@
           <span class="field-label">Ability</span>
           <select id="atkAbility" class="field-select"></select>
         </div>
+
+        <div class="field-row" id="atkHPPctRow" style="display:none">
+          <span class="field-label">Current HP</span>
+          <div class="slider-wrap">
+            <input type="range" class="sp-slider" id="atkHPPctSlider" min="1" max="100" value="100">
+            <span class="sp-val" id="atkHPPctVal">100</span>
+            <span style="color:var(--muted);font-size:0.82rem">%</span>
+          </div>
+        </div>
       </section>
 
       <!-- ── DEFENDER ─────────────────────────────────── -->
@@ -173,9 +182,13 @@
                onerror="nextSprite(this)">
         </div>
 
-        <!-- spacer aligns with move+set-moves rows in attacker panel -->
-        <div class="field-row field-placeholder"></div>
-        <div class="field-row field-placeholder"></div>
+        <div class="field-row">
+          <span class="field-label">Move</span>
+          <div class="field-input-wrap">
+            <input type="text" id="defMove" list="defMoveList" placeholder="Earthquake…" autocomplete="off" class="pkmn-input">
+            <div class="set-moves-row" id="defSetMoves" style="display:none"></div>
+          </div>
+        </div>
 
         <div class="field-row">
           <span class="field-label">Nature</span>
@@ -295,16 +308,31 @@
 
     <!-- ── RESULTS ─────────────────────────────────────── -->
     <div class="calc-results">
-      <div id="dmgBlock">
-        <p class="dmg-placeholder">Enter a Pokémon, move, and defender above to calculate damage.</p>
-      </div>
+      <div class="results-cols">
+        <div class="results-col">
+          <div class="results-col-title col-ab">A → B</div>
+          <div id="dmgBlockAB">
+            <p class="dmg-placeholder">Enter Pokémon, move, and stats above.</p>
+          </div>
+          <div class="opt-row">
+            <button class="btn-opt btn-survive" onclick="findMinSurvive('AB')">🛡 Min SP to survive</button>
+            <button class="btn-opt btn-ohko"    onclick="findMinOHKO('AB')">⚔ Min SP to OHKO</button>
+          </div>
+          <div class="opt-output" id="optOutputAB"></div>
+        </div>
 
-      <div class="opt-row">
-        <button class="btn-opt btn-survive" onclick="findMinSurvive()">🛡 Min SP to survive</button>
-        <button class="btn-opt btn-ohko" onclick="findMinOHKO()">⚔ Min SP to OHKO</button>
+        <div class="results-col">
+          <div class="results-col-title col-ba">B → A</div>
+          <div id="dmgBlockBA">
+            <p class="dmg-placeholder">Enter Pokémon, move, and stats above.</p>
+          </div>
+          <div class="opt-row">
+            <button class="btn-opt btn-survive" onclick="findMinSurvive('BA')">🛡 Min SP to survive</button>
+            <button class="btn-opt btn-ohko"    onclick="findMinOHKO('BA')">⚔ Min SP to OHKO</button>
+          </div>
+          <div class="opt-output" id="optOutputBA"></div>
+        </div>
       </div>
-
-      <div class="opt-output" id="optOutput"></div>
     </div>
 
   </div><!-- #calcApp -->
@@ -312,7 +340,8 @@
 
 <datalist id="pkmnList"></datalist>
 <datalist id="moveList"></datalist>
+<datalist id="defMoveList"></datalist>
 
-<script src="calc.js?v=8"></script>
+<script src="calc.js?v=10"></script>
 </body>
 </html>
