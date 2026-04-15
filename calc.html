@@ -6,7 +6,7 @@
   <title>Pokemon Champions — Damage Calc</title>
   <link rel="icon" type="image/png" href="https://img.pokemondb.net/sprites/home/normal/weavile.png">
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="calc.css?v=17">
+  <link rel="stylesheet" href="calc.css?v=18">
 </head>
 <body>
 
@@ -357,31 +357,29 @@
     </div>
 
     <!-- ── RESULTS ─────────────────────────────────────── -->
-    <div class="calc-results">
-      <div class="results-cols">
-        <div class="results-col">
-          <div class="results-col-title col-ab">A → B</div>
-          <div id="dmgBlockAB">
-            <p class="dmg-placeholder">Enter Pokémon, move, and stats above.</p>
-          </div>
-          <div class="opt-row">
-            <button class="btn-opt btn-survive" onclick="findMinSurvive('AB')">🛡 Min SP to survive</button>
-            <button class="btn-opt btn-ohko"    onclick="findMinOHKO('AB')">⚔ Min SP to OHKO</button>
-          </div>
-          <div class="opt-output" id="optOutputAB"></div>
+    <div class="results-cols">
+      <div class="results-col">
+        <div class="results-col-title col-ab">A → B</div>
+        <div id="dmgBlockAB">
+          <p class="dmg-placeholder">Enter Pokémon, move, and stats above.</p>
         </div>
+        <div class="opt-row">
+          <button class="btn-opt btn-survive" onclick="findMinSurvive('AB')">🛡 Min SP to survive</button>
+          <button class="btn-opt btn-ohko"    onclick="findMinOHKO('AB')">⚔ Min SP to OHKO</button>
+        </div>
+        <div class="opt-output" id="optOutputAB"></div>
+      </div>
 
-        <div class="results-col">
-          <div class="results-col-title col-ba">B → A</div>
-          <div id="dmgBlockBA">
-            <p class="dmg-placeholder">Enter Pokémon, move, and stats above.</p>
-          </div>
-          <div class="opt-row">
-            <button class="btn-opt btn-survive" onclick="findMinSurvive('BA')">🛡 Min SP to survive</button>
-            <button class="btn-opt btn-ohko"    onclick="findMinOHKO('BA')">⚔ Min SP to OHKO</button>
-          </div>
-          <div class="opt-output" id="optOutputBA"></div>
+      <div class="results-col">
+        <div class="results-col-title col-ba">B → A</div>
+        <div id="dmgBlockBA">
+          <p class="dmg-placeholder">Enter Pokémon, move, and stats above.</p>
         </div>
+        <div class="opt-row">
+          <button class="btn-opt btn-survive" onclick="findMinSurvive('BA')">🛡 Min SP to survive</button>
+          <button class="btn-opt btn-ohko"    onclick="findMinOHKO('BA')">⚔ Min SP to OHKO</button>
+        </div>
+        <div class="opt-output" id="optOutputBA"></div>
       </div>
     </div>
 

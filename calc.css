@@ -237,10 +237,6 @@
 .field-checks input[type="checkbox"] { cursor: pointer; }
 
 /* ── RESULTS ── */
-.calc-results {
-  background: var(--surface); border: 1px solid var(--border);
-  border-radius: 10px; padding: 20px;
-}
 .dmg-placeholder { color: var(--muted); font-size: 0.9rem; text-align: center; padding: 20px 0; }
 
 /* Damage header line */
@@ -413,11 +409,13 @@
 /* ── BIDIRECTIONAL RESULTS ── */
 .results-cols {
   display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
-  align-items: start; /* don't stretch columns to equal height */
+  align-items: start;
 }
 @media (max-width: 860px) { .results-cols { grid-template-columns: 1fr; } }
 .results-col {
   display: flex; flex-direction: column;
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 10px; padding: 18px;
 }
 /* dmgBlock expands so opt-row buttons are always at the same vertical position */
 .results-col > div:nth-child(2) { flex: 1; min-height: 80px; }
