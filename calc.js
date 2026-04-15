@@ -131,6 +131,22 @@ const ATK_ABILITIES = [
 // Moves halved by Grassy Terrain (earthquake-family hits grounded Pokémon softer)
 const GRASSY_HALVED_MOVES = new Set(['Earthquake', 'Bulldoze', 'Magnitude']);
 
+// Moves that hit all adjacent foes in doubles (×0.75 spread penalty)
+const SPREAD_MOVES = new Set([
+  'Earthquake', 'Magnitude', 'Bulldoze',
+  'Rock Slide', 'Diamond Storm', 'Thousand Arrows', 'Thousand Waves',
+  'Surf', 'Muddy Water', 'Origin Pulse', 'Sparkling Aria',
+  'Discharge', 'Electroweb',
+  'Blizzard', 'Icy Wind', 'Glacial Lance', 'Freeze-Dry',
+  'Heat Wave', 'Eruption', 'Lava Plume', 'Searing Shot', 'Burning Jealousy',
+  'Sludge Wave',
+  'Hyper Voice', 'Boomburst', 'Round', 'Tri Attack', 'Swift',
+  'Dazzling Gleam', 'Moonblast',
+  'Breaking Swipe', 'Dragon Energy',
+  'Petal Blizzard', 'Pollen Puff',
+  'Power Gem', 'Ancient Power',
+]);
+
 // localStorage key. Bump the suffix when the state schema changes incompatibly.
 const STORAGE_KEY = 'champions-calc-state-v1';
 
@@ -194,9 +210,32 @@ function calcHP(base, sp) {
   return Math.floor((2 * base + 31) * 50 / 100) + 60 + sp;
 }
 
-function getTypeEffRaw(atkType, defTypes) {
+/** Returns [eff1, eff2] — each type applied separately (needed for floor-per-type in calcRolls).
+ *  Handles Gravity (Ground hits Flying) and Strong Winds (SE vs Flying neutralised). */
+function getTypeEffComponents(atkType, defTypes, s) {
   const chart = TYPE_CHART[atkType] || {};
-  return (chart[defTypes[0]] ?? 1) * (defTypes[1] ? (chart[defTypes[1]] ?? 1) : 1);
+  let eff1 = chart[defTypes[0]] ?? 1;
+  let eff2 = defTypes[1] ? (chart[defTypes[1]] ?? 1) : 1;
+
+  // Gravity: Ground moves no longer have 0 effectiveness against Flying types
+  if (s?.gravity && atkType === 'ground') {
+    if (defTypes[0] === 'flying' && eff1 === 0) eff1 = 1;
+    if (defTypes[1] === 'flying' && eff2 === 0) eff2 = 1;
+  }
+  // Strong Winds: moves SE against Flying are neutralised to 1×
+  if (s?.weather === 'strong-winds') {
+    const flyingWeak = new Set(['electric', 'ice', 'rock']);
+    if (flyingWeak.has(atkType)) {
+      if (defTypes[0] === 'flying' && eff1 > 1) eff1 = 1;
+      if (defTypes[1] === 'flying' && eff2 > 1) eff2 = 1;
+    }
+  }
+  return [eff1, eff2];
+}
+
+function getTypeEffRaw(atkType, defTypes, s) {
+  const [e1, e2] = getTypeEffComponents(atkType, defTypes, s);
+  return e1 * e2;
 }
 
 function isSTAB(moveType, pkmnTypes) {
@@ -219,13 +258,9 @@ function calcNHKOChance(rolls, hp, n) {
 
 // 16 damage rolls (r = 85..100)
 // Order: BASE → random → STAB → type (each floored)
-function calcRolls(atkStat, defStat, bp, stabMult, atkType, defTypes) {
+// Accepts pre-computed [typeEff1, typeEff2] from getTypeEffComponents to support Gravity/Strong Winds.
+function calcRolls(atkStat, defStat, bp, stabMult, typeEff1, typeEff2) {
   if (!bp || !atkStat || !defStat) return new Array(16).fill(0);
-
-  const chart = TYPE_CHART[atkType] || {};
-  const typeEff1 = chart[defTypes[0]] ?? 1;
-  const typeEff2 = defTypes[1] ? (chart[defTypes[1]] ?? 1) : 1;
-
   if (typeEff1 === 0 || typeEff2 === 0) return new Array(16).fill(0);
 
   const base = Math.floor(Math.floor(Math.floor(22 * bp * atkStat / defStat) / 50) + 2);
@@ -287,17 +322,28 @@ function readState() {
 
     weather:     document.getElementById('fldWeather')?.value     || '',
     terrain:     document.getElementById('fldTerrain')?.value     || '',
+    format:      document.querySelector('input[name="fldFormat"]:checked')?.value || 'doubles',
+    // Field conditions
+    gravity:     document.getElementById('fldGravity')?.checked    || false,
+    magicRoom:   document.getElementById('fldMagicRoom')?.checked  || false,
+    wonderRoom:  document.getElementById('fldWonderRoom')?.checked || false,
+    // Atk-side modifiers (ally effects in doubles)
+    helpingHand: document.getElementById('fldHelpingHand')?.checked || false,
+    battery:     document.getElementById('fldBattery')?.checked    || false,
+    // Def-side modifiers
     reflect:     document.getElementById('fldReflect')?.checked     || false,
     lightScreen: document.getElementById('fldLightScreen')?.checked || false,
     auroraVeil:  document.getElementById('fldAuroraVeil')?.checked  || false,
+    friendGuard: document.getElementById('fldFriendGuard')?.checked || false,
     crit:        document.getElementById('fldCrit')?.checked        || false,
   };
 }
 
 // A Pokémon is "grounded" if it has no Flying type and no Levitate.
-// Used for terrain effects (terrains only affect grounded Pokémon).
-function isGrounded(pkmnData, ability) {
+// Gravity grounds all Pokémon (Flying type and Levitate don't apply).
+function isGrounded(pkmnData, ability, gravity) {
   if (!pkmnData) return false;
+  if (gravity) return true;
   if (pkmnData.types.includes('flying')) return false;
   if (ability === 'levitate') return false;
   return true;
@@ -328,9 +374,11 @@ function buildReversedState(s) {
     defAbility: s.atkAbility,  // A's ability used defensively
     defHPPct:   s.atkHPPct,    // A's current HP% (for Multiscale when B attacks A)
 
-    weather: s.weather, terrain: s.terrain,
+    weather: s.weather, terrain: s.terrain, format: s.format,
+    gravity: s.gravity, magicRoom: s.magicRoom, wonderRoom: s.wonderRoom,
+    helpingHand: s.helpingHand, battery: s.battery,
     reflect: s.reflect, lightScreen: s.lightScreen,
-    auroraVeil: s.auroraVeil, crit: s.crit,
+    auroraVeil: s.auroraVeil, friendGuard: s.friendGuard, crit: s.crit,
   };
 }
 
@@ -346,12 +394,13 @@ function buildAtkStat(s, moveData, isPhysical, defAbility) {
   const nat     = getNatureMult(s.atkNature, statKey);
   let stat = calcStat(pkmnData[statKey], sp, nat);
 
-  if (s.atkItem === 'choice-band'  && isPhysical)  stat = Math.floor(stat * 1.5);
-  if (s.atkItem === 'choice-specs' && !isPhysical) stat = Math.floor(stat * 1.5);
-  if (s.atkItem === 'muscle-band'  && isPhysical)  stat = Math.floor(stat * 1.1);
-  if (s.atkItem === 'wise-glasses' && !isPhysical) stat = Math.floor(stat * 1.1);
-  if (s.atkItem.startsWith('type-')) {
-    const itemDef = ATK_ITEMS.find(i => i.id === s.atkItem);
+  const atkItem = s.magicRoom ? '' : s.atkItem; // Magic Room suppresses items
+  if (atkItem === 'choice-band'  && isPhysical)  stat = Math.floor(stat * 1.5);
+  if (atkItem === 'choice-specs' && !isPhysical) stat = Math.floor(stat * 1.5);
+  if (atkItem === 'muscle-band'  && isPhysical)  stat = Math.floor(stat * 1.1);
+  if (atkItem === 'wise-glasses' && !isPhysical) stat = Math.floor(stat * 1.1);
+  if (atkItem.startsWith('type-')) {
+    const itemDef = ATK_ITEMS.find(i => i.id === atkItem);
     if (itemDef && itemDef.moveType === moveData.type) stat = Math.floor(stat * 1.2);
   }
   if ((s.atkAbility === 'huge-power' || s.atkAbility === 'pure-power') && isPhysical)
@@ -435,14 +484,18 @@ function buildStabMult(s, moveData, pkmnData) {
 function buildDefStat(s, moveData, isPhysical) {
   const pkmnData = PKMN[s.defPkmn];
   if (!pkmnData) return { hp: 1, def: 1 };
-  const hp      = calcHP(pkmnData.hp, s.defHpSP);
-  const statKey = isPhysical ? 'def' : 'spd';
-  const sp      = isPhysical ? s.defDefSP : s.defSpdSP;
+  const hp = calcHP(pkmnData.hp, s.defHpSP);
+
+  // Wonder Room swaps Def and SpD for all Pokémon
+  const effectivePhysical = s.wonderRoom ? !isPhysical : isPhysical;
+  const statKey = effectivePhysical ? 'def' : 'spd';
+  const sp      = effectivePhysical ? s.defDefSP : s.defSpdSP;
   const nat     = getNatureMult(s.defNature, statKey);
   let def = calcStat(pkmnData[statKey], sp, nat);
 
-  if (s.defItem === 'assault-vest' && !isPhysical) def = Math.floor(def * 1.5);
-  if (s.defItem === 'eviolite')                    def = Math.floor(def * 1.5);
+  const defItem = s.magicRoom ? '' : s.defItem; // Magic Room suppresses items
+  if (defItem === 'assault-vest' && !isPhysical) def = Math.floor(def * 1.5);
+  if (defItem === 'eviolite')                    def = Math.floor(def * 1.5);
 
   // Weather-boosted stats (applied before stage mods, like items)
   if (s.weather === 'sand' && !isPhysical && pkmnData.types.includes('rock'))
@@ -492,13 +545,15 @@ function applyPostMods(rolls, s, moveData, isPhysical, typeEff) {
     r = r.map(d => Math.floor(d * 1.2));
   if (s.atkAbility === 'guts' && isPhysical)
     r = r.map(d => Math.floor(d * 1.5));
-  if (s.atkItem === 'life-orb')  r = r.map(d => Math.floor(d * 1.3));
-  if (s.atkItem === 'expert-belt' && typeEff > 1) r = r.map(d => Math.floor(d * 1.2));
+  const atkItem = s.magicRoom ? '' : s.atkItem;
+  const defItem = s.magicRoom ? '' : s.defItem;
+  if (atkItem === 'life-orb')  r = r.map(d => Math.floor(d * 1.3));
+  if (atkItem === 'expert-belt' && typeEff > 1) r = r.map(d => Math.floor(d * 1.2));
 
   // Type-resist berries: halve damage from a matching move type.
   // Non-Normal berries only activate on super-effective hits.
-  if (s.defItem && s.defItem.startsWith('berry-')) {
-    const itemDef = DEF_ITEMS.find(i => i.id === s.defItem);
+  if (defItem && defItem.startsWith('berry-')) {
+    const itemDef = DEF_ITEMS.find(i => i.id === defItem);
     if (itemDef && itemDef.berryType === moveData.type) {
       const activates = itemDef.berryType === 'normal' || typeEff > 1;
       if (activates) r = r.map(d => Math.floor(d * 0.5));
@@ -506,19 +561,21 @@ function applyPostMods(rolls, s, moveData, isPhysical, typeEff) {
   }
 
   // ── Weather ──
-  if (s.weather === 'sun') {
+  if (s.weather === 'sun' || s.weather === 'harsh-sun') {
     if (moveData.type === 'fire')  r = r.map(d => Math.floor(d * 1.5));
-    if (moveData.type === 'water') r = r.map(d => Math.floor(d * 0.5));
-  } else if (s.weather === 'rain') {
+    if (moveData.type === 'water' && s.weather === 'sun') r = r.map(d => Math.floor(d * 0.5));
+    // harsh-sun: water already blocked by isImmune
+  } else if (s.weather === 'rain' || s.weather === 'heavy-rain') {
     if (moveData.type === 'water') r = r.map(d => Math.floor(d * 1.5));
-    if (moveData.type === 'fire')  r = r.map(d => Math.floor(d * 0.5));
+    if (moveData.type === 'fire' && s.weather === 'rain') r = r.map(d => Math.floor(d * 0.5));
+    // heavy-rain: fire already blocked by isImmune
   }
 
   // ── Terrain (only affects grounded Pokémon) ──
   const atkData = PKMN[s.atkPkmn];
   const defData = PKMN[s.defPkmn];
-  const atkGrounded = isGrounded(atkData, s.atkAbility);
-  const defGrounded = isGrounded(defData, effDefAbility(s));
+  const atkGrounded = isGrounded(atkData, s.atkAbility, s.gravity);
+  const defGrounded = isGrounded(defData, effDefAbility(s), s.gravity);
   if (atkGrounded) {
     if (s.terrain === 'electric' && moveData.type === 'electric')
       r = r.map(d => Math.floor(d * 1.3));
@@ -546,6 +603,15 @@ function applyPostMods(rolls, s, moveData, isPhysical, typeEff) {
     }
   }
 
+  // ── Doubles: spread move penalty ──
+  if (s.format === 'doubles' && SPREAD_MOVES.has(s.atkMove))
+    r = r.map(d => Math.floor(d * 0.75));
+
+  // ── Doubles: ally effects ──
+  if (s.helpingHand)                   r = r.map(d => Math.floor(d * 1.5));
+  if (s.battery && !isPhysical)        r = r.map(d => Math.floor(d * 1.3));
+  if (s.friendGuard)                   r = r.map(d => Math.floor(d * 0.75));
+
   // ── Critical hit ──
   // Base damage ×1.5 (or ×2.25 with Sniper).
   if (s.crit) {
@@ -558,10 +624,20 @@ function applyPostMods(rolls, s, moveData, isPhysical, typeEff) {
 
 function isImmune(moveType, s) {
   const defAbility = effDefAbility(s);
-  if (defAbility === 'levitate'    && moveType === 'ground')   return true;
+  const defData    = PKMN[s.defPkmn];
+  if (moveType === 'ground') {
+    // Gravity removes Ground immunity from Levitate and Flying type
+    if (!s.gravity) {
+      if (defAbility === 'levitate') return true;
+      if (defData?.types.includes('flying')) return true;
+    }
+  }
   if (defAbility === 'flash-fire'  && moveType === 'fire')     return true;
   if (defAbility === 'volt-absorb' && moveType === 'electric') return true;
   if ((defAbility === 'water-absorb' || defAbility === 'storm-drain') && moveType === 'water') return true;
+  // Extreme weather: Water moves fail in Harsh Sunshine, Fire moves fail in Heavy Rain
+  if (s.weather === 'harsh-sun'  && moveType === 'water') return true;
+  if (s.weather === 'heavy-rain' && moveType === 'fire')  return true;
   return false;
 }
 
@@ -588,11 +664,12 @@ function computeDirection(s, suffix) {
     return;
   }
 
-  const isPhysical = moveData.category === 'physical';
-  const typeEff    = getTypeEffRaw(moveData.type, defData.types);
+  const isPhysical          = moveData.category === 'physical';
+  const [tEff1, tEff2]      = getTypeEffComponents(moveData.type, defData.types, s);
+  const typeEff             = tEff1 * tEff2;
 
   if (isImmune(moveData.type, s)) {
-    dmgEl.innerHTML = renderImmune(moveData, defData, s.defAbility);
+    dmgEl.innerHTML = renderImmune(moveData, defData, s.defAbility, s);
     if (optEl) optEl.innerHTML = '';
     return;
   }
@@ -603,7 +680,7 @@ function computeDirection(s, suffix) {
   const { hp, def: defStat } = buildDefStat(s, moveData, isPhysical);
   const curHP    = Math.floor(hp * (s.defHPPct || 100) / 100);
 
-  let rolls = calcRolls(atkStat, defStat, effBP, stabMult, moveData.type, defData.types);
+  let rolls = calcRolls(atkStat, defStat, effBP, stabMult, tEff1, tEff2);
   rolls = applyPostMods(rolls, s, moveData, isPhysical, typeEff);
 
   dmgEl.innerHTML =
@@ -717,9 +794,21 @@ function restoreState() {
   // --- Field state ---
   setVal('fldWeather', saved.weather || '');
   setVal('fldTerrain', saved.terrain || '');
+  // Format radio
+  const fmtEl = document.querySelector(`input[name="fldFormat"][value="${saved.format || 'doubles'}"]`);
+  if (fmtEl) fmtEl.checked = true;
+  // Field conditions
+  setCheck('fldGravity',     saved.gravity);
+  setCheck('fldMagicRoom',   saved.magicRoom);
+  setCheck('fldWonderRoom',  saved.wonderRoom);
+  // Atk-side
+  setCheck('fldHelpingHand', saved.helpingHand);
+  setCheck('fldBattery',     saved.battery);
+  // Def-side
   setCheck('fldReflect',     saved.reflect);
   setCheck('fldLightScreen', saved.lightScreen);
   setCheck('fldAuroraVeil',  saved.auroraVeil);
+  setCheck('fldFriendGuard', saved.friendGuard);
   setCheck('fldCrit',        saved.crit);
 }
 
@@ -735,8 +824,9 @@ window.findMinSurvive = function (dir) {
   const moveData = MOVES[s.atkMove];
   if (!atkData || !defData || !moveData || moveData.category === 'status') return;
 
-  const isPhysical = moveData.category === 'physical';
-  const typeEff    = getTypeEffRaw(moveData.type, defData.types);
+  const isPhysical         = moveData.category === 'physical';
+  const [tEff1s, tEff2s]   = getTypeEffComponents(moveData.type, defData.types, s);
+  const typeEff            = tEff1s * tEff2s;
   if (isImmune(moveData.type, s)) return;
 
   const atkStat  = buildAtkStat(s, moveData, isPhysical, s.defAbility);
@@ -746,13 +836,12 @@ window.findMinSurvive = function (dir) {
   const solutions = [];
   for (let hpSP = 0; hpSP <= 32; hpSP++) {
     for (let defSP = 0; defSP <= 32; defSP++) {
-      // Reuse buildDefStat by overriding SP values in a state copy
       const sCopy = { ...s, defHpSP: hpSP };
       if (isPhysical) sCopy.defDefSP = defSP;
       else            sCopy.defSpdSP = defSP;
       const { hp, def } = buildDefStat(sCopy, moveData, isPhysical);
 
-      let rolls = calcRolls(atkStat, def, effBP, stabMult, moveData.type, defData.types);
+      let rolls = calcRolls(atkStat, def, effBP, stabMult, tEff1s, tEff2s);
       rolls = applyPostMods(rolls, sCopy, moveData, isPhysical, typeEff);
 
       // Survival is checked against current HP (HP% × max HP), not max HP
@@ -831,8 +920,9 @@ window.findMinOHKO = function (dir) {
   const moveData = MOVES[s.atkMove];
   if (!atkData || !defData || !moveData || moveData.category === 'status') return;
 
-  const isPhysical = moveData.category === 'physical';
-  const typeEff    = getTypeEffRaw(moveData.type, defData.types);
+  const isPhysical         = moveData.category === 'physical';
+  const [tEff1o, tEff2o]   = getTypeEffComponents(moveData.type, defData.types, s);
+  const typeEff            = tEff1o * tEff2o;
   if (isImmune(moveData.type, s)) return;
 
   const effBP    = buildEffBP(s, moveData, atkData, defData);
@@ -852,13 +942,12 @@ window.findMinOHKO = function (dir) {
   for (const thresh of THRESHOLDS) {
     let found = null;
     for (let sp = 0; sp <= 32; sp++) {
-      // Reuse buildAtkStat by overriding the relevant SP value in a state copy
       const sCopy = { ...s };
       if (isPhysical) sCopy.atkAtkSP = sp;
       else            sCopy.atkSpaSP = sp;
       const atkStat = buildAtkStat(sCopy, moveData, isPhysical, s.defAbility);
 
-      let rolls = calcRolls(atkStat, defStat, effBP, stabMult, moveData.type, defData.types);
+      let rolls = calcRolls(atkStat, defStat, effBP, stabMult, tEff1o, tEff2o);
       rolls = applyPostMods(rolls, s, moveData, isPhysical, typeEff);
       const koRolls = rolls.filter(r => r >= curHP).length;
       if (koRolls >= thresh.rolls) { found = { sp, atkStat, koRolls, rolls }; break; }
@@ -1041,12 +1130,20 @@ function renderDamage(rolls, hp, curHP, s, moveData, atkData, defData, atkStat, 
     ? `<span class="dmg-tag tag-crit">💥 ${s.atkAbility === 'sniper' ? 'Sniper Crit' : 'Crit'}</span>`
     : '';
 
+  const hhTag  = s.helpingHand  ? '<span class="dmg-tag tag-hh">Helping Hand</span>'  : '';
+  const batTag = s.battery && !isPhysical ? '<span class="dmg-tag tag-bat">Battery</span>' : '';
+  const fgTag  = s.friendGuard  ? '<span class="dmg-tag tag-fg">Friend Guard</span>'  : '';
+  const spreadTag = (s.format === 'doubles' && SPREAD_MOVES.has(s.atkMove))
+    ? '<span class="dmg-tag tag-spread">Doubles spread ×0.75</span>' : '';
+  const wrTag  = s.wonderRoom   ? '<span class="dmg-tag tag-wr">Wonder Room</span>'   : '';
+  const mrTag  = s.magicRoom    ? '<span class="dmg-tag tag-mr">Magic Room</span>'    : '';
+
   const cells = rolls.map(d =>
     `<div class="roll-cell${d >= hp ? ' ko' : ''}" title="${d}"></div>`
   ).join('');
 
-  const isPhysLabel  = isPhysical ? 'Atk' : 'SpA';
-  const defStatLabel = isPhysical ? 'Def' : 'SpD';
+  const isPhysLabel  = isPhysical ? (s.wonderRoom ? 'SpD→Def' : 'Atk') : (s.wonderRoom ? 'Def→SpD' : 'SpA');
+  const defStatLabel = isPhysical ? (s.wonderRoom ? 'SpD' : 'Def') : (s.wonderRoom ? 'Def' : 'SpD');
   const atkSPVal     = isPhysical ? s.atkAtkSP : s.atkSpaSP;
   const defSPVal     = isPhysical ? s.defDefSP : s.defSpdSP;
   const atkNatChar   = getNatureMult(s.atkNature, isPhysical ? 'atk' : 'spa') > 1 ? '＋'
@@ -1060,7 +1157,7 @@ function renderDamage(rolls, hp, curHP, s, moveData, atkData, defData, atkStat, 
       <span class="dmg-pct">(${minPct}%–${maxPct}%)</span>
       <span class="dmg-ko ${koClass}">${koText}</span>
     </div>
-    <div class="dmg-tags">${stabTag}${typeTag}${critTag}</div>
+    <div class="dmg-tags">${stabTag}${typeTag}${critTag}${hhTag}${batTag}${fgTag}${spreadTag}${wrTag}${mrTag}</div>
     <div class="rolls-row">${cells}</div>
     <div class="dmg-stats">
       <strong>${atkData.displayName}</strong> ${isPhysLabel} <strong>${atkStat}</strong>
@@ -1073,11 +1170,17 @@ function renderDamage(rolls, hp, curHP, s, moveData, atkData, defData, atkStat, 
   `;
 }
 
-function renderImmune(moveData, defData, defAbility) {
-  const abilityDef = DEF_ABILITIES.find(a => a.id === defAbility);
+function renderImmune(moveData, defData, defAbility, s) {
+  let reason;
+  if (s?.weather === 'harsh-sun'  && moveData.type === 'water') reason = '☀️ Harsh Sunshine — Water moves fail';
+  else if (s?.weather === 'heavy-rain' && moveData.type === 'fire')  reason = '🌧️ Heavy Rain — Fire moves fail';
+  else {
+    const abilityDef = DEF_ABILITIES.find(a => a.id === defAbility);
+    reason = abilityDef?.label || defAbility || 'type immunity';
+  }
   return `<div class="dmg-header">
     <span class="dmg-range">No effect</span>
-    <div class="dmg-tags"><span class="dmg-tag tag-imm">Immune — ${abilityDef?.label || defAbility}</span></div>
+    <div class="dmg-tags"><span class="dmg-tag tag-imm">Immune — ${reason}</span></div>
   </div>`;
 }
 
