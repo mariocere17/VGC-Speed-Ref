@@ -1890,7 +1890,7 @@ function renderSetsList() {
     const safeId    = s.id.replace(/'/g, "\\'");
     return `
       <div class="set-row" data-id="${s.id}">
-        ${spriteUrl ? `<img class="set-sprite" src="${spriteUrl}" onerror="this.style.display='none'" alt="">` : '<span class="set-sprite-placeholder"></span>'}
+        ${spriteUrl ? `<img class="set-sprite" src="${spriteUrl}" data-pkmn="${s.pokemon}" onerror="window._setSpriteFallback(this)" alt="">` : '<span class="set-sprite-placeholder"></span>'}
         <input class="set-label-input" value="${safeLabel}" title="Click to rename"
           onblur="window.renameSetInline('${safeId}', this.value)"
           onkeydown="if(event.key==='Enter'){this.blur();event.preventDefault()}">
@@ -1907,6 +1907,16 @@ function spriteUrl_for(pkmnKey) {
   if (!display) return '';
   return `https://img.pokemondb.net/sprites/home/normal/${nameToSlug(display)}.png`;
 }
+
+// Fallback handler for set-list sprites: tries remaining URLs from spriteQueue
+// (same logic as updateSprite) instead of simply hiding the image.
+window._setSpriteFallback = function (img) {
+  if (!img._spriteQ) {
+    const display = PKMN[img.dataset.pkmn]?.displayName || '';
+    img._spriteQ  = display ? spriteQueue(display).slice(1) : [];
+  }
+  nextSprite(img);
+};
 
 window.openSetsModal = function () {
   renderSetsList();
