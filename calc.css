@@ -1,6 +1,7 @@
 /* calc.css — Damage Calculator styles (extends style.css) */
 
 /* ── HEADER NAV ── */
+.header-nav { display: flex; align-items: center; gap: 10px; }
 .btn-nav {
   display: inline-flex; align-items: center; gap: 6px;
   height: 38px; padding: 0 16px; box-sizing: border-box;
