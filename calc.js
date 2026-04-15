@@ -1900,11 +1900,12 @@ function renderSetsList() {
   }).join('');
 }
 
-// Helper: reuse the existing sprite-URL logic from updateSprite
+// Returns the primary sprite URL for a Pokémon key, using the same nameToSlug
+// logic as updateSprite so that Mega/regional names resolve correctly.
 function spriteUrl_for(pkmnKey) {
   const display = PKMN[pkmnKey]?.displayName || '';
-  const slug    = display.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
-  return `https://img.pokemondb.net/sprites/home/normal/${slug}.png`;
+  if (!display) return '';
+  return `https://img.pokemondb.net/sprites/home/normal/${nameToSlug(display)}.png`;
 }
 
 window.openSetsModal = function () {
