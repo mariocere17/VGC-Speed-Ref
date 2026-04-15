@@ -270,15 +270,15 @@ tbody tr { cursor: pointer; }
 .btn-add-custom:hover { background: #004444; border-color: #4dd0e1; }
 .btn-damage-calc {
   display: inline-flex; align-items: center; gap: 6px;
-  padding: 8px 14px; background: #2a0808; flex-shrink: 0;
+  padding: 8px 16px; background: #2a0808; flex-shrink: 0;
   border: 1px solid #7f1d1d; color: #ef9a9a; border-radius: 6px;
   cursor: pointer; font-size: 0.85rem; font-weight: 600;
   transition: all .15s; text-decoration: none;
 }
 .btn-damage-calc:hover { background: #3d1515; border-color: #ef5350; color: #ef5350; }
 .btn-sprite {
-  width: 24px; height: 24px; object-fit: contain;
-  image-rendering: auto; flex-shrink: 0;
+  width: 20px; height: 20px; object-fit: contain;
+  image-rendering: auto; flex-shrink: 0; display: block;
 }
 .custom-overlay {
   display: none; position: fixed; inset: 0;
