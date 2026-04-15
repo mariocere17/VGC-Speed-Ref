@@ -265,12 +265,13 @@ tbody tr { cursor: pointer; }
 .btn-add-custom {
   display: inline-flex; align-items: center; gap: 6px;
   height: 38px; padding: 0 16px; box-sizing: border-box;
-  background: #003333; flex-shrink: 0;
-  border: 1px solid #1a5454; color: #4dd0e1; border-radius: 6px;
+  background: var(--surface); flex-shrink: 0;
+  border: 1px solid var(--border); color: var(--text); border-radius: 6px;
   cursor: pointer; font-size: 0.85rem; font-weight: 600; transition: all .15s;
   font-family: inherit; line-height: 1;
+  appearance: none; -webkit-appearance: none;
 }
-.btn-add-custom:hover { background: #004444; border-color: #4dd0e1; }
+.btn-add-custom:hover { border-color: var(--accent); color: var(--accent); }
 .btn-damage-calc {
   display: inline-flex; align-items: center; gap: 6px;
   height: 38px; padding: 0 16px; box-sizing: border-box;
