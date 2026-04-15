@@ -125,20 +125,6 @@ const ATK_ABILITIES = [
   { id:'sniper',       label:'Sniper (crit ×2.25)' },
 ];
 
-// Combined item list used by both panels (bidirectional calc)
-const ALL_ITEMS = [
-  ATK_ITEMS[0], // None (single entry)
-  ...ATK_ITEMS.slice(1),
-  ...DEF_ITEMS.slice(1),
-];
-
-// Combined ability list used by both panels (bidirectional calc)
-const ALL_ABILITIES = [
-  ATK_ABILITIES[0], // None
-  ...ATK_ABILITIES.slice(1),
-  ...DEF_ABILITIES.slice(1),
-];
-
 // Moves halved by Grassy Terrain (earthquake-family hits grounded Pokémon softer)
 const GRASSY_HALVED_MOVES = new Set(['Earthquake', 'Bulldoze', 'Magnitude']);
 
@@ -160,6 +146,20 @@ const DEF_ABILITIES = [
   { id:'volt-absorb',   label:'Volt Absorb (Electric immune)' },
   { id:'water-absorb',  label:'Water Absorb (Water immune)' },
   { id:'storm-drain',   label:'Storm Drain (Water immune)' },
+];
+
+// Combined item list used by both panels (bidirectional calc)
+const ALL_ITEMS = [
+  ATK_ITEMS[0], // None (single entry)
+  ...ATK_ITEMS.slice(1),
+  ...DEF_ITEMS.slice(1),
+];
+
+// Combined ability list used by both panels (bidirectional calc)
+const ALL_ABILITIES = [
+  ATK_ABILITIES[0], // None
+  ...ATK_ABILITIES.slice(1),
+  ...DEF_ABILITIES.slice(1),
 ];
 
 // ═══════════════════════════════════════════════════════════
