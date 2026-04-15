@@ -1346,6 +1346,9 @@ function bindEvents() {
       // When switching to a different valid Pokémon, reset SP/stages/nature/move
       if (key !== prevKey && PKMN[key]) clearPanelStats(prefix);
       el.dataset.currentKey = key;
+      // Deselect set selector when user manually changes the Pokémon
+      const setEl = document.getElementById(prefix + 'Set');
+      if (setEl) setEl.value = '';
       updateMoveDatalist(prefix, key);
       updateAbilitySelect(prefix, key);
       updateSprite(prefix, key);
