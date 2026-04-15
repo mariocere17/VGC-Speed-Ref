@@ -263,6 +263,7 @@ tbody tr { cursor: pointer; }
 }
 .btn-delete-custom:hover { color: #f85149; }
 .btn-add-custom {
+  display: inline-flex; align-items: center; gap: 6px;
   padding: 8px 16px; background: #003333; flex-shrink: 0;
   border: 1px solid #1a5454; color: #4dd0e1; border-radius: 6px;
   cursor: pointer; font-size: 0.85rem; font-weight: 600; transition: all .15s;
