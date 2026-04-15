@@ -529,7 +529,10 @@ function computeDirection(s, suffix) {
   if (!dmgEl) return;
 
   if (!atkData || !defData || !moveData || moveData.category === 'status') {
-    dmgEl.innerHTML = '<p class="dmg-placeholder">Enter Pokémon, move, and stats above.</p>';
+    let msg = 'Enter Pokémon, move, and stats above.';
+    if (atkData && defData && s.atkMove && !MOVES[s.atkMove])
+      msg = `<strong>${s.atkMove}</strong> has variable or unknown base power — not supported.`;
+    dmgEl.innerHTML = `<p class="dmg-placeholder">${msg}</p>`;
     if (optEl) optEl.innerHTML = '';
     return;
   }
@@ -1785,7 +1788,13 @@ function renderSetMoveButtons(prefix, moves) {
     const cls   = known ? (known.category === 'physical' ? 'btn-setmove-p' :
                            known.category === 'special'  ? 'btn-setmove-s' : 'btn-setmove-t')
                         : 'btn-setmove-u';
-    const safe = m.replace(/'/g, "\\'");
+    const safe  = m.replace(/'/g, "\\'");
+    // Moves not in the damage database (e.g. Low Kick, Grass Knot — variable BP)
+    // are rendered disabled so the user knows they can't be calculated.
+    if (!known) {
+      return `<button class="btn-setmove btn-setmove-u btn-setmove-disabled"
+        title="${m}: variable or unknown base power — not supported" disabled>${m}</button>`;
+    }
     return `<button class="btn-setmove ${cls}" onclick="pickSetMove('${safe}','${prefix}')">${m}</button>`;
   }).join('');
 }

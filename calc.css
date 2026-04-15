@@ -409,3 +409,7 @@
 .btn-setmove-s { border-color: #42a5f566; color: #90caf9; }
 .btn-setmove-t { border-color: #78909c66; color: #90a4ae; }
 .btn-setmove-u { border-color: var(--border); }
+.btn-setmove-disabled {
+  opacity: 0.35; cursor: not-allowed;
+  text-decoration: line-through;
+}
