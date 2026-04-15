@@ -234,6 +234,7 @@
   display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
 }
 .dmg-range { color: var(--text); }
+.dmg-varbp { color: var(--muted); font-size: 0.8rem; font-weight: 400; }
 .dmg-pct   { color: var(--muted); font-size: 0.85rem; font-weight: 400; }
 .dmg-ko    { font-size: 0.85rem; }
 .ko-0      { color: var(--muted); }

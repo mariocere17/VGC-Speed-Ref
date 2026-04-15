@@ -1135,6 +1135,15 @@
     "hasSecondary": false,
     "isPunch": false
   },
+  "Electro Ball": {
+    "bp": null,
+    "type": "electric",
+    "category": "special",
+    "makesContact": false,
+    "hasSecondary": false,
+    "isPunch": false,
+    "speedBased": true
+  },
   "Electro Drift": {
     "bp": 100,
     "type": "electric",
@@ -1679,6 +1688,15 @@
     "hasSecondary": false,
     "isPunch": false
   },
+  "Grass Knot": {
+    "bp": null,
+    "type": "grass",
+    "category": "special",
+    "makesContact": true,
+    "hasSecondary": false,
+    "isPunch": false,
+    "weightBased": "defender"
+  },
   "Grass Pledge": {
     "bp": 80,
     "type": "grass",
@@ -1718,6 +1736,15 @@
     "makesContact": false,
     "hasSecondary": false,
     "isPunch": false
+  },
+  "Gyro Ball": {
+    "bp": null,
+    "type": "steel",
+    "category": "physical",
+    "makesContact": true,
+    "hasSecondary": false,
+    "isPunch": false,
+    "speedBased": true
   },
   "Hammer Arm": {
     "bp": 100,
@@ -1767,6 +1794,15 @@
     "hasSecondary": true,
     "isPunch": false
   },
+  "Heat Crash": {
+    "bp": null,
+    "type": "fire",
+    "category": "physical",
+    "makesContact": true,
+    "hasSecondary": true,
+    "isPunch": false,
+    "weightBased": "ratio"
+  },
   "Heat Wave": {
     "bp": 95,
     "type": "fire",
@@ -1774,6 +1810,15 @@
     "makesContact": false,
     "hasSecondary": true,
     "isPunch": false
+  },
+  "Heavy Slam": {
+    "bp": null,
+    "type": "steel",
+    "category": "physical",
+    "makesContact": true,
+    "hasSecondary": false,
+    "isPunch": false,
+    "weightBased": "ratio"
   },
   "Hex": {
     "bp": 65,
@@ -2230,6 +2275,15 @@
     "makesContact": false,
     "hasSecondary": true,
     "isPunch": false
+  },
+  "Low Kick": {
+    "bp": null,
+    "type": "fighting",
+    "category": "physical",
+    "makesContact": true,
+    "hasSecondary": false,
+    "isPunch": false,
+    "weightBased": "defender"
   },
   "Low Sweep": {
     "bp": 65,

@@ -370,8 +370,59 @@ function buildAtkStat(s, moveData, isPhysical, defAbility) {
   return stat;
 }
 
-function buildEffBP(s, moveData) {
-  let bp = moveData.bp;
+// ── Variable-power BP helpers ────────────────────────────────
+/** Low Kick / Grass Knot: BP depends on defender's weight */
+function weightBasedBP(defWeightKg) {
+  if (defWeightKg === undefined) return 60; // fallback if weight missing
+  if (defWeightKg <  10) return  20;
+  if (defWeightKg <  25) return  40;
+  if (defWeightKg <  50) return  60;
+  if (defWeightKg < 100) return  80;
+  if (defWeightKg < 200) return 100;
+  return 120;
+}
+
+/** Heat Crash / Heavy Slam: BP depends on attacker weight / defender weight ratio */
+function weightRatioBP(atkWeightKg, defWeightKg) {
+  if (atkWeightKg === undefined || defWeightKg === undefined || defWeightKg === 0) return 60;
+  const ratio = atkWeightKg / defWeightKg;
+  if (ratio >= 5) return 120;
+  if (ratio >= 4) return 100;
+  if (ratio >= 3) return  80;
+  if (ratio >= 2) return  60;
+  return 40;
+}
+
+/** Gyro Ball / Electro Ball: BP = min(150, floor(25 × foe_spe / user_spe)) */
+function speedBasedBP(atkSpe, defSpe) {
+  if (!atkSpe) return 1;
+  return Math.min(150, Math.floor(25 * defSpe / atkSpe));
+}
+
+/**
+ * Returns the effective base power of a move given attacker + defender context.
+ * Handles fixed BP, weight-based (Low Kick / Grass Knot / Heavy Slam / Heat Crash),
+ * and speed-based (Gyro Ball / Electro Ball) moves.
+ * Also applies Technician where eligible.
+ */
+function buildEffBP(s, moveData, atkData, defData) {
+  let bp;
+
+  if (moveData.weightBased === 'defender') {
+    bp = weightBasedBP(defData?.weight_kg);
+  } else if (moveData.weightBased === 'ratio') {
+    bp = weightRatioBP(atkData?.weight_kg, defData?.weight_kg);
+  } else if (moveData.speedBased) {
+    // Compute actual speed stats (with nature, SP and stage)
+    const rawAtkSpe = atkData ? calcStat(atkData.spe, s.atkSpeSP, getNatureMult(s.atkNature, 'spe')) : 1;
+    const rawDefSpe = defData ? calcStat(defData.spe, s.defSpeSP, getNatureMult(s.defNature, 'spe')) : 1;
+    const atkSpe = s.atkSpeStage ? Math.floor(rawAtkSpe * getStageMult(s.atkSpeStage)) : rawAtkSpe;
+    const defSpe = s.defSpeStage ? Math.floor(rawDefSpe * getStageMult(s.defSpeStage)) : rawDefSpe;
+    bp = speedBasedBP(atkSpe, defSpe);
+  } else {
+    bp = moveData.bp;
+  }
+
   if (s.atkAbility === 'technician' && bp <= 60) bp = Math.floor(bp * 1.5);
   return bp;
 }
@@ -547,7 +598,7 @@ function computeDirection(s, suffix) {
   }
 
   const atkStat  = buildAtkStat(s, moveData, isPhysical, s.defAbility);
-  const effBP    = buildEffBP(s, moveData);
+  const effBP    = buildEffBP(s, moveData, atkData, defData);
   const stabMult = buildStabMult(s, moveData, atkData);
   const { hp, def: defStat } = buildDefStat(s, moveData, isPhysical);
   const curHP    = Math.floor(hp * (s.defHPPct || 100) / 100);
@@ -556,7 +607,7 @@ function computeDirection(s, suffix) {
   rolls = applyPostMods(rolls, s, moveData, isPhysical, typeEff);
 
   dmgEl.innerHTML =
-    renderDamage(rolls, hp, curHP, s, moveData, atkData, defData, atkStat, defStat, stabMult, typeEff, isPhysical);
+    renderDamage(rolls, hp, curHP, s, moveData, atkData, defData, atkStat, defStat, stabMult, typeEff, isPhysical, effBP);
   if (optEl) optEl.innerHTML = '';
 }
 
@@ -689,7 +740,7 @@ window.findMinSurvive = function (dir) {
   if (isImmune(moveData.type, s)) return;
 
   const atkStat  = buildAtkStat(s, moveData, isPhysical, s.defAbility);
-  const effBP    = buildEffBP(s, moveData);
+  const effBP    = buildEffBP(s, moveData, atkData, defData);
   const stabMult = buildStabMult(s, moveData, atkData);
 
   const solutions = [];
@@ -784,7 +835,7 @@ window.findMinOHKO = function (dir) {
   const typeEff    = getTypeEffRaw(moveData.type, defData.types);
   if (isImmune(moveData.type, s)) return;
 
-  const effBP    = buildEffBP(s, moveData);
+  const effBP    = buildEffBP(s, moveData, atkData, defData);
   const stabMult = buildStabMult(s, moveData, atkData);
   const { hp, def: defStat } = buildDefStat(s, moveData, isPhysical);
   const curHP    = Math.floor(hp * (s.defHPPct || 100) / 100);
@@ -950,7 +1001,7 @@ window.swapPanels = function () {
 //  DISPLAY
 // ═══════════════════════════════════════════════════════════
 
-function renderDamage(rolls, hp, curHP, s, moveData, atkData, defData, atkStat, defStat, stabMult, typeEff, isPhysical) {
+function renderDamage(rolls, hp, curHP, s, moveData, atkData, defData, atkStat, defStat, stabMult, typeEff, isPhysical, effBP) {
   const minDmg = rolls[0], maxDmg = rolls[15];
   // Damage % is shown vs MAX HP (Showdown convention), but KO chances use CURRENT HP
   const minPct = (minDmg / hp * 100).toFixed(1);
@@ -1005,7 +1056,7 @@ function renderDamage(rolls, hp, curHP, s, moveData, atkData, defData, atkStat, 
 
   return `
     <div class="dmg-header">
-      <span class="dmg-range">${s.atkMove} → <strong>${minDmg}–${maxDmg}</strong></span>
+      <span class="dmg-range">${s.atkMove}${moveData.bp === null ? ` <span class="dmg-varbp">[${effBP} BP]</span>` : ''} → <strong>${minDmg}–${maxDmg}</strong></span>
       <span class="dmg-pct">(${minPct}%–${maxPct}%)</span>
       <span class="dmg-ko ${koClass}">${koText}</span>
     </div>
