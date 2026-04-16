@@ -1254,6 +1254,67 @@ function cleanLabelName(list, id) {
   return entry.label.replace(/\s*\(.*$/, '').trim();
 }
 
+// Canonical Mega Stones (Pokémon Champions roster + classic gen6/7).
+// Keyed by the PKMN displayName as stored in pokemon-stats.json.
+const MEGA_STONES = {
+  'Mega Venusaur': 'Venusaurite', 'Mega Charizard X': 'Charizardite X',
+  'Mega Charizard Y': 'Charizardite Y', 'Mega Blastoise': 'Blastoisinite',
+  'Mega Beedrill': 'Beedrillite', 'Mega Pidgeot': 'Pidgeotite',
+  'Mega Clefable': 'Clefablite', 'Mega Alakazam': 'Alakazite',
+  'Mega Victreebel': 'Victreebelite', 'Mega Slowbro': 'Slowbronite',
+  'Mega Gengar': 'Gengarite', 'Mega Kangaskhan': 'Kangaskhanite',
+  'Mega Starmie': 'Starmieite', 'Mega Pinsir': 'Pinsirite',
+  'Mega Gyarados': 'Gyaradosite', 'Mega Aerodactyl': 'Aerodactylite',
+  'Mega Mewtwo X': 'Mewtwonite X', 'Mega Mewtwo Y': 'Mewtwonite Y',
+  'Mega Dragonite': 'Dragonitite', 'Mega Meganium': 'Meganiumite',
+  'Mega Feraligatr': 'Feraligatrite', 'Mega Ampharos': 'Ampharosite',
+  'Mega Steelix': 'Steelixite', 'Mega Scizor': 'Scizorite',
+  'Mega Heracross': 'Heracronite', 'Mega Skarmory': 'Skarmoryite',
+  'Mega Houndoom': 'Houndoominite', 'Mega Tyranitar': 'Tyranitarite',
+  'Mega Blaziken': 'Blazikenite', 'Mega Gardevoir': 'Gardevoirite',
+  'Mega Sableye': 'Sablenite', 'Mega Mawile': 'Mawilite',
+  'Mega Aggron': 'Aggronite', 'Mega Medicham': 'Medichamite',
+  'Mega Manectric': 'Manectite', 'Mega Sharpedo': 'Sharpedonite',
+  'Mega Camerupt': 'Cameruptite', 'Mega Altaria': 'Altarianite',
+  'Mega Banette': 'Banettite', 'Mega Chimecho': 'Chimechite',
+  'Mega Absol': 'Absolite', 'Mega Glalie': 'Glalitite',
+  'Mega Salamence': 'Salamencite', 'Mega Metagross': 'Metagrossite',
+  'Mega Latias': 'Latiasite', 'Mega Latios': 'Latiosite',
+  'Mega Lopunny': 'Lopunnite', 'Mega Garchomp': 'Garchompite',
+  'Mega Lucario': 'Lucarionite', 'Mega Abomasnow': 'Abomasite',
+  'Mega Sceptile': 'Sceptilite', 'Mega Swampert': 'Swampertite',
+  'Mega Gallade': 'Galladite', 'Mega Diancie': 'Diancite',
+  'Mega Audino': 'Audinite', 'Mega Froslass': 'Froslassite',
+  'Mega Emboar': 'Emboarite', 'Mega Excadrill': 'Excadrite',
+  'Mega Chandelure': 'Chandelurite', 'Mega Chesnaught': 'Chesnaughtite',
+  'Mega Delphox': 'Delphoxite', 'Mega Greninja': 'Greninjite',
+  'Mega Floette': 'Floettite', 'Mega Meowstic': 'Meowsticite',
+  'Mega Hawlucha': 'Hawluchite', 'Mega Crabominable': 'Crabominite',
+  'Mega Drampa': 'Drampite', 'Mega Scovillain': 'Scovillainite',
+  'Mega Glimmora': 'Glimmorite', 'Mega Tatsugiri': 'Tatsugirite',
+  'Mega Raichu X': 'Raichunite X', 'Mega Raichu Y': 'Raichunite Y',
+  'Mega Golurk': 'Golurkite',
+  // Rayquaza is a Mega via Dragon Ascent, no stone required.
+  'Mega Rayquaza': '',
+};
+
+// "Mega Skarmory"   → "Skarmory-Mega"
+// "Mega Charizard X" → "Charizard-Mega-X"
+function toShowdownSpecies(displayName) {
+  if (!displayName) return '';
+  const m = displayName.match(/^Mega\s+(.+?)(?:\s+([XY]))?$/);
+  if (!m) return displayName;
+  return m[2] ? `${m[1]}-Mega-${m[2]}` : `${m[1]}-Mega`;
+}
+
+// "parental-bond" → "Parental Bond"
+function kebabToTitle(kebab) {
+  if (!kebab || kebab === 'undefined') return '';
+  return kebab.split('-')
+    .map(w => w.charAt(0).toUpperCase() + w.slice(1))
+    .join(' ');
+}
+
 // Read the 4 set-move buttons for a panel (if any), falling back to the
 // current Move input when no set is loaded.
 function getPanelMoves(prefix) {
@@ -1276,8 +1337,18 @@ window.exportSet = function (prefix, btn) {
   const abilityId = document.getElementById(prefix + 'Ability')?.value || '';
   const nature    = document.getElementById(prefix + 'Nature')?.value  || '';
 
-  const itemName    = cleanLabelName(ALL_ITEMS, itemId);
-  const abilityName = cleanLabelName(ALL_ABILITIES, abilityId);
+  // Mega auto-fill: stone as item, innate ability, and Showdown species format.
+  const pkmnData  = PKMN[name.toLowerCase()];
+  const displayN  = pkmnData?.displayName || name;
+  const isMega    = displayN.startsWith('Mega ');
+
+  const speciesOut = isMega ? toShowdownSpecies(displayN) : displayN;
+  const itemName    = isMega
+    ? (MEGA_STONES[displayN] || cleanLabelName(ALL_ITEMS, itemId))
+    : cleanLabelName(ALL_ITEMS, itemId);
+  const abilityName = isMega
+    ? (kebabToTitle(pkmnData?.abilities?.[0]) || cleanLabelName(ALL_ABILITIES, abilityId))
+    : cleanLabelName(ALL_ABILITIES, abilityId);
 
   const evLabelMap = [
     ['Hp', 'HP'], ['Atk', 'Atk'], ['Def', 'Def'],
@@ -1292,7 +1363,7 @@ window.exportSet = function (prefix, btn) {
   const moves = getPanelMoves(prefix);
 
   const lines = [];
-  lines.push(itemName ? `${name} @ ${itemName}` : name);
+  lines.push(itemName ? `${speciesOut} @ ${itemName}` : speciesOut);
   lines.push(`Ability: ${abilityName}`);
   lines.push('Level: 50');
   if (evParts.length) lines.push(`EVs: ${evParts.join(' / ')}`);
