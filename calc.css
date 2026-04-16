@@ -423,8 +423,8 @@
   background: var(--surface); border: 1px solid var(--border);
   border-radius: 10px; padding: 18px;
 }
-/* dmgBlock expands so opt-row buttons are always at the same vertical position */
-.results-col > div:nth-child(2) { flex: 1; min-height: 80px; }
+/* Gap goes above dmgBlock (between title and content), not below it */
+.results-col > div:nth-child(2) { margin-top: auto; }
 .results-col-title {
   font-size: 0.72rem; font-weight: 700; text-transform: uppercase;
   letter-spacing: 0.5px; margin-bottom: 10px;
