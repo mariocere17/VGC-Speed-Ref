@@ -1216,8 +1216,10 @@ function renderDamage(rolls, hp, curHP, s, moveData, atkData, defData, atkStat, 
   const defNatChar   = getNatureMult(s.defNature, isPhysical ? 'def' : 'spd') > 1 ? '＋'
                      : getNatureMult(s.defNature, isPhysical ? 'def' : 'spd') < 1 ? '−' : '●';
 
+  const copyText = `${atkData.displayName} ${s.atkMove} → ${minDmg}–${maxDmg} (${minPct}%–${maxPct}%) vs ${defData.displayName} ${koText}`.replace(/\s+/g, ' ').trim();
+
   return `
-    <div class="dmg-header">
+    <div class="dmg-header" onclick="copyDmgLine(this, '${copyText.replace(/'/g, "\\'")}')" title="Click to copy">
       <span class="dmg-range">${s.atkMove}${moveData.bp === null ? ` <span class="dmg-varbp">[${effBP} BP]</span>` : ''} → <strong>${minDmg}–${maxDmg}</strong></span>
       <span class="dmg-pct">(${minPct}%–${maxPct}%)</span>
       <span class="dmg-ko ${koClass}">${koText}</span>
@@ -1234,6 +1236,13 @@ function renderDamage(rolls, hp, curHP, s, moveData, atkData, defData, atkStat, 
     </div>
   `;
 }
+
+window.copyDmgLine = function (el, text) {
+  navigator.clipboard.writeText(text).then(() => {
+    el.classList.add('dmg-copied');
+    setTimeout(() => el.classList.remove('dmg-copied'), 800);
+  });
+};
 
 function renderImmune(moveData, defData, defAbility, s) {
   let reason;

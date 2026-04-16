@@ -248,6 +248,14 @@
 .dmg-header {
   font-size: 1.1rem; font-weight: 700; margin-bottom: 6px;
   display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+  cursor: pointer; border-radius: 6px; padding: 4px 8px; margin: -4px -8px 6px;
+  transition: background .15s;
+}
+.dmg-header:hover { background: var(--border); }
+.dmg-copied { background: #1a3a2a !important; }
+.dmg-copied::after {
+  content: 'Copied!'; font-size: 0.7rem; color: #4caf50; font-weight: 600;
+  margin-left: 8px;
 }
 .dmg-range { color: var(--text); }
 .dmg-varbp { color: var(--muted); font-size: 0.8rem; font-weight: 400; }
