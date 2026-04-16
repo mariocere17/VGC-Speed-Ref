@@ -115,6 +115,7 @@ const ATK_ABILITIES = [
   { id:'huge-power',   label:'Huge Power (Atk ×2)' },
   { id:'pure-power',   label:'Pure Power (Atk ×2)' },
   { id:'adaptability', label:'Adaptability (STAB ×2)' },
+  { id:'protean',      label:'Protean / Libero (all moves STAB)' },
   { id:'tinted-lens',  label:'Tinted Lens (NVE ×2)' },
   { id:'mold-breaker', label:'Mold Breaker (ignore def ability)' },
   { id:'tough-claws',  label:'Tough Claws (contact ×1.3)' },
@@ -481,6 +482,7 @@ function buildEffBP(s, moveData, atkData, defData) {
 }
 
 function buildStabMult(s, moveData, pkmnData) {
+  if (s.atkAbility === 'protean') return 1.5;
   if (!isSTAB(moveData.type, pkmnData.types)) return 1;
   return s.atkAbility === 'adaptability' ? 2 : 1.5;
 }
@@ -1131,8 +1133,10 @@ function renderDamage(rolls, hp, curHP, s, moveData, atkData, defData, atkStat, 
   else if (typeEff >= 2)    typeTag = `<span class="dmg-tag tag-se2">2× ${moveData.type}</span>`;
   else if (typeEff <= 0.5)  typeTag = `<span class="dmg-tag tag-nve">${typeEff}× ${moveData.type}</span>`;
 
+  const stabLabel = stabMult === 2 ? 'Adaptability'
+                   : s.atkAbility === 'protean' ? 'Protean' : 'STAB';
   const stabTag = stabMult > 1
-    ? `<span class="dmg-tag tag-stab">${stabMult === 2 ? 'Adaptability' : 'STAB'}</span>`
+    ? `<span class="dmg-tag tag-stab">${stabLabel}</span>`
     : '';
 
   const critTag = s.crit
