@@ -260,7 +260,7 @@
 .ko-full   { color: #ef5350; font-weight: 700; }
 
 /* Modifier tags */
-.dmg-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 10px; min-height: 26px; }
+.dmg-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 10px; min-height: 26px; align-items: center; }
 .dmg-tag {
   font-size: 0.72rem; font-weight: 700; padding: 2px 8px; border-radius: 10px;
   text-transform: uppercase; letter-spacing: 0.5px;
