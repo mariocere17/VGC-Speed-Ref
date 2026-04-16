@@ -6,7 +6,7 @@
   <title>Pokemon Champions — Damage Calc</title>
   <link rel="icon" type="image/png" href="https://img.pokemondb.net/sprites/home/normal/weavile.png">
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="calc.css?v=20">
+  <link rel="stylesheet" href="calc.css?v=21">
 </head>
 <body>
 
@@ -80,8 +80,10 @@
             <input type="text" id="atkPkmn" list="pkmnList" placeholder="Garchomp…" class="pkmn-input">
             <div class="type-row" id="atkTypeRow"></div>
           </div>
-          <img id="atkSprite" class="panel-sprite" alt="" style="display:none"
-               onerror="nextSprite(this)">
+          <div class="panel-sprite-wrap" id="atkSpriteWrap" style="display:none">
+            <img id="atkSprite" class="panel-sprite" alt="" onerror="nextSprite(this)">
+            <button class="btn-export" onclick="exportSet('atk', this)" title="Copy set to clipboard (Showdown format)">📋 Export</button>
+          </div>
         </div>
 
         <div class="field-row">
@@ -189,8 +191,10 @@
             <input type="text" id="defPkmn" list="pkmnList" placeholder="Garchomp…" class="pkmn-input">
             <div class="type-row" id="defTypeRow"></div>
           </div>
-          <img id="defSprite" class="panel-sprite" alt="" style="display:none"
-               onerror="nextSprite(this)">
+          <div class="panel-sprite-wrap" id="defSpriteWrap" style="display:none">
+            <img id="defSprite" class="panel-sprite" alt="" onerror="nextSprite(this)">
+            <button class="btn-export" onclick="exportSet('def', this)" title="Copy set to clipboard (Showdown format)">📋 Export</button>
+          </div>
         </div>
 
         <div class="field-row">
@@ -390,6 +394,6 @@
 <datalist id="moveList"></datalist>
 <datalist id="defMoveList"></datalist>
 
-<script src="calc.js?v=17"></script>
+<script src="calc.js?v=18"></script>
 </body>
 </html>

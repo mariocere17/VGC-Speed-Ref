@@ -1245,6 +1245,75 @@ window.copyDmgLine = function (el, text) {
   });
 };
 
+// Strip trailing parenthetical description from item/ability labels.
+// e.g. "Choice Band (Atk ×1.5)" → "Choice Band"
+function cleanLabelName(list, id) {
+  if (!id) return '';
+  const entry = list.find(e => e.id === id);
+  if (!entry) return '';
+  return entry.label.replace(/\s*\(.*$/, '').trim();
+}
+
+// Read the 4 set-move buttons for a panel (if any), falling back to the
+// current Move input when no set is loaded.
+function getPanelMoves(prefix) {
+  const row = document.getElementById(prefix + 'SetMoves');
+  if (row && row.children.length) {
+    return Array.from(row.querySelectorAll('.btn-setmove'))
+      .map(b => b.textContent.trim())
+      .filter(Boolean);
+  }
+  const mv = document.getElementById(prefix + 'Move')?.value.trim() || '';
+  return mv ? [mv] : [];
+}
+
+window.exportSet = function (prefix, btn) {
+  const pkmnInput = document.getElementById(prefix + 'Pkmn');
+  const name = pkmnInput?.value.trim() || '';
+  if (!name) return;
+
+  const itemId    = document.getElementById(prefix + 'Item')?.value    || '';
+  const abilityId = document.getElementById(prefix + 'Ability')?.value || '';
+  const nature    = document.getElementById(prefix + 'Nature')?.value  || '';
+
+  const itemName    = cleanLabelName(ALL_ITEMS, itemId);
+  const abilityName = cleanLabelName(ALL_ABILITIES, abilityId);
+
+  const evLabelMap = [
+    ['Hp', 'HP'], ['Atk', 'Atk'], ['Def', 'Def'],
+    ['Spa', 'SpA'], ['Spd', 'SpD'], ['Spe', 'Spe'],
+  ];
+  const evParts = [];
+  for (const [id, lbl] of evLabelMap) {
+    const v = spVal(prefix + id + 'SP');
+    if (v > 0) evParts.push(`${v} ${lbl}`);
+  }
+
+  const moves = getPanelMoves(prefix);
+
+  const lines = [];
+  lines.push(itemName ? `${name} @ ${itemName}` : name);
+  lines.push(`Ability: ${abilityName}`);
+  lines.push('Level: 50');
+  if (evParts.length) lines.push(`EVs: ${evParts.join(' / ')}`);
+  if (nature) lines.push(`${nature} Nature`);
+  for (let i = 0; i < 4; i++) {
+    lines.push(`- ${moves[i] || ''}`);
+  }
+
+  const text = lines.join('\n');
+  navigator.clipboard.writeText(text).then(() => {
+    if (!btn) return;
+    const orig = btn.innerHTML;
+    btn.classList.add('btn-export-copied');
+    btn.innerHTML = '✓ Copied';
+    setTimeout(() => {
+      btn.classList.remove('btn-export-copied');
+      btn.innerHTML = orig;
+    }, 900);
+  });
+};
+
 function renderImmune(moveData, defData, defAbility, s) {
   let reason;
   const mType = eMoveType(s, moveData);
@@ -1387,11 +1456,12 @@ function nextSprite(img) {
 }
 
 function updateSprite(prefix, pkmnKey) {
-  const img = document.getElementById(prefix + 'Sprite');
+  const img  = document.getElementById(prefix + 'Sprite');
+  const wrap = document.getElementById(prefix + 'SpriteWrap');
   if (!img) return;
   const pkmnData = PKMN[pkmnKey];
   if (!pkmnData) {
-    img.style.display = 'none';
+    if (wrap) wrap.style.display = 'none';
     img.src = '';
     return;
   }
@@ -1399,8 +1469,8 @@ function updateSprite(prefix, pkmnKey) {
   img._spriteQ = q.slice(1);
   img.onerror  = () => nextSprite(img);
   img.src      = q[0];
-  img.style.display  = '';
-  img.style.opacity  = '1';
+  img.style.opacity = '1';
+  if (wrap) wrap.style.display = '';
 }
 
 // ═══════════════════════════════════════════════════════════
