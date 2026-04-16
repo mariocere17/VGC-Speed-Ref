@@ -456,6 +456,18 @@
 .results-col-title.col-ab { color: #ef9a9a; border-color: #ef535044; }
 .results-col-title.col-ba { color: #90caf9; border-color: #42a5f544; }
 
+/* ── MOVE INPUT + ADD BUTTON ── */
+.move-input-row { display: flex; gap: 6px; align-items: stretch; }
+.move-input-row .pkmn-input { flex: 1; }
+.btn-addmove {
+  background: var(--bg); border: 1px solid var(--border); color: var(--muted);
+  font-family: inherit; font-size: 0.95rem; font-weight: 700; line-height: 1;
+  padding: 0 11px; border-radius: 6px; cursor: pointer;
+  transition: all .12s; flex-shrink: 0;
+}
+.btn-addmove:hover { border-color: var(--accent); color: var(--accent); }
+.btn-addmove:disabled { opacity: 0.3; cursor: default; border-color: var(--border); color: var(--muted); }
+
 /* ── SET MOVES QUICK-PICK ── */
 /* Ahora dentro de field-input-wrap — no padding lateral extra */
 .set-moves-row { display: flex; gap: 5px; min-height: 32px; align-items: center; }

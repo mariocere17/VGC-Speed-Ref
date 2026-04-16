@@ -1063,6 +1063,7 @@ function clearPanelStats(prefix) {
   if (prefix === 'atk') updateMoveCat(null);
   const setMovesEl = document.getElementById(prefix + 'SetMoves');
   if (setMovesEl) setMovesEl.innerHTML = '';
+  updateAddBtnState(prefix);
   updateHPPctVisibility(prefix);
 }
 
@@ -2159,8 +2160,8 @@ window.loadSetIntoPanel = function (prefix, setId) {
  */
 function renderSetMoveButtons(prefix, moves) {
   const row = document.getElementById(prefix + 'SetMoves');
-  if (!row) return;
-  if (!moves || !moves.length) { row.innerHTML = ''; return; }
+  if (!row) { updateAddBtnState(prefix); return; }
+  if (!moves || !moves.length) { row.innerHTML = ''; updateAddBtnState(prefix); return; }
   const active = window._moveOverride[prefix];
   row.innerHTML = moves.map(m => {
     const known = MOVES[m];
@@ -2177,7 +2178,39 @@ function renderSetMoveButtons(prefix, moves) {
     }
     return `<button class="btn-setmove ${cls}${activeCls}" onclick="pickSetMove('${safe}','${prefix}')">${m}</button>`;
   }).join('');
+  updateAddBtnState(prefix);
 }
+
+/** Read the current moves present in the set-moves row (text content). */
+function readPoolMoves(prefix) {
+  const row = document.getElementById(prefix + 'SetMoves');
+  if (!row) return [];
+  return Array.from(row.querySelectorAll('.btn-setmove'))
+    .map(b => b.textContent.trim())
+    .filter(Boolean);
+}
+
+/** Hide the "+" add-move button when the pool already has 4 moves. */
+function updateAddBtnState(prefix) {
+  const btn = document.getElementById(prefix + 'AddMove');
+  if (!btn) return;
+  btn.style.display = readPoolMoves(prefix).length >= 4 ? 'none' : '';
+}
+
+window.addMoveToPool = function (prefix) {
+  const input = document.getElementById(prefix + 'Move');
+  const move  = input?.value.trim();
+  if (!move) return;
+  const pool = readPoolMoves(prefix);
+  if (pool.length >= 4) return;
+  if (pool.includes(move)) return;
+  pool.push(move);
+  // Make the just-added move the active quick-pick
+  window._moveOverride[prefix] = move;
+  if (prefix === 'atk' && MOVES[move]) updateMoveCat(MOVES[move]);
+  renderSetMoveButtons(prefix, pool);
+  computeAll();
+};
 
 window.pickSetMove = function (moveName, prefix) {
   prefix = prefix || 'atk';
