@@ -282,10 +282,14 @@ function spVal(id) { return parseInt(document.getElementById(id)?.value) || 0; }
 
 function stageVal(id) { return parseInt(document.getElementById(id)?.value) || 0; }
 
+// Override móvil: cuando el usuario clica uno de los botones de moves de un set,
+// ese move se usa para el cálculo sin tocar el input (el input queda como 5ª opción)
+window._moveOverride = window._moveOverride || { atk: null, def: null };
+
 function readState() {
   return {
     atkPkmn:    document.getElementById('atkPkmn').value.toLowerCase().trim(),
-    atkMove:    document.getElementById('atkMove').value.trim(),
+    atkMove:    window._moveOverride.atk || document.getElementById('atkMove').value.trim(),
     atkNature:  document.getElementById('atkNature').value,
     atkHpSP:    spVal('atkHpSP'),
     atkAtkSP:   spVal('atkAtkSP'),
@@ -303,7 +307,7 @@ function readState() {
     atkHPPct:   parseInt(document.getElementById('atkHPPctSlider')?.value) || 100,
 
     defPkmn:    document.getElementById('defPkmn').value.toLowerCase().trim(),
-    defMove:    document.getElementById('defMove').value.trim(),
+    defMove:    window._moveOverride.def || document.getElementById('defMove').value.trim(),
     defNature:  document.getElementById('defNature').value,
     defHpSP:    spVal('defHpSP'),
     defAtkSP:   spVal('defAtkSP'),
@@ -1005,6 +1009,7 @@ function clearPanelStats(prefix) {
   if (natureEl) natureEl.value = prefix === 'atk' ? 'Jolly' : 'Hardy';
   const moveEl = document.getElementById(prefix + 'Move');
   if (moveEl) moveEl.value = '';
+  window._moveOverride[prefix] = null;
   if (prefix === 'atk') updateMoveCat(null);
   const setMovesEl = document.getElementById(prefix + 'SetMoves');
   if (setMovesEl) setMovesEl.innerHTML = '';
@@ -1039,6 +1044,10 @@ window.swapPanels = function () {
 
   swapVals('atkPkmn', 'defPkmn');
   swapVals('atkMove', 'defMove');
+  // Swap move overrides
+  const tmpOvr = window._moveOverride.atk;
+  window._moveOverride.atk = window._moveOverride.def;
+  window._moveOverride.def = tmpOvr;
   swapVals('atkNature', 'defNature');
   swapVals('atkItem', 'defItem');
   swapVals('atkAbility', 'defAbility');
@@ -1517,6 +1526,9 @@ function bindEvents() {
   const moveEl = document.getElementById('atkMove');
   if (moveEl) {
     moveEl.addEventListener('input', () => {
+      window._moveOverride.atk = null;
+      const row = document.getElementById('atkSetMoves');
+      if (row) row.querySelectorAll('.btn-setmove').forEach(b => b.classList.remove('btn-setmove-active'));
       const m = MOVES[moveEl.value.trim()];
       updateMoveCat(m);
       if (m) computeAll();
@@ -1525,7 +1537,12 @@ function bindEvents() {
   }
   const defMoveEl = document.getElementById('defMove');
   if (defMoveEl) {
-    defMoveEl.addEventListener('input', () => { if (MOVES[defMoveEl.value.trim()]) computeAll(); });
+    defMoveEl.addEventListener('input', () => {
+      window._moveOverride.def = null;
+      const row = document.getElementById('defSetMoves');
+      if (row) row.querySelectorAll('.btn-setmove').forEach(b => b.classList.remove('btn-setmove-active'));
+      if (MOVES[defMoveEl.value.trim()]) computeAll();
+    });
     defMoveEl.addEventListener('change', computeAll);
   }
 
@@ -1916,12 +1933,12 @@ window.loadSetIntoPanel = function (prefix, setId) {
 
   updateHPPctVisibility(prefix);
 
-  // Populate the move input with the first move of the set and refresh quick-pick buttons
-  const moveInputId = prefix + 'Move';
-  const moveEl = document.getElementById(moveInputId);
-  if (moveEl && set.moves.length) {
-    moveEl.value = set.moves[0];
+  // Set first move as active override (no toca el input — queda como 5ª opción independiente)
+  if (set.moves.length) {
+    window._moveOverride[prefix] = set.moves[0];
     if (prefix === 'atk') updateMoveCat(MOVES[set.moves[0]]);
+  } else {
+    window._moveOverride[prefix] = null;
   }
   renderSetMoveButtons(prefix, set.moves);
 
@@ -1936,11 +1953,13 @@ function renderSetMoveButtons(prefix, moves) {
   const row = document.getElementById(prefix + 'SetMoves');
   if (!row) return;
   if (!moves || !moves.length) { row.innerHTML = ''; return; }
+  const active = window._moveOverride[prefix];
   row.innerHTML = moves.map(m => {
     const known = MOVES[m];
     const cls   = known ? (known.category === 'physical' ? 'btn-setmove-p' :
                            known.category === 'special'  ? 'btn-setmove-s' : 'btn-setmove-t')
                         : 'btn-setmove-u';
+    const activeCls = (m === active) ? ' btn-setmove-active' : '';
     const safe  = m.replace(/'/g, "\\'");
     // Moves not in the damage database (e.g. Low Kick, Grass Knot — variable BP)
     // are rendered disabled so the user knows they can't be calculated.
@@ -1948,16 +1967,18 @@ function renderSetMoveButtons(prefix, moves) {
       return `<button class="btn-setmove btn-setmove-u btn-setmove-disabled"
         title="${m}: variable or unknown base power — not supported" disabled>${m}</button>`;
     }
-    return `<button class="btn-setmove ${cls}" onclick="pickSetMove('${safe}','${prefix}')">${m}</button>`;
+    return `<button class="btn-setmove ${cls}${activeCls}" onclick="pickSetMove('${safe}','${prefix}')">${m}</button>`;
   }).join('');
 }
 
 window.pickSetMove = function (moveName, prefix) {
-  const moveEl = document.getElementById((prefix || 'atk') + 'Move');
-  if (moveEl) {
-    moveEl.value = moveName;
-    if ((prefix || 'atk') === 'atk') updateMoveCat(MOVES[moveName]);
-  }
+  prefix = prefix || 'atk';
+  window._moveOverride[prefix] = moveName;
+  if (prefix === 'atk') updateMoveCat(MOVES[moveName]);
+  // Highlight active button
+  const row = document.getElementById(prefix + 'SetMoves');
+  if (row) row.querySelectorAll('.btn-setmove').forEach(b =>
+    b.classList.toggle('btn-setmove-active', b.textContent === moveName));
   computeAll();
 };
 
