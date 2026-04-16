@@ -2165,9 +2165,7 @@ function renderSetMoveButtons(prefix, moves) {
   const active = window._moveOverride[prefix];
   row.innerHTML = moves.map(m => {
     const known = MOVES[m];
-    const cls   = known ? (known.category === 'physical' ? 'btn-setmove-p' :
-                           known.category === 'special'  ? 'btn-setmove-s' : 'btn-setmove-t')
-                        : 'btn-setmove-u';
+    const cls   = known && known.type ? `btn-setmove-type-${known.type}` : 'btn-setmove-u';
     const activeCls = (m === active) ? ' btn-setmove-active' : '';
     const safe  = m.replace(/'/g, "\\'");
     // Moves not in the damage database (e.g. Low Kick, Grass Knot — variable BP)

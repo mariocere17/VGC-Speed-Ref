@@ -481,10 +481,26 @@
   white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
 }
 .btn-setmove:hover { border-color: var(--accent); color: var(--text); }
-.btn-setmove-p { border-color: #ef535066; color: #ef9a9a; }
-.btn-setmove-s { border-color: #42a5f566; color: #90caf9; }
-.btn-setmove-t { border-color: #78909c66; color: #90a4ae; }
-.btn-setmove-u { border-color: var(--border); }
+/* Border + text colored by move type (matches .type-* badge palette) */
+.btn-setmove-type-normal   { border-color: #9e9e9e88; color: #cfcfcf; }
+.btn-setmove-type-fire     { border-color: #ef535099; color: #ef9a9a; }
+.btn-setmove-type-water    { border-color: #42a5f599; color: #90caf9; }
+.btn-setmove-type-grass    { border-color: #66bb6a99; color: #a5d6a7; }
+.btn-setmove-type-electric { border-color: #fdd83599; color: #fff59d; }
+.btn-setmove-type-ice      { border-color: #80deea99; color: #b2ebf2; }
+.btn-setmove-type-fighting { border-color: #e5393599; color: #ef9a9a; }
+.btn-setmove-type-poison   { border-color: #ab47bc99; color: #ce93d8; }
+.btn-setmove-type-ground   { border-color: #a1887f99; color: #bcaaa4; }
+.btn-setmove-type-flying   { border-color: #90caf999; color: #b3dcfb; }
+.btn-setmove-type-psychic  { border-color: #f0629299; color: #f8bbd0; }
+.btn-setmove-type-bug      { border-color: #8bc34a99; color: #c5e1a5; }
+.btn-setmove-type-rock     { border-color: #8d6e6399; color: #bcaaa4; }
+.btn-setmove-type-ghost    { border-color: #7e57c2aa; color: #b39ddb; }
+.btn-setmove-type-dragon   { border-color: #512da8cc; color: #9575cd; }
+.btn-setmove-type-dark     { border-color: #5d4037aa; color: #a1887f; }
+.btn-setmove-type-steel    { border-color: #90a4ae99; color: #b0bec5; }
+.btn-setmove-type-fairy    { border-color: #f48fb199; color: #f8bbd0; }
+.btn-setmove-u { border-color: var(--border); color: var(--muted); }
 .btn-setmove-active {
   background: var(--surface); border-color: var(--accent); color: var(--text);
   box-shadow: 0 0 0 1px var(--accent);
