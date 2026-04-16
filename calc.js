@@ -1216,7 +1216,8 @@ function renderDamage(rolls, hp, curHP, s, moveData, atkData, defData, atkStat, 
   const defNatChar   = getNatureMult(s.defNature, isPhysical ? 'def' : 'spd') > 1 ? '＋'
                      : getNatureMult(s.defNature, isPhysical ? 'def' : 'spd') < 1 ? '−' : '●';
 
-  const copyText = `${atkData.displayName} ${s.atkMove} → ${minDmg}–${maxDmg} (${minPct}%–${maxPct}%) vs ${defData.displayName} ${koText}`.replace(/\s+/g, ' ').trim();
+  const natSymbol = atkNatChar === '＋' ? '+' : atkNatChar === '−' ? '-' : '';
+  const copyText = `${atkSPVal}${natSymbol} ${isPhysLabel} ${atkData.displayName} ${s.atkMove} vs. ${s.defHpSP} HP / ${defSPVal} ${defStatLabel} ${defData.displayName}: ${minDmg}-${maxDmg} (${minPct}%-${maxPct}%) -- ${koText}`.replace(/\s+/g, ' ').trim();
 
   return `
     <div class="dmg-header" onclick="copyDmgLine(this, '${copyText.replace(/'/g, "\\'")}')" title="Click to copy">
