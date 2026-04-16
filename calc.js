@@ -2170,11 +2170,12 @@ function renderSetMoveButtons(prefix, moves) {
     const safe  = m.replace(/'/g, "\\'");
     // Moves not in the damage database (e.g. Low Kick, Grass Knot — variable BP)
     // are rendered disabled so the user knows they can't be calculated.
+    const removeAttr = `oncontextmenu="return removeMoveFromPool('${safe}','${prefix}',event)"`;
     if (!known) {
-      return `<button class="btn-setmove btn-setmove-u btn-setmove-disabled"
-        title="${m}: variable or unknown base power — not supported" disabled>${m}</button>`;
+      return `<button class="btn-setmove btn-setmove-u btn-setmove-disabled" ${removeAttr}
+        title="${m}: variable or unknown base power — right-click to remove" disabled>${m}</button>`;
     }
-    return `<button class="btn-setmove ${cls}${activeCls}" onclick="pickSetMove('${safe}','${prefix}')">${m}</button>`;
+    return `<button class="btn-setmove ${cls}${activeCls}" onclick="pickSetMove('${safe}','${prefix}')" ${removeAttr} title="Right-click to remove">${m}</button>`;
   }).join('');
   updateAddBtnState(prefix);
 }
@@ -2194,6 +2195,21 @@ function updateAddBtnState(prefix) {
   if (!btn) return;
   btn.style.display = readPoolMoves(prefix).length >= 4 ? 'none' : '';
 }
+
+window.removeMoveFromPool = function (moveName, prefix, ev) {
+  if (ev) ev.preventDefault();
+  const pool = readPoolMoves(prefix).filter(m => m !== moveName);
+  // If we just removed the active override, promote the first remaining move
+  // (or clear the override when the pool is empty).
+  if (window._moveOverride[prefix] === moveName) {
+    const next = pool[0] || null;
+    window._moveOverride[prefix] = next;
+    if (prefix === 'atk') updateMoveCat(next ? MOVES[next] : null);
+  }
+  renderSetMoveButtons(prefix, pool);
+  computeAll();
+  return false;
+};
 
 window.addMoveToPool = function (prefix) {
   const input = document.getElementById(prefix + 'Move');
