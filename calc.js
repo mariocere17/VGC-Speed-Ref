@@ -2208,6 +2208,7 @@ window.addMoveToPool = function (prefix) {
   // Make the just-added move the active quick-pick
   window._moveOverride[prefix] = move;
   if (prefix === 'atk' && MOVES[move]) updateMoveCat(MOVES[move]);
+  if (input) input.value = '';
   renderSetMoveButtons(prefix, pool);
   computeAll();
 };
