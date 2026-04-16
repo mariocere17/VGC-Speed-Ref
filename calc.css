@@ -260,7 +260,7 @@
 .ko-full   { color: #ef5350; font-weight: 700; }
 
 /* Modifier tags */
-.dmg-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 10px; }
+.dmg-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 10px; min-height: 26px; }
 .dmg-tag {
   font-size: 0.72rem; font-weight: 700; padding: 2px 8px; border-radius: 10px;
   text-transform: uppercase; letter-spacing: 0.5px;
@@ -423,8 +423,8 @@
   background: var(--surface); border: 1px solid var(--border);
   border-radius: 10px; padding: 18px;
 }
-/* Gap goes above dmgBlock (between title and content), not below it */
-.results-col > div:nth-child(2) { margin-top: auto; }
+/* dmgBlock buttons stay at bottom */
+.results-col > div:nth-child(2) { flex: 1; }
 .results-col-title {
   font-size: 0.72rem; font-weight: 700; text-transform: uppercase;
   letter-spacing: 0.5px; margin-bottom: 10px;
