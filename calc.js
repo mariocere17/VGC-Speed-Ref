@@ -124,6 +124,14 @@ const ATK_ABILITIES = [
   { id:'sheer-force',  label:'Sheer Force (secondary ×1.3)' },
   { id:'guts',         label:'Guts (statused Atk ×1.5)' },
   { id:'sniper',       label:'Sniper (crit ×2.25)' },
+  // Type-changing (-ate, Liquid Voice, Permafrost Fist)
+  { id:'pixilate',         label:'Pixilate (Normal → Fairy ×1.2)' },
+  { id:'refrigerate',      label:'Refrigerate (Normal → Ice ×1.2)' },
+  { id:'aerilate',         label:'Aerilate (Normal → Flying ×1.2)' },
+  { id:'galvanize',        label:'Galvanize (Normal → Electric ×1.2)' },
+  { id:'dragonize',        label:'Dragonize (Normal → Dragon ×1.2)' },
+  { id:'liquid-voice',     label:'Liquid Voice (sound → Water)' },
+  { id:'permafrost-fist',  label:'Permafrost Fist (punch → Ice ×1.3)' },
   // Weather-conditional
   { id:'sand-force',   label:'Sand Force (Rock/Ground/Steel ×1.3 in Sand)' },
   { id:'solar-power',  label:'Solar Power (SpA ×1.5 in Sun)' },
@@ -237,6 +245,38 @@ function getTypeEffComponents(atkType, defTypes, s) {
 function getTypeEffRaw(atkType, defTypes, s) {
   const [e1, e2] = getTypeEffComponents(atkType, defTypes, s);
   return e1 * e2;
+}
+
+// ── Type-changing abilities (-ate, Liquid Voice, Permafrost Fist) ──
+const ATE_MAP = {
+  'pixilate':    { from: 'normal', to: 'fairy' },
+  'refrigerate': { from: 'normal', to: 'ice' },
+  'aerilate':    { from: 'normal', to: 'flying' },
+  'galvanize':   { from: 'normal', to: 'electric' },
+  'dragonize':   { from: 'normal', to: 'dragon' },
+};
+const SOUND_MOVES = new Set([
+  'Hyper Voice', 'Boomburst', 'Bug Buzz', 'Snarl', 'Round', 'Overdrive',
+  'Disarming Voice', 'Clanging Scales', 'Uproar', 'Snore', 'Echoed Voice',
+  'Relic Song', 'Sparkling Aria', 'Eerie Spell', 'Torch Song',
+]);
+
+/** Returns effective move type after ability conversion. */
+function eMoveType(s, moveData) {
+  if (!moveData) return '';
+  const ate = ATE_MAP[s.atkAbility];
+  if (ate && moveData.type === ate.from) return ate.to;
+  if (s.atkAbility === 'permafrost-fist' && moveData.isPunch) return 'ice';
+  if (s.atkAbility === 'liquid-voice' && SOUND_MOVES.has(s.atkMove)) return 'water';
+  return moveData.type;
+}
+
+/** Returns BP multiplier from type-changing abilities. */
+function ateBpMult(s, moveData) {
+  const ate = ATE_MAP[s.atkAbility];
+  if (ate && moveData.type === ate.from) return 1.2;
+  if (s.atkAbility === 'permafrost-fist' && moveData.isPunch) return 1.3;
+  return 1;
 }
 
 function isSTAB(moveType, pkmnTypes) {
@@ -406,7 +446,7 @@ function buildAtkStat(s, moveData, isPhysical, defAbility) {
   if (atkItem === 'wise-glasses' && !isPhysical) stat = Math.floor(stat * 1.1);
   if (atkItem.startsWith('type-')) {
     const itemDef = ATK_ITEMS.find(i => i.id === atkItem);
-    if (itemDef && itemDef.moveType === moveData.type) stat = Math.floor(stat * 1.2);
+    if (itemDef && itemDef.moveType === eMoveType(s, moveData)) stat = Math.floor(stat * 1.2);
   }
   if ((s.atkAbility === 'huge-power' || s.atkAbility === 'pure-power') && isPhysical)
     stat = Math.floor(stat * 2);
@@ -478,12 +518,16 @@ function buildEffBP(s, moveData, atkData, defData) {
   }
 
   if (s.atkAbility === 'technician' && bp <= 60) bp = Math.floor(bp * 1.5);
+  // -ate / Permafrost Fist BP boost
+  const abMult = ateBpMult(s, moveData);
+  if (abMult > 1) bp = Math.floor(bp * abMult);
   return bp;
 }
 
 function buildStabMult(s, moveData, pkmnData) {
   if (s.atkAbility === 'protean') return 1.5;
-  if (!isSTAB(moveData.type, pkmnData.types)) return 1;
+  const effType = eMoveType(s, moveData);
+  if (!isSTAB(effType, pkmnData.types)) return 1;
   return s.atkAbility === 'adaptability' ? 2 : 1.5;
 }
 
@@ -526,8 +570,9 @@ function effDefAbility(s) {
 
 function applyPostMods(rolls, s, moveData, isPhysical, typeEff) {
   let r = rolls;
+  const mType = eMoveType(s, moveData);
   const defAb = effDefAbility(s);
-  if (defAb === 'thick-fat' && (moveData.type === 'fire' || moveData.type === 'ice'))
+  if (defAb === 'thick-fat' && (mType === 'fire' || mType === 'ice'))
     r = r.map(d => Math.floor(d * 0.5));
   if (defAb === 'ice-scales' && !isPhysical)
     r = r.map(d => Math.floor(d * 0.5));
@@ -541,7 +586,7 @@ function applyPostMods(rolls, s, moveData, isPhysical, typeEff) {
   if (s.atkAbility === 'tinted-lens' && typeEff > 0 && typeEff < 1)
     r = r.map(d => Math.floor(d * 2));
   if (s.atkAbility === 'sand-force' && s.weather === 'sand' &&
-      ['rock', 'ground', 'steel'].includes(moveData.type))
+      ['rock', 'ground', 'steel'].includes(mType))
     r = r.map(d => Math.floor(d * 1.3));
   if (s.atkAbility === 'sheer-force' && moveData.hasSecondary)
     r = r.map(d => Math.floor(d * 1.3));
@@ -560,7 +605,7 @@ function applyPostMods(rolls, s, moveData, isPhysical, typeEff) {
   // Non-Normal berries only activate on super-effective hits.
   if (defItem && defItem.startsWith('berry-')) {
     const itemDef = DEF_ITEMS.find(i => i.id === defItem);
-    if (itemDef && itemDef.berryType === moveData.type) {
+    if (itemDef && itemDef.berryType === mType) {
       const activates = itemDef.berryType === 'normal' || typeEff > 1;
       if (activates) r = r.map(d => Math.floor(d * 0.5));
     }
@@ -568,12 +613,12 @@ function applyPostMods(rolls, s, moveData, isPhysical, typeEff) {
 
   // ── Weather ──
   if (s.weather === 'sun' || s.weather === 'harsh-sun') {
-    if (moveData.type === 'fire')  r = r.map(d => Math.floor(d * 1.5));
-    if (moveData.type === 'water' && s.weather === 'sun') r = r.map(d => Math.floor(d * 0.5));
+    if (mType === 'fire')  r = r.map(d => Math.floor(d * 1.5));
+    if (mType === 'water' && s.weather === 'sun') r = r.map(d => Math.floor(d * 0.5));
     // harsh-sun: water already blocked by isImmune
   } else if (s.weather === 'rain' || s.weather === 'heavy-rain') {
-    if (moveData.type === 'water') r = r.map(d => Math.floor(d * 1.5));
-    if (moveData.type === 'fire' && s.weather === 'rain') r = r.map(d => Math.floor(d * 0.5));
+    if (mType === 'water') r = r.map(d => Math.floor(d * 1.5));
+    if (mType === 'fire' && s.weather === 'rain') r = r.map(d => Math.floor(d * 0.5));
     // heavy-rain: fire already blocked by isImmune
   }
 
@@ -583,17 +628,17 @@ function applyPostMods(rolls, s, moveData, isPhysical, typeEff) {
   const atkGrounded = isGrounded(atkData, s.atkAbility, s.gravity);
   const defGrounded = isGrounded(defData, effDefAbility(s), s.gravity);
   if (atkGrounded) {
-    if (s.terrain === 'electric' && moveData.type === 'electric')
+    if (s.terrain === 'electric' && mType === 'electric')
       r = r.map(d => Math.floor(d * 1.3));
-    if (s.terrain === 'grassy'   && moveData.type === 'grass')
+    if (s.terrain === 'grassy'   && mType === 'grass')
       r = r.map(d => Math.floor(d * 1.3));
-    if (s.terrain === 'psychic'  && moveData.type === 'psychic')
+    if (s.terrain === 'psychic'  && mType === 'psychic')
       r = r.map(d => Math.floor(d * 1.3));
   }
   if (defGrounded) {
     if (s.terrain === 'grassy' && GRASSY_HALVED_MOVES.has(s.atkMove))
       r = r.map(d => Math.floor(d * 0.5));
-    if (s.terrain === 'misty'  && moveData.type === 'dragon')
+    if (s.terrain === 'misty'  && mType === 'dragon')
       r = r.map(d => Math.floor(d * 0.5));
   }
 
@@ -671,10 +716,11 @@ function computeDirection(s, suffix) {
   }
 
   const isPhysical          = moveData.category === 'physical';
-  const [tEff1, tEff2]      = getTypeEffComponents(moveData.type, defData.types, s);
+  const mType               = eMoveType(s, moveData);
+  const [tEff1, tEff2]      = getTypeEffComponents(mType, defData.types, s);
   const typeEff             = tEff1 * tEff2;
 
-  if (isImmune(moveData.type, s)) {
+  if (isImmune(mType, s)) {
     dmgEl.innerHTML = renderImmune(moveData, defData, s.defAbility, s);
     if (optEl) optEl.innerHTML = '';
     return;
@@ -831,9 +877,10 @@ window.findMinSurvive = function (dir) {
   if (!atkData || !defData || !moveData || moveData.category === 'status') return;
 
   const isPhysical         = moveData.category === 'physical';
-  const [tEff1s, tEff2s]   = getTypeEffComponents(moveData.type, defData.types, s);
+  const mType              = eMoveType(s, moveData);
+  const [tEff1s, tEff2s]   = getTypeEffComponents(mType, defData.types, s);
   const typeEff            = tEff1s * tEff2s;
-  if (isImmune(moveData.type, s)) return;
+  if (isImmune(mType, s)) return;
 
   const atkStat  = buildAtkStat(s, moveData, isPhysical, s.defAbility);
   const effBP    = buildEffBP(s, moveData, atkData, defData);
@@ -927,9 +974,10 @@ window.findMinOHKO = function (dir) {
   if (!atkData || !defData || !moveData || moveData.category === 'status') return;
 
   const isPhysical         = moveData.category === 'physical';
-  const [tEff1o, tEff2o]   = getTypeEffComponents(moveData.type, defData.types, s);
+  const mType              = eMoveType(s, moveData);
+  const [tEff1o, tEff2o]   = getTypeEffComponents(mType, defData.types, s);
   const typeEff            = tEff1o * tEff2o;
-  if (isImmune(moveData.type, s)) return;
+  if (isImmune(mType, s)) return;
 
   const effBP    = buildEffBP(s, moveData, atkData, defData);
   const stabMult = buildStabMult(s, moveData, atkData);
@@ -1127,11 +1175,13 @@ function renderDamage(rolls, hp, curHP, s, moveData, atkData, defData, atkStat, 
     }
   }
 
+  const mType = eMoveType(s, moveData);
+  const ateConverted = mType !== moveData.type;
   let typeTag = '';
   if (typeEff === 0)        typeTag = '<span class="dmg-tag tag-imm">Immune</span>';
-  else if (typeEff >= 4)    typeTag = `<span class="dmg-tag tag-se4">4× ${moveData.type}</span>`;
-  else if (typeEff >= 2)    typeTag = `<span class="dmg-tag tag-se2">2× ${moveData.type}</span>`;
-  else if (typeEff <= 0.5)  typeTag = `<span class="dmg-tag tag-nve">${typeEff}× ${moveData.type}</span>`;
+  else if (typeEff >= 4)    typeTag = `<span class="dmg-tag tag-se4">4× ${mType}</span>`;
+  else if (typeEff >= 2)    typeTag = `<span class="dmg-tag tag-se2">2× ${mType}</span>`;
+  else if (typeEff <= 0.5)  typeTag = `<span class="dmg-tag tag-nve">${typeEff}× ${mType}</span>`;
 
   const stabLabel = stabMult === 2 ? 'Adaptability'
                    : s.atkAbility === 'protean' ? 'Protean' : 'STAB';
@@ -1143,6 +1193,8 @@ function renderDamage(rolls, hp, curHP, s, moveData, atkData, defData, atkStat, 
     ? `<span class="dmg-tag tag-crit">💥 ${s.atkAbility === 'sniper' ? 'Sniper Crit' : 'Crit'}</span>`
     : '';
 
+  const ateTag = ateConverted
+    ? `<span class="dmg-tag tag-ate">${moveData.type} → ${mType}</span>` : '';
   const hhTag  = s.helpingHand  ? '<span class="dmg-tag tag-hh">Helping Hand</span>'  : '';
   const batTag = s.battery && !isPhysical ? '<span class="dmg-tag tag-bat">Battery</span>' : '';
   const fgTag  = s.friendGuard  ? '<span class="dmg-tag tag-fg">Friend Guard</span>'  : '';
@@ -1170,7 +1222,7 @@ function renderDamage(rolls, hp, curHP, s, moveData, atkData, defData, atkStat, 
       <span class="dmg-pct">(${minPct}%–${maxPct}%)</span>
       <span class="dmg-ko ${koClass}">${koText}</span>
     </div>
-    <div class="dmg-tags">${stabTag}${typeTag}${critTag}${hhTag}${batTag}${fgTag}${spreadTag}${wrTag}${mrTag}</div>
+    <div class="dmg-tags">${ateTag}${stabTag}${typeTag}${critTag}${hhTag}${batTag}${fgTag}${spreadTag}${wrTag}${mrTag}</div>
     <div class="rolls-row">${cells}</div>
     <div class="dmg-stats">
       <strong>${atkData.displayName}</strong> ${isPhysLabel} <strong>${atkStat}</strong>
@@ -1185,8 +1237,9 @@ function renderDamage(rolls, hp, curHP, s, moveData, atkData, defData, atkStat, 
 
 function renderImmune(moveData, defData, defAbility, s) {
   let reason;
-  if (s?.weather === 'harsh-sun'  && moveData.type === 'water') reason = '☀️ Harsh Sunshine — Water moves fail';
-  else if (s?.weather === 'heavy-rain' && moveData.type === 'fire')  reason = '🌧️ Heavy Rain — Fire moves fail';
+  const mType = eMoveType(s, moveData);
+  if (s?.weather === 'harsh-sun'  && mType === 'water') reason = '☀️ Harsh Sunshine — Water moves fail';
+  else if (s?.weather === 'heavy-rain' && mType === 'fire')  reason = '🌧️ Heavy Rain — Fire moves fail';
   else {
     const abilityDef = DEF_ABILITIES.find(a => a.id === defAbility);
     reason = abilityDef?.label || defAbility || 'type immunity';
