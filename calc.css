@@ -75,6 +75,9 @@
   width: 100%; cursor: pointer;
 }
 .field-select:focus { border-color: var(--accent); }
+.field-select-compact {
+  width: auto; flex: 0 0 auto; min-width: 110px;
+}
 
 /* ── TYPE BADGES ── */
 .type-row { display: flex; gap: 5px; flex-wrap: wrap; }

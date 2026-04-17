@@ -124,6 +124,7 @@ const ATK_ABILITIES = [
   { id:'sheer-force',  label:'Sheer Force (secondary ×1.3)' },
   { id:'guts',         label:'Guts (statused Atk ×1.5)' },
   { id:'sniper',       label:'Sniper (crit ×2.25)' },
+  { id:'supreme-overlord', label:'Supreme Overlord (×1+0.1 per fainted ally)' },
   // Type-changing (-ate, Liquid Voice, Permafrost Fist)
   { id:'pixilate',         label:'Pixilate (Normal → Fairy ×1.2)' },
   { id:'refrigerate',      label:'Refrigerate (Normal → Ice ×1.2)' },
@@ -345,6 +346,7 @@ function readState() {
     atkSpeStage: stageVal('atkSpeStage'),
     atkItem:    document.getElementById('atkItem').value,
     atkAbility: document.getElementById('atkAbility').value,
+    atkOverlord: parseInt(document.getElementById('atkOverlord')?.value) || 0,
     atkHPPct:   parseInt(document.getElementById('atkHPPctSlider')?.value) || 100,
 
     defPkmn:    document.getElementById('defPkmn').value.toLowerCase().trim(),
@@ -363,6 +365,7 @@ function readState() {
     defSpeStage: stageVal('defSpeStage'),
     defItem:    document.getElementById('defItem').value,
     defAbility: document.getElementById('defAbility').value,
+    defOverlord: parseInt(document.getElementById('defOverlord')?.value) || 0,
     defHPPct:   parseInt(document.getElementById('defHPPctSlider')?.value) || 100,
 
     weather:     document.getElementById('fldWeather')?.value     || '',
@@ -406,6 +409,7 @@ function buildReversedState(s) {
     atkSpaStage: s.defSpaStage, atkSpdStage: s.defSpdStage, atkSpeStage: s.defSpeStage,
     atkItem:    s.defItem,
     atkAbility: s.defAbility,  // B's ability used offensively
+    atkOverlord: s.defOverlord, // B's overlord count used offensively
     atkHPPct:   s.atkHPPct,    // not used by reversed (it's A's HP%, but we pass it along)
 
     defPkmn:    s.atkPkmn,
@@ -417,6 +421,7 @@ function buildReversedState(s) {
     defSpaStage: s.atkSpaStage, defSpdStage: s.atkSpdStage, defSpeStage: s.atkSpeStage,
     defItem:    s.atkItem,
     defAbility: s.atkAbility,  // A's ability used defensively
+    defOverlord: s.atkOverlord, // A's overlord count (not used defensively, passed along)
     defHPPct:   s.atkHPPct,    // A's current HP% (for Multiscale when B attacks A)
 
     weather: s.weather, terrain: s.terrain, format: s.format,
@@ -596,6 +601,10 @@ function applyPostMods(rolls, s, moveData, isPhysical, typeEff) {
     r = r.map(d => Math.floor(d * 1.2));
   if (s.atkAbility === 'guts' && isPhysical)
     r = r.map(d => Math.floor(d * 1.5));
+  if (s.atkAbility === 'supreme-overlord') {
+    const fainted = Math.max(0, Math.min(5, s.atkOverlord || 0));
+    if (fainted > 0) r = r.map(d => Math.floor(d * (1 + fainted * 0.1)));
+  }
   const atkItem = s.magicRoom ? '' : s.atkItem;
   const defItem = s.magicRoom ? '' : s.defItem;
   if (atkItem === 'life-orb')  r = r.map(d => Math.floor(d * 1.3));
@@ -819,6 +828,8 @@ function restoreState() {
     if (stat !== 'Hp') setStage('atk' + stat + 'Stage', saved['atk' + stat + 'Stage']);
   }
   updateHPPctVisibility('atk');
+  updateOverlordVisibility('atk');
+  if (saved.atkOverlord != null) setVal('atkOverlord', String(saved.atkOverlord));
   if (saved.atkHPPct) setSlider('atkHPPctSlider', saved.atkHPPct, 'atkHPPctVal');
 
   // --- DEFENDER ---
@@ -841,6 +852,8 @@ function restoreState() {
 
   // --- HP% sliders ---
   updateHPPctVisibility('def');
+  updateOverlordVisibility('def');
+  if (saved.defOverlord != null) setVal('defOverlord', String(saved.defOverlord));
   if (saved.defHPPct) setSlider('defHPPctSlider', saved.defHPPct, 'defHPPctVal');
 
   // --- Field state ---
@@ -1102,6 +1115,7 @@ window.swapPanels = function () {
   swapVals('atkNature', 'defNature');
   swapVals('atkItem', 'defItem');
   swapVals('atkAbility', 'defAbility');
+  swapVals('atkOverlord', 'defOverlord');
 
   // Swap HP% sliders
   swapVals('atkHPPctSlider', 'defHPPctSlider');
@@ -1142,6 +1156,8 @@ window.swapPanels = function () {
   updateSprite('def', newDefKey);
   updateHPPctVisibility('atk');
   updateHPPctVisibility('def');
+  updateOverlordVisibility('atk');
+  updateOverlordVisibility('def');
 
   computeAll();
 };
@@ -1676,6 +1692,7 @@ function updateAbilitySelect(prefix, pkmnKey) {
 
   // Show/hide Current HP slider for abilities that depend on full HP
   updateHPPctVisibility(prefix);
+  updateOverlordVisibility(prefix);
 }
 
 /** Show the "Current HP %" slider only for Multiscale / Shadow Shield. Works for both panels. */
@@ -1691,6 +1708,16 @@ function updateHPPctVisibility(prefix) {
     if (slider) slider.value = 100;
     if (val)    val.textContent = '100';
   }
+}
+
+/** Show the "fainted allies" selector only when Supreme Overlord is chosen. */
+function updateOverlordVisibility(prefix) {
+  const ability = document.getElementById(prefix + 'Ability')?.value;
+  const sel     = document.getElementById(prefix + 'Overlord');
+  if (!sel) return;
+  const show = ability === 'supreme-overlord';
+  sel.style.display = show ? '' : 'none';
+  if (!show) sel.value = '0';
 }
 
 /** Legacy wrapper — keep existing call sites working */
@@ -1781,8 +1808,13 @@ function bindEvents() {
     if (abilityEl) {
       abilityEl.addEventListener('change', () => {
         updateHPPctVisibility(prefix);
+        updateOverlordVisibility(prefix);
         computeAll();
       });
+    }
+    const overlordEl = document.getElementById(prefix + 'Overlord');
+    if (overlordEl) {
+      overlordEl.addEventListener('change', computeAll);
     }
   }
 
@@ -2141,6 +2173,7 @@ window.loadSetIntoPanel = function (prefix, setId) {
   }
 
   updateHPPctVisibility(prefix);
+  updateOverlordVisibility(prefix);
 
   // Set first move as active override (no toca el input — queda como 5ª opción independiente)
   if (set.moves.length) {
