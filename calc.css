@@ -1,5 +1,7 @@
 /* calc.css — Damage Calculator styles (extends style.css) */
 
+.subtitle-hint { margin-top: 2px; font-size: 0.74rem; opacity: 0.85; }
+
 /* ── HEADER NAV ── */
 .header-nav { display: flex; align-items: center; gap: 10px; }
 .btn-nav {
