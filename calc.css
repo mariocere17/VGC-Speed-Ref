@@ -78,6 +78,14 @@
 .field-select-compact {
   width: auto; flex: 0 0 auto; min-width: 110px;
 }
+.ability-toggle {
+  display: inline-flex; align-items: center; gap: 5px;
+  font-size: 0.78rem; color: var(--text);
+  background: var(--bg); border: 1px solid var(--border);
+  border-radius: 6px; padding: 5px 9px; cursor: pointer;
+  white-space: nowrap; flex: 0 0 auto;
+}
+.ability-toggle input[type="checkbox"] { margin: 0; cursor: pointer; }
 
 /* ── TYPE BADGES ── */
 .type-row { display: flex; gap: 5px; flex-wrap: wrap; }

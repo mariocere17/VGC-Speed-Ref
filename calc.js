@@ -125,6 +125,11 @@ const ATK_ABILITIES = [
   { id:'guts',         label:'Guts (statused Atk ×1.5)' },
   { id:'sniper',       label:'Sniper (crit ×2.25)' },
   { id:'supreme-overlord', label:'Supreme Overlord (×1+0.1 per fainted ally)' },
+  { id:'stakeout',     label:'Stakeout (×2 if target switched in)' },
+  { id:'analytic',     label:'Analytic (×1.3 if moves last)' },
+  { id:'rivalry',      label:'Rivalry (same gender ×1.25 / opposite ×0.75)' },
+  { id:'protosynthesis', label:'Protosynthesis (Booster Energy / Sun)' },
+  { id:'quark-drive',    label:'Quark Drive (Booster Energy / Electric Terrain)' },
   // Type-changing (-ate, Liquid Voice, Permafrost Fist)
   { id:'pixilate',         label:'Pixilate (Normal → Fairy ×1.2)' },
   { id:'refrigerate',      label:'Refrigerate (Normal → Ice ×1.2)' },
@@ -347,6 +352,11 @@ function readState() {
     atkItem:    document.getElementById('atkItem').value,
     atkAbility: document.getElementById('atkAbility').value,
     atkOverlord: parseInt(document.getElementById('atkOverlord')?.value) || 0,
+    atkStakeout: document.getElementById('atkStakeout')?.checked || false,
+    atkAnalytic: document.getElementById('atkAnalytic')?.checked || false,
+    atkFlashFire: document.getElementById('atkFlashFire')?.checked || false,
+    atkRivalry: document.getElementById('atkRivalry')?.value || 'same',
+    atkProto:   document.getElementById('atkProto')?.value || '',
     atkHPPct:   parseInt(document.getElementById('atkHPPctSlider')?.value) || 100,
 
     defPkmn:    document.getElementById('defPkmn').value.toLowerCase().trim(),
@@ -366,6 +376,7 @@ function readState() {
     defItem:    document.getElementById('defItem').value,
     defAbility: document.getElementById('defAbility').value,
     defOverlord: parseInt(document.getElementById('defOverlord')?.value) || 0,
+    defProto:   document.getElementById('defProto')?.value || '',
     defHPPct:   parseInt(document.getElementById('defHPPctSlider')?.value) || 100,
 
     weather:     document.getElementById('fldWeather')?.value     || '',
@@ -410,6 +421,11 @@ function buildReversedState(s) {
     atkItem:    s.defItem,
     atkAbility: s.defAbility,  // B's ability used offensively
     atkOverlord: s.defOverlord, // B's overlord count used offensively
+    atkStakeout: false,        // conditional flags are A-specific; do not carry over
+    atkAnalytic: false,
+    atkFlashFire: false,
+    atkRivalry: 'same',
+    atkProto:   s.defProto,    // B's booster state applies to its offensive side too
     atkHPPct:   s.atkHPPct,    // not used by reversed (it's A's HP%, but we pass it along)
 
     defPkmn:    s.atkPkmn,
@@ -422,6 +438,7 @@ function buildReversedState(s) {
     defItem:    s.atkItem,
     defAbility: s.atkAbility,  // A's ability used defensively
     defOverlord: s.atkOverlord, // A's overlord count (not used defensively, passed along)
+    defProto:   s.atkProto,    // A's booster state also applies to its defensive side
     defHPPct:   s.atkHPPct,    // A's current HP% (for Multiscale when B attacks A)
 
     weather: s.weather, terrain: s.terrain, format: s.format,
@@ -457,6 +474,12 @@ function buildAtkStat(s, moveData, isPhysical, defAbility) {
     stat = Math.floor(stat * 2);
   if (s.atkAbility === 'solar-power' && !isPhysical && s.weather === 'sun')
     stat = Math.floor(stat * 1.5);
+  // Protosynthesis / Quark Drive: booster boosts one stat (×1.3, or ×1.5 if Speed).
+  // Speed boost does not affect damage output, so only Atk/SpA apply here.
+  if ((s.atkAbility === 'protosynthesis' || s.atkAbility === 'quark-drive') && s.atkProto) {
+    if (isPhysical && s.atkProto === 'atk')  stat = Math.floor(stat * 1.3);
+    if (!isPhysical && s.atkProto === 'spa') stat = Math.floor(stat * 1.3);
+  }
   if (defAbility === 'intimidate' && isPhysical)
     stat = Math.floor(stat * 2 / 3);
 
@@ -552,6 +575,12 @@ function buildDefStat(s, moveData, isPhysical) {
   if (defItem === 'assault-vest' && !isPhysical) def = Math.floor(def * 1.5);
   if (defItem === 'eviolite')                    def = Math.floor(def * 1.5);
 
+  // Protosynthesis / Quark Drive on defender: boosts Def or SpD by ×1.3.
+  if ((s.defAbility === 'protosynthesis' || s.defAbility === 'quark-drive') && s.defProto) {
+    if (effectivePhysical && s.defProto === 'def')  def = Math.floor(def * 1.3);
+    if (!effectivePhysical && s.defProto === 'spd') def = Math.floor(def * 1.3);
+  }
+
   // Weather-boosted stats (applied before stage mods, like items)
   if (s.weather === 'sand' && !isPhysical && pkmnData.types.includes('rock'))
     def = Math.floor(def * 1.5);
@@ -604,6 +633,16 @@ function applyPostMods(rolls, s, moveData, isPhysical, typeEff) {
   if (s.atkAbility === 'supreme-overlord') {
     const fainted = Math.max(0, Math.min(5, s.atkOverlord || 0));
     if (fainted > 0) r = r.map(d => Math.floor(d * (1 + fainted * 0.1)));
+  }
+  if (s.atkAbility === 'stakeout' && s.atkStakeout)
+    r = r.map(d => Math.floor(d * 2));
+  if (s.atkAbility === 'analytic' && s.atkAnalytic)
+    r = r.map(d => Math.floor(d * 1.3));
+  if (s.atkAbility === 'flash-fire' && s.atkFlashFire && mType === 'fire')
+    r = r.map(d => Math.floor(d * 1.5));
+  if (s.atkAbility === 'rivalry') {
+    if (s.atkRivalry === 'same')     r = r.map(d => Math.floor(d * 1.25));
+    else if (s.atkRivalry === 'opposite') r = r.map(d => Math.floor(d * 0.75));
   }
   const atkItem = s.magicRoom ? '' : s.atkItem;
   const defItem = s.magicRoom ? '' : s.defItem;
@@ -830,6 +869,12 @@ function restoreState() {
   updateHPPctVisibility('atk');
   updateOverlordVisibility('atk');
   if (saved.atkOverlord != null) setVal('atkOverlord', String(saved.atkOverlord));
+  if (saved.atkRivalry)          setVal('atkRivalry', saved.atkRivalry);
+  if (saved.atkProto != null)    setVal('atkProto', saved.atkProto);
+  const _ch = (id, v) => { const el = document.getElementById(id); if (el) el.checked = !!v; };
+  _ch('atkStakeout',  saved.atkStakeout);
+  _ch('atkAnalytic',  saved.atkAnalytic);
+  _ch('atkFlashFire', saved.atkFlashFire);
   if (saved.atkHPPct) setSlider('atkHPPctSlider', saved.atkHPPct, 'atkHPPctVal');
 
   // --- DEFENDER ---
@@ -854,6 +899,7 @@ function restoreState() {
   updateHPPctVisibility('def');
   updateOverlordVisibility('def');
   if (saved.defOverlord != null) setVal('defOverlord', String(saved.defOverlord));
+  if (saved.defProto != null)    setVal('defProto', saved.defProto);
   if (saved.defHPPct) setSlider('defHPPctSlider', saved.defHPPct, 'defHPPctVal');
 
   // --- Field state ---
@@ -1116,6 +1162,13 @@ window.swapPanels = function () {
   swapVals('atkItem', 'defItem');
   swapVals('atkAbility', 'defAbility');
   swapVals('atkOverlord', 'defOverlord');
+  swapVals('atkProto', 'defProto');
+  // Attacker-only flags (stakeout/analytic/flashfire/rivalry) don't have a defender counterpart;
+  // reset them on swap so they don't persist on the new attacker side.
+  for (const id of ['atkStakeout', 'atkAnalytic', 'atkFlashFire']) {
+    const el = document.getElementById(id); if (el) el.checked = false;
+  }
+  const rv = document.getElementById('atkRivalry'); if (rv) rv.value = 'same';
 
   // Swap HP% sliders
   swapVals('atkHPPctSlider', 'defHPPctSlider');
@@ -1710,14 +1763,36 @@ function updateHPPctVisibility(prefix) {
   }
 }
 
-/** Show the "fainted allies" selector only when Supreme Overlord is chosen. */
+/** Show/hide ability-specific extra controls (fainted count, toggles, booster, etc.). */
 function updateOverlordVisibility(prefix) {
   const ability = document.getElementById(prefix + 'Ability')?.value;
-  const sel     = document.getElementById(prefix + 'Overlord');
-  if (!sel) return;
-  const show = ability === 'supreme-overlord';
-  sel.style.display = show ? '' : 'none';
-  if (!show) sel.value = '0';
+
+  // atk-only controls
+  if (prefix === 'atk') {
+    toggleEl('atkOverlord',     ability === 'supreme-overlord', '0');
+    toggleEl('atkStakeoutWrap', ability === 'stakeout');
+    toggleEl('atkAnalyticWrap', ability === 'analytic');
+    toggleEl('atkFlashFireWrap', ability === 'flash-fire');
+    toggleEl('atkRivalry',      ability === 'rivalry', 'same');
+    toggleEl('atkProto',        ability === 'protosynthesis' || ability === 'quark-drive', '');
+    // Reset checkboxes when their ability is hidden
+    if (ability !== 'stakeout')   { const c = document.getElementById('atkStakeout');  if (c) c.checked = false; }
+    if (ability !== 'analytic')   { const c = document.getElementById('atkAnalytic');  if (c) c.checked = false; }
+    if (ability !== 'flash-fire') { const c = document.getElementById('atkFlashFire'); if (c) c.checked = false; }
+  }
+
+  // def-only controls
+  if (prefix === 'def') {
+    toggleEl('defOverlord', ability === 'supreme-overlord', '0');
+    toggleEl('defProto',    ability === 'protosynthesis' || ability === 'quark-drive', '');
+  }
+}
+
+function toggleEl(id, show, resetValue) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  el.style.display = show ? '' : 'none';
+  if (!show && resetValue !== undefined) el.value = resetValue;
 }
 
 /** Legacy wrapper — keep existing call sites working */
@@ -1815,6 +1890,14 @@ function bindEvents() {
     const overlordEl = document.getElementById(prefix + 'Overlord');
     if (overlordEl) {
       overlordEl.addEventListener('change', computeAll);
+    }
+    // Ability-state controls (only exist for their respective panel)
+    const extraIds = prefix === 'atk'
+      ? ['atkStakeout', 'atkAnalytic', 'atkFlashFire', 'atkRivalry', 'atkProto']
+      : ['defProto'];
+    for (const id of extraIds) {
+      const el = document.getElementById(id);
+      if (el) el.addEventListener('change', computeAll);
     }
   }
 

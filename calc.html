@@ -6,7 +6,7 @@
   <title>Pokemon Champions — Damage Calc</title>
   <link rel="icon" type="image/png" href="https://img.pokemondb.net/sprites/home/normal/weavile.png">
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="calc.css?v=24">
+  <link rel="stylesheet" href="calc.css?v=25">
 </head>
 <body>
 
@@ -170,6 +170,28 @@
             <option value="4">4 fainted</option>
             <option value="5">5 fainted</option>
           </select>
+          <label class="ability-toggle" id="atkStakeoutWrap" style="display:none">
+            <input type="checkbox" id="atkStakeout"> switched in
+          </label>
+          <label class="ability-toggle" id="atkAnalyticWrap" style="display:none">
+            <input type="checkbox" id="atkAnalytic"> moves last
+          </label>
+          <label class="ability-toggle" id="atkFlashFireWrap" style="display:none">
+            <input type="checkbox" id="atkFlashFire"> activated
+          </label>
+          <select id="atkRivalry" class="field-select field-select-compact" style="display:none" title="Rivalry">
+            <option value="same">Same gender</option>
+            <option value="opposite">Opposite gender</option>
+            <option value="none">Genderless</option>
+          </select>
+          <select id="atkProto" class="field-select field-select-compact" style="display:none" title="Booster">
+            <option value="">Booster: off</option>
+            <option value="atk">+Atk</option>
+            <option value="def">+Def</option>
+            <option value="spa">+SpA</option>
+            <option value="spd">+SpD</option>
+            <option value="spe">+Spe</option>
+          </select>
         </div>
 
         <div class="field-row" id="atkHPPctRow" style="display:none">
@@ -290,6 +312,14 @@
             <option value="3">3 fainted</option>
             <option value="4">4 fainted</option>
             <option value="5">5 fainted</option>
+          </select>
+          <select id="defProto" class="field-select field-select-compact" style="display:none" title="Booster">
+            <option value="">Booster: off</option>
+            <option value="atk">+Atk</option>
+            <option value="def">+Def</option>
+            <option value="spa">+SpA</option>
+            <option value="spd">+SpD</option>
+            <option value="spe">+Spe</option>
           </select>
         </div>
 
@@ -416,6 +446,6 @@
 <datalist id="moveList"></datalist>
 <datalist id="defMoveList"></datalist>
 
-<script src="calc.js?v=24"></script>
+<script src="calc.js?v=25"></script>
 </body>
 </html>
