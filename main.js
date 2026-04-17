@@ -594,7 +594,7 @@ function saveCustomSets(sets) { localStorage.setItem(CUSTOM_KEY, JSON.stringify(
 
 function calcChampionsSpeed(base, statPoints, nature) {
   const mult = nature === 'plus' ? 1.1 : nature === 'minus' ? 0.9 : 1.0;
-  return Math.floor(Math.floor((2 * base + 31) * 50 / 100 + 5) * mult) + Number(statPoints);
+  return Math.floor((Math.floor((2 * base + 31) * 50 / 100) + 5 + Number(statPoints)) * mult);
 }
 
 const ABILITY_MULTS = {
