@@ -6,7 +6,7 @@
   <title>Pokemon Champions — Damage Calc</title>
   <link rel="icon" type="image/png" href="https://img.pokemondb.net/sprites/home/normal/weavile.png">
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="calc.css?v=27">
+  <link rel="stylesheet" href="calc.css?v=28">
 </head>
 <body>
 
@@ -196,6 +196,21 @@
           </select>
         </div>
 
+        <div class="field-row">
+          <span class="field-label">Status</span>
+          <select id="atkStatus" class="field-select" title="Status condition">
+            <option value="healthy">Healthy</option>
+            <option value="burn">Burn (phys ×0.5 unless Guts)</option>
+            <option value="poison">Poison</option>
+            <option value="toxic">Badly Poisoned</option>
+            <option value="paralysis">Paralysis</option>
+            <option value="sleep">Sleep</option>
+            <option value="freeze">Freeze</option>
+          </select>
+          <select id="atkHits" class="field-select field-select-compact" style="display:none" title="Multi-hit count">
+          </select>
+        </div>
+
         <div class="field-row" id="atkHPPctRow" style="display:none">
           <span class="field-label">Current HP</span>
           <div class="slider-wrap">
@@ -326,6 +341,21 @@
           </select>
         </div>
 
+        <div class="field-row">
+          <span class="field-label">Status</span>
+          <select id="defStatus" class="field-select" title="Status condition">
+            <option value="healthy">Healthy</option>
+            <option value="burn">Burn (phys ×0.5 unless Guts)</option>
+            <option value="poison">Poison</option>
+            <option value="toxic">Badly Poisoned</option>
+            <option value="paralysis">Paralysis</option>
+            <option value="sleep">Sleep</option>
+            <option value="freeze">Freeze</option>
+          </select>
+          <select id="defHits" class="field-select field-select-compact" style="display:none" title="Multi-hit count">
+          </select>
+        </div>
+
         <div class="field-row" id="defHPPctRow" style="display:none">
           <span class="field-label">Current HP</span>
           <div class="slider-wrap">
@@ -406,6 +436,21 @@
           </div>
         </div>
         <div class="field-block">
+          <span class="field-block-label">Hazards (def)</span>
+          <div class="field-checks">
+            <label title="Stealth Rock chip damage on switch-in (12.5% × Rock effectiveness)"><input type="checkbox" id="fldStealthRock" onchange="computeAll()"> 🪨 Stealth Rock</label>
+            <label title="Spikes layers (only if defender is grounded)">
+              <span style="font-size:0.78rem">Spikes</span>
+              <select id="fldSpikes" class="stage-select" onchange="computeAll()">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+              </select>
+            </label>
+          </div>
+        </div>
+        <div class="field-block">
           <span class="field-block-label">Other</span>
           <div class="field-checks">
             <label title="Damage ×1.5, ignores screens, Multiscale, positive def stages, negative atk stages. Sniper: ×2.25."><input type="checkbox" id="fldCrit" onchange="computeAll()"> 💥 Critical hit</label>
@@ -449,6 +494,6 @@
 <datalist id="moveList"></datalist>
 <datalist id="defMoveList"></datalist>
 
-<script src="calc.js?v=26"></script>
+<script src="calc.js?v=28"></script>
 </body>
 </html>

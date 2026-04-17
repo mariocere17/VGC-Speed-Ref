@@ -86,6 +86,7 @@ const DEF_ITEMS = [
   { id:'',             label:'None' },
   { id:'assault-vest', label:'Assault Vest (SpD ×1.5)' },
   { id:'eviolite',     label:'Eviolite (Def/SpD ×1.5)' },
+  { id:'heavy-duty-boots', label:'Heavy-Duty Boots (ignores hazards)' },
   // Type-resist berries: halve damage from a move of the matching type.
   // All berries except Chilan require the hit to be super-effective.
   { id:'berry-normal',   label:'Chilan Berry (Normal ×0.5)',      berryType:'normal' },
@@ -122,7 +123,10 @@ const ATK_ABILITIES = [
   { id:'technician',   label:'Technician (BP≤60 ×1.5)' },
   { id:'iron-fist',    label:'Iron Fist (punch ×1.2)' },
   { id:'sheer-force',  label:'Sheer Force (secondary ×1.3)' },
-  { id:'guts',         label:'Guts (statused Atk ×1.5)' },
+  { id:'guts',         label:'Guts (statused Atk ×1.5, ignores burn)' },
+  { id:'toxic-boost',  label:'Toxic Boost (poisoned phys ×1.5)' },
+  { id:'flare-boost',  label:'Flare Boost (burned spec ×1.5)' },
+  { id:'magic-guard',  label:'Magic Guard (ignores hazards/burn chip)' },
   { id:'sniper',       label:'Sniper (crit ×2.25)' },
   { id:'supreme-overlord', label:'Supreme Overlord (×1+0.1 per fainted ally)' },
   { id:'stakeout',     label:'Stakeout (×2 if target switched in)' },
@@ -142,6 +146,52 @@ const ATK_ABILITIES = [
   { id:'sand-force',   label:'Sand Force (Rock/Ground/Steel ×1.3 in Sand)' },
   { id:'solar-power',  label:'Solar Power (SpA ×1.5 in Sun)' },
 ];
+
+// Multi-hit moves: { 'Move': { min, max, default } }. The user can override hit count.
+const MULTI_HIT_MOVES = {
+  'Bullet Seed':     { min:2, max:5,  default:5 },
+  'Pin Missile':     { min:2, max:5,  default:5 },
+  'Icicle Spear':    { min:2, max:5,  default:5 },
+  'Rock Blast':      { min:2, max:5,  default:5 },
+  'Tail Slap':       { min:2, max:5,  default:5 },
+  'Arm Thrust':      { min:2, max:5,  default:5 },
+  'Comet Punch':     { min:2, max:5,  default:5 },
+  'Spike Cannon':    { min:2, max:5,  default:5 },
+  'Fury Attack':     { min:2, max:5,  default:5 },
+  'Fury Swipes':     { min:2, max:5,  default:5 },
+  'Bone Rush':       { min:2, max:5,  default:5 },
+  'Scale Shot':      { min:2, max:5,  default:5 },
+  'Water Shuriken':  { min:2, max:5,  default:5 },
+  'Population Bomb': { min:1, max:10, default:10 },
+  'Double Hit':      { min:2, max:2,  default:2 },
+  'Dual Chop':       { min:2, max:2,  default:2 },
+  'Double Kick':     { min:2, max:2,  default:2 },
+  'Dual Wingbeat':   { min:2, max:2,  default:2 },
+  'Twineedle':       { min:2, max:2,  default:2 },
+  'Bonemerang':      { min:2, max:2,  default:2 },
+  'Double Iron Bash':{ min:2, max:2,  default:2 },
+  'Gear Grind':      { min:2, max:2,  default:2 },
+  'Tachyon Cutter':  { min:2, max:2,  default:2 },
+  'Triple Kick':     { min:3, max:3,  default:3 },
+  'Triple Axel':     { min:3, max:3,  default:3 },
+  'Surging Strikes': { min:3, max:3,  default:3 },
+};
+
+// Recoil moves: { 'Move': fraction of damage dealt (recoil to attacker) }
+const RECOIL_MOVES = {
+  'Wood Hammer':   1/3,
+  'Brave Bird':    1/3,
+  'Flare Blitz':   1/3,
+  'Volt Tackle':   1/3,
+  'Double-Edge':   1/3,
+  'Wave Crash':    1/3,
+  'Light of Ruin': 1/2,
+  'Head Smash':    1/2,
+  'Take Down':     1/4,
+  'Submission':    1/4,
+  'Wild Charge':   1/4,
+  'Head Charge':   1/4,
+};
 
 // Moves halved by Grassy Terrain (earthquake-family hits grounded Pokémon softer)
 const GRASSY_HALVED_MOVES = new Set(['Earthquake', 'Bulldoze', 'Magnitude']);
@@ -357,6 +407,8 @@ function readState() {
     atkFlashFire: document.getElementById('atkFlashFire')?.checked || false,
     atkRivalry: document.getElementById('atkRivalry')?.value || 'same',
     atkProto:   document.getElementById('atkProto')?.value || '',
+    atkStatus:  document.getElementById('atkStatus')?.value || 'healthy',
+    atkHits:    parseInt(document.getElementById('atkHits')?.value) || 1,
     atkHPPct:   parseInt(document.getElementById('atkHPPctSlider')?.value) || 100,
 
     defPkmn:    document.getElementById('defPkmn').value.toLowerCase().trim(),
@@ -377,6 +429,8 @@ function readState() {
     defAbility: document.getElementById('defAbility').value,
     defOverlord: parseInt(document.getElementById('defOverlord')?.value) || 0,
     defProto:   document.getElementById('defProto')?.value || '',
+    defStatus:  document.getElementById('defStatus')?.value || 'healthy',
+    defHits:    parseInt(document.getElementById('defHits')?.value) || 1,
     defHPPct:   parseInt(document.getElementById('defHPPctSlider')?.value) || 100,
 
     weather:     document.getElementById('fldWeather')?.value     || '',
@@ -395,6 +449,9 @@ function readState() {
     auroraVeil:  document.getElementById('fldAuroraVeil')?.checked  || false,
     friendGuard: document.getElementById('fldFriendGuard')?.checked || false,
     crit:        document.getElementById('fldCrit')?.checked        || false,
+    // Hazards (def side)
+    stealthRock: document.getElementById('fldStealthRock')?.checked || false,
+    spikes:      parseInt(document.getElementById('fldSpikes')?.value) || 0,
   };
 }
 
@@ -406,6 +463,31 @@ function isGrounded(pkmnData, ability, gravity) {
   if (pkmnData.types.includes('flying')) return false;
   if (ability === 'levitate') return false;
   return true;
+}
+
+/**
+ * Returns the total chip damage (in HP units) the defender takes from active
+ * hazards before the move lands. Bypassed by Heavy-Duty Boots and Magic Guard.
+ */
+function computeHazardChip(s, defData, maxHP) {
+  if (!defData || !maxHP) return 0;
+  // Bypassers: Heavy-Duty Boots (item) and Magic Guard (ability)
+  if (s.defItem === 'heavy-duty-boots') return 0;
+  if (s.defAbility === 'magic-guard')   return 0;
+
+  let chip = 0;
+  // Stealth Rock: 12.5% × Rock effectiveness vs defender, regardless of grounding.
+  if (s.stealthRock) {
+    const rockEff = getTypeEffRaw('rock', defData.types, s);
+    chip += Math.floor(maxHP * 0.125 * rockEff);
+  }
+  // Spikes: only damages grounded Pokémon. Flash Fire/Levitate/Flying skip them.
+  if (s.spikes > 0 && isGrounded(defData, s.defAbility, s.gravity)) {
+    const layers = Math.min(3, Math.max(0, parseInt(s.spikes) || 0));
+    const fracs  = { 1: 1/8, 2: 1/6, 3: 1/4 };
+    chip += Math.floor(maxHP * fracs[layers]);
+  }
+  return chip;
 }
 
 /** Build the state for the B→A direction by swapping all atk/def fields. */
@@ -426,6 +508,8 @@ function buildReversedState(s) {
     atkFlashFire: false,
     atkRivalry: 'same',
     atkProto:   s.defProto,    // B's booster state applies to its offensive side too
+    atkStatus:  s.defStatus,   // B's status applies to it as attacker
+    atkHits:    s.defHits,     // B's multihit count for B→A
     atkHPPct:   s.atkHPPct,    // not used by reversed (it's A's HP%, but we pass it along)
 
     defPkmn:    s.atkPkmn,
@@ -439,6 +523,8 @@ function buildReversedState(s) {
     defAbility: s.atkAbility,  // A's ability used defensively
     defOverlord: s.atkOverlord, // A's overlord count (not used defensively, passed along)
     defProto:   s.atkProto,    // A's booster state also applies to its defensive side
+    defStatus:  s.atkStatus,   // A's status (mostly for hazards/burn chip carryover)
+    defHits:    1,             // not used defensively
     defHPPct:   s.atkHPPct,    // A's current HP% (for Multiscale when B attacks A)
 
     weather: s.weather, terrain: s.terrain, format: s.format,
@@ -446,6 +532,7 @@ function buildReversedState(s) {
     helpingHand: s.helpingHand, battery: s.battery,
     reflect: s.reflect, lightScreen: s.lightScreen,
     auroraVeil: s.auroraVeil, friendGuard: s.friendGuard, crit: s.crit,
+    stealthRock: s.stealthRock, spikes: s.spikes,
   };
 }
 
@@ -480,6 +567,9 @@ function buildAtkStat(s, moveData, isPhysical, defAbility) {
     if (isPhysical && s.atkProto === 'atk')  stat = Math.floor(stat * 1.3);
     if (!isPhysical && s.atkProto === 'spa') stat = Math.floor(stat * 1.3);
   }
+  // Burn halves physical attack stat unless the attacker has Guts.
+  if (s.atkStatus === 'burn' && isPhysical && s.atkAbility !== 'guts')
+    stat = Math.floor(stat * 0.5);
   if (defAbility === 'intimidate' && isPhysical)
     stat = Math.floor(stat * 2 / 3);
 
@@ -628,7 +718,15 @@ function applyPostMods(rolls, s, moveData, isPhysical, typeEff) {
     r = r.map(d => Math.floor(d * 1.3));
   if (s.atkAbility === 'iron-fist' && moveData.isPunch)
     r = r.map(d => Math.floor(d * 1.2));
-  if (s.atkAbility === 'guts' && isPhysical)
+  // Guts: +50% physical damage when attacker has any non-volatile status
+  if (s.atkAbility === 'guts' && isPhysical && s.atkStatus && s.atkStatus !== 'healthy')
+    r = r.map(d => Math.floor(d * 1.5));
+  // Toxic Boost: +50% physical damage when poisoned/badly poisoned
+  if (s.atkAbility === 'toxic-boost' && isPhysical &&
+      (s.atkStatus === 'poison' || s.atkStatus === 'toxic'))
+    r = r.map(d => Math.floor(d * 1.5));
+  // Flare Boost: +50% special damage when burned
+  if (s.atkAbility === 'flare-boost' && !isPhysical && s.atkStatus === 'burn')
     r = r.map(d => Math.floor(d * 1.5));
   if (s.atkAbility === 'supreme-overlord') {
     const fainted = Math.max(0, Math.min(5, s.atkOverlord || 0));
@@ -718,6 +816,11 @@ function applyPostMods(rolls, s, moveData, isPhysical, typeEff) {
     r = r.map(d => Math.floor(d * critMult));
   }
 
+  // ── Multi-hit ── final step: per-hit rolls aggregated by hit count.
+  // Showdown convention: total damage range = single-hit range × N hits.
+  const hits = Math.max(1, parseInt(s.atkHits) || 1);
+  if (hits > 1) r = r.map(d => d * hits);
+
   return r;
 }
 
@@ -778,13 +881,14 @@ function computeDirection(s, suffix) {
   const effBP    = buildEffBP(s, moveData, atkData, defData);
   const stabMult = buildStabMult(s, moveData, atkData);
   const { hp, def: defStat } = buildDefStat(s, moveData, isPhysical);
-  const curHP    = Math.floor(hp * (s.defHPPct || 100) / 100);
+  const hazardChip = computeHazardChip(s, defData, hp);
+  const curHP      = Math.max(1, Math.floor(hp * (s.defHPPct || 100) / 100) - hazardChip);
 
   let rolls = calcRolls(atkStat, defStat, effBP, stabMult, tEff1, tEff2);
   rolls = applyPostMods(rolls, s, moveData, isPhysical, typeEff);
 
   dmgEl.innerHTML =
-    renderDamage(rolls, hp, curHP, s, moveData, atkData, defData, atkStat, defStat, stabMult, typeEff, isPhysical, effBP);
+    renderDamage(rolls, hp, curHP, s, moveData, atkData, defData, atkStat, defStat, stabMult, typeEff, isPhysical, effBP, hazardChip);
   if (optEl) optEl.innerHTML = '';
 }
 
@@ -875,6 +979,10 @@ function restoreState() {
   _ch('atkStakeout',  saved.atkStakeout);
   _ch('atkAnalytic',  saved.atkAnalytic);
   _ch('atkFlashFire', saved.atkFlashFire);
+  setVal('atkStatus', saved.atkStatus || 'healthy');
+  // Populate hit-count selector for the current atk move, then restore value
+  updateHitsSelector('atk');
+  if (saved.atkHits != null) setVal('atkHits', String(saved.atkHits));
   if (saved.atkHPPct) setSlider('atkHPPctSlider', saved.atkHPPct, 'atkHPPctVal');
 
   // --- DEFENDER ---
@@ -900,6 +1008,9 @@ function restoreState() {
   updateOverlordVisibility('def');
   if (saved.defOverlord != null) setVal('defOverlord', String(saved.defOverlord));
   if (saved.defProto != null)    setVal('defProto', saved.defProto);
+  setVal('defStatus', saved.defStatus || 'healthy');
+  updateHitsSelector('def');
+  if (saved.defHits != null) setVal('defHits', String(saved.defHits));
   if (saved.defHPPct) setSlider('defHPPctSlider', saved.defHPPct, 'defHPPctVal');
 
   // --- Field state ---
@@ -921,6 +1032,9 @@ function restoreState() {
   setCheck('fldAuroraVeil',  saved.auroraVeil);
   setCheck('fldFriendGuard', saved.friendGuard);
   setCheck('fldCrit',        saved.crit);
+  // Hazards
+  setCheck('fldStealthRock', saved.stealthRock);
+  setVal('fldSpikes', String(saved.spikes || 0));
 }
 
 // ═══════════════════════════════════════════════════════════
@@ -956,8 +1070,9 @@ window.findMinSurvive = function (dir) {
       let rolls = calcRolls(atkStat, def, effBP, stabMult, tEff1s, tEff2s);
       rolls = applyPostMods(rolls, sCopy, moveData, isPhysical, typeEff);
 
-      // Survival is checked against current HP (HP% × max HP), not max HP
-      const curHP = Math.floor(hp * (s.defHPPct || 100) / 100);
+      // Survival is checked against current HP (HP% × max HP), minus any hazard chip.
+      const chip  = computeHazardChip(s, defData, hp);
+      const curHP = Math.max(1, Math.floor(hp * (s.defHPPct || 100) / 100) - chip);
       if (rolls[0] < curHP) solutions.push({ hpSP, defSP, total: hpSP + defSP, rolls, hp, curHP });
     }
   }
@@ -1041,7 +1156,8 @@ window.findMinOHKO = function (dir) {
   const effBP    = buildEffBP(s, moveData, atkData, defData);
   const stabMult = buildStabMult(s, moveData, atkData);
   const { hp, def: defStat } = buildDefStat(s, moveData, isPhysical);
-  const curHP    = Math.floor(hp * (s.defHPPct || 100) / 100);
+  const hazardChip = computeHazardChip(s, defData, hp);
+  const curHP    = Math.max(1, Math.floor(hp * (s.defHPPct || 100) / 100) - hazardChip);
   const curSP    = isPhysical ? s.atkAtkSP : s.atkSpaSP;
 
   const THRESHOLDS = [
@@ -1163,6 +1279,7 @@ window.swapPanels = function () {
   swapVals('atkAbility', 'defAbility');
   swapVals('atkOverlord', 'defOverlord');
   swapVals('atkProto', 'defProto');
+  swapVals('atkStatus', 'defStatus');
   // Attacker-only flags (stakeout/analytic/flashfire/rivalry) don't have a defender counterpart;
   // reset them on swap so they don't persist on the new attacker side.
   for (const id of ['atkStakeout', 'atkAnalytic', 'atkFlashFire']) {
@@ -1211,6 +1328,9 @@ window.swapPanels = function () {
   updateHPPctVisibility('def');
   updateOverlordVisibility('atk');
   updateOverlordVisibility('def');
+  // Rebuild hit-count selectors for the swapped moves
+  updateHitsSelector('atk');
+  updateHitsSelector('def');
 
   computeAll();
 };
@@ -1219,7 +1339,7 @@ window.swapPanels = function () {
 //  DISPLAY
 // ═══════════════════════════════════════════════════════════
 
-function renderDamage(rolls, hp, curHP, s, moveData, atkData, defData, atkStat, defStat, stabMult, typeEff, isPhysical, effBP) {
+function renderDamage(rolls, hp, curHP, s, moveData, atkData, defData, atkStat, defStat, stabMult, typeEff, isPhysical, effBP, hazardChip) {
   const minDmg = rolls[0], maxDmg = rolls[15];
   // Damage % is shown vs MAX HP (Showdown convention), but KO chances use CURRENT HP
   const minPct = (minDmg / hp * 100).toFixed(1);
@@ -1273,6 +1393,26 @@ function renderDamage(rolls, hp, curHP, s, moveData, atkData, defData, atkStat, 
   const wrTag  = s.wonderRoom   ? '<span class="dmg-tag tag-wr">Wonder Room</span>'   : '';
   const mrTag  = s.magicRoom    ? '<span class="dmg-tag tag-mr">Magic Room</span>'    : '';
 
+  // Multi-hit + recoil tags
+  const hits   = Math.max(1, parseInt(s.atkHits) || 1);
+  const hitsTag = hits > 1 ? `<span class="dmg-tag tag-hits">${hits} hits</span>` : '';
+
+  const recoilFrac = RECOIL_MOVES[s.atkMove];
+  let recoilTag = '';
+  if (recoilFrac && s.atkAbility !== 'rock-head' && s.atkAbility !== 'magic-guard') {
+    const recMin = Math.floor(minDmg * recoilFrac);
+    const recMax = Math.floor(maxDmg * recoilFrac);
+    const atkMaxHP = atkData ? calcHP(atkData.hp, s.atkHpSP) : 1;
+    const recPctMin = (recMin / atkMaxHP * 100).toFixed(1);
+    const recPctMax = (recMax / atkMaxHP * 100).toFixed(1);
+    recoilTag = `<span class="dmg-tag tag-recoil" title="Recoil to attacker (${recMin}-${recMax} HP)">↩ ${recPctMin}-${recPctMax}% recoil</span>`;
+  }
+
+  const hazardChipShown = hazardChip || 0;
+  const hazardTag = hazardChipShown > 0
+    ? `<span class="dmg-tag tag-hazard" title="Stealth Rock + Spikes chip">🪨 -${hazardChipShown} HP chip</span>`
+    : '';
+
   const cells = rolls.map(d =>
     `<div class="roll-cell${d >= hp ? ' ko' : ''}" title="${d}"></div>`
   ).join('');
@@ -1295,7 +1435,7 @@ function renderDamage(rolls, hp, curHP, s, moveData, atkData, defData, atkStat, 
       <span class="dmg-pct">(${minPct}%–${maxPct}%)</span>
       <span class="dmg-ko ${koClass}">${koText}</span>
     </div>
-    <div class="dmg-tags">${ateTag}${stabTag}${typeTag}${critTag}${hhTag}${batTag}${fgTag}${spreadTag}${wrTag}${mrTag}</div>
+    <div class="dmg-tags">${ateTag}${stabTag}${typeTag}${critTag}${hitsTag}${recoilTag}${hazardTag}${hhTag}${batTag}${fgTag}${spreadTag}${wrTag}${mrTag}</div>
     <div class="rolls-row">${cells}</div>
     <div class="dmg-stats">
       <strong>${atkData.displayName}</strong> ${isPhysLabel} <strong>${atkStat}</strong>
@@ -1798,6 +1938,32 @@ function toggleEl(id, show, resetValue) {
 /** Legacy wrapper — keep existing call sites working */
 function updateDefHPPctVisibility() { updateHPPctVisibility('def'); }
 
+/** Populate and show the hit-count select when the current move is multi-hit. */
+function updateHitsSelector(prefix) {
+  const hitsSel = document.getElementById(prefix + 'Hits');
+  if (!hitsSel) return;
+  // Prefer the active set-move override; fall back to the raw move input
+  const override = window._moveOverride && window._moveOverride[prefix];
+  const moveName = override || document.getElementById(prefix + 'Move')?.value.trim();
+  const info = moveName ? MULTI_HIT_MOVES[moveName] : null;
+  if (!info) {
+    hitsSel.style.display = 'none';
+    hitsSel.innerHTML = '';
+    hitsSel.value = '1';
+    return;
+  }
+  const prev = parseInt(hitsSel.value) || 0;
+  hitsSel.innerHTML = '';
+  for (let i = info.min; i <= info.max; i++) {
+    const opt = document.createElement('option');
+    opt.value = String(i);
+    opt.textContent = `${i} hit${i > 1 ? 's' : ''}`;
+    hitsSel.appendChild(opt);
+  }
+  hitsSel.value = String((prev >= info.min && prev <= info.max) ? prev : info.default);
+  hitsSel.style.display = '';
+}
+
 // ═══════════════════════════════════════════════════════════
 //  EVENT BINDING
 // ═══════════════════════════════════════════════════════════
@@ -1842,9 +2008,10 @@ function bindEvents() {
       if (row) row.querySelectorAll('.btn-setmove').forEach(b => b.classList.remove('btn-setmove-active'));
       const m = MOVES[moveEl.value.trim()];
       updateMoveCat(m);
+      updateHitsSelector('atk');
       if (m) computeAll();
     });
-    moveEl.addEventListener('change', computeAll);
+    moveEl.addEventListener('change', () => { updateHitsSelector('atk'); computeAll(); });
   }
   const defMoveEl = document.getElementById('defMove');
   if (defMoveEl) {
@@ -1852,9 +2019,10 @@ function bindEvents() {
       window._moveOverride.def = null;
       const row = document.getElementById('defSetMoves');
       if (row) row.querySelectorAll('.btn-setmove').forEach(b => b.classList.remove('btn-setmove-active'));
+      updateHitsSelector('def');
       if (MOVES[defMoveEl.value.trim()]) computeAll();
     });
-    defMoveEl.addEventListener('change', computeAll);
+    defMoveEl.addEventListener('change', () => { updateHitsSelector('def'); computeAll(); });
   }
 
   // Bind all stat sliders for both panels
@@ -1901,8 +2069,14 @@ function bindEvents() {
     }
   }
 
-  // Field controls (weather / terrain / screens / crit)
-  for (const id of ['fldWeather', 'fldTerrain', 'fldReflect', 'fldLightScreen', 'fldAuroraVeil', 'fldCrit']) {
+  // Field controls (weather / terrain / screens / crit / hazards)
+  for (const id of ['fldWeather', 'fldTerrain', 'fldReflect', 'fldLightScreen', 'fldAuroraVeil', 'fldCrit', 'fldStealthRock', 'fldSpikes']) {
+    const el = document.getElementById(id);
+    if (el) el.addEventListener('change', computeAll);
+  }
+
+  // Status + multi-hit controls
+  for (const id of ['atkStatus', 'defStatus', 'atkHits', 'defHits']) {
     const el = document.getElementById(id);
     if (el) el.addEventListener('change', computeAll);
   }
@@ -2266,6 +2440,7 @@ window.loadSetIntoPanel = function (prefix, setId) {
     window._moveOverride[prefix] = null;
   }
   renderSetMoveButtons(prefix, set.moves);
+  updateHitsSelector(prefix);
 
   computeAll();
 };
@@ -2323,6 +2498,7 @@ window.removeMoveFromPool = function (moveName, prefix, ev) {
     if (prefix === 'atk') updateMoveCat(next ? MOVES[next] : null);
   }
   renderSetMoveButtons(prefix, pool);
+  updateHitsSelector(prefix);
   computeAll();
   return false;
 };
@@ -2340,6 +2516,7 @@ window.addMoveToPool = function (prefix) {
   if (prefix === 'atk' && MOVES[move]) updateMoveCat(MOVES[move]);
   if (input) input.value = '';
   renderSetMoveButtons(prefix, pool);
+  updateHitsSelector(prefix);
   computeAll();
 };
 
@@ -2351,6 +2528,7 @@ window.pickSetMove = function (moveName, prefix) {
   const row = document.getElementById(prefix + 'SetMoves');
   if (row) row.querySelectorAll('.btn-setmove').forEach(b =>
     b.classList.toggle('btn-setmove-active', b.textContent === moveName));
+  updateHitsSelector(prefix);
   computeAll();
 };
 

@@ -314,6 +314,9 @@
 .tag-wr     { background: #1e0a3a; color: #ce93d8; }
 .tag-mr     { background: #0a0a2a; color: #7986cb; }
 .tag-ate    { background: #2a0a2a; color: #f48fb1; }
+.tag-hits   { background: #2a1a3d; color: #b39ddb; }
+.tag-recoil { background: #3a0f0f; color: #ff8a65; }
+.tag-hazard { background: #2a2010; color: #d7a86e; }
 
 /* Rolls visualization */
 .rolls-row {
