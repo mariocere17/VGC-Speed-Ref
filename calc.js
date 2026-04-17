@@ -2461,6 +2461,25 @@ window.deleteSetFromModal = function (id) {
   renderSetsList();
 };
 
+/** Right-click handler on the Set <select>: deletes the currently selected set. */
+window.deleteSelectedSet = function (prefix, ev) {
+  if (ev) ev.preventDefault();
+  const sel = document.getElementById(prefix + 'Set');
+  const id  = sel?.value;
+  if (!id) return false; // blank — nothing to delete
+  const label = sel.options[sel.selectedIndex]?.textContent || 'this set';
+  if (!confirm(`Delete saved set "${label}"?`)) return false;
+  removeSet(id);
+  refreshSetSelectors();
+  renderSetsList();
+  // Reset both panel selectors to blank if they were pointing to the deleted set
+  for (const p of ['atk', 'def']) {
+    const s = document.getElementById(p + 'Set');
+    if (s && s.value === id) s.value = '';
+  }
+  return false;
+};
+
 window.renameSetInline = function (id, newLabel) {
   const trimmed = newLabel.trim();
   if (!trimmed) return; // don't allow blank label

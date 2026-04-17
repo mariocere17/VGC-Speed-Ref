@@ -6,7 +6,7 @@
   <title>Pokemon Champions — Damage Calc</title>
   <link rel="icon" type="image/png" href="https://img.pokemondb.net/sprites/home/normal/weavile.png">
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="calc.css?v=25">
+  <link rel="stylesheet" href="calc.css?v=26">
 </head>
 <body>
 
@@ -69,7 +69,8 @@
 
         <div class="field-row">
           <span class="field-label">Set</span>
-          <select id="atkSet" class="field-select" onchange="loadSetIntoPanel('atk', this.value)">
+          <select id="atkSet" class="field-select" onchange="loadSetIntoPanel('atk', this.value)"
+            oncontextmenu="return deleteSelectedSet('atk', event)" title="Right-click to delete the selected set">
             <option value="">— blank set —</option>
           </select>
         </div>
@@ -213,7 +214,8 @@
 
         <div class="field-row">
           <span class="field-label">Set</span>
-          <select id="defSet" class="field-select" onchange="loadSetIntoPanel('def', this.value)">
+          <select id="defSet" class="field-select" onchange="loadSetIntoPanel('def', this.value)"
+            oncontextmenu="return deleteSelectedSet('def', event)" title="Right-click to delete the selected set">
             <option value="">— blank set —</option>
           </select>
         </div>
@@ -446,6 +448,6 @@
 <datalist id="moveList"></datalist>
 <datalist id="defMoveList"></datalist>
 
-<script src="calc.js?v=25"></script>
+<script src="calc.js?v=26"></script>
 </body>
 </html>
