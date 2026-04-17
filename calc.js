@@ -1427,7 +1427,30 @@ function renderDamage(rolls, hp, curHP, s, moveData, atkData, defData, atkStat, 
                      : getNatureMult(s.defNature, isPhysical ? 'def' : 'spd') < 1 ? '−' : '●';
 
   const natSymbol = atkNatChar === '＋' ? '+' : atkNatChar === '−' ? '-' : '';
-  const copyText = `${atkSPVal}${natSymbol} ${isPhysLabel} ${atkData.displayName} ${s.atkMove} vs. ${s.defHpSP} HP / ${defSPVal} ${defStatLabel} ${defData.displayName}: ${minDmg}-${maxDmg} (${minPct}%-${maxPct}%) -- ${koText}`.replace(/\s+/g, ' ').trim();
+
+  // Showdown-style copy line: include stages, items, abilities, screens, crit.
+  const stagePfx = v => v ? `${v > 0 ? '+' + v : v} ` : '';
+  const atkStageVal = isPhysical ? s.atkAtkStage : s.atkSpaStage;
+  const defStageVal = isPhysical ? s.defDefStage : s.defSpdStage;
+  const atkItemLbl  = cleanLabelName(ALL_ITEMS, s.atkItem);
+  const defItemLbl  = cleanLabelName(ALL_ITEMS, s.defItem);
+  const atkAbLbl    = cleanLabelName(ALL_ABILITIES, s.atkAbility);
+  const defAbLbl    = cleanLabelName(ALL_ABILITIES, s.defAbility);
+  const atkPfx = `${atkItemLbl ? atkItemLbl + ' ' : ''}${atkAbLbl ? atkAbLbl + ' ' : ''}`;
+  const defPfx = `${defItemLbl ? defItemLbl + ' ' : ''}${defAbLbl ? defAbLbl + ' ' : ''}`;
+
+  const suffixParts = [];
+  if (s.crit) suffixParts.push('on a critical hit');
+  const screens = [];
+  if (s.auroraVeil) screens.push('Aurora Veil');
+  else {
+    if (s.reflect && isPhysical)      screens.push('Reflect');
+    if (s.lightScreen && !isPhysical) screens.push('Light Screen');
+  }
+  if (screens.length) suffixParts.push(`through ${screens.join(' and ')}`);
+  const suffix = suffixParts.length ? ' ' + suffixParts.join(' ') : '';
+
+  const copyText = `${stagePfx(atkStageVal)}${atkSPVal}${natSymbol} ${isPhysLabel} ${atkPfx}${atkData.displayName} ${s.atkMove} vs. ${stagePfx(defStageVal)}${s.defHpSP} HP / ${defSPVal} ${defStatLabel} ${defPfx}${defData.displayName}${suffix}: ${minDmg}-${maxDmg} (${minPct}%-${maxPct}%) -- ${koText}`.replace(/\s+/g, ' ').trim();
 
   return `
     <div class="dmg-header" onclick="copyDmgLine(this, '${copyText.replace(/'/g, "\\'")}')" title="Click to copy">
