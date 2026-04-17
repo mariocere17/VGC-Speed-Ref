@@ -6,7 +6,7 @@
   <title>Pokemon Champions — Damage Calc</title>
   <link rel="icon" type="image/png" href="https://img.pokemondb.net/sprites/home/normal/weavile.png">
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="calc.css?v=28">
+  <link rel="stylesheet" href="calc.css?v=29">
 </head>
 <body>
 
@@ -438,10 +438,10 @@
         <div class="field-block">
           <span class="field-block-label">Hazards (def)</span>
           <div class="field-checks">
-            <label title="Stealth Rock chip damage on switch-in (12.5% × Rock effectiveness)"><input type="checkbox" id="fldStealthRock" onchange="computeAll()"> 🪨 Stealth Rock</label>
+            <label title="Stealth Rock chip damage on switch-in (12.5% × Rock effectiveness)"><input type="checkbox" id="fldStealthRock" onchange="computeAll()"> Stealth Rock</label>
             <label title="Spikes layers (only if defender is grounded)">
               <span style="font-size:0.78rem">Spikes</span>
-              <select id="fldSpikes" class="stage-select" onchange="computeAll()">
+              <select id="fldSpikes" class="hazard-select" onchange="computeAll()">
                 <option value="0">0</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
