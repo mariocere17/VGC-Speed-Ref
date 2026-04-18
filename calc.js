@@ -2588,6 +2588,8 @@ function refreshSetSelectors() {
 function renderSetsList() {
   const sets = loadSets();
   const listEl = document.getElementById('setsModalList');
+  const clearBtn = document.querySelector('.btn-sets-clear');
+  if (clearBtn) clearBtn.disabled = sets.length === 0;
   if (!listEl) return;
   if (!sets.length) {
     listEl.innerHTML = '<p class="sets-empty">No saved sets yet. Paste Showdown text above and click Import.</p>';
@@ -2674,6 +2676,19 @@ window.deleteSetFromModal = function (id) {
   removeSet(id);
   refreshSetSelectors();
   renderSetsList();
+};
+
+window.clearAllSets = function () {
+  const n = loadSets().length;
+  if (!n) return;
+  if (!confirm(`Delete all ${n} saved set${n > 1 ? 's' : ''}? This cannot be undone.`)) return;
+  saveSetsToStorage([]);
+  refreshSetSelectors();
+  renderSetsList();
+  for (const p of ['atk', 'def']) {
+    const s = document.getElementById(p + 'Set');
+    if (s) s.value = '';
+  }
 };
 
 /** Right-click handler on the Set <select>: deletes the currently selected set. */
