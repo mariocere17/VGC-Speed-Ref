@@ -1785,21 +1785,10 @@ function updateMoveDatalist(prefix, pkmnKey) {
   const listId = prefix === 'def' ? 'defMoveList' : 'moveList';
   const moveList = document.getElementById(listId);
   if (!moveList) return;
-  const pkmnData = PKMN[pkmnKey];
-
-  // If no Pokémon or no learnset data, show all moves
-  if (!pkmnData || !pkmnData.moves || pkmnData.moves.length === 0) {
-    const moveNames = Object.keys(MOVES).sort().map(m => `<option value="${m}">`);
-    moveList.innerHTML = moveNames.join('');
-    return;
-  }
-
-  // Filter to moves both in learnset AND in our MOVES damage table
-  const learnable = new Set(pkmnData.moves);
-  const moveNames = Object.keys(MOVES)
-    .filter(m => learnable.has(m))
-    .sort()
-    .map(m => `<option value="${m}">`);
+  // Always show every damaging move. PokeAPI learnsets are incomplete (e.g.,
+  // Kingambit's Sucker Punch is missing) and Champions has its own movepools,
+  // so filtering by learnset hides legal moves. The user can still pick any.
+  const moveNames = Object.keys(MOVES).sort().map(m => `<option value="${m}">`);
   moveList.innerHTML = moveNames.join('');
 }
 
@@ -1843,13 +1832,25 @@ function populateNatureSelects() {
   });
 }
 
+// Strip variant suffixes that don't change a Pokémon's identity for the
+// Champions usage filter. PokeAPI splits some species into variants
+// (Basculegion Male/Female, Basculin Red/Blue/White Striped, etc.) but the
+// Champions data lists only the base form, so a strict equality match drops
+// every variant.
+function basePokemonName(displayName) {
+  return displayName
+    .toLowerCase()
+    .replace(/\s+(male|female)$/, '')
+    .replace(/\s+(red|blue|white)\s+striped$/, '');
+}
+
 function populateDataLists() {
   const pkmnList = document.getElementById('pkmnList');
   if (!pkmnList) return;
 
-  // Filter to Champions Pokémon only
+  // Filter to Champions Pokémon only (matching base names so variants pass too)
   const pkmnNames = Object.values(PKMN)
-    .filter(p => CHAMPIONS.size === 0 || CHAMPIONS.has(p.displayName.toLowerCase()))
+    .filter(p => CHAMPIONS.size === 0 || CHAMPIONS.has(basePokemonName(p.displayName)))
     .sort((a, b) => a.displayName.localeCompare(b.displayName))
     .map(p => `<option value="${p.displayName}">`);
   pkmnList.innerHTML = pkmnNames.join('');
