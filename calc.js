@@ -1785,10 +1785,23 @@ function updateMoveDatalist(prefix, pkmnKey) {
   const listId = prefix === 'def' ? 'defMoveList' : 'moveList';
   const moveList = document.getElementById(listId);
   if (!moveList) return;
-  // Always show every damaging move. PokeAPI learnsets are incomplete (e.g.,
-  // Kingambit's Sucker Punch is missing) and Champions has its own movepools,
-  // so filtering by learnset hides legal moves. The user can still pick any.
-  const moveNames = Object.keys(MOVES).sort().map(m => `<option value="${m}">`);
+  const pkmnData = PKMN[pkmnKey];
+
+  // No Pokémon picked yet → show every move so search still works.
+  if (!pkmnData || !pkmnData.moves || pkmnData.moves.length === 0) {
+    const all = Object.keys(MOVES).sort().map(m => `<option value="${m}">`);
+    moveList.innerHTML = all.join('');
+    return;
+  }
+
+  // Filter to learnset moves we have damage data for. Source is Showdown's
+  // learnsets.json (walks the evolution chain) — much more complete than
+  // PokeAPI, e.g. Kingambit correctly inherits Sucker Punch from Pawniard.
+  const learnable = new Set(pkmnData.moves);
+  const moveNames = Object.keys(MOVES)
+    .filter(m => learnable.has(m))
+    .sort()
+    .map(m => `<option value="${m}">`);
   moveList.innerHTML = moveNames.join('');
 }
 
