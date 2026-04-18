@@ -117,7 +117,8 @@ let condition = null; // 'tailwind' | 'para' | null
 
 // ── Compare state ────────────────────────────────────────────────
 let compareA = null, compareB = null;
-let cmpCondA = null, cmpCondB = null;
+let cmpTwA   = false, cmpTwB   = false;
+let cmpParaA = false, cmpParaB = false;
 let cmpStageA = 0, cmpStageB = 0;   // Speed stat stage -6..+6 per side
 let cmpWeather = null; // 'sun' | 'rain' | 'sand' | 'snow' | null
 
@@ -145,7 +146,7 @@ function isWeatherEntry(r) {
   return r.mult === '×2' && getWeatherAbility(r) !== null;
 }
 
-function calcFinalSpeedWeather(r, cond, weather, stage = 0) {
+function calcFinalSpeedWeather(r, conds, weather, stage = 0) {
   // Stage mod is applied at the stat level, before multipliers (ability/item/TW).
   let speed = stage ? Math.floor(r.actual * getSpeedStageMult(stage)) : r.actual;
   const abilityWeather = getWeatherAbility(r);
@@ -154,7 +155,7 @@ function calcFinalSpeedWeather(r, cond, weather, stage = 0) {
     if (weather === abilityWeather && !alreadyBoosted) speed *= 2;
     if (weather !== abilityWeather && alreadyBoosted)  speed = Math.floor(speed / 2);
   }
-  return calcFinalSpeed(speed, cond);
+  return calcFinalSpeed(speed, conds);
 }
 
 function setCmpWeather(w) {
@@ -380,15 +381,32 @@ function selectForCompare(idx) {
   if (compareA && compareB) openCmp();
 }
 
-function calcFinalSpeed(actual, cond) {
-  if (cond === 'tailwind') return actual * 2;
-  if (cond === 'para')     return Math.floor(actual / 2);
-  return actual;
+function calcFinalSpeed(actual, conds) {
+  // Supports the legacy string form ('tailwind' | 'para' | null) used by the
+  // main speed-ref table as well as the multi-flag object form {tw, pa} used
+  // inside the compare modal (both can be active at once).
+  let tw = false, pa = false;
+  if (typeof conds === 'string') {
+    tw = conds === 'tailwind';
+    pa = conds === 'para';
+  } else if (conds && typeof conds === 'object') {
+    tw = !!conds.tw;
+    pa = !!conds.pa;
+  }
+  let s = actual;
+  if (tw) s *= 2;
+  if (pa) s = Math.floor(s / 2);
+  return s;
 }
 
 function cmpToggle(side, cond) {
-  if (side === 'A') cmpCondA = cmpCondA === cond ? null : cond;
-  else              cmpCondB = cmpCondB === cond ? null : cond;
+  if (side === 'A') {
+    if (cond === 'tailwind') cmpTwA   = !cmpTwA;
+    if (cond === 'para')     cmpParaA = !cmpParaA;
+  } else {
+    if (cond === 'tailwind') cmpTwB   = !cmpTwB;
+    if (cond === 'para')     cmpParaB = !cmpParaB;
+  }
   renderCmpCols();
 }
 
@@ -400,12 +418,15 @@ function cmpSetStage(side, raw) {
 }
 
 function renderCmpCol(r, side) {
-  const cond     = side === 'A' ? cmpCondA : cmpCondB;
+  const tw = side === 'A' ? cmpTwA   : cmpTwB;
+  const pa = side === 'A' ? cmpParaA : cmpParaB;
+  const conds = { tw, pa };
+  const otherConds = { tw: side === 'A' ? cmpTwB : cmpTwA, pa: side === 'A' ? cmpParaB : cmpParaA };
   const stage    = side === 'A' ? cmpStageA : cmpStageB;
   const otherStage = side === 'A' ? cmpStageB : cmpStageA;
-  const finalSpd = calcFinalSpeedWeather(r, cond, cmpWeather, stage);
+  const finalSpd = calcFinalSpeedWeather(r, conds, cmpWeather, stage);
   const other    = side === 'A' ? compareB : compareA;
-  const otherSpd = other ? calcFinalSpeedWeather(other, side === 'A' ? cmpCondB : cmpCondA, cmpWeather, otherStage) : 0;
+  const otherSpd = other ? calcFinalSpeedWeather(other, otherConds, cmpWeather, otherStage) : 0;
   const outcome  = finalSpd > otherSpd ? 'winner' : finalSpd < otherSpd ? 'loser' : 'draw';
   const outcomeLabel = outcome === 'winner' ? 'FASTER' : outcome === 'loser' ? 'SLOWER' : 'TIE';
 
@@ -426,9 +447,6 @@ function renderCmpCol(r, side) {
     ? `Custom (${r.statPoints}pts, ${r.nature})`
     : r.tier === 'max' ? 'Max Speed' : r.tier === 'neutral' ? 'Neutral' : r.tier === 'minus' ? 'Trick Room' : 'No EVs';
   const multLabel = r.mult === '×2' ? '×2' : r.mult === '×1.5' ? '×1.5' : r.mult === '×3' ? '×3' : '×1';
-  const tw = cond === 'tailwind';
-  const pa = cond === 'para';
-
   const currentIdx = ALL_DATA.indexOf(r);
   const variants = ALL_DATA.map((e, i) => ({ e, i })).filter(({ e }) => e.dex_id === r.dex_id);
   const variantSelect = variants.length > 1 ? `
@@ -483,8 +501,10 @@ function renderCmpCol(r, side) {
 function renderCmpCols() {
   if (!compareA || !compareB) return;
 
-  const finalA = calcFinalSpeedWeather(compareA, cmpCondA, cmpWeather, cmpStageA);
-  const finalB = calcFinalSpeedWeather(compareB, cmpCondB, cmpWeather, cmpStageB);
+  const condsA = { tw: cmpTwA, pa: cmpParaA };
+  const condsB = { tw: cmpTwB, pa: cmpParaB };
+  const finalA = calcFinalSpeedWeather(compareA, condsA, cmpWeather, cmpStageA);
+  const finalB = calcFinalSpeedWeather(compareB, condsB, cmpWeather, cmpStageB);
   const colA = document.getElementById('cmpColA');
   const colB = document.getElementById('cmpColB');
 
@@ -496,7 +516,8 @@ function renderCmpCols() {
 }
 
 function openCmp() {
-  cmpCondA = null; cmpCondB = null; cmpWeather = null;
+  cmpTwA = false; cmpTwB = false; cmpParaA = false; cmpParaB = false;
+  cmpWeather = null;
   cmpStageA = 0; cmpStageB = 0;
   ['None','Sun','Rain','Sand','Snow'].forEach(n => document.getElementById('w'+n)?.classList.remove('active-weather'));
   document.getElementById('wNone')?.classList.add('active-weather');
