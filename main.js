@@ -118,7 +118,14 @@ let condition = null; // 'tailwind' | 'para' | null
 // ── Compare state ────────────────────────────────────────────────
 let compareA = null, compareB = null;
 let cmpCondA = null, cmpCondB = null;
+let cmpStageA = 0, cmpStageB = 0;   // Speed stat stage -6..+6 per side
 let cmpWeather = null; // 'sun' | 'rain' | 'sand' | 'snow' | null
+
+// Stat-stage multiplier (same formula used by the damage calc for Atk/Def/Spe)
+function getSpeedStageMult(stage) {
+  if (stage >= 0) return (2 + stage) / 2;
+  return 2 / (2 - stage);
+}
 
 const WEATHER_ABILITIES = {
   sun:  ['Chlorophyll'],
@@ -138,8 +145,9 @@ function isWeatherEntry(r) {
   return r.mult === '×2' && getWeatherAbility(r) !== null;
 }
 
-function calcFinalSpeedWeather(r, cond, weather) {
-  let speed = r.actual;
+function calcFinalSpeedWeather(r, cond, weather, stage = 0) {
+  // Stage mod is applied at the stat level, before multipliers (ability/item/TW).
+  let speed = stage ? Math.floor(r.actual * getSpeedStageMult(stage)) : r.actual;
   const abilityWeather = getWeatherAbility(r);
   if (abilityWeather) {
     const alreadyBoosted = isWeatherEntry(r);
@@ -384,11 +392,20 @@ function cmpToggle(side, cond) {
   renderCmpCols();
 }
 
+function cmpSetStage(side, raw) {
+  const s = Math.max(-6, Math.min(6, parseInt(raw) || 0));
+  if (side === 'A') cmpStageA = s;
+  else              cmpStageB = s;
+  renderCmpCols();
+}
+
 function renderCmpCol(r, side) {
   const cond     = side === 'A' ? cmpCondA : cmpCondB;
-  const finalSpd = calcFinalSpeedWeather(r, cond, cmpWeather);
+  const stage    = side === 'A' ? cmpStageA : cmpStageB;
+  const otherStage = side === 'A' ? cmpStageB : cmpStageA;
+  const finalSpd = calcFinalSpeedWeather(r, cond, cmpWeather, stage);
   const other    = side === 'A' ? compareB : compareA;
-  const otherSpd = other ? calcFinalSpeedWeather(other, side === 'A' ? cmpCondB : cmpCondA, cmpWeather) : 0;
+  const otherSpd = other ? calcFinalSpeedWeather(other, side === 'A' ? cmpCondB : cmpCondA, cmpWeather, otherStage) : 0;
   const outcome  = finalSpd > otherSpd ? 'winner' : finalSpd < otherSpd ? 'loser' : 'draw';
   const outcomeLabel = outcome === 'winner' ? 'FASTER' : outcome === 'loser' ? 'SLOWER' : 'TIE';
 
@@ -447,6 +464,15 @@ function renderCmpCol(r, side) {
       <button class="btn-toggle ${tw ? 'active-tailwind' : ''}" onclick="cmpToggle('${side}','tailwind')">Tailwind ×2</button>
       <button class="btn-toggle ${pa ? 'active-para'     : ''}" onclick="cmpToggle('${side}','para')">Paralysis ÷2</button>
     </div>
+    <div class="cmp-stage-row">
+      <span class="cmp-stage-label">Spe stage</span>
+      <select class="cmp-stage-select ${stage > 0 ? 'stage-pos' : stage < 0 ? 'stage-neg' : ''}" onchange="cmpSetStage('${side}', this.value)">
+        ${[6,5,4,3,2,1,0,-1,-2,-3,-4,-5,-6].map(n => {
+          const lbl = n > 0 ? `+${n}` : `${n}`;
+          return `<option value="${n}" ${n === stage ? 'selected' : ''}>${lbl}</option>`;
+        }).join('')}
+      </select>
+    </div>
     <hr class="cmp-divider">
     <div class="cmp-final">
       <span class="cmp-final-speed ${outcome}">${finalSpd}</span>
@@ -457,8 +483,8 @@ function renderCmpCol(r, side) {
 function renderCmpCols() {
   if (!compareA || !compareB) return;
 
-  const finalA = calcFinalSpeedWeather(compareA, cmpCondA, cmpWeather);
-  const finalB = calcFinalSpeedWeather(compareB, cmpCondB, cmpWeather);
+  const finalA = calcFinalSpeedWeather(compareA, cmpCondA, cmpWeather, cmpStageA);
+  const finalB = calcFinalSpeedWeather(compareB, cmpCondB, cmpWeather, cmpStageB);
   const colA = document.getElementById('cmpColA');
   const colB = document.getElementById('cmpColB');
 
@@ -471,6 +497,7 @@ function renderCmpCols() {
 
 function openCmp() {
   cmpCondA = null; cmpCondB = null; cmpWeather = null;
+  cmpStageA = 0; cmpStageB = 0;
   ['None','Sun','Rain','Sand','Snow'].forEach(n => document.getElementById('w'+n)?.classList.remove('active-weather'));
   document.getElementById('wNone')?.classList.add('active-weather');
   renderCmpCols();

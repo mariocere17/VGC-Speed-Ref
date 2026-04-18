@@ -181,6 +181,20 @@ tbody tr { cursor: pointer; }
 .cmp-val   { font-weight: 600; }
 .cmp-divider { border: none; border-top: 1px solid var(--border); }
 .cmp-toggles { display: flex; gap: 6px; }
+.cmp-stage-row {
+  display: flex; align-items: center; justify-content: space-between; gap: 8px;
+  font-size: 0.82rem;
+}
+.cmp-stage-label { color: var(--muted); }
+.cmp-stage-select {
+  background: var(--bg); color: var(--text);
+  border: 1px solid var(--border); border-radius: 6px;
+  padding: 3px 6px; font-size: 0.82rem; font-weight: 600;
+  cursor: pointer;
+}
+.cmp-stage-select:hover { border-color: var(--text); }
+.cmp-stage-select.stage-pos { border-color: #3fb950; color: #3fb950; }
+.cmp-stage-select.stage-neg { border-color: #f85149; color: #f85149; }
 .cmp-final { display: flex; align-items: center; justify-content: space-between; margin-top: 2px; }
 .cmp-final-speed { font-size: 2rem; font-weight: 700; }
 .cmp-final-speed.winner { color: #3fb950; }
