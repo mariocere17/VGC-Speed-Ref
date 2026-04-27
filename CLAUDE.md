@@ -37,3 +37,18 @@ que usa un sistema de inversión en stats completamente diferente al VGC convenc
 - El juego tiene Mega Evoluciones disponibles
 - Los torneos en Limitless filtrados por `data-format="1"` + verificación "M-A" en descripción
 - Pikalytics usa el nombre de formato `championstournaments`
+
+## Convenciones de UI — selectores en `calc.html`
+
+Los `<select>` nativos NO se usan visiblemente en la calculadora porque su popup es controlado por el navegador (Chrome puede abrirlos hacia arriba si no hay sitio debajo, y el `<datalist>` no refiltra al abrirse con clic). Hay dos helpers en `calc.js` que reemplazan a los nativos por dropdowns custom — **úsalos siempre que añadas un selector nuevo**:
+
+| Caso | Helper | HTML que espera |
+|------|--------|-----------------|
+| Lista cerrada de opciones (Nature, Set, Item, Ability…) | `setupChoice(selectEl)` | `<select id="..." onchange="...">…</select>` (queda oculto, se inyecta `.choice-btn` + `.choice-list`) |
+| Autocompletar contra una lista grande (Pokémon, Move) | `setupCombo(inputId, getOptions)` | `<div class="combo-wrap"><input id="..." class="pkmn-input" autocomplete="off"></div>` |
+
+**Reglas:**
+- Cualquier dropdown nuevo debe abrirse **hacia abajo** y compartir el look de `.choice-btn` (con chevron SVG ▾ a la derecha). No introducir `<select>` visible ni `<datalist>` nativo.
+- `setupChoice` mantiene el `<select>` oculto como fuente de verdad (intercepta el setter de `.value` para sincronizar el botón) — así `el.value`, `change`, `swapVals`, `setVal`, etc. siguen funcionando sin tocar nada.
+- Si el caller reconstruye `innerHTML` del select (como `refreshSetSelectors`), debe llamar `el._syncChoice?.()` después para refrescar el label.
+- `setupChoice` hereda `title` y `oncontextmenu` del select original — útil para patrones tipo "right-click para borrar".
