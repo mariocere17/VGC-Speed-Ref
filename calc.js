@@ -1853,6 +1853,14 @@ function setupChoice(sel) {
   const btn = document.createElement('button');
   btn.type = 'button';
   btn.className = 'choice-btn';
+  // Inherit title + right-click handler from the original select so behaviour
+  // like "right-click to delete the selected set" still works through the
+  // visible button.
+  if (sel.title) btn.title = sel.title;
+  if (sel.oncontextmenu) {
+    const handler = sel.oncontextmenu;
+    btn.addEventListener('contextmenu', handler);
+  }
   wrap.appendChild(btn);
 
   const list = document.createElement('div');
@@ -1906,6 +1914,10 @@ function setupChoice(sel) {
     set(v) { desc.set.call(sel, v); syncBtn(); },
     configurable: true,
   });
+
+  // Exposed so callers that rebuild the option list (e.g. refreshSetSelectors)
+  // can refresh the visible label after innerHTML changes.
+  sel._syncChoice = syncBtn;
 
   syncBtn();
 }
@@ -2337,6 +2349,12 @@ async function loadData() {
   populateDataLists();
   bindEvents();
 
+  // Wrap Set selects with the same custom dropdown used for Nature so they
+  // share the visual style (must happen before refreshSetSelectors so the
+  // _syncChoice hook exists when the option list is first rebuilt).
+  setupChoice(document.getElementById('atkSet'));
+  setupChoice(document.getElementById('defSet'));
+
   // Populate set selectors from localStorage (sets persist across visits).
   refreshSetSelectors();
 
@@ -2739,7 +2757,11 @@ function refreshSetSelectors() {
   ).join('');
   for (const id of ['atkSet', 'defSet']) {
     const el = document.getElementById(id);
-    if (el) el.innerHTML = blank + opts;
+    if (!el) continue;
+    el.innerHTML = blank + opts;
+    // Custom button label needs to refresh after innerHTML rebuild dropped the
+    // selectedIndex back to the blank option.
+    el._syncChoice?.();
   }
 }
 
