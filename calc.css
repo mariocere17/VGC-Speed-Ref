@@ -309,10 +309,52 @@
 .side-tag.active.side-tag-def {
   background: rgba(66, 165, 245, 0.15); border-color: #42a5f5; color: #42a5f5;
 }
-/* Static side labels for the per-side Spikes selects */
-.side-tag-atk-text { color: #ef5350; font-size: 0.65rem; font-weight: 700; letter-spacing: .6px; }
-.side-tag-def-text { color: #42a5f5; font-size: 0.65rem; font-weight: 700; letter-spacing: .6px; }
-.side-spikes-group { display: inline-flex; align-items: center; gap: 4px; }
+/* Per-side Spikes pills — same look as .side-tag toggles, color-activate when layers > 0. */
+.side-spikes-group {
+  display: inline-flex; align-items: center; gap: 5px;
+  padding: 2px 6px 2px 8px; border-radius: 5px;
+  border: 1px solid var(--border); background: var(--bg);
+  transition: all .12s;
+}
+.side-spikes-lbl {
+  font-size: 0.65rem; font-weight: 700; letter-spacing: .6px;
+  color: var(--muted); transition: color .12s;
+}
+.side-spikes-select {
+  border: none; background: transparent; outline: none;
+  color: var(--text); font-family: inherit;
+  font-size: 0.78rem; font-weight: 600;
+  padding: 0; cursor: pointer; line-height: 1.2;
+  transition: color .12s;
+}
+.side-spikes-select option { background: var(--surface); color: var(--text); }
+/* Active = at least one layer selected. Uses :has() so no JS needed. */
+.side-spikes-atk:has(option[value="1"]:checked),
+.side-spikes-atk:has(option[value="2"]:checked),
+.side-spikes-atk:has(option[value="3"]:checked) {
+  background: rgba(239, 83, 80, 0.15); border-color: #ef5350;
+}
+.side-spikes-atk:has(option[value="1"]:checked) .side-spikes-lbl,
+.side-spikes-atk:has(option[value="2"]:checked) .side-spikes-lbl,
+.side-spikes-atk:has(option[value="3"]:checked) .side-spikes-lbl,
+.side-spikes-atk:has(option[value="1"]:checked) .side-spikes-select,
+.side-spikes-atk:has(option[value="2"]:checked) .side-spikes-select,
+.side-spikes-atk:has(option[value="3"]:checked) .side-spikes-select {
+  color: #ef5350;
+}
+.side-spikes-def:has(option[value="1"]:checked),
+.side-spikes-def:has(option[value="2"]:checked),
+.side-spikes-def:has(option[value="3"]:checked) {
+  background: rgba(66, 165, 245, 0.15); border-color: #42a5f5;
+}
+.side-spikes-def:has(option[value="1"]:checked) .side-spikes-lbl,
+.side-spikes-def:has(option[value="2"]:checked) .side-spikes-lbl,
+.side-spikes-def:has(option[value="3"]:checked) .side-spikes-lbl,
+.side-spikes-def:has(option[value="1"]:checked) .side-spikes-select,
+.side-spikes-def:has(option[value="2"]:checked) .side-spikes-select,
+.side-spikes-def:has(option[value="3"]:checked) .side-spikes-select {
+  color: #42a5f5;
+}
 
 @media (max-width: 700px) {
   .side-mods-grid { grid-template-columns: 1fr; }
