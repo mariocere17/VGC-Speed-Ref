@@ -6,7 +6,7 @@
   <title>Pokemon Champions — Damage Calc</title>
   <link rel="icon" type="image/png" href="https://img.pokemondb.net/sprites/home/normal/weavile.png">
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="calc.css?v=35">
+  <link rel="stylesheet" href="calc.css?v=36">
 </head>
 <body>
 
@@ -411,10 +411,10 @@
         </div>
       </div>
 
-      <!-- Row 2: conditions + sides -->
+      <!-- Row 2: globals (affect both sides) + crit -->
       <div class="field-row-bottom">
         <div class="field-block">
-          <span class="field-block-label">Field</span>
+          <span class="field-block-label">Field (global)</span>
           <div class="field-checks">
             <label title="All Pokémon grounded, Ground moves hit Flying/Levitate"><input type="checkbox" id="fldGravity" onchange="computeAll()"> Gravity</label>
             <label title="Items have no effect"><input type="checkbox" id="fldMagicRoom" onchange="computeAll()"> Magic Room</label>
@@ -422,40 +422,80 @@
           </div>
         </div>
         <div class="field-block">
-          <span class="field-block-label">Atk side</span>
-          <div class="field-checks">
-            <label title="Ally used Helping Hand → damage ×1.5"><input type="checkbox" id="fldHelpingHand" onchange="computeAll()"> Helping Hand</label>
-            <label title="Ally has Battery → special moves ×1.3"><input type="checkbox" id="fldBattery" onchange="computeAll()"> Battery (ally)</label>
-          </div>
-        </div>
-        <div class="field-block">
-          <span class="field-block-label">Def side</span>
-          <div class="field-checks">
-            <label><input type="checkbox" id="fldReflect" onchange="computeAll()"> Reflect</label>
-            <label><input type="checkbox" id="fldLightScreen" onchange="computeAll()"> Light Screen</label>
-            <label><input type="checkbox" id="fldAuroraVeil" onchange="computeAll()"> Aurora Veil</label>
-            <label title="Ally has Friend Guard → damage taken ×0.75"><input type="checkbox" id="fldFriendGuard" onchange="computeAll()"> Friend Guard (ally)</label>
-          </div>
-        </div>
-        <div class="field-block">
-          <span class="field-block-label">Hazards (def)</span>
-          <div class="field-checks">
-            <label title="Stealth Rock chip damage on switch-in (12.5% × Rock effectiveness)"><input type="checkbox" id="fldStealthRock" onchange="computeAll()"> Stealth Rock</label>
-            <label title="Spikes layers (only if defender is grounded)">
-              <span style="font-size:0.78rem">Spikes</span>
-              <select id="fldSpikes" class="hazard-select" onchange="computeAll()">
-                <option value="0">0</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-              </select>
-            </label>
-          </div>
-        </div>
-        <div class="field-block">
           <span class="field-block-label">Other</span>
           <div class="field-checks">
             <label title="Damage ×1.5, ignores screens, Multiscale, positive def stages, negative atk stages. Sniper: ×2.25."><input type="checkbox" id="fldCrit" onchange="computeAll()"> 💥 Critical hit</label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Row 3: per-side modifiers (each can affect ATK side, DEF side, both, or neither) -->
+      <div class="side-mods-grid">
+        <div class="side-mods-section">
+          <span class="side-mods-section-label">Screens</span>
+          <div class="side-mod-list">
+            <div class="side-mod-row" title="Reduces physical damage taken by 1/2 (1/3 doubles)">
+              <span class="side-mod-name">Reflect</span>
+              <button type="button" class="side-tag side-tag-atk" id="atkReflectBtn" onclick="toggleSideMod(this)">ATK</button>
+              <button type="button" class="side-tag side-tag-def" id="defReflectBtn" onclick="toggleSideMod(this)">DEF</button>
+            </div>
+            <div class="side-mod-row" title="Reduces special damage taken by 1/2 (1/3 doubles)">
+              <span class="side-mod-name">Light Screen</span>
+              <button type="button" class="side-tag side-tag-atk" id="atkLightScreenBtn" onclick="toggleSideMod(this)">ATK</button>
+              <button type="button" class="side-tag side-tag-def" id="defLightScreenBtn" onclick="toggleSideMod(this)">DEF</button>
+            </div>
+            <div class="side-mod-row" title="Reduces all damage taken by 1/2 (1/3 doubles) — needs snow">
+              <span class="side-mod-name">Aurora Veil</span>
+              <button type="button" class="side-tag side-tag-atk" id="atkAuroraVeilBtn" onclick="toggleSideMod(this)">ATK</button>
+              <button type="button" class="side-tag side-tag-def" id="defAuroraVeilBtn" onclick="toggleSideMod(this)">DEF</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="side-mods-section">
+          <span class="side-mods-section-label">Hazards</span>
+          <div class="side-mod-list">
+            <div class="side-mod-row" title="Stealth Rock chip on switch-in (12.5% × Rock effectiveness)">
+              <span class="side-mod-name">Stealth Rock</span>
+              <button type="button" class="side-tag side-tag-atk" id="atkStealthRockBtn" onclick="toggleSideMod(this)">ATK</button>
+              <button type="button" class="side-tag side-tag-def" id="defStealthRockBtn" onclick="toggleSideMod(this)">DEF</button>
+            </div>
+            <div class="side-mod-row" title="Spikes layers — only damages grounded Pokémon">
+              <span class="side-mod-name">Spikes</span>
+              <span class="side-spikes-group">
+                <span class="side-spikes-lbl side-tag-atk-text">ATK</span>
+                <select id="fldAtkSpikes" class="hazard-select" onchange="computeAll()">
+                  <option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option>
+                </select>
+              </span>
+              <span class="side-spikes-group">
+                <span class="side-spikes-lbl side-tag-def-text">DEF</span>
+                <select id="fldDefSpikes" class="hazard-select" onchange="computeAll()">
+                  <option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option>
+                </select>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="side-mods-section">
+          <span class="side-mods-section-label">Support (ally)</span>
+          <div class="side-mod-list">
+            <div class="side-mod-row" title="Ally used Helping Hand → outgoing damage ×1.5">
+              <span class="side-mod-name">Helping Hand</span>
+              <button type="button" class="side-tag side-tag-atk" id="atkHelpingHandBtn" onclick="toggleSideMod(this)">ATK</button>
+              <button type="button" class="side-tag side-tag-def" id="defHelpingHandBtn" onclick="toggleSideMod(this)">DEF</button>
+            </div>
+            <div class="side-mod-row" title="Ally has Battery → outgoing special moves ×1.3">
+              <span class="side-mod-name">Battery</span>
+              <button type="button" class="side-tag side-tag-atk" id="atkBatteryBtn" onclick="toggleSideMod(this)">ATK</button>
+              <button type="button" class="side-tag side-tag-def" id="defBatteryBtn" onclick="toggleSideMod(this)">DEF</button>
+            </div>
+            <div class="side-mod-row" title="Ally has Friend Guard → damage taken ×0.75">
+              <span class="side-mod-name">Friend Guard</span>
+              <button type="button" class="side-tag side-tag-atk" id="atkFriendGuardBtn" onclick="toggleSideMod(this)">ATK</button>
+              <button type="button" class="side-tag side-tag-def" id="defFriendGuardBtn" onclick="toggleSideMod(this)">DEF</button>
+            </div>
           </div>
         </div>
       </div>
@@ -492,6 +532,6 @@
   </div><!-- #calcApp -->
 </main>
 
-<script src="calc.js?v=36"></script>
+<script src="calc.js?v=37"></script>
 </body>
 </html>

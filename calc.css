@@ -279,6 +279,45 @@
 }
 .field-checks input[type="checkbox"] { cursor: pointer; }
 
+/* ── PER-SIDE MODIFIERS GRID (Screens / Hazards / Support) ── */
+.side-mods-grid {
+  display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px;
+  padding-top: 12px; margin-top: 4px;
+  border-top: 1px solid var(--border);
+}
+.side-mods-section { display: flex; flex-direction: column; gap: 6px; }
+.side-mods-section-label {
+  font-size: 0.68rem; color: var(--muted); text-transform: uppercase;
+  letter-spacing: 0.5px; font-weight: 700;
+}
+.side-mod-list { display: flex; flex-direction: column; gap: 5px; }
+.side-mod-row {
+  display: flex; align-items: center; gap: 6px;
+  font-size: 0.78rem; color: var(--text);
+}
+.side-mod-name { flex: 1; }
+.side-tag {
+  padding: 3px 9px; border-radius: 5px; font-size: 0.65rem; font-weight: 700;
+  letter-spacing: .6px; cursor: pointer; font-family: inherit;
+  border: 1px solid var(--border); background: var(--bg); color: var(--muted);
+  transition: all .12s;
+}
+.side-tag:hover { color: var(--text); border-color: var(--text); }
+.side-tag.active.side-tag-atk {
+  background: rgba(239, 83, 80, 0.15); border-color: #ef5350; color: #ef5350;
+}
+.side-tag.active.side-tag-def {
+  background: rgba(66, 165, 245, 0.15); border-color: #42a5f5; color: #42a5f5;
+}
+/* Static side labels for the per-side Spikes selects */
+.side-tag-atk-text { color: #ef5350; font-size: 0.65rem; font-weight: 700; letter-spacing: .6px; }
+.side-tag-def-text { color: #42a5f5; font-size: 0.65rem; font-weight: 700; letter-spacing: .6px; }
+.side-spikes-group { display: inline-flex; align-items: center; gap: 4px; }
+
+@media (max-width: 700px) {
+  .side-mods-grid { grid-template-columns: 1fr; }
+}
+
 /* ── RESULTS ── */
 .dmg-placeholder { color: var(--muted); font-size: 0.9rem; text-align: center; padding: 20px 0; }
 

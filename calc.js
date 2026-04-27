@@ -436,24 +436,45 @@ function readState() {
     weather:     document.getElementById('fldWeather')?.value     || '',
     terrain:     document.getElementById('fldTerrain')?.value     || '',
     format:      document.querySelector('input[name="fldFormat"]:checked')?.value || 'doubles',
-    // Field conditions
+    // Global field conditions (always affect both sides)
     gravity:     document.getElementById('fldGravity')?.checked    || false,
     magicRoom:   document.getElementById('fldMagicRoom')?.checked  || false,
     wonderRoom:  document.getElementById('fldWonderRoom')?.checked || false,
-    // Atk-side modifiers (ally effects in doubles)
-    helpingHand: document.getElementById('fldHelpingHand')?.checked || false,
-    battery:     document.getElementById('fldBattery')?.checked    || false,
-    // Def-side modifiers
-    reflect:     document.getElementById('fldReflect')?.checked     || false,
-    lightScreen: document.getElementById('fldLightScreen')?.checked || false,
-    auroraVeil:  document.getElementById('fldAuroraVeil')?.checked  || false,
-    friendGuard: document.getElementById('fldFriendGuard')?.checked || false,
     crit:        document.getElementById('fldCrit')?.checked        || false,
-    // Hazards (def side)
-    stealthRock: document.getElementById('fldStealthRock')?.checked || false,
-    spikes:      parseInt(document.getElementById('fldSpikes')?.value) || 0,
+    // Per-side modifiers — each can be on the attacker's side, defender's side,
+    // both, or neither. The damage calc only reads the side that actually
+    // matters for atk→def damage in this direction (e.g. defReflect for screens,
+    // atkHelpingHand for support boosts). Storing the other side is needed so
+    // swap correctly transposes the field state (and so D→A in the second
+    // result column applies the right side too).
+    atkReflect:     sideOn('atkReflectBtn'),
+    defReflect:     sideOn('defReflectBtn'),
+    atkLightScreen: sideOn('atkLightScreenBtn'),
+    defLightScreen: sideOn('defLightScreenBtn'),
+    atkAuroraVeil:  sideOn('atkAuroraVeilBtn'),
+    defAuroraVeil:  sideOn('defAuroraVeilBtn'),
+    atkFriendGuard: sideOn('atkFriendGuardBtn'),
+    defFriendGuard: sideOn('defFriendGuardBtn'),
+    atkHelpingHand: sideOn('atkHelpingHandBtn'),
+    defHelpingHand: sideOn('defHelpingHandBtn'),
+    atkBattery:     sideOn('atkBatteryBtn'),
+    defBattery:     sideOn('defBatteryBtn'),
+    atkStealthRock: sideOn('atkStealthRockBtn'),
+    defStealthRock: sideOn('defStealthRockBtn'),
+    atkSpikes:      parseInt(document.getElementById('fldAtkSpikes')?.value) || 0,
+    defSpikes:      parseInt(document.getElementById('fldDefSpikes')?.value) || 0,
   };
 }
+
+// Helper for the side-tag toggle buttons
+function sideOn(btnId) {
+  return document.getElementById(btnId)?.classList.contains('active') || false;
+}
+
+window.toggleSideMod = function (btn) {
+  btn.classList.toggle('active');
+  computeAll();
+};
 
 // A Pokémon is "grounded" if it has no Flying type and no Levitate.
 // Gravity grounds all Pokémon (Flying type and Levitate don't apply).
@@ -477,13 +498,13 @@ function computeHazardChip(s, defData, maxHP) {
 
   let chip = 0;
   // Stealth Rock: 12.5% × Rock effectiveness vs defender, regardless of grounding.
-  if (s.stealthRock) {
+  if (s.defStealthRock) {
     const rockEff = getTypeEffRaw('rock', defData.types, s);
     chip += Math.floor(maxHP * 0.125 * rockEff);
   }
   // Spikes: only damages grounded Pokémon. Flash Fire/Levitate/Flying skip them.
-  if (s.spikes > 0 && isGrounded(defData, s.defAbility, s.gravity)) {
-    const layers = Math.min(3, Math.max(0, parseInt(s.spikes) || 0));
+  if (s.defSpikes > 0 && isGrounded(defData, s.defAbility, s.gravity)) {
+    const layers = Math.min(3, Math.max(0, parseInt(s.defSpikes) || 0));
     const fracs  = { 1: 1/8, 2: 1/6, 3: 1/4 };
     chip += Math.floor(maxHP * fracs[layers]);
   }
@@ -529,10 +550,17 @@ function buildReversedState(s) {
 
     weather: s.weather, terrain: s.terrain, format: s.format,
     gravity: s.gravity, magicRoom: s.magicRoom, wonderRoom: s.wonderRoom,
-    helpingHand: s.helpingHand, battery: s.battery,
-    reflect: s.reflect, lightScreen: s.lightScreen,
-    auroraVeil: s.auroraVeil, friendGuard: s.friendGuard, crit: s.crit,
-    stealthRock: s.stealthRock, spikes: s.spikes,
+    crit: s.crit,
+    // Per-side modifiers TRANSPOSE for the reversed direction: A's screens
+    // protect A from B's attack, A's hazards chip A on switch-in, etc.
+    atkReflect: s.defReflect,         defReflect: s.atkReflect,
+    atkLightScreen: s.defLightScreen, defLightScreen: s.atkLightScreen,
+    atkAuroraVeil: s.defAuroraVeil,   defAuroraVeil: s.atkAuroraVeil,
+    atkFriendGuard: s.defFriendGuard, defFriendGuard: s.atkFriendGuard,
+    atkHelpingHand: s.defHelpingHand, defHelpingHand: s.atkHelpingHand,
+    atkBattery: s.defBattery,         defBattery: s.atkBattery,
+    atkStealthRock: s.defStealthRock, defStealthRock: s.atkStealthRock,
+    atkSpikes: s.defSpikes,           defSpikes: s.atkSpikes,
   };
 }
 
@@ -789,14 +817,14 @@ function applyPostMods(rolls, s, moveData, isPhysical, typeEff) {
   }
 
   // ── Screens (VGC doubles: ×2732/4096 ≈ ×0.6670) ──
-  // Screens are bypassed on crits.
+  // Screens are bypassed on crits. Defender's-side screens reduce damage taken.
   if (!s.crit) {
     const screenMult = 2732 / 4096;
-    if (s.auroraVeil) {
+    if (s.defAuroraVeil) {
       r = r.map(d => Math.floor(d * screenMult));
     } else {
-      if (s.reflect && isPhysical)      r = r.map(d => Math.floor(d * screenMult));
-      if (s.lightScreen && !isPhysical) r = r.map(d => Math.floor(d * screenMult));
+      if (s.defReflect && isPhysical)      r = r.map(d => Math.floor(d * screenMult));
+      if (s.defLightScreen && !isPhysical) r = r.map(d => Math.floor(d * screenMult));
     }
   }
 
@@ -805,9 +833,11 @@ function applyPostMods(rolls, s, moveData, isPhysical, typeEff) {
     r = r.map(d => Math.floor(d * 0.75));
 
   // ── Doubles: ally effects ──
-  if (s.helpingHand)                   r = r.map(d => Math.floor(d * 1.5));
-  if (s.battery && !isPhysical)        r = r.map(d => Math.floor(d * 1.3));
-  if (s.friendGuard)                   r = r.map(d => Math.floor(d * 0.75));
+  // Helping Hand / Battery boost the *attacker* (atk side). Friend Guard
+  // protects whoever's side it's on, so the defender benefits from def-side FG.
+  if (s.atkHelpingHand)                   r = r.map(d => Math.floor(d * 1.5));
+  if (s.atkBattery && !isPhysical)        r = r.map(d => Math.floor(d * 1.3));
+  if (s.defFriendGuard)                   r = r.map(d => Math.floor(d * 0.75));
 
   // ── Critical hit ──
   // Base damage ×1.5 (or ×2.25 with Sniper).
@@ -1019,22 +1049,36 @@ function restoreState() {
   // Format radio
   const fmtEl = document.querySelector(`input[name="fldFormat"][value="${saved.format || 'doubles'}"]`);
   if (fmtEl) fmtEl.checked = true;
-  // Field conditions
+  // Field conditions (global)
   setCheck('fldGravity',     saved.gravity);
   setCheck('fldMagicRoom',   saved.magicRoom);
   setCheck('fldWonderRoom',  saved.wonderRoom);
-  // Atk-side
-  setCheck('fldHelpingHand', saved.helpingHand);
-  setCheck('fldBattery',     saved.battery);
-  // Def-side
-  setCheck('fldReflect',     saved.reflect);
-  setCheck('fldLightScreen', saved.lightScreen);
-  setCheck('fldAuroraVeil',  saved.auroraVeil);
-  setCheck('fldFriendGuard', saved.friendGuard);
   setCheck('fldCrit',        saved.crit);
-  // Hazards
-  setCheck('fldStealthRock', saved.stealthRock);
-  setVal('fldSpikes', String(saved.spikes || 0));
+
+  // Per-side modifiers — backwards-compatible: a legacy single-flag value
+  // (saved.reflect etc., before the per-side split) is treated as defending
+  // side, which matches the old layout where those checkboxes lived under
+  // "Def side". Atk-side legacy values (helpingHand/battery) map to atk side.
+  const sideTag = (btnId, on) => {
+    const el = document.getElementById(btnId);
+    if (el) el.classList.toggle('active', !!on);
+  };
+  sideTag('atkReflectBtn',     saved.atkReflect);
+  sideTag('defReflectBtn',     saved.defReflect ?? saved.reflect);
+  sideTag('atkLightScreenBtn', saved.atkLightScreen);
+  sideTag('defLightScreenBtn', saved.defLightScreen ?? saved.lightScreen);
+  sideTag('atkAuroraVeilBtn',  saved.atkAuroraVeil);
+  sideTag('defAuroraVeilBtn',  saved.defAuroraVeil ?? saved.auroraVeil);
+  sideTag('atkFriendGuardBtn', saved.atkFriendGuard);
+  sideTag('defFriendGuardBtn', saved.defFriendGuard ?? saved.friendGuard);
+  sideTag('atkHelpingHandBtn', saved.atkHelpingHand ?? saved.helpingHand);
+  sideTag('defHelpingHandBtn', saved.defHelpingHand);
+  sideTag('atkBatteryBtn',     saved.atkBattery ?? saved.battery);
+  sideTag('defBatteryBtn',     saved.defBattery);
+  sideTag('atkStealthRockBtn', saved.atkStealthRock);
+  sideTag('defStealthRockBtn', saved.defStealthRock ?? saved.stealthRock);
+  setVal('fldAtkSpikes', String(saved.atkSpikes || 0));
+  setVal('fldDefSpikes', String(saved.defSpikes ?? saved.spikes ?? 0));
 }
 
 // ═══════════════════════════════════════════════════════════
@@ -1315,6 +1359,26 @@ window.swapPanels = function () {
     }
   }
 
+  // Swap per-side modifier toggles (Reflect/Light Screen/Aurora Veil/Friend Guard/
+  // Helping Hand/Battery/Stealth Rock) and the Spikes selects so each side's
+  // field state follows the Pokémon to its new role.
+  function swapTags(atkBtn, defBtn) {
+    const a = document.getElementById(atkBtn);
+    const b = document.getElementById(defBtn);
+    if (!a || !b) return;
+    const tmp = a.classList.contains('active');
+    a.classList.toggle('active', b.classList.contains('active'));
+    b.classList.toggle('active', tmp);
+  }
+  swapTags('atkReflectBtn',     'defReflectBtn');
+  swapTags('atkLightScreenBtn', 'defLightScreenBtn');
+  swapTags('atkAuroraVeilBtn',  'defAuroraVeilBtn');
+  swapTags('atkFriendGuardBtn', 'defFriendGuardBtn');
+  swapTags('atkHelpingHandBtn', 'defHelpingHandBtn');
+  swapTags('atkBatteryBtn',     'defBatteryBtn');
+  swapTags('atkStealthRockBtn', 'defStealthRockBtn');
+  swapVals('fldAtkSpikes', 'fldDefSpikes');
+
   // Update move datalists, ability selects, sprites and HP% visibility for new roles
   const newAtkKey = document.getElementById('atkPkmn').value.toLowerCase().trim();
   const newDefKey = document.getElementById('defPkmn').value.toLowerCase().trim();
@@ -1385,9 +1449,9 @@ function renderDamage(rolls, hp, curHP, s, moveData, atkData, defData, atkStat, 
 
   const ateTag = ateConverted
     ? `<span class="dmg-tag tag-ate">${moveData.type} → ${mType}</span>` : '';
-  const hhTag  = s.helpingHand  ? '<span class="dmg-tag tag-hh">Helping Hand</span>'  : '';
-  const batTag = s.battery && !isPhysical ? '<span class="dmg-tag tag-bat">Battery</span>' : '';
-  const fgTag  = s.friendGuard  ? '<span class="dmg-tag tag-fg">Friend Guard</span>'  : '';
+  const hhTag  = s.atkHelpingHand  ? '<span class="dmg-tag tag-hh">Helping Hand</span>'  : '';
+  const batTag = s.atkBattery && !isPhysical ? '<span class="dmg-tag tag-bat">Battery</span>' : '';
+  const fgTag  = s.defFriendGuard  ? '<span class="dmg-tag tag-fg">Friend Guard</span>'  : '';
   const spreadTag = (s.format === 'doubles' && SPREAD_MOVES.has(s.atkMove))
     ? '<span class="dmg-tag tag-spread">Doubles spread ×0.75</span>' : '';
   const wrTag  = s.wonderRoom   ? '<span class="dmg-tag tag-wr">Wonder Room</span>'   : '';
@@ -1442,10 +1506,10 @@ function renderDamage(rolls, hp, curHP, s, moveData, atkData, defData, atkStat, 
   const suffixParts = [];
   if (s.crit) suffixParts.push('on a critical hit');
   const screens = [];
-  if (s.auroraVeil) screens.push('Aurora Veil');
+  if (s.defAuroraVeil) screens.push('Aurora Veil');
   else {
-    if (s.reflect && isPhysical)      screens.push('Reflect');
-    if (s.lightScreen && !isPhysical) screens.push('Light Screen');
+    if (s.defReflect && isPhysical)      screens.push('Reflect');
+    if (s.defLightScreen && !isPhysical) screens.push('Light Screen');
   }
   if (screens.length) suffixParts.push(`through ${screens.join(' and ')}`);
   const suffix = suffixParts.length ? ' ' + suffixParts.join(' ') : '';
@@ -2299,8 +2363,9 @@ function bindEvents() {
     }
   }
 
-  // Field controls (weather / terrain / screens / crit / hazards)
-  for (const id of ['fldWeather', 'fldTerrain', 'fldReflect', 'fldLightScreen', 'fldAuroraVeil', 'fldCrit', 'fldStealthRock', 'fldSpikes']) {
+  // Field controls (weather / terrain / crit / per-side spikes selects)
+  // Side-tag buttons trigger computeAll directly via toggleSideMod.
+  for (const id of ['fldWeather', 'fldTerrain', 'fldCrit', 'fldAtkSpikes', 'fldDefSpikes']) {
     const el = document.getElementById(id);
     if (el) el.addEventListener('change', computeAll);
   }
