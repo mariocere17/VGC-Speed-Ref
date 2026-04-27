@@ -1474,7 +1474,7 @@ function renderDamage(rolls, hp, curHP, s, moveData, atkData, defData, atkStat, 
 
   const hazardChipShown = hazardChip || 0;
   const hazardTag = hazardChipShown > 0
-    ? `<span class="dmg-tag tag-hazard" title="Stealth Rock + Spikes chip">🪨 -${hazardChipShown} HP chip</span>`
+    ? `<span class="dmg-tag tag-hazard" title="Stealth Rock + Spikes chip">-${hazardChipShown} HP chip</span>`
     : '';
 
   const cells = rolls.map(d =>
