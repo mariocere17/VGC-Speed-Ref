@@ -67,9 +67,18 @@
 
 .pkmn-input {
   background: var(--bg); border: 1px solid var(--border); color: var(--text);
-  padding: 6px 10px; border-radius: 6px; font-size: 0.85rem; outline: none; width: 100%;
+  padding: 6px 26px 6px 8px; border-radius: 6px; font-size: 0.82rem; outline: none; width: 100%;
+  cursor: pointer;
+  /* Same chevron native <select> elements show, so Pokémon/Move pickers read */
+  /* visually as dropdowns (matches .field-select used by Nature / Set / Item).  */
+  appearance: none; -webkit-appearance: none; -moz-appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'><path fill='%238b949e' d='M0 0l5 6 5-6z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 9px center;
 }
 .pkmn-input:focus { border-color: var(--accent); }
+/* Hide the default datalist arrow some browsers (Chrome) inject on input[list] */
+.pkmn-input::-webkit-calendar-picker-indicator { opacity: 0; }
 
 .field-select {
   background: var(--bg); border: 1px solid var(--border); color: var(--text);
