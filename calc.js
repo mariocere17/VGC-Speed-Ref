@@ -1843,9 +1843,14 @@ function setupChoice(sel) {
   if (!sel || sel._choiceInited) return;
   sel._choiceInited = true;
 
+  // Capture initial state from the original select before we hide it.
+  const isCompact = sel.classList.contains('field-select-compact');
+  const startsHidden = sel.style.display === 'none';
+
   // Wrap select + button + list inside the field-row's flex slot
   const wrap = document.createElement('div');
-  wrap.className = 'choice-wrap';
+  wrap.className = 'choice-wrap' + (isCompact ? ' choice-wrap-compact' : '');
+  if (startsHidden) wrap.style.display = 'none';
   sel.parentNode.insertBefore(wrap, sel);
   wrap.appendChild(sel);
   sel.classList.add('hidden-select');
@@ -1877,11 +1882,22 @@ function setupChoice(sel) {
   }
   function close() { list.hidden = true; }
   function open() {
-    const opts = Array.from(sel.options);
-    list.innerHTML = opts.map(o => {
-      const active = o.value === sel.value ? ' choice-active' : '';
-      return `<div class="choice-item${active}" data-val="${escAttr(o.value)}">${escHtml(o.textContent)}</div>`;
-    }).join('');
+    // Walk children so <optgroup> labels become headers in the dropdown.
+    const parts = [];
+    for (const child of sel.children) {
+      if (child.tagName === 'OPTGROUP') {
+        parts.push(`<div class="choice-group">${escHtml(child.label || '')}</div>`);
+        for (const opt of child.children) {
+          if (opt.tagName !== 'OPTION') continue;
+          const active = opt.value === sel.value ? ' choice-active' : '';
+          parts.push(`<div class="choice-item${active}" data-val="${escAttr(opt.value)}">${escHtml(opt.textContent)}</div>`);
+        }
+      } else if (child.tagName === 'OPTION') {
+        const active = child.value === sel.value ? ' choice-active' : '';
+        parts.push(`<div class="choice-item${active}" data-val="${escAttr(child.value)}">${escHtml(child.textContent)}</div>`);
+      }
+    }
+    list.innerHTML = parts.join('');
     list.hidden = false;
     const a = list.querySelector('.choice-active');
     if (a) a.scrollIntoView({ block: 'nearest' });
@@ -2138,7 +2154,10 @@ function updateOverlordVisibility(prefix) {
 function toggleEl(id, show, resetValue) {
   const el = document.getElementById(id);
   if (!el) return;
-  el.style.display = show ? '' : 'none';
+  // If the select has been wrapped by setupChoice, hide the wrap (the select
+  // itself is permanently display:none via .hidden-select).
+  const target = el.parentNode?.classList.contains('choice-wrap') ? el.parentNode : el;
+  target.style.display = show ? '' : 'none';
   if (!show && resetValue !== undefined) el.value = resetValue;
 }
 
@@ -2149,14 +2168,17 @@ function updateDefHPPctVisibility() { updateHPPctVisibility('def'); }
 function updateHitsSelector(prefix) {
   const hitsSel = document.getElementById(prefix + 'Hits');
   if (!hitsSel) return;
+  // Visibility lives on the .choice-wrap if the select has been wrapped.
+  const visHost = hitsSel.parentNode?.classList.contains('choice-wrap') ? hitsSel.parentNode : hitsSel;
   // Prefer the active set-move override; fall back to the raw move input
   const override = window._moveOverride && window._moveOverride[prefix];
   const moveName = override || document.getElementById(prefix + 'Move')?.value.trim();
   const info = moveName ? MULTI_HIT_MOVES[moveName] : null;
   if (!info) {
-    hitsSel.style.display = 'none';
+    visHost.style.display = 'none';
     hitsSel.innerHTML = '';
     hitsSel.value = '1';
+    hitsSel._syncChoice?.();
     return;
   }
   const prev = parseInt(hitsSel.value) || 0;
@@ -2168,7 +2190,8 @@ function updateHitsSelector(prefix) {
     hitsSel.appendChild(opt);
   }
   hitsSel.value = String((prev >= info.min && prev <= info.max) ? prev : info.default);
-  hitsSel.style.display = '';
+  hitsSel._syncChoice?.();
+  visHost.style.display = '';
 }
 
 // ═══════════════════════════════════════════════════════════
@@ -2349,11 +2372,23 @@ async function loadData() {
   populateDataLists();
   bindEvents();
 
-  // Wrap Set selects with the same custom dropdown used for Nature so they
-  // share the visual style (must happen before refreshSetSelectors so the
-  // _syncChoice hook exists when the option list is first rebuilt).
-  setupChoice(document.getElementById('atkSet'));
-  setupChoice(document.getElementById('defSet'));
+  // Wrap remaining native <select>s with the custom dropdown so all selectors
+  // share the same look and always open downward. Stage selects (per-stat
+  // -6/+6 inline) and the tiny .hazard-select (Spikes 0–3) keep their native
+  // styling because they're visually distinct on purpose.
+  // Order matters: Set must be wrapped before refreshSetSelectors so the
+  // _syncChoice hook exists when the option list is rebuilt.
+  [
+    'atkSet', 'defSet',
+    'atkItem', 'defItem',
+    'atkAbility', 'defAbility',
+    'atkOverlord', 'defOverlord',
+    'atkRivalry',
+    'atkProto', 'defProto',
+    'atkStatus', 'defStatus',
+    'atkHits', 'defHits',
+    'fldWeather', 'fldTerrain',
+  ].forEach(id => setupChoice(document.getElementById(id)));
 
   // Populate set selectors from localStorage (sets persist across visits).
   refreshSetSelectors();

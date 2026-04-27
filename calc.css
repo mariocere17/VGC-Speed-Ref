@@ -501,7 +501,8 @@
 
 /* ── CUSTOM CHOICE DROPDOWN (Nature picker — always opens downward) ── */
 .hidden-select { display: none !important; }
-.choice-wrap { position: relative; flex: 1; }
+.choice-wrap { position: relative; flex: 1; min-width: 0; }
+.choice-wrap-compact { flex: 0 0 auto; min-width: 110px; }
 .choice-btn {
   background: var(--bg); border: 1px solid var(--border); color: var(--text);
   padding: 6px 28px 6px 10px; border-radius: 6px; font-size: 0.82rem;
@@ -529,6 +530,12 @@
 .choice-item:hover, .choice-item.choice-active {
   background: rgba(88, 166, 255, 0.15); color: var(--accent);
 }
+.choice-group {
+  padding: 4px 10px; font-size: 0.7rem; color: var(--muted);
+  text-transform: uppercase; letter-spacing: .5px;
+  background: rgba(255,255,255,0.02); border-bottom: 1px solid var(--border);
+}
+.choice-group:not(:first-child) { border-top: 1px solid var(--border); }
 
 /* ── CUSTOM AUTOCOMPLETE COMBO (Pokémon / Move pickers) ── */
 .combo-wrap { position: relative; width: 100%; }
