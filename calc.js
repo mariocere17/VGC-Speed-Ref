@@ -1824,7 +1824,90 @@ function populateNatureSelects() {
     el.innerHTML = opts;
     // Default to Jolly for attacker, Hardy for defender
     el.value = id === 'atkNature' ? 'Jolly' : 'Hardy';
+    setupChoice(el);
   });
+}
+
+// ═══════════════════════════════════════════════════════════
+//  CUSTOM CHOICE DROPDOWN (Nature picker — opens downward)
+// ═══════════════════════════════════════════════════════════
+//
+// Replaces the native <select> visually with a button + dropdown list that
+// always opens *below* the field. The native select stays in the DOM (hidden
+// via CSS) so existing code reading `el.value`, listening to `change`, and
+// using inline `onchange="onNatureChange('atk')"` keeps working unchanged.
+// We also intercept `el.value =` writes so external value sets (restoreFormState,
+// swap, set import) keep the visible button label in sync.
+
+function setupChoice(sel) {
+  if (!sel || sel._choiceInited) return;
+  sel._choiceInited = true;
+
+  // Wrap select + button + list inside the field-row's flex slot
+  const wrap = document.createElement('div');
+  wrap.className = 'choice-wrap';
+  sel.parentNode.insertBefore(wrap, sel);
+  wrap.appendChild(sel);
+  sel.classList.add('hidden-select');
+
+  const btn = document.createElement('button');
+  btn.type = 'button';
+  btn.className = 'choice-btn';
+  wrap.appendChild(btn);
+
+  const list = document.createElement('div');
+  list.className = 'choice-list';
+  list.hidden = true;
+  wrap.appendChild(list);
+
+  const escAttr = s => String(s).replace(/&/g,'&amp;').replace(/"/g,'&quot;');
+  const escHtml = s => String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;');
+
+  function syncBtn() {
+    const opt = sel.options[sel.selectedIndex];
+    btn.textContent = opt ? opt.textContent : '— select —';
+  }
+  function close() { list.hidden = true; }
+  function open() {
+    const opts = Array.from(sel.options);
+    list.innerHTML = opts.map(o => {
+      const active = o.value === sel.value ? ' choice-active' : '';
+      return `<div class="choice-item${active}" data-val="${escAttr(o.value)}">${escHtml(o.textContent)}</div>`;
+    }).join('');
+    list.hidden = false;
+    const a = list.querySelector('.choice-active');
+    if (a) a.scrollIntoView({ block: 'nearest' });
+  }
+  function pick(value) {
+    sel.value = value; // setter intercept (below) syncs the button label
+    sel.dispatchEvent(new Event('change', { bubbles: true }));
+    close();
+  }
+
+  btn.addEventListener('click', e => {
+    e.preventDefault();
+    if (list.hidden) open(); else close();
+  });
+  list.addEventListener('mousedown', e => {
+    const item = e.target.closest('.choice-item');
+    if (!item) return;
+    e.preventDefault(); // suppress focus shift
+    pick(item.dataset.val);
+  });
+  document.addEventListener('mousedown', e => {
+    if (!wrap.contains(e.target)) close();
+  });
+
+  // Intercept .value assignments so setVal()/swap()/restoreFormState() etc.
+  // keep the visible button label in sync without each caller having to know.
+  const desc = Object.getOwnPropertyDescriptor(HTMLSelectElement.prototype, 'value');
+  Object.defineProperty(sel, 'value', {
+    get() { return desc.get.call(sel); },
+    set(v) { desc.set.call(sel, v); syncBtn(); },
+    configurable: true,
+  });
+
+  syncBtn();
 }
 
 // Strip variant suffixes that don't change a Pokémon's identity for the

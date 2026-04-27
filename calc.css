@@ -499,6 +499,37 @@
 .move-input-row .pkmn-input { flex: 1; }
 .move-input-row .combo-wrap { flex: 1; }
 
+/* ── CUSTOM CHOICE DROPDOWN (Nature picker — always opens downward) ── */
+.hidden-select { display: none !important; }
+.choice-wrap { position: relative; flex: 1; }
+.choice-btn {
+  background: var(--bg); border: 1px solid var(--border); color: var(--text);
+  padding: 6px 28px 6px 10px; border-radius: 6px; font-size: 0.82rem;
+  outline: none; width: 100%; cursor: pointer; text-align: left;
+  font-family: inherit; line-height: 1.4;
+  appearance: none; -webkit-appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'><path fill='%238b949e' d='M0 0l5 6 5-6z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 9px center;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.choice-btn:hover, .choice-btn:focus { border-color: var(--accent); }
+.choice-list {
+  position: absolute; top: calc(100% + 2px); left: 0; right: 0;
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 6px; max-height: 280px; overflow-y: auto;
+  z-index: 100; box-shadow: 0 6px 20px rgba(0,0,0,0.45);
+}
+.choice-item {
+  padding: 6px 10px; font-size: 0.82rem; color: var(--text);
+  cursor: pointer; border-bottom: 1px solid var(--border);
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.choice-item:last-child { border-bottom: none; }
+.choice-item:hover, .choice-item.choice-active {
+  background: rgba(88, 166, 255, 0.15); color: var(--accent);
+}
+
 /* ── CUSTOM AUTOCOMPLETE COMBO (Pokémon / Move pickers) ── */
 .combo-wrap { position: relative; width: 100%; }
 .combo-list {
