@@ -296,11 +296,21 @@
   font-size: 0.78rem; color: var(--text);
 }
 .side-mod-name { flex: 1; }
-.side-tag {
-  padding: 3px 9px; border-radius: 5px; font-size: 0.65rem; font-weight: 700;
-  letter-spacing: .6px; cursor: pointer; font-family: inherit;
-  border: 1px solid var(--border); background: var(--bg); color: var(--muted);
+/* Shared base: .side-tag (toggles) and .side-spikes-group (label + select)
+   share padding/border/border-radius/font so they read as the same UI element. */
+.side-tag,
+.side-spikes-group {
+  display: inline-flex; align-items: center;
+  padding: 2px 9px; border-radius: 5px;
+  font-size: 0.7rem; font-weight: 700; letter-spacing: .6px;
+  line-height: 1.4;
+  border: 1px solid var(--border); background: var(--bg);
   transition: all .12s;
+}
+.side-tag {
+  cursor: pointer; font-family: inherit;
+  color: var(--muted);
+  justify-content: center; min-width: 56px;
 }
 .side-tag:hover { color: var(--text); border-color: var(--text); }
 .side-tag.active.side-tag-atk {
@@ -311,20 +321,16 @@
 }
 /* Per-side Spikes pills — same look as .side-tag toggles, color-activate when layers > 0. */
 .side-spikes-group {
-  display: inline-flex; align-items: center; gap: 5px;
-  padding: 2px 6px 2px 8px; border-radius: 5px;
-  border: 1px solid var(--border); background: var(--bg);
-  transition: all .12s;
+  gap: 5px; min-width: 56px;
 }
 .side-spikes-lbl {
-  font-size: 0.65rem; font-weight: 700; letter-spacing: .6px;
   color: var(--muted); transition: color .12s;
 }
 .side-spikes-select {
   border: none; background: transparent; outline: none;
   color: var(--text); font-family: inherit;
-  font-size: 0.78rem; font-weight: 600;
-  padding: 0; cursor: pointer; line-height: 1.2;
+  font-size: inherit; font-weight: inherit;
+  padding: 0; cursor: pointer; line-height: inherit;
   transition: color .12s;
 }
 .side-spikes-select option { background: var(--surface); color: var(--text); }
