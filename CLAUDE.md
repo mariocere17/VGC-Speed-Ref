@@ -38,6 +38,23 @@ que usa un sistema de inversión en stats completamente diferente al VGC convenc
 - Los torneos en Limitless filtrados por `data-format="1"` + verificación "M-A" en descripción
 - Pikalytics usa el nombre de formato `championstournaments`
 
+## Modificadores de campo — global vs. per-side
+
+La sección Field de `calc.html` está dividida en dos bloques:
+
+| Bloque | Qué incluye | Cómo afecta al cálculo |
+|--------|-------------|------------------------|
+| **Globales** | Format, Weather, Terrain, Gravity, Magic Room, Wonder Room, Critical hit | Aplican a ambos lados a la vez — un solo control. |
+| **Per-side** (Screens / Hazards / Support) | Reflect, Light Screen, Aurora Veil, Friend Guard, Helping Hand, Battery, Stealth Rock, Spikes | Cada modificador tiene **dos botones `.side-tag` (ATK / DEF)** que se activan independientemente. |
+
+**Reglas para añadir per-side modifiers nuevos:**
+- HTML: dos `<button class="side-tag side-tag-atk">ATK</button>` + `side-tag-def">DEF</button>` con IDs `atk<Mod>Btn` / `def<Mod>Btn`. Para selectores numéricos (Spikes 0–3) usar dos `.hazard-select` con IDs `fldAtkX` / `fldDefX`.
+- `readState`: leer ambos lados (`atkX`, `defX`) usando el helper `sideOn(btnId)`.
+- Cálculo: usar SOLO el lado que aplica para la dirección atk→def — `defReflect/LightScreen/AuroraVeil/FriendGuard/StealthRock/Spikes` reducen daño/chip al defensor; `atkHelpingHand/Battery` boostean al atacante. El otro lado se guarda para que swap y el panel D→A funcionen.
+- `buildReversedState`: TRANSPONER atk↔def para todos los per-side modifiers (necesario para que el segundo panel D→A aplique las screens del que ahora ataca).
+- `swapPanels`: usar `swapTags(atkBtn, defBtn)` para los toggles y `swapVals` para los selects de Spikes.
+- `restoreFormState`: aceptar la clave legacy sin prefijo (`saved.reflect ?? saved.defReflect`) para mantener compatibilidad con localStorage de antes del split.
+
 ## Convenciones de UI — selectores en `calc.html`
 
 Los `<select>` nativos NO se usan visiblemente en la calculadora porque su popup es controlado por el navegador (Chrome puede abrirlos hacia arriba si no hay sitio debajo, y el `<datalist>` no refiltra al abrirse con clic). Hay dos helpers en `calc.js` que reemplazan a los nativos por dropdowns custom — **úsalos siempre que añadas un selector nuevo**:
