@@ -1,7 +1,7 @@
 {
-  "updated": "2026-04-26T05:18:39.004Z",
+  "updated": "2026-04-27T05:31:20.530Z",
   "format": "championstournaments",
-  "count": 84,
+  "count": 82,
   "pokemon": {
     "Sneasler": {
       "usage": 52.74,
@@ -4141,79 +4141,6 @@
         }
       ]
     },
-    "Hatterene": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Dazzling Gleam",
-          "pct": 97.222
-        },
-        {
-          "name": "Trick Room",
-          "pct": 94.444
-        },
-        {
-          "name": "Psychic",
-          "pct": 77.778
-        },
-        {
-          "name": "Protect",
-          "pct": 69.444
-        },
-        {
-          "name": "Mystical Fire",
-          "pct": 16.667
-        },
-        {
-          "name": "Expanding Force",
-          "pct": 11.111
-        },
-        {
-          "name": "Magic Powder",
-          "pct": 11.111
-        },
-        {
-          "name": "Calm Mind",
-          "pct": 8.333
-        }
-      ],
-      "items": [
-        {
-          "name": "Fairy Feather",
-          "pct": 55.556
-        },
-        {
-          "name": "Focus Sash",
-          "pct": 13.889
-        },
-        {
-          "name": "Shell Bell",
-          "pct": 5.556
-        },
-        {
-          "name": "Twisted Spoon",
-          "pct": 5.556
-        },
-        {
-          "name": "Kasib Berry",
-          "pct": 5.556
-        },
-        {
-          "name": "Kebia Berry",
-          "pct": 2.778
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Magic Bounce",
-          "pct": 88.889
-        },
-        {
-          "name": "Healer",
-          "pct": 11.111
-        }
-      ]
-    },
     "Blastoise": {
       "usage": null,
       "moves": [
@@ -4288,6 +4215,148 @@
         {
           "name": "Mega Launcher",
           "pct": 14.286
+        }
+      ]
+    },
+    "Hatterene": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Dazzling Gleam",
+          "pct": 97.222
+        },
+        {
+          "name": "Trick Room",
+          "pct": 94.444
+        },
+        {
+          "name": "Psychic",
+          "pct": 77.778
+        },
+        {
+          "name": "Protect",
+          "pct": 69.444
+        },
+        {
+          "name": "Mystical Fire",
+          "pct": 16.667
+        },
+        {
+          "name": "Expanding Force",
+          "pct": 11.111
+        },
+        {
+          "name": "Magic Powder",
+          "pct": 11.111
+        },
+        {
+          "name": "Calm Mind",
+          "pct": 8.333
+        }
+      ],
+      "items": [
+        {
+          "name": "Fairy Feather",
+          "pct": 55.556
+        },
+        {
+          "name": "Focus Sash",
+          "pct": 13.889
+        },
+        {
+          "name": "Shell Bell",
+          "pct": 5.556
+        },
+        {
+          "name": "Twisted Spoon",
+          "pct": 5.556
+        },
+        {
+          "name": "Kasib Berry",
+          "pct": 5.556
+        },
+        {
+          "name": "Kebia Berry",
+          "pct": 2.778
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Magic Bounce",
+          "pct": 88.889
+        },
+        {
+          "name": "Healer",
+          "pct": 11.111
+        }
+      ]
+    },
+    "Tsareena": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Triple Axel",
+          "pct": 78.571
+        },
+        {
+          "name": "Trop Kick",
+          "pct": 73.81
+        },
+        {
+          "name": "Low Kick",
+          "pct": 50
+        },
+        {
+          "name": "Protect",
+          "pct": 50
+        },
+        {
+          "name": "Helping Hand",
+          "pct": 23.81
+        },
+        {
+          "name": "U-turn",
+          "pct": 23.81
+        },
+        {
+          "name": "Power Whip",
+          "pct": 23.81
+        },
+        {
+          "name": "Knock Off",
+          "pct": 21.429
+        }
+      ],
+      "items": [
+        {
+          "name": "Sitrus Berry",
+          "pct": 38.095
+        },
+        {
+          "name": "Choice Scarf",
+          "pct": 14.286
+        },
+        {
+          "name": "Focus Sash",
+          "pct": 11.905
+        },
+        {
+          "name": "Kebia Berry",
+          "pct": 9.524
+        },
+        {
+          "name": "Leftovers",
+          "pct": 7.143
+        },
+        {
+          "name": "White Herb",
+          "pct": 7.143
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Queenly Majesty",
+          "pct": 100
         }
       ]
     },
@@ -4372,75 +4441,6 @@
         }
       ]
     },
-    "Tsareena": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Triple Axel",
-          "pct": 78.571
-        },
-        {
-          "name": "Trop Kick",
-          "pct": 73.81
-        },
-        {
-          "name": "Low Kick",
-          "pct": 50
-        },
-        {
-          "name": "Protect",
-          "pct": 50
-        },
-        {
-          "name": "Helping Hand",
-          "pct": 23.81
-        },
-        {
-          "name": "U-turn",
-          "pct": 23.81
-        },
-        {
-          "name": "Power Whip",
-          "pct": 23.81
-        },
-        {
-          "name": "Knock Off",
-          "pct": 21.429
-        }
-      ],
-      "items": [
-        {
-          "name": "Sitrus Berry",
-          "pct": 38.095
-        },
-        {
-          "name": "Choice Scarf",
-          "pct": 14.286
-        },
-        {
-          "name": "Focus Sash",
-          "pct": 11.905
-        },
-        {
-          "name": "Kebia Berry",
-          "pct": 9.524
-        },
-        {
-          "name": "Leftovers",
-          "pct": 7.143
-        },
-        {
-          "name": "White Herb",
-          "pct": 7.143
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Queenly Majesty",
-          "pct": 100
-        }
-      ]
-    },
     "Tinkaton": {
       "usage": null,
       "moves": [
@@ -4514,79 +4514,6 @@
         }
       ]
     },
-    "Oranguru": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Instruct",
-          "pct": 100
-        },
-        {
-          "name": "Trick Room",
-          "pct": 100
-        },
-        {
-          "name": "Protect",
-          "pct": 63.636
-        },
-        {
-          "name": "Psychic",
-          "pct": 54.545
-        },
-        {
-          "name": "Encore",
-          "pct": 27.273
-        },
-        {
-          "name": "Foul Play",
-          "pct": 13.636
-        },
-        {
-          "name": "Psychic Noise",
-          "pct": 9.091
-        },
-        {
-          "name": "Knock Off",
-          "pct": 4.545
-        }
-      ],
-      "items": [
-        {
-          "name": "Mental Herb",
-          "pct": 45.455
-        },
-        {
-          "name": "Colbur Berry",
-          "pct": 18.182
-        },
-        {
-          "name": "Sitrus Berry",
-          "pct": 18.182
-        },
-        {
-          "name": "Leftovers",
-          "pct": 9.091
-        },
-        {
-          "name": "Focus Band",
-          "pct": 4.545
-        },
-        {
-          "name": "Silk Scarf",
-          "pct": 4.545
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Inner Focus",
-          "pct": 90.909
-        },
-        {
-          "name": "Telepathy",
-          "pct": 9.091
-        }
-      ]
-    },
     "Azumarill": {
       "usage": null,
       "moves": [
@@ -4657,6 +4584,79 @@
         {
           "name": "Thick Fat",
           "pct": 2.941
+        }
+      ]
+    },
+    "Oranguru": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Instruct",
+          "pct": 100
+        },
+        {
+          "name": "Trick Room",
+          "pct": 100
+        },
+        {
+          "name": "Protect",
+          "pct": 63.636
+        },
+        {
+          "name": "Psychic",
+          "pct": 54.545
+        },
+        {
+          "name": "Encore",
+          "pct": 27.273
+        },
+        {
+          "name": "Foul Play",
+          "pct": 13.636
+        },
+        {
+          "name": "Psychic Noise",
+          "pct": 9.091
+        },
+        {
+          "name": "Knock Off",
+          "pct": 4.545
+        }
+      ],
+      "items": [
+        {
+          "name": "Mental Herb",
+          "pct": 45.455
+        },
+        {
+          "name": "Colbur Berry",
+          "pct": 18.182
+        },
+        {
+          "name": "Sitrus Berry",
+          "pct": 18.182
+        },
+        {
+          "name": "Leftovers",
+          "pct": 9.091
+        },
+        {
+          "name": "Focus Band",
+          "pct": 4.545
+        },
+        {
+          "name": "Silk Scarf",
+          "pct": 4.545
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Inner Focus",
+          "pct": 90.909
+        },
+        {
+          "name": "Telepathy",
+          "pct": 9.091
         }
       ]
     },
@@ -4997,6 +4997,79 @@
         }
       ]
     },
+    "Drampa": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Hyper Voice",
+          "pct": 86.364
+        },
+        {
+          "name": "Draco Meteor",
+          "pct": 63.636
+        },
+        {
+          "name": "Protect",
+          "pct": 50
+        },
+        {
+          "name": "Thunderbolt",
+          "pct": 45.455
+        },
+        {
+          "name": "Dragon Pulse",
+          "pct": 36.364
+        },
+        {
+          "name": "Earth Power",
+          "pct": 27.273
+        },
+        {
+          "name": "Heat Wave",
+          "pct": 22.727
+        },
+        {
+          "name": "Flamethrower",
+          "pct": 18.182
+        }
+      ],
+      "items": [
+        {
+          "name": "Drampanite",
+          "pct": 63.636
+        },
+        {
+          "name": "Life Orb",
+          "pct": 4.545
+        },
+        {
+          "name": "Silk Scarf",
+          "pct": 4.545
+        },
+        {
+          "name": "Focus Sash",
+          "pct": 4.545
+        },
+        {
+          "name": "Quick Claw",
+          "pct": 4.545
+        },
+        {
+          "name": "Shell Bell",
+          "pct": 4.545
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Berserk",
+          "pct": 59.091
+        },
+        {
+          "name": "Cloud Nine",
+          "pct": 40.909
+        }
+      ]
+    },
     "Conkeldurr": {
       "usage": null,
       "moves": [
@@ -5132,79 +5205,6 @@
         {
           "name": "Weak Armor",
           "pct": 8.571
-        }
-      ]
-    },
-    "Drampa": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Hyper Voice",
-          "pct": 86.364
-        },
-        {
-          "name": "Draco Meteor",
-          "pct": 63.636
-        },
-        {
-          "name": "Protect",
-          "pct": 50
-        },
-        {
-          "name": "Thunderbolt",
-          "pct": 45.455
-        },
-        {
-          "name": "Dragon Pulse",
-          "pct": 36.364
-        },
-        {
-          "name": "Earth Power",
-          "pct": 27.273
-        },
-        {
-          "name": "Heat Wave",
-          "pct": 22.727
-        },
-        {
-          "name": "Flamethrower",
-          "pct": 18.182
-        }
-      ],
-      "items": [
-        {
-          "name": "Drampanite",
-          "pct": 63.636
-        },
-        {
-          "name": "Life Orb",
-          "pct": 4.545
-        },
-        {
-          "name": "Silk Scarf",
-          "pct": 4.545
-        },
-        {
-          "name": "Focus Sash",
-          "pct": 4.545
-        },
-        {
-          "name": "Quick Claw",
-          "pct": 4.545
-        },
-        {
-          "name": "Shell Bell",
-          "pct": 4.545
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Berserk",
-          "pct": 59.091
-        },
-        {
-          "name": "Cloud Nine",
-          "pct": 40.909
         }
       ]
     },
@@ -5802,140 +5802,6 @@
         {
           "name": "Scrappy",
           "pct": 26.923
-        }
-      ]
-    },
-    "Skarmory": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Iron Head",
-          "pct": 100
-        },
-        {
-          "name": "Protect",
-          "pct": 92.857
-        },
-        {
-          "name": "Brave Bird",
-          "pct": 82.143
-        },
-        {
-          "name": "Tailwind",
-          "pct": 28.571
-        },
-        {
-          "name": "Body Press",
-          "pct": 21.429
-        },
-        {
-          "name": "Swords Dance",
-          "pct": 14.286
-        },
-        {
-          "name": "Taunt",
-          "pct": 14.286
-        },
-        {
-          "name": "Dual Wingbeat",
-          "pct": 10.714
-        }
-      ],
-      "items": [
-        {
-          "name": "Skarmorite",
-          "pct": 96.429
-        },
-        {
-          "name": "Occa Berry",
-          "pct": 3.571
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Weak Armor",
-          "pct": 46.429
-        },
-        {
-          "name": "Sturdy",
-          "pct": 39.286
-        },
-        {
-          "name": "Stalwart",
-          "pct": 14.286
-        }
-      ]
-    },
-    "Armarouge": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Armor Cannon",
-          "pct": 76.923
-        },
-        {
-          "name": "Trick Room",
-          "pct": 38.462
-        },
-        {
-          "name": "Expanding Force",
-          "pct": 38.462
-        },
-        {
-          "name": "Psyshock",
-          "pct": 30.769
-        },
-        {
-          "name": "Heat Wave",
-          "pct": 30.769
-        },
-        {
-          "name": "Psychic",
-          "pct": 30.769
-        },
-        {
-          "name": "Wide Guard",
-          "pct": 30.769
-        },
-        {
-          "name": "Protect",
-          "pct": 23.077
-        }
-      ],
-      "items": [
-        {
-          "name": "Focus Sash",
-          "pct": 23.077
-        },
-        {
-          "name": "Sitrus Berry",
-          "pct": 15.385
-        },
-        {
-          "name": "Quick Claw",
-          "pct": 15.385
-        },
-        {
-          "name": "White Herb",
-          "pct": 15.385
-        },
-        {
-          "name": "Twisted Spoon",
-          "pct": 15.385
-        },
-        {
-          "name": "Focus Band",
-          "pct": 7.692
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Flash Fire",
-          "pct": 61.538
-        },
-        {
-          "name": "Weak Armor",
-          "pct": 38.462
         }
       ]
     }
