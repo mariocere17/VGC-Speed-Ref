@@ -1781,28 +1781,10 @@ function updateSprite(prefix, pkmnKey) {
 //  MOVE DATALIST FILTER
 // ═══════════════════════════════════════════════════════════
 
-function updateMoveDatalist(prefix, pkmnKey) {
-  const listId = prefix === 'def' ? 'defMoveList' : 'moveList';
-  const moveList = document.getElementById(listId);
-  if (!moveList) return;
-  const pkmnData = PKMN[pkmnKey];
-
-  // No Pokémon picked yet → show every move so search still works.
-  if (!pkmnData || !pkmnData.moves || pkmnData.moves.length === 0) {
-    const all = Object.keys(MOVES).sort().map(m => `<option value="${m}">`);
-    moveList.innerHTML = all.join('');
-    return;
-  }
-
-  // Filter to learnset moves we have damage data for. Source is Showdown's
-  // learnsets.json (walks the evolution chain) — much more complete than
-  // PokeAPI, e.g. Kingambit correctly inherits Sucker Punch from Pawniard.
-  const learnable = new Set(pkmnData.moves);
-  const moveNames = Object.keys(MOVES)
-    .filter(m => learnable.has(m))
-    .sort()
-    .map(m => `<option value="${m}">`);
-  moveList.innerHTML = moveNames.join('');
+function updateMoveDatalist(_prefix, _pkmnKey) {
+  // No-op: the move combo reads the currently-selected Pokémon's learnset
+  // dynamically each time the dropdown is rendered (see setupCombo wiring in
+  // populateDataLists). Kept as a stub so callers don't need to be removed.
 }
 
 // ═══════════════════════════════════════════════════════════
@@ -1858,22 +1840,115 @@ function basePokemonName(displayName) {
 }
 
 function populateDataLists() {
-  const pkmnList = document.getElementById('pkmnList');
-  if (!pkmnList) return;
-
-  // Filter to Champions Pokémon only (matching base names so variants pass too)
-  const pkmnNames = Object.values(PKMN)
+  // Wire the four combo boxes (Pokémon + Move for both panels). Native <datalist>
+  // proved unreliable in Chrome — clicking the picker indicator opens the full
+  // unfiltered list and subsequent typing doesn't refilter. setupCombo gives us
+  // a controlled dropdown with substring matching that always reflects what's
+  // in the input.
+  const getPkmnOpts = () => Object.values(PKMN)
     .filter(p => CHAMPIONS.size === 0 || CHAMPIONS.has(basePokemonName(p.displayName)))
     .sort((a, b) => a.displayName.localeCompare(b.displayName))
-    .map(p => `<option value="${p.displayName}">`);
-  pkmnList.innerHTML = pkmnNames.join('');
+    .map(p => p.displayName);
+  setupCombo('atkPkmn', getPkmnOpts);
+  setupCombo('defPkmn', getPkmnOpts);
 
-  // Initial move lists (all moves; filtered per Pokémon on selection)
-  const allMoveOpts = Object.keys(MOVES).sort().map(m => `<option value="${m}">`).join('');
-  for (const listId of ['moveList', 'defMoveList']) {
-    const el = document.getElementById(listId);
-    if (el) el.innerHTML = allMoveOpts;
+  for (const prefix of ['atk', 'def']) {
+    setupCombo(prefix + 'Move', () => {
+      const pkmnInput = document.getElementById(prefix + 'Pkmn');
+      const key = pkmnInput?.value.toLowerCase().trim() || '';
+      const pkmnData = PKMN[key];
+      const all = Object.keys(MOVES).sort();
+      if (!pkmnData?.moves?.length) return all;
+      const learnable = new Set(pkmnData.moves);
+      return all.filter(m => learnable.has(m));
+    });
   }
+}
+
+// ═══════════════════════════════════════════════════════════
+//  CUSTOM AUTOCOMPLETE COMBO
+// ═══════════════════════════════════════════════════════════
+
+function setupCombo(inputId, getOptions) {
+  const input = document.getElementById(inputId);
+  if (!input) return;
+  const wrap = input.parentNode;
+  if (!wrap || !wrap.classList.contains('combo-wrap')) return;
+
+  const list = document.createElement('div');
+  list.className = 'combo-list';
+  list.hidden = true;
+  wrap.appendChild(list);
+
+  let activeIdx = -1;
+  let currentOpts = [];
+  const escAttr = s => String(s).replace(/&/g,'&amp;').replace(/"/g,'&quot;');
+  const escHtml = s => String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;');
+
+  function render() {
+    const q = input.value.toLowerCase().trim();
+    const all = getOptions();
+    currentOpts = q ? all.filter(o => o.toLowerCase().includes(q)) : all;
+    if (!currentOpts.length) {
+      list.innerHTML = '<div class="combo-empty">No matches</div>';
+      list.hidden = false;
+      return;
+    }
+    const shown = currentOpts.slice(0, 100);
+    list.innerHTML = shown.map((o, i) =>
+      `<div class="combo-item${i === activeIdx ? ' combo-active' : ''}" data-val="${escAttr(o)}">${escHtml(o)}</div>`
+    ).join('');
+    list.hidden = false;
+    if (activeIdx >= 0) {
+      const el = list.children[activeIdx];
+      if (el) el.scrollIntoView({ block: 'nearest' });
+    } else {
+      list.scrollTop = 0;
+    }
+  }
+
+  function pick(val) {
+    input.value = val;
+    list.hidden = true;
+    activeIdx = -1;
+    // Fire input + change so panel handlers (datalist consumers, computeAll) run.
+    input.dispatchEvent(new Event('input',  { bubbles: true }));
+    input.dispatchEvent(new Event('change', { bubbles: true }));
+  }
+
+  input.addEventListener('focus', () => { activeIdx = -1; render(); });
+  input.addEventListener('input', () => { activeIdx = -1; render(); });
+  input.addEventListener('blur',  () => setTimeout(() => { list.hidden = true; }, 150));
+  input.addEventListener('keydown', e => {
+    if (e.key === 'ArrowDown') {
+      if (list.hidden) render();
+      else {
+        activeIdx = Math.min(activeIdx + 1, Math.min(currentOpts.length, 100) - 1);
+        render();
+      }
+      e.preventDefault();
+    } else if (e.key === 'ArrowUp') {
+      if (list.hidden) return;
+      activeIdx = Math.max(activeIdx - 1, 0);
+      render();
+      e.preventDefault();
+    } else if (e.key === 'Enter') {
+      if (!list.hidden && activeIdx >= 0 && currentOpts[activeIdx]) {
+        pick(currentOpts[activeIdx]);
+        e.preventDefault();
+      }
+    } else if (e.key === 'Escape') {
+      list.hidden = true;
+      activeIdx = -1;
+    }
+  });
+
+  list.addEventListener('mousedown', e => {
+    const item = e.target.closest('.combo-item');
+    if (!item) return;
+    e.preventDefault(); // keep input focused, suppress blur before click
+    pick(item.dataset.val);
+  });
 }
 
 // Called when nature select changes

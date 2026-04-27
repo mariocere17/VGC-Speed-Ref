@@ -497,6 +497,29 @@
 /* ── MOVE INPUT + ADD BUTTON ── */
 .move-input-row { display: flex; gap: 6px; align-items: stretch; }
 .move-input-row .pkmn-input { flex: 1; }
+.move-input-row .combo-wrap { flex: 1; }
+
+/* ── CUSTOM AUTOCOMPLETE COMBO (Pokémon / Move pickers) ── */
+.combo-wrap { position: relative; width: 100%; }
+.combo-list {
+  position: absolute; top: calc(100% + 2px); left: 0; right: 0;
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 6px; max-height: 240px; overflow-y: auto;
+  z-index: 100;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.45);
+}
+.combo-item {
+  padding: 6px 10px; font-size: 0.82rem; color: var(--text);
+  cursor: pointer; border-bottom: 1px solid var(--border);
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.combo-item:last-child { border-bottom: none; }
+.combo-item:hover, .combo-item.combo-active {
+  background: rgba(88, 166, 255, 0.15); color: var(--accent);
+}
+.combo-empty {
+  padding: 10px; color: var(--muted); font-size: 0.78rem; text-align: center;
+}
 .btn-addmove {
   background: var(--bg); border: 1px solid var(--border); color: var(--muted);
   font-family: inherit; font-size: 0.95rem; font-weight: 700; line-height: 1;
