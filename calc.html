@@ -6,7 +6,7 @@
   <title>Pokemon Champions — Damage Calc</title>
   <link rel="icon" type="image/png" href="https://img.pokemondb.net/sprites/home/normal/weavile.png">
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="calc.css?v=39">
+  <link rel="stylesheet" href="calc.css?v=40">
 </head>
 <body>
 
@@ -460,20 +460,12 @@
               <button type="button" class="side-tag side-tag-atk" id="atkStealthRockBtn" onclick="toggleSideMod(this)">ATK</button>
               <button type="button" class="side-tag side-tag-def" id="defStealthRockBtn" onclick="toggleSideMod(this)">DEF</button>
             </div>
-            <div class="side-mod-row" title="Spikes layers — only damages grounded Pokémon">
+            <div class="side-mod-row" title="Spikes layers (left-click to cycle 0→1→2→3, right-click to reset). Only damages grounded Pokémon.">
               <span class="side-mod-name">Spikes</span>
-              <span class="side-spikes-group side-spikes-atk">
-                <span class="side-spikes-lbl">ATK</span>
-                <select id="fldAtkSpikes" class="side-spikes-select" onchange="computeAll()">
-                  <option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option>
-                </select>
-              </span>
-              <span class="side-spikes-group side-spikes-def">
-                <span class="side-spikes-lbl">DEF</span>
-                <select id="fldDefSpikes" class="side-spikes-select" onchange="computeAll()">
-                  <option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option>
-                </select>
-              </span>
+              <button type="button" class="side-tag side-tag-atk" id="atkSpikesBtn" data-value="0"
+                onclick="cycleSpikes(this)" oncontextmenu="resetSpikes(this); return false;">ATK 0</button>
+              <button type="button" class="side-tag side-tag-def" id="defSpikesBtn" data-value="0"
+                onclick="cycleSpikes(this)" oncontextmenu="resetSpikes(this); return false;">DEF 0</button>
             </div>
           </div>
         </div>
@@ -532,6 +524,6 @@
   </div><!-- #calcApp -->
 </main>
 
-<script src="calc.js?v=38"></script>
+<script src="calc.js?v=39"></script>
 </body>
 </html>

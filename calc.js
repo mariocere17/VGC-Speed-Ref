@@ -461,8 +461,8 @@ function readState() {
     defBattery:     sideOn('defBatteryBtn'),
     atkStealthRock: sideOn('atkStealthRockBtn'),
     defStealthRock: sideOn('defStealthRockBtn'),
-    atkSpikes:      parseInt(document.getElementById('fldAtkSpikes')?.value) || 0,
-    defSpikes:      parseInt(document.getElementById('fldDefSpikes')?.value) || 0,
+    atkSpikes:      spikesVal('atkSpikesBtn'),
+    defSpikes:      spikesVal('defSpikesBtn'),
   };
 }
 
@@ -475,6 +475,29 @@ window.toggleSideMod = function (btn) {
   btn.classList.toggle('active');
   computeAll();
 };
+
+// Spikes pills: cycle 0→1→2→3 on left-click, reset to 0 on right-click.
+// Storing the count on the button avoids the awkwardness of styling a native
+// <select> popup to match the pill (Chrome renders it tiny and unstyled when
+// the select itself is compact + appearance:none).
+window.cycleSpikes = function (btn) {
+  const cur = parseInt(btn.dataset.value) || 0;
+  const next = (cur + 1) % 4;
+  setSpikesBtn(btn, next);
+  computeAll();
+};
+window.resetSpikes = function (btn) {
+  setSpikesBtn(btn, 0);
+  computeAll();
+};
+function setSpikesBtn(btn, value) {
+  const v = Math.max(0, Math.min(3, parseInt(value) || 0));
+  btn.dataset.value = String(v);
+  const label = btn.id.startsWith('atk') ? 'ATK' : 'DEF';
+  btn.textContent = v ? `${label} ${v}` : label;
+  btn.classList.toggle('active', v > 0);
+}
+const spikesVal = id => parseInt(document.getElementById(id)?.dataset.value) || 0;
 
 // A Pokémon is "grounded" if it has no Flying type and no Levitate.
 // Gravity grounds all Pokémon (Flying type and Levitate don't apply).
@@ -1077,8 +1100,10 @@ function restoreState() {
   sideTag('defBatteryBtn',     saved.defBattery);
   sideTag('atkStealthRockBtn', saved.atkStealthRock);
   sideTag('defStealthRockBtn', saved.defStealthRock ?? saved.stealthRock);
-  setVal('fldAtkSpikes', String(saved.atkSpikes || 0));
-  setVal('fldDefSpikes', String(saved.defSpikes ?? saved.spikes ?? 0));
+  const aSp = document.getElementById('atkSpikesBtn');
+  const dSp = document.getElementById('defSpikesBtn');
+  if (aSp) setSpikesBtn(aSp, saved.atkSpikes || 0);
+  if (dSp) setSpikesBtn(dSp, saved.defSpikes ?? saved.spikes ?? 0);
 }
 
 // ═══════════════════════════════════════════════════════════
@@ -1377,7 +1402,15 @@ window.swapPanels = function () {
   swapTags('atkHelpingHandBtn', 'defHelpingHandBtn');
   swapTags('atkBatteryBtn',     'defBatteryBtn');
   swapTags('atkStealthRockBtn', 'defStealthRockBtn');
-  swapVals('fldAtkSpikes', 'fldDefSpikes');
+  // Swap the spikes counters (button data-value + label/active state)
+  const aSp = document.getElementById('atkSpikesBtn');
+  const dSp = document.getElementById('defSpikesBtn');
+  if (aSp && dSp) {
+    const aVal = spikesVal('atkSpikesBtn');
+    const dVal = spikesVal('defSpikesBtn');
+    setSpikesBtn(aSp, dVal);
+    setSpikesBtn(dSp, aVal);
+  }
 
   // Update move datalists, ability selects, sprites and HP% visibility for new roles
   const newAtkKey = document.getElementById('atkPkmn').value.toLowerCase().trim();
@@ -2363,9 +2396,9 @@ function bindEvents() {
     }
   }
 
-  // Field controls (weather / terrain / crit / per-side spikes selects)
-  // Side-tag buttons trigger computeAll directly via toggleSideMod.
-  for (const id of ['fldWeather', 'fldTerrain', 'fldCrit', 'fldAtkSpikes', 'fldDefSpikes']) {
+  // Field controls (weather / terrain / crit). Side-tag and spikes-cycle
+  // buttons trigger computeAll directly via toggleSideMod / cycleSpikes.
+  for (const id of ['fldWeather', 'fldTerrain', 'fldCrit']) {
     const el = document.getElementById(id);
     if (el) el.addEventListener('change', computeAll);
   }
