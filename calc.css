@@ -297,20 +297,23 @@
 }
 .side-mod-name { flex: 1; }
 /* Shared base: .side-tag (toggles) and .side-spikes-group (label + select)
-   share padding/border/border-radius/font so they read as the same UI element. */
+   share dimensions so they read as the same UI element. Explicit height +
+   box-sizing keeps the native <select> inside Spikes from inflating its
+   intrinsic height beyond the toggle pills. */
 .side-tag,
 .side-spikes-group {
-  display: inline-flex; align-items: center;
-  padding: 2px 9px; border-radius: 5px;
+  display: inline-flex; align-items: center; box-sizing: border-box;
+  height: 24px; min-width: 58px; padding: 0 9px;
+  border-radius: 5px;
   font-size: 0.7rem; font-weight: 700; letter-spacing: .6px;
-  line-height: 1.4;
+  line-height: 1;
   border: 1px solid var(--border); background: var(--bg);
   transition: all .12s;
 }
 .side-tag {
   cursor: pointer; font-family: inherit;
   color: var(--muted);
-  justify-content: center; min-width: 56px;
+  justify-content: center;
 }
 .side-tag:hover { color: var(--text); border-color: var(--text); }
 .side-tag.active.side-tag-atk {
@@ -321,16 +324,20 @@
 }
 /* Per-side Spikes pills — same look as .side-tag toggles, color-activate when layers > 0. */
 .side-spikes-group {
-  gap: 5px; min-width: 56px;
+  gap: 5px;
 }
 .side-spikes-lbl {
   color: var(--muted); transition: color .12s;
 }
 .side-spikes-select {
+  /* Strip the native chrome (chevron, intrinsic min-height) so the select
+     matches the pill dimensions exactly. */
+  appearance: none; -webkit-appearance: none; -moz-appearance: none;
   border: none; background: transparent; outline: none;
   color: var(--text); font-family: inherit;
-  font-size: inherit; font-weight: inherit;
-  padding: 0; cursor: pointer; line-height: inherit;
+  font-size: inherit; font-weight: inherit; letter-spacing: inherit;
+  padding: 0; margin: 0; cursor: pointer;
+  height: 100%; line-height: 1;
   transition: color .12s;
 }
 .side-spikes-select option { background: var(--surface); color: var(--text); }
