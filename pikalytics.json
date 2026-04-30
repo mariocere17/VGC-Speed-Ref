@@ -1,5 +1,5 @@
 {
-  "updated": "2026-04-29T05:32:57.339Z",
+  "updated": "2026-04-30T05:36:52.085Z",
   "format": "championstournaments",
   "count": 83,
   "pokemon": {
@@ -5683,83 +5683,6 @@
         }
       ]
     },
-    "Conkeldurr": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Mach Punch",
-          "pct": 91.228
-        },
-        {
-          "name": "Drain Punch",
-          "pct": 89.474
-        },
-        {
-          "name": "Ice Punch",
-          "pct": 56.14
-        },
-        {
-          "name": "Protect",
-          "pct": 47.368
-        },
-        {
-          "name": "Thunder Punch",
-          "pct": 28.07
-        },
-        {
-          "name": "Knock Off",
-          "pct": 24.561
-        },
-        {
-          "name": "Wide Guard",
-          "pct": 22.807
-        },
-        {
-          "name": "Detect",
-          "pct": 14.035
-        }
-      ],
-      "items": [
-        {
-          "name": "Black Belt",
-          "pct": 42.105
-        },
-        {
-          "name": "Sitrus Berry",
-          "pct": 17.544
-        },
-        {
-          "name": "Leftovers",
-          "pct": 15.789
-        },
-        {
-          "name": "Lum Berry",
-          "pct": 10.526
-        },
-        {
-          "name": "White Herb",
-          "pct": 8.772
-        },
-        {
-          "name": "Focus Sash",
-          "pct": 1.754
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Iron Fist",
-          "pct": 87.719
-        },
-        {
-          "name": "Guts",
-          "pct": 10.526
-        },
-        {
-          "name": "Sheer Force",
-          "pct": 1.754
-        }
-      ]
-    },
     "Chandelure": {
       "usage": null,
       "moves": [
@@ -5834,6 +5757,83 @@
         {
           "name": "Flame Body",
           "pct": 4.286
+        }
+      ]
+    },
+    "Conkeldurr": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Mach Punch",
+          "pct": 91.228
+        },
+        {
+          "name": "Drain Punch",
+          "pct": 89.474
+        },
+        {
+          "name": "Ice Punch",
+          "pct": 56.14
+        },
+        {
+          "name": "Protect",
+          "pct": 47.368
+        },
+        {
+          "name": "Thunder Punch",
+          "pct": 28.07
+        },
+        {
+          "name": "Knock Off",
+          "pct": 24.561
+        },
+        {
+          "name": "Wide Guard",
+          "pct": 22.807
+        },
+        {
+          "name": "Detect",
+          "pct": 14.035
+        }
+      ],
+      "items": [
+        {
+          "name": "Black Belt",
+          "pct": 42.105
+        },
+        {
+          "name": "Sitrus Berry",
+          "pct": 17.544
+        },
+        {
+          "name": "Leftovers",
+          "pct": 15.789
+        },
+        {
+          "name": "Lum Berry",
+          "pct": 10.526
+        },
+        {
+          "name": "White Herb",
+          "pct": 8.772
+        },
+        {
+          "name": "Focus Sash",
+          "pct": 1.754
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Iron Fist",
+          "pct": 87.719
+        },
+        {
+          "name": "Guts",
+          "pct": 10.526
+        },
+        {
+          "name": "Sheer Force",
+          "pct": 1.754
         }
       ]
     },
