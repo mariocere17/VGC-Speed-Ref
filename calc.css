@@ -547,10 +547,12 @@
 /* ── MOVE INPUT + ADD BUTTON ── */
 /* Move input + add-to-pool button. The combo-wrap fills the row (matches the
    width of the Pokémon input above) and the ＋ sits flush against its right
-   edge with a 4px gap. align-items: center aligns both with the "Move" label. */
+   edge with a 4px gap. align-items: center aligns both with the "Move" label.
+   width: auto cancels the base .combo-wrap width: 100% so it doesn't get
+   reinterpreted as flex-basis: 100% and fight the button for space. */
 .move-input-row { display: flex; gap: 4px; align-items: center; }
 .move-input-row .pkmn-input { flex: 1; }
-.move-input-row .combo-wrap { flex: 1; min-width: 0; }
+.move-input-row .combo-wrap { flex: 1 1 0; min-width: 0; width: auto; }
 
 /* ── CUSTOM CHOICE DROPDOWN (Nature picker — always opens downward) ── */
 .hidden-select { display: none !important; }
@@ -591,11 +593,10 @@
 .choice-group:not(:first-child) { border-top: 1px solid var(--border); }
 
 /* ── CUSTOM AUTOCOMPLETE COMBO (Pokémon / Move pickers) ── */
-/* No width: 100% here — it gets reinterpreted as flex-basis: 100% inside
-   move-input-row and competes with the ＋ button. In the Pokémon column-flex
-   parent the wrap stretches via align-items: stretch (default), and in the
-   Move row the .move-input-row .combo-wrap rule (flex: 1) handles sizing. */
-.combo-wrap { position: relative; }
+/* width: 100% so the wrap fills its column-flex parent (Pokémon row).
+   Inside .move-input-row this is overridden to width: auto so flex sizing
+   takes over and the ＋ button gets its own space. */
+.combo-wrap { position: relative; width: 100%; }
 .combo-list {
   position: absolute; top: calc(100% + 2px); left: 0; right: 0;
   background: var(--surface); border: 1px solid var(--border);
