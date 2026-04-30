@@ -545,16 +545,22 @@
 .results-col-title.col-ab { color: #ef9a9a; border-color: #ef535044; }
 .results-col-title.col-ba { color: #90caf9; border-color: #42a5f544; }
 
-/* ── MOVE INPUT + ADD BUTTON ── */
-/* Move input + add-to-pool button — grid layout: combo-wrap takes ALL the
-   remaining row width (1fr) and the ＋ button takes its natural width (auto).
-   Grid is more predictable than flex here because flex-basis percentages can
-   conflict with the .combo-wrap base width: 100% in the row context. */
+/* ── MOVE INPUT + ADD BUTTON ──
+   Brute-force grid: 1fr auto. Width 100% on the row to ensure it spans the
+   full field-input-wrap. minmax(0, 1fr) guarantees the column expands but
+   can also shrink past min-content if needed. */
 .move-input-row {
-  display: grid; grid-template-columns: 1fr auto;
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) auto !important;
   gap: 4px; align-items: center;
+  width: 100%;
 }
-.move-input-row .combo-wrap { width: auto; min-width: 0; }
+.move-input-row > .combo-wrap {
+  width: 100% !important; min-width: 0 !important; max-width: none !important;
+}
+.move-input-row > .combo-wrap > .pkmn-input {
+  width: 100% !important; box-sizing: border-box;
+}
 
 /* ── CUSTOM CHOICE DROPDOWN (Nature picker — always opens downward) ── */
 .hidden-select { display: none !important; }
