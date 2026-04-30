@@ -2035,16 +2035,57 @@ function setupChoice(sel) {
   syncBtn();
 }
 
-// Strip variant suffixes that don't change a Pokémon's identity for the
-// Champions usage filter. PokeAPI splits some species into variants
-// (Basculegion Male/Female, Basculin Red/Blue/White Striped, etc.) but the
-// Champions data lists only the base form, so a strict equality match drops
-// every variant.
-function basePokemonName(displayName) {
-  return displayName
-    .toLowerCase()
-    .replace(/\s+(male|female)$/, '')
-    .replace(/\s+(red|blue|white)\s+striped$/, '');
+// Pokémon name normalization for the Champions filter.
+//
+// Pikalytics, Limitless and our pokemon-stats.json each name the same species
+// in slightly different ways:
+//   - Pikalytics: "Alolan Ninetales", "Heat Rotom", "Black Kyurem"
+//   - Limitless:  "ninetales-alola", "rotom-heat", "chi-yu", "mr. rime"
+//   - PKMN data:  "Ninetales Alola", "Rotom Heat", "Kyurem Black", "Aegislash Shield"
+// On top of that, PKMN splits some species into form-specific entries
+// (Aegislash Shield/Blade, Palafin Zero/Hero, Mimikyu Disguised/Busted, etc.)
+// while the Champions feeds list just the base species. To make a single
+// matching pass that covers every case, we (a) normalize each name to a
+// canonical key and (b) reduce that key to a base species identifier so a
+// PKMN entry like "Aegislash Shield" still matches a Champions entry of
+// "aegislash". Mega/Primal prefixes are stripped for the base check; multi-
+// word base species (Mr Mime, Tapu Koko, Iron Hands, Chi Yu, Kommo O…)
+// keep their two-word identity to avoid colliding with unrelated species.
+
+function canonName(name) {
+  let n = name.toLowerCase()
+    .replace(/[.,'’]/g, '')           // periods / commas / apostrophes
+    .replace(/[♀♂]/g, '')              // gender symbols
+    .replace(/-/g, ' ')                // dashes → spaces
+    .trim()
+    .replace(/\s+/g, ' ');
+  n = n.replace(/\s+forme?$/, '');                         // "blade forme" → "blade"
+  n = n.replace(/^alolan?\s+(.+)$/, '$1 alola')           // regional prefix → suffix
+       .replace(/^hisuian\s+(.+)$/, '$1 hisui')
+       .replace(/^galarian\s+(.+)$/, '$1 galar')
+       .replace(/^paldean\s+(.+)$/, '$1 paldea');
+  n = n.replace(/^(heat|wash|frost|fan|mow|mower)\s+rotom$/, 'rotom $1');
+  n = n.replace(/^(black|white)\s+kyurem$/, 'kyurem $1');
+  n = n.replace(/^(ice|shadow)\s+rider\s+calyrex$/, 'calyrex $1');
+  n = n.replace(/^eternal\s+flower\s+floette$/, 'floette eternal');
+  n = n.replace(/\s+breed$/, '');                          // Paldean Tauros breeds
+  return n;
+}
+
+const MULTIWORD_BASE_FIRSTS = new Set([
+  'mr', 'tapu', 'ho', 'porygon', 'type',
+  'chi', 'kommo', 'jangmo', 'hakamo', 'ting', 'wo', 'chien',
+  'iron', 'great', 'flutter', 'slither', 'sandy', 'scream',
+  'brute', 'roaring', 'walking', 'gouging', 'raging',
+]);
+
+function getBaseSpecies(canonical) {
+  const words = canonical.split(' ');
+  if (words[0] === 'mega' || words[0] === 'primal') return words[1] || '';
+  if (words.length > 1 && MULTIWORD_BASE_FIRSTS.has(words[0])) {
+    return words.slice(0, 2).join(' ');
+  }
+  return words[0];
 }
 
 function populateDataLists() {
@@ -2054,7 +2095,7 @@ function populateDataLists() {
   // a controlled dropdown with substring matching that always reflects what's
   // in the input.
   const getPkmnOpts = () => Object.values(PKMN)
-    .filter(p => CHAMPIONS.size === 0 || CHAMPIONS.has(basePokemonName(p.displayName)))
+    .filter(p => CHAMPIONS.size === 0 || CHAMPIONS.has(getBaseSpecies(canonName(p.displayName))))
     .sort((a, b) => a.displayName.localeCompare(b.displayName))
     .map(p => p.displayName);
   setupCombo('atkPkmn', getPkmnOpts);
@@ -2451,9 +2492,14 @@ async function loadData() {
     const limitless  = await limitlessRes.json();
 
     CHAMPIONS = new Set();
-    // Keys are display names ("Garchomp", "Incineroar") — lowercase to match PKMN filter
-    Object.keys(pikalytics.pokemon || {}).forEach(k => CHAMPIONS.add(k.toLowerCase()));
-    Object.keys((limitless.aggregate || {}).pokemon || {}).forEach(k => CHAMPIONS.add(k.toLowerCase()));
+    // Reduce every Champions key to its base species so the PKMN filter can
+    // match every form of that species (e.g. "aegislash" in Champions →
+    // matches "Aegislash Shield" *and* "Aegislash Blade" in PKMN).
+    const allKeys = [
+      ...Object.keys(pikalytics.pokemon || {}),
+      ...Object.keys((limitless.aggregate || {}).pokemon || {}),
+    ];
+    for (const k of allKeys) CHAMPIONS.add(getBaseSpecies(canonName(k)));
   } catch (err) {
     console.warn('Champions filter unavailable, showing all Pokémon:', err.message);
     CHAMPIONS = new Set(); // stays empty → populateDataLists shows all
