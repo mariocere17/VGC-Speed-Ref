@@ -591,7 +591,11 @@
 .choice-group:not(:first-child) { border-top: 1px solid var(--border); }
 
 /* ── CUSTOM AUTOCOMPLETE COMBO (Pokémon / Move pickers) ── */
-.combo-wrap { position: relative; width: 100%; }
+/* No width: 100% here — it gets reinterpreted as flex-basis: 100% inside
+   move-input-row and competes with the ＋ button. In the Pokémon column-flex
+   parent the wrap stretches via align-items: stretch (default), and in the
+   Move row the .move-input-row .combo-wrap rule (flex: 1) handles sizing. */
+.combo-wrap { position: relative; }
 .combo-list {
   position: absolute; top: calc(100% + 2px); left: 0; right: 0;
   background: var(--surface); border: 1px solid var(--border);
