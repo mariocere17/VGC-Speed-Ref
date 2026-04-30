@@ -67,7 +67,8 @@
 
 .pkmn-input {
   background: var(--bg); border: 1px solid var(--border); color: var(--text);
-  padding: 6px 8px; border-radius: 6px; font-size: 0.82rem; outline: none; width: 100%;
+  padding: 6px 8px; border-radius: 6px; font-size: 0.82rem; outline: none;
+  width: 100%; box-sizing: border-box; display: block;
 }
 .pkmn-input:focus { border-color: var(--accent); }
 
@@ -545,14 +546,15 @@
 .results-col-title.col-ba { color: #90caf9; border-color: #42a5f544; }
 
 /* ── MOVE INPUT + ADD BUTTON ── */
-/* Move input + add-to-pool button. The combo-wrap fills the row (matches the
-   width of the Pokémon input above) and the ＋ sits flush against its right
-   edge with a 4px gap. align-items: center aligns both with the "Move" label.
-   width: auto cancels the base .combo-wrap width: 100% so it doesn't get
-   reinterpreted as flex-basis: 100% and fight the button for space. */
-.move-input-row { display: flex; gap: 4px; align-items: center; }
-.move-input-row .pkmn-input { flex: 1; }
-.move-input-row .combo-wrap { flex: 1 1 0; min-width: 0; width: auto; }
+/* Move input + add-to-pool button — grid layout: combo-wrap takes ALL the
+   remaining row width (1fr) and the ＋ button takes its natural width (auto).
+   Grid is more predictable than flex here because flex-basis percentages can
+   conflict with the .combo-wrap base width: 100% in the row context. */
+.move-input-row {
+  display: grid; grid-template-columns: 1fr auto;
+  gap: 4px; align-items: center;
+}
+.move-input-row .combo-wrap { width: auto; min-width: 0; }
 
 /* ── CUSTOM CHOICE DROPDOWN (Nature picker — always opens downward) ── */
 .hidden-select { display: none !important; }
@@ -593,10 +595,9 @@
 .choice-group:not(:first-child) { border-top: 1px solid var(--border); }
 
 /* ── CUSTOM AUTOCOMPLETE COMBO (Pokémon / Move pickers) ── */
-/* width: 100% so the wrap fills its column-flex parent (Pokémon row).
-   Inside .move-input-row this is overridden to width: auto so flex sizing
-   takes over and the ＋ button gets its own space. */
-.combo-wrap { position: relative; width: 100%; }
+/* display: block + width: 100% so the wrap fills its parent (column-flex
+   field-input-wrap for Pokémon, grid cell for Move). */
+.combo-wrap { position: relative; display: block; width: 100%; box-sizing: border-box; }
 .combo-list {
   position: absolute; top: calc(100% + 2px); left: 0; right: 0;
   background: var(--surface); border: 1px solid var(--border);
