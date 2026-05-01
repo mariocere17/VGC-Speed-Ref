@@ -599,6 +599,17 @@
   background: rgba(255,255,255,0.02); border-bottom: 1px solid var(--border);
 }
 .choice-group:not(:first-child) { border-top: 1px solid var(--border); }
+/* Sticky search input at the top of the dropdown — appears for lists with
+   more than ~6 options. Filters .choice-item siblings as the user types. */
+.choice-search {
+  position: sticky; top: 0; z-index: 1;
+  display: block; width: 100%; box-sizing: border-box;
+  background: var(--bg); color: var(--text);
+  border: none; border-bottom: 1px solid var(--border);
+  padding: 6px 10px; font-size: 0.82rem; font-family: inherit;
+  outline: none;
+}
+.choice-search:focus { background: rgba(88, 166, 255, 0.05); }
 
 /* ── CUSTOM AUTOCOMPLETE COMBO (Pokémon / Move pickers) ── */
 /* display: block + width: 100% so the wrap fills its parent (column-flex

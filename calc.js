@@ -2022,6 +2022,8 @@ function setupChoice(sel) {
   function close() { list.hidden = true; }
   function open() {
     // Walk children so <optgroup> labels become headers in the dropdown.
+    // Prepend a search input that filters visible items as the user types
+    // (skipped for very short lists where it'd just be chrome).
     const parts = [];
     for (const child of sel.children) {
       if (child.tagName === 'OPTGROUP') {
@@ -2036,10 +2038,49 @@ function setupChoice(sel) {
         parts.push(`<div class="choice-item${active}" data-val="${escAttr(child.value)}">${escHtml(child.textContent)}</div>`);
       }
     }
+    const itemCount = parts.filter(p => p.includes('class="choice-item')).length;
+    const showSearch = itemCount > 6;
+    if (showSearch) {
+      parts.unshift('<input type="text" class="choice-search" placeholder="Search…" autocomplete="off">');
+    }
     list.innerHTML = parts.join('');
     list.hidden = false;
-    const a = list.querySelector('.choice-active');
-    if (a) a.scrollIntoView({ block: 'nearest' });
+
+    if (showSearch) {
+      const search = list.querySelector('.choice-search');
+      requestAnimationFrame(() => search?.focus());
+      const allItems  = [...list.querySelectorAll('.choice-item')];
+      const allGroups = [...list.querySelectorAll('.choice-group')];
+      const refilter = () => {
+        const q = search.value.toLowerCase().trim();
+        allItems.forEach(it => {
+          it.style.display = (!q || it.textContent.toLowerCase().includes(q)) ? '' : 'none';
+        });
+        // Hide group headers with no visible items underneath.
+        allGroups.forEach(g => {
+          let hasVisible = false;
+          let next = g.nextElementSibling;
+          while (next && !next.classList.contains('choice-group')) {
+            if (next.classList.contains('choice-item') && next.style.display !== 'none') {
+              hasVisible = true; break;
+            }
+            next = next.nextElementSibling;
+          }
+          g.style.display = hasVisible ? '' : 'none';
+        });
+      };
+      search.addEventListener('input', refilter);
+      search.addEventListener('keydown', e => {
+        if (e.key === 'Escape') { close(); btn.focus(); e.preventDefault(); }
+        else if (e.key === 'Enter') {
+          const first = allItems.find(it => it.style.display !== 'none');
+          if (first) { pick(first.dataset.val); btn.focus(); e.preventDefault(); }
+        }
+      });
+    } else {
+      const a = list.querySelector('.choice-active');
+      if (a) a.scrollIntoView({ block: 'nearest' });
+    }
   }
   function pick(value) {
     sel.value = value; // setter intercept (below) syncs the button label
