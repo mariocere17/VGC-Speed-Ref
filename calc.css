@@ -628,13 +628,20 @@
   font-family: inherit; font-size: 0.95rem; font-weight: 700; line-height: 1;
   padding: 0 11px; border-radius: 6px; cursor: pointer;
   transition: all .12s; flex-shrink: 0;
+  align-self: stretch;            /* match input height inside the grid row */
+  min-width: 36px;
 }
 .btn-addmove:hover { border-color: var(--accent); color: var(--accent); }
 .btn-addmove:disabled { opacity: 0.3; cursor: default; border-color: var(--border); color: var(--muted); }
 
 /* ── SET MOVES QUICK-PICK ── */
 /* Ahora dentro de field-input-wrap — no padding lateral extra */
-.set-moves-row { display: flex; gap: 5px; min-height: 32px; align-items: center; }
+/* Set-move quick-pick row: collapse to zero height when empty so the field
+   row above stays aligned with the MOVE label. Reserves space only when the
+   set has buttons rendered. */
+.set-moves-row { display: flex; gap: 5px; align-items: center; }
+.set-moves-row:empty { display: none; }
+.set-moves-row:not(:empty) { min-height: 32px; }
 .btn-setmove {
   flex: 1;                   /* reparte el ancho igual que el input */
   font-size: 0.78rem; font-weight: 600;
