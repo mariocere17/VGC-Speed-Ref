@@ -1,0 +1,59 @@
+name: Update Static Data (Pokémon stats, moves, learnsets)
+
+# Runs weekly to refresh the slow-moving data files derived from PokeAPI and
+# Showdown. These rarely change (only when GameFreak ships a DLC, a new
+# generation, or Showdown patches a learnset), so a daily run would be wasted
+# work and would hammer PokeAPI for no benefit. Sundays at 4 UTC keeps the
+# job clear of the daily Champions/Limitless workflows (2 UTC and 3 UTC).
+
+on:
+  schedule:
+    - cron: '0 4 * * 0'   # 4am UTC every Sunday
+  workflow_dispatch:        # allow manual run from GitHub UI
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+
+      # Order matters:
+      #   1. get-pokemon-stats.js seeds pokemon-stats.json (stats + types +
+      #      abilities + a tentative moves list pulled from PokeAPI).
+      #   2. get-moves.js writes moves.json (BP / type / category for every
+      #      damaging move).
+      #   3. update-learnsets.js then walks Pokémon Showdown's learnsets.json
+      #      (which is far more complete than PokeAPI — e.g. it knows that
+      #      Kingambit inherits Sucker Punch from Pawniard) and replaces the
+      #      moves array on each entry with one filtered to moves we actually
+      #      have damage data for.
+      - name: Refresh Pokémon stats from PokeAPI
+        run: node generator/get-pokemon-stats.js
+
+      - name: Refresh moves from PokeAPI
+        run: node generator/get-moves.js
+
+      - name: Patch learnsets from Pokémon Showdown
+        run: node generator/update-learnsets.js
+
+      - name: Commit and push if data changed
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add pokemon-stats.json moves.json
+          git diff --staged --quiet && echo "No changes" || (
+            git commit -m "chore: refresh static data (stats / moves / learnsets) $(date -u '+%Y-%m-%d')" &&
+            git push
+          )
