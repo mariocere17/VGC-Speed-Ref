@@ -145,7 +145,33 @@ const ATK_ABILITIES = [
   // Weather-conditional
   { id:'sand-force',   label:'Sand Force (Rock/Ground/Steel ×1.3 in Sand)' },
   { id:'solar-power',  label:'Solar Power (SpA ×1.5 in Sun)' },
+  // Weather / terrain summoners — auto-set the field state if the user
+  // hasn't picked a weather/terrain manually (handled in readState).
+  { id:'drought',          label:'Drought (auto Sun)' },
+  { id:'mega-sol',         label:'Mega Sol (auto Sun)' },
+  { id:'orichalcum-pulse', label:'Orichalcum Pulse (auto Sun)' },
+  { id:'drizzle',          label:'Drizzle (auto Rain)' },
+  { id:'sand-stream',      label:'Sand Stream (auto Sand)' },
+  { id:'snow-warning',     label:'Snow Warning (auto Snow)' },
+  { id:'desolate-land',    label:'Desolate Land (auto Harsh Sun)' },
+  { id:'primordial-sea',   label:'Primordial Sea (auto Heavy Rain)' },
+  { id:'delta-stream',     label:'Delta Stream (auto Strong Winds)' },
+  { id:'hadron-engine',    label:'Hadron Engine (auto Electric Terrain)' },
 ];
+
+// Map ability id → weather/terrain it summons. Used in readState to default
+// the weather field when the user hasn't set one explicitly. Picking these
+// also fixes Weather Ball, weather-boosted moves, etc. naturally.
+const ABILITY_WEATHER = {
+  'drought': 'sun', 'mega-sol': 'sun', 'orichalcum-pulse': 'sun',
+  'drizzle': 'rain',
+  'sand-stream': 'sand',
+  'snow-warning': 'snow',
+  'desolate-land': 'harsh-sun',
+  'primordial-sea': 'heavy-rain',
+  'delta-stream': 'strong-winds',
+};
+const ABILITY_TERRAIN = { 'hadron-engine': 'electric' };
 
 // Multi-hit moves: { 'Move': { min, max, default } }. The user can override hit count.
 const MULTI_HIT_MOVES = {
@@ -324,6 +350,13 @@ function eMoveType(s, moveData) {
   if (ate && moveData.type === ate.from) return ate.to;
   if (s.atkAbility === 'permafrost-fist' && moveData.isPunch) return 'ice';
   if (s.atkAbility === 'liquid-voice' && SOUND_MOVES.has(s.atkMove)) return 'water';
+  // Weather Ball: type follows the active weather (Normal otherwise).
+  if (s.atkMove === 'Weather Ball') {
+    if (s.weather === 'sun'  || s.weather === 'harsh-sun')  return 'fire';
+    if (s.weather === 'rain' || s.weather === 'heavy-rain') return 'water';
+    if (s.weather === 'sand') return 'rock';
+    if (s.weather === 'snow') return 'ice';
+  }
   return moveData.type;
 }
 
@@ -433,8 +466,17 @@ function readState() {
     defHits:    parseInt(document.getElementById('defHits')?.value) || 1,
     defHPPct:   parseInt(document.getElementById('defHPPctSlider')?.value) || 100,
 
-    weather:     document.getElementById('fldWeather')?.value     || '',
-    terrain:     document.getElementById('fldTerrain')?.value     || '',
+    // Weather/terrain — fall back to whatever the attacker's or defender's
+    // ability summons (Drought, Drizzle, Mega Sol, Hadron Engine…) when the
+    // user hasn't picked one explicitly. Manual selection wins.
+    weather: (document.getElementById('fldWeather')?.value || '')
+      || ABILITY_WEATHER[document.getElementById('atkAbility')?.value || '']
+      || ABILITY_WEATHER[document.getElementById('defAbility')?.value || '']
+      || '',
+    terrain: (document.getElementById('fldTerrain')?.value || '')
+      || ABILITY_TERRAIN[document.getElementById('atkAbility')?.value || '']
+      || ABILITY_TERRAIN[document.getElementById('defAbility')?.value || '']
+      || '',
     format:      document.querySelector('input[name="fldFormat"]:checked')?.value || 'doubles',
     // Global field conditions (always affect both sides)
     gravity:     document.getElementById('fldGravity')?.checked    || false,
