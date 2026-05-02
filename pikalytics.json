@@ -1,5 +1,5 @@
 {
-  "updated": "2026-05-01T05:48:27.288Z",
+  "updated": "2026-05-02T05:17:38.613Z",
   "format": "championstournaments",
   "count": 83,
   "pokemon": {
@@ -4868,6 +4868,67 @@
         }
       ]
     },
+    "Lopunny": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Close Combat",
+          "pct": 98.214
+        },
+        {
+          "name": "Fake Out",
+          "pct": 91.071
+        },
+        {
+          "name": "Protect",
+          "pct": 60.714
+        },
+        {
+          "name": "Triple Axel",
+          "pct": 45.536
+        },
+        {
+          "name": "Encore",
+          "pct": 16.964
+        },
+        {
+          "name": "U-turn",
+          "pct": 16.071
+        },
+        {
+          "name": "Ice Punch",
+          "pct": 9.821
+        },
+        {
+          "name": "After You",
+          "pct": 9.821
+        }
+      ],
+      "items": [
+        {
+          "name": "Lopunnite",
+          "pct": 100
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Limber",
+          "pct": 59.821
+        },
+        {
+          "name": "Cute Charm",
+          "pct": 32.143
+        },
+        {
+          "name": "Scrappy",
+          "pct": 6.25
+        },
+        {
+          "name": "Klutz",
+          "pct": 1.786
+        }
+      ]
+    },
     "Arcanine": {
       "usage": null,
       "moves": [
@@ -4938,67 +4999,6 @@
         {
           "name": "Justified",
           "pct": 1.429
-        }
-      ]
-    },
-    "Lopunny": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Close Combat",
-          "pct": 98.214
-        },
-        {
-          "name": "Fake Out",
-          "pct": 91.071
-        },
-        {
-          "name": "Protect",
-          "pct": 60.714
-        },
-        {
-          "name": "Triple Axel",
-          "pct": 45.536
-        },
-        {
-          "name": "Encore",
-          "pct": 16.964
-        },
-        {
-          "name": "U-turn",
-          "pct": 16.071
-        },
-        {
-          "name": "Ice Punch",
-          "pct": 9.821
-        },
-        {
-          "name": "After You",
-          "pct": 9.821
-        }
-      ],
-      "items": [
-        {
-          "name": "Lopunnite",
-          "pct": 100
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Limber",
-          "pct": 59.821
-        },
-        {
-          "name": "Cute Charm",
-          "pct": 32.143
-        },
-        {
-          "name": "Scrappy",
-          "pct": 6.25
-        },
-        {
-          "name": "Klutz",
-          "pct": 1.786
         }
       ]
     },
@@ -5837,6 +5837,71 @@
         }
       ]
     },
+    "Feraligatr": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Liquidation",
+          "pct": 91.045
+        },
+        {
+          "name": "Protect",
+          "pct": 80.597
+        },
+        {
+          "name": "Double-Edge",
+          "pct": 77.612
+        },
+        {
+          "name": "Aqua Jet",
+          "pct": 52.239
+        },
+        {
+          "name": "Dragon Dance",
+          "pct": 23.881
+        },
+        {
+          "name": "Body Slam",
+          "pct": 13.433
+        },
+        {
+          "name": "Swords Dance",
+          "pct": 8.955
+        },
+        {
+          "name": "Ice Punch",
+          "pct": 8.955
+        }
+      ],
+      "items": [
+        {
+          "name": "Feraligite",
+          "pct": 95.522
+        },
+        {
+          "name": "Feraligatrite",
+          "pct": 2.985
+        },
+        {
+          "name": "Mystic Water",
+          "pct": 1.493
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Sheer Force",
+          "pct": 73.134
+        },
+        {
+          "name": "Torrent",
+          "pct": 25.373
+        },
+        {
+          "name": "Dragonize",
+          "pct": 1.493
+        }
+      ]
+    },
     "Weavile": {
       "usage": null,
       "moves": [
@@ -5907,71 +5972,6 @@
         {
           "name": "Pressure",
           "pct": 48.077
-        }
-      ]
-    },
-    "Feraligatr": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Liquidation",
-          "pct": 91.045
-        },
-        {
-          "name": "Protect",
-          "pct": 80.597
-        },
-        {
-          "name": "Double-Edge",
-          "pct": 77.612
-        },
-        {
-          "name": "Aqua Jet",
-          "pct": 52.239
-        },
-        {
-          "name": "Dragon Dance",
-          "pct": 23.881
-        },
-        {
-          "name": "Body Slam",
-          "pct": 13.433
-        },
-        {
-          "name": "Swords Dance",
-          "pct": 8.955
-        },
-        {
-          "name": "Ice Punch",
-          "pct": 8.955
-        }
-      ],
-      "items": [
-        {
-          "name": "Feraligite",
-          "pct": 95.522
-        },
-        {
-          "name": "Feraligatrite",
-          "pct": 2.985
-        },
-        {
-          "name": "Mystic Water",
-          "pct": 1.493
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Sheer Force",
-          "pct": 73.134
-        },
-        {
-          "name": "Torrent",
-          "pct": 25.373
-        },
-        {
-          "name": "Dragonize",
-          "pct": 1.493
         }
       ]
     },
