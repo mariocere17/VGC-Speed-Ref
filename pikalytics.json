@@ -1,5 +1,5 @@
 {
-  "updated": "2026-05-06T05:36:13.412Z",
+  "updated": "2026-05-07T05:38:23.220Z",
   "format": "championstournaments",
   "count": 84,
   "pokemon": {
@@ -5679,6 +5679,144 @@
         }
       ]
     },
+    "Weavile": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Fake Out",
+          "pct": 86.538
+        },
+        {
+          "name": "Knock Off",
+          "pct": 80.769
+        },
+        {
+          "name": "Triple Axel",
+          "pct": 46.154
+        },
+        {
+          "name": "Protect",
+          "pct": 40.385
+        },
+        {
+          "name": "Ice Shard",
+          "pct": 28.846
+        },
+        {
+          "name": "Low Kick",
+          "pct": 19.231
+        },
+        {
+          "name": "Ice Spinner",
+          "pct": 19.231
+        },
+        {
+          "name": "Icicle Crash",
+          "pct": 15.385
+        }
+      ],
+      "items": [
+        {
+          "name": "Focus Sash",
+          "pct": 61.538
+        },
+        {
+          "name": "Never-Melt Ice",
+          "pct": 7.692
+        },
+        {
+          "name": "White Herb",
+          "pct": 5.769
+        },
+        {
+          "name": "No Item",
+          "pct": 3.846
+        },
+        {
+          "name": "Occa Berry",
+          "pct": 3.846
+        },
+        {
+          "name": "King's Rock",
+          "pct": 3.846
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Pickpocket",
+          "pct": 51.923
+        },
+        {
+          "name": "Pressure",
+          "pct": 48.077
+        }
+      ]
+    },
+    "Feraligatr": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Liquidation",
+          "pct": 91.045
+        },
+        {
+          "name": "Protect",
+          "pct": 80.597
+        },
+        {
+          "name": "Double-Edge",
+          "pct": 77.612
+        },
+        {
+          "name": "Aqua Jet",
+          "pct": 52.239
+        },
+        {
+          "name": "Dragon Dance",
+          "pct": 23.881
+        },
+        {
+          "name": "Body Slam",
+          "pct": 13.433
+        },
+        {
+          "name": "Swords Dance",
+          "pct": 8.955
+        },
+        {
+          "name": "Ice Punch",
+          "pct": 8.955
+        }
+      ],
+      "items": [
+        {
+          "name": "Feraligite",
+          "pct": 95.522
+        },
+        {
+          "name": "Feraligatrite",
+          "pct": 2.985
+        },
+        {
+          "name": "Mystic Water",
+          "pct": 1.493
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Sheer Force",
+          "pct": 73.134
+        },
+        {
+          "name": "Torrent",
+          "pct": 25.373
+        },
+        {
+          "name": "Dragonize",
+          "pct": 1.493
+        }
+      ]
+    },
     "Meowstic": {
       "usage": null,
       "moves": [
@@ -5757,144 +5895,6 @@
         {
           "name": "Trace",
           "pct": 1.316
-        }
-      ]
-    },
-    "Feraligatr": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Liquidation",
-          "pct": 91.045
-        },
-        {
-          "name": "Protect",
-          "pct": 80.597
-        },
-        {
-          "name": "Double-Edge",
-          "pct": 77.612
-        },
-        {
-          "name": "Aqua Jet",
-          "pct": 52.239
-        },
-        {
-          "name": "Dragon Dance",
-          "pct": 23.881
-        },
-        {
-          "name": "Body Slam",
-          "pct": 13.433
-        },
-        {
-          "name": "Swords Dance",
-          "pct": 8.955
-        },
-        {
-          "name": "Ice Punch",
-          "pct": 8.955
-        }
-      ],
-      "items": [
-        {
-          "name": "Feraligite",
-          "pct": 95.522
-        },
-        {
-          "name": "Feraligatrite",
-          "pct": 2.985
-        },
-        {
-          "name": "Mystic Water",
-          "pct": 1.493
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Sheer Force",
-          "pct": 73.134
-        },
-        {
-          "name": "Torrent",
-          "pct": 25.373
-        },
-        {
-          "name": "Dragonize",
-          "pct": 1.493
-        }
-      ]
-    },
-    "Weavile": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Fake Out",
-          "pct": 86.538
-        },
-        {
-          "name": "Knock Off",
-          "pct": 80.769
-        },
-        {
-          "name": "Triple Axel",
-          "pct": 46.154
-        },
-        {
-          "name": "Protect",
-          "pct": 40.385
-        },
-        {
-          "name": "Ice Shard",
-          "pct": 28.846
-        },
-        {
-          "name": "Low Kick",
-          "pct": 19.231
-        },
-        {
-          "name": "Ice Spinner",
-          "pct": 19.231
-        },
-        {
-          "name": "Icicle Crash",
-          "pct": 15.385
-        }
-      ],
-      "items": [
-        {
-          "name": "Focus Sash",
-          "pct": 61.538
-        },
-        {
-          "name": "Never-Melt Ice",
-          "pct": 7.692
-        },
-        {
-          "name": "White Herb",
-          "pct": 5.769
-        },
-        {
-          "name": "No Item",
-          "pct": 3.846
-        },
-        {
-          "name": "Occa Berry",
-          "pct": 3.846
-        },
-        {
-          "name": "King's Rock",
-          "pct": 3.846
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Pickpocket",
-          "pct": 51.923
-        },
-        {
-          "name": "Pressure",
-          "pct": 48.077
         }
       ]
     },
