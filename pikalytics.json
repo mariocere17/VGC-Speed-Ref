@@ -1,5 +1,5 @@
 {
-  "updated": "2026-05-09T05:27:39.418Z",
+  "updated": "2026-05-10T05:43:11.376Z",
   "format": "championstournaments",
   "count": 84,
   "pokemon": {
@@ -5388,79 +5388,6 @@
         }
       ]
     },
-    "Raichu": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Fake Out",
-          "pct": 95
-        },
-        {
-          "name": "Volt Switch",
-          "pct": 68.333
-        },
-        {
-          "name": "Nuzzle",
-          "pct": 41.667
-        },
-        {
-          "name": "Protect",
-          "pct": 35
-        },
-        {
-          "name": "Thunderbolt",
-          "pct": 31.667
-        },
-        {
-          "name": "Electroweb",
-          "pct": 30
-        },
-        {
-          "name": "Thunder",
-          "pct": 23.333
-        },
-        {
-          "name": "Encore",
-          "pct": 16.667
-        }
-      ],
-      "items": [
-        {
-          "name": "Focus Sash",
-          "pct": 50
-        },
-        {
-          "name": "Sitrus Berry",
-          "pct": 13.333
-        },
-        {
-          "name": "Shuca Berry",
-          "pct": 10
-        },
-        {
-          "name": "Leftovers",
-          "pct": 8.333
-        },
-        {
-          "name": "Choice Scarf",
-          "pct": 5
-        },
-        {
-          "name": "Magnet",
-          "pct": 5
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Lightning Rod",
-          "pct": 95
-        },
-        {
-          "name": "Static",
-          "pct": 5
-        }
-      ]
-    },
     "Chandelure": {
       "usage": null,
       "moves": [
@@ -5538,76 +5465,76 @@
         }
       ]
     },
-    "Greninja": {
+    "Raichu": {
       "usage": null,
       "moves": [
         {
-          "name": "Dark Pulse",
-          "pct": 78.689
+          "name": "Fake Out",
+          "pct": 95
+        },
+        {
+          "name": "Volt Switch",
+          "pct": 68.333
+        },
+        {
+          "name": "Nuzzle",
+          "pct": 41.667
         },
         {
           "name": "Protect",
-          "pct": 59.016
+          "pct": 35
         },
         {
-          "name": "Ice Beam",
-          "pct": 39.344
+          "name": "Thunderbolt",
+          "pct": 31.667
         },
         {
-          "name": "Hydro Pump",
-          "pct": 36.066
+          "name": "Electroweb",
+          "pct": 30
         },
         {
-          "name": "Blizzard",
-          "pct": 36.066
+          "name": "Thunder",
+          "pct": 23.333
         },
         {
-          "name": "Low Kick",
-          "pct": 24.59
-        },
-        {
-          "name": "Extrasensory",
-          "pct": 21.311
-        },
-        {
-          "name": "Water Shuriken",
-          "pct": 16.393
+          "name": "Encore",
+          "pct": 16.667
         }
       ],
       "items": [
         {
-          "name": "Greninjite",
-          "pct": 72.131
+          "name": "Focus Sash",
+          "pct": 50
+        },
+        {
+          "name": "Sitrus Berry",
+          "pct": 13.333
+        },
+        {
+          "name": "Shuca Berry",
+          "pct": 10
+        },
+        {
+          "name": "Leftovers",
+          "pct": 8.333
         },
         {
           "name": "Choice Scarf",
-          "pct": 11.475
+          "pct": 5
         },
         {
-          "name": "Focus Sash",
-          "pct": 6.557
-        },
-        {
-          "name": "Mystic Water",
-          "pct": 1.639
-        },
-        {
-          "name": "Focus Band",
-          "pct": 1.639
-        },
-        {
-          "name": "Black Glasses",
-          "pct": 1.639
+          "name": "Magnet",
+          "pct": 5
         }
       ],
       "abilities": [
         {
-          "name": "Protean",
-          "pct": 98.361
+          "name": "Lightning Rod",
+          "pct": 95
         },
         {
-          "name": "Torrent",
-          "pct": 1.639
+          "name": "Static",
+          "pct": 5
         }
       ]
     },
@@ -5681,6 +5608,79 @@
         {
           "name": "Pressure",
           "pct": 36.538
+        }
+      ]
+    },
+    "Greninja": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Dark Pulse",
+          "pct": 78.689
+        },
+        {
+          "name": "Protect",
+          "pct": 59.016
+        },
+        {
+          "name": "Ice Beam",
+          "pct": 39.344
+        },
+        {
+          "name": "Hydro Pump",
+          "pct": 36.066
+        },
+        {
+          "name": "Blizzard",
+          "pct": 36.066
+        },
+        {
+          "name": "Low Kick",
+          "pct": 24.59
+        },
+        {
+          "name": "Extrasensory",
+          "pct": 21.311
+        },
+        {
+          "name": "Water Shuriken",
+          "pct": 16.393
+        }
+      ],
+      "items": [
+        {
+          "name": "Greninjite",
+          "pct": 72.131
+        },
+        {
+          "name": "Choice Scarf",
+          "pct": 11.475
+        },
+        {
+          "name": "Focus Sash",
+          "pct": 6.557
+        },
+        {
+          "name": "Mystic Water",
+          "pct": 1.639
+        },
+        {
+          "name": "Focus Band",
+          "pct": 1.639
+        },
+        {
+          "name": "Black Glasses",
+          "pct": 1.639
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Protean",
+          "pct": 98.361
+        },
+        {
+          "name": "Torrent",
+          "pct": 1.639
         }
       ]
     },
