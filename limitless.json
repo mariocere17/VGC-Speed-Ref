@@ -1,5 +1,5 @@
 {
-  "updated": "2026-05-11T06:39:42.351Z",
+  "updated": "2026-05-12T06:15:08.237Z",
   "format": "championstournaments",
   "tournaments": {
     "69d7114dc734cfa1af2b581d": {
@@ -82728,299 +82728,2165 @@
           "draws": 0
         }
       }
+    },
+    "69f8a6c7e23aab068aada7ee": {
+      "name": "Pokepal Smackdown #140 (Champions) (Reg M-A)",
+      "date": "2026-05-11",
+      "total_teams": 21,
+      "pokemon": {
+        "Garchomp": {
+          "teams": 12,
+          "wins": 20,
+          "losses": 24,
+          "draws": 0
+        },
+        "Aerodactyl": {
+          "teams": 11,
+          "wins": 21,
+          "losses": 21,
+          "draws": 0
+        },
+        "Charizard": {
+          "teams": 9,
+          "wins": 18,
+          "losses": 19,
+          "draws": 0
+        },
+        "Kingambit": {
+          "teams": 8,
+          "wins": 21,
+          "losses": 15,
+          "draws": 0
+        },
+        "Basculegion": {
+          "teams": 7,
+          "wins": 16,
+          "losses": 11,
+          "draws": 0
+        },
+        "Incineroar": {
+          "teams": 7,
+          "wins": 14,
+          "losses": 15,
+          "draws": 0
+        },
+        "Sneasler": {
+          "teams": 6,
+          "wins": 12,
+          "losses": 12,
+          "draws": 0
+        },
+        "Sylveon": {
+          "teams": 4,
+          "wins": 12,
+          "losses": 8,
+          "draws": 0
+        },
+        "Eternal Flower Floette": {
+          "teams": 4,
+          "wins": 10,
+          "losses": 8,
+          "draws": 0
+        },
+        "Milotic": {
+          "teams": 4,
+          "wins": 8,
+          "losses": 9,
+          "draws": 0
+        },
+        "Scizor": {
+          "teams": 3,
+          "wins": 8,
+          "losses": 2,
+          "draws": 0
+        },
+        "Whimsicott": {
+          "teams": 3,
+          "wins": 2,
+          "losses": 7,
+          "draws": 0
+        },
+        "Sinistcha": {
+          "teams": 3,
+          "wins": 6,
+          "losses": 9,
+          "draws": 0
+        },
+        "Dragonite": {
+          "teams": 2,
+          "wins": 8,
+          "losses": 0,
+          "draws": 0
+        },
+        "Archaludon": {
+          "teams": 2,
+          "wins": 7,
+          "losses": 3,
+          "draws": 0
+        },
+        "Venusaur": {
+          "teams": 2,
+          "wins": 4,
+          "losses": 6,
+          "draws": 0
+        },
+        "Weavile": {
+          "teams": 2,
+          "wins": 0,
+          "losses": 4,
+          "draws": 0
+        },
+        "Glimmora": {
+          "teams": 2,
+          "wins": 0,
+          "losses": 4,
+          "draws": 0
+        },
+        "Farigiraf": {
+          "teams": 2,
+          "wins": 2,
+          "losses": 5,
+          "draws": 0
+        },
+        "Hatterene": {
+          "teams": 2,
+          "wins": 5,
+          "losses": 5,
+          "draws": 0
+        },
+        "Delphox": {
+          "teams": 2,
+          "wins": 3,
+          "losses": 5,
+          "draws": 0
+        },
+        "Primarina": {
+          "teams": 2,
+          "wins": 1,
+          "losses": 4,
+          "draws": 0
+        },
+        "Clefable": {
+          "teams": 2,
+          "wins": 5,
+          "losses": 5,
+          "draws": 0
+        },
+        "Wash Rotom": {
+          "teams": 2,
+          "wins": 5,
+          "losses": 5,
+          "draws": 0
+        },
+        "Tyranitar": {
+          "teams": 2,
+          "wins": 4,
+          "losses": 6,
+          "draws": 0
+        },
+        "Pelipper": {
+          "teams": 1,
+          "wins": 5,
+          "losses": 0,
+          "draws": 0
+        },
+        "Espathra": {
+          "teams": 1,
+          "wins": 4,
+          "losses": 1,
+          "draws": 0
+        },
+        "Maushold": {
+          "teams": 1,
+          "wins": 4,
+          "losses": 1,
+          "draws": 0
+        },
+        "Talonflame": {
+          "teams": 1,
+          "wins": 4,
+          "losses": 1,
+          "draws": 0
+        },
+        "Lucario": {
+          "teams": 1,
+          "wins": 0,
+          "losses": 1,
+          "draws": 0
+        },
+        "Aegislash": {
+          "teams": 1,
+          "wins": 0,
+          "losses": 1,
+          "draws": 0
+        },
+        "Palafin": {
+          "teams": 1,
+          "wins": 0,
+          "losses": 1,
+          "draws": 0
+        },
+        "Floette": {
+          "teams": 1,
+          "wins": 0,
+          "losses": 1,
+          "draws": 0
+        },
+        "Kangaskhan": {
+          "teams": 1,
+          "wins": 2,
+          "losses": 3,
+          "draws": 0
+        },
+        "Torkoal": {
+          "teams": 1,
+          "wins": 2,
+          "losses": 3,
+          "draws": 0
+        },
+        "Mimikyu": {
+          "teams": 1,
+          "wins": 3,
+          "losses": 2,
+          "draws": 0
+        },
+        "Ampharos": {
+          "teams": 1,
+          "wins": 3,
+          "losses": 2,
+          "draws": 0
+        },
+        "Hippowdon": {
+          "teams": 1,
+          "wins": 3,
+          "losses": 2,
+          "draws": 0
+        },
+        "Pangoro": {
+          "teams": 1,
+          "wins": 3,
+          "losses": 2,
+          "draws": 0
+        },
+        "Sableye": {
+          "teams": 1,
+          "wins": 2,
+          "losses": 3,
+          "draws": 0
+        },
+        "Dragapult": {
+          "teams": 1,
+          "wins": 2,
+          "losses": 3,
+          "draws": 0
+        },
+        "Skeledirge": {
+          "teams": 1,
+          "wins": 3,
+          "losses": 2,
+          "draws": 0
+        },
+        "Aggron": {
+          "teams": 1,
+          "wins": 3,
+          "losses": 2,
+          "draws": 0
+        },
+        "Greninja": {
+          "teams": 1,
+          "wins": 1,
+          "losses": 3,
+          "draws": 0
+        },
+        "Gengar": {
+          "teams": 1,
+          "wins": 1,
+          "losses": 3,
+          "draws": 0
+        },
+        "Vanilluxe": {
+          "teams": 1,
+          "wins": 1,
+          "losses": 3,
+          "draws": 0
+        }
+      }
+    },
+    "69febd5d13f957d6d4b43339": {
+      "name": "Intimidators Champions Challenge #8 - REG M-A",
+      "date": "2026-05-11",
+      "total_teams": 32,
+      "pokemon": {
+        "Sneasler": {
+          "teams": 14,
+          "wins": 31,
+          "losses": 34,
+          "draws": 0
+        },
+        "Basculegion": {
+          "teams": 14,
+          "wins": 31,
+          "losses": 32,
+          "draws": 0
+        },
+        "Garchomp": {
+          "teams": 12,
+          "wins": 26,
+          "losses": 32,
+          "draws": 0
+        },
+        "Incineroar": {
+          "teams": 9,
+          "wins": 23,
+          "losses": 20,
+          "draws": 0
+        },
+        "Farigiraf": {
+          "teams": 8,
+          "wins": 15,
+          "losses": 24,
+          "draws": 0
+        },
+        "Charizard": {
+          "teams": 8,
+          "wins": 16,
+          "losses": 22,
+          "draws": 0
+        },
+        "Archaludon": {
+          "teams": 8,
+          "wins": 18,
+          "losses": 17,
+          "draws": 0
+        },
+        "Milotic": {
+          "teams": 7,
+          "wins": 9,
+          "losses": 19,
+          "draws": 0
+        },
+        "Sinistcha": {
+          "teams": 7,
+          "wins": 15,
+          "losses": 17,
+          "draws": 0
+        },
+        "Kingambit": {
+          "teams": 7,
+          "wins": 17,
+          "losses": 16,
+          "draws": 0
+        },
+        "Dragonite": {
+          "teams": 6,
+          "wins": 18,
+          "losses": 14,
+          "draws": 0
+        },
+        "Whimsicott": {
+          "teams": 6,
+          "wins": 16,
+          "losses": 10,
+          "draws": 0
+        },
+        "Pelipper": {
+          "teams": 6,
+          "wins": 11,
+          "losses": 14,
+          "draws": 0
+        },
+        "Venusaur": {
+          "teams": 5,
+          "wins": 12,
+          "losses": 13,
+          "draws": 0
+        },
+        "Scizor": {
+          "teams": 5,
+          "wins": 10,
+          "losses": 14,
+          "draws": 0
+        },
+        "Tyranitar": {
+          "teams": 4,
+          "wins": 7,
+          "losses": 11,
+          "draws": 0
+        },
+        "Aerodactyl": {
+          "teams": 3,
+          "wins": 2,
+          "losses": 10,
+          "draws": 0
+        },
+        "Eternal Flower Floette": {
+          "teams": 3,
+          "wins": 3,
+          "losses": 9,
+          "draws": 0
+        },
+        "Aegislash": {
+          "teams": 3,
+          "wins": 10,
+          "losses": 6,
+          "draws": 0
+        },
+        "Torkoal": {
+          "teams": 3,
+          "wins": 6,
+          "losses": 7,
+          "draws": 0
+        },
+        "Wash Rotom": {
+          "teams": 3,
+          "wins": 8,
+          "losses": 7,
+          "draws": 0
+        },
+        "Corviknight": {
+          "teams": 3,
+          "wins": 4,
+          "losses": 8,
+          "draws": 0
+        },
+        "Maushold": {
+          "teams": 2,
+          "wins": 1,
+          "losses": 8,
+          "draws": 0
+        },
+        "Glimmora": {
+          "teams": 2,
+          "wins": 7,
+          "losses": 4,
+          "draws": 0
+        },
+        "Palafin": {
+          "teams": 2,
+          "wins": 9,
+          "losses": 3,
+          "draws": 0
+        },
+        "Kangaskhan": {
+          "teams": 2,
+          "wins": 5,
+          "losses": 5,
+          "draws": 0
+        },
+        "Meganium": {
+          "teams": 2,
+          "wins": 3,
+          "losses": 3,
+          "draws": 0
+        },
+        "Floette": {
+          "teams": 2,
+          "wins": 5,
+          "losses": 3,
+          "draws": 0
+        },
+        "Drampa": {
+          "teams": 2,
+          "wins": 6,
+          "losses": 3,
+          "draws": 0
+        },
+        "Sableye": {
+          "teams": 2,
+          "wins": 5,
+          "losses": 7,
+          "draws": 0
+        },
+        "Scovillain": {
+          "teams": 2,
+          "wins": 1,
+          "losses": 6,
+          "draws": 0
+        },
+        "Excadrill": {
+          "teams": 2,
+          "wins": 1,
+          "losses": 6,
+          "draws": 0
+        },
+        "Sylveon": {
+          "teams": 2,
+          "wins": 9,
+          "losses": 5,
+          "draws": 0
+        },
+        "Politoed": {
+          "teams": 2,
+          "wins": 5,
+          "losses": 6,
+          "draws": 0
+        },
+        "Espathra": {
+          "teams": 2,
+          "wins": 4,
+          "losses": 6,
+          "draws": 0
+        },
+        "Hisuian Zoroark": {
+          "teams": 2,
+          "wins": 5,
+          "losses": 6,
+          "draws": 0
+        },
+        "Heat Rotom": {
+          "teams": 1,
+          "wins": 4,
+          "losses": 2,
+          "draws": 0
+        },
+        "Toxapex": {
+          "teams": 1,
+          "wins": 4,
+          "losses": 2,
+          "draws": 0
+        },
+        "Camerupt": {
+          "teams": 1,
+          "wins": 2,
+          "losses": 2,
+          "draws": 0
+        },
+        "Delphox": {
+          "teams": 1,
+          "wins": 3,
+          "losses": 2,
+          "draws": 0
+        },
+        "Manectric": {
+          "teams": 1,
+          "wins": 2,
+          "losses": 2,
+          "draws": 0
+        },
+        "Aggron": {
+          "teams": 1,
+          "wins": 2,
+          "losses": 3,
+          "draws": 0
+        },
+        "Gengar": {
+          "teams": 1,
+          "wins": 3,
+          "losses": 3,
+          "draws": 0
+        },
+        "Banette": {
+          "teams": 1,
+          "wins": 0,
+          "losses": 1,
+          "draws": 0
+        },
+        "Meowscarada": {
+          "teams": 1,
+          "wins": 0,
+          "losses": 1,
+          "draws": 0
+        },
+        "Dragapult": {
+          "teams": 1,
+          "wins": 0,
+          "losses": 1,
+          "draws": 0
+        },
+        "Volcarona": {
+          "teams": 1,
+          "wins": 3,
+          "losses": 0,
+          "draws": 0
+        },
+        "Blastoise": {
+          "teams": 1,
+          "wins": 2,
+          "losses": 3,
+          "draws": 0
+        },
+        "Liepard": {
+          "teams": 1,
+          "wins": 0,
+          "losses": 3,
+          "draws": 0
+        },
+        "Raichu": {
+          "teams": 1,
+          "wins": 0,
+          "losses": 3,
+          "draws": 0
+        },
+        "Ariados": {
+          "teams": 1,
+          "wins": 3,
+          "losses": 3,
+          "draws": 0
+        },
+        "Froslass": {
+          "teams": 1,
+          "wins": 4,
+          "losses": 1,
+          "draws": 0
+        },
+        "Kommo-o": {
+          "teams": 1,
+          "wins": 4,
+          "losses": 1,
+          "draws": 0
+        },
+        "Mamoswine": {
+          "teams": 1,
+          "wins": 2,
+          "losses": 3,
+          "draws": 0
+        },
+        "Heracross": {
+          "teams": 1,
+          "wins": 2,
+          "losses": 3,
+          "draws": 0
+        },
+        "Chimecho": {
+          "teams": 1,
+          "wins": 6,
+          "losses": 2,
+          "draws": 0
+        }
+      }
+    },
+    "69fed67113f957d6d4b43410": {
+      "name": "Champions Collective #7.5",
+      "date": "2026-05-11",
+      "total_teams": 31,
+      "pokemon": {
+        "Basculegion": {
+          "teams": 16,
+          "wins": 43,
+          "losses": 36,
+          "draws": 0
+        },
+        "Incineroar": {
+          "teams": 12,
+          "wins": 21,
+          "losses": 30,
+          "draws": 0
+        },
+        "Sneasler": {
+          "teams": 10,
+          "wins": 28,
+          "losses": 23,
+          "draws": 0
+        },
+        "Tyranitar": {
+          "teams": 9,
+          "wins": 25,
+          "losses": 19,
+          "draws": 0
+        },
+        "Kingambit": {
+          "teams": 9,
+          "wins": 25,
+          "losses": 23,
+          "draws": 0
+        },
+        "Sinistcha": {
+          "teams": 8,
+          "wins": 12,
+          "losses": 20,
+          "draws": 0
+        },
+        "Garchomp": {
+          "teams": 8,
+          "wins": 27,
+          "losses": 17,
+          "draws": 0
+        },
+        "Charizard": {
+          "teams": 8,
+          "wins": 26,
+          "losses": 17,
+          "draws": 0
+        },
+        "Kommo-o": {
+          "teams": 5,
+          "wins": 6,
+          "losses": 12,
+          "draws": 0
+        },
+        "Aerodactyl": {
+          "teams": 5,
+          "wins": 19,
+          "losses": 10,
+          "draws": 0
+        },
+        "Sylveon": {
+          "teams": 5,
+          "wins": 12,
+          "losses": 8,
+          "draws": 0
+        },
+        "Dragonite": {
+          "teams": 5,
+          "wins": 6,
+          "losses": 13,
+          "draws": 0
+        },
+        "Sableye": {
+          "teams": 5,
+          "wins": 8,
+          "losses": 11,
+          "draws": 0
+        },
+        "Scizor": {
+          "teams": 4,
+          "wins": 3,
+          "losses": 12,
+          "draws": 0
+        },
+        "Froslass": {
+          "teams": 4,
+          "wins": 12,
+          "losses": 10,
+          "draws": 0
+        },
+        "Venusaur": {
+          "teams": 4,
+          "wins": 10,
+          "losses": 10,
+          "draws": 0
+        },
+        "Archaludon": {
+          "teams": 4,
+          "wins": 7,
+          "losses": 10,
+          "draws": 0
+        },
+        "Corviknight": {
+          "teams": 4,
+          "wins": 15,
+          "losses": 8,
+          "draws": 0
+        },
+        "Milotic": {
+          "teams": 3,
+          "wins": 7,
+          "losses": 7,
+          "draws": 0
+        },
+        "Eternal Flower Floette": {
+          "teams": 3,
+          "wins": 12,
+          "losses": 6,
+          "draws": 0
+        },
+        "Farigiraf": {
+          "teams": 3,
+          "wins": 4,
+          "losses": 7,
+          "draws": 0
+        },
+        "Scovillain": {
+          "teams": 3,
+          "wins": 9,
+          "losses": 4,
+          "draws": 0
+        },
+        "Pelipper": {
+          "teams": 3,
+          "wins": 8,
+          "losses": 7,
+          "draws": 0
+        },
+        "Excadrill": {
+          "teams": 3,
+          "wins": 14,
+          "losses": 4,
+          "draws": 0
+        },
+        "Wash Rotom": {
+          "teams": 3,
+          "wins": 9,
+          "losses": 5,
+          "draws": 0
+        },
+        "Aegislash": {
+          "teams": 3,
+          "wins": 11,
+          "losses": 6,
+          "draws": 0
+        },
+        "Kangaskhan": {
+          "teams": 2,
+          "wins": 6,
+          "losses": 6,
+          "draws": 0
+        },
+        "Volcarona": {
+          "teams": 2,
+          "wins": 4,
+          "losses": 6,
+          "draws": 0
+        },
+        "Floette": {
+          "teams": 2,
+          "wins": 3,
+          "losses": 4,
+          "draws": 0
+        },
+        "Talonflame": {
+          "teams": 2,
+          "wins": 3,
+          "losses": 5,
+          "draws": 0
+        },
+        "Gengar": {
+          "teams": 2,
+          "wins": 5,
+          "losses": 5,
+          "draws": 0
+        },
+        "Politoed": {
+          "teams": 2,
+          "wins": 5,
+          "losses": 5,
+          "draws": 0
+        },
+        "Hydreigon": {
+          "teams": 2,
+          "wins": 10,
+          "losses": 5,
+          "draws": 0
+        },
+        "Alolan Ninetales": {
+          "teams": 1,
+          "wins": 3,
+          "losses": 3,
+          "draws": 0
+        },
+        "Runerigus": {
+          "teams": 1,
+          "wins": 2,
+          "losses": 2,
+          "draws": 0
+        },
+        "Gardevoir": {
+          "teams": 1,
+          "wins": 2,
+          "losses": 3,
+          "draws": 0
+        },
+        "Maushold": {
+          "teams": 1,
+          "wins": 2,
+          "losses": 3,
+          "draws": 0
+        },
+        "Tinkaton": {
+          "teams": 1,
+          "wins": 2,
+          "losses": 2,
+          "draws": 0
+        },
+        "Palafin": {
+          "teams": 1,
+          "wins": 3,
+          "losses": 3,
+          "draws": 0
+        },
+        "Greninja": {
+          "teams": 1,
+          "wins": 0,
+          "losses": 2,
+          "draws": 0
+        },
+        "Dragapult": {
+          "teams": 1,
+          "wins": 0,
+          "losses": 2,
+          "draws": 0
+        },
+        "Espathra": {
+          "teams": 1,
+          "wins": 0,
+          "losses": 2,
+          "draws": 0
+        },
+        "Hatterene": {
+          "teams": 1,
+          "wins": 2,
+          "losses": 3,
+          "draws": 0
+        },
+        "Torkoal": {
+          "teams": 1,
+          "wins": 2,
+          "losses": 3,
+          "draws": 0
+        },
+        "Medicham": {
+          "teams": 1,
+          "wins": 2,
+          "losses": 3,
+          "draws": 0
+        },
+        "Glimmora": {
+          "teams": 1,
+          "wins": 1,
+          "losses": 3,
+          "draws": 0
+        },
+        "Vaporeon": {
+          "teams": 1,
+          "wins": 1,
+          "losses": 3,
+          "draws": 0
+        },
+        "Klefki": {
+          "teams": 1,
+          "wins": 1,
+          "losses": 1,
+          "draws": 0
+        },
+        "Raichu": {
+          "teams": 1,
+          "wins": 1,
+          "losses": 1,
+          "draws": 0
+        },
+        "Meganium": {
+          "teams": 1,
+          "wins": 1,
+          "losses": 1,
+          "draws": 0
+        },
+        "Mimikyu": {
+          "teams": 1,
+          "wins": 7,
+          "losses": 2,
+          "draws": 0
+        },
+        "Aggron": {
+          "teams": 1,
+          "wins": 1,
+          "losses": 3,
+          "draws": 0
+        },
+        "Hisuian Zoroark": {
+          "teams": 1,
+          "wins": 1,
+          "losses": 3,
+          "draws": 0
+        },
+        "Heat Rotom": {
+          "teams": 1,
+          "wins": 5,
+          "losses": 2,
+          "draws": 0
+        },
+        "Starmie": {
+          "teams": 1,
+          "wins": 5,
+          "losses": 2,
+          "draws": 0
+        },
+        "Arcanine": {
+          "teams": 1,
+          "wins": 3,
+          "losses": 3,
+          "draws": 0
+        }
+      }
+    },
+    "6a00b6e913f957d6d4b44ffd": {
+      "name": "Champions Tour LEPE #4",
+      "date": "2026-05-11",
+      "total_teams": 18,
+      "pokemon": {
+        "Kingambit": {
+          "teams": 6,
+          "wins": 18,
+          "losses": 12,
+          "draws": 0
+        },
+        "Garchomp": {
+          "teams": 6,
+          "wins": 12,
+          "losses": 10,
+          "draws": 0
+        },
+        "Wash Rotom": {
+          "teams": 6,
+          "wins": 16,
+          "losses": 14,
+          "draws": 0
+        },
+        "Charizard": {
+          "teams": 5,
+          "wins": 13,
+          "losses": 11,
+          "draws": 0
+        },
+        "Sneasler": {
+          "teams": 5,
+          "wins": 8,
+          "losses": 14,
+          "draws": 0
+        },
+        "Basculegion": {
+          "teams": 5,
+          "wins": 14,
+          "losses": 10,
+          "draws": 0
+        },
+        "Aerodactyl": {
+          "teams": 5,
+          "wins": 11,
+          "losses": 11,
+          "draws": 0
+        },
+        "Sylveon": {
+          "teams": 5,
+          "wins": 10,
+          "losses": 11,
+          "draws": 0
+        },
+        "Whimsicott": {
+          "teams": 4,
+          "wins": 9,
+          "losses": 9,
+          "draws": 0
+        },
+        "Venusaur": {
+          "teams": 4,
+          "wins": 8,
+          "losses": 8,
+          "draws": 0
+        },
+        "Farigiraf": {
+          "teams": 3,
+          "wins": 8,
+          "losses": 6,
+          "draws": 0
+        },
+        "Sableye": {
+          "teams": 3,
+          "wins": 5,
+          "losses": 8,
+          "draws": 0
+        },
+        "Archaludon": {
+          "teams": 3,
+          "wins": 7,
+          "losses": 8,
+          "draws": 0
+        },
+        "Gengar": {
+          "teams": 2,
+          "wins": 5,
+          "losses": 5,
+          "draws": 0
+        },
+        "Sinistcha": {
+          "teams": 2,
+          "wins": 6,
+          "losses": 7,
+          "draws": 0
+        },
+        "Torkoal": {
+          "teams": 2,
+          "wins": 2,
+          "losses": 5,
+          "draws": 0
+        },
+        "Excadrill": {
+          "teams": 2,
+          "wins": 10,
+          "losses": 4,
+          "draws": 0
+        },
+        "Tyranitar": {
+          "teams": 2,
+          "wins": 10,
+          "losses": 4,
+          "draws": 0
+        },
+        "Corviknight": {
+          "teams": 2,
+          "wins": 10,
+          "losses": 4,
+          "draws": 0
+        },
+        "Hydreigon": {
+          "teams": 2,
+          "wins": 10,
+          "losses": 4,
+          "draws": 0
+        },
+        "Mimikyu": {
+          "teams": 2,
+          "wins": 10,
+          "losses": 4,
+          "draws": 0
+        },
+        "Kommo-o": {
+          "teams": 1,
+          "wins": 4,
+          "losses": 3,
+          "draws": 0
+        },
+        "Incineroar": {
+          "teams": 1,
+          "wins": 4,
+          "losses": 3,
+          "draws": 0
+        },
+        "Maushold": {
+          "teams": 1,
+          "wins": 4,
+          "losses": 3,
+          "draws": 0
+        },
+        "Heliolisk": {
+          "teams": 1,
+          "wins": 1,
+          "losses": 2,
+          "draws": 0
+        },
+        "Steelix": {
+          "teams": 1,
+          "wins": 1,
+          "losses": 2,
+          "draws": 0
+        },
+        "Delphox": {
+          "teams": 1,
+          "wins": 0,
+          "losses": 2,
+          "draws": 0
+        },
+        "Eternal Flower Floette": {
+          "teams": 1,
+          "wins": 0,
+          "losses": 2,
+          "draws": 0
+        },
+        "Alakazam": {
+          "teams": 1,
+          "wins": 0,
+          "losses": 1,
+          "draws": 0
+        },
+        "Meowstic": {
+          "teams": 1,
+          "wins": 0,
+          "losses": 1,
+          "draws": 0
+        },
+        "Hatterene": {
+          "teams": 1,
+          "wins": 0,
+          "losses": 1,
+          "draws": 0
+        },
+        "Gallade": {
+          "teams": 1,
+          "wins": 0,
+          "losses": 1,
+          "draws": 0
+        },
+        "Crabominable": {
+          "teams": 1,
+          "wins": 0,
+          "losses": 1,
+          "draws": 0
+        },
+        "Blastoise": {
+          "teams": 1,
+          "wins": 5,
+          "losses": 2,
+          "draws": 0
+        },
+        "Kangaskhan": {
+          "teams": 1,
+          "wins": 7,
+          "losses": 1,
+          "draws": 0
+        },
+        "Arcanine": {
+          "teams": 1,
+          "wins": 0,
+          "losses": 2,
+          "draws": 0
+        },
+        "Milotic": {
+          "teams": 1,
+          "wins": 0,
+          "losses": 2,
+          "draws": 0
+        },
+        "Froslass": {
+          "teams": 1,
+          "wins": 1,
+          "losses": 1,
+          "draws": 0
+        },
+        "Scizor": {
+          "teams": 1,
+          "wins": 1,
+          "losses": 1,
+          "draws": 0
+        },
+        "Hisuian Goodra": {
+          "teams": 1,
+          "wins": 1,
+          "losses": 1,
+          "draws": 0
+        },
+        "Talonflame": {
+          "teams": 1,
+          "wins": 1,
+          "losses": 2,
+          "draws": 0
+        },
+        "Aegislash": {
+          "teams": 1,
+          "wins": 1,
+          "losses": 2,
+          "draws": 0
+        },
+        "Alolan Ninetales": {
+          "teams": 1,
+          "wins": 1,
+          "losses": 2,
+          "draws": 0
+        },
+        "Glimmora": {
+          "teams": 1,
+          "wins": 1,
+          "losses": 2,
+          "draws": 0
+        },
+        "Meganium": {
+          "teams": 1,
+          "wins": 2,
+          "losses": 3,
+          "draws": 0
+        },
+        "Pelipper": {
+          "teams": 1,
+          "wins": 2,
+          "losses": 3,
+          "draws": 0
+        },
+        "Heat Rotom": {
+          "teams": 1,
+          "wins": 2,
+          "losses": 2,
+          "draws": 0
+        },
+        "Palafin": {
+          "teams": 1,
+          "wins": 2,
+          "losses": 2,
+          "draws": 0
+        },
+        "Scovillain": {
+          "teams": 1,
+          "wins": 3,
+          "losses": 3,
+          "draws": 0
+        },
+        "Primarina": {
+          "teams": 1,
+          "wins": 0,
+          "losses": 3,
+          "draws": 0
+        },
+        "Alcremie": {
+          "teams": 1,
+          "wins": 0,
+          "losses": 3,
+          "draws": 0
+        },
+        "Altaria": {
+          "teams": 1,
+          "wins": 0,
+          "losses": 3,
+          "draws": 0
+        },
+        "Morpeko": {
+          "teams": 1,
+          "wins": 0,
+          "losses": 3,
+          "draws": 0
+        }
+      }
+    },
+    "69fc45a4e23aab068aadd086": {
+      "name": "Game Corner Showdown 2025 - Split 3 | Torneio #3",
+      "date": "2026-05-10",
+      "total_teams": 12,
+      "pokemon": {
+        "Kingambit": {
+          "teams": 5,
+          "wins": 14,
+          "losses": 10,
+          "draws": 0
+        },
+        "Sinistcha": {
+          "teams": 5,
+          "wins": 11,
+          "losses": 10,
+          "draws": 0
+        },
+        "Gengar": {
+          "teams": 5,
+          "wins": 6,
+          "losses": 11,
+          "draws": 0
+        },
+        "Delphox": {
+          "teams": 4,
+          "wins": 9,
+          "losses": 8,
+          "draws": 0
+        },
+        "Garchomp": {
+          "teams": 4,
+          "wins": 11,
+          "losses": 7,
+          "draws": 0
+        },
+        "Tinkaton": {
+          "teams": 4,
+          "wins": 8,
+          "losses": 7,
+          "draws": 0
+        },
+        "Basculegion": {
+          "teams": 4,
+          "wins": 12,
+          "losses": 8,
+          "draws": 0
+        },
+        "Incineroar": {
+          "teams": 4,
+          "wins": 4,
+          "losses": 9,
+          "draws": 0
+        },
+        "Sneasler": {
+          "teams": 3,
+          "wins": 8,
+          "losses": 5,
+          "draws": 0
+        },
+        "Clefable": {
+          "teams": 2,
+          "wins": 6,
+          "losses": 3,
+          "draws": 0
+        },
+        "Tyranitar": {
+          "teams": 2,
+          "wins": 5,
+          "losses": 5,
+          "draws": 0
+        },
+        "Gardevoir": {
+          "teams": 2,
+          "wins": 6,
+          "losses": 4,
+          "draws": 0
+        },
+        "Talonflame": {
+          "teams": 2,
+          "wins": 7,
+          "losses": 3,
+          "draws": 0
+        },
+        "Eternal Flower Floette": {
+          "teams": 2,
+          "wins": 5,
+          "losses": 4,
+          "draws": 0
+        },
+        "Farigiraf": {
+          "teams": 2,
+          "wins": 4,
+          "losses": 6,
+          "draws": 0
+        },
+        "Kommo-o": {
+          "teams": 2,
+          "wins": 1,
+          "losses": 4,
+          "draws": 0
+        },
+        "Politoed": {
+          "teams": 2,
+          "wins": 1,
+          "losses": 4,
+          "draws": 0
+        },
+        "Archaludon": {
+          "teams": 1,
+          "wins": 2,
+          "losses": 2,
+          "draws": 0
+        },
+        "Venusaur": {
+          "teams": 1,
+          "wins": 2,
+          "losses": 2,
+          "draws": 0
+        },
+        "Wash Rotom": {
+          "teams": 1,
+          "wins": 2,
+          "losses": 2,
+          "draws": 0
+        },
+        "Milotic": {
+          "teams": 1,
+          "wins": 5,
+          "losses": 1,
+          "draws": 0
+        },
+        "Glimmora": {
+          "teams": 1,
+          "wins": 5,
+          "losses": 1,
+          "draws": 0
+        },
+        "Maushold": {
+          "teams": 1,
+          "wins": 2,
+          "losses": 2,
+          "draws": 0
+        },
+        "Blastoise": {
+          "teams": 1,
+          "wins": 3,
+          "losses": 3,
+          "draws": 0
+        },
+        "Alolan Ninetales": {
+          "teams": 1,
+          "wins": 2,
+          "losses": 2,
+          "draws": 0
+        },
+        "Dragonite": {
+          "teams": 1,
+          "wins": 2,
+          "losses": 2,
+          "draws": 0
+        },
+        "Whimsicott": {
+          "teams": 1,
+          "wins": 1,
+          "losses": 3,
+          "draws": 0
+        },
+        "Toxicroak": {
+          "teams": 1,
+          "wins": 1,
+          "losses": 3,
+          "draws": 0
+        },
+        "Hisuian Typhlosion": {
+          "teams": 1,
+          "wins": 1,
+          "losses": 3,
+          "draws": 0
+        },
+        "Tsareena": {
+          "teams": 1,
+          "wins": 1,
+          "losses": 3,
+          "draws": 0
+        },
+        "Aerodactyl": {
+          "teams": 1,
+          "wins": 3,
+          "losses": 2,
+          "draws": 0
+        },
+        "Charizard": {
+          "teams": 1,
+          "wins": 3,
+          "losses": 2,
+          "draws": 0
+        },
+        "Hisuian Decidueye": {
+          "teams": 1,
+          "wins": 1,
+          "losses": 3,
+          "draws": 0
+        },
+        "Primarina": {
+          "teams": 1,
+          "wins": 1,
+          "losses": 3,
+          "draws": 0
+        },
+        "Scovillain": {
+          "teams": 1,
+          "wins": 1,
+          "losses": 3,
+          "draws": 0
+        }
+      }
+    },
+    "69ed70b80dbc80f3c21e9536": {
+      "name": "VGC Trainer School; champions M/A #4",
+      "date": "2026-05-10",
+      "total_teams": 36,
+      "pokemon": {
+        "Garchomp": {
+          "teams": 16,
+          "wins": 44,
+          "losses": 44,
+          "draws": 0
+        },
+        "Sneasler": {
+          "teams": 15,
+          "wins": 50,
+          "losses": 38,
+          "draws": 0
+        },
+        "Charizard": {
+          "teams": 14,
+          "wins": 39,
+          "losses": 33,
+          "draws": 0
+        },
+        "Kingambit": {
+          "teams": 13,
+          "wins": 50,
+          "losses": 34,
+          "draws": 0
+        },
+        "Incineroar": {
+          "teams": 13,
+          "wins": 31,
+          "losses": 35,
+          "draws": 0
+        },
+        "Basculegion": {
+          "teams": 9,
+          "wins": 30,
+          "losses": 22,
+          "draws": 0
+        },
+        "Aerodactyl": {
+          "teams": 9,
+          "wins": 22,
+          "losses": 22,
+          "draws": 0
+        },
+        "Sinistcha": {
+          "teams": 8,
+          "wins": 23,
+          "losses": 18,
+          "draws": 0
+        },
+        "Milotic": {
+          "teams": 6,
+          "wins": 17,
+          "losses": 16,
+          "draws": 0
+        },
+        "Sylveon": {
+          "teams": 6,
+          "wins": 15,
+          "losses": 14,
+          "draws": 0
+        },
+        "Farigiraf": {
+          "teams": 5,
+          "wins": 12,
+          "losses": 8,
+          "draws": 0
+        },
+        "Wash Rotom": {
+          "teams": 5,
+          "wins": 9,
+          "losses": 11,
+          "draws": 0
+        },
+        "Pelipper": {
+          "teams": 5,
+          "wins": 9,
+          "losses": 16,
+          "draws": 0
+        },
+        "Archaludon": {
+          "teams": 5,
+          "wins": 9,
+          "losses": 16,
+          "draws": 0
+        },
+        "Eternal Flower Floette": {
+          "teams": 5,
+          "wins": 26,
+          "losses": 8,
+          "draws": 0
+        },
+        "Gengar": {
+          "teams": 5,
+          "wins": 13,
+          "losses": 16,
+          "draws": 0
+        },
+        "Alolan Ninetales": {
+          "teams": 5,
+          "wins": 10,
+          "losses": 16,
+          "draws": 0
+        },
+        "Sableye": {
+          "teams": 5,
+          "wins": 13,
+          "losses": 16,
+          "draws": 0
+        },
+        "Aegislash": {
+          "teams": 5,
+          "wins": 12,
+          "losses": 14,
+          "draws": 0
+        },
+        "Scizor": {
+          "teams": 4,
+          "wins": 8,
+          "losses": 13,
+          "draws": 0
+        },
+        "Venusaur": {
+          "teams": 4,
+          "wins": 6,
+          "losses": 11,
+          "draws": 0
+        },
+        "Torkoal": {
+          "teams": 4,
+          "wins": 10,
+          "losses": 8,
+          "draws": 0
+        },
+        "Whimsicott": {
+          "teams": 3,
+          "wins": 8,
+          "losses": 10,
+          "draws": 0
+        },
+        "Talonflame": {
+          "teams": 3,
+          "wins": 18,
+          "losses": 7,
+          "draws": 0
+        },
+        "Hydreigon": {
+          "teams": 2,
+          "wins": 6,
+          "losses": 6,
+          "draws": 0
+        },
+        "Tyranitar": {
+          "teams": 2,
+          "wins": 4,
+          "losses": 6,
+          "draws": 0
+        },
+        "Maushold": {
+          "teams": 2,
+          "wins": 10,
+          "losses": 6,
+          "draws": 0
+        },
+        "Kommo-o": {
+          "teams": 2,
+          "wins": 4,
+          "losses": 6,
+          "draws": 0
+        },
+        "Kleavor": {
+          "teams": 2,
+          "wins": 3,
+          "losses": 4,
+          "draws": 0
+        },
+        "Paldean Tauros Aqua Breed": {
+          "teams": 2,
+          "wins": 8,
+          "losses": 6,
+          "draws": 0
+        },
+        "Scovillain": {
+          "teams": 2,
+          "wins": 1,
+          "losses": 7,
+          "draws": 0
+        },
+        "Gardevoir": {
+          "teams": 2,
+          "wins": 12,
+          "losses": 6,
+          "draws": 0
+        },
+        "Blastoise": {
+          "teams": 2,
+          "wins": 3,
+          "losses": 4,
+          "draws": 0
+        },
+        "Kangaskhan": {
+          "teams": 2,
+          "wins": 6,
+          "losses": 4,
+          "draws": 0
+        },
+        "Excadrill": {
+          "teams": 1,
+          "wins": 3,
+          "losses": 3,
+          "draws": 0
+        },
+        "Mimikyu": {
+          "teams": 1,
+          "wins": 3,
+          "losses": 3,
+          "draws": 0
+        },
+        "Corviknight": {
+          "teams": 1,
+          "wins": 3,
+          "losses": 3,
+          "draws": 0
+        },
+        "Delphox": {
+          "teams": 1,
+          "wins": 1,
+          "losses": 1,
+          "draws": 0
+        },
+        "Clefable": {
+          "teams": 1,
+          "wins": 1,
+          "losses": 1,
+          "draws": 0
+        },
+        "Meganium": {
+          "teams": 1,
+          "wins": 3,
+          "losses": 3,
+          "draws": 0
+        },
+        "Greninja": {
+          "teams": 1,
+          "wins": 2,
+          "losses": 3,
+          "draws": 0
+        },
+        "Galarian Slowbro": {
+          "teams": 1,
+          "wins": 0,
+          "losses": 1,
+          "draws": 0
+        },
+        "Rhyperior": {
+          "teams": 1,
+          "wins": 0,
+          "losses": 1,
+          "draws": 0
+        },
+        "Hisuian Arcanine": {
+          "teams": 1,
+          "wins": 5,
+          "losses": 3,
+          "draws": 0
+        },
+        "Primarina": {
+          "teams": 1,
+          "wins": 5,
+          "losses": 3,
+          "draws": 0
+        },
+        "Drampa": {
+          "teams": 1,
+          "wins": 4,
+          "losses": 3,
+          "draws": 0
+        },
+        "Aggron": {
+          "teams": 1,
+          "wins": 4,
+          "losses": 3,
+          "draws": 0
+        },
+        "Oranguru": {
+          "teams": 1,
+          "wins": 4,
+          "losses": 3,
+          "draws": 0
+        },
+        "Hisuian Samurott": {
+          "teams": 1,
+          "wins": 0,
+          "losses": 2,
+          "draws": 0
+        },
+        "Mamoswine": {
+          "teams": 1,
+          "wins": 0,
+          "losses": 2,
+          "draws": 0
+        },
+        "Camerupt": {
+          "teams": 1,
+          "wins": 0,
+          "losses": 1,
+          "draws": 0
+        },
+        "Alcremie": {
+          "teams": 1,
+          "wins": 0,
+          "losses": 1,
+          "draws": 0
+        },
+        "Meowscarada": {
+          "teams": 1,
+          "wins": 3,
+          "losses": 3,
+          "draws": 0
+        },
+        "Pikachu": {
+          "teams": 1,
+          "wins": 5,
+          "losses": 3,
+          "draws": 0
+        },
+        "Conkeldurr": {
+          "teams": 1,
+          "wins": 1,
+          "losses": 1,
+          "draws": 0
+        },
+        "Glimmora": {
+          "teams": 1,
+          "wins": 4,
+          "losses": 3,
+          "draws": 0
+        },
+        "Froslass": {
+          "teams": 1,
+          "wins": 0,
+          "losses": 3,
+          "draws": 0
+        },
+        "Dragonite": {
+          "teams": 1,
+          "wins": 2,
+          "losses": 4,
+          "draws": 0
+        }
+      }
     }
   },
   "aggregate": {
-    "total_teams": 17034,
-    "tournament_count": 215,
+    "total_teams": 17184,
+    "tournament_count": 221,
     "pokemon": {
       "Incineroar": {
-        "teams": 6542,
-        "usage_pct": 38.41,
-        "wins": 17091,
-        "losses": 18700,
+        "teams": 6588,
+        "usage_pct": 38.34,
+        "wins": 17188,
+        "losses": 18812,
         "draws": 20,
-        "win_rate": 47.75
+        "win_rate": 47.74
       },
       "Sneasler": {
-        "teams": 8319,
-        "usage_pct": 48.84,
-        "wins": 23636,
-        "losses": 23217,
+        "teams": 8372,
+        "usage_pct": 48.72,
+        "wins": 23773,
+        "losses": 23343,
         "draws": 30,
-        "win_rate": 50.45
+        "win_rate": 50.46
       },
       "Garchomp": {
-        "teams": 6731,
-        "usage_pct": 39.52,
-        "wins": 19405,
-        "losses": 18798,
+        "teams": 6789,
+        "usage_pct": 39.51,
+        "wins": 19545,
+        "losses": 18932,
         "draws": 32,
-        "win_rate": 50.79
+        "win_rate": 50.8
       },
       "Sinistcha": {
-        "teams": 4466,
-        "usage_pct": 26.22,
-        "wins": 11967,
-        "losses": 12766,
+        "teams": 4499,
+        "usage_pct": 26.18,
+        "wins": 12040,
+        "losses": 12847,
         "draws": 11,
         "win_rate": 48.38
       },
       "Kingambit": {
-        "teams": 5422,
+        "teams": 5470,
         "usage_pct": 31.83,
-        "wins": 16644,
-        "losses": 14617,
+        "wins": 16789,
+        "losses": 14727,
         "draws": 24,
-        "win_rate": 53.24
+        "win_rate": 53.27
       },
       "Basculegion": {
-        "teams": 5074,
-        "usage_pct": 29.79,
-        "wins": 15669,
-        "losses": 13795,
+        "teams": 5129,
+        "usage_pct": 29.85,
+        "wins": 15815,
+        "losses": 13914,
         "draws": 28,
-        "win_rate": 53.18
+        "win_rate": 53.2
       },
       "Wash Rotom": {
-        "teams": 2900,
-        "usage_pct": 17.02,
-        "wins": 7989,
-        "losses": 8267,
+        "teams": 2920,
+        "usage_pct": 16.99,
+        "wins": 8038,
+        "losses": 8311,
         "draws": 3,
-        "win_rate": 49.14
+        "win_rate": 49.17
       },
       "Whimsicott": {
-        "teams": 2263,
-        "usage_pct": 13.29,
-        "wins": 5826,
-        "losses": 6659,
+        "teams": 2280,
+        "usage_pct": 13.27,
+        "wins": 5862,
+        "losses": 6698,
         "draws": 9,
-        "win_rate": 46.66
+        "win_rate": 46.67
       },
       "Aerodactyl": {
-        "teams": 3983,
+        "teams": 4017,
         "usage_pct": 23.38,
-        "wins": 11954,
-        "losses": 11006,
+        "wins": 12032,
+        "losses": 11082,
         "draws": 18,
         "win_rate": 52.06
       },
       "Pelipper": {
-        "teams": 2371,
-        "usage_pct": 13.92,
-        "wins": 6640,
-        "losses": 6747,
+        "teams": 2387,
+        "usage_pct": 13.89,
+        "wins": 6675,
+        "losses": 6787,
         "draws": 5,
-        "win_rate": 49.6
+        "win_rate": 49.58
       },
       "Maushold": {
-        "teams": 1074,
-        "usage_pct": 6.31,
-        "wins": 2908,
-        "losses": 3060,
+        "teams": 1082,
+        "usage_pct": 6.3,
+        "wins": 2931,
+        "losses": 3083,
         "draws": 1,
-        "win_rate": 48.73
+        "win_rate": 48.74
       },
       "Dragonite": {
-        "teams": 1494,
-        "usage_pct": 8.77,
-        "wins": 4102,
-        "losses": 4271,
+        "teams": 1509,
+        "usage_pct": 8.78,
+        "wins": 4138,
+        "losses": 4304,
         "draws": 2,
-        "win_rate": 48.99
+        "win_rate": 49.02
       },
       "Farigiraf": {
-        "teams": 2276,
-        "usage_pct": 13.36,
-        "wins": 5901,
-        "losses": 6583,
+        "teams": 2299,
+        "usage_pct": 13.38,
+        "wins": 5946,
+        "losses": 6639,
         "draws": 15,
-        "win_rate": 47.27
+        "win_rate": 47.25
       },
       "Tyranitar": {
-        "teams": 2157,
-        "usage_pct": 12.66,
-        "wins": 5881,
-        "losses": 6358,
+        "teams": 2178,
+        "usage_pct": 12.67,
+        "wins": 5936,
+        "losses": 6409,
         "draws": 3,
-        "win_rate": 48.05
+        "win_rate": 48.08
       },
       "Charizard": {
-        "teams": 3087,
-        "usage_pct": 18.12,
-        "wins": 8794,
-        "losses": 8709,
+        "teams": 3132,
+        "usage_pct": 18.23,
+        "wins": 8909,
+        "losses": 8813,
         "draws": 10,
-        "win_rate": 50.24
+        "win_rate": 50.27
       },
       "Floette": {
-        "teams": 866,
-        "usage_pct": 5.08,
-        "wins": 2550,
-        "losses": 2273,
+        "teams": 871,
+        "usage_pct": 5.07,
+        "wins": 2558,
+        "losses": 2281,
         "draws": 4,
-        "win_rate": 52.87
+        "win_rate": 52.86
       },
       "Talonflame": {
-        "teams": 1158,
-        "usage_pct": 6.8,
-        "wins": 3291,
-        "losses": 3324,
+        "teams": 1167,
+        "usage_pct": 6.79,
+        "wins": 3324,
+        "losses": 3342,
         "draws": 2,
-        "win_rate": 49.75
+        "win_rate": 49.86
       },
       "Gengar": {
-        "teams": 1130,
-        "usage_pct": 6.63,
-        "wins": 2701,
-        "losses": 3172,
+        "teams": 1146,
+        "usage_pct": 6.67,
+        "wins": 2734,
+        "losses": 3215,
         "draws": 7,
-        "win_rate": 45.99
+        "win_rate": 45.96
       },
       "Mega Floette": {
         "teams": 569,
-        "usage_pct": 3.34,
+        "usage_pct": 3.31,
         "wins": 1597,
         "losses": 1378,
         "draws": 1,
         "win_rate": 53.68
       },
       "Venusaur": {
-        "teams": 1913,
-        "usage_pct": 11.23,
-        "wins": 4971,
-        "losses": 5571,
+        "teams": 1933,
+        "usage_pct": 11.25,
+        "wins": 5013,
+        "losses": 5621,
         "draws": 10,
-        "win_rate": 47.15
+        "win_rate": 47.14
       },
       "Archaludon": {
-        "teams": 2173,
-        "usage_pct": 12.76,
-        "wins": 5958,
-        "losses": 6251,
+        "teams": 2196,
+        "usage_pct": 12.78,
+        "wins": 6008,
+        "losses": 6307,
         "draws": 5,
-        "win_rate": 48.8
+        "win_rate": 48.79
       },
       "Milotic": {
-        "teams": 2426,
-        "usage_pct": 14.24,
-        "wins": 6518,
-        "losses": 7066,
+        "teams": 2448,
+        "usage_pct": 14.25,
+        "wins": 6564,
+        "losses": 7120,
         "draws": 13,
-        "win_rate": 47.98
+        "win_rate": 47.97
       },
       "Alolan Ninetales": {
-        "teams": 631,
-        "usage_pct": 3.7,
-        "wins": 1715,
-        "losses": 1750,
+        "teams": 639,
+        "usage_pct": 3.72,
+        "wins": 1731,
+        "losses": 1773,
         "draws": 13,
-        "win_rate": 49.49
+        "win_rate": 49.4
       },
       "Primarina": {
-        "teams": 881,
-        "usage_pct": 5.17,
-        "wins": 2400,
-        "losses": 2610,
+        "teams": 886,
+        "usage_pct": 5.16,
+        "wins": 2407,
+        "losses": 2623,
         "draws": 1,
-        "win_rate": 47.9
+        "win_rate": 47.85
       },
       "Kommo-o": {
-        "teams": 953,
-        "usage_pct": 5.59,
-        "wins": 2847,
-        "losses": 2575,
+        "teams": 964,
+        "usage_pct": 5.61,
+        "wins": 2866,
+        "losses": 2601,
         "draws": 0,
-        "win_rate": 52.51
+        "win_rate": 52.42
       },
       "Excadrill": {
-        "teams": 1046,
-        "usage_pct": 6.14,
-        "wins": 2873,
-        "losses": 3067,
+        "teams": 1054,
+        "usage_pct": 6.13,
+        "wins": 2901,
+        "losses": 3084,
         "draws": 2,
-        "win_rate": 48.37
+        "win_rate": 48.47
       },
       "Froslass": {
-        "teams": 1505,
-        "usage_pct": 8.84,
-        "wins": 4378,
-        "losses": 4392,
+        "teams": 1512,
+        "usage_pct": 8.8,
+        "wins": 4395,
+        "losses": 4407,
         "draws": 11,
-        "win_rate": 49.92
+        "win_rate": 49.93
       },
       "Clefable": {
-        "teams": 429,
-        "usage_pct": 2.52,
-        "wins": 1180,
-        "losses": 1263,
+        "teams": 434,
+        "usage_pct": 2.53,
+        "wins": 1192,
+        "losses": 1272,
         "draws": 1,
-        "win_rate": 48.3
+        "win_rate": 48.38
       },
       "Corviknight": {
-        "teams": 1325,
-        "usage_pct": 7.78,
-        "wins": 3766,
-        "losses": 3733,
+        "teams": 1335,
+        "usage_pct": 7.77,
+        "wins": 3798,
+        "losses": 3756,
         "draws": 2,
-        "win_rate": 50.22
+        "win_rate": 50.28
       },
       "Gardevoir": {
-        "teams": 877,
-        "usage_pct": 5.15,
-        "wins": 2405,
-        "losses": 2596,
+        "teams": 882,
+        "usage_pct": 5.13,
+        "wins": 2425,
+        "losses": 2609,
         "draws": 4,
-        "win_rate": 48.09
+        "win_rate": 48.17
       },
       "Palafin": {
-        "teams": 431,
-        "usage_pct": 2.53,
-        "wins": 1196,
-        "losses": 1201,
+        "teams": 436,
+        "usage_pct": 2.54,
+        "wins": 1210,
+        "losses": 1210,
         "draws": 1,
-        "win_rate": 49.9
+        "win_rate": 50
       },
       "Aegislash": {
-        "teams": 1315,
-        "usage_pct": 7.72,
-        "wins": 3937,
-        "losses": 3687,
+        "teams": 1328,
+        "usage_pct": 7.73,
+        "wins": 3971,
+        "losses": 3716,
         "draws": 1,
-        "win_rate": 51.64
+        "win_rate": 51.66
       },
       "Mega Charizard Y": {
         "teams": 273,
-        "usage_pct": 1.6,
+        "usage_pct": 1.59,
         "wins": 662,
         "losses": 695,
         "draws": 2,
         "win_rate": 48.78
       },
       "Delphox": {
-        "teams": 1083,
-        "usage_pct": 6.36,
-        "wins": 3409,
-        "losses": 3102,
+        "teams": 1092,
+        "usage_pct": 6.35,
+        "wins": 3425,
+        "losses": 3120,
         "draws": 7,
-        "win_rate": 52.36
+        "win_rate": 52.33
       },
       "Gyarados": {
         "teams": 411,
-        "usage_pct": 2.41,
+        "usage_pct": 2.39,
         "wins": 943,
         "losses": 1221,
         "draws": 0,
         "win_rate": 43.58
       },
       "Torkoal": {
-        "teams": 822,
-        "usage_pct": 4.83,
-        "wins": 1989,
-        "losses": 2422,
+        "teams": 833,
+        "usage_pct": 4.85,
+        "wins": 2011,
+        "losses": 2448,
         "draws": 2,
-        "win_rate": 45.09
+        "win_rate": 45.1
       },
       "Mega Delphox": {
         "teams": 159,
@@ -83031,68 +84897,68 @@
         "win_rate": 52.63
       },
       "Politoed": {
-        "teams": 643,
-        "usage_pct": 3.77,
-        "wins": 1599,
-        "losses": 1844,
+        "teams": 649,
+        "usage_pct": 3.78,
+        "wins": 1610,
+        "losses": 1859,
         "draws": 1,
-        "win_rate": 46.44
+        "win_rate": 46.41
       },
       "Sylveon": {
-        "teams": 732,
-        "usage_pct": 4.3,
-        "wins": 1855,
-        "losses": 2027,
+        "teams": 754,
+        "usage_pct": 4.39,
+        "wins": 1913,
+        "losses": 2073,
         "draws": 1,
-        "win_rate": 47.78
+        "win_rate": 47.99
       },
       "Kangaskhan": {
-        "teams": 691,
-        "usage_pct": 4.06,
-        "wins": 1949,
-        "losses": 1940,
+        "teams": 699,
+        "usage_pct": 4.07,
+        "wins": 1975,
+        "losses": 1959,
         "draws": 0,
-        "win_rate": 50.12
+        "win_rate": 50.2
       },
       "Mega Froslass": {
         "teams": 190,
-        "usage_pct": 1.12,
+        "usage_pct": 1.11,
         "wins": 514,
         "losses": 508,
         "draws": 1,
         "win_rate": 50.29
       },
       "Glimmora": {
-        "teams": 520,
-        "usage_pct": 3.05,
-        "wins": 1326,
-        "losses": 1563,
+        "teams": 528,
+        "usage_pct": 3.07,
+        "wins": 1344,
+        "losses": 1580,
         "draws": 3,
-        "win_rate": 45.9
+        "win_rate": 45.96
       },
       "Starmie": {
-        "teams": 228,
-        "usage_pct": 1.34,
-        "wins": 550,
-        "losses": 677,
+        "teams": 229,
+        "usage_pct": 1.33,
+        "wins": 555,
+        "losses": 679,
         "draws": 0,
-        "win_rate": 44.82
+        "win_rate": 44.98
       },
       "Mega Tyranitar": {
         "teams": 180,
-        "usage_pct": 1.06,
+        "usage_pct": 1.05,
         "wins": 498,
         "losses": 453,
         "draws": 1,
         "win_rate": 52.37
       },
       "Heat Rotom": {
-        "teams": 529,
-        "usage_pct": 3.11,
-        "wins": 1433,
-        "losses": 1498,
+        "teams": 532,
+        "usage_pct": 3.1,
+        "wins": 1444,
+        "losses": 1504,
         "draws": 0,
-        "win_rate": 48.89
+        "win_rate": 48.98
       },
       "Orthworm": {
         "teams": 166,
@@ -83103,16 +84969,16 @@
         "win_rate": 44.91
       },
       "Dragapult": {
-        "teams": 444,
-        "usage_pct": 2.61,
-        "wins": 1147,
-        "losses": 1322,
+        "teams": 447,
+        "usage_pct": 2.6,
+        "wins": 1149,
+        "losses": 1328,
         "draws": 1,
-        "win_rate": 46.46
+        "win_rate": 46.39
       },
       "Mega Dragonite": {
         "teams": 121,
-        "usage_pct": 0.71,
+        "usage_pct": 0.7,
         "wins": 287,
         "losses": 337,
         "draws": 2,
@@ -83120,107 +84986,107 @@
       },
       "Golurk": {
         "teams": 293,
-        "usage_pct": 1.72,
+        "usage_pct": 1.71,
         "wins": 608,
         "losses": 893,
         "draws": 1,
         "win_rate": 40.51
       },
       "Meowscarada": {
-        "teams": 280,
+        "teams": 282,
         "usage_pct": 1.64,
-        "wins": 705,
-        "losses": 845,
+        "wins": 708,
+        "losses": 849,
         "draws": 3,
-        "win_rate": 45.48
+        "win_rate": 45.47
       },
       "Volcarona": {
-        "teams": 346,
+        "teams": 349,
         "usage_pct": 2.03,
-        "wins": 967,
-        "losses": 1000,
+        "wins": 974,
+        "losses": 1006,
         "draws": 0,
-        "win_rate": 49.16
+        "win_rate": 49.19
       },
       "Mega Meganium": {
         "teams": 115,
-        "usage_pct": 0.68,
+        "usage_pct": 0.67,
         "wins": 324,
         "losses": 299,
         "draws": 0,
         "win_rate": 52.01
       },
       "Meganium": {
-        "teams": 1116,
-        "usage_pct": 6.55,
-        "wins": 3068,
-        "losses": 3305,
+        "teams": 1121,
+        "usage_pct": 6.52,
+        "wins": 3077,
+        "losses": 3315,
         "draws": 2,
         "win_rate": 48.14
       },
       "Hydreigon": {
-        "teams": 490,
-        "usage_pct": 2.88,
-        "wins": 1410,
-        "losses": 1418,
+        "teams": 496,
+        "usage_pct": 2.89,
+        "wins": 1436,
+        "losses": 1433,
         "draws": 0,
-        "win_rate": 49.86
+        "win_rate": 50.05
       },
       "Gallade": {
-        "teams": 200,
+        "teams": 201,
         "usage_pct": 1.17,
         "wins": 445,
-        "losses": 621,
+        "losses": 622,
         "draws": 5,
-        "win_rate": 41.74
+        "win_rate": 41.71
       },
       "Mega Gengar": {
         "teams": 177,
-        "usage_pct": 1.04,
+        "usage_pct": 1.03,
         "wins": 432,
         "losses": 478,
         "draws": 0,
         "win_rate": 47.47
       },
       "Arcanine": {
-        "teams": 140,
-        "usage_pct": 0.82,
-        "wins": 321,
-        "losses": 415,
+        "teams": 142,
+        "usage_pct": 0.83,
+        "wins": 324,
+        "losses": 420,
         "draws": 0,
-        "win_rate": 43.61
+        "win_rate": 43.55
       },
       "Hisuian Arcanine": {
-        "teams": 401,
-        "usage_pct": 2.35,
-        "wins": 1185,
-        "losses": 1147,
+        "teams": 402,
+        "usage_pct": 2.34,
+        "wins": 1190,
+        "losses": 1150,
         "draws": 0,
-        "win_rate": 50.81
+        "win_rate": 50.85
       },
       "Sableye": {
-        "teams": 619,
-        "usage_pct": 3.63,
-        "wins": 1576,
-        "losses": 1801,
+        "teams": 635,
+        "usage_pct": 3.7,
+        "wins": 1609,
+        "losses": 1846,
         "draws": 4,
-        "win_rate": 46.67
+        "win_rate": 46.57
       },
       "Chandelure": {
         "teams": 127,
-        "usage_pct": 0.75,
+        "usage_pct": 0.74,
         "wins": 277,
         "losses": 381,
         "draws": 0,
         "win_rate": 42.1
       },
       "Lucario": {
-        "teams": 216,
-        "usage_pct": 1.27,
+        "teams": 217,
+        "usage_pct": 1.26,
         "wins": 536,
-        "losses": 677,
+        "losses": 678,
         "draws": 11,
-        "win_rate": 44.19
+        "win_rate": 44.15
       },
       "Mega Venusaur": {
         "teams": 49,
@@ -83239,20 +85105,20 @@
         "win_rate": 44.93
       },
       "Mamoswine": {
-        "teams": 124,
+        "teams": 126,
         "usage_pct": 0.73,
-        "wins": 333,
-        "losses": 361,
+        "wins": 335,
+        "losses": 366,
         "draws": 0,
-        "win_rate": 47.98
+        "win_rate": 47.79
       },
       "Hisuian Typhlosion": {
-        "teams": 349,
-        "usage_pct": 2.05,
-        "wins": 761,
-        "losses": 982,
+        "teams": 350,
+        "usage_pct": 2.04,
+        "wins": 762,
+        "losses": 985,
         "draws": 1,
-        "win_rate": 43.66
+        "win_rate": 43.62
       },
       "Mega Aggron": {
         "teams": 57,
@@ -83263,24 +85129,24 @@
         "win_rate": 45.49
       },
       "Tsareena": {
-        "teams": 344,
-        "usage_pct": 2.02,
-        "wins": 932,
-        "losses": 986,
+        "teams": 345,
+        "usage_pct": 2.01,
+        "wins": 933,
+        "losses": 989,
         "draws": 0,
-        "win_rate": 48.59
+        "win_rate": 48.54
       },
       "Hisuian Zoroark": {
-        "teams": 269,
+        "teams": 272,
         "usage_pct": 1.58,
-        "wins": 696,
-        "losses": 812,
+        "wins": 702,
+        "losses": 821,
         "draws": 1,
-        "win_rate": 46.15
+        "win_rate": 46.09
       },
       "Empoleon": {
         "teams": 145,
-        "usage_pct": 0.85,
+        "usage_pct": 0.84,
         "wins": 295,
         "losses": 466,
         "draws": 0,
@@ -83288,27 +85154,27 @@
       },
       "Frost Rotom": {
         "teams": 148,
-        "usage_pct": 0.87,
+        "usage_pct": 0.86,
         "wins": 364,
         "losses": 483,
         "draws": 0,
         "win_rate": 42.98
       },
       "Blastoise": {
-        "teams": 402,
-        "usage_pct": 2.36,
-        "wins": 1035,
-        "losses": 1203,
+        "teams": 407,
+        "usage_pct": 2.37,
+        "wins": 1048,
+        "losses": 1215,
         "draws": 2,
-        "win_rate": 46.25
+        "win_rate": 46.31
       },
       "Drampa": {
-        "teams": 182,
-        "usage_pct": 1.07,
-        "wins": 422,
-        "losses": 577,
+        "teams": 185,
+        "usage_pct": 1.08,
+        "wins": 432,
+        "losses": 583,
         "draws": 0,
-        "win_rate": 42.24
+        "win_rate": 42.56
       },
       "Azumarill": {
         "teams": 149,
@@ -83328,35 +85194,35 @@
       },
       "Mega Gardevoir": {
         "teams": 83,
-        "usage_pct": 0.49,
+        "usage_pct": 0.48,
         "wins": 214,
         "losses": 199,
         "draws": 0,
         "win_rate": 51.82
       },
       "Crabominable": {
-        "teams": 205,
+        "teams": 206,
         "usage_pct": 1.2,
         "wins": 486,
-        "losses": 621,
+        "losses": 622,
         "draws": 3,
-        "win_rate": 43.9
+        "win_rate": 43.86
       },
       "Scovillain": {
-        "teams": 568,
-        "usage_pct": 3.33,
-        "wins": 1691,
-        "losses": 1535,
+        "teams": 577,
+        "usage_pct": 3.36,
+        "wins": 1706,
+        "losses": 1558,
         "draws": 1,
-        "win_rate": 52.42
+        "win_rate": 52.27
       },
       "Oranguru": {
-        "teams": 181,
+        "teams": 182,
         "usage_pct": 1.06,
-        "wins": 384,
-        "losses": 561,
+        "wins": 388,
+        "losses": 564,
         "draws": 0,
-        "win_rate": 40.63
+        "win_rate": 40.76
       },
       "Machamp": {
         "teams": 44,
@@ -83376,7 +85242,7 @@
       },
       "Mega Glimmora": {
         "teams": 52,
-        "usage_pct": 0.31,
+        "usage_pct": 0.3,
         "wins": 122,
         "losses": 117,
         "draws": 0,
@@ -83384,19 +85250,19 @@
       },
       "Garganacl": {
         "teams": 42,
-        "usage_pct": 0.25,
+        "usage_pct": 0.24,
         "wins": 64,
         "losses": 131,
         "draws": 1,
         "win_rate": 32.82
       },
       "Weavile": {
-        "teams": 129,
+        "teams": 131,
         "usage_pct": 0.76,
         "wins": 302,
-        "losses": 377,
+        "losses": 381,
         "draws": 0,
-        "win_rate": 44.48
+        "win_rate": 44.22
       },
       "Mega Ampharos": {
         "teams": 8,
@@ -83407,12 +85273,12 @@
         "win_rate": 45.45
       },
       "Tinkaton": {
-        "teams": 220,
-        "usage_pct": 1.29,
-        "wins": 515,
-        "losses": 684,
+        "teams": 225,
+        "usage_pct": 1.31,
+        "wins": 525,
+        "losses": 693,
         "draws": 0,
-        "win_rate": 42.95
+        "win_rate": 43.1
       },
       "Typhlosion": {
         "teams": 16,
@@ -83423,20 +85289,20 @@
         "win_rate": 28.75
       },
       "Scizor": {
-        "teams": 1026,
-        "usage_pct": 6.02,
-        "wins": 3205,
-        "losses": 2806,
+        "teams": 1043,
+        "usage_pct": 6.07,
+        "wins": 3235,
+        "losses": 2848,
         "draws": 2,
-        "win_rate": 53.32
+        "win_rate": 53.18
       },
       "Mimikyu": {
-        "teams": 317,
-        "usage_pct": 1.86,
-        "wins": 821,
-        "losses": 922,
+        "teams": 322,
+        "usage_pct": 1.87,
+        "wins": 844,
+        "losses": 933,
         "draws": 7,
-        "win_rate": 47.1
+        "win_rate": 47.5
       },
       "Quaquaval": {
         "teams": 40,
@@ -83455,12 +85321,12 @@
         "win_rate": 37.14
       },
       "Conkeldurr": {
-        "teams": 101,
+        "teams": 102,
         "usage_pct": 0.59,
-        "wins": 231,
-        "losses": 288,
+        "wins": 232,
+        "losses": 289,
         "draws": 0,
-        "win_rate": 44.51
+        "win_rate": 44.53
       },
       "Mega Greninja": {
         "teams": 11,
@@ -83479,28 +85345,28 @@
         "win_rate": 47.25
       },
       "Steelix": {
-        "teams": 34,
+        "teams": 35,
         "usage_pct": 0.2,
-        "wins": 55,
-        "losses": 101,
+        "wins": 56,
+        "losses": 103,
         "draws": 0,
-        "win_rate": 35.26
+        "win_rate": 35.22
       },
       "Camerupt": {
-        "teams": 131,
+        "teams": 133,
         "usage_pct": 0.77,
-        "wins": 285,
-        "losses": 382,
+        "wins": 287,
+        "losses": 385,
         "draws": 6,
-        "win_rate": 42.73
+        "win_rate": 42.71
       },
       "Pikachu": {
-        "teams": 40,
-        "usage_pct": 0.23,
-        "wins": 65,
-        "losses": 121,
+        "teams": 41,
+        "usage_pct": 0.24,
+        "wins": 70,
+        "losses": 124,
         "draws": 0,
-        "win_rate": 34.95
+        "win_rate": 36.08
       },
       "Mow Rotom": {
         "teams": 89,
@@ -83519,12 +85385,12 @@
         "win_rate": 35.85
       },
       "Aggron": {
-        "teams": 288,
-        "usage_pct": 1.69,
-        "wins": 647,
-        "losses": 854,
+        "teams": 292,
+        "usage_pct": 1.7,
+        "wins": 657,
+        "losses": 865,
         "draws": 0,
-        "win_rate": 43.1
+        "win_rate": 43.17
       },
       "Vivillon": {
         "teams": 92,
@@ -83544,7 +85410,7 @@
       },
       "Feraligatr": {
         "teams": 112,
-        "usage_pct": 0.66,
+        "usage_pct": 0.65,
         "wins": 228,
         "losses": 332,
         "draws": 0,
@@ -83552,7 +85418,7 @@
       },
       "Lycanroc": {
         "teams": 42,
-        "usage_pct": 0.25,
+        "usage_pct": 0.24,
         "wins": 106,
         "losses": 103,
         "draws": 0,
@@ -83591,20 +85457,20 @@
         "win_rate": 41.51
       },
       "Heracross": {
-        "teams": 28,
-        "usage_pct": 0.16,
-        "wins": 63,
-        "losses": 76,
+        "teams": 29,
+        "usage_pct": 0.17,
+        "wins": 65,
+        "losses": 79,
         "draws": 0,
-        "win_rate": 45.32
+        "win_rate": 45.14
       },
       "Hisuian Goodra": {
-        "teams": 66,
+        "teams": 67,
         "usage_pct": 0.39,
-        "wins": 147,
-        "losses": 228,
+        "wins": 148,
+        "losses": 229,
         "draws": 0,
-        "win_rate": 39.2
+        "win_rate": 39.26
       },
       "Mega Blastoise": {
         "teams": 26,
@@ -83639,26 +85505,26 @@
         "win_rate": 42.11
       },
       "Hisuian Samurott": {
-        "teams": 66,
+        "teams": 67,
         "usage_pct": 0.39,
         "wins": 147,
-        "losses": 195,
+        "losses": 197,
         "draws": 0,
-        "win_rate": 42.98
+        "win_rate": 42.73
       },
       "Meowstic": {
-        "teams": 111,
+        "teams": 112,
         "usage_pct": 0.65,
         "wins": 204,
-        "losses": 381,
+        "losses": 382,
         "draws": 0,
-        "win_rate": 34.87
+        "win_rate": 34.81
       },
       "Manectric": {
-        "teams": 146,
+        "teams": 147,
         "usage_pct": 0.86,
-        "wins": 419,
-        "losses": 434,
+        "wins": 421,
+        "losses": 436,
         "draws": 0,
         "win_rate": 49.12
       },
@@ -83679,16 +85545,16 @@
         "win_rate": 43.48
       },
       "Hisuian Decidueye": {
-        "teams": 57,
-        "usage_pct": 0.33,
-        "wins": 123,
-        "losses": 169,
+        "teams": 58,
+        "usage_pct": 0.34,
+        "wins": 124,
+        "losses": 172,
         "draws": 0,
-        "win_rate": 42.12
+        "win_rate": 41.89
       },
       "Abomasnow": {
         "teams": 52,
-        "usage_pct": 0.31,
+        "usage_pct": 0.3,
         "wins": 140,
         "losses": 137,
         "draws": 0,
@@ -83703,12 +85569,12 @@
         "win_rate": 41.94
       },
       "Alakazam": {
-        "teams": 69,
+        "teams": 70,
         "usage_pct": 0.41,
         "wins": 108,
-        "losses": 231,
+        "losses": 232,
         "draws": 0,
-        "win_rate": 31.86
+        "win_rate": 31.76
       },
       "Clawitzer": {
         "teams": 16,
@@ -83719,16 +85585,16 @@
         "win_rate": 36.78
       },
       "Raichu": {
-        "teams": 125,
-        "usage_pct": 0.73,
-        "wins": 261,
-        "losses": 412,
+        "teams": 127,
+        "usage_pct": 0.74,
+        "wins": 262,
+        "losses": 416,
         "draws": 0,
-        "win_rate": 38.78
+        "win_rate": 38.64
       },
       "Mega Drampa": {
         "teams": 18,
-        "usage_pct": 0.11,
+        "usage_pct": 0.1,
         "wins": 38,
         "losses": 58,
         "draws": 0,
@@ -83743,12 +85609,12 @@
         "win_rate": 36.05
       },
       "Paldean Tauros Aqua Breed": {
-        "teams": 197,
+        "teams": 199,
         "usage_pct": 1.16,
-        "wins": 485,
-        "losses": 566,
+        "wins": 493,
+        "losses": 572,
         "draws": 0,
-        "win_rate": 46.15
+        "win_rate": 46.29
       },
       "Mega Scovillain": {
         "teams": 40,
@@ -83767,40 +85633,40 @@
         "win_rate": 40.5
       },
       "Kleavor": {
-        "teams": 75,
-        "usage_pct": 0.44,
-        "wins": 152,
-        "losses": 249,
+        "teams": 77,
+        "usage_pct": 0.45,
+        "wins": 155,
+        "losses": 253,
         "draws": 0,
-        "win_rate": 37.91
+        "win_rate": 37.99
       },
       "Klefki": {
-        "teams": 83,
+        "teams": 84,
         "usage_pct": 0.49,
-        "wins": 198,
-        "losses": 256,
+        "wins": 199,
+        "losses": 257,
         "draws": 1,
-        "win_rate": 43.61
+        "win_rate": 43.64
       },
       "Hatterene": {
-        "teams": 259,
-        "usage_pct": 1.52,
-        "wins": 628,
-        "losses": 814,
+        "teams": 263,
+        "usage_pct": 1.53,
+        "wins": 635,
+        "losses": 823,
         "draws": 6,
         "win_rate": 43.55
       },
       "Espathra": {
-        "teams": 71,
-        "usage_pct": 0.42,
-        "wins": 156,
-        "losses": 211,
+        "teams": 75,
+        "usage_pct": 0.44,
+        "wins": 164,
+        "losses": 220,
         "draws": 0,
-        "win_rate": 42.51
+        "win_rate": 42.71
       },
       "Mega Lopunny": {
         "teams": 23,
-        "usage_pct": 0.14,
+        "usage_pct": 0.13,
         "wins": 42,
         "losses": 73,
         "draws": 0,
@@ -83824,19 +85690,19 @@
       },
       "Hawlucha": {
         "teams": 81,
-        "usage_pct": 0.48,
+        "usage_pct": 0.47,
         "wins": 142,
         "losses": 257,
         "draws": 0,
         "win_rate": 35.59
       },
       "Vanilluxe": {
-        "teams": 57,
-        "usage_pct": 0.33,
-        "wins": 119,
-        "losses": 168,
+        "teams": 58,
+        "usage_pct": 0.34,
+        "wins": 120,
+        "losses": 171,
         "draws": 0,
-        "win_rate": 41.46
+        "win_rate": 41.24
       },
       "Mega Lucario": {
         "teams": 20,
@@ -83863,12 +85729,12 @@
         "win_rate": 42.86
       },
       "Altaria": {
-        "teams": 66,
+        "teams": 67,
         "usage_pct": 0.39,
         "wins": 129,
-        "losses": 221,
+        "losses": 224,
         "draws": 0,
-        "win_rate": 36.86
+        "win_rate": 36.54
       },
       "Hisuian Sneasel": {
         "teams": 5,
@@ -83887,48 +85753,48 @@
         "win_rate": 50.15
       },
       "Ariados": {
-        "teams": 22,
+        "teams": 23,
         "usage_pct": 0.13,
-        "wins": 40,
-        "losses": 76,
+        "wins": 43,
+        "losses": 79,
         "draws": 0,
-        "win_rate": 34.48
+        "win_rate": 35.25
       },
       "Skeledirge": {
-        "teams": 42,
+        "teams": 43,
         "usage_pct": 0.25,
-        "wins": 77,
-        "losses": 140,
+        "wins": 80,
+        "losses": 142,
         "draws": 0,
-        "win_rate": 35.48
+        "win_rate": 36.04
       },
       "Greninja": {
-        "teams": 116,
-        "usage_pct": 0.68,
-        "wins": 201,
-        "losses": 368,
+        "teams": 119,
+        "usage_pct": 0.69,
+        "wins": 204,
+        "losses": 376,
         "draws": 0,
-        "win_rate": 35.33
+        "win_rate": 35.17
       },
       "Toxapex": {
-        "teams": 30,
+        "teams": 31,
         "usage_pct": 0.18,
-        "wins": 51,
-        "losses": 95,
+        "wins": 55,
+        "losses": 97,
         "draws": 0,
-        "win_rate": 34.93
+        "win_rate": 36.18
       },
       "Rhyperior": {
-        "teams": 51,
+        "teams": 52,
         "usage_pct": 0.3,
         "wins": 130,
-        "losses": 157,
+        "losses": 158,
         "draws": 0,
-        "win_rate": 45.3
+        "win_rate": 45.14
       },
       "Mega Starmie": {
         "teams": 35,
-        "usage_pct": 0.21,
+        "usage_pct": 0.2,
         "wins": 89,
         "losses": 91,
         "draws": 0,
@@ -83944,19 +85810,19 @@
       },
       "Galarian Slowking": {
         "teams": 71,
-        "usage_pct": 0.42,
+        "usage_pct": 0.41,
         "wins": 173,
         "losses": 217,
         "draws": 0,
         "win_rate": 44.36
       },
       "Galarian Slowbro": {
-        "teams": 25,
+        "teams": 26,
         "usage_pct": 0.15,
         "wins": 43,
-        "losses": 90,
+        "losses": 91,
         "draws": 0,
-        "win_rate": 32.33
+        "win_rate": 32.09
       },
       "Krookodile": {
         "teams": 43,
@@ -83968,7 +85834,7 @@
       },
       "Chesnaught": {
         "teams": 66,
-        "usage_pct": 0.39,
+        "usage_pct": 0.38,
         "wins": 170,
         "losses": 208,
         "draws": 0,
@@ -83984,19 +85850,19 @@
       },
       "Gliscor": {
         "teams": 35,
-        "usage_pct": 0.21,
+        "usage_pct": 0.2,
         "wins": 59,
         "losses": 98,
         "draws": 0,
         "win_rate": 37.58
       },
       "Alcremie": {
-        "teams": 24,
-        "usage_pct": 0.14,
+        "teams": 26,
+        "usage_pct": 0.15,
         "wins": 41,
-        "losses": 96,
+        "losses": 100,
         "draws": 0,
-        "win_rate": 29.93
+        "win_rate": 29.08
       },
       "Cofagrigus": {
         "teams": 43,
@@ -84079,12 +85945,12 @@
         "win_rate": 0
       },
       "Toxicroak": {
-        "teams": 29,
+        "teams": 30,
         "usage_pct": 0.17,
-        "wins": 61,
-        "losses": 96,
+        "wins": 62,
+        "losses": 99,
         "draws": 0,
-        "win_rate": 38.85
+        "win_rate": 38.51
       },
       "Zoroark": {
         "teams": 14,
@@ -84095,12 +85961,12 @@
         "win_rate": 30.26
       },
       "Medicham": {
-        "teams": 22,
+        "teams": 23,
         "usage_pct": 0.13,
-        "wins": 59,
-        "losses": 69,
+        "wins": 61,
+        "losses": 72,
         "draws": 0,
-        "win_rate": 46.09
+        "win_rate": 45.86
       },
       "Espeon": {
         "teams": 16,
@@ -84111,12 +85977,12 @@
         "win_rate": 37.63
       },
       "Chimecho": {
-        "teams": 36,
-        "usage_pct": 0.21,
-        "wins": 81,
-        "losses": 109,
+        "teams": 37,
+        "usage_pct": 0.22,
+        "wins": 87,
+        "losses": 111,
         "draws": 0,
-        "win_rate": 42.63
+        "win_rate": 43.94
       },
       "Diggersby": {
         "teams": 7,
@@ -84216,19 +86082,19 @@
       },
       "Lopunny": {
         "teams": 165,
-        "usage_pct": 0.97,
+        "usage_pct": 0.96,
         "wins": 456,
         "losses": 518,
         "draws": 0,
         "win_rate": 46.82
       },
       "Ampharos": {
-        "teams": 61,
+        "teams": 62,
         "usage_pct": 0.36,
-        "wins": 107,
-        "losses": 182,
+        "wins": 110,
+        "losses": 184,
         "draws": 0,
-        "win_rate": 37.02
+        "win_rate": 37.41
       },
       "Decidueye": {
         "teams": 12,
@@ -84248,7 +86114,7 @@
       },
       "Ninetales": {
         "teams": 23,
-        "usage_pct": 0.14,
+        "usage_pct": 0.13,
         "wins": 56,
         "losses": 76,
         "draws": 0,
@@ -84263,20 +86129,20 @@
         "win_rate": 29.27
       },
       "Runerigus": {
-        "teams": 12,
-        "usage_pct": 0.07,
-        "wins": 14,
-        "losses": 40,
+        "teams": 13,
+        "usage_pct": 0.08,
+        "wins": 16,
+        "losses": 42,
         "draws": 0,
-        "win_rate": 25.93
+        "win_rate": 27.59
       },
       "Vaporeon": {
-        "teams": 20,
+        "teams": 21,
         "usage_pct": 0.12,
-        "wins": 30,
-        "losses": 71,
+        "wins": 31,
+        "losses": 74,
         "draws": 0,
-        "win_rate": 29.7
+        "win_rate": 29.52
       },
       "Sharpedo": {
         "teams": 31,
@@ -84423,12 +86289,12 @@
         "win_rate": 40
       },
       "Banette": {
-        "teams": 25,
+        "teams": 26,
         "usage_pct": 0.15,
         "wins": 42,
-        "losses": 76,
+        "losses": 77,
         "draws": 0,
-        "win_rate": 35.59
+        "win_rate": 35.29
       },
       "Dedenne": {
         "teams": 2,
@@ -84464,19 +86330,19 @@
       },
       "Mega Chimecho": {
         "teams": 6,
-        "usage_pct": 0.04,
+        "usage_pct": 0.03,
         "wins": 12,
         "losses": 15,
         "draws": 0,
         "win_rate": 44.44
       },
       "Heliolisk": {
-        "teams": 103,
-        "usage_pct": 0.6,
-        "wins": 255,
-        "losses": 291,
+        "teams": 104,
+        "usage_pct": 0.61,
+        "wins": 256,
+        "losses": 293,
         "draws": 0,
-        "win_rate": 46.7
+        "win_rate": 46.63
       },
       "Wyrdeer": {
         "teams": 11,
@@ -84487,12 +86353,12 @@
         "win_rate": 38.46
       },
       "Pangoro": {
-        "teams": 6,
+        "teams": 7,
         "usage_pct": 0.04,
-        "wins": 22,
-        "losses": 19,
+        "wins": 25,
+        "losses": 21,
         "draws": 0,
-        "win_rate": 53.66
+        "win_rate": 54.35
       },
       "Mega Pinsir": {
         "teams": 1,
@@ -84583,12 +86449,12 @@
         "win_rate": 20
       },
       "Morpeko": {
-        "teams": 7,
-        "usage_pct": 0.04,
+        "teams": 8,
+        "usage_pct": 0.05,
         "wins": 29,
-        "losses": 22,
+        "losses": 25,
         "draws": 0,
-        "win_rate": 56.86
+        "win_rate": 53.7
       },
       "Mega Gallade": {
         "teams": 5,
@@ -84615,12 +86481,12 @@
         "win_rate": 37.5
       },
       "Hippowdon": {
-        "teams": 16,
-        "usage_pct": 0.09,
-        "wins": 31,
-        "losses": 46,
+        "teams": 17,
+        "usage_pct": 0.1,
+        "wins": 34,
+        "losses": 48,
         "draws": 0,
-        "win_rate": 40.26
+        "win_rate": 41.46
       },
       "Flapple": {
         "teams": 9,
@@ -84632,7 +86498,7 @@
       },
       "Aegislash Blade Forme": {
         "teams": 6,
-        "usage_pct": 0.04,
+        "usage_pct": 0.03,
         "wins": 15,
         "losses": 15,
         "draws": 0,
@@ -84720,7 +86586,7 @@
       },
       "Glalie": {
         "teams": 6,
-        "usage_pct": 0.04,
+        "usage_pct": 0.03,
         "wins": 18,
         "losses": 23,
         "draws": 0,
@@ -84799,12 +86665,12 @@
         "win_rate": 62.5
       },
       "Liepard": {
-        "teams": 6,
+        "teams": 7,
         "usage_pct": 0.04,
         "wins": 13,
-        "losses": 21,
+        "losses": 24,
         "draws": 0,
-        "win_rate": 38.24
+        "win_rate": 35.14
       },
       "Samurott": {
         "teams": 1,
@@ -84847,12 +86713,12 @@
         "win_rate": 61.11
       },
       "Eternal Flower Floette": {
-        "teams": 1420,
-        "usage_pct": 8.34,
-        "wins": 4762,
-        "losses": 3989,
+        "teams": 1438,
+        "usage_pct": 8.37,
+        "wins": 4818,
+        "losses": 4026,
         "draws": 6,
-        "win_rate": 54.42
+        "win_rate": 54.48
       },
       "Hisuian Avalugg": {
         "teams": 4,
@@ -84864,7 +86730,7 @@
       },
       "Basculegion ♀": {
         "teams": 47,
-        "usage_pct": 0.28,
+        "usage_pct": 0.27,
         "wins": 133,
         "losses": 141,
         "draws": 0,
@@ -84880,7 +86746,7 @@
       },
       "Appletun": {
         "teams": 6,
-        "usage_pct": 0.04,
+        "usage_pct": 0.03,
         "wins": 5,
         "losses": 17,
         "draws": 0,
