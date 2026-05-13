@@ -1,5 +1,5 @@
 {
-  "updated": "2026-05-12T05:44:39.821Z",
+  "updated": "2026-05-13T05:55:04.904Z",
   "format": "championstournaments",
   "count": 83,
   "pokemon": {
@@ -4744,59 +4744,6 @@
         }
       ]
     },
-    "Mamoswine": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Icicle Crash",
-          "pct": 100
-        },
-        {
-          "name": "High Horsepower",
-          "pct": 100
-        },
-        {
-          "name": "Rock Slide",
-          "pct": 66.667
-        },
-        {
-          "name": "Icy Wind",
-          "pct": 33.333
-        },
-        {
-          "name": "Ice Shard",
-          "pct": 33.333
-        },
-        {
-          "name": "Protect",
-          "pct": 33.333
-        },
-        {
-          "name": "Iron Head",
-          "pct": 33.333
-        }
-      ],
-      "items": [
-        {
-          "name": "Choice Scarf",
-          "pct": 66.667
-        },
-        {
-          "name": "Never-Melt Ice",
-          "pct": 33.333
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Oblivious",
-          "pct": 66.667
-        },
-        {
-          "name": "Thick Fat",
-          "pct": 33.333
-        }
-      ]
-    },
     "Raichu": {
       "usage": null,
       "moves": [
@@ -4855,6 +4802,59 @@
         {
           "name": "Lightning Rod",
           "pct": 100
+        }
+      ]
+    },
+    "Mamoswine": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Icicle Crash",
+          "pct": 100
+        },
+        {
+          "name": "High Horsepower",
+          "pct": 100
+        },
+        {
+          "name": "Rock Slide",
+          "pct": 66.667
+        },
+        {
+          "name": "Icy Wind",
+          "pct": 33.333
+        },
+        {
+          "name": "Ice Shard",
+          "pct": 33.333
+        },
+        {
+          "name": "Protect",
+          "pct": 33.333
+        },
+        {
+          "name": "Iron Head",
+          "pct": 33.333
+        }
+      ],
+      "items": [
+        {
+          "name": "Choice Scarf",
+          "pct": 66.667
+        },
+        {
+          "name": "Never-Melt Ice",
+          "pct": 33.333
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Oblivious",
+          "pct": 66.667
+        },
+        {
+          "name": "Thick Fat",
+          "pct": 33.333
         }
       ]
     },
@@ -5037,51 +5037,6 @@
         }
       ]
     },
-    "Skarmory": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Iron Head",
-          "pct": 100
-        },
-        {
-          "name": "Protect",
-          "pct": 100
-        },
-        {
-          "name": "Brave Bird",
-          "pct": 80
-        },
-        {
-          "name": "Tailwind",
-          "pct": 60
-        },
-        {
-          "name": "Swords Dance",
-          "pct": 40
-        },
-        {
-          "name": "Drill Run",
-          "pct": 20
-        }
-      ],
-      "items": [
-        {
-          "name": "Skarmorite",
-          "pct": 100
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Weak Armor",
-          "pct": 80
-        },
-        {
-          "name": "Sturdy",
-          "pct": 20
-        }
-      ]
-    },
     "Heliolisk": {
       "usage": null,
       "moves": [
@@ -5144,6 +5099,51 @@
         {
           "name": "Solar Power",
           "pct": 10
+        }
+      ]
+    },
+    "Skarmory": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Iron Head",
+          "pct": 100
+        },
+        {
+          "name": "Protect",
+          "pct": 100
+        },
+        {
+          "name": "Brave Bird",
+          "pct": 80
+        },
+        {
+          "name": "Tailwind",
+          "pct": 60
+        },
+        {
+          "name": "Swords Dance",
+          "pct": 40
+        },
+        {
+          "name": "Drill Run",
+          "pct": 20
+        }
+      ],
+      "items": [
+        {
+          "name": "Skarmorite",
+          "pct": 100
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Weak Armor",
+          "pct": 80
+        },
+        {
+          "name": "Sturdy",
+          "pct": 20
         }
       ]
     },
