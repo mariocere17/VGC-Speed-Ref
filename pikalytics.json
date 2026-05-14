@@ -1,5 +1,5 @@
 {
-  "updated": "2026-05-13T05:55:04.904Z",
+  "updated": "2026-05-14T05:54:36.716Z",
   "format": "championstournaments",
   "count": 83,
   "pokemon": {
@@ -4178,51 +4178,6 @@
         }
       ]
     },
-    "Orthworm": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Iron Defense",
-          "pct": 100
-        },
-        {
-          "name": "Body Press",
-          "pct": 100
-        },
-        {
-          "name": "Shed Tail",
-          "pct": 66.667
-        },
-        {
-          "name": "Heavy Slam",
-          "pct": 66.667
-        },
-        {
-          "name": "Protect",
-          "pct": 66.667
-        }
-      ],
-      "items": [
-        {
-          "name": "Sitrus Berry",
-          "pct": 33.333
-        },
-        {
-          "name": "Quick Claw",
-          "pct": 33.333
-        },
-        {
-          "name": "Leftovers",
-          "pct": 33.333
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Earth Eater",
-          "pct": 100
-        }
-      ]
-    },
     "Lopunny": {
       "usage": null,
       "moves": [
@@ -4273,6 +4228,51 @@
         {
           "name": "Cute Charm",
           "pct": 35.714
+        }
+      ]
+    },
+    "Orthworm": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Iron Defense",
+          "pct": 100
+        },
+        {
+          "name": "Body Press",
+          "pct": 100
+        },
+        {
+          "name": "Shed Tail",
+          "pct": 66.667
+        },
+        {
+          "name": "Heavy Slam",
+          "pct": 66.667
+        },
+        {
+          "name": "Protect",
+          "pct": 66.667
+        }
+      ],
+      "items": [
+        {
+          "name": "Sitrus Berry",
+          "pct": 33.333
+        },
+        {
+          "name": "Quick Claw",
+          "pct": 33.333
+        },
+        {
+          "name": "Leftovers",
+          "pct": 33.333
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Earth Eater",
+          "pct": 100
         }
       ]
     },
@@ -4512,6 +4512,71 @@
         }
       ]
     },
+    "Weavile": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Fake Out",
+          "pct": 100
+        },
+        {
+          "name": "Knock Off",
+          "pct": 85
+        },
+        {
+          "name": "Icicle Crash",
+          "pct": 60
+        },
+        {
+          "name": "Low Kick",
+          "pct": 50
+        },
+        {
+          "name": "Triple Axel",
+          "pct": 30
+        },
+        {
+          "name": "Ice Shard",
+          "pct": 15
+        },
+        {
+          "name": "Taunt",
+          "pct": 15
+        },
+        {
+          "name": "Psycho Cut",
+          "pct": 15
+        }
+      ],
+      "items": [
+        {
+          "name": "Focus Sash",
+          "pct": 85
+        },
+        {
+          "name": "Mental Herb",
+          "pct": 5
+        },
+        {
+          "name": "Sitrus Berry",
+          "pct": 5
+        },
+        {
+          "name": "White Herb",
+          "pct": 5
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Pickpocket",
+          "pct": 70
+        },
+        {
+          "name": "Pressure",
+          "pct": 30
+        }
+      ]
+    },
     "Camerupt": {
       "usage": null,
       "moves": [
@@ -4607,71 +4672,6 @@
         {
           "name": "Water Bubble",
           "pct": 100
-        }
-      ]
-    },
-    "Weavile": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Fake Out",
-          "pct": 100
-        },
-        {
-          "name": "Knock Off",
-          "pct": 85
-        },
-        {
-          "name": "Icicle Crash",
-          "pct": 60
-        },
-        {
-          "name": "Low Kick",
-          "pct": 50
-        },
-        {
-          "name": "Triple Axel",
-          "pct": 30
-        },
-        {
-          "name": "Ice Shard",
-          "pct": 15
-        },
-        {
-          "name": "Taunt",
-          "pct": 15
-        },
-        {
-          "name": "Psycho Cut",
-          "pct": 15
-        }
-      ],
-      "items": [
-        {
-          "name": "Focus Sash",
-          "pct": 85
-        },
-        {
-          "name": "Mental Herb",
-          "pct": 5
-        },
-        {
-          "name": "Sitrus Berry",
-          "pct": 5
-        },
-        {
-          "name": "White Herb",
-          "pct": 5
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Pickpocket",
-          "pct": 70
-        },
-        {
-          "name": "Pressure",
-          "pct": 30
         }
       ]
     },
@@ -5212,59 +5212,6 @@
         }
       ]
     },
-    "Snorlax": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Protect",
-          "pct": 92.308
-        },
-        {
-          "name": "Fissure",
-          "pct": 61.538
-        },
-        {
-          "name": "Stockpile",
-          "pct": 61.538
-        },
-        {
-          "name": "Body Press",
-          "pct": 61.538
-        },
-        {
-          "name": "Belly Drum",
-          "pct": 30.769
-        },
-        {
-          "name": "High Horsepower",
-          "pct": 23.077
-        },
-        {
-          "name": "Rock Slide",
-          "pct": 15.385
-        },
-        {
-          "name": "Self-Destruct",
-          "pct": 15.385
-        }
-      ],
-      "items": [
-        {
-          "name": "Leftovers",
-          "pct": 69.231
-        },
-        {
-          "name": "Sitrus Berry",
-          "pct": 30.769
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Thick Fat",
-          "pct": 100
-        }
-      ]
-    },
     "Vivillon": {
       "usage": null,
       "moves": [
@@ -5319,6 +5266,59 @@
         {
           "name": "Friend Guard",
           "pct": 12.5
+        }
+      ]
+    },
+    "Snorlax": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Protect",
+          "pct": 92.308
+        },
+        {
+          "name": "Fissure",
+          "pct": 61.538
+        },
+        {
+          "name": "Stockpile",
+          "pct": 61.538
+        },
+        {
+          "name": "Body Press",
+          "pct": 61.538
+        },
+        {
+          "name": "Belly Drum",
+          "pct": 30.769
+        },
+        {
+          "name": "High Horsepower",
+          "pct": 23.077
+        },
+        {
+          "name": "Rock Slide",
+          "pct": 15.385
+        },
+        {
+          "name": "Self-Destruct",
+          "pct": 15.385
+        }
+      ],
+      "items": [
+        {
+          "name": "Leftovers",
+          "pct": 69.231
+        },
+        {
+          "name": "Sitrus Berry",
+          "pct": 30.769
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Thick Fat",
+          "pct": 100
         }
       ]
     }
