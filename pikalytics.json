@@ -1,5 +1,5 @@
 {
-  "updated": "2026-05-14T05:54:36.716Z",
+  "updated": "2026-05-15T06:01:07.503Z",
   "format": "championstournaments",
   "count": 83,
   "pokemon": {
@@ -4333,55 +4333,6 @@
         }
       ]
     },
-    "Manectric": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Protect",
-          "pct": 100
-        },
-        {
-          "name": "Volt Switch",
-          "pct": 90.476
-        },
-        {
-          "name": "Snarl",
-          "pct": 85.714
-        },
-        {
-          "name": "Overheat",
-          "pct": 47.619
-        },
-        {
-          "name": "Thunder",
-          "pct": 33.333
-        },
-        {
-          "name": "Thunderbolt",
-          "pct": 19.048
-        },
-        {
-          "name": "Flamethrower",
-          "pct": 14.286
-        },
-        {
-          "name": "Thunder Wave",
-          "pct": 4.762
-        }
-      ],
-      "items": [
-        {
-          "name": "Manectite",
-          "pct": 100
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Lightning Rod",
-          "pct": 100
-        }
-      ]
-    },
     "Empoleon": {
       "usage": null,
       "moves": [
@@ -4435,6 +4386,55 @@
       "abilities": [
         {
           "name": "Competitive",
+          "pct": 100
+        }
+      ]
+    },
+    "Manectric": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Protect",
+          "pct": 100
+        },
+        {
+          "name": "Volt Switch",
+          "pct": 90.476
+        },
+        {
+          "name": "Snarl",
+          "pct": 85.714
+        },
+        {
+          "name": "Overheat",
+          "pct": 47.619
+        },
+        {
+          "name": "Thunder",
+          "pct": 33.333
+        },
+        {
+          "name": "Thunderbolt",
+          "pct": 19.048
+        },
+        {
+          "name": "Flamethrower",
+          "pct": 14.286
+        },
+        {
+          "name": "Thunder Wave",
+          "pct": 4.762
+        }
+      ],
+      "items": [
+        {
+          "name": "Manectite",
+          "pct": 100
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Lightning Rod",
           "pct": 100
         }
       ]
@@ -5037,116 +5037,6 @@
         }
       ]
     },
-    "Heliolisk": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Volt Switch",
-          "pct": 60
-        },
-        {
-          "name": "Electroweb",
-          "pct": 60
-        },
-        {
-          "name": "Hyper Voice",
-          "pct": 50
-        },
-        {
-          "name": "Shed Tail",
-          "pct": 50
-        },
-        {
-          "name": "Thunderbolt",
-          "pct": 50
-        },
-        {
-          "name": "Focus Blast",
-          "pct": 30
-        },
-        {
-          "name": "Protect",
-          "pct": 30
-        },
-        {
-          "name": "Dragon Pulse",
-          "pct": 20
-        }
-      ],
-      "items": [
-        {
-          "name": "Choice Scarf",
-          "pct": 60
-        },
-        {
-          "name": "Focus Sash",
-          "pct": 20
-        },
-        {
-          "name": "Sitrus Berry",
-          "pct": 20
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Dry Skin",
-          "pct": 80
-        },
-        {
-          "name": "Sand Veil",
-          "pct": 10
-        },
-        {
-          "name": "Solar Power",
-          "pct": 10
-        }
-      ]
-    },
-    "Skarmory": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Iron Head",
-          "pct": 100
-        },
-        {
-          "name": "Protect",
-          "pct": 100
-        },
-        {
-          "name": "Brave Bird",
-          "pct": 80
-        },
-        {
-          "name": "Tailwind",
-          "pct": 60
-        },
-        {
-          "name": "Swords Dance",
-          "pct": 40
-        },
-        {
-          "name": "Drill Run",
-          "pct": 20
-        }
-      ],
-      "items": [
-        {
-          "name": "Skarmorite",
-          "pct": 100
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Weak Armor",
-          "pct": 80
-        },
-        {
-          "name": "Sturdy",
-          "pct": 20
-        }
-      ]
-    },
     "Conkeldurr": {
       "usage": null,
       "moves": [
@@ -5209,6 +5099,116 @@
         {
           "name": "Guts",
           "pct": 20
+        }
+      ]
+    },
+    "Skarmory": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Iron Head",
+          "pct": 100
+        },
+        {
+          "name": "Protect",
+          "pct": 100
+        },
+        {
+          "name": "Brave Bird",
+          "pct": 80
+        },
+        {
+          "name": "Tailwind",
+          "pct": 60
+        },
+        {
+          "name": "Swords Dance",
+          "pct": 40
+        },
+        {
+          "name": "Drill Run",
+          "pct": 20
+        }
+      ],
+      "items": [
+        {
+          "name": "Skarmorite",
+          "pct": 100
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Weak Armor",
+          "pct": 80
+        },
+        {
+          "name": "Sturdy",
+          "pct": 20
+        }
+      ]
+    },
+    "Heliolisk": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Volt Switch",
+          "pct": 60
+        },
+        {
+          "name": "Electroweb",
+          "pct": 60
+        },
+        {
+          "name": "Hyper Voice",
+          "pct": 50
+        },
+        {
+          "name": "Shed Tail",
+          "pct": 50
+        },
+        {
+          "name": "Thunderbolt",
+          "pct": 50
+        },
+        {
+          "name": "Focus Blast",
+          "pct": 30
+        },
+        {
+          "name": "Protect",
+          "pct": 30
+        },
+        {
+          "name": "Dragon Pulse",
+          "pct": 20
+        }
+      ],
+      "items": [
+        {
+          "name": "Choice Scarf",
+          "pct": 60
+        },
+        {
+          "name": "Focus Sash",
+          "pct": 20
+        },
+        {
+          "name": "Sitrus Berry",
+          "pct": 20
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Dry Skin",
+          "pct": 80
+        },
+        {
+          "name": "Sand Veil",
+          "pct": 10
+        },
+        {
+          "name": "Solar Power",
+          "pct": 10
         }
       ]
     },
