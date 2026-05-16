@@ -1,5 +1,5 @@
 {
-  "updated": "2026-05-15T06:01:07.503Z",
+  "updated": "2026-05-16T05:33:02.197Z",
   "format": "championstournaments",
   "count": 83,
   "pokemon": {
@@ -3991,63 +3991,6 @@
         }
       ]
     },
-    "Drampa": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Hyper Voice",
-          "pct": 95.455
-        },
-        {
-          "name": "Protect",
-          "pct": 77.273
-        },
-        {
-          "name": "Earth Power",
-          "pct": 63.636
-        },
-        {
-          "name": "Calm Mind",
-          "pct": 54.545
-        },
-        {
-          "name": "Dragon Pulse",
-          "pct": 27.273
-        },
-        {
-          "name": "Draco Meteor",
-          "pct": 22.727
-        },
-        {
-          "name": "Flamethrower",
-          "pct": 22.727
-        },
-        {
-          "name": "Thunderbolt",
-          "pct": 13.636
-        }
-      ],
-      "items": [
-        {
-          "name": "Drampanite",
-          "pct": 95.455
-        },
-        {
-          "name": "Chople Berry",
-          "pct": 4.545
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Cloud Nine",
-          "pct": 77.273
-        },
-        {
-          "name": "Berserk",
-          "pct": 22.727
-        }
-      ]
-    },
     "Oranguru": {
       "usage": null,
       "moves": [
@@ -4102,6 +4045,63 @@
         {
           "name": "Inner Focus",
           "pct": 100
+        }
+      ]
+    },
+    "Drampa": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Hyper Voice",
+          "pct": 95.455
+        },
+        {
+          "name": "Protect",
+          "pct": 77.273
+        },
+        {
+          "name": "Earth Power",
+          "pct": 63.636
+        },
+        {
+          "name": "Calm Mind",
+          "pct": 54.545
+        },
+        {
+          "name": "Dragon Pulse",
+          "pct": 27.273
+        },
+        {
+          "name": "Draco Meteor",
+          "pct": 22.727
+        },
+        {
+          "name": "Flamethrower",
+          "pct": 22.727
+        },
+        {
+          "name": "Thunderbolt",
+          "pct": 13.636
+        }
+      ],
+      "items": [
+        {
+          "name": "Drampanite",
+          "pct": 95.455
+        },
+        {
+          "name": "Chople Berry",
+          "pct": 4.545
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Cloud Nine",
+          "pct": 77.273
+        },
+        {
+          "name": "Berserk",
+          "pct": 22.727
         }
       ]
     },
@@ -4333,6 +4333,55 @@
         }
       ]
     },
+    "Manectric": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Protect",
+          "pct": 100
+        },
+        {
+          "name": "Volt Switch",
+          "pct": 90.476
+        },
+        {
+          "name": "Snarl",
+          "pct": 85.714
+        },
+        {
+          "name": "Overheat",
+          "pct": 47.619
+        },
+        {
+          "name": "Thunder",
+          "pct": 33.333
+        },
+        {
+          "name": "Thunderbolt",
+          "pct": 19.048
+        },
+        {
+          "name": "Flamethrower",
+          "pct": 14.286
+        },
+        {
+          "name": "Thunder Wave",
+          "pct": 4.762
+        }
+      ],
+      "items": [
+        {
+          "name": "Manectite",
+          "pct": 100
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Lightning Rod",
+          "pct": 100
+        }
+      ]
+    },
     "Empoleon": {
       "usage": null,
       "moves": [
@@ -4386,55 +4435,6 @@
       "abilities": [
         {
           "name": "Competitive",
-          "pct": 100
-        }
-      ]
-    },
-    "Manectric": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Protect",
-          "pct": 100
-        },
-        {
-          "name": "Volt Switch",
-          "pct": 90.476
-        },
-        {
-          "name": "Snarl",
-          "pct": 85.714
-        },
-        {
-          "name": "Overheat",
-          "pct": 47.619
-        },
-        {
-          "name": "Thunder",
-          "pct": 33.333
-        },
-        {
-          "name": "Thunderbolt",
-          "pct": 19.048
-        },
-        {
-          "name": "Flamethrower",
-          "pct": 14.286
-        },
-        {
-          "name": "Thunder Wave",
-          "pct": 4.762
-        }
-      ],
-      "items": [
-        {
-          "name": "Manectite",
-          "pct": 100
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Lightning Rod",
           "pct": 100
         }
       ]
@@ -4577,47 +4577,6 @@
         }
       ]
     },
-    "Camerupt": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Earth Power",
-          "pct": 100
-        },
-        {
-          "name": "Heat Wave",
-          "pct": 83.333
-        },
-        {
-          "name": "Ancient Power",
-          "pct": 66.667
-        },
-        {
-          "name": "Protect",
-          "pct": 50
-        },
-        {
-          "name": "Eruption",
-          "pct": 50
-        },
-        {
-          "name": "Flash Cannon",
-          "pct": 33.333
-        }
-      ],
-      "items": [
-        {
-          "name": "Cameruptite",
-          "pct": 100
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Solid Rock",
-          "pct": 100
-        }
-      ]
-    },
     "Araquanid": {
       "usage": null,
       "moves": [
@@ -4671,6 +4630,47 @@
       "abilities": [
         {
           "name": "Water Bubble",
+          "pct": 100
+        }
+      ]
+    },
+    "Camerupt": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Earth Power",
+          "pct": 100
+        },
+        {
+          "name": "Heat Wave",
+          "pct": 83.333
+        },
+        {
+          "name": "Ancient Power",
+          "pct": 66.667
+        },
+        {
+          "name": "Protect",
+          "pct": 50
+        },
+        {
+          "name": "Eruption",
+          "pct": 50
+        },
+        {
+          "name": "Flash Cannon",
+          "pct": 33.333
+        }
+      ],
+      "items": [
+        {
+          "name": "Cameruptite",
+          "pct": 100
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Solid Rock",
           "pct": 100
         }
       ]
