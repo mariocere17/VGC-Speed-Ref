@@ -1,5 +1,5 @@
 {
-  "updated": "2026-05-16T05:33:02.197Z",
+  "updated": "2026-05-17T05:55:07.272Z",
   "format": "championstournaments",
   "count": 83,
   "pokemon": {
@@ -4276,6 +4276,55 @@
         }
       ]
     },
+    "Manectric": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Protect",
+          "pct": 100
+        },
+        {
+          "name": "Volt Switch",
+          "pct": 90.476
+        },
+        {
+          "name": "Snarl",
+          "pct": 85.714
+        },
+        {
+          "name": "Overheat",
+          "pct": 47.619
+        },
+        {
+          "name": "Thunder",
+          "pct": 33.333
+        },
+        {
+          "name": "Thunderbolt",
+          "pct": 19.048
+        },
+        {
+          "name": "Flamethrower",
+          "pct": 14.286
+        },
+        {
+          "name": "Thunder Wave",
+          "pct": 4.762
+        }
+      ],
+      "items": [
+        {
+          "name": "Manectite",
+          "pct": 100
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Lightning Rod",
+          "pct": 100
+        }
+      ]
+    },
     "Azumarill": {
       "usage": null,
       "moves": [
@@ -4329,112 +4378,6 @@
       "abilities": [
         {
           "name": "Huge Power",
-          "pct": 100
-        }
-      ]
-    },
-    "Manectric": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Protect",
-          "pct": 100
-        },
-        {
-          "name": "Volt Switch",
-          "pct": 90.476
-        },
-        {
-          "name": "Snarl",
-          "pct": 85.714
-        },
-        {
-          "name": "Overheat",
-          "pct": 47.619
-        },
-        {
-          "name": "Thunder",
-          "pct": 33.333
-        },
-        {
-          "name": "Thunderbolt",
-          "pct": 19.048
-        },
-        {
-          "name": "Flamethrower",
-          "pct": 14.286
-        },
-        {
-          "name": "Thunder Wave",
-          "pct": 4.762
-        }
-      ],
-      "items": [
-        {
-          "name": "Manectite",
-          "pct": 100
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Lightning Rod",
-          "pct": 100
-        }
-      ]
-    },
-    "Empoleon": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Hydro Pump",
-          "pct": 88.889
-        },
-        {
-          "name": "Protect",
-          "pct": 88.889
-        },
-        {
-          "name": "Ice Beam",
-          "pct": 77.778
-        },
-        {
-          "name": "Surf",
-          "pct": 55.556
-        },
-        {
-          "name": "Flash Cannon",
-          "pct": 33.333
-        },
-        {
-          "name": "Feather Dance",
-          "pct": 11.111
-        },
-        {
-          "name": "Metal Sound",
-          "pct": 11.111
-        },
-        {
-          "name": "Steel Beam",
-          "pct": 11.111
-        }
-      ],
-      "items": [
-        {
-          "name": "Mystic Water",
-          "pct": 55.556
-        },
-        {
-          "name": "Chople Berry",
-          "pct": 33.333
-        },
-        {
-          "name": "Sitrus Berry",
-          "pct": 11.111
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Competitive",
           "pct": 100
         }
       ]
@@ -4574,6 +4517,63 @@
         {
           "name": "Pressure",
           "pct": 30
+        }
+      ]
+    },
+    "Empoleon": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Hydro Pump",
+          "pct": 88.889
+        },
+        {
+          "name": "Protect",
+          "pct": 88.889
+        },
+        {
+          "name": "Ice Beam",
+          "pct": 77.778
+        },
+        {
+          "name": "Surf",
+          "pct": 55.556
+        },
+        {
+          "name": "Flash Cannon",
+          "pct": 33.333
+        },
+        {
+          "name": "Feather Dance",
+          "pct": 11.111
+        },
+        {
+          "name": "Metal Sound",
+          "pct": 11.111
+        },
+        {
+          "name": "Steel Beam",
+          "pct": 11.111
+        }
+      ],
+      "items": [
+        {
+          "name": "Mystic Water",
+          "pct": 55.556
+        },
+        {
+          "name": "Chople Berry",
+          "pct": 33.333
+        },
+        {
+          "name": "Sitrus Berry",
+          "pct": 11.111
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Competitive",
+          "pct": 100
         }
       ]
     },
@@ -5037,6 +5037,51 @@
         }
       ]
     },
+    "Skarmory": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Iron Head",
+          "pct": 100
+        },
+        {
+          "name": "Protect",
+          "pct": 100
+        },
+        {
+          "name": "Brave Bird",
+          "pct": 80
+        },
+        {
+          "name": "Tailwind",
+          "pct": 60
+        },
+        {
+          "name": "Swords Dance",
+          "pct": 40
+        },
+        {
+          "name": "Drill Run",
+          "pct": 20
+        }
+      ],
+      "items": [
+        {
+          "name": "Skarmorite",
+          "pct": 100
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Weak Armor",
+          "pct": 80
+        },
+        {
+          "name": "Sturdy",
+          "pct": 20
+        }
+      ]
+    },
     "Conkeldurr": {
       "usage": null,
       "moves": [
@@ -5102,48 +5147,60 @@
         }
       ]
     },
-    "Skarmory": {
+    "Vivillon": {
       "usage": null,
       "moves": [
         {
-          "name": "Iron Head",
-          "pct": 100
+          "name": "Sleep Powder",
+          "pct": 87.5
+        },
+        {
+          "name": "Rage Powder",
+          "pct": 87.5
         },
         {
           "name": "Protect",
-          "pct": 100
+          "pct": 87.5
         },
         {
-          "name": "Brave Bird",
-          "pct": 80
+          "name": "Hurricane",
+          "pct": 75
+        },
+        {
+          "name": "Pollen Puff",
+          "pct": 25
         },
         {
           "name": "Tailwind",
-          "pct": 60
+          "pct": 25
         },
         {
-          "name": "Swords Dance",
-          "pct": 40
-        },
-        {
-          "name": "Drill Run",
-          "pct": 20
+          "name": "Quiver Dance",
+          "pct": 12.5
         }
       ],
       "items": [
         {
-          "name": "Skarmorite",
-          "pct": 100
+          "name": "Focus Sash",
+          "pct": 75
+        },
+        {
+          "name": "Leftovers",
+          "pct": 12.5
+        },
+        {
+          "name": "Choice Scarf",
+          "pct": 12.5
         }
       ],
       "abilities": [
         {
-          "name": "Weak Armor",
-          "pct": 80
+          "name": "Compound Eyes",
+          "pct": 87.5
         },
         {
-          "name": "Sturdy",
-          "pct": 20
+          "name": "Friend Guard",
+          "pct": 12.5
         }
       ]
     },
@@ -5209,63 +5266,6 @@
         {
           "name": "Solar Power",
           "pct": 10
-        }
-      ]
-    },
-    "Vivillon": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Sleep Powder",
-          "pct": 87.5
-        },
-        {
-          "name": "Rage Powder",
-          "pct": 87.5
-        },
-        {
-          "name": "Protect",
-          "pct": 87.5
-        },
-        {
-          "name": "Hurricane",
-          "pct": 75
-        },
-        {
-          "name": "Pollen Puff",
-          "pct": 25
-        },
-        {
-          "name": "Tailwind",
-          "pct": 25
-        },
-        {
-          "name": "Quiver Dance",
-          "pct": 12.5
-        }
-      ],
-      "items": [
-        {
-          "name": "Focus Sash",
-          "pct": 75
-        },
-        {
-          "name": "Leftovers",
-          "pct": 12.5
-        },
-        {
-          "name": "Choice Scarf",
-          "pct": 12.5
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Compound Eyes",
-          "pct": 87.5
-        },
-        {
-          "name": "Friend Guard",
-          "pct": 12.5
         }
       ]
     },
