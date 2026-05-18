@@ -1,5 +1,5 @@
 {
-  "updated": "2026-05-17T05:55:07.272Z",
+  "updated": "2026-05-18T06:21:39.375Z",
   "format": "championstournaments",
   "count": 83,
   "pokemon": {
@@ -3735,6 +3735,67 @@
         }
       ]
     },
+    "Lucario": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Close Combat",
+          "pct": 85.714
+        },
+        {
+          "name": "Meteor Mash",
+          "pct": 80.952
+        },
+        {
+          "name": "Protect",
+          "pct": 47.619
+        },
+        {
+          "name": "Final Gambit",
+          "pct": 47.619
+        },
+        {
+          "name": "Bullet Punch",
+          "pct": 28.571
+        },
+        {
+          "name": "Coaching",
+          "pct": 23.81
+        },
+        {
+          "name": "Stone Edge",
+          "pct": 23.81
+        },
+        {
+          "name": "Swords Dance",
+          "pct": 9.524
+        }
+      ],
+      "items": [
+        {
+          "name": "Choice Scarf",
+          "pct": 47.619
+        },
+        {
+          "name": "Lucarionite",
+          "pct": 42.857
+        },
+        {
+          "name": "Metal Coat",
+          "pct": 4.762
+        },
+        {
+          "name": "Focus Sash",
+          "pct": 4.762
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Inner Focus",
+          "pct": 100
+        }
+      ]
+    },
     "Starmie": {
       "usage": null,
       "moves": [
@@ -3797,67 +3858,6 @@
         {
           "name": "Huge Power",
           "pct": 4.762
-        }
-      ]
-    },
-    "Lucario": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Close Combat",
-          "pct": 85.714
-        },
-        {
-          "name": "Meteor Mash",
-          "pct": 80.952
-        },
-        {
-          "name": "Protect",
-          "pct": 47.619
-        },
-        {
-          "name": "Final Gambit",
-          "pct": 47.619
-        },
-        {
-          "name": "Bullet Punch",
-          "pct": 28.571
-        },
-        {
-          "name": "Coaching",
-          "pct": 23.81
-        },
-        {
-          "name": "Stone Edge",
-          "pct": 23.81
-        },
-        {
-          "name": "Swords Dance",
-          "pct": 9.524
-        }
-      ],
-      "items": [
-        {
-          "name": "Choice Scarf",
-          "pct": 47.619
-        },
-        {
-          "name": "Lucarionite",
-          "pct": 42.857
-        },
-        {
-          "name": "Metal Coat",
-          "pct": 4.762
-        },
-        {
-          "name": "Focus Sash",
-          "pct": 4.762
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Inner Focus",
-          "pct": 100
         }
       ]
     },
@@ -4382,6 +4382,71 @@
         }
       ]
     },
+    "Weavile": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Fake Out",
+          "pct": 100
+        },
+        {
+          "name": "Knock Off",
+          "pct": 85
+        },
+        {
+          "name": "Icicle Crash",
+          "pct": 60
+        },
+        {
+          "name": "Low Kick",
+          "pct": 50
+        },
+        {
+          "name": "Triple Axel",
+          "pct": 30
+        },
+        {
+          "name": "Ice Shard",
+          "pct": 15
+        },
+        {
+          "name": "Taunt",
+          "pct": 15
+        },
+        {
+          "name": "Psycho Cut",
+          "pct": 15
+        }
+      ],
+      "items": [
+        {
+          "name": "Focus Sash",
+          "pct": 85
+        },
+        {
+          "name": "Mental Herb",
+          "pct": 5
+        },
+        {
+          "name": "Sitrus Berry",
+          "pct": 5
+        },
+        {
+          "name": "White Herb",
+          "pct": 5
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Pickpocket",
+          "pct": 70
+        },
+        {
+          "name": "Pressure",
+          "pct": 30
+        }
+      ]
+    },
     "Arcanine": {
       "usage": null,
       "moves": [
@@ -4452,71 +4517,6 @@
         {
           "name": "Flash Fire",
           "pct": 25
-        }
-      ]
-    },
-    "Weavile": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Fake Out",
-          "pct": 100
-        },
-        {
-          "name": "Knock Off",
-          "pct": 85
-        },
-        {
-          "name": "Icicle Crash",
-          "pct": 60
-        },
-        {
-          "name": "Low Kick",
-          "pct": 50
-        },
-        {
-          "name": "Triple Axel",
-          "pct": 30
-        },
-        {
-          "name": "Ice Shard",
-          "pct": 15
-        },
-        {
-          "name": "Taunt",
-          "pct": 15
-        },
-        {
-          "name": "Psycho Cut",
-          "pct": 15
-        }
-      ],
-      "items": [
-        {
-          "name": "Focus Sash",
-          "pct": 85
-        },
-        {
-          "name": "Mental Herb",
-          "pct": 5
-        },
-        {
-          "name": "Sitrus Berry",
-          "pct": 5
-        },
-        {
-          "name": "White Herb",
-          "pct": 5
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Pickpocket",
-          "pct": 70
-        },
-        {
-          "name": "Pressure",
-          "pct": 30
         }
       ]
     },
@@ -4858,6 +4858,108 @@
         }
       ]
     },
+    "Vivillon": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Sleep Powder",
+          "pct": 87.5
+        },
+        {
+          "name": "Rage Powder",
+          "pct": 87.5
+        },
+        {
+          "name": "Protect",
+          "pct": 87.5
+        },
+        {
+          "name": "Hurricane",
+          "pct": 75
+        },
+        {
+          "name": "Pollen Puff",
+          "pct": 25
+        },
+        {
+          "name": "Tailwind",
+          "pct": 25
+        },
+        {
+          "name": "Quiver Dance",
+          "pct": 12.5
+        }
+      ],
+      "items": [
+        {
+          "name": "Focus Sash",
+          "pct": 75
+        },
+        {
+          "name": "Leftovers",
+          "pct": 12.5
+        },
+        {
+          "name": "Choice Scarf",
+          "pct": 12.5
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Compound Eyes",
+          "pct": 87.5
+        },
+        {
+          "name": "Friend Guard",
+          "pct": 12.5
+        }
+      ]
+    },
+    "Skarmory": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Iron Head",
+          "pct": 100
+        },
+        {
+          "name": "Protect",
+          "pct": 100
+        },
+        {
+          "name": "Brave Bird",
+          "pct": 80
+        },
+        {
+          "name": "Tailwind",
+          "pct": 60
+        },
+        {
+          "name": "Swords Dance",
+          "pct": 40
+        },
+        {
+          "name": "Drill Run",
+          "pct": 20
+        }
+      ],
+      "items": [
+        {
+          "name": "Skarmorite",
+          "pct": 100
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Weak Armor",
+          "pct": 80
+        },
+        {
+          "name": "Sturdy",
+          "pct": 20
+        }
+      ]
+    },
     "Greninja": {
       "usage": null,
       "moves": [
@@ -5037,51 +5139,6 @@
         }
       ]
     },
-    "Skarmory": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Iron Head",
-          "pct": 100
-        },
-        {
-          "name": "Protect",
-          "pct": 100
-        },
-        {
-          "name": "Brave Bird",
-          "pct": 80
-        },
-        {
-          "name": "Tailwind",
-          "pct": 60
-        },
-        {
-          "name": "Swords Dance",
-          "pct": 40
-        },
-        {
-          "name": "Drill Run",
-          "pct": 20
-        }
-      ],
-      "items": [
-        {
-          "name": "Skarmorite",
-          "pct": 100
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Weak Armor",
-          "pct": 80
-        },
-        {
-          "name": "Sturdy",
-          "pct": 20
-        }
-      ]
-    },
     "Conkeldurr": {
       "usage": null,
       "moves": [
@@ -5144,63 +5201,6 @@
         {
           "name": "Guts",
           "pct": 20
-        }
-      ]
-    },
-    "Vivillon": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Sleep Powder",
-          "pct": 87.5
-        },
-        {
-          "name": "Rage Powder",
-          "pct": 87.5
-        },
-        {
-          "name": "Protect",
-          "pct": 87.5
-        },
-        {
-          "name": "Hurricane",
-          "pct": 75
-        },
-        {
-          "name": "Pollen Puff",
-          "pct": 25
-        },
-        {
-          "name": "Tailwind",
-          "pct": 25
-        },
-        {
-          "name": "Quiver Dance",
-          "pct": 12.5
-        }
-      ],
-      "items": [
-        {
-          "name": "Focus Sash",
-          "pct": 75
-        },
-        {
-          "name": "Leftovers",
-          "pct": 12.5
-        },
-        {
-          "name": "Choice Scarf",
-          "pct": 12.5
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Compound Eyes",
-          "pct": 87.5
-        },
-        {
-          "name": "Friend Guard",
-          "pct": 12.5
         }
       ]
     },
