@@ -1,7 +1,7 @@
 {
-  "updated": "2026-05-19T06:15:54.213Z",
+  "updated": "2026-05-20T06:16:10.027Z",
   "format": "championstournaments",
-  "count": 83,
+  "count": 84,
   "pokemon": {
     "Basculegion": {
       "usage": 44.51,
@@ -4703,6 +4703,55 @@
         }
       ]
     },
+    "Camerupt": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Earth Power",
+          "pct": 100
+        },
+        {
+          "name": "Heat Wave",
+          "pct": 94.444
+        },
+        {
+          "name": "Protect",
+          "pct": 83.333
+        },
+        {
+          "name": "Ancient Power",
+          "pct": 55.556
+        },
+        {
+          "name": "Eruption",
+          "pct": 38.889
+        },
+        {
+          "name": "Flash Cannon",
+          "pct": 22.222
+        }
+      ],
+      "items": [
+        {
+          "name": "Cameruptite",
+          "pct": 100
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Solid Rock",
+          "pct": 77.778
+        },
+        {
+          "name": "Magma Armor",
+          "pct": 16.667
+        },
+        {
+          "name": "Sheer Force",
+          "pct": 5.556
+        }
+      ]
+    },
     "Arcanine": {
       "usage": null,
       "moves": [
@@ -4837,55 +4886,6 @@
         }
       ]
     },
-    "Camerupt": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Earth Power",
-          "pct": 100
-        },
-        {
-          "name": "Heat Wave",
-          "pct": 94.444
-        },
-        {
-          "name": "Protect",
-          "pct": 83.333
-        },
-        {
-          "name": "Ancient Power",
-          "pct": 55.556
-        },
-        {
-          "name": "Eruption",
-          "pct": 38.889
-        },
-        {
-          "name": "Flash Cannon",
-          "pct": 22.222
-        }
-      ],
-      "items": [
-        {
-          "name": "Cameruptite",
-          "pct": 100
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Solid Rock",
-          "pct": 77.778
-        },
-        {
-          "name": "Magma Armor",
-          "pct": 16.667
-        },
-        {
-          "name": "Sheer Force",
-          "pct": 5.556
-        }
-      ]
-    },
     "Araquanid": {
       "usage": null,
       "moves": [
@@ -4948,6 +4948,79 @@
         {
           "name": "Water Bubble",
           "pct": 100
+        }
+      ]
+    },
+    "Vivillon": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Sleep Powder",
+          "pct": 87.805
+        },
+        {
+          "name": "Hurricane",
+          "pct": 73.171
+        },
+        {
+          "name": "Rage Powder",
+          "pct": 70.732
+        },
+        {
+          "name": "Protect",
+          "pct": 63.415
+        },
+        {
+          "name": "Tailwind",
+          "pct": 48.78
+        },
+        {
+          "name": "Pollen Puff",
+          "pct": 29.268
+        },
+        {
+          "name": "Rain Dance",
+          "pct": 17.073
+        },
+        {
+          "name": "Sunny Day",
+          "pct": 4.878
+        }
+      ],
+      "items": [
+        {
+          "name": "Focus Sash",
+          "pct": 58.537
+        },
+        {
+          "name": "Choice Scarf",
+          "pct": 31.707
+        },
+        {
+          "name": "Quick Claw",
+          "pct": 4.878
+        },
+        {
+          "name": "Bright Powder",
+          "pct": 2.439
+        },
+        {
+          "name": "Leftovers",
+          "pct": 2.439
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Compound Eyes",
+          "pct": 75.61
+        },
+        {
+          "name": "Friend Guard",
+          "pct": 21.951
+        },
+        {
+          "name": "Shield Dust",
+          "pct": 2.439
         }
       ]
     },
@@ -5143,79 +5216,6 @@
         {
           "name": "Thick Fat",
           "pct": 22.222
-        }
-      ]
-    },
-    "Vivillon": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Sleep Powder",
-          "pct": 87.805
-        },
-        {
-          "name": "Hurricane",
-          "pct": 73.171
-        },
-        {
-          "name": "Rage Powder",
-          "pct": 70.732
-        },
-        {
-          "name": "Protect",
-          "pct": 63.415
-        },
-        {
-          "name": "Tailwind",
-          "pct": 48.78
-        },
-        {
-          "name": "Pollen Puff",
-          "pct": 29.268
-        },
-        {
-          "name": "Rain Dance",
-          "pct": 17.073
-        },
-        {
-          "name": "Sunny Day",
-          "pct": 4.878
-        }
-      ],
-      "items": [
-        {
-          "name": "Focus Sash",
-          "pct": 58.537
-        },
-        {
-          "name": "Choice Scarf",
-          "pct": 31.707
-        },
-        {
-          "name": "Quick Claw",
-          "pct": 4.878
-        },
-        {
-          "name": "Bright Powder",
-          "pct": 2.439
-        },
-        {
-          "name": "Leftovers",
-          "pct": 2.439
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Compound Eyes",
-          "pct": 75.61
-        },
-        {
-          "name": "Friend Guard",
-          "pct": 21.951
-        },
-        {
-          "name": "Shield Dust",
-          "pct": 2.439
         }
       ]
     },
@@ -5667,6 +5667,67 @@
         {
           "name": "Immunity",
           "pct": 4
+        }
+      ]
+    },
+    "Hawlucha": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Close Combat",
+          "pct": 84.211
+        },
+        {
+          "name": "Detect",
+          "pct": 78.947
+        },
+        {
+          "name": "Brave Bird",
+          "pct": 73.684
+        },
+        {
+          "name": "Entrainment",
+          "pct": 73.684
+        },
+        {
+          "name": "Dual Wingbeat",
+          "pct": 15.789
+        },
+        {
+          "name": "Protect",
+          "pct": 15.789
+        },
+        {
+          "name": "Stone Edge",
+          "pct": 10.526
+        },
+        {
+          "name": "Flying Press",
+          "pct": 10.526
+        }
+      ],
+      "items": [
+        {
+          "name": "Hawluchanite",
+          "pct": 94.737
+        },
+        {
+          "name": "Mental Herb",
+          "pct": 5.263
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Limber",
+          "pct": 84.211
+        },
+        {
+          "name": "Mold Breaker",
+          "pct": 10.526
+        },
+        {
+          "name": "Unburden",
+          "pct": 5.263
         }
       ]
     }
