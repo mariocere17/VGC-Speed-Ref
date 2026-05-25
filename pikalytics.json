@@ -1,5 +1,5 @@
 {
-  "updated": "2026-05-24T06:09:06.555Z",
+  "updated": "2026-05-25T06:43:02.388Z",
   "format": "championstournaments",
   "count": 84,
   "pokemon": {
@@ -4459,6 +4459,59 @@
         }
       ]
     },
+    "Lopunny": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Fake Out",
+          "pct": 98.058
+        },
+        {
+          "name": "Close Combat",
+          "pct": 95.146
+        },
+        {
+          "name": "Triple Axel",
+          "pct": 53.398
+        },
+        {
+          "name": "Encore",
+          "pct": 45.631
+        },
+        {
+          "name": "Protect",
+          "pct": 43.689
+        },
+        {
+          "name": "After You",
+          "pct": 11.65
+        },
+        {
+          "name": "U-turn",
+          "pct": 10.68
+        },
+        {
+          "name": "Giga Impact",
+          "pct": 6.796
+        }
+      ],
+      "items": [
+        {
+          "name": "Lopunnite",
+          "pct": 98.058
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Limber",
+          "pct": 60.194
+        },
+        {
+          "name": "Cute Charm",
+          "pct": 39.806
+        }
+      ]
+    },
     "Oranguru": {
       "usage": null,
       "moves": [
@@ -4533,59 +4586,6 @@
         {
           "name": "Symbiosis",
           "pct": 1.042
-        }
-      ]
-    },
-    "Lopunny": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Fake Out",
-          "pct": 98.058
-        },
-        {
-          "name": "Close Combat",
-          "pct": 95.146
-        },
-        {
-          "name": "Triple Axel",
-          "pct": 53.398
-        },
-        {
-          "name": "Encore",
-          "pct": 45.631
-        },
-        {
-          "name": "Protect",
-          "pct": 43.689
-        },
-        {
-          "name": "After You",
-          "pct": 11.65
-        },
-        {
-          "name": "U-turn",
-          "pct": 10.68
-        },
-        {
-          "name": "Giga Impact",
-          "pct": 6.796
-        }
-      ],
-      "items": [
-        {
-          "name": "Lopunnite",
-          "pct": 98.058
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Limber",
-          "pct": 60.194
-        },
-        {
-          "name": "Cute Charm",
-          "pct": 39.806
         }
       ]
     },
@@ -4735,67 +4735,6 @@
         }
       ]
     },
-    "Manectric": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Volt Switch",
-          "pct": 95.506
-        },
-        {
-          "name": "Protect",
-          "pct": 95.506
-        },
-        {
-          "name": "Snarl",
-          "pct": 78.652
-        },
-        {
-          "name": "Thunderbolt",
-          "pct": 48.315
-        },
-        {
-          "name": "Thunder",
-          "pct": 31.461
-        },
-        {
-          "name": "Flamethrower",
-          "pct": 17.978
-        },
-        {
-          "name": "Overheat",
-          "pct": 16.854
-        },
-        {
-          "name": "Thunder Wave",
-          "pct": 5.618
-        }
-      ],
-      "items": [
-        {
-          "name": "Manectite",
-          "pct": 96.629
-        },
-        {
-          "name": "Magnet",
-          "pct": 2.247
-        },
-        {
-          "name": "Bright Powder",
-          "pct": 1.124
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Lightning Rod",
-          "pct": 95.506
-        },
-        {
-          "name": "Static",
-          "pct": 4.494
-        }
-      ]
-    },
     "Weavile": {
       "usage": null,
       "moves": [
@@ -4869,6 +4808,67 @@
         }
       ]
     },
+    "Manectric": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Volt Switch",
+          "pct": 95.506
+        },
+        {
+          "name": "Protect",
+          "pct": 95.506
+        },
+        {
+          "name": "Snarl",
+          "pct": 78.652
+        },
+        {
+          "name": "Thunderbolt",
+          "pct": 48.315
+        },
+        {
+          "name": "Thunder",
+          "pct": 31.461
+        },
+        {
+          "name": "Flamethrower",
+          "pct": 17.978
+        },
+        {
+          "name": "Overheat",
+          "pct": 16.854
+        },
+        {
+          "name": "Thunder Wave",
+          "pct": 5.618
+        }
+      ],
+      "items": [
+        {
+          "name": "Manectite",
+          "pct": 96.629
+        },
+        {
+          "name": "Magnet",
+          "pct": 2.247
+        },
+        {
+          "name": "Bright Powder",
+          "pct": 1.124
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Lightning Rod",
+          "pct": 95.506
+        },
+        {
+          "name": "Static",
+          "pct": 4.494
+        }
+      ]
+    },
     "Orthworm": {
       "usage": null,
       "moves": [
@@ -4922,63 +4922,6 @@
       "abilities": [
         {
           "name": "Earth Eater",
-          "pct": 100
-        }
-      ]
-    },
-    "Azumarill": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Aqua Jet",
-          "pct": 94.915
-        },
-        {
-          "name": "Play Rough",
-          "pct": 94.915
-        },
-        {
-          "name": "Protect",
-          "pct": 91.525
-        },
-        {
-          "name": "Belly Drum",
-          "pct": 64.407
-        },
-        {
-          "name": "Liquidation",
-          "pct": 33.898
-        },
-        {
-          "name": "Knock Off",
-          "pct": 6.78
-        },
-        {
-          "name": "Superpower",
-          "pct": 6.78
-        },
-        {
-          "name": "Helping Hand",
-          "pct": 3.39
-        }
-      ],
-      "items": [
-        {
-          "name": "Sitrus Berry",
-          "pct": 64.407
-        },
-        {
-          "name": "Mystic Water",
-          "pct": 32.203
-        },
-        {
-          "name": "Quick Claw",
-          "pct": 3.39
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Huge Power",
           "pct": 100
         }
       ]
@@ -5037,6 +4980,63 @@
         {
           "name": "Sheer Force",
           "pct": 2.817
+        }
+      ]
+    },
+    "Azumarill": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Aqua Jet",
+          "pct": 94.915
+        },
+        {
+          "name": "Play Rough",
+          "pct": 94.915
+        },
+        {
+          "name": "Protect",
+          "pct": 91.525
+        },
+        {
+          "name": "Belly Drum",
+          "pct": 64.407
+        },
+        {
+          "name": "Liquidation",
+          "pct": 33.898
+        },
+        {
+          "name": "Knock Off",
+          "pct": 6.78
+        },
+        {
+          "name": "Superpower",
+          "pct": 6.78
+        },
+        {
+          "name": "Helping Hand",
+          "pct": 3.39
+        }
+      ],
+      "items": [
+        {
+          "name": "Sitrus Berry",
+          "pct": 64.407
+        },
+        {
+          "name": "Mystic Water",
+          "pct": 32.203
+        },
+        {
+          "name": "Quick Claw",
+          "pct": 3.39
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Huge Power",
+          "pct": 100
         }
       ]
     },
