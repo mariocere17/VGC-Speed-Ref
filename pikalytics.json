@@ -1,5 +1,5 @@
 {
-  "updated": "2026-05-27T06:27:47.570Z",
+  "updated": "2026-05-28T06:19:49.133Z",
   "format": "championstournaments",
   "count": 85,
   "pokemon": {
@@ -5726,6 +5726,71 @@
         }
       ]
     },
+    "Greninja": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Protect",
+          "pct": 78.571
+        },
+        {
+          "name": "Dark Pulse",
+          "pct": 71.429
+        },
+        {
+          "name": "Ice Beam",
+          "pct": 35.714
+        },
+        {
+          "name": "Blizzard",
+          "pct": 30.952
+        },
+        {
+          "name": "Hydro Pump",
+          "pct": 28.571
+        },
+        {
+          "name": "Extrasensory",
+          "pct": 26.19
+        },
+        {
+          "name": "Water Shuriken",
+          "pct": 21.429
+        },
+        {
+          "name": "Sludge Wave",
+          "pct": 16.667
+        }
+      ],
+      "items": [
+        {
+          "name": "Greninjite",
+          "pct": 83.333
+        },
+        {
+          "name": "Focus Sash",
+          "pct": 7.143
+        },
+        {
+          "name": "Choice Scarf",
+          "pct": 4.762
+        },
+        {
+          "name": "King's Rock",
+          "pct": 2.381
+        },
+        {
+          "name": "Mystic Water",
+          "pct": 2.381
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Protean",
+          "pct": 100
+        }
+      ]
+    },
     "Meowstic": {
       "usage": null,
       "moves": [
@@ -5800,71 +5865,6 @@
         {
           "name": "Infiltrator",
           "pct": 2.083
-        }
-      ]
-    },
-    "Greninja": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Protect",
-          "pct": 78.571
-        },
-        {
-          "name": "Dark Pulse",
-          "pct": 71.429
-        },
-        {
-          "name": "Ice Beam",
-          "pct": 35.714
-        },
-        {
-          "name": "Blizzard",
-          "pct": 30.952
-        },
-        {
-          "name": "Hydro Pump",
-          "pct": 28.571
-        },
-        {
-          "name": "Extrasensory",
-          "pct": 26.19
-        },
-        {
-          "name": "Water Shuriken",
-          "pct": 21.429
-        },
-        {
-          "name": "Sludge Wave",
-          "pct": 16.667
-        }
-      ],
-      "items": [
-        {
-          "name": "Greninjite",
-          "pct": 83.333
-        },
-        {
-          "name": "Focus Sash",
-          "pct": 7.143
-        },
-        {
-          "name": "Choice Scarf",
-          "pct": 4.762
-        },
-        {
-          "name": "King's Rock",
-          "pct": 2.381
-        },
-        {
-          "name": "Mystic Water",
-          "pct": 2.381
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Protean",
-          "pct": 100
         }
       ]
     },
@@ -6018,71 +6018,6 @@
         }
       ]
     },
-    "Hawlucha": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Entrainment",
-          "pct": 87.302
-        },
-        {
-          "name": "Brave Bird",
-          "pct": 63.492
-        },
-        {
-          "name": "Close Combat",
-          "pct": 61.905
-        },
-        {
-          "name": "Detect",
-          "pct": 55.556
-        },
-        {
-          "name": "Protect",
-          "pct": 28.571
-        },
-        {
-          "name": "Dual Wingbeat",
-          "pct": 19.048
-        },
-        {
-          "name": "Flying Press",
-          "pct": 12.698
-        },
-        {
-          "name": "Cross Chop",
-          "pct": 11.111
-        }
-      ],
-      "items": [
-        {
-          "name": "Hawluchanite",
-          "pct": 96.825
-        },
-        {
-          "name": "Mental Herb",
-          "pct": 1.587
-        },
-        {
-          "name": "Focus Sash",
-          "pct": 1.587
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Limber",
-          "pct": 77.778
-        },
-        {
-          "name": "Mold Breaker",
-          "pct": 14.286
-        },
-        {
-          "name": "Unburden",
-          "pct": 7.937
-        }
-      ]
-    },
     "Kleavor": {
       "usage": null,
       "moves": [
@@ -6149,6 +6084,71 @@
         {
           "name": "Swarm",
           "pct": 1.667
+        }
+      ]
+    },
+    "Hawlucha": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Entrainment",
+          "pct": 87.302
+        },
+        {
+          "name": "Brave Bird",
+          "pct": 63.492
+        },
+        {
+          "name": "Close Combat",
+          "pct": 61.905
+        },
+        {
+          "name": "Detect",
+          "pct": 55.556
+        },
+        {
+          "name": "Protect",
+          "pct": 28.571
+        },
+        {
+          "name": "Dual Wingbeat",
+          "pct": 19.048
+        },
+        {
+          "name": "Flying Press",
+          "pct": 12.698
+        },
+        {
+          "name": "Cross Chop",
+          "pct": 11.111
+        }
+      ],
+      "items": [
+        {
+          "name": "Hawluchanite",
+          "pct": 96.825
+        },
+        {
+          "name": "Mental Herb",
+          "pct": 1.587
+        },
+        {
+          "name": "Focus Sash",
+          "pct": 1.587
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Limber",
+          "pct": 77.778
+        },
+        {
+          "name": "Mold Breaker",
+          "pct": 14.286
+        },
+        {
+          "name": "Unburden",
+          "pct": 7.937
         }
       ]
     }
