@@ -1,7 +1,7 @@
 {
-  "updated": "2026-06-03T07:01:10.631Z",
+  "updated": "2026-06-04T06:50:10.302Z",
   "format": "championstournaments",
-  "count": 99,
+  "count": 103,
   "pokemon": {
     "Basculegion": {
       "usage": 46.91,
@@ -4547,63 +4547,6 @@
         }
       ]
     },
-    "Mega Charizard Y": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Protect",
-          "pct": 99.382
-        },
-        {
-          "name": "Heat Wave",
-          "pct": 98.609
-        },
-        {
-          "name": "Solar Beam",
-          "pct": 94.281
-        },
-        {
-          "name": "Weather Ball",
-          "pct": 87.79
-        },
-        {
-          "name": "Air Slash",
-          "pct": 7.419
-        },
-        {
-          "name": "Overheat",
-          "pct": 2.782
-        },
-        {
-          "name": "Ancient Power",
-          "pct": 2.37
-        },
-        {
-          "name": "Helping Hand",
-          "pct": 1.288
-        }
-      ],
-      "items": [
-        {
-          "name": "Charizardite Y",
-          "pct": 100
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Blaze",
-          "pct": 67.13
-        },
-        {
-          "name": "Solar Power",
-          "pct": 28.748
-        },
-        {
-          "name": "Drought",
-          "pct": 3.967
-        }
-      ]
-    },
     "Crabominable": {
       "usage": null,
       "moves": [
@@ -4662,6 +4605,63 @@
         {
           "name": "Anger Point",
           "pct": 4.301
+        }
+      ]
+    },
+    "Mega Charizard Y": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Protect",
+          "pct": 99.382
+        },
+        {
+          "name": "Heat Wave",
+          "pct": 98.609
+        },
+        {
+          "name": "Solar Beam",
+          "pct": 94.281
+        },
+        {
+          "name": "Weather Ball",
+          "pct": 87.79
+        },
+        {
+          "name": "Air Slash",
+          "pct": 7.419
+        },
+        {
+          "name": "Overheat",
+          "pct": 2.782
+        },
+        {
+          "name": "Ancient Power",
+          "pct": 2.37
+        },
+        {
+          "name": "Helping Hand",
+          "pct": 1.288
+        }
+      ],
+      "items": [
+        {
+          "name": "Charizardite Y",
+          "pct": 100
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Blaze",
+          "pct": 67.13
+        },
+        {
+          "name": "Solar Power",
+          "pct": 28.748
+        },
+        {
+          "name": "Drought",
+          "pct": 3.967
         }
       ]
     },
@@ -5246,6 +5246,12 @@
         }
       ]
     },
+    "Mega Froslass": {
+      "usage": null,
+      "moves": [],
+      "items": [],
+      "abilities": []
+    },
     "Orthworm": {
       "usage": null,
       "moves": [
@@ -5555,6 +5561,79 @@
         }
       ]
     },
+    "Empoleon": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Protect",
+          "pct": 92.857
+        },
+        {
+          "name": "Flash Cannon",
+          "pct": 60.714
+        },
+        {
+          "name": "Hydro Pump",
+          "pct": 60.714
+        },
+        {
+          "name": "Surf",
+          "pct": 50
+        },
+        {
+          "name": "Ice Beam",
+          "pct": 50
+        },
+        {
+          "name": "Icy Wind",
+          "pct": 14.286
+        },
+        {
+          "name": "Weather Ball",
+          "pct": 14.286
+        },
+        {
+          "name": "Helping Hand",
+          "pct": 7.143
+        }
+      ],
+      "items": [
+        {
+          "name": "Mystic Water",
+          "pct": 32.143
+        },
+        {
+          "name": "Chople Berry",
+          "pct": 28.571
+        },
+        {
+          "name": "Leftovers",
+          "pct": 17.857
+        },
+        {
+          "name": "Sitrus Berry",
+          "pct": 14.286
+        },
+        {
+          "name": "Focus Sash",
+          "pct": 3.571
+        },
+        {
+          "name": "Metal Coat",
+          "pct": 3.571
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Competitive",
+          "pct": 96.429
+        },
+        {
+          "name": "Torrent",
+          "pct": 3.571
+        }
+      ]
+    },
     "Chandelure": {
       "usage": null,
       "moves": [
@@ -5632,78 +5711,11 @@
         }
       ]
     },
-    "Empoleon": {
+    "Mega Delphox": {
       "usage": null,
-      "moves": [
-        {
-          "name": "Protect",
-          "pct": 92.857
-        },
-        {
-          "name": "Flash Cannon",
-          "pct": 60.714
-        },
-        {
-          "name": "Hydro Pump",
-          "pct": 60.714
-        },
-        {
-          "name": "Surf",
-          "pct": 50
-        },
-        {
-          "name": "Ice Beam",
-          "pct": 50
-        },
-        {
-          "name": "Icy Wind",
-          "pct": 14.286
-        },
-        {
-          "name": "Weather Ball",
-          "pct": 14.286
-        },
-        {
-          "name": "Helping Hand",
-          "pct": 7.143
-        }
-      ],
-      "items": [
-        {
-          "name": "Mystic Water",
-          "pct": 32.143
-        },
-        {
-          "name": "Chople Berry",
-          "pct": 28.571
-        },
-        {
-          "name": "Leftovers",
-          "pct": 17.857
-        },
-        {
-          "name": "Sitrus Berry",
-          "pct": 14.286
-        },
-        {
-          "name": "Focus Sash",
-          "pct": 3.571
-        },
-        {
-          "name": "Metal Coat",
-          "pct": 3.571
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Competitive",
-          "pct": 96.429
-        },
-        {
-          "name": "Torrent",
-          "pct": 3.571
-        }
-      ]
+      "moves": [],
+      "items": [],
+      "abilities": []
     },
     "Snorlax": {
       "usage": null,
@@ -5908,6 +5920,79 @@
         }
       ]
     },
+    "Mamoswine": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Ice Shard",
+          "pct": 75
+        },
+        {
+          "name": "Icicle Crash",
+          "pct": 58.333
+        },
+        {
+          "name": "Protect",
+          "pct": 58.333
+        },
+        {
+          "name": "High Horsepower",
+          "pct": 54.167
+        },
+        {
+          "name": "Earthquake",
+          "pct": 50
+        },
+        {
+          "name": "Rock Slide",
+          "pct": 37.5
+        },
+        {
+          "name": "Icicle Spear",
+          "pct": 25
+        },
+        {
+          "name": "Iron Head",
+          "pct": 12.5
+        }
+      ],
+      "items": [
+        {
+          "name": "Choice Scarf",
+          "pct": 37.5
+        },
+        {
+          "name": "Focus Sash",
+          "pct": 33.333
+        },
+        {
+          "name": "Never-Melt Ice",
+          "pct": 20.833
+        },
+        {
+          "name": "Quick Claw",
+          "pct": 4.167
+        },
+        {
+          "name": "Icicle Plate",
+          "pct": 4.167
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Oblivious",
+          "pct": 83.333
+        },
+        {
+          "name": "Thick Fat",
+          "pct": 12.5
+        },
+        {
+          "name": "Snow Cloak",
+          "pct": 4.167
+        }
+      ]
+    },
     "Conkeldurr": {
       "usage": null,
       "moves": [
@@ -5982,79 +6067,6 @@
         {
           "name": "Sheer Force",
           "pct": 5.263
-        }
-      ]
-    },
-    "Mamoswine": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Ice Shard",
-          "pct": 75
-        },
-        {
-          "name": "Icicle Crash",
-          "pct": 58.333
-        },
-        {
-          "name": "Protect",
-          "pct": 58.333
-        },
-        {
-          "name": "High Horsepower",
-          "pct": 54.167
-        },
-        {
-          "name": "Earthquake",
-          "pct": 50
-        },
-        {
-          "name": "Rock Slide",
-          "pct": 37.5
-        },
-        {
-          "name": "Icicle Spear",
-          "pct": 25
-        },
-        {
-          "name": "Iron Head",
-          "pct": 12.5
-        }
-      ],
-      "items": [
-        {
-          "name": "Choice Scarf",
-          "pct": 37.5
-        },
-        {
-          "name": "Focus Sash",
-          "pct": 33.333
-        },
-        {
-          "name": "Never-Melt Ice",
-          "pct": 20.833
-        },
-        {
-          "name": "Quick Claw",
-          "pct": 4.167
-        },
-        {
-          "name": "Icicle Plate",
-          "pct": 4.167
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Oblivious",
-          "pct": 83.333
-        },
-        {
-          "name": "Thick Fat",
-          "pct": 12.5
-        },
-        {
-          "name": "Snow Cloak",
-          "pct": 4.167
         }
       ]
     },
@@ -6349,6 +6361,18 @@
           "pct": 4.762
         }
       ]
+    },
+    "Mega Dragonite": {
+      "usage": null,
+      "moves": [],
+      "items": [],
+      "abilities": []
+    },
+    "Mega Meganium": {
+      "usage": null,
+      "moves": [],
+      "items": [],
+      "abilities": []
     }
   }
 }
