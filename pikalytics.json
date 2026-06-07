@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-06T05:59:55.431Z",
+  "updated": "2026-06-07T06:37:45.257Z",
   "format": "championstournaments",
   "count": 103,
   "pokemon": {
@@ -5055,63 +5055,6 @@
         }
       ]
     },
-    "Skarmory": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Iron Head",
-          "pct": 98.261
-        },
-        {
-          "name": "Brave Bird",
-          "pct": 95.652
-        },
-        {
-          "name": "Protect",
-          "pct": 76.522
-        },
-        {
-          "name": "Rock Tomb",
-          "pct": 51.304
-        },
-        {
-          "name": "Tailwind",
-          "pct": 28.696
-        },
-        {
-          "name": "Taunt",
-          "pct": 20
-        },
-        {
-          "name": "Rock Slide",
-          "pct": 13.043
-        },
-        {
-          "name": "Swords Dance",
-          "pct": 6.957
-        }
-      ],
-      "items": [
-        {
-          "name": "Skarmorite",
-          "pct": 100
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Sturdy",
-          "pct": 80.87
-        },
-        {
-          "name": "Weak Armor",
-          "pct": 15.652
-        },
-        {
-          "name": "Keen Eye",
-          "pct": 2.609
-        }
-      ]
-    },
     "Azumarill": {
       "usage": null,
       "moves": [
@@ -5178,6 +5121,63 @@
         {
           "name": "Huge Power",
           "pct": 100
+        }
+      ]
+    },
+    "Skarmory": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Iron Head",
+          "pct": 98.261
+        },
+        {
+          "name": "Brave Bird",
+          "pct": 95.652
+        },
+        {
+          "name": "Protect",
+          "pct": 76.522
+        },
+        {
+          "name": "Rock Tomb",
+          "pct": 51.304
+        },
+        {
+          "name": "Tailwind",
+          "pct": 28.696
+        },
+        {
+          "name": "Taunt",
+          "pct": 20
+        },
+        {
+          "name": "Rock Slide",
+          "pct": 13.043
+        },
+        {
+          "name": "Swords Dance",
+          "pct": 6.957
+        }
+      ],
+      "items": [
+        {
+          "name": "Skarmorite",
+          "pct": 100
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Sturdy",
+          "pct": 80.87
+        },
+        {
+          "name": "Weak Armor",
+          "pct": 15.652
+        },
+        {
+          "name": "Keen Eye",
+          "pct": 2.609
         }
       ]
     },
