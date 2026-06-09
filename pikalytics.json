@@ -1,306 +1,302 @@
 {
-  "updated": "2026-06-08T06:53:05.336Z",
+  "updated": "2026-06-09T06:16:14.228Z",
   "format": "championstournaments",
   "count": 104,
   "pokemon": {
     "Basculegion": {
-      "usage": 46.91,
+      "usage": 46.1,
       "moves": [
         {
           "name": "Last Respects",
-          "pct": 99.496
+          "pct": 99.418
         },
         {
           "name": "Aqua Jet",
-          "pct": 97.36
+          "pct": 97.616
         },
         {
           "name": "Wave Crash",
-          "pct": 74.607
-        },
-        {
-          "name": "Flip Turn",
-          "pct": 51.854
+          "pct": 74.272
         },
         {
           "name": "Protect",
-          "pct": 48.087
+          "pct": 51.317
+        },
+        {
+          "name": "Flip Turn",
+          "pct": 48.711
         },
         {
           "name": "Liquidation",
-          "pct": 23.376
-        },
-        {
-          "name": "Psychic Fangs",
-          "pct": 1.246
+          "pct": 23.593
         },
         {
           "name": "Waterfall",
-          "pct": 1.009
+          "pct": 1.22
+        },
+        {
+          "name": "Psychic Fangs",
+          "pct": 1.137
         }
       ],
       "items": [
         {
           "name": "Choice Scarf",
-          "pct": 50.519
+          "pct": 47.269
         },
         {
           "name": "Focus Sash",
-          "pct": 25.126
+          "pct": 24.951
         },
         {
           "name": "Mystic Water",
-          "pct": 16.167
+          "pct": 20.405
         },
         {
           "name": "Sitrus Berry",
-          "pct": 3.678
+          "pct": 3.438
         },
         {
           "name": "Colbur Berry",
-          "pct": 2.492
+          "pct": 2.19
         },
         {
           "name": "Kasib Berry",
-          "pct": 1.454
+          "pct": 1.248
         }
       ],
       "abilities": [
         {
           "name": "Adaptability",
-          "pct": 93.355
+          "pct": 94.677
         },
         {
           "name": "Swift Swim",
-          "pct": 6.467
+          "pct": 5.129
         }
       ]
     },
     "Garchomp": {
-      "usage": 40.22,
+      "usage": 41.87,
       "moves": [
         {
           "name": "Earthquake",
-          "pct": 90.277
+          "pct": 90.904
         },
         {
           "name": "Dragon Claw",
-          "pct": 79.377
-        },
-        {
-          "name": "Protect",
-          "pct": 69.412
+          "pct": 85.104
         },
         {
           "name": "Rock Slide",
-          "pct": 66.055
+          "pct": 68.864
+        },
+        {
+          "name": "Protect",
+          "pct": 66.3
         },
         {
           "name": "Stomping Tantrum",
-          "pct": 43.149
+          "pct": 38.126
         },
         {
           "name": "Rock Tomb",
-          "pct": 18.512
-        },
-        {
-          "name": "Scale Shot",
-          "pct": 12.215
+          "pct": 18.193
         },
         {
           "name": "Poison Jab",
-          "pct": 10.9
+          "pct": 15.14
+        },
+        {
+          "name": "Scale Shot",
+          "pct": 8.059
         }
       ],
       "items": [
         {
           "name": "Sitrus Berry",
-          "pct": 34.706
+          "pct": 38.523
         },
         {
           "name": "Choice Scarf",
-          "pct": 22.976
+          "pct": 23.23
         },
         {
           "name": "Soft Sand",
-          "pct": 10.069
+          "pct": 8.547
         },
         {
-          "name": "Dragon Fang",
-          "pct": 8.962
+          "name": "Roseli Berry",
+          "pct": 8.028
         },
         {
           "name": "Lum Berry",
-          "pct": 6.263
+          "pct": 6.136
         },
         {
-          "name": "White Herb",
-          "pct": 5.156
+          "name": "Dragon Fang",
+          "pct": 5.433
         }
       ],
       "abilities": [
         {
           "name": "Rough Skin",
-          "pct": 97.024
+          "pct": 97.68
         },
         {
           "name": "Sand Veil",
-          "pct": 2.941
+          "pct": 2.259
         }
       ]
     },
     "Kingambit": {
-      "usage": 38.84,
+      "usage": 39.28,
       "moves": [
         {
           "name": "Sucker Punch",
-          "pct": 99.534
+          "pct": 99.707
         },
         {
           "name": "Kowtow Cleave",
-          "pct": 96.954
+          "pct": 97.885
         },
         {
           "name": "Protect",
-          "pct": 84.163
+          "pct": 81.132
         },
         {
           "name": "Iron Head",
-          "pct": 60.659
+          "pct": 62.622
         },
         {
           "name": "Low Kick",
-          "pct": 46.829
+          "pct": 45.511
         },
         {
           "name": "Swords Dance",
-          "pct": 10.462
+          "pct": 11.809
         }
       ],
       "items": [
         {
           "name": "Chople Berry",
-          "pct": 59.907
+          "pct": 58.328
         },
         {
           "name": "Black Glasses",
-          "pct": 34.647
+          "pct": 35.947
         },
         {
           "name": "Focus Sash",
-          "pct": 4.013
+          "pct": 4.131
         }
       ],
       "abilities": [
         {
           "name": "Defiant",
-          "pct": 98.029
+          "pct": 98.276
         },
         {
           "name": "Supreme Overlord",
-          "pct": 1.935
+          "pct": 1.724
         }
       ]
     },
     "Sneasler": {
-      "usage": 32.09,
+      "usage": 31.08,
       "moves": [
         {
           "name": "Close Combat",
-          "pct": 99.48
-        },
-        {
-          "name": "Dire Claw",
-          "pct": 95.794
+          "pct": 99.465
         },
         {
           "name": "Fake Out",
-          "pct": 95.75
+          "pct": 96.834
+        },
+        {
+          "name": "Dire Claw",
+          "pct": 95.025
         },
         {
           "name": "Protect",
-          "pct": 78.708
+          "pct": 76.275
         },
         {
           "name": "Coaching",
-          "pct": 12.186
+          "pct": 15.748
         },
         {
           "name": "Gunk Shot",
-          "pct": 3.339
-        },
-        {
-          "name": "Feint",
-          "pct": 2.298
+          "pct": 3.906
         },
         {
           "name": "Rock Tomb",
-          "pct": 2.125
+          "pct": 1.974
+        },
+        {
+          "name": "Throat Chop",
+          "pct": 1.891
         }
       ],
       "items": [
         {
           "name": "White Herb",
-          "pct": 81.093
+          "pct": 77.056
         },
         {
           "name": "Focus Sash",
-          "pct": 15.742
+          "pct": 20.271
         },
         {
           "name": "Mental Herb",
-          "pct": 1.301
+          "pct": 1.275
         }
       ],
       "abilities": [
         {
           "name": "Unburden",
-          "pct": 91.414
+          "pct": 90.132
         },
         {
           "name": "Poison Touch",
-          "pct": 6.938
-        },
-        {
-          "name": "Pressure",
-          "pct": 1.041
+          "pct": 8.553
         }
       ]
     },
     "Charizard-Mega-Y": {
-      "usage": 27.01,
+      "usage": 28.49,
       "moves": [
         {
           "name": "Protect",
-          "pct": 99.382
+          "pct": 99.551
         },
         {
           "name": "Heat Wave",
-          "pct": 98.609
+          "pct": 98.789
         },
         {
           "name": "Solar Beam",
-          "pct": 94.281
+          "pct": 93.854
         },
         {
           "name": "Weather Ball",
-          "pct": 87.79
+          "pct": 90.444
         },
         {
           "name": "Air Slash",
-          "pct": 7.419
-        },
-        {
-          "name": "Overheat",
-          "pct": 2.782
+          "pct": 6.057
         },
         {
           "name": "Ancient Power",
-          "pct": 2.37
+          "pct": 2.647
         },
         {
-          "name": "Helping Hand",
-          "pct": 1.288
+          "name": "Overheat",
+          "pct": 2.198
+        },
+        {
+          "name": "Scorching Sands",
+          "pct": 1.256
         }
       ],
       "items": [
@@ -312,259 +308,255 @@
       "abilities": [
         {
           "name": "Blaze",
-          "pct": 67.13
+          "pct": 67.34
         },
         {
           "name": "Solar Power",
-          "pct": 28.748
+          "pct": 29.43
         },
         {
           "name": "Drought",
-          "pct": 3.967
+          "pct": 3.14
         }
       ]
     },
     "Incineroar": {
-      "usage": 25.27,
+      "usage": 28.19,
       "moves": [
         {
           "name": "Fake Out",
-          "pct": 99.78
+          "pct": 99.864
         },
         {
           "name": "Parting Shot",
-          "pct": 94.493
+          "pct": 96.011
         },
         {
           "name": "Flare Blitz",
-          "pct": 84.912
+          "pct": 88.531
         },
         {
           "name": "Throat Chop",
-          "pct": 49.229
+          "pct": 54.306
         },
         {
           "name": "Darkest Lariat",
-          "pct": 31.002
+          "pct": 27.199
         },
         {
           "name": "Protect",
-          "pct": 15.363
+          "pct": 11.514
         },
         {
           "name": "Helping Hand",
-          "pct": 7.985
+          "pct": 8.069
         },
         {
-          "name": "Close Combat",
-          "pct": 4.736
+          "name": "Will-O-Wisp",
+          "pct": 4.352
         }
       ],
       "items": [
         {
           "name": "Sitrus Berry",
-          "pct": 42.456
+          "pct": 46.872
         },
         {
           "name": "Chople Berry",
-          "pct": 23.568
+          "pct": 20.852
         },
         {
           "name": "Passho Berry",
-          "pct": 14.207
+          "pct": 13.781
         },
         {
           "name": "Shuca Berry",
-          "pct": 7.654
+          "pct": 6.029
         },
         {
           "name": "Charcoal",
-          "pct": 4.185
+          "pct": 5.168
         },
         {
-          "name": "White Herb",
-          "pct": 3.359
+          "name": "Leftovers",
+          "pct": 3.309
         }
       ],
       "abilities": [
         {
           "name": "Intimidate",
-          "pct": 99.284
-        }
-      ]
-    },
-    "Sinistcha": {
-      "usage": 18.8,
-      "moves": [
-        {
-          "name": "Matcha Gotcha",
-          "pct": 99.26
-        },
-        {
-          "name": "Rage Powder",
-          "pct": 97.483
-        },
-        {
-          "name": "Trick Room",
-          "pct": 73.797
-        },
-        {
-          "name": "Life Dew",
-          "pct": 64.249
-        },
-        {
-          "name": "Protect",
-          "pct": 44.486
-        },
-        {
-          "name": "Shadow Ball",
-          "pct": 9.697
-        },
-        {
-          "name": "Strength Sap",
-          "pct": 6.588
-        },
-        {
-          "name": "Imprison",
-          "pct": 1.628
-        }
-      ],
-      "items": [
-        {
-          "name": "Sitrus Berry",
-          "pct": 35.603
-        },
-        {
-          "name": "Kasib Berry",
-          "pct": 30.348
-        },
-        {
-          "name": "Colbur Berry",
-          "pct": 10.807
-        },
-        {
-          "name": "Leftovers",
-          "pct": 7.92
-        },
-        {
-          "name": "Occa Berry",
-          "pct": 5.181
-        },
-        {
-          "name": "Coba Berry",
-          "pct": 4.515
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Hospitality",
-          "pct": 99.556
+          "pct": 99.411
         }
       ]
     },
     "Whimsicott": {
-      "usage": 18.33,
+      "usage": 21,
       "moves": [
         {
           "name": "Tailwind",
-          "pct": 98.937
+          "pct": 99.087
         },
         {
           "name": "Moonblast",
-          "pct": 96.203
+          "pct": 97.079
         },
         {
           "name": "Encore",
-          "pct": 89.825
+          "pct": 91.722
         },
         {
           "name": "Protect",
-          "pct": 78.132
+          "pct": 80.828
         },
         {
           "name": "Sunny Day",
-          "pct": 12.908
-        },
-        {
-          "name": "Taunt",
-          "pct": 4.784
+          "pct": 10.53
         },
         {
           "name": "Fake Tears",
-          "pct": 4.252
+          "pct": 3.652
         },
         {
-          "name": "Helping Hand",
-          "pct": 1.974
+          "name": "Taunt",
+          "pct": 3.53
+        },
+        {
+          "name": "Endeavor",
+          "pct": 1.887
         }
       ],
       "items": [
         {
           "name": "Focus Sash",
-          "pct": 45.33
+          "pct": 44.431
         },
         {
           "name": "Fairy Feather",
-          "pct": 31.967
+          "pct": 36.093
         },
         {
           "name": "Coba Berry",
-          "pct": 8.808
-        },
-        {
-          "name": "Sitrus Berry",
-          "pct": 4.404
+          "pct": 7.791
         },
         {
           "name": "Kebia Berry",
-          "pct": 3.948
+          "pct": 3.53
+        },
+        {
+          "name": "Sitrus Berry",
+          "pct": 3.165
         },
         {
           "name": "Mental Herb",
-          "pct": 3.493
+          "pct": 2.921
         }
       ],
       "abilities": [
         {
           "name": "Prankster",
-          "pct": 98.709
+          "pct": 99.087
+        }
+      ]
+    },
+    "Sinistcha": {
+      "usage": 20.93,
+      "moves": [
+        {
+          "name": "Matcha Gotcha",
+          "pct": 99.451
         },
         {
-          "name": "Chlorophyll",
-          "pct": 1.215
+          "name": "Rage Powder",
+          "pct": 98.657
+        },
+        {
+          "name": "Trick Room",
+          "pct": 74.176
+        },
+        {
+          "name": "Life Dew",
+          "pct": 58.73
+        },
+        {
+          "name": "Protect",
+          "pct": 54.274
+        },
+        {
+          "name": "Shadow Ball",
+          "pct": 7.082
+        },
+        {
+          "name": "Strength Sap",
+          "pct": 4.09
+        },
+        {
+          "name": "Imprison",
+          "pct": 1.526
+        }
+      ],
+      "items": [
+        {
+          "name": "Kasib Berry",
+          "pct": 39.194
+        },
+        {
+          "name": "Sitrus Berry",
+          "pct": 32.662
+        },
+        {
+          "name": "Colbur Berry",
+          "pct": 9.219
+        },
+        {
+          "name": "Leftovers",
+          "pct": 6.349
+        },
+        {
+          "name": "Occa Berry",
+          "pct": 5.495
+        },
+        {
+          "name": "Coba Berry",
+          "pct": 3.358
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Hospitality",
+          "pct": 99.512
         }
       ]
     },
     "Floette-Eternal-Mega": {
-      "usage": 16.75,
+      "usage": 20.12,
       "moves": [
         {
           "name": "Protect",
-          "pct": 99.917
+          "pct": 99.936
         },
         {
           "name": "Dazzling Gleam",
-          "pct": 94.85
+          "pct": 92.821
         },
         {
           "name": "Moonblast",
-          "pct": 86.711
-        },
-        {
-          "name": "Light of Ruin",
-          "pct": 51.412
+          "pct": 78.335
         },
         {
           "name": "Calm Mind",
-          "pct": 47.176
+          "pct": 58.767
+        },
+        {
+          "name": "Light of Ruin",
+          "pct": 40.28
         },
         {
           "name": "Draining Kiss",
-          "pct": 16.528
+          "pct": 27.255
         },
         {
           "name": "Psychic",
-          "pct": 1.578
+          "pct": 1.334
         }
       ],
       "items": [
@@ -576,312 +568,361 @@
       "abilities": [
         {
           "name": "Flower Veil",
-          "pct": 93.854
+          "pct": 95.044
         },
         {
           "name": "Fairy Aura",
-          "pct": 5.233
-        }
-      ]
-    },
-    "Archaludon": {
-      "usage": 15.67,
-      "moves": [
-        {
-          "name": "Electro Shot",
-          "pct": 92.718
-        },
-        {
-          "name": "Protect",
-          "pct": 91.563
-        },
-        {
-          "name": "Flash Cannon",
-          "pct": 86.057
-        },
-        {
-          "name": "Dragon Pulse",
-          "pct": 63.499
-        },
-        {
-          "name": "Draco Meteor",
-          "pct": 30.107
-        },
-        {
-          "name": "Aura Sphere",
-          "pct": 24.867
-        },
-        {
-          "name": "Snarl",
-          "pct": 3.908
-        },
-        {
-          "name": "Thunderbolt",
-          "pct": 3.641
-        }
-      ],
-      "items": [
-        {
-          "name": "Leftovers",
-          "pct": 73.179
-        },
-        {
-          "name": "Chople Berry",
-          "pct": 9.947
-        },
-        {
-          "name": "White Herb",
-          "pct": 4.352
-        },
-        {
-          "name": "Choice Scarf",
-          "pct": 3.108
-        },
-        {
-          "name": "Sitrus Berry",
-          "pct": 2.664
-        },
-        {
-          "name": "Magnet",
-          "pct": 2.043
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Stamina",
-          "pct": 89.698
-        },
-        {
-          "name": "Sturdy",
-          "pct": 8.703
-        },
-        {
-          "name": "Stalwart",
-          "pct": 1.51
+          "pct": 4.003
         }
       ]
     },
     "Sylveon": {
-      "usage": 15.08,
+      "usage": 15.13,
       "moves": [
         {
           "name": "Hyper Voice",
-          "pct": 99.077
+          "pct": 99.24
         },
         {
           "name": "Quick Attack",
-          "pct": 80.443
+          "pct": 82.095
         },
         {
           "name": "Hyper Beam",
-          "pct": 69.096
+          "pct": 67.821
         },
         {
           "name": "Detect",
-          "pct": 54.982
+          "pct": 59.459
         },
         {
           "name": "Protect",
-          "pct": 43.635
+          "pct": 39.02
         },
         {
           "name": "Moonblast",
-          "pct": 19.926
+          "pct": 22.128
         },
         {
           "name": "Calm Mind",
-          "pct": 9.502
+          "pct": 9.122
         },
         {
           "name": "Yawn",
-          "pct": 8.303
+          "pct": 8.446
         }
       ],
       "items": [
         {
           "name": "Fairy Feather",
-          "pct": 93.358
-        },
-        {
-          "name": "Leftovers",
-          "pct": 2.768
+          "pct": 95.439
         },
         {
           "name": "Sitrus Berry",
-          "pct": 2.583
+          "pct": 1.774
+        },
+        {
+          "name": "Leftovers",
+          "pct": 1.605
         }
       ],
       "abilities": [
         {
           "name": "Pixilate",
-          "pct": 99.077
+          "pct": 99.155
+        }
+      ]
+    },
+    "Archaludon": {
+      "usage": 14.73,
+      "moves": [
+        {
+          "name": "Protect",
+          "pct": 92.715
+        },
+        {
+          "name": "Electro Shot",
+          "pct": 92.715
+        },
+        {
+          "name": "Flash Cannon",
+          "pct": 87.684
+        },
+        {
+          "name": "Dragon Pulse",
+          "pct": 67.303
+        },
+        {
+          "name": "Draco Meteor",
+          "pct": 26.973
+        },
+        {
+          "name": "Aura Sphere",
+          "pct": 21.856
+        },
+        {
+          "name": "Thunderbolt",
+          "pct": 3.816
+        },
+        {
+          "name": "Snarl",
+          "pct": 2.949
+        }
+      ],
+      "items": [
+        {
+          "name": "Leftovers",
+          "pct": 75.716
+        },
+        {
+          "name": "Chople Berry",
+          "pct": 9.367
+        },
+        {
+          "name": "White Herb",
+          "pct": 4.51
+        },
+        {
+          "name": "Choice Scarf",
+          "pct": 2.602
+        },
+        {
+          "name": "Sitrus Berry",
+          "pct": 2.168
+        },
+        {
+          "name": "Magnet",
+          "pct": 1.735
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Stamina",
+          "pct": 89.506
+        },
+        {
+          "name": "Sturdy",
+          "pct": 8.933
+        },
+        {
+          "name": "Stalwart",
+          "pct": 1.474
         }
       ]
     },
     "Farigiraf": {
-      "usage": 15.03,
+      "usage": 14.71,
       "moves": [
         {
           "name": "Trick Room",
-          "pct": 98.241
-        },
-        {
-          "name": "Psychic",
-          "pct": 67.037
+          "pct": 97.915
         },
         {
           "name": "Helping Hand",
-          "pct": 63.796
+          "pct": 66.464
+        },
+        {
+          "name": "Psychic",
+          "pct": 63.597
         },
         {
           "name": "Protect",
-          "pct": 46.204
+          "pct": 45.439
         },
         {
           "name": "Hyper Voice",
-          "pct": 43.704
+          "pct": 40.052
         },
         {
           "name": "Twin Beam",
-          "pct": 20.556
-        },
-        {
-          "name": "Imprison",
-          "pct": 10.463
+          "pct": 24.327
         },
         {
           "name": "Thunderbolt",
-          "pct": 8.796
+          "pct": 13.988
+        },
+        {
+          "name": "Imprison",
+          "pct": 10.252
         }
       ],
       "items": [
         {
           "name": "Sitrus Berry",
-          "pct": 61.481
+          "pct": 60.209
         },
         {
           "name": "Colbur Berry",
-          "pct": 26.852
-        },
-        {
-          "name": "Mental Herb",
-          "pct": 4.074
-        },
-        {
-          "name": "Leftovers",
-          "pct": 2.407
+          "pct": 26.672
         },
         {
           "name": "Twisted Spoon",
-          "pct": 1.667
+          "pct": 5.126
+        },
+        {
+          "name": "Mental Herb",
+          "pct": 2.954
+        },
+        {
+          "name": "Leftovers",
+          "pct": 1.825
         },
         {
           "name": "Focus Sash",
-          "pct": 1.574
+          "pct": 1.043
         }
       ],
       "abilities": [
         {
           "name": "Armor Tail",
-          "pct": 99.074
+          "pct": 99.479
         }
       ]
     },
-    "Pelipper": {
-      "usage": 13.44,
+    "Glimmora": {
+      "usage": 12.89,
       "moves": [
         {
-          "name": "Hurricane",
-          "pct": 97.516
+          "name": "Power Gem",
+          "pct": 99.802
         },
         {
-          "name": "Weather Ball",
-          "pct": 91.718
+          "name": "Earth Power",
+          "pct": 97.126
         },
         {
-          "name": "Tailwind",
-          "pct": 85.507
+          "name": "Sludge Bomb",
+          "pct": 97.126
         },
         {
-          "name": "Wide Guard",
-          "pct": 60.87
+          "name": "Spiky Shield",
+          "pct": 94.549
         },
         {
           "name": "Protect",
-          "pct": 45.445
+          "pct": 4.46
         },
         {
-          "name": "Muddy Water",
-          "pct": 5.176
+          "name": "Sludge Wave",
+          "pct": 2.478
         },
         {
-          "name": "Rain Dance",
-          "pct": 2.588
+          "name": "Energy Ball",
+          "pct": 1.388
         },
         {
-          "name": "Helping Hand",
-          "pct": 2.381
+          "name": "Mortal Spin",
+          "pct": 1.189
         }
       ],
       "items": [
         {
           "name": "Focus Sash",
-          "pct": 52.692
+          "pct": 61.943
+        },
+        {
+          "name": "Glimmoranite",
+          "pct": 36.67
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Toxic Debris",
+          "pct": 99.009
+        }
+      ]
+    },
+    "Pelipper": {
+      "usage": 12.52,
+      "moves": [
+        {
+          "name": "Hurricane",
+          "pct": 97.143
+        },
+        {
+          "name": "Weather Ball",
+          "pct": 94.286
+        },
+        {
+          "name": "Tailwind",
+          "pct": 88.571
+        },
+        {
+          "name": "Wide Guard",
+          "pct": 60
+        },
+        {
+          "name": "Protect",
+          "pct": 42.857
+        },
+        {
+          "name": "Muddy Water",
+          "pct": 4.694
+        },
+        {
+          "name": "Rain Dance",
+          "pct": 3.469
+        },
+        {
+          "name": "Helping Hand",
+          "pct": 3.367
+        }
+      ],
+      "items": [
+        {
+          "name": "Focus Sash",
+          "pct": 49.592
         },
         {
           "name": "Sitrus Berry",
-          "pct": 38.613
+          "pct": 42.347
         },
         {
           "name": "Choice Scarf",
-          "pct": 2.07
+          "pct": 1.837
         },
         {
           "name": "Mystic Water",
-          "pct": 1.553
-        },
-        {
-          "name": "Leftovers",
-          "pct": 1.346
+          "pct": 1.531
         },
         {
           "name": "Quick Claw",
-          "pct": 1.035
+          "pct": 1.327
         }
       ],
       "abilities": [
         {
           "name": "Drizzle",
-          "pct": 98.965
+          "pct": 99.592
         }
       ]
     },
     "Aerodactyl-Mega": {
-      "usage": 12.52,
+      "usage": 11.71,
       "moves": [
         {
           "name": "Rock Slide",
-          "pct": 99.222
+          "pct": 99.017
         },
         {
           "name": "Dual Wingbeat",
-          "pct": 96.556
+          "pct": 96.288
         },
         {
           "name": "Tailwind",
-          "pct": 94.333
+          "pct": 94.432
         },
         {
           "name": "Protect",
-          "pct": 86.444
+          "pct": 80.786
         },
         {
           "name": "Wide Guard",
-          "pct": 14.333
+          "pct": 19.214
         },
         {
           "name": "Ice Fang",
-          "pct": 4.444
+          "pct": 6.55
         }
       ],
       "items": [
@@ -893,127 +934,66 @@
       "abilities": [
         {
           "name": "Unnerve",
-          "pct": 95.556
+          "pct": 97.162
         },
         {
           "name": "Rock Head",
-          "pct": 1.889
-        },
-        {
-          "name": "Pressure",
-          "pct": 1.333
-        },
-        {
-          "name": "Tough Claws",
-          "pct": 1.222
-        }
-      ]
-    },
-    "Glimmora": {
-      "usage": 11.83,
-      "moves": [
-        {
-          "name": "Power Gem",
-          "pct": 99.529
-        },
-        {
-          "name": "Sludge Bomb",
-          "pct": 97.059
-        },
-        {
-          "name": "Earth Power",
-          "pct": 96.471
-        },
-        {
-          "name": "Spiky Shield",
-          "pct": 93.529
-        },
-        {
-          "name": "Protect",
-          "pct": 5.294
-        },
-        {
-          "name": "Sludge Wave",
-          "pct": 2.824
-        },
-        {
-          "name": "Energy Ball",
-          "pct": 1.647
-        },
-        {
-          "name": "Mortal Spin",
-          "pct": 1.176
-        }
-      ],
-      "items": [
-        {
-          "name": "Focus Sash",
-          "pct": 57.059
-        },
-        {
-          "name": "Glimmoranite",
-          "pct": 41.059
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Toxic Debris",
-          "pct": 99.176
+          "pct": 1.201
         }
       ]
     },
     "Rotom-Wash": {
-      "usage": 11.34,
+      "usage": 11.18,
       "moves": [
         {
           "name": "Hydro Pump",
-          "pct": 98.528
+          "pct": 97.943
         },
         {
           "name": "Thunderbolt",
-          "pct": 76.564
+          "pct": 78.514
         },
         {
           "name": "Will-O-Wisp",
-          "pct": 73.374
+          "pct": 76.343
         },
         {
           "name": "Protect",
-          "pct": 65.644
+          "pct": 65.486
         },
         {
           "name": "Volt Switch",
-          "pct": 43.804
+          "pct": 37.829
         },
         {
           "name": "Electroweb",
-          "pct": 25.767
+          "pct": 22.857
+        },
+        {
+          "name": "Light Screen",
+          "pct": 6.743
         },
         {
           "name": "Trick",
-          "pct": 4.663
-        },
-        {
-          "name": "Shadow Ball",
-          "pct": 3.558
+          "pct": 3.886
         }
       ],
       "items": [
         {
           "name": "Sitrus Berry",
-          "pct": 44.908
-        },
-        {
-          "name": "Choice Scarf",
-          "pct": 23.804
+          "pct": 39.314
         },
         {
           "name": "Leftovers",
-          "pct": 15.828
+          "pct": 21.6
+        },
+        {
+          "name": "Choice Scarf",
+          "pct": 20.343
         },
         {
           "name": "Magnet",
-          "pct": 13.865
+          "pct": 17.029
         }
       ],
       "abilities": [
@@ -1023,296 +1003,211 @@
         }
       ]
     },
-    "Aerodactyl": {
-      "usage": 10.53,
-      "moves": [
-        {
-          "name": "Rock Slide",
-          "pct": 99.075
-        },
-        {
-          "name": "Tailwind",
-          "pct": 98.679
-        },
-        {
-          "name": "Protect",
-          "pct": 86.922
-        },
-        {
-          "name": "Dual Wingbeat",
-          "pct": 69.221
-        },
-        {
-          "name": "Wide Guard",
-          "pct": 36.724
-        },
-        {
-          "name": "Taunt",
-          "pct": 3.435
-        },
-        {
-          "name": "Sunny Day",
-          "pct": 1.453
-        },
-        {
-          "name": "Iron Head",
-          "pct": 1.057
-        }
-      ],
-      "items": [
-        {
-          "name": "Focus Sash",
-          "pct": 96.565
-        },
-        {
-          "name": "Lum Berry",
-          "pct": 1.057
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Unnerve",
-          "pct": 97.226
-        },
-        {
-          "name": "Rock Head",
-          "pct": 1.849
-        }
-      ]
-    },
     "Dragonite": {
-      "usage": 9.89,
+      "usage": 10.35,
       "moves": [
         {
           "name": "Protect",
-          "pct": 75.809
-        },
-        {
-          "name": "Tailwind",
-          "pct": 47.117
-        },
-        {
-          "name": "Hurricane",
-          "pct": 44.023
+          "pct": 80
         },
         {
           "name": "Dragon Pulse",
-          "pct": 39.1
+          "pct": 49.877
+        },
+        {
+          "name": "Tailwind",
+          "pct": 44.074
+        },
+        {
+          "name": "Hurricane",
+          "pct": 38.889
         },
         {
           "name": "Extreme Speed",
-          "pct": 37.271
+          "pct": 32.593
+        },
+        {
+          "name": "Thunderbolt",
+          "pct": 24.321
         },
         {
           "name": "Draco Meteor",
-          "pct": 28.551
+          "pct": 24.321
         },
         {
-          "name": "Dragon Claw",
-          "pct": 25.176
-        },
-        {
-          "name": "Low Kick",
-          "pct": 20.956
+          "name": "Flamethrower",
+          "pct": 21.235
         }
       ],
       "items": [
         {
           "name": "Dragoninite",
-          "pct": 67.932
+          "pct": 76.42
         },
         {
           "name": "Dragon Fang",
-          "pct": 24.473
+          "pct": 17.778
         },
         {
           "name": "Lum Berry",
-          "pct": 3.235
-        },
-        {
-          "name": "Leftovers",
-          "pct": 1.266
+          "pct": 2.469
         }
       ],
       "abilities": [
         {
           "name": "Multiscale",
-          "pct": 70.464
+          "pct": 74.198
         },
         {
           "name": "Inner Focus",
-          "pct": 29.536
+          "pct": 25.802
         }
       ]
     },
-    "Aegislash": {
-      "usage": 7.49,
+    "Froslass": {
+      "usage": 7.86,
       "moves": [
         {
-          "name": "Shadow Sneak",
-          "pct": 88.662
+          "name": "Blizzard",
+          "pct": 100
         },
         {
-          "name": "Poltergeist",
-          "pct": 87.361
-        },
-        {
-          "name": "King's Shield",
-          "pct": 84.015
-        },
-        {
-          "name": "Iron Head",
-          "pct": 37.732
-        },
-        {
-          "name": "Close Combat",
-          "pct": 31.784
-        },
-        {
-          "name": "Sacred Sword",
-          "pct": 29.554
-        },
-        {
-          "name": "Wide Guard",
-          "pct": 22.491
+          "name": "Protect",
+          "pct": 99.024
         },
         {
           "name": "Shadow Ball",
-          "pct": 6.32
+          "pct": 96.585
+        },
+        {
+          "name": "Aurora Veil",
+          "pct": 79.675
+        },
+        {
+          "name": "Weather Ball",
+          "pct": 5.203
+        },
+        {
+          "name": "Nasty Plot",
+          "pct": 3.252
+        },
+        {
+          "name": "Substitute",
+          "pct": 3.252
+        },
+        {
+          "name": "Thunderbolt",
+          "pct": 3.252
         }
       ],
       "items": [
         {
-          "name": "Spell Tag",
-          "pct": 47.212
-        },
-        {
-          "name": "Focus Sash",
-          "pct": 28.996
-        },
-        {
-          "name": "Colbur Berry",
-          "pct": 9.665
-        },
-        {
-          "name": "Leftovers",
-          "pct": 7.063
-        },
-        {
-          "name": "White Herb",
-          "pct": 1.487
-        },
-        {
-          "name": "Kasib Berry",
-          "pct": 1.301
+          "name": "Froslassite",
+          "pct": 99.675
         }
       ],
       "abilities": [
         {
-          "name": "Stance Change",
-          "pct": 100
+          "name": "Cursed Body",
+          "pct": 86.504
+        },
+        {
+          "name": "Snow Cloak",
+          "pct": 11.22
+        },
+        {
+          "name": "Snow Warning",
+          "pct": 2.276
         }
       ]
     },
-    "Sableye": {
-      "usage": 7.08,
+    "Aerodactyl": {
+      "usage": 7.72,
       "moves": [
         {
-          "name": "Light Screen",
-          "pct": 72.888
+          "name": "Rock Slide",
+          "pct": 99.007
         },
         {
-          "name": "Rain Dance",
-          "pct": 71.906
+          "name": "Tailwind",
+          "pct": 97.185
         },
         {
-          "name": "Encore",
-          "pct": 51.866
+          "name": "Protect",
+          "pct": 82.119
         },
         {
-          "name": "Reflect",
-          "pct": 48.527
+          "name": "Dual Wingbeat",
+          "pct": 70.861
         },
         {
-          "name": "Will-O-Wisp",
-          "pct": 37.328
+          "name": "Wide Guard",
+          "pct": 35.099
         },
         {
-          "name": "Disable",
-          "pct": 23.379
+          "name": "Sunny Day",
+          "pct": 6.788
         },
         {
-          "name": "Foul Play",
-          "pct": 23.183
+          "name": "Taunt",
+          "pct": 3.974
         },
         {
-          "name": "Quash",
-          "pct": 18.861
+          "name": "Ice Fang",
+          "pct": 1.325
         }
       ],
       "items": [
         {
-          "name": "Roseli Berry",
-          "pct": 78.978
-        },
-        {
-          "name": "Sitrus Berry",
-          "pct": 10.806
-        },
-        {
           "name": "Focus Sash",
-          "pct": 4.322
-        },
-        {
-          "name": "Mental Herb",
-          "pct": 2.161
-        },
-        {
-          "name": "Leftovers",
-          "pct": 1.375
+          "pct": 96.854
         }
       ],
       "abilities": [
         {
-          "name": "Prankster",
-          "pct": 99.214
+          "name": "Unnerve",
+          "pct": 97.517
+        },
+        {
+          "name": "Rock Head",
+          "pct": 1.987
         }
       ]
     },
     "Tyranitar-Mega": {
-      "usage": 7.06,
+      "usage": 7.12,
       "moves": [
         {
-          "name": "Rock Slide",
-          "pct": 99.014
+          "name": "Protect",
+          "pct": 99.641
         },
         {
-          "name": "Protect",
-          "pct": 98.817
+          "name": "Rock Slide",
+          "pct": 98.743
         },
         {
           "name": "Knock Off",
-          "pct": 92.899
+          "pct": 94.614
         },
         {
           "name": "Low Kick",
-          "pct": 68.442
-        },
-        {
-          "name": "Ice Punch",
-          "pct": 11.637
+          "pct": 58.528
         },
         {
           "name": "Dragon Dance",
-          "pct": 7.298
+          "pct": 22.442
         },
         {
-          "name": "Crunch",
-          "pct": 5.917
+          "name": "Ice Punch",
+          "pct": 9.156
         },
         {
           "name": "High Horsepower",
-          "pct": 4.931
+          "pct": 4.847
+        },
+        {
+          "name": "Crunch",
+          "pct": 3.95
         }
       ],
       "items": [
@@ -1324,223 +1219,113 @@
       "abilities": [
         {
           "name": "Sand Stream",
-          "pct": 99.803
-        }
-      ]
-    },
-    "Froslass": {
-      "usage": 7.03,
-      "moves": [
-        {
-          "name": "Blizzard",
-          "pct": 100
-        },
-        {
-          "name": "Protect",
-          "pct": 99.208
-        },
-        {
-          "name": "Shadow Ball",
-          "pct": 96.832
-        },
-        {
-          "name": "Aurora Veil",
-          "pct": 81.98
-        },
-        {
-          "name": "Nasty Plot",
-          "pct": 3.366
-        },
-        {
-          "name": "Thunderbolt",
-          "pct": 3.168
-        },
-        {
-          "name": "Ice Beam",
-          "pct": 3.168
-        },
-        {
-          "name": "Substitute",
-          "pct": 2.97
-        }
-      ],
-      "items": [
-        {
-          "name": "Froslassite",
-          "pct": 99.406
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Cursed Body",
-          "pct": 80.99
-        },
-        {
-          "name": "Snow Cloak",
-          "pct": 15.446
-        },
-        {
-          "name": "Snow Warning",
-          "pct": 3.564
+          "pct": 99.461
         }
       ]
     },
     "Talonflame": {
-      "usage": 6.72,
+      "usage": 7.11,
       "moves": [
         {
           "name": "Tailwind",
-          "pct": 97.93
+          "pct": 94.604
         },
         {
           "name": "Protect",
-          "pct": 88.199
+          "pct": 87.77
         },
         {
           "name": "Flare Blitz",
-          "pct": 65.01
+          "pct": 62.95
         },
         {
           "name": "Acrobatics",
-          "pct": 40.373
+          "pct": 37.05
         },
         {
           "name": "Dual Wingbeat",
-          "pct": 34.783
+          "pct": 33.094
         },
         {
           "name": "Brave Bird",
-          "pct": 24.431
+          "pct": 28.957
         },
         {
           "name": "Will-O-Wisp",
-          "pct": 16.77
+          "pct": 17.806
         },
         {
           "name": "Quick Guard",
-          "pct": 7.453
+          "pct": 8.094
         }
       ],
       "items": [
         {
           "name": "Sharp Beak",
-          "pct": 42.65
+          "pct": 46.223
         },
         {
           "name": "Nothing",
-          "pct": 28.364
+          "pct": 24.46
         },
         {
           "name": "Focus Sash",
-          "pct": 11.387
+          "pct": 10.432
         },
         {
           "name": "Charcoal",
-          "pct": 1.656
+          "pct": 2.518
         },
         {
           "name": "Charti Berry",
-          "pct": 1.449
+          "pct": 1.439
         }
       ],
       "abilities": [
         {
           "name": "Gale Wings",
-          "pct": 98.344
+          "pct": 98.022
         },
         {
           "name": "Flame Body",
-          "pct": 1.449
-        }
-      ]
-    },
-    "Scizor-Mega": {
-      "usage": 6.67,
-      "moves": [
-        {
-          "name": "Bullet Punch",
-          "pct": 100
-        },
-        {
-          "name": "Protect",
-          "pct": 97.077
-        },
-        {
-          "name": "Swords Dance",
-          "pct": 86.221
-        },
-        {
-          "name": "Bug Bite",
-          "pct": 84.76
-        },
-        {
-          "name": "Close Combat",
-          "pct": 18.372
-        },
-        {
-          "name": "Dual Wingbeat",
-          "pct": 7.307
-        },
-        {
-          "name": "Knock Off",
-          "pct": 2.714
-        },
-        {
-          "name": "U-turn",
-          "pct": 1.67
-        }
-      ],
-      "items": [
-        {
-          "name": "Scizorite",
-          "pct": 100
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Technician",
-          "pct": 98.539
-        },
-        {
-          "name": "Swarm",
-          "pct": 1.044
+          "pct": 1.799
         }
       ]
     },
     "Venusaur-Mega": {
-      "usage": 6.62,
+      "usage": 6.63,
       "moves": [
         {
           "name": "Sludge Bomb",
-          "pct": 96.849
+          "pct": 97.495
         },
         {
           "name": "Protect",
-          "pct": 96.008
+          "pct": 95.183
         },
         {
           "name": "Earth Power",
-          "pct": 91.387
+          "pct": 93.449
         },
         {
           "name": "Giga Drain",
-          "pct": 88.025
-        },
-        {
-          "name": "Leech Seed",
-          "pct": 10.924
+          "pct": 86.898
         },
         {
           "name": "Sleep Powder",
-          "pct": 6.723
+          "pct": 9.634
+        },
+        {
+          "name": "Leech Seed",
+          "pct": 9.634
         },
         {
           "name": "Energy Ball",
-          "pct": 3.992
+          "pct": 3.661
         },
         {
-          "name": "Weather Ball",
-          "pct": 1.681
+          "name": "Leaf Storm",
+          "pct": 1.156
         }
       ],
       "items": [
@@ -1552,52 +1337,483 @@
       "abilities": [
         {
           "name": "Chlorophyll",
-          "pct": 93.067
+          "pct": 93.449
         },
         {
           "name": "Overgrow",
-          "pct": 5.252
+          "pct": 5.395
+        }
+      ]
+    },
+    "Aegislash": {
+      "usage": 6.19,
+      "moves": [
+        {
+          "name": "Poltergeist",
+          "pct": 89.256
         },
         {
-          "name": "Thick Fat",
-          "pct": 1.05
+          "name": "Shadow Sneak",
+          "pct": 88.843
+        },
+        {
+          "name": "King's Shield",
+          "pct": 82.231
+        },
+        {
+          "name": "Iron Head",
+          "pct": 41.116
+        },
+        {
+          "name": "Close Combat",
+          "pct": 31.198
+        },
+        {
+          "name": "Sacred Sword",
+          "pct": 26.86
+        },
+        {
+          "name": "Wide Guard",
+          "pct": 25
+        },
+        {
+          "name": "Shadow Ball",
+          "pct": 5.785
+        }
+      ],
+      "items": [
+        {
+          "name": "Spell Tag",
+          "pct": 43.388
+        },
+        {
+          "name": "Focus Sash",
+          "pct": 35.744
+        },
+        {
+          "name": "Colbur Berry",
+          "pct": 8.058
+        },
+        {
+          "name": "Leftovers",
+          "pct": 5.579
+        },
+        {
+          "name": "Kasib Berry",
+          "pct": 2.066
+        },
+        {
+          "name": "White Herb",
+          "pct": 1.86
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Stance Change",
+          "pct": 100
+        }
+      ]
+    },
+    "Sableye": {
+      "usage": 6.06,
+      "moves": [
+        {
+          "name": "Light Screen",
+          "pct": 77.215
+        },
+        {
+          "name": "Rain Dance",
+          "pct": 74.262
+        },
+        {
+          "name": "Encore",
+          "pct": 50.633
+        },
+        {
+          "name": "Reflect",
+          "pct": 50.211
+        },
+        {
+          "name": "Will-O-Wisp",
+          "pct": 37.975
+        },
+        {
+          "name": "Foul Play",
+          "pct": 22.574
+        },
+        {
+          "name": "Disable",
+          "pct": 19.62
+        },
+        {
+          "name": "Fake Out",
+          "pct": 15.823
+        }
+      ],
+      "items": [
+        {
+          "name": "Roseli Berry",
+          "pct": 82.7
+        },
+        {
+          "name": "Sitrus Berry",
+          "pct": 8.439
+        },
+        {
+          "name": "Focus Sash",
+          "pct": 4.43
+        },
+        {
+          "name": "Mental Herb",
+          "pct": 2.321
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Prankster",
+          "pct": 99.367
+        }
+      ]
+    },
+    "Maushold": {
+      "usage": 6.06,
+      "moves": [
+        {
+          "name": "Follow Me",
+          "pct": 100
+        },
+        {
+          "name": "Protect",
+          "pct": 91.983
+        },
+        {
+          "name": "Super Fang",
+          "pct": 83.966
+        },
+        {
+          "name": "Feint",
+          "pct": 35.443
+        },
+        {
+          "name": "Taunt",
+          "pct": 24.684
+        },
+        {
+          "name": "Encore",
+          "pct": 18.987
+        },
+        {
+          "name": "Helping Hand",
+          "pct": 16.245
+        },
+        {
+          "name": "Rain Dance",
+          "pct": 12.869
+        }
+      ],
+      "items": [
+        {
+          "name": "Chople Berry",
+          "pct": 52.321
+        },
+        {
+          "name": "Focus Sash",
+          "pct": 36.076
+        },
+        {
+          "name": "Sitrus Berry",
+          "pct": 6.751
+        },
+        {
+          "name": "King's Rock",
+          "pct": 2.11
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Friend Guard",
+          "pct": 97.257
+        },
+        {
+          "name": "Technician",
+          "pct": 2.11
+        }
+      ]
+    },
+    "Scizor-Mega": {
+      "usage": 5.84,
+      "moves": [
+        {
+          "name": "Bullet Punch",
+          "pct": 100
+        },
+        {
+          "name": "Protect",
+          "pct": 97.593
+        },
+        {
+          "name": "Swords Dance",
+          "pct": 86.871
+        },
+        {
+          "name": "Bug Bite",
+          "pct": 82.276
+        },
+        {
+          "name": "Close Combat",
+          "pct": 19.475
+        },
+        {
+          "name": "Dual Wingbeat",
+          "pct": 7.221
+        },
+        {
+          "name": "Knock Off",
+          "pct": 2.407
+        },
+        {
+          "name": "U-turn",
+          "pct": 1.751
+        }
+      ],
+      "items": [
+        {
+          "name": "Scizorite",
+          "pct": 100
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Technician",
+          "pct": 98.687
+        }
+      ]
+    },
+    "Torkoal": {
+      "usage": 5.6,
+      "moves": [
+        {
+          "name": "Eruption",
+          "pct": 96.347
+        },
+        {
+          "name": "Protect",
+          "pct": 93.836
+        },
+        {
+          "name": "Weather Ball",
+          "pct": 57.306
+        },
+        {
+          "name": "Heat Wave",
+          "pct": 55.936
+        },
+        {
+          "name": "Earth Power",
+          "pct": 38.356
+        },
+        {
+          "name": "Solar Beam",
+          "pct": 16.438
+        },
+        {
+          "name": "Body Press",
+          "pct": 9.817
+        },
+        {
+          "name": "Helping Hand",
+          "pct": 9.589
+        }
+      ],
+      "items": [
+        {
+          "name": "Charcoal",
+          "pct": 96.804
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Drought",
+          "pct": 98.63
+        },
+        {
+          "name": "White Smoke",
+          "pct": 1.142
+        }
+      ]
+    },
+    "Corviknight": {
+      "usage": 5.56,
+      "moves": [
+        {
+          "name": "Brave Bird",
+          "pct": 88.966
+        },
+        {
+          "name": "Tailwind",
+          "pct": 78.391
+        },
+        {
+          "name": "Roost",
+          "pct": 64.368
+        },
+        {
+          "name": "Bulk Up",
+          "pct": 62.069
+        },
+        {
+          "name": "Iron Head",
+          "pct": 41.149
+        },
+        {
+          "name": "Body Press",
+          "pct": 31.494
+        },
+        {
+          "name": "Protect",
+          "pct": 16.092
+        },
+        {
+          "name": "Iron Defense",
+          "pct": 10.575
+        }
+      ],
+      "items": [
+        {
+          "name": "Leftovers",
+          "pct": 72.644
+        },
+        {
+          "name": "Sitrus Berry",
+          "pct": 12.644
+        },
+        {
+          "name": "Occa Berry",
+          "pct": 11.724
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Mirror Armor",
+          "pct": 94.483
+        },
+        {
+          "name": "Unnerve",
+          "pct": 2.759
+        },
+        {
+          "name": "Pressure",
+          "pct": 2.529
+        }
+      ]
+    },
+    "Ninetales-Alola": {
+      "usage": 5.52,
+      "moves": [
+        {
+          "name": "Blizzard",
+          "pct": 97.917
+        },
+        {
+          "name": "Protect",
+          "pct": 76.389
+        },
+        {
+          "name": "Freeze-Dry",
+          "pct": 65.509
+        },
+        {
+          "name": "Encore",
+          "pct": 53.472
+        },
+        {
+          "name": "Moonblast",
+          "pct": 28.472
+        },
+        {
+          "name": "Aurora Veil",
+          "pct": 26.852
+        },
+        {
+          "name": "Icy Wind",
+          "pct": 25.231
+        },
+        {
+          "name": "Disable",
+          "pct": 16.667
+        }
+      ],
+      "items": [
+        {
+          "name": "Focus Sash",
+          "pct": 38.426
+        },
+        {
+          "name": "Never-Melt Ice",
+          "pct": 35.417
+        },
+        {
+          "name": "Choice Scarf",
+          "pct": 19.676
+        },
+        {
+          "name": "Occa Berry",
+          "pct": 1.389
+        },
+        {
+          "name": "Sitrus Berry",
+          "pct": 1.389
+        },
+        {
+          "name": "Fairy Feather",
+          "pct": 1.157
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Snow Warning",
+          "pct": 97.685
+        },
+        {
+          "name": "Snow Cloak",
+          "pct": 2.315
         }
       ]
     },
     "Gengar-Mega": {
-      "usage": 6.26,
+      "usage": 5.46,
       "moves": [
         {
           "name": "Protect",
-          "pct": 99.778
+          "pct": 99.532
         },
         {
           "name": "Shadow Ball",
-          "pct": 98.444
-        },
-        {
-          "name": "Disable",
-          "pct": 62
-        },
-        {
-          "name": "Perish Song",
-          "pct": 59.778
+          "pct": 97.892
         },
         {
           "name": "Sludge Bomb",
-          "pct": 58.222
+          "pct": 62.061
+        },
+        {
+          "name": "Disable",
+          "pct": 58.782
+        },
+        {
+          "name": "Perish Song",
+          "pct": 58.08
         },
         {
           "name": "Icy Wind",
-          "pct": 4.889
-        },
-        {
-          "name": "Focus Blast",
-          "pct": 2.667
+          "pct": 6.792
         },
         {
           "name": "Will-O-Wisp",
-          "pct": 2.444
+          "pct": 2.576
+        },
+        {
+          "name": "Focus Blast",
+          "pct": 2.108
         }
       ],
       "items": [
@@ -1609,617 +1825,357 @@
       "abilities": [
         {
           "name": "Cursed Body",
-          "pct": 92.222
+          "pct": 92.272
         },
         {
           "name": "Shadow Tag",
-          "pct": 7.111
+          "pct": 7.494
         }
       ]
     },
     "Kommo-o": {
-      "usage": 6.19,
+      "usage": 5.37,
       "moves": [
         {
-          "name": "Clanging Scales",
-          "pct": 95.955
+          "name": "Protect",
+          "pct": 95.952
         },
         {
-          "name": "Protect",
-          "pct": 95.73
+          "name": "Clanging Scales",
+          "pct": 95.714
         },
         {
           "name": "Aura Sphere",
-          "pct": 93.258
+          "pct": 93.095
         },
         {
           "name": "Clangorous Soul",
-          "pct": 89.663
+          "pct": 91.667
         },
         {
           "name": "Flamethrower",
-          "pct": 4.27
+          "pct": 3.81
         },
         {
           "name": "Draco Meteor",
-          "pct": 3.596
+          "pct": 2.381
         },
         {
           "name": "Body Press",
-          "pct": 2.022
+          "pct": 2.381
         },
         {
-          "name": "Flash Cannon",
-          "pct": 1.798
+          "name": "Drain Punch",
+          "pct": 2.143
         }
       ],
       "items": [
         {
           "name": "Leftovers",
-          "pct": 81.348
+          "pct": 80.952
         },
         {
           "name": "Dragon Fang",
-          "pct": 8.539
-        },
-        {
-          "name": "Choice Scarf",
-          "pct": 2.921
+          "pct": 9.762
         },
         {
           "name": "Sitrus Berry",
-          "pct": 2.697
+          "pct": 2.857
+        },
+        {
+          "name": "Choice Scarf",
+          "pct": 2.381
         },
         {
           "name": "Haban Berry",
-          "pct": 2.022
+          "pct": 1.19
         }
       ],
       "abilities": [
         {
           "name": "Soundproof",
-          "pct": 88.539
+          "pct": 89.762
         },
         {
           "name": "Overcoat",
-          "pct": 8.315
+          "pct": 7.619
         },
         {
           "name": "Bulletproof",
-          "pct": 3.146
-        }
-      ]
-    },
-    "Torkoal": {
-      "usage": 6.18,
-      "moves": [
-        {
-          "name": "Eruption",
-          "pct": 97.072
-        },
-        {
-          "name": "Protect",
-          "pct": 95.946
-        },
-        {
-          "name": "Weather Ball",
-          "pct": 54.279
-        },
-        {
-          "name": "Heat Wave",
-          "pct": 53.604
-        },
-        {
-          "name": "Earth Power",
-          "pct": 40.541
-        },
-        {
-          "name": "Solar Beam",
-          "pct": 21.171
-        },
-        {
-          "name": "Helping Hand",
-          "pct": 9.685
-        },
-        {
-          "name": "Body Press",
-          "pct": 7.207
-        }
-      ],
-      "items": [
-        {
-          "name": "Charcoal",
-          "pct": 96.396
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Drought",
-          "pct": 98.874
+          "pct": 2.619
         }
       ]
     },
     "Milotic": {
-      "usage": 6.08,
+      "usage": 5.11,
       "moves": [
         {
-          "name": "Scald",
-          "pct": 72.082
+          "name": "Protect",
+          "pct": 69.25
         },
         {
-          "name": "Protect",
-          "pct": 70.709
+          "name": "Scald",
+          "pct": 66.75
         },
         {
           "name": "Icy Wind",
-          "pct": 56.522
+          "pct": 51
         },
         {
           "name": "Recover",
-          "pct": 51.03
+          "pct": 47.25
         },
         {
           "name": "Life Dew",
-          "pct": 32.494
-        },
-        {
-          "name": "Hypnosis",
-          "pct": 29.748
+          "pct": 35.25
         },
         {
           "name": "Muddy Water",
-          "pct": 27.918
+          "pct": 33.5
+        },
+        {
+          "name": "Hypnosis",
+          "pct": 33
         },
         {
           "name": "Coil",
-          "pct": 27.918
+          "pct": 31.25
         }
       ],
       "items": [
         {
           "name": "Leftovers",
-          "pct": 81.922
+          "pct": 82.5
         },
         {
           "name": "Sitrus Berry",
-          "pct": 15.561
+          "pct": 15
         }
       ],
       "abilities": [
         {
           "name": "Competitive",
-          "pct": 99.085
-        }
-      ]
-    },
-    "Scovillain": {
-      "usage": 5.82,
-      "moves": [
-        {
-          "name": "Rage Powder",
-          "pct": 100
+          "pct": 98
         },
         {
-          "name": "Protect",
-          "pct": 96.172
-        },
-        {
-          "name": "Overheat",
-          "pct": 72.967
-        },
-        {
-          "name": "Leech Seed",
-          "pct": 70.096
-        },
-        {
-          "name": "Giga Drain",
-          "pct": 25.12
-        },
-        {
-          "name": "Flamethrower",
-          "pct": 21.77
-        },
-        {
-          "name": "Leaf Storm",
-          "pct": 5.742
-        },
-        {
-          "name": "Spicy Extract",
-          "pct": 2.632
-        }
-      ],
-      "items": [
-        {
-          "name": "Scovillainite",
-          "pct": 98.804
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Moody",
-          "pct": 83.254
-        },
-        {
-          "name": "Chlorophyll",
-          "pct": 13.397
-        },
-        {
-          "name": "Insomnia",
-          "pct": 1.435
-        },
-        {
-          "name": "Spicy Spray",
-          "pct": 1.435
-        }
-      ]
-    },
-    "Ninetales-Alola": {
-      "usage": 5.69,
-      "moves": [
-        {
-          "name": "Blizzard",
-          "pct": 98.533
-        },
-        {
-          "name": "Protect",
-          "pct": 77.017
-        },
-        {
-          "name": "Freeze-Dry",
-          "pct": 64.548
-        },
-        {
-          "name": "Encore",
-          "pct": 55.012
-        },
-        {
-          "name": "Icy Wind",
-          "pct": 27.384
-        },
-        {
-          "name": "Moonblast",
-          "pct": 26.161
-        },
-        {
-          "name": "Aurora Veil",
-          "pct": 23.472
-        },
-        {
-          "name": "Disable",
-          "pct": 19.071
-        }
-      ],
-      "items": [
-        {
-          "name": "Focus Sash",
-          "pct": 39.364
-        },
-        {
-          "name": "Never-Melt Ice",
-          "pct": 34.23
-        },
-        {
-          "name": "Choice Scarf",
-          "pct": 20.049
-        },
-        {
-          "name": "Sitrus Berry",
-          "pct": 1.711
-        },
-        {
-          "name": "Fairy Feather",
-          "pct": 1.222
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Snow Warning",
-          "pct": 98.533
-        },
-        {
-          "name": "Snow Cloak",
-          "pct": 1.467
-        }
-      ]
-    },
-    "Maushold": {
-      "usage": 5.55,
-      "moves": [
-        {
-          "name": "Follow Me",
-          "pct": 99.248
-        },
-        {
-          "name": "Protect",
-          "pct": 88.471
-        },
-        {
-          "name": "Super Fang",
-          "pct": 81.955
-        },
-        {
-          "name": "Feint",
-          "pct": 29.825
-        },
-        {
-          "name": "Taunt",
-          "pct": 28.822
-        },
-        {
-          "name": "Encore",
-          "pct": 23.308
-        },
-        {
-          "name": "Helping Hand",
-          "pct": 19.799
-        },
-        {
-          "name": "Rain Dance",
-          "pct": 9.524
-        }
-      ],
-      "items": [
-        {
-          "name": "Chople Berry",
-          "pct": 47.368
-        },
-        {
-          "name": "Focus Sash",
-          "pct": 37.343
-        },
-        {
-          "name": "Sitrus Berry",
-          "pct": 9.524
-        },
-        {
-          "name": "King's Rock",
-          "pct": 3.008
-        },
-        {
-          "name": "Leftovers",
-          "pct": 1.003
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Friend Guard",
-          "pct": 96.742
-        },
-        {
-          "name": "Technician",
-          "pct": 2.757
-        }
-      ]
-    },
-    "Corviknight": {
-      "usage": 5.34,
-      "moves": [
-        {
-          "name": "Brave Bird",
-          "pct": 84.635
-        },
-        {
-          "name": "Tailwind",
-          "pct": 83.854
-        },
-        {
-          "name": "Roost",
-          "pct": 65.104
-        },
-        {
-          "name": "Bulk Up",
-          "pct": 63.802
-        },
-        {
-          "name": "Iron Head",
-          "pct": 40.365
-        },
-        {
-          "name": "Body Press",
-          "pct": 30.99
-        },
-        {
-          "name": "Iron Defense",
-          "pct": 13.281
-        },
-        {
-          "name": "Protect",
-          "pct": 10.417
-        }
-      ],
-      "items": [
-        {
-          "name": "Leftovers",
-          "pct": 79.167
-        },
-        {
-          "name": "Sitrus Berry",
-          "pct": 12.24
-        },
-        {
-          "name": "Occa Berry",
-          "pct": 4.167
-        },
-        {
-          "name": "Quick Claw",
-          "pct": 1.302
-        },
-        {
-          "name": "Wacan Berry",
-          "pct": 1.042
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Mirror Armor",
-          "pct": 92.969
-        },
-        {
-          "name": "Unnerve",
-          "pct": 3.906
-        },
-        {
-          "name": "Pressure",
-          "pct": 2.865
+          "name": "Marvel Scale",
+          "pct": 1.5
         }
       ]
     },
     "Delphox": {
-      "usage": 4.61,
+      "usage": 4.77,
       "moves": [
         {
           "name": "Protect",
-          "pct": 98.187
+          "pct": 98.123
         },
         {
           "name": "Heat Wave",
-          "pct": 97.583
+          "pct": 97.051
         },
         {
           "name": "Psychic",
-          "pct": 76.737
-        },
-        {
-          "name": "Encore",
-          "pct": 33.535
-        },
-        {
-          "name": "Substitute",
-          "pct": 23.263
+          "pct": 69.437
         },
         {
           "name": "Nasty Plot",
-          "pct": 21.45
+          "pct": 36.997
         },
         {
           "name": "Psyshock",
-          "pct": 20.846
+          "pct": 27.614
+        },
+        {
+          "name": "Encore",
+          "pct": 24.665
+        },
+        {
+          "name": "Substitute",
+          "pct": 20.912
         },
         {
           "name": "Calm Mind",
-          "pct": 9.668
+          "pct": 8.847
         }
       ],
       "items": [
         {
           "name": "Delphoxite",
-          "pct": 99.396
+          "pct": 99.464
         }
       ],
       "abilities": [
         {
           "name": "Blaze",
-          "pct": 92.447
+          "pct": 92.225
         },
         {
           "name": "Magician",
-          "pct": 4.532
+          "pct": 4.29
         },
         {
           "name": "Levitate",
-          "pct": 3.021
+          "pct": 3.217
         }
       ]
     },
-    "Excadrill": {
-      "usage": 4.59,
+    "Scovillain": {
+      "usage": 4.6,
       "moves": [
         {
-          "name": "Iron Head",
-          "pct": 99.394
+          "name": "Rage Powder",
+          "pct": 99.167
         },
         {
           "name": "Protect",
-          "pct": 97.273
+          "pct": 95.556
         },
         {
-          "name": "Rock Slide",
-          "pct": 79.697
+          "name": "Leech Seed",
+          "pct": 71.667
         },
         {
-          "name": "Earthquake",
-          "pct": 63.636
+          "name": "Overheat",
+          "pct": 70.278
         },
         {
-          "name": "High Horsepower",
-          "pct": 50
+          "name": "Giga Drain",
+          "pct": 25.833
         },
         {
-          "name": "Rock Tomb",
-          "pct": 3.636
+          "name": "Flamethrower",
+          "pct": 24.444
         },
         {
-          "name": "Drill Run",
-          "pct": 1.818
+          "name": "Leaf Storm",
+          "pct": 5.278
         },
         {
-          "name": "Throat Chop",
-          "pct": 1.818
+          "name": "Super Fang",
+          "pct": 1.944
+        }
+      ],
+      "items": [
+        {
+          "name": "Scovillainite",
+          "pct": 99.167
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Moody",
+          "pct": 82.778
+        },
+        {
+          "name": "Chlorophyll",
+          "pct": 14.167
+        },
+        {
+          "name": "Insomnia",
+          "pct": 2.222
+        }
+      ]
+    },
+    "Vivillon": {
+      "usage": 4.41,
+      "moves": [
+        {
+          "name": "Sleep Powder",
+          "pct": 95.652
+        },
+        {
+          "name": "Hurricane",
+          "pct": 84.638
+        },
+        {
+          "name": "Rage Powder",
+          "pct": 81.159
+        },
+        {
+          "name": "Protect",
+          "pct": 48.116
+        },
+        {
+          "name": "Tailwind",
+          "pct": 37.101
+        },
+        {
+          "name": "Pollen Puff",
+          "pct": 24.638
+        },
+        {
+          "name": "Rain Dance",
+          "pct": 21.159
+        },
+        {
+          "name": "U-turn",
+          "pct": 2.899
         }
       ],
       "items": [
         {
           "name": "Focus Sash",
-          "pct": 92.727
-        },
-        {
-          "name": "Excadrite",
-          "pct": 3.333
+          "pct": 53.913
         },
         {
           "name": "Choice Scarf",
-          "pct": 2.424
+          "pct": 44.058
         },
         {
-          "name": "Soft Sand",
-          "pct": 1.212
+          "name": "Quick Claw",
+          "pct": 1.449
         }
       ],
       "abilities": [
         {
-          "name": "Sand Rush",
-          "pct": 93.03
+          "name": "Compound Eyes",
+          "pct": 91.304
         },
         {
-          "name": "Mold Breaker",
-          "pct": 6.061
+          "name": "Friend Guard",
+          "pct": 7.246
+        },
+        {
+          "name": "Shield Dust",
+          "pct": 1.449
         }
       ]
     },
     "Kangaskhan-Mega": {
-      "usage": 4.41,
+      "usage": 4.28,
       "moves": [
         {
           "name": "Fake Out",
-          "pct": 97.792
+          "pct": 98.507
         },
         {
           "name": "Double-Edge",
-          "pct": 91.798
+          "pct": 92.239
         },
         {
           "name": "Sucker Punch",
-          "pct": 57.729
+          "pct": 49.552
         },
         {
           "name": "Low Kick",
-          "pct": 37.539
-        },
-        {
-          "name": "Drain Punch",
-          "pct": 37.224
+          "pct": 42.388
         },
         {
           "name": "Ice Punch",
-          "pct": 29.653
+          "pct": 36.716
+        },
+        {
+          "name": "Drain Punch",
+          "pct": 34.328
         },
         {
           "name": "Hammer Arm",
-          "pct": 18.297
+          "pct": 17.313
         },
         {
           "name": "Crunch",
-          "pct": 8.517
+          "pct": 8.955
         }
       ],
       "items": [
@@ -2231,243 +2187,48 @@
       "abilities": [
         {
           "name": "Scrappy",
-          "pct": 94.637
+          "pct": 96.716
         },
         {
           "name": "Inner Focus",
-          "pct": 4.416
-        }
-      ]
-    },
-    "Politoed": {
-      "usage": 4.12,
-      "moves": [
-        {
-          "name": "Protect",
-          "pct": 93.919
-        },
-        {
-          "name": "Weather Ball",
-          "pct": 88.514
-        },
-        {
-          "name": "Perish Song",
-          "pct": 62.838
-        },
-        {
-          "name": "Encore",
-          "pct": 60.135
-        },
-        {
-          "name": "Muddy Water",
-          "pct": 22.973
-        },
-        {
-          "name": "Icy Wind",
-          "pct": 21.622
-        },
-        {
-          "name": "Helping Hand",
-          "pct": 18.581
-        },
-        {
-          "name": "Ice Beam",
-          "pct": 14.527
-        }
-      ],
-      "items": [
-        {
-          "name": "Sitrus Berry",
-          "pct": 72.297
-        },
-        {
-          "name": "Leftovers",
-          "pct": 18.243
-        },
-        {
-          "name": "Mystic Water",
-          "pct": 5.405
-        },
-        {
-          "name": "Quick Claw",
-          "pct": 1.351
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Drizzle",
-          "pct": 97.635
-        },
-        {
-          "name": "Water Absorb",
-          "pct": 2.365
-        }
-      ]
-    },
-    "Hydreigon": {
-      "usage": 4.08,
-      "moves": [
-        {
-          "name": "Dark Pulse",
-          "pct": 94.539
-        },
-        {
-          "name": "Draco Meteor",
-          "pct": 94.198
-        },
-        {
-          "name": "Snarl",
-          "pct": 68.601
-        },
-        {
-          "name": "Heat Wave",
-          "pct": 47.44
-        },
-        {
-          "name": "Protect",
-          "pct": 25.939
-        },
-        {
-          "name": "Earth Power",
-          "pct": 17.406
-        },
-        {
-          "name": "Flamethrower",
-          "pct": 16.041
-        },
-        {
-          "name": "U-turn",
-          "pct": 8.191
-        }
-      ],
-      "items": [
-        {
-          "name": "Choice Scarf",
-          "pct": 70.307
-        },
-        {
-          "name": "Haban Berry",
-          "pct": 8.532
-        },
-        {
-          "name": "Chople Berry",
-          "pct": 5.802
-        },
-        {
-          "name": "Focus Sash",
-          "pct": 4.437
-        },
-        {
-          "name": "Black Glasses",
-          "pct": 2.73
-        },
-        {
-          "name": "White Herb",
-          "pct": 2.389
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Levitate",
-          "pct": 100
-        }
-      ]
-    },
-    "Gardevoir-Mega": {
-      "usage": 4.01,
-      "moves": [
-        {
-          "name": "Protect",
-          "pct": 96.875
-        },
-        {
-          "name": "Hyper Voice",
-          "pct": 95.486
-        },
-        {
-          "name": "Trick Room",
-          "pct": 63.889
-        },
-        {
-          "name": "Psychic",
-          "pct": 51.389
-        },
-        {
-          "name": "Psyshock",
-          "pct": 44.792
-        },
-        {
-          "name": "Calm Mind",
-          "pct": 11.806
-        },
-        {
-          "name": "Vacuum Wave",
-          "pct": 8.333
-        },
-        {
-          "name": "Moonblast",
-          "pct": 6.597
-        }
-      ],
-      "items": [
-        {
-          "name": "Gardevoirite",
-          "pct": 100
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Trace",
-          "pct": 58.681
-        },
-        {
-          "name": "Telepathy",
-          "pct": 32.639
-        },
-        {
-          "name": "Synchronize",
-          "pct": 7.639
-        },
-        {
-          "name": "Pixilate",
-          "pct": 1.042
+          "pct": 2.687
         }
       ]
     },
     "Blastoise-Mega": {
-      "usage": 3.74,
+      "usage": 3.96,
       "moves": [
         {
           "name": "Water Spout",
-          "pct": 93.68
+          "pct": 93.871
         },
         {
           "name": "Dark Pulse",
-          "pct": 81.041
-        },
-        {
-          "name": "Aura Sphere",
-          "pct": 59.108
+          "pct": 81.935
         },
         {
           "name": "Fake Out",
-          "pct": 56.506
+          "pct": 54.839
+        },
+        {
+          "name": "Aura Sphere",
+          "pct": 54.194
         },
         {
           "name": "Shell Smash",
-          "pct": 41.264
+          "pct": 45.161
         },
         {
           "name": "Protect",
-          "pct": 40.149
-        },
-        {
-          "name": "Water Pulse",
-          "pct": 10.409
+          "pct": 43.871
         },
         {
           "name": "Ice Beam",
-          "pct": 9.665
+          "pct": 10.323
+        },
+        {
+          "name": "Water Pulse",
+          "pct": 9.032
         }
       ],
       "items": [
@@ -2479,308 +2240,377 @@
       "abilities": [
         {
           "name": "Rain Dish",
-          "pct": 68.401
+          "pct": 73.871
         },
         {
           "name": "Torrent",
-          "pct": 28.625
+          "pct": 23.871
         },
         {
           "name": "Mega Launcher",
-          "pct": 2.974
+          "pct": 2.258
         }
       ]
     },
-    "Vivillon": {
-      "usage": 3.31,
+    "Politoed": {
+      "usage": 3.95,
       "moves": [
-        {
-          "name": "Sleep Powder",
-          "pct": 94.118
-        },
-        {
-          "name": "Hurricane",
-          "pct": 81.933
-        },
-        {
-          "name": "Rage Powder",
-          "pct": 81.092
-        },
         {
           "name": "Protect",
-          "pct": 50.84
-        },
-        {
-          "name": "Tailwind",
-          "pct": 36.555
-        },
-        {
-          "name": "Pollen Puff",
-          "pct": 27.731
-        },
-        {
-          "name": "Rain Dance",
-          "pct": 21.008
-        },
-        {
-          "name": "U-turn",
-          "pct": 3.361
-        }
-      ],
-      "items": [
-        {
-          "name": "Focus Sash",
-          "pct": 56.723
-        },
-        {
-          "name": "Choice Scarf",
-          "pct": 40.336
-        },
-        {
-          "name": "Quick Claw",
-          "pct": 2.101
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Compound Eyes",
-          "pct": 88.655
-        },
-        {
-          "name": "Friend Guard",
-          "pct": 9.664
-        },
-        {
-          "name": "Shield Dust",
-          "pct": 1.681
-        }
-      ]
-    },
-    "Meganium": {
-      "usage": 3.1,
-      "moves": [
-        {
-          "name": "Solar Beam",
-          "pct": 99.552
+          "pct": 91.262
         },
         {
           "name": "Weather Ball",
-          "pct": 94.619
+          "pct": 88.026
         },
         {
-          "name": "Protect",
-          "pct": 94.619
+          "name": "Perish Song",
+          "pct": 54.693
         },
         {
-          "name": "Dazzling Gleam",
-          "pct": 94.17
+          "name": "Encore",
+          "pct": 51.133
         },
         {
-          "name": "Earth Power",
-          "pct": 7.623
-        },
-        {
-          "name": "Synthesis",
-          "pct": 6.278
-        }
-      ],
-      "items": [
-        {
-          "name": "Meganiumite",
-          "pct": 100
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Overgrow",
-          "pct": 57.848
-        },
-        {
-          "name": "Leaf Guard",
-          "pct": 37.668
-        },
-        {
-          "name": "Mega Sol",
-          "pct": 3.587
-        }
-      ]
-    },
-    "Primarina": {
-      "usage": 2.94,
-      "moves": [
-        {
-          "name": "Hyper Voice",
-          "pct": 95.261
-        },
-        {
-          "name": "Protect",
-          "pct": 94.787
-        },
-        {
-          "name": "Moonblast",
-          "pct": 90.995
-        },
-        {
-          "name": "Calm Mind",
-          "pct": 43.602
+          "name": "Muddy Water",
+          "pct": 30.097
         },
         {
           "name": "Ice Beam",
-          "pct": 9.005
+          "pct": 27.184
         },
         {
-          "name": "Life Dew",
-          "pct": 8.057
+          "name": "Icy Wind",
+          "pct": 21.359
         },
         {
-          "name": "Dazzling Gleam",
-          "pct": 5.687
-        },
-        {
-          "name": "Aqua Jet",
-          "pct": 5.213
+          "name": "Helping Hand",
+          "pct": 17.152
         }
       ],
       "items": [
         {
-          "name": "Mystic Water",
-          "pct": 36.493
+          "name": "Sitrus Berry",
+          "pct": 67.638
         },
         {
           "name": "Leftovers",
-          "pct": 33.175
+          "pct": 14.887
         },
         {
-          "name": "Sitrus Berry",
-          "pct": 19.431
+          "name": "Mystic Water",
+          "pct": 13.269
         },
         {
-          "name": "Kebia Berry",
-          "pct": 5.687
-        },
-        {
-          "name": "Quick Claw",
-          "pct": 2.37
+          "name": "Choice Scarf",
+          "pct": 1.294
         }
       ],
       "abilities": [
         {
-          "name": "Liquid Voice",
-          "pct": 95.261
+          "name": "Drizzle",
+          "pct": 98.382
         },
         {
-          "name": "Torrent",
-          "pct": 4.739
+          "name": "Water Absorb",
+          "pct": 1.618
         }
       ]
     },
     "Venusaur": {
-      "usage": 2.88,
+      "usage": 3.9,
       "moves": [
         {
           "name": "Sludge Bomb",
-          "pct": 95.169
+          "pct": 95.082
         },
         {
           "name": "Sleep Powder",
-          "pct": 83.575
+          "pct": 90.164
         },
         {
           "name": "Protect",
-          "pct": 81.159
-        },
-        {
-          "name": "Leaf Storm",
-          "pct": 35.749
+          "pct": 89.18
         },
         {
           "name": "Earth Power",
-          "pct": 29.469
+          "pct": 48.852
+        },
+        {
+          "name": "Leaf Storm",
+          "pct": 26.557
         },
         {
           "name": "Energy Ball",
-          "pct": 28.019
+          "pct": 18.361
         },
         {
           "name": "Giga Drain",
-          "pct": 21.256
+          "pct": 15.41
         },
         {
           "name": "Solar Beam",
-          "pct": 11.594
+          "pct": 5.902
         }
       ],
       "items": [
         {
           "name": "Focus Sash",
-          "pct": 62.319
-        },
-        {
-          "name": "Leftovers",
-          "pct": 9.179
+          "pct": 73.115
         },
         {
           "name": "Miracle Seed",
-          "pct": 7.246
-        },
-        {
-          "name": "Bright Powder",
-          "pct": 5.314
+          "pct": 5.574
         },
         {
           "name": "Occa Berry",
-          "pct": 4.348
+          "pct": 5.246
         },
         {
           "name": "Sitrus Berry",
-          "pct": 3.382
+          "pct": 4.918
+        },
+        {
+          "name": "Leftovers",
+          "pct": 4.262
+        },
+        {
+          "name": "Coba Berry",
+          "pct": 2.295
         }
       ],
       "abilities": [
         {
           "name": "Chlorophyll",
-          "pct": 97.101
+          "pct": 97.377
         },
         {
           "name": "Overgrow",
-          "pct": 1.932
+          "pct": 1.967
+        }
+      ]
+    },
+    "Hydreigon": {
+      "usage": 3.88,
+      "moves": [
+        {
+          "name": "Dark Pulse",
+          "pct": 94.079
+        },
+        {
+          "name": "Draco Meteor",
+          "pct": 93.092
+        },
+        {
+          "name": "Snarl",
+          "pct": 72.368
+        },
+        {
+          "name": "Heat Wave",
+          "pct": 37.5
+        },
+        {
+          "name": "Protect",
+          "pct": 28.618
+        },
+        {
+          "name": "Earth Power",
+          "pct": 26.316
+        },
+        {
+          "name": "Flamethrower",
+          "pct": 16.118
+        },
+        {
+          "name": "Tailwind",
+          "pct": 7.895
+        }
+      ],
+      "items": [
+        {
+          "name": "Choice Scarf",
+          "pct": 69.079
+        },
+        {
+          "name": "Haban Berry",
+          "pct": 8.882
+        },
+        {
+          "name": "Chople Berry",
+          "pct": 7.237
+        },
+        {
+          "name": "Black Glasses",
+          "pct": 3.947
+        },
+        {
+          "name": "Focus Sash",
+          "pct": 3.618
+        },
+        {
+          "name": "Scope Lens",
+          "pct": 2.632
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Levitate",
+          "pct": 100
+        }
+      ]
+    },
+    "Excadrill": {
+      "usage": 3.87,
+      "moves": [
+        {
+          "name": "Iron Head",
+          "pct": 98.68
+        },
+        {
+          "name": "Protect",
+          "pct": 97.69
+        },
+        {
+          "name": "Rock Slide",
+          "pct": 77.888
+        },
+        {
+          "name": "Earthquake",
+          "pct": 62.046
+        },
+        {
+          "name": "High Horsepower",
+          "pct": 52.145
+        },
+        {
+          "name": "Rock Tomb",
+          "pct": 5.281
+        },
+        {
+          "name": "Swords Dance",
+          "pct": 1.98
+        },
+        {
+          "name": "Throat Chop",
+          "pct": 1.32
+        }
+      ],
+      "items": [
+        {
+          "name": "Focus Sash",
+          "pct": 91.089
+        },
+        {
+          "name": "Excadrite",
+          "pct": 5.281
+        },
+        {
+          "name": "Choice Scarf",
+          "pct": 1.98
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Sand Rush",
+          "pct": 92.409
+        },
+        {
+          "name": "Mold Breaker",
+          "pct": 7.261
+        }
+      ]
+    },
+    "Gardevoir-Mega": {
+      "usage": 3.86,
+      "moves": [
+        {
+          "name": "Protect",
+          "pct": 97.682
+        },
+        {
+          "name": "Hyper Voice",
+          "pct": 96.026
+        },
+        {
+          "name": "Trick Room",
+          "pct": 63.245
+        },
+        {
+          "name": "Psyshock",
+          "pct": 52.98
+        },
+        {
+          "name": "Psychic",
+          "pct": 43.709
+        },
+        {
+          "name": "Vacuum Wave",
+          "pct": 12.583
+        },
+        {
+          "name": "Calm Mind",
+          "pct": 12.252
+        },
+        {
+          "name": "Moonblast",
+          "pct": 3.642
+        }
+      ],
+      "items": [
+        {
+          "name": "Gardevoirite",
+          "pct": 100
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Trace",
+          "pct": 65.894
+        },
+        {
+          "name": "Telepathy",
+          "pct": 28.146
+        },
+        {
+          "name": "Synchronize",
+          "pct": 5.298
         }
       ]
     },
     "Charizard-Mega-X": {
-      "usage": 2.81,
+      "usage": 3.37,
       "moves": [
         {
-          "name": "Flare Blitz",
-          "pct": 95.545
+          "name": "Protect",
+          "pct": 95.833
         },
         {
-          "name": "Protect",
-          "pct": 94.554
+          "name": "Flare Blitz",
+          "pct": 93.939
         },
         {
           "name": "Dragon Dance",
-          "pct": 92.079
+          "pct": 93.182
         },
         {
           "name": "Dragon Claw",
-          "pct": 82.178
+          "pct": 81.439
         },
         {
           "name": "Breaking Swipe",
-          "pct": 14.851
+          "pct": 16.288
         },
         {
           "name": "Temper Flare",
-          "pct": 3.96
+          "pct": 5.682
         },
         {
           "name": "Thunder Punch",
-          "pct": 3.465
+          "pct": 3.03
         },
         {
           "name": "Roost",
-          "pct": 2.97
+          "pct": 1.894
         }
       ],
       "items": [
@@ -2792,182 +2622,304 @@
       "abilities": [
         {
           "name": "Blaze",
-          "pct": 90.099
+          "pct": 90.909
         },
         {
           "name": "Tough Claws",
-          "pct": 5.446
+          "pct": 5.303
         },
         {
           "name": "Solar Power",
-          "pct": 4.455
+          "pct": 3.788
+        }
+      ]
+    },
+    "Meganium": {
+      "usage": 2.4,
+      "moves": [
+        {
+          "name": "Solar Beam",
+          "pct": 98.936
+        },
+        {
+          "name": "Weather Ball",
+          "pct": 93.617
+        },
+        {
+          "name": "Dazzling Gleam",
+          "pct": 93.617
+        },
+        {
+          "name": "Protect",
+          "pct": 93.085
+        },
+        {
+          "name": "Earth Power",
+          "pct": 8.511
+        },
+        {
+          "name": "Synthesis",
+          "pct": 6.915
+        },
+        {
+          "name": "Pollen Puff",
+          "pct": 1.064
+        },
+        {
+          "name": "Leech Seed",
+          "pct": 1.064
+        }
+      ],
+      "items": [
+        {
+          "name": "Meganiumite",
+          "pct": 100
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Overgrow",
+          "pct": 53.191
+        },
+        {
+          "name": "Leaf Guard",
+          "pct": 43.617
+        },
+        {
+          "name": "Mega Sol",
+          "pct": 2.128
         }
       ]
     },
     "Tsareena": {
-      "usage": 2.64,
+      "usage": 2.39,
       "moves": [
         {
           "name": "Triple Axel",
-          "pct": 86.316
+          "pct": 86.631
         },
         {
           "name": "Trop Kick",
-          "pct": 69.474
-        },
-        {
-          "name": "Low Kick",
-          "pct": 58.947
+          "pct": 72.193
         },
         {
           "name": "Protect",
-          "pct": 58.421
+          "pct": 60.963
         },
         {
-          "name": "Power Whip",
-          "pct": 28.947
+          "name": "Low Kick",
+          "pct": 56.684
         },
         {
           "name": "U-turn",
-          "pct": 26.316
+          "pct": 25.668
+        },
+        {
+          "name": "Power Whip",
+          "pct": 24.599
         },
         {
           "name": "Taunt",
-          "pct": 17.895
+          "pct": 18.717
         },
         {
           "name": "High Jump Kick",
-          "pct": 16.316
+          "pct": 16.043
         }
       ],
       "items": [
         {
           "name": "Choice Scarf",
-          "pct": 30
+          "pct": 28.342
         },
         {
           "name": "Sitrus Berry",
-          "pct": 28.421
-        },
-        {
-          "name": "Focus Sash",
-          "pct": 13.684
+          "pct": 25.668
         },
         {
           "name": "Miracle Seed",
-          "pct": 13.158
+          "pct": 17.647
+        },
+        {
+          "name": "Focus Sash",
+          "pct": 12.834
         },
         {
           "name": "Leftovers",
-          "pct": 5.263
+          "pct": 3.209
         },
         {
           "name": "Occa Berry",
-          "pct": 3.158
+          "pct": 3.209
         }
       ],
       "abilities": [
         {
           "name": "Queenly Majesty",
-          "pct": 98.947
-        },
-        {
-          "name": "Leaf Guard",
-          "pct": 1.053
+          "pct": 99.465
         }
       ]
     },
     "Kleavor": {
-      "usage": 2.16,
+      "usage": 2.38,
       "moves": [
         {
           "name": "Stone Axe",
-          "pct": 98.065
+          "pct": 98.387
         },
         {
           "name": "Close Combat",
-          "pct": 72.258
+          "pct": 77.957
         },
         {
           "name": "Protect",
-          "pct": 50.323
+          "pct": 56.989
         },
         {
           "name": "X-Scissor",
-          "pct": 48.387
+          "pct": 41.935
         },
         {
           "name": "Feint",
-          "pct": 36.129
+          "pct": 37.634
         },
         {
           "name": "U-turn",
-          "pct": 28.387
+          "pct": 30.645
         },
         {
           "name": "Rock Slide",
-          "pct": 23.871
+          "pct": 28.495
         },
         {
           "name": "Night Slash",
-          "pct": 20.645
+          "pct": 12.903
         }
       ],
       "items": [
         {
           "name": "Focus Sash",
-          "pct": 51.613
+          "pct": 56.989
         },
         {
           "name": "Choice Scarf",
-          "pct": 43.871
-        },
-        {
-          "name": "Sitrus Berry",
-          "pct": 1.935
+          "pct": 40.323
         }
       ],
       "abilities": [
         {
           "name": "Sharpness",
-          "pct": 99.355
+          "pct": 99.462
+        }
+      ]
+    },
+    "Primarina": {
+      "usage": 2.3,
+      "moves": [
+        {
+          "name": "Protect",
+          "pct": 95
+        },
+        {
+          "name": "Hyper Voice",
+          "pct": 92.778
+        },
+        {
+          "name": "Moonblast",
+          "pct": 90.556
+        },
+        {
+          "name": "Calm Mind",
+          "pct": 37.778
+        },
+        {
+          "name": "Ice Beam",
+          "pct": 12.222
+        },
+        {
+          "name": "Psychic",
+          "pct": 8.333
+        },
+        {
+          "name": "Perish Song",
+          "pct": 7.778
+        },
+        {
+          "name": "Life Dew",
+          "pct": 6.667
+        }
+      ],
+      "items": [
+        {
+          "name": "Mystic Water",
+          "pct": 33.889
+        },
+        {
+          "name": "Leftovers",
+          "pct": 30.556
+        },
+        {
+          "name": "Sitrus Berry",
+          "pct": 21.667
+        },
+        {
+          "name": "Kebia Berry",
+          "pct": 6.667
+        },
+        {
+          "name": "Fairy Feather",
+          "pct": 2.222
+        },
+        {
+          "name": "Quick Claw",
+          "pct": 2.222
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Liquid Voice",
+          "pct": 93.889
+        },
+        {
+          "name": "Torrent",
+          "pct": 6.111
         }
       ]
     },
     "Lopunny-Mega": {
-      "usage": 2.03,
+      "usage": 2.22,
       "moves": [
         {
           "name": "Fake Out",
-          "pct": 99.315
+          "pct": 99.425
         },
         {
           "name": "Close Combat",
-          "pct": 95.89
+          "pct": 95.977
         },
         {
           "name": "Triple Axel",
-          "pct": 53.425
+          "pct": 54.598
         },
         {
           "name": "Encore",
-          "pct": 51.37
+          "pct": 50
         },
         {
           "name": "Protect",
-          "pct": 32.192
+          "pct": 32.759
         },
         {
           "name": "Giga Impact",
-          "pct": 23.288
-        },
-        {
-          "name": "U-turn",
-          "pct": 10.274
+          "pct": 23.563
         },
         {
           "name": "After You",
-          "pct": 10.274
+          "pct": 9.77
+        },
+        {
+          "name": "U-turn",
+          "pct": 8.046
         }
       ],
       "items": [
@@ -2979,161 +2931,153 @@
       "abilities": [
         {
           "name": "Limber",
-          "pct": 56.164
+          "pct": 50.575
         },
         {
           "name": "Cute Charm",
-          "pct": 40.411
+          "pct": 45.402
         },
         {
           "name": "Klutz",
-          "pct": 2.055
+          "pct": 2.874
         },
         {
           "name": "Scrappy",
-          "pct": 1.37
+          "pct": 1.149
         }
       ]
     },
-    "Tinkaton": {
-      "usage": 1.99,
+    "Arcanine-Hisui": {
+      "usage": 2.12,
       "moves": [
         {
-          "name": "Gigaton Hammer",
-          "pct": 99.301
-        },
-        {
-          "name": "Fake Out",
-          "pct": 97.902
+          "name": "Flare Blitz",
+          "pct": 100
         },
         {
           "name": "Protect",
-          "pct": 76.224
+          "pct": 84.337
         },
         {
-          "name": "Encore",
-          "pct": 65.734
+          "name": "Rock Slide",
+          "pct": 66.265
         },
         {
-          "name": "Play Rough",
-          "pct": 27.972
+          "name": "Head Smash",
+          "pct": 65.663
         },
         {
-          "name": "Feint",
-          "pct": 11.888
+          "name": "Extreme Speed",
+          "pct": 64.458
         },
         {
-          "name": "Helping Hand",
-          "pct": 3.497
+          "name": "Close Combat",
+          "pct": 5.422
         },
         {
-          "name": "Ice Hammer",
-          "pct": 3.497
+          "name": "Psychic Fangs",
+          "pct": 3.614
+        },
+        {
+          "name": "Wild Charge",
+          "pct": 3.614
         }
       ],
       "items": [
         {
-          "name": "Shuca Berry",
-          "pct": 64.336
+          "name": "Focus Sash",
+          "pct": 60.843
         },
-        {
-          "name": "Metal Coat",
-          "pct": 11.189
-        },
-        {
-          "name": "Occa Berry",
-          "pct": 9.79
-        },
-        {
-          "name": "Sitrus Berry",
-          "pct": 6.294
-        },
-        {
-          "name": "Leftovers",
-          "pct": 3.497
-        },
-        {
-          "name": "White Herb",
-          "pct": 2.098
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Mold Breaker",
-          "pct": 81.119
-        },
-        {
-          "name": "Own Tempo",
-          "pct": 18.182
-        }
-      ]
-    },
-    "Rotom-Heat": {
-      "usage": 1.89,
-      "moves": [
-        {
-          "name": "Overheat",
-          "pct": 99.265
-        },
-        {
-          "name": "Thunderbolt",
-          "pct": 66.912
-        },
-        {
-          "name": "Volt Switch",
-          "pct": 63.235
-        },
-        {
-          "name": "Will-O-Wisp",
-          "pct": 48.529
-        },
-        {
-          "name": "Electroweb",
-          "pct": 48.529
-        },
-        {
-          "name": "Protect",
-          "pct": 44.853
-        },
-        {
-          "name": "Trick",
-          "pct": 11.029
-        },
-        {
-          "name": "Discharge",
-          "pct": 5.882
-        }
-      ],
-      "items": [
         {
           "name": "Choice Scarf",
-          "pct": 48.529
+          "pct": 12.651
         },
         {
           "name": "Sitrus Berry",
-          "pct": 32.353
+          "pct": 11.446
         },
         {
-          "name": "Leftovers",
-          "pct": 5.882
+          "name": "Hard Stone",
+          "pct": 7.229
         },
         {
-          "name": "Passho Berry",
-          "pct": 5.147
+          "name": "Shuca Berry",
+          "pct": 1.807
         },
         {
-          "name": "White Herb",
-          "pct": 5.147
-        },
-        {
-          "name": "Magnet",
-          "pct": 1.471
+          "name": "Chople Berry",
+          "pct": 1.807
         }
       ],
       "abilities": [
         {
-          "name": "Levitate",
-          "pct": 100
+          "name": "Rock Head",
+          "pct": 71.084
+        },
+        {
+          "name": "Intimidate",
+          "pct": 28.916
+        }
+      ]
+    },
+    "Skarmory": {
+      "usage": 2.03,
+      "moves": [
+        {
+          "name": "Iron Head",
+          "pct": 98.113
+        },
+        {
+          "name": "Brave Bird",
+          "pct": 93.711
+        },
+        {
+          "name": "Protect",
+          "pct": 81.132
+        },
+        {
+          "name": "Rock Tomb",
+          "pct": 58.491
+        },
+        {
+          "name": "Tailwind",
+          "pct": 25.157
+        },
+        {
+          "name": "Taunt",
+          "pct": 15.094
+        },
+        {
+          "name": "Rock Slide",
+          "pct": 11.321
+        },
+        {
+          "name": "Swords Dance",
+          "pct": 4.403
+        }
+      ],
+      "items": [
+        {
+          "name": "Skarmorite",
+          "pct": 99.371
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Sturdy",
+          "pct": 82.39
+        },
+        {
+          "name": "Weak Armor",
+          "pct": 12.579
+        },
+        {
+          "name": "Keen Eye",
+          "pct": 3.145
+        },
+        {
+          "name": "Stalwart",
+          "pct": 1.258
         }
       ]
     },
@@ -3142,39 +3086,26 @@
       "moves": [
         {
           "name": "Heat Wave",
-          "pct": 66.667
+          "pct": 50
         },
         {
           "name": "Solar Beam",
-          "pct": 66.667
-        },
-        {
-          "name": "Weather Ball",
-          "pct": 66.667
+          "pct": 50
         },
         {
           "name": "Protect",
-          "pct": 33.333
+          "pct": 50
         },
         {
-          "name": "Dragon Pulse",
-          "pct": 33.333
+          "name": "Weather Ball",
+          "pct": 50
         }
       ],
-      "items": [
-        {
-          "name": "Choice Scarf",
-          "pct": 33.333
-        }
-      ],
+      "items": [],
       "abilities": [
         {
           "name": "Drought",
-          "pct": 33.333
-        },
-        {
-          "name": "Solar Power",
-          "pct": 33.333
+          "pct": 50
         }
       ]
     },
@@ -3183,71 +3114,71 @@
       "moves": [
         {
           "name": "Rock Slide",
-          "pct": 97.143
+          "pct": 96.341
         },
         {
           "name": "Knock Off",
-          "pct": 87.619
+          "pct": 86.585
         },
         {
           "name": "Protect",
-          "pct": 80.952
+          "pct": 84.146
         },
         {
           "name": "Low Kick",
-          "pct": 44.762
+          "pct": 43.902
         },
         {
           "name": "Ice Punch",
-          "pct": 30.476
+          "pct": 25.61
         },
         {
           "name": "High Horsepower",
-          "pct": 15.238
-        },
-        {
-          "name": "Superpower",
-          "pct": 8.571
+          "pct": 17.073
         },
         {
           "name": "Earthquake",
-          "pct": 7.619
+          "pct": 8.537
+        },
+        {
+          "name": "Superpower",
+          "pct": 7.317
         }
       ],
       "items": [
         {
           "name": "Focus Sash",
-          "pct": 39.048
+          "pct": 40.244
         },
         {
           "name": "Chople Berry",
-          "pct": 19.048
+          "pct": 26.829
         },
         {
           "name": "Choice Scarf",
-          "pct": 17.143
-        },
-        {
-          "name": "Sitrus Berry",
-          "pct": 11.429
+          "pct": 12.195
         },
         {
           "name": "Passho Berry",
-          "pct": 3.81
+          "pct": 4.878
+        },
+        {
+          "name": "Leftovers",
+          "pct": 3.659
         },
         {
           "name": "Lum Berry",
-          "pct": 2.857
+          "pct": 3.659
         }
       ],
       "abilities": [
         {
           "name": "Sand Stream",
-          "pct": 97.143
+          "pct": 96.341
         },
         {
           "name": "Unnerve",
-          "pct": 2.857
+          "pct": 3.659
         }
       ]
     },
@@ -3255,60 +3186,56 @@
       "usage": null,
       "moves": [
         {
-          "name": "Shadow Ball",
-          "pct": 92.593
+          "name": "Sludge Bomb",
+          "pct": 80.952
         },
         {
-          "name": "Sludge Bomb",
-          "pct": 66.667
+          "name": "Shadow Ball",
+          "pct": 80.952
         },
         {
           "name": "Icy Wind",
-          "pct": 44.444
+          "pct": 42.857
         },
         {
           "name": "Protect",
-          "pct": 44.444
-        },
-        {
-          "name": "Destiny Bond",
-          "pct": 29.63
-        },
-        {
-          "name": "Sludge Wave",
-          "pct": 25.926
+          "pct": 38.095
         },
         {
           "name": "Taunt",
-          "pct": 18.519
+          "pct": 28.571
         },
         {
-          "name": "Trick",
-          "pct": 11.111
+          "name": "Destiny Bond",
+          "pct": 19.048
+        },
+        {
+          "name": "Psychic",
+          "pct": 14.286
+        },
+        {
+          "name": "Trick Room",
+          "pct": 14.286
         }
       ],
       "items": [
         {
           "name": "Focus Sash",
-          "pct": 70.37
+          "pct": 71.429
         },
         {
           "name": "Choice Scarf",
-          "pct": 14.815
+          "pct": 14.286
         },
         {
           "name": "Quick Claw",
-          "pct": 7.407
-        },
-        {
-          "name": "Sitrus Berry",
-          "pct": 3.704
+          "pct": 9.524
         }
       ],
       "abilities": [
         {
           "name": "Cursed Body",
-          "pct": 96.296
+          "pct": 95.238
         }
       ]
     },
@@ -3317,71 +3244,67 @@
       "moves": [
         {
           "name": "Bullet Punch",
-          "pct": 98.98
+          "pct": 100
         },
         {
           "name": "Protect",
-          "pct": 96.939
+          "pct": 97.938
         },
         {
           "name": "Swords Dance",
-          "pct": 82.653
+          "pct": 83.505
         },
         {
           "name": "Bug Bite",
-          "pct": 80.612
+          "pct": 77.32
         },
         {
           "name": "Close Combat",
-          "pct": 30.612
+          "pct": 35.052
         },
         {
           "name": "Knock Off",
-          "pct": 5.102
+          "pct": 3.093
         },
         {
-          "name": "Tailwind",
-          "pct": 1.02
+          "name": "Dual Wingbeat",
+          "pct": 1.031
         },
         {
-          "name": "Psycho Cut",
-          "pct": 1.02
+          "name": "Brutal Swing",
+          "pct": 1.031
         }
       ],
       "items": [
         {
           "name": "Metal Coat",
-          "pct": 60.204
+          "pct": 70.103
         },
         {
           "name": "Sitrus Berry",
-          "pct": 29.592
+          "pct": 19.588
         },
         {
           "name": "Lum Berry",
-          "pct": 4.082
-        },
-        {
-          "name": "Focus Sash",
-          "pct": 3.061
+          "pct": 4.124
         },
         {
           "name": "White Herb",
-          "pct": 2.041
+          "pct": 3.093
         },
         {
-          "name": "Silver Powder",
-          "pct": 1.02
+          "name": "Focus Sash",
+          "pct": 3.093
         }
       ],
       "abilities": [
         {
           "name": "Technician",
-          "pct": 97.959
+          "pct": 97.938
         },
         {
           "name": "Swarm",
-          "pct": 2.041
+          "pct": 2.062
         }
       ]
     },
@@ -3390,71 +3313,71 @@
       "moves": [
         {
           "name": "Moonblast",
-          "pct": 73.684
+          "pct": 72.727
         },
         {
           "name": "Psychic",
-          "pct": 68.421
+          "pct": 68.182
         },
         {
           "name": "Dazzling Gleam",
-          "pct": 57.895
+          "pct": 59.091
         },
         {
           "name": "Trick Room",
-          "pct": 36.842
+          "pct": 36.364
         },
         {
           "name": "Protect",
-          "pct": 31.579
+          "pct": 36.364
         },
         {
           "name": "Icy Wind",
-          "pct": 31.579
+          "pct": 27.273
         },
         {
           "name": "Psyshock",
-          "pct": 15.789
+          "pct": 22.727
         },
         {
           "name": "Thunderbolt",
-          "pct": 15.789
+          "pct": 13.636
         }
       ],
       "items": [
         {
           "name": "Choice Scarf",
-          "pct": 42.105
-        },
-        {
-          "name": "Fairy Feather",
-          "pct": 31.579
+          "pct": 36.364
         },
         {
           "name": "Focus Sash",
-          "pct": 15.789
+          "pct": 27.273
+        },
+        {
+          "name": "Fairy Feather",
+          "pct": 27.273
         },
         {
           "name": "Leftovers",
-          "pct": 5.263
+          "pct": 4.545
         },
         {
           "name": "Focus Band",
-          "pct": 5.263
+          "pct": 4.545
         }
       ],
       "abilities": [
         {
           "name": "Telepathy",
-          "pct": 63.158
+          "pct": 63.636
         },
         {
           "name": "Trace",
-          "pct": 26.316
+          "pct": 27.273
         },
         {
           "name": "Synchronize",
-          "pct": 10.526
+          "pct": 9.091
         }
       ]
     },
@@ -3467,55 +3390,55 @@
         },
         {
           "name": "Last Resort",
-          "pct": 82.569
+          "pct": 83.654
         },
         {
           "name": "Double-Edge",
-          "pct": 17.431
+          "pct": 16.346
         },
         {
           "name": "Sucker Punch",
-          "pct": 13.761
+          "pct": 10.577
         },
         {
           "name": "Drain Punch",
-          "pct": 11.009
+          "pct": 9.615
         },
         {
           "name": "Ice Punch",
-          "pct": 4.587
+          "pct": 4.808
         },
         {
           "name": "Protect",
-          "pct": 2.752
+          "pct": 3.846
         },
         {
           "name": "Hammer Arm",
-          "pct": 1.835
+          "pct": 2.885
         }
       ],
       "items": [
         {
           "name": "Silk Scarf",
-          "pct": 93.578
+          "pct": 92.308
         },
         {
           "name": "Chople Berry",
-          "pct": 2.752
+          "pct": 1.923
         },
         {
           "name": "Sitrus Berry",
-          "pct": 1.835
+          "pct": 1.923
         }
       ],
       "abilities": [
         {
           "name": "Scrappy",
-          "pct": 97.248
+          "pct": 98.077
         },
         {
           "name": "Inner Focus",
-          "pct": 2.752
+          "pct": 1.923
         }
       ]
     },
@@ -3523,30 +3446,42 @@
       "usage": null,
       "moves": [
         {
-          "name": "Moonblast",
-          "pct": 100
-        },
-        {
           "name": "Dazzling Gleam",
           "pct": 100
         },
         {
-          "name": "Light of Ruin",
-          "pct": 100
+          "name": "Moonblast",
+          "pct": 80
         },
         {
           "name": "Protect",
-          "pct": 50
+          "pct": 80
         },
         {
-          "name": "Trick",
-          "pct": 50
+          "name": "Light of Ruin",
+          "pct": 40
+        },
+        {
+          "name": "Pollen Puff",
+          "pct": 40
+        },
+        {
+          "name": "Calm Mind",
+          "pct": 40
+        },
+        {
+          "name": "Psychic",
+          "pct": 20
         }
       ],
       "items": [
         {
+          "name": "Fairy Feather",
+          "pct": 40
+        },
+        {
           "name": "Choice Scarf",
-          "pct": 50
+          "pct": 20
         }
       ],
       "abilities": [
@@ -3560,68 +3495,64 @@
       "usage": null,
       "moves": [
         {
-          "name": "Fake Out",
-          "pct": 57.143
+          "name": "Ice Beam",
+          "pct": 43.75
         },
         {
           "name": "Flip Turn",
-          "pct": 50
+          "pct": 43.75
         },
         {
-          "name": "Ice Beam",
-          "pct": 35.714
-        },
-        {
-          "name": "Hydro Pump",
-          "pct": 35.714
-        },
-        {
-          "name": "Protect",
-          "pct": 28.571
+          "name": "Fake Out",
+          "pct": 43.75
         },
         {
           "name": "Water Spout",
-          "pct": 21.429
+          "pct": 37.5
         },
         {
-          "name": "Yawn",
-          "pct": 21.429
+          "name": "Shell Smash",
+          "pct": 37.5
         },
         {
           "name": "Dark Pulse",
-          "pct": 21.429
+          "pct": 25
+        },
+        {
+          "name": "Hydro Pump",
+          "pct": 25
+        },
+        {
+          "name": "Protect",
+          "pct": 18.75
         }
       ],
       "items": [
         {
-          "name": "Mystic Water",
-          "pct": 28.571
-        },
-        {
           "name": "Sitrus Berry",
-          "pct": 21.429
+          "pct": 37.5
         },
         {
           "name": "White Herb",
-          "pct": 21.429
+          "pct": 31.25
+        },
+        {
+          "name": "Mystic Water",
+          "pct": 18.75
         },
         {
           "name": "Choice Scarf",
-          "pct": 14.286
-        },
-        {
-          "name": "Leftovers",
-          "pct": 14.286
+          "pct": 12.5
         }
       ],
       "abilities": [
         {
-          "name": "Torrent",
-          "pct": 57.143
+          "name": "Rain Dish",
+          "pct": 56.25
         },
         {
-          "name": "Rain Dish",
-          "pct": 42.857
+          "name": "Torrent",
+          "pct": 43.75
         }
       ]
     },
@@ -3630,31 +3561,31 @@
       "moves": [
         {
           "name": "Protect",
-          "pct": 99.917
+          "pct": 99.936
         },
         {
           "name": "Dazzling Gleam",
-          "pct": 94.85
+          "pct": 92.821
         },
         {
           "name": "Moonblast",
-          "pct": 86.711
-        },
-        {
-          "name": "Light of Ruin",
-          "pct": 51.412
+          "pct": 78.335
         },
         {
           "name": "Calm Mind",
-          "pct": 47.176
+          "pct": 58.767
+        },
+        {
+          "name": "Light of Ruin",
+          "pct": 40.28
         },
         {
           "name": "Draining Kiss",
-          "pct": 16.528
+          "pct": 27.255
         },
         {
           "name": "Psychic",
-          "pct": 1.578
+          "pct": 1.334
         }
       ],
       "items": [
@@ -3666,11 +3597,11 @@
       "abilities": [
         {
           "name": "Flower Veil",
-          "pct": 93.854
+          "pct": 95.044
         },
         {
           "name": "Fairy Aura",
-          "pct": 5.233
+          "pct": 4.003
         }
       ]
     },
@@ -3679,57 +3610,57 @@
       "moves": [
         {
           "name": "Jet Punch",
-          "pct": 96.639
+          "pct": 98.4
         },
         {
           "name": "Wave Crash",
-          "pct": 90.756
+          "pct": 95.2
         },
         {
           "name": "Protect",
-          "pct": 84.034
+          "pct": 88.8
         },
         {
           "name": "Flip Turn",
-          "pct": 50.42
-        },
-        {
-          "name": "Close Combat",
-          "pct": 32.773
+          "pct": 40
         },
         {
           "name": "Bulk Up",
-          "pct": 14.286
+          "pct": 32.8
         },
         {
-          "name": "Ice Punch",
-          "pct": 7.563
+          "name": "Close Combat",
+          "pct": 24.8
+        },
+        {
+          "name": "Taunt",
+          "pct": 4.8
         },
         {
           "name": "Encore",
-          "pct": 5.882
+          "pct": 4
         }
       ],
       "items": [
         {
           "name": "Mystic Water",
-          "pct": 70.588
+          "pct": 56
         },
         {
           "name": "Leftovers",
-          "pct": 11.765
+          "pct": 31.2
         },
         {
           "name": "Choice Scarf",
-          "pct": 9.244
+          "pct": 7.2
         },
         {
           "name": "Sitrus Berry",
-          "pct": 4.202
+          "pct": 2.4
         },
         {
           "name": "White Herb",
-          "pct": 2.521
+          "pct": 1.6
         }
       ],
       "abilities": [
@@ -3744,67 +3675,71 @@
       "moves": [
         {
           "name": "Waterfall",
-          "pct": 92.683
-        },
-        {
-          "name": "Taunt",
-          "pct": 41.463
-        },
-        {
-          "name": "Thunder Wave",
-          "pct": 41.463
+          "pct": 92.308
         },
         {
           "name": "Protect",
-          "pct": 39.024
+          "pct": 51.282
+        },
+        {
+          "name": "Thunder Wave",
+          "pct": 46.154
+        },
+        {
+          "name": "Taunt",
+          "pct": 38.462
         },
         {
           "name": "Ice Fang",
-          "pct": 34.146
+          "pct": 28.205
         },
         {
           "name": "Helping Hand",
-          "pct": 29.268
-        },
-        {
-          "name": "Dragon Dance",
-          "pct": 24.39
+          "pct": 23.077
         },
         {
           "name": "Earthquake",
-          "pct": 24.39
+          "pct": 20.513
+        },
+        {
+          "name": "Power Whip",
+          "pct": 17.949
         }
       ],
       "items": [
         {
           "name": "Sitrus Berry",
-          "pct": 43.902
+          "pct": 53.846
         },
         {
           "name": "Leftovers",
-          "pct": 31.707
-        },
-        {
-          "name": "Lum Berry",
-          "pct": 7.317
+          "pct": 17.949
         },
         {
           "name": "Wacan Berry",
-          "pct": 4.878
+          "pct": 5.128
         },
         {
           "name": "Mystic Water",
-          "pct": 4.878
+          "pct": 5.128
         },
         {
-          "name": "Bright Powder",
-          "pct": 2.439
+          "name": "Lum Berry",
+          "pct": 5.128
+        },
+        {
+          "name": "Choice Scarf",
+          "pct": 2.564
         }
       ],
       "abilities": [
         {
           "name": "Intimidate",
-          "pct": 100
+          "pct": 97.436
+        },
+        {
+          "name": "Moxie",
+          "pct": 2.564
         }
       ]
     },
@@ -3813,75 +3748,75 @@
       "moves": [
         {
           "name": "Follow Me",
-          "pct": 96.396
-        },
-        {
-          "name": "Moonblast",
-          "pct": 88.288
+          "pct": 97.03
         },
         {
           "name": "Protect",
-          "pct": 79.279
+          "pct": 86.139
+        },
+        {
+          "name": "Moonblast",
+          "pct": 84.158
         },
         {
           "name": "Helping Hand",
-          "pct": 45.045
+          "pct": 47.525
         },
         {
           "name": "Life Dew",
-          "pct": 26.126
+          "pct": 21.782
         },
         {
           "name": "Icy Wind",
-          "pct": 15.315
-        },
-        {
-          "name": "Dazzling Gleam",
-          "pct": 5.405
+          "pct": 13.861
         },
         {
           "name": "Air Slash",
-          "pct": 5.405
+          "pct": 7.921
+        },
+        {
+          "name": "Dazzling Gleam",
+          "pct": 5.941
         }
       ],
       "items": [
         {
           "name": "Sitrus Berry",
-          "pct": 63.964
+          "pct": 51.485
         },
         {
           "name": "Clefablite",
-          "pct": 11.712
+          "pct": 19.802
         },
         {
           "name": "Leftovers",
-          "pct": 10.811
+          "pct": 11.881
         },
         {
           "name": "Kebia Berry",
-          "pct": 4.505
+          "pct": 4.95
         },
         {
-          "name": "Mental Herb",
-          "pct": 2.703
+          "name": "Lum Berry",
+          "pct": 2.97
         },
         {
           "name": "Babiri Berry",
-          "pct": 2.703
+          "pct": 2.97
         }
       ],
       "abilities": [
         {
           "name": "Unaware",
-          "pct": 69.369
+          "pct": 66.337
         },
         {
           "name": "Magic Guard",
-          "pct": 26.126
+          "pct": 28.713
         },
         {
           "name": "Cute Charm",
-          "pct": 2.703
+          "pct": 2.97
         }
       ]
     },
@@ -3890,75 +3825,75 @@
       "moves": [
         {
           "name": "Protect",
-          "pct": 71.605
+          "pct": 73.333
         },
         {
           "name": "Dragon Darts",
-          "pct": 59.259
+          "pct": 60
         },
         {
           "name": "Psychic Fangs",
-          "pct": 45.679
+          "pct": 44
         },
         {
           "name": "Phantom Force",
-          "pct": 39.506
+          "pct": 42.667
         },
         {
           "name": "Will-O-Wisp",
-          "pct": 32.099
+          "pct": 32
         },
         {
           "name": "Draco Meteor",
-          "pct": 28.395
+          "pct": 29.333
         },
         {
           "name": "Shadow Ball",
-          "pct": 20.988
+          "pct": 16
         },
         {
           "name": "Light Screen",
-          "pct": 13.58
+          "pct": 13.333
         }
       ],
       "items": [
         {
           "name": "Focus Sash",
-          "pct": 30.864
+          "pct": 37.333
         },
         {
           "name": "Dragon Fang",
-          "pct": 20.988
+          "pct": 20
         },
         {
           "name": "Colbur Berry",
-          "pct": 16.049
+          "pct": 10.667
         },
         {
           "name": "Spell Tag",
-          "pct": 11.111
+          "pct": 6.667
         },
         {
           "name": "White Herb",
-          "pct": 4.938
+          "pct": 4
         },
         {
-          "name": "Sitrus Berry",
-          "pct": 3.704
+          "name": "Kasib Berry",
+          "pct": 4
         }
       ],
       "abilities": [
         {
           "name": "Clear Body",
-          "pct": 79.012
+          "pct": 78.667
         },
         {
           "name": "Infiltrator",
-          "pct": 14.815
+          "pct": 14.667
         },
         {
           "name": "Cursed Body",
-          "pct": 4.938
+          "pct": 5.333
         }
       ]
     },
@@ -3967,61 +3902,61 @@
       "moves": [
         {
           "name": "Protect",
-          "pct": 83.969
+          "pct": 86.066
         },
         {
           "name": "Heat Wave",
-          "pct": 54.962
+          "pct": 59.836
         },
         {
           "name": "Rage Powder",
-          "pct": 54.198
+          "pct": 56.557
         },
         {
           "name": "Quiver Dance",
-          "pct": 44.275
+          "pct": 45.082
         },
         {
           "name": "Struggle Bug",
-          "pct": 38.168
-        },
-        {
-          "name": "Fiery Dance",
-          "pct": 32.824
+          "pct": 35.246
         },
         {
           "name": "Giga Drain",
-          "pct": 29.771
+          "pct": 30.328
+        },
+        {
+          "name": "Fiery Dance",
+          "pct": 25.41
         },
         {
           "name": "Tailwind",
-          "pct": 23.664
+          "pct": 24.59
         }
       ],
       "items": [
         {
-          "name": "Leftovers",
-          "pct": 34.351
+          "name": "Sitrus Berry",
+          "pct": 33.607
         },
         {
-          "name": "Sitrus Berry",
-          "pct": 33.588
+          "name": "Leftovers",
+          "pct": 31.148
         },
         {
           "name": "Charcoal",
-          "pct": 12.977
-        },
-        {
-          "name": "Charti Berry",
-          "pct": 7.634
+          "pct": 13.934
         },
         {
           "name": "Passho Berry",
-          "pct": 6.87
+          "pct": 10.656
+        },
+        {
+          "name": "Charti Berry",
+          "pct": 5.738
         },
         {
           "name": "Focus Sash",
-          "pct": 2.29
+          "pct": 3.279
         }
       ],
       "abilities": [
@@ -4036,67 +3971,67 @@
       "moves": [
         {
           "name": "Play Rough",
-          "pct": 94.531
+          "pct": 93.22
         },
         {
           "name": "Shadow Sneak",
-          "pct": 89.844
+          "pct": 87.288
         },
         {
           "name": "Shadow Claw",
-          "pct": 80.469
+          "pct": 77.966
         },
         {
           "name": "Protect",
-          "pct": 72.656
+          "pct": 71.186
         },
         {
           "name": "Trick Room",
-          "pct": 25.781
+          "pct": 27.966
         },
         {
           "name": "Swords Dance",
-          "pct": 12.5
+          "pct": 8.475
         },
         {
           "name": "Taunt",
-          "pct": 5.469
+          "pct": 7.627
         },
         {
           "name": "Will-O-Wisp",
-          "pct": 5.469
+          "pct": 7.627
         }
       ],
       "items": [
         {
           "name": "White Herb",
-          "pct": 42.969
-        },
-        {
-          "name": "Mental Herb",
-          "pct": 16.406
-        },
-        {
-          "name": "Fairy Feather",
-          "pct": 16.406
+          "pct": 31.356
         },
         {
           "name": "Spell Tag",
-          "pct": 15.625
+          "pct": 23.729
+        },
+        {
+          "name": "Fairy Feather",
+          "pct": 20.339
+        },
+        {
+          "name": "Mental Herb",
+          "pct": 12.712
         },
         {
           "name": "Scope Lens",
-          "pct": 2.344
+          "pct": 2.542
         },
         {
-          "name": "Leftovers",
-          "pct": 1.563
+          "name": "Babiri Berry",
+          "pct": 1.695
         }
       ],
       "abilities": [
         {
           "name": "Disguise",
-          "pct": 99.219
+          "pct": 99.153
         }
       ]
     },
@@ -4105,35 +4040,35 @@
       "moves": [
         {
           "name": "Protect",
-          "pct": 96.842
+          "pct": 97.98
         },
         {
           "name": "Poltergeist",
-          "pct": 95.789
+          "pct": 95.96
         },
         {
           "name": "Headlong Rush",
-          "pct": 95.789
+          "pct": 94.949
         },
         {
           "name": "Rock Slide",
-          "pct": 46.316
+          "pct": 59.596
         },
         {
           "name": "Ice Punch",
-          "pct": 42.105
-        },
-        {
-          "name": "Drain Punch",
-          "pct": 6.316
+          "pct": 31.313
         },
         {
           "name": "Close Combat",
-          "pct": 4.211
+          "pct": 4.04
         },
         {
-          "name": "Earthquake",
-          "pct": 2.105
+          "name": "High Horsepower",
+          "pct": 3.03
+        },
+        {
+          "name": "Drain Punch",
+          "pct": 2.02
         }
       ],
       "items": [
@@ -4145,19 +4080,15 @@
       "abilities": [
         {
           "name": "No Guard",
-          "pct": 54.737
+          "pct": 58.586
         },
         {
           "name": "Iron Fist",
-          "pct": 42.105
+          "pct": 39.394
         },
         {
           "name": "Unseen Fist",
-          "pct": 2.105
-        },
-        {
-          "name": "Klutz",
-          "pct": 1.053
+          "pct": 2.02
         }
       ]
     },
@@ -4166,71 +4097,140 @@
       "moves": [
         {
           "name": "Flower Trick",
-          "pct": 97.744
-        },
-        {
-          "name": "Knock Off",
-          "pct": 77.444
+          "pct": 98.333
         },
         {
           "name": "Triple Axel",
-          "pct": 76.692
+          "pct": 73.333
+        },
+        {
+          "name": "Knock Off",
+          "pct": 70.833
         },
         {
           "name": "U-turn",
-          "pct": 51.88
+          "pct": 54.167
         },
         {
           "name": "Low Kick",
-          "pct": 25.564
+          "pct": 30
         },
         {
           "name": "Protect",
-          "pct": 23.308
+          "pct": 28.333
         },
         {
           "name": "Sucker Punch",
-          "pct": 18.045
+          "pct": 16.667
         },
         {
           "name": "Throat Chop",
-          "pct": 7.519
+          "pct": 7.5
         }
       ],
       "items": [
         {
           "name": "Choice Scarf",
-          "pct": 69.173
+          "pct": 66.667
         },
         {
           "name": "Focus Sash",
-          "pct": 20.301
+          "pct": 22.5
         },
         {
           "name": "Black Glasses",
-          "pct": 4.511
+          "pct": 4.167
+        },
+        {
+          "name": "Nothing",
+          "pct": 1.667
         },
         {
           "name": "Miracle Seed",
-          "pct": 1.504
-        },
-        {
-          "name": "Leftovers",
-          "pct": 1.504
-        },
-        {
-          "name": "King's Rock",
-          "pct": 1.504
+          "pct": 1.667
         }
       ],
       "abilities": [
         {
           "name": "Protean",
-          "pct": 84.962
+          "pct": 82.5
         },
         {
           "name": "Overgrow",
-          "pct": 15.038
+          "pct": 17.5
+        }
+      ]
+    },
+    "Tinkaton": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Gigaton Hammer",
+          "pct": 98.551
+        },
+        {
+          "name": "Fake Out",
+          "pct": 96.377
+        },
+        {
+          "name": "Protect",
+          "pct": 75.362
+        },
+        {
+          "name": "Encore",
+          "pct": 65.217
+        },
+        {
+          "name": "Play Rough",
+          "pct": 31.159
+        },
+        {
+          "name": "Feint",
+          "pct": 12.319
+        },
+        {
+          "name": "Thunder Wave",
+          "pct": 4.348
+        },
+        {
+          "name": "Helping Hand",
+          "pct": 2.899
+        }
+      ],
+      "items": [
+        {
+          "name": "Shuca Berry",
+          "pct": 62.319
+        },
+        {
+          "name": "Metal Coat",
+          "pct": 13.768
+        },
+        {
+          "name": "Occa Berry",
+          "pct": 7.971
+        },
+        {
+          "name": "Sitrus Berry",
+          "pct": 4.348
+        },
+        {
+          "name": "Leftovers",
+          "pct": 3.623
+        },
+        {
+          "name": "White Herb",
+          "pct": 2.899
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Mold Breaker",
+          "pct": 79.71
+        },
+        {
+          "name": "Own Tempo",
+          "pct": 19.565
         }
       ]
     },
@@ -4239,71 +4239,71 @@
       "moves": [
         {
           "name": "Dazzling Gleam",
-          "pct": 97.98
+          "pct": 97.561
         },
         {
           "name": "Trick Room",
-          "pct": 97.98
+          "pct": 97.561
         },
         {
           "name": "Protect",
-          "pct": 94.949
+          "pct": 91.463
         },
         {
           "name": "Psychic",
-          "pct": 83.838
-        },
-        {
-          "name": "Expanding Force",
-          "pct": 5.051
+          "pct": 75.61
         },
         {
           "name": "Magic Powder",
-          "pct": 5.051
+          "pct": 7.317
         },
         {
-          "name": "Helping Hand",
-          "pct": 2.02
+          "name": "Expanding Force",
+          "pct": 6.098
         },
         {
           "name": "Psyshock",
-          "pct": 2.02
+          "pct": 4.878
+        },
+        {
+          "name": "Heal Pulse",
+          "pct": 2.439
         }
       ],
       "items": [
         {
           "name": "Fairy Feather",
-          "pct": 50.505
+          "pct": 52.439
         },
         {
           "name": "Focus Sash",
-          "pct": 38.384
+          "pct": 37.805
         },
         {
           "name": "Babiri Berry",
-          "pct": 4.04
+          "pct": 3.659
         },
         {
           "name": "Twisted Spoon",
-          "pct": 3.03
-        },
-        {
-          "name": "Leftovers",
-          "pct": 2.02
+          "pct": 2.439
         },
         {
           "name": "Kebia Berry",
-          "pct": 2.02
+          "pct": 2.439
+        },
+        {
+          "name": "Leftovers",
+          "pct": 1.22
         }
       ],
       "abilities": [
         {
           "name": "Magic Bounce",
-          "pct": 96.97
+          "pct": 97.561
         },
         {
           "name": "Healer",
-          "pct": 3.03
+          "pct": 2.439
         }
       ]
     },
@@ -4360,11 +4360,15 @@
           "pct": 100
         },
         {
-          "name": "Close Combat",
+          "name": "Baton Pass",
           "pct": 66.667
         },
         {
-          "name": "Baton Pass",
+          "name": "Helping Hand",
+          "pct": 66.667
+        },
+        {
+          "name": "Cotton Guard",
           "pct": 33.333
         },
         {
@@ -4372,26 +4376,22 @@
           "pct": 33.333
         },
         {
-          "name": "Helping Hand",
-          "pct": 33.333
-        },
-        {
           "name": "Protect",
           "pct": 33.333
         },
         {
-          "name": "Triple Axel",
+          "name": "Close Combat",
           "pct": 33.333
         },
         {
-          "name": "After You",
+          "name": "Triple Axel",
           "pct": 33.333
         }
       ],
       "items": [
         {
           "name": "Chople Berry",
-          "pct": 33.333
+          "pct": 66.667
         }
       ],
       "abilities": [
@@ -4410,71 +4410,71 @@
       "moves": [
         {
           "name": "Protect",
-          "pct": 94.253
+          "pct": 94.937
         },
         {
           "name": "Liquidation",
-          "pct": 72.414
+          "pct": 74.684
         },
         {
           "name": "Aqua Jet",
-          "pct": 65.517
+          "pct": 68.354
         },
         {
           "name": "Zen Headbutt",
-          "pct": 40.23
+          "pct": 36.709
         },
         {
           "name": "Ice Spinner",
-          "pct": 22.989
+          "pct": 26.582
         },
         {
           "name": "Psycho Cut",
-          "pct": 20.69
+          "pct": 20.253
         },
         {
-          "name": "Ice Beam",
-          "pct": 16.092
+          "name": "Flip Turn",
+          "pct": 12.658
         },
         {
           "name": "Scald",
-          "pct": 12.644
+          "pct": 12.658
         }
       ],
       "items": [
         {
           "name": "Starminite",
-          "pct": 85.057
+          "pct": 87.342
         },
         {
           "name": "Focus Sash",
-          "pct": 10.345
+          "pct": 7.595
         },
         {
           "name": "Bright Powder",
-          "pct": 1.149
+          "pct": 1.266
         },
         {
           "name": "Never-Melt Ice",
-          "pct": 1.149
+          "pct": 1.266
         }
       ],
       "abilities": [
         {
           "name": "Natural Cure",
-          "pct": 81.609
+          "pct": 81.013
         },
         {
           "name": "Illuminate",
-          "pct": 9.195
+          "pct": 11.392
         },
         {
           "name": "Analytic",
-          "pct": 4.598
+          "pct": 3.797
         },
         {
           "name": "Huge Power",
-          "pct": 3.448
+          "pct": 2.532
         }
       ]
     },
@@ -4482,68 +4482,64 @@
       "usage": null,
       "moves": [
         {
-          "name": "Close Combat",
-          "pct": 88.462
+          "name": "Meteor Mash",
+          "pct": 76.471
         },
         {
-          "name": "Meteor Mash",
-          "pct": 88.462
+          "name": "Close Combat",
+          "pct": 70.588
         },
         {
           "name": "Final Gambit",
-          "pct": 80.769
+          "pct": 70.588
         },
         {
           "name": "Coaching",
-          "pct": 50
+          "pct": 47.059
         },
         {
           "name": "Stone Edge",
-          "pct": 30.769
+          "pct": 23.529
         },
         {
-          "name": "Protect",
-          "pct": 15.385
+          "name": "Drain Punch",
+          "pct": 17.647
         },
         {
-          "name": "Flash Cannon",
-          "pct": 7.692
+          "name": "Bullet Punch",
+          "pct": 11.765
         },
         {
-          "name": "Aura Sphere",
-          "pct": 7.692
+          "name": "Howl",
+          "pct": 11.765
         }
       ],
       "items": [
         {
           "name": "Choice Scarf",
-          "pct": 84.615
+          "pct": 76.471
+        },
+        {
+          "name": "Chople Berry",
+          "pct": 11.765
         },
         {
           "name": "Black Belt",
-          "pct": 3.846
+          "pct": 5.882
         },
         {
           "name": "Lum Berry",
-          "pct": 3.846
-        },
-        {
-          "name": "Metal Coat",
-          "pct": 3.846
-        },
-        {
-          "name": "Focus Sash",
-          "pct": 3.846
+          "pct": 5.882
         }
       ],
       "abilities": [
         {
           "name": "Inner Focus",
-          "pct": 96.154
+          "pct": 94.118
         },
         {
           "name": "Justified",
-          "pct": 3.846
+          "pct": 5.882
         }
       ]
     },
@@ -4551,60 +4547,56 @@
       "usage": null,
       "moves": [
         {
-          "name": "Ice Hammer",
-          "pct": 90.323
+          "name": "Protect",
+          "pct": 94.444
         },
         {
-          "name": "Protect",
-          "pct": 89.247
+          "name": "Ice Hammer",
+          "pct": 90.741
         },
         {
           "name": "Drain Punch",
-          "pct": 86.022
+          "pct": 75.926
         },
         {
           "name": "Mach Punch",
-          "pct": 68.817
-        },
-        {
-          "name": "Thunder Punch",
-          "pct": 20.43
+          "pct": 75.926
         },
         {
           "name": "Close Combat",
-          "pct": 15.054
+          "pct": 25
         },
         {
-          "name": "Crabhammer",
-          "pct": 9.677
+          "name": "Thunder Punch",
+          "pct": 17.593
         },
         {
           "name": "Ice Punch",
-          "pct": 7.527
+          "pct": 9.259
+        },
+        {
+          "name": "Crabhammer",
+          "pct": 4.63
         }
       ],
       "items": [
         {
           "name": "Crabominite",
-          "pct": 97.849
-        },
-        {
-          "name": "Leftovers",
-          "pct": 2.151
+          "pct": 100
         }
       ],
       "abilities": [
         {
           "name": "Hyper Cutter",
-          "pct": 87.097
+          "pct": 94.444
         },
         {
           "name": "Iron Fist",
-          "pct": 8.602
+          "pct": 3.704
         },
         {
           "name": "Anger Point",
-          "pct": 4.301
+          "pct": 1.852
         }
       ]
     },
@@ -4617,67 +4609,63 @@
         },
         {
           "name": "Psycho Cut",
-          "pct": 92.958
-        },
-        {
-          "name": "Protect",
-          "pct": 67.606
+          "pct": 90.805
         },
         {
           "name": "Leaf Blade",
-          "pct": 64.789
+          "pct": 67.816
+        },
+        {
+          "name": "Protect",
+          "pct": 67.816
         },
         {
           "name": "Trick Room",
-          "pct": 26.761
+          "pct": 28.736
         },
         {
           "name": "Wide Guard",
-          "pct": 16.901
+          "pct": 14.943
         },
         {
           "name": "Night Slash",
-          "pct": 11.268
+          "pct": 10.345
         },
         {
-          "name": "Life Dew",
-          "pct": 4.225
+          "name": "Rock Tomb",
+          "pct": 4.598
         }
       ],
       "items": [
         {
           "name": "Focus Sash",
-          "pct": 50.704
-        },
-        {
-          "name": "White Herb",
-          "pct": 12.676
-        },
-        {
-          "name": "Choice Scarf",
-          "pct": 9.859
-        },
-        {
-          "name": "Sitrus Berry",
-          "pct": 9.859
+          "pct": 54.023
         },
         {
           "name": "Black Belt",
-          "pct": 8.451
+          "pct": 12.644
+        },
+        {
+          "name": "Choice Scarf",
+          "pct": 12.644
+        },
+        {
+          "name": "White Herb",
+          "pct": 10.345
         },
         {
           "name": "Scope Lens",
-          "pct": 5.634
+          "pct": 4.598
+        },
+        {
+          "name": "Sitrus Berry",
+          "pct": 3.448
         }
       ],
       "abilities": [
         {
           "name": "Sharpness",
-          "pct": 98.592
-        },
-        {
-          "name": "Steadfast",
-          "pct": 1.408
+          "pct": 100
         }
       ]
     },
@@ -4686,35 +4674,35 @@
       "moves": [
         {
           "name": "Protect",
-          "pct": 99.382
+          "pct": 99.551
         },
         {
           "name": "Heat Wave",
-          "pct": 98.609
+          "pct": 98.789
         },
         {
           "name": "Solar Beam",
-          "pct": 94.281
+          "pct": 93.854
         },
         {
           "name": "Weather Ball",
-          "pct": 87.79
+          "pct": 90.444
         },
         {
           "name": "Air Slash",
-          "pct": 7.419
-        },
-        {
-          "name": "Overheat",
-          "pct": 2.782
+          "pct": 6.057
         },
         {
           "name": "Ancient Power",
-          "pct": 2.37
+          "pct": 2.647
         },
         {
-          "name": "Helping Hand",
-          "pct": 1.288
+          "name": "Overheat",
+          "pct": 2.198
+        },
+        {
+          "name": "Scorching Sands",
+          "pct": 1.256
         }
       ],
       "items": [
@@ -4726,15 +4714,15 @@
       "abilities": [
         {
           "name": "Blaze",
-          "pct": 67.13
+          "pct": 67.34
         },
         {
           "name": "Solar Power",
-          "pct": 28.748
+          "pct": 29.43
         },
         {
           "name": "Drought",
-          "pct": 3.967
+          "pct": 3.14
         }
       ]
     },
@@ -4743,59 +4731,59 @@
       "moves": [
         {
           "name": "Instruct",
-          "pct": 99.107
+          "pct": 100
         },
         {
           "name": "Trick Room",
-          "pct": 98.214
+          "pct": 96.117
         },
         {
           "name": "Protect",
-          "pct": 63.393
+          "pct": 66.019
         },
         {
           "name": "Psychic",
-          "pct": 42.857
-        },
-        {
-          "name": "Foul Play",
-          "pct": 26.786
-        },
-        {
-          "name": "Psychic Noise",
-          "pct": 15.179
+          "pct": 38.835
         },
         {
           "name": "Skill Swap",
-          "pct": 14.286
+          "pct": 27.184
+        },
+        {
+          "name": "Foul Play",
+          "pct": 20.388
         },
         {
           "name": "Encore",
-          "pct": 12.5
+          "pct": 14.563
+        },
+        {
+          "name": "Psychic Noise",
+          "pct": 13.592
         }
       ],
       "items": [
         {
           "name": "Colbur Berry",
-          "pct": 58.036
+          "pct": 64.078
         },
         {
           "name": "Mental Herb",
-          "pct": 24.107
+          "pct": 17.476
         },
         {
           "name": "Sitrus Berry",
-          "pct": 15.179
+          "pct": 15.534
         }
       ],
       "abilities": [
         {
           "name": "Inner Focus",
-          "pct": 93.75
+          "pct": 92.233
         },
         {
           "name": "Telepathy",
-          "pct": 5.357
+          "pct": 7.767
         }
       ]
     },
@@ -4804,75 +4792,75 @@
       "moves": [
         {
           "name": "Protect",
-          "pct": 78.409
+          "pct": 87.143
         },
         {
           "name": "Hyper Voice",
-          "pct": 76.136
+          "pct": 71.429
         },
         {
           "name": "Earth Power",
-          "pct": 57.955
-        },
-        {
-          "name": "Calm Mind",
-          "pct": 36.364
+          "pct": 61.429
         },
         {
           "name": "Draco Meteor",
-          "pct": 32.955
+          "pct": 35.714
         },
         {
           "name": "Dragon Pulse",
-          "pct": 30.682
+          "pct": 32.857
+        },
+        {
+          "name": "Calm Mind",
+          "pct": 31.429
         },
         {
           "name": "Thunderbolt",
-          "pct": 25
+          "pct": 28.571
         },
         {
-          "name": "Flamethrower",
-          "pct": 20.455
+          "name": "Ice Beam",
+          "pct": 11.429
         }
       ],
       "items": [
         {
           "name": "Drampanite",
-          "pct": 72.727
+          "pct": 61.429
         },
         {
           "name": "Chople Berry",
-          "pct": 13.636
-        },
-        {
-          "name": "Haban Berry",
-          "pct": 3.409
-        },
-        {
-          "name": "Roseli Berry",
-          "pct": 3.409
+          "pct": 15.714
         },
         {
           "name": "White Herb",
-          "pct": 3.409
+          "pct": 8.571
+        },
+        {
+          "name": "Haban Berry",
+          "pct": 4.286
+        },
+        {
+          "name": "Roseli Berry",
+          "pct": 4.286
         },
         {
           "name": "Sitrus Berry",
-          "pct": 1.136
+          "pct": 2.857
         }
       ],
       "abilities": [
         {
           "name": "Cloud Nine",
-          "pct": 76.136
+          "pct": 75.714
         },
         {
           "name": "Berserk",
-          "pct": 21.591
+          "pct": 21.429
         },
         {
           "name": "Sap Sipper",
-          "pct": 2.273
+          "pct": 2.857
         }
       ]
     },
@@ -4881,71 +4869,71 @@
       "moves": [
         {
           "name": "Bitter Blade",
-          "pct": 98.99
+          "pct": 98.913
         },
         {
           "name": "Shadow Sneak",
-          "pct": 92.929
+          "pct": 93.478
         },
         {
           "name": "Protect",
-          "pct": 87.879
+          "pct": 86.957
         },
         {
           "name": "Swords Dance",
-          "pct": 44.444
-        },
-        {
-          "name": "Poltergeist",
-          "pct": 31.313
+          "pct": 44.565
         },
         {
           "name": "Bulk Up",
-          "pct": 28.283
+          "pct": 31.522
+        },
+        {
+          "name": "Poltergeist",
+          "pct": 29.348
         },
         {
           "name": "Close Combat",
-          "pct": 5.051
+          "pct": 4.348
         },
         {
-          "name": "Phantom Force",
-          "pct": 4.04
+          "name": "Psycho Cut",
+          "pct": 3.261
         }
       ],
       "items": [
         {
           "name": "Colbur Berry",
-          "pct": 32.323
+          "pct": 33.696
         },
         {
           "name": "Focus Sash",
-          "pct": 20.202
+          "pct": 22.826
         },
         {
           "name": "Leftovers",
-          "pct": 15.152
+          "pct": 13.043
         },
         {
           "name": "Sitrus Berry",
-          "pct": 10.101
+          "pct": 13.043
         },
         {
-          "name": "Kasib Berry",
-          "pct": 5.051
+          "name": "Charcoal",
+          "pct": 4.348
         },
         {
-          "name": "Passho Berry",
-          "pct": 3.03
+          "name": "White Herb",
+          "pct": 4.348
         }
       ],
       "abilities": [
         {
           "name": "Flash Fire",
-          "pct": 94.949
+          "pct": 95.652
         },
         {
           "name": "Weak Armor",
-          "pct": 5.051
+          "pct": 4.348
         }
       ]
     },
@@ -4954,35 +4942,35 @@
       "moves": [
         {
           "name": "Earth Power",
-          "pct": 98.039
+          "pct": 99.237
         },
         {
           "name": "Protect",
-          "pct": 91.176
+          "pct": 95.42
         },
         {
           "name": "Heat Wave",
-          "pct": 83.333
+          "pct": 87.023
         },
         {
           "name": "Ancient Power",
-          "pct": 69.608
+          "pct": 74.046
         },
         {
           "name": "Eruption",
-          "pct": 38.235
+          "pct": 29.008
         },
         {
           "name": "Flash Cannon",
-          "pct": 6.863
+          "pct": 5.344
         },
         {
           "name": "Flamethrower",
-          "pct": 3.922
+          "pct": 3.053
         },
         {
-          "name": "Fire Blast",
-          "pct": 2.941
+          "name": "Rock Slide",
+          "pct": 2.29
         }
       ],
       "items": [
@@ -4994,11 +4982,11 @@
       "abilities": [
         {
           "name": "Solid Rock",
-          "pct": 93.137
+          "pct": 93.893
         },
         {
           "name": "Magma Armor",
-          "pct": 5.882
+          "pct": 5.344
         }
       ]
     },
@@ -5011,41 +4999,41 @@
         },
         {
           "name": "Thunderbolt",
-          "pct": 80
-        },
-        {
-          "name": "Flamethrower",
-          "pct": 60
+          "pct": 75
         },
         {
           "name": "Thunder",
-          "pct": 40
+          "pct": 50
         },
         {
-          "name": "Snarl",
-          "pct": 40
+          "name": "Flamethrower",
+          "pct": 50
         },
         {
           "name": "Hyper Voice",
-          "pct": 20
+          "pct": 25
         },
         {
           "name": "Protect",
-          "pct": 20
+          "pct": 25
         },
         {
           "name": "Eerie Impulse",
-          "pct": 20
+          "pct": 25
+        },
+        {
+          "name": "Discharge",
+          "pct": 25
         }
       ],
       "items": [
         {
-          "name": "Magnet",
-          "pct": 60
+          "name": "Choice Scarf",
+          "pct": 50
         },
         {
-          "name": "Choice Scarf",
-          "pct": 40
+          "name": "Magnet",
+          "pct": 50
         }
       ],
       "abilities": [
@@ -5055,60 +5043,76 @@
         }
       ]
     },
-    "Skarmory": {
+    "Weavile": {
       "usage": null,
       "moves": [
         {
-          "name": "Iron Head",
-          "pct": 98.261
+          "name": "Fake Out",
+          "pct": 98.901
         },
         {
-          "name": "Brave Bird",
-          "pct": 95.652
+          "name": "Knock Off",
+          "pct": 86.813
+        },
+        {
+          "name": "Low Kick",
+          "pct": 61.538
+        },
+        {
+          "name": "Icicle Crash",
+          "pct": 53.846
+        },
+        {
+          "name": "Triple Axel",
+          "pct": 31.868
         },
         {
           "name": "Protect",
-          "pct": 76.522
+          "pct": 20.879
         },
         {
-          "name": "Rock Tomb",
-          "pct": 51.304
+          "name": "Ice Spinner",
+          "pct": 13.187
         },
         {
-          "name": "Tailwind",
-          "pct": 28.696
-        },
-        {
-          "name": "Taunt",
-          "pct": 20
-        },
-        {
-          "name": "Rock Slide",
-          "pct": 13.043
-        },
-        {
-          "name": "Swords Dance",
-          "pct": 6.957
+          "name": "Psycho Cut",
+          "pct": 6.593
         }
       ],
       "items": [
         {
-          "name": "Skarmorite",
-          "pct": 100
+          "name": "Focus Sash",
+          "pct": 82.418
+        },
+        {
+          "name": "Black Glasses",
+          "pct": 5.495
+        },
+        {
+          "name": "King's Rock",
+          "pct": 4.396
+        },
+        {
+          "name": "White Herb",
+          "pct": 4.396
+        },
+        {
+          "name": "Never-Melt Ice",
+          "pct": 2.198
+        },
+        {
+          "name": "Nothing",
+          "pct": 1.099
         }
       ],
       "abilities": [
         {
-          "name": "Sturdy",
-          "pct": 80.87
+          "name": "Pickpocket",
+          "pct": 72.527
         },
         {
-          "name": "Weak Armor",
-          "pct": 15.652
-        },
-        {
-          "name": "Keen Eye",
-          "pct": 2.609
+          "name": "Pressure",
+          "pct": 27.473
         }
       ]
     },
@@ -5116,62 +5120,58 @@
       "usage": null,
       "moves": [
         {
-          "name": "Play Rough",
-          "pct": 93.846
+          "name": "Aqua Jet",
+          "pct": 98.63
         },
         {
-          "name": "Aqua Jet",
-          "pct": 93.846
+          "name": "Play Rough",
+          "pct": 94.521
         },
         {
           "name": "Protect",
-          "pct": 90.769
-        },
-        {
-          "name": "Liquidation",
-          "pct": 53.846
+          "pct": 93.151
         },
         {
           "name": "Belly Drum",
-          "pct": 46.154
+          "pct": 50.685
         },
         {
-          "name": "Superpower",
-          "pct": 6.154
+          "name": "Liquidation",
+          "pct": 49.315
         },
         {
           "name": "Knock Off",
-          "pct": 6.154
+          "pct": 4.11
         },
         {
           "name": "Ice Spinner",
-          "pct": 4.615
+          "pct": 4.11
+        },
+        {
+          "name": "Superpower",
+          "pct": 2.74
         }
       ],
       "items": [
         {
-          "name": "Mystic Water",
-          "pct": 46.154
-        },
-        {
           "name": "Sitrus Berry",
-          "pct": 46.154
+          "pct": 50.685
         },
         {
-          "name": "Quick Claw",
-          "pct": 3.077
+          "name": "Mystic Water",
+          "pct": 45.205
         },
         {
           "name": "Fairy Feather",
-          "pct": 1.538
+          "pct": 1.37
         },
         {
           "name": "Scope Lens",
-          "pct": 1.538
+          "pct": 1.37
         },
         {
           "name": "White Herb",
-          "pct": 1.538
+          "pct": 1.37
         }
       ],
       "abilities": [
@@ -5181,129 +5181,60 @@
         }
       ]
     },
-    "Weavile": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Fake Out",
-          "pct": 100
-        },
-        {
-          "name": "Knock Off",
-          "pct": 86.792
-        },
-        {
-          "name": "Low Kick",
-          "pct": 64.151
-        },
-        {
-          "name": "Icicle Crash",
-          "pct": 59.434
-        },
-        {
-          "name": "Triple Axel",
-          "pct": 27.358
-        },
-        {
-          "name": "Protect",
-          "pct": 14.151
-        },
-        {
-          "name": "Ice Spinner",
-          "pct": 12.264
-        },
-        {
-          "name": "Taunt",
-          "pct": 7.547
-        }
-      ],
-      "items": [
-        {
-          "name": "Focus Sash",
-          "pct": 85.849
-        },
-        {
-          "name": "Black Glasses",
-          "pct": 4.717
-        },
-        {
-          "name": "King's Rock",
-          "pct": 2.83
-        },
-        {
-          "name": "White Herb",
-          "pct": 2.83
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Pickpocket",
-          "pct": 74.528
-        },
-        {
-          "name": "Pressure",
-          "pct": 25.472
-        }
-      ]
-    },
     "Orthworm": {
       "usage": null,
       "moves": [
         {
-          "name": "Body Press",
-          "pct": 96.296
-        },
-        {
           "name": "Shed Tail",
-          "pct": 92.593
+          "pct": 100
         },
         {
-          "name": "Heavy Slam",
-          "pct": 66.667
+          "name": "Body Press",
+          "pct": 96.552
         },
         {
           "name": "Protect",
-          "pct": 59.259
+          "pct": 65.517
         },
         {
-          "name": "Iron Defense",
-          "pct": 44.444
+          "name": "Heavy Slam",
+          "pct": 62.069
         },
         {
           "name": "Helping Hand",
-          "pct": 29.63
+          "pct": 34.483
         },
         {
-          "name": "Bulldoze",
-          "pct": 3.704
+          "name": "Iron Defense",
+          "pct": 27.586
         },
         {
           "name": "Iron Head",
-          "pct": 3.704
+          "pct": 10.345
+        },
+        {
+          "name": "Bulldoze",
+          "pct": 3.448
         }
       ],
       "items": [
         {
           "name": "Sitrus Berry",
-          "pct": 85.185
+          "pct": 96.552
         },
         {
           "name": "Leftovers",
-          "pct": 7.407
-        },
-        {
-          "name": "Quick Claw",
-          "pct": 7.407
+          "pct": 3.448
         }
       ],
       "abilities": [
         {
           "name": "Earth Eater",
-          "pct": 96.296
+          "pct": 96.552
         },
         {
           "name": "Sand Veil",
-          "pct": 3.704
+          "pct": 3.448
         }
       ]
     },
@@ -5317,36 +5248,36 @@
       "usage": null,
       "moves": [
         {
-          "name": "Rock Slide",
-          "pct": 99.014
+          "name": "Protect",
+          "pct": 99.641
         },
         {
-          "name": "Protect",
-          "pct": 98.817
+          "name": "Rock Slide",
+          "pct": 98.743
         },
         {
           "name": "Knock Off",
-          "pct": 92.899
+          "pct": 94.614
         },
         {
           "name": "Low Kick",
-          "pct": 68.442
-        },
-        {
-          "name": "Ice Punch",
-          "pct": 11.637
+          "pct": 58.528
         },
         {
           "name": "Dragon Dance",
-          "pct": 7.298
+          "pct": 22.442
         },
         {
-          "name": "Crunch",
-          "pct": 5.917
+          "name": "Ice Punch",
+          "pct": 9.156
         },
         {
           "name": "High Horsepower",
-          "pct": 4.931
+          "pct": 4.847
+        },
+        {
+          "name": "Crunch",
+          "pct": 3.95
         }
       ],
       "items": [
@@ -5358,7 +5289,7 @@
       "abilities": [
         {
           "name": "Sand Stream",
-          "pct": 99.803
+          "pct": 99.461
         }
       ]
     },
@@ -5367,35 +5298,35 @@
       "moves": [
         {
           "name": "Protect",
-          "pct": 99.778
+          "pct": 99.532
         },
         {
           "name": "Shadow Ball",
-          "pct": 98.444
-        },
-        {
-          "name": "Disable",
-          "pct": 62
-        },
-        {
-          "name": "Perish Song",
-          "pct": 59.778
+          "pct": 97.892
         },
         {
           "name": "Sludge Bomb",
-          "pct": 58.222
+          "pct": 62.061
+        },
+        {
+          "name": "Disable",
+          "pct": 58.782
+        },
+        {
+          "name": "Perish Song",
+          "pct": 58.08
         },
         {
           "name": "Icy Wind",
-          "pct": 4.889
-        },
-        {
-          "name": "Focus Blast",
-          "pct": 2.667
+          "pct": 6.792
         },
         {
           "name": "Will-O-Wisp",
-          "pct": 2.444
+          "pct": 2.576
+        },
+        {
+          "name": "Focus Blast",
+          "pct": 2.108
         }
       ],
       "items": [
@@ -5407,11 +5338,11 @@
       "abilities": [
         {
           "name": "Cursed Body",
-          "pct": 92.222
+          "pct": 92.272
         },
         {
           "name": "Shadow Tag",
-          "pct": 7.111
+          "pct": 7.494
         }
       ]
     },
@@ -5419,76 +5350,64 @@
       "usage": null,
       "moves": [
         {
-          "name": "Protect",
-          "pct": 66.667
-        },
-        {
-          "name": "Flare Blitz",
-          "pct": 66.667
-        },
-        {
           "name": "Snarl",
-          "pct": 58.974
-        },
-        {
-          "name": "Extreme Speed",
-          "pct": 56.41
+          "pct": 67.568
         },
         {
           "name": "Will-O-Wisp",
-          "pct": 56.41
+          "pct": 64.865
         },
         {
-          "name": "Howl",
-          "pct": 30.769
+          "name": "Flare Blitz",
+          "pct": 59.459
+        },
+        {
+          "name": "Extreme Speed",
+          "pct": 51.351
+        },
+        {
+          "name": "Protect",
+          "pct": 45.946
         },
         {
           "name": "Burn Up",
-          "pct": 17.949
+          "pct": 29.73
         },
         {
-          "name": "Charm",
-          "pct": 10.256
+          "name": "Howl",
+          "pct": 24.324
+        },
+        {
+          "name": "Close Combat",
+          "pct": 16.216
         }
       ],
       "items": [
         {
           "name": "Sitrus Berry",
-          "pct": 74.359
-        },
-        {
-          "name": "Focus Sash",
-          "pct": 7.692
+          "pct": 89.189
         },
         {
           "name": "Shuca Berry",
-          "pct": 5.128
-        },
-        {
-          "name": "Charcoal",
-          "pct": 5.128
+          "pct": 5.405
         },
         {
           "name": "Leftovers",
-          "pct": 2.564
+          "pct": 2.703
         },
         {
           "name": "Lum Berry",
-          "pct": 2.564
+          "pct": 2.703
         }
       ],
       "abilities": [
         {
           "name": "Intimidate",
-          "pct": 79.487
+          "pct": 94.595
         },
         {
           "name": "Flash Fire",
-          "pct": 12.821
-        },
-        {
-          "name": "Rock Head",
-          "pct": 7.692
+          "pct": 5.405
         }
       ]
     },
@@ -5497,71 +5416,67 @@
       "moves": [
         {
           "name": "Protect",
-          "pct": 78.652
+          "pct": 75.556
         },
         {
           "name": "Fissure",
-          "pct": 61.798
+          "pct": 55.556
         },
         {
           "name": "Stockpile",
-          "pct": 52.809
-        },
-        {
-          "name": "Body Press",
-          "pct": 41.573
-        },
-        {
-          "name": "High Horsepower",
-          "pct": 23.596
+          "pct": 46.667
         },
         {
           "name": "Yawn",
-          "pct": 23.596
+          "pct": 34.444
         },
         {
-          "name": "Belly Drum",
-          "pct": 14.607
+          "name": "Body Press",
+          "pct": 28.889
+        },
+        {
+          "name": "High Horsepower",
+          "pct": 27.778
+        },
+        {
+          "name": "Smack Down",
+          "pct": 16.667
         },
         {
           "name": "Facade",
-          "pct": 13.483
+          "pct": 16.667
         }
       ],
       "items": [
         {
           "name": "Leftovers",
-          "pct": 69.663
+          "pct": 67.778
         },
         {
           "name": "Sitrus Berry",
-          "pct": 22.472
+          "pct": 25.556
         },
         {
           "name": "Silk Scarf",
-          "pct": 4.494
+          "pct": 4.444
+        },
+        {
+          "name": "Chesto Berry",
+          "pct": 1.111
         },
         {
           "name": "Bright Powder",
-          "pct": 1.124
-        },
-        {
-          "name": "Chople Berry",
-          "pct": 1.124
-        },
-        {
-          "name": "Lum Berry",
-          "pct": 1.124
+          "pct": 1.111
         }
       ],
       "abilities": [
         {
           "name": "Thick Fat",
-          "pct": 96.629
+          "pct": 96.667
         },
         {
           "name": "Immunity",
-          "pct": 3.371
+          "pct": 3.333
         }
       ]
     },
@@ -5573,64 +5488,68 @@
           "pct": 87.037
         },
         {
-          "name": "Wide Guard",
-          "pct": 85.185
+          "name": "Protect",
+          "pct": 81.481
         },
         {
-          "name": "Protect",
-          "pct": 75.926
+          "name": "Wide Guard",
+          "pct": 79.63
         },
         {
           "name": "Leech Life",
-          "pct": 35.185
+          "pct": 44.444
         },
         {
           "name": "Lunge",
-          "pct": 14.815
+          "pct": 12.963
         },
         {
           "name": "Hydro Pump",
           "pct": 12.963
         },
         {
-          "name": "Substitute",
+          "name": "Poison Jab",
           "pct": 11.111
         },
         {
-          "name": "Ice Beam",
+          "name": "Bug Bite",
           "pct": 9.259
         }
       ],
       "items": [
         {
           "name": "Mystic Water",
-          "pct": 70.37
+          "pct": 72.222
+        },
+        {
+          "name": "Leftovers",
+          "pct": 9.259
         },
         {
           "name": "Never-Melt Ice",
           "pct": 9.259
         },
         {
-          "name": "Leftovers",
-          "pct": 7.407
-        },
-        {
           "name": "Sitrus Berry",
-          "pct": 3.704
-        },
-        {
-          "name": "Lum Berry",
-          "pct": 3.704
+          "pct": 5.556
         },
         {
           "name": "Charti Berry",
+          "pct": 1.852
+        },
+        {
+          "name": "Coba Berry",
           "pct": 1.852
         }
       ],
       "abilities": [
         {
           "name": "Water Bubble",
-          "pct": 100
+          "pct": 98.148
+        },
+        {
+          "name": "Water Absorb",
+          "pct": 1.852
         }
       ]
     },
@@ -5639,75 +5558,71 @@
       "moves": [
         {
           "name": "Shadow Ball",
-          "pct": 98.361
-        },
-        {
-          "name": "Protect",
-          "pct": 93.443
+          "pct": 96.226
         },
         {
           "name": "Heat Wave",
-          "pct": 91.803
+          "pct": 92.453
+        },
+        {
+          "name": "Protect",
+          "pct": 84.906
         },
         {
           "name": "Trick Room",
-          "pct": 49.18
+          "pct": 49.057
+        },
+        {
+          "name": "Energy Ball",
+          "pct": 9.434
         },
         {
           "name": "Overheat",
-          "pct": 11.475
+          "pct": 9.434
+        },
+        {
+          "name": "Trick",
+          "pct": 7.547
         },
         {
           "name": "Calm Mind",
-          "pct": 9.836
-        },
-        {
-          "name": "Flamethrower",
-          "pct": 8.197
-        },
-        {
-          "name": "Substitute",
-          "pct": 6.557
+          "pct": 7.547
         }
       ],
       "items": [
         {
           "name": "Chandelurite",
-          "pct": 77.049
-        },
-        {
-          "name": "Colbur Berry",
-          "pct": 9.836
+          "pct": 64.151
         },
         {
           "name": "Focus Sash",
-          "pct": 6.557
+          "pct": 16.981
         },
         {
-          "name": "Spell Tag",
-          "pct": 3.279
+          "name": "Colbur Berry",
+          "pct": 7.547
         },
         {
           "name": "Choice Scarf",
-          "pct": 1.639
+          "pct": 5.66
         },
         {
-          "name": "Sitrus Berry",
-          "pct": 1.639
+          "name": "Spell Tag",
+          "pct": 5.66
         }
       ],
       "abilities": [
         {
           "name": "Flash Fire",
-          "pct": 86.885
+          "pct": 88.679
         },
         {
           "name": "Flame Body",
-          "pct": 6.557
+          "pct": 7.547
         },
         {
           "name": "Infiltrator",
-          "pct": 6.557
+          "pct": 3.774
         }
       ]
     },
@@ -5716,140 +5631,71 @@
       "moves": [
         {
           "name": "Protect",
-          "pct": 92.857
+          "pct": 94.737
         },
         {
           "name": "Flash Cannon",
-          "pct": 60.714
-        },
-        {
-          "name": "Hydro Pump",
-          "pct": 60.714
+          "pct": 68.421
         },
         {
           "name": "Surf",
-          "pct": 50
+          "pct": 47.368
+        },
+        {
+          "name": "Hydro Pump",
+          "pct": 42.105
         },
         {
           "name": "Ice Beam",
-          "pct": 50
+          "pct": 36.842
         },
         {
           "name": "Icy Wind",
-          "pct": 14.286
-        },
-        {
-          "name": "Weather Ball",
-          "pct": 14.286
+          "pct": 26.316
         },
         {
           "name": "Helping Hand",
-          "pct": 7.143
+          "pct": 21.053
+        },
+        {
+          "name": "Vacuum Wave",
+          "pct": 10.526
         }
       ],
       "items": [
         {
-          "name": "Mystic Water",
-          "pct": 32.143
-        },
-        {
           "name": "Chople Berry",
-          "pct": 28.571
+          "pct": 36.842
         },
         {
           "name": "Leftovers",
-          "pct": 17.857
+          "pct": 15.789
         },
         {
           "name": "Sitrus Berry",
-          "pct": 14.286
+          "pct": 15.789
         },
         {
-          "name": "Focus Sash",
-          "pct": 3.571
+          "name": "Mystic Water",
+          "pct": 10.526
         },
         {
-          "name": "Metal Coat",
-          "pct": 3.571
+          "name": "Scope Lens",
+          "pct": 5.263
+        },
+        {
+          "name": "Wacan Berry",
+          "pct": 5.263
         }
       ],
       "abilities": [
         {
           "name": "Competitive",
-          "pct": 96.429
+          "pct": 89.474
         },
         {
           "name": "Torrent",
-          "pct": 3.571
-        }
-      ]
-    },
-    "Raichu": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Fake Out",
-          "pct": 93.182
-        },
-        {
-          "name": "Volt Switch",
-          "pct": 65.909
-        },
-        {
-          "name": "Thunderbolt",
-          "pct": 50
-        },
-        {
-          "name": "Nuzzle",
-          "pct": 40.909
-        },
-        {
-          "name": "Encore",
-          "pct": 38.636
-        },
-        {
-          "name": "Protect",
-          "pct": 31.818
-        },
-        {
-          "name": "Thunder",
-          "pct": 18.182
-        },
-        {
-          "name": "Surf",
-          "pct": 9.091
-        }
-      ],
-      "items": [
-        {
-          "name": "Focus Sash",
-          "pct": 59.091
-        },
-        {
-          "name": "Magnet",
-          "pct": 18.182
-        },
-        {
-          "name": "Sitrus Berry",
-          "pct": 9.091
-        },
-        {
-          "name": "King's Rock",
-          "pct": 4.545
-        },
-        {
-          "name": "Focus Band",
-          "pct": 4.545
-        },
-        {
-          "name": "Shuca Berry",
-          "pct": 2.273
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Lightning Rod",
-          "pct": 100
+          "pct": 10.526
         }
       ]
     },
@@ -5859,64 +5705,125 @@
       "items": [],
       "abilities": []
     },
+    "Raichu": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Fake Out",
+          "pct": 95.122
+        },
+        {
+          "name": "Volt Switch",
+          "pct": 63.415
+        },
+        {
+          "name": "Thunderbolt",
+          "pct": 53.659
+        },
+        {
+          "name": "Nuzzle",
+          "pct": 43.902
+        },
+        {
+          "name": "Encore",
+          "pct": 41.463
+        },
+        {
+          "name": "Protect",
+          "pct": 39.024
+        },
+        {
+          "name": "Thunder",
+          "pct": 12.195
+        },
+        {
+          "name": "Electroweb",
+          "pct": 9.756
+        }
+      ],
+      "items": [
+        {
+          "name": "Focus Sash",
+          "pct": 56.098
+        },
+        {
+          "name": "Magnet",
+          "pct": 26.829
+        },
+        {
+          "name": "Sitrus Berry",
+          "pct": 7.317
+        },
+        {
+          "name": "Bright Powder",
+          "pct": 2.439
+        },
+        {
+          "name": "Shuca Berry",
+          "pct": 2.439
+        },
+        {
+          "name": "King's Rock",
+          "pct": 2.439
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Lightning Rod",
+          "pct": 100
+        }
+      ]
+    },
     "Feraligatr": {
       "usage": null,
       "moves": [
         {
           "name": "Protect",
-          "pct": 90.566
-        },
-        {
-          "name": "Double-Edge",
-          "pct": 77.358
+          "pct": 93.878
         },
         {
           "name": "Liquidation",
-          "pct": 73.585
+          "pct": 89.796
         },
         {
-          "name": "Aqua Jet",
-          "pct": 39.623
-        },
-        {
-          "name": "Facade",
-          "pct": 26.415
-        },
-        {
-          "name": "Swords Dance",
-          "pct": 26.415
+          "name": "Double-Edge",
+          "pct": 71.429
         },
         {
           "name": "Dragon Dance",
-          "pct": 24.528
+          "pct": 38.776
+        },
+        {
+          "name": "Aqua Jet",
+          "pct": 26.531
+        },
+        {
+          "name": "Facade",
+          "pct": 26.531
         },
         {
           "name": "Body Slam",
-          "pct": 7.547
+          "pct": 18.367
+        },
+        {
+          "name": "Waterfall",
+          "pct": 8.163
         }
       ],
       "items": [
         {
           "name": "Feraligite",
-          "pct": 94.34
-        },
-        {
-          "name": "Lum Berry",
-          "pct": 3.774
-        },
-        {
-          "name": "Rawst Berry",
-          "pct": 1.887
+          "pct": 97.959
         }
       ],
       "abilities": [
         {
           "name": "Sheer Force",
-          "pct": 79.245
+          "pct": 75.51
         },
         {
           "name": "Torrent",
-          "pct": 18.868
+          "pct": 24.49
         }
       ]
     },
@@ -5925,71 +5832,71 @@
       "moves": [
         {
           "name": "Ice Shard",
-          "pct": 75
-        },
-        {
-          "name": "Icicle Crash",
-          "pct": 58.333
+          "pct": 84.375
         },
         {
           "name": "Protect",
-          "pct": 58.333
-        },
-        {
-          "name": "High Horsepower",
-          "pct": 54.167
+          "pct": 68.75
         },
         {
           "name": "Earthquake",
+          "pct": 59.375
+        },
+        {
+          "name": "High Horsepower",
           "pct": 50
         },
         {
+          "name": "Icicle Crash",
+          "pct": 46.875
+        },
+        {
           "name": "Rock Slide",
-          "pct": 37.5
+          "pct": 34.375
         },
         {
           "name": "Icicle Spear",
-          "pct": 25
+          "pct": 34.375
         },
         {
-          "name": "Iron Head",
-          "pct": 12.5
+          "name": "Stone Edge",
+          "pct": 3.125
         }
       ],
       "items": [
         {
-          "name": "Choice Scarf",
-          "pct": 37.5
-        },
-        {
           "name": "Focus Sash",
-          "pct": 33.333
+          "pct": 40.625
         },
         {
           "name": "Never-Melt Ice",
-          "pct": 20.833
+          "pct": 25
+        },
+        {
+          "name": "Choice Scarf",
+          "pct": 25
+        },
+        {
+          "name": "Chople Berry",
+          "pct": 3.125
+        },
+        {
+          "name": "Lum Berry",
+          "pct": 3.125
         },
         {
           "name": "Quick Claw",
-          "pct": 4.167
-        },
-        {
-          "name": "Icicle Plate",
-          "pct": 4.167
+          "pct": 3.125
         }
       ],
       "abilities": [
         {
           "name": "Oblivious",
-          "pct": 83.333
+          "pct": 93.75
         },
         {
           "name": "Thick Fat",
-          "pct": 12.5
-        },
-        {
-          "name": "Snow Cloak",
-          "pct": 4.167
+          "pct": 6.25
         }
       ]
     },
@@ -5998,75 +5905,79 @@
       "moves": [
         {
           "name": "Drain Punch",
-          "pct": 91.228
+          "pct": 89.583
         },
         {
           "name": "Mach Punch",
-          "pct": 63.158
-        },
-        {
-          "name": "Ice Punch",
-          "pct": 47.368
+          "pct": 62.5
         },
         {
           "name": "Thunder Punch",
-          "pct": 42.105
+          "pct": 50
         },
         {
           "name": "Protect",
-          "pct": 40.351
+          "pct": 45.833
         },
         {
-          "name": "Poison Jab",
-          "pct": 24.561
-        },
-        {
-          "name": "Knock Off",
-          "pct": 22.807
+          "name": "Ice Punch",
+          "pct": 35.417
         },
         {
           "name": "Rock Slide",
-          "pct": 21.053
+          "pct": 25
+        },
+        {
+          "name": "Poison Jab",
+          "pct": 25
+        },
+        {
+          "name": "Knock Off",
+          "pct": 22.917
         }
       ],
       "items": [
         {
           "name": "Black Belt",
-          "pct": 56.14
-        },
-        {
-          "name": "Sitrus Berry",
-          "pct": 8.772
-        },
-        {
-          "name": "Leftovers",
-          "pct": 8.772
+          "pct": 60.417
         },
         {
           "name": "White Herb",
-          "pct": 7.018
+          "pct": 8.333
         },
         {
-          "name": "King's Rock",
-          "pct": 5.263
+          "name": "Sitrus Berry",
+          "pct": 8.333
         },
         {
           "name": "Roseli Berry",
-          "pct": 3.509
+          "pct": 6.25
+        },
+        {
+          "name": "King's Rock",
+          "pct": 6.25
+        },
+        {
+          "name": "Leftovers",
+          "pct": 4.167
         }
       ],
       "abilities": [
         {
           "name": "Iron Fist",
-          "pct": 77.193
+          "pct": 79.167
         },
         {
           "name": "Guts",
-          "pct": 17.544
+          "pct": 12.5
         },
         {
           "name": "Sheer Force",
-          "pct": 5.263
+          "pct": 6.25
+        },
+        {
+          "name": "Adaptability",
+          "pct": 2.083
         }
       ]
     },
@@ -6075,75 +5986,75 @@
       "moves": [
         {
           "name": "Fake Out",
-          "pct": 42.553
+          "pct": 50
         },
         {
           "name": "Psychic Terrain",
-          "pct": 42.553
-        },
-        {
-          "name": "Light Screen",
-          "pct": 34.043
-        },
-        {
-          "name": "Reflect",
-          "pct": 31.915
+          "pct": 39.474
         },
         {
           "name": "Rain Dance",
-          "pct": 29.787
+          "pct": 36.842
         },
         {
           "name": "Expanding Force",
-          "pct": 27.66
+          "pct": 34.211
         },
         {
-          "name": "Psychic",
-          "pct": 23.404
+          "name": "Reflect",
+          "pct": 34.211
+        },
+        {
+          "name": "Light Screen",
+          "pct": 34.211
         },
         {
           "name": "Yawn",
-          "pct": 19.149
+          "pct": 28.947
+        },
+        {
+          "name": "Psychic",
+          "pct": 23.684
         }
       ],
       "items": [
         {
-          "name": "Meowsticite",
-          "pct": 21.277
-        },
-        {
-          "name": "Focus Sash",
-          "pct": 19.149
-        },
-        {
-          "name": "Colbur Berry",
-          "pct": 14.894
+          "name": "Sitrus Berry",
+          "pct": 21.053
         },
         {
           "name": "Mental Herb",
-          "pct": 12.766
+          "pct": 21.053
         },
         {
-          "name": "Sitrus Berry",
-          "pct": 10.638
+          "name": "Focus Sash",
+          "pct": 15.789
+        },
+        {
+          "name": "Meowsticite",
+          "pct": 15.789
+        },
+        {
+          "name": "Colbur Berry",
+          "pct": 10.526
         },
         {
           "name": "Twisted Spoon",
-          "pct": 6.383
+          "pct": 5.263
         }
       ],
       "abilities": [
         {
           "name": "Prankster",
-          "pct": 82.979
+          "pct": 84.211
         },
         {
           "name": "Competitive",
-          "pct": 14.894
+          "pct": 13.158
         },
         {
           "name": "Infiltrator",
-          "pct": 2.128
+          "pct": 2.632
         }
       ]
     },
@@ -6152,67 +6063,71 @@
       "moves": [
         {
           "name": "Protect",
-          "pct": 83.333
+          "pct": 80.645
         },
         {
           "name": "Dark Pulse",
-          "pct": 75
+          "pct": 70.968
         },
         {
           "name": "Ice Beam",
-          "pct": 38.889
+          "pct": 41.935
         },
         {
           "name": "Blizzard",
-          "pct": 30.556
+          "pct": 32.258
         },
         {
           "name": "Hydro Pump",
-          "pct": 22.222
+          "pct": 32.258
         },
         {
           "name": "Extrasensory",
-          "pct": 19.444
+          "pct": 16.129
         },
         {
           "name": "Water Shuriken",
-          "pct": 16.667
+          "pct": 16.129
         },
         {
-          "name": "Low Kick",
-          "pct": 13.889
+          "name": "Liquidation",
+          "pct": 12.903
         }
       ],
       "items": [
         {
           "name": "Greninjite",
-          "pct": 83.333
-        },
-        {
-          "name": "Focus Sash",
-          "pct": 5.556
+          "pct": 80.645
         },
         {
           "name": "Choice Scarf",
-          "pct": 5.556
+          "pct": 6.452
+        },
+        {
+          "name": "Mystic Water",
+          "pct": 3.226
         },
         {
           "name": "Never-Melt Ice",
-          "pct": 2.778
+          "pct": 3.226
+        },
+        {
+          "name": "Focus Sash",
+          "pct": 3.226
         },
         {
           "name": "King's Rock",
-          "pct": 2.778
+          "pct": 3.226
         }
       ],
       "abilities": [
         {
           "name": "Protean",
-          "pct": 97.222
+          "pct": 96.774
         },
         {
           "name": "Torrent",
-          "pct": 2.778
+          "pct": 3.226
         }
       ]
     },
@@ -6221,71 +6136,67 @@
       "moves": [
         {
           "name": "Entrainment",
-          "pct": 83.582
-        },
-        {
-          "name": "Close Combat",
-          "pct": 71.642
+          "pct": 85.714
         },
         {
           "name": "Detect",
-          "pct": 68.657
+          "pct": 69.643
         },
         {
           "name": "Brave Bird",
-          "pct": 67.164
+          "pct": 67.857
+        },
+        {
+          "name": "Close Combat",
+          "pct": 66.071
         },
         {
           "name": "Protect",
-          "pct": 19.403
+          "pct": 21.429
         },
         {
           "name": "Dual Wingbeat",
-          "pct": 14.925
+          "pct": 17.857
         },
         {
           "name": "High Jump Kick",
-          "pct": 8.955
+          "pct": 16.071
         },
         {
-          "name": "Cross Chop",
-          "pct": 7.463
+          "name": "Coaching",
+          "pct": 7.143
         }
       ],
       "items": [
         {
           "name": "Hawluchanite",
-          "pct": 92.537
+          "pct": 94.643
         },
         {
           "name": "Focus Sash",
-          "pct": 4.478
+          "pct": 3.571
         },
         {
           "name": "White Herb",
-          "pct": 1.493
-        },
-        {
-          "name": "Mental Herb",
-          "pct": 1.493
+          "pct": 1.786
         }
       ],
       "abilities": [
         {
           "name": "Limber",
-          "pct": 74.627
+          "pct": 69.643
         },
         {
           "name": "Mold Breaker",
-          "pct": 16.418
+          "pct": 19.643
         },
         {
           "name": "Unburden",
-          "pct": 7.463
+          "pct": 7.143
         },
         {
           "name": "No Guard",
-          "pct": 1.493
+          "pct": 3.571
         }
       ]
     },
@@ -6294,71 +6205,144 @@
       "moves": [
         {
           "name": "Thunderbolt",
-          "pct": 66.667
-        },
-        {
-          "name": "Volt Switch",
-          "pct": 50
-        },
-        {
-          "name": "Electroweb",
-          "pct": 45.238
-        },
-        {
-          "name": "Hyper Voice",
-          "pct": 40.476
+          "pct": 87.097
         },
         {
           "name": "Shed Tail",
-          "pct": 40.476
+          "pct": 45.161
+        },
+        {
+          "name": "Electroweb",
+          "pct": 41.935
         },
         {
           "name": "Protect",
-          "pct": 35.714
+          "pct": 38.71
+        },
+        {
+          "name": "Volt Switch",
+          "pct": 38.71
+        },
+        {
+          "name": "Hyper Voice",
+          "pct": 35.484
         },
         {
           "name": "Dragon Pulse",
-          "pct": 30.952
+          "pct": 25.806
         },
         {
           "name": "Focus Blast",
-          "pct": 21.429
+          "pct": 19.355
         }
       ],
       "items": [
         {
           "name": "Choice Scarf",
-          "pct": 57.143
-        },
-        {
-          "name": "Focus Sash",
-          "pct": 19.048
-        },
-        {
-          "name": "Sitrus Berry",
-          "pct": 11.905
+          "pct": 54.839
         },
         {
           "name": "Magnet",
-          "pct": 9.524
+          "pct": 16.129
+        },
+        {
+          "name": "Sitrus Berry",
+          "pct": 12.903
+        },
+        {
+          "name": "Focus Sash",
+          "pct": 9.677
+        },
+        {
+          "name": "King's Rock",
+          "pct": 3.226
         },
         {
           "name": "Bright Powder",
-          "pct": 2.381
+          "pct": 3.226
         }
       ],
       "abilities": [
         {
           "name": "Dry Skin",
-          "pct": 73.81
+          "pct": 70.968
         },
         {
           "name": "Solar Power",
-          "pct": 21.429
+          "pct": 22.581
         },
         {
           "name": "Sand Veil",
-          "pct": 4.762
+          "pct": 6.452
+        }
+      ]
+    },
+    "Espathra": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Lumina Crash",
+          "pct": 98.78
+        },
+        {
+          "name": "Protect",
+          "pct": 98.78
+        },
+        {
+          "name": "Baton Pass",
+          "pct": 82.927
+        },
+        {
+          "name": "Calm Mind",
+          "pct": 81.707
+        },
+        {
+          "name": "Dazzling Gleam",
+          "pct": 10.976
+        },
+        {
+          "name": "Skill Swap",
+          "pct": 7.317
+        },
+        {
+          "name": "Hypnosis",
+          "pct": 3.659
+        },
+        {
+          "name": "Rain Dance",
+          "pct": 3.659
+        }
+      ],
+      "items": [
+        {
+          "name": "Sitrus Berry",
+          "pct": 30.488
+        },
+        {
+          "name": "Focus Sash",
+          "pct": 24.39
+        },
+        {
+          "name": "Colbur Berry",
+          "pct": 23.171
+        },
+        {
+          "name": "Mental Herb",
+          "pct": 13.415
+        },
+        {
+          "name": "Kasib Berry",
+          "pct": 6.098
+        },
+        {
+          "name": "Twisted Spoon",
+          "pct": 1.22
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Speed Boost",
+          "pct": 100
         }
       ]
     },
@@ -6367,79 +6351,6 @@
       "moves": [],
       "items": [],
       "abilities": []
-    },
-    "Espathra": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Protect",
-          "pct": 98.276
-        },
-        {
-          "name": "Lumina Crash",
-          "pct": 93.103
-        },
-        {
-          "name": "Baton Pass",
-          "pct": 81.034
-        },
-        {
-          "name": "Calm Mind",
-          "pct": 77.586
-        },
-        {
-          "name": "Dazzling Gleam",
-          "pct": 15.517
-        },
-        {
-          "name": "Skill Swap",
-          "pct": 10.345
-        },
-        {
-          "name": "Rain Dance",
-          "pct": 5.172
-        },
-        {
-          "name": "Stored Power",
-          "pct": 5.172
-        }
-      ],
-      "items": [
-        {
-          "name": "Colbur Berry",
-          "pct": 31.034
-        },
-        {
-          "name": "Focus Sash",
-          "pct": 29.31
-        },
-        {
-          "name": "Mental Herb",
-          "pct": 15.517
-        },
-        {
-          "name": "Sitrus Berry",
-          "pct": 12.069
-        },
-        {
-          "name": "Kasib Berry",
-          "pct": 6.897
-        },
-        {
-          "name": "Twisted Spoon",
-          "pct": 3.448
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Speed Boost",
-          "pct": 98.276
-        },
-        {
-          "name": "Opportunist",
-          "pct": 1.724
-        }
-      ]
     },
     "Mega Meganium": {
       "usage": null,
