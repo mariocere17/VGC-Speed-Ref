@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-09T06:16:14.228Z",
+  "updated": "2026-06-10T06:39:17.835Z",
   "format": "championstournaments",
   "count": 104,
   "pokemon": {
@@ -3605,71 +3605,6 @@
         }
       ]
     },
-    "Palafin": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Jet Punch",
-          "pct": 98.4
-        },
-        {
-          "name": "Wave Crash",
-          "pct": 95.2
-        },
-        {
-          "name": "Protect",
-          "pct": 88.8
-        },
-        {
-          "name": "Flip Turn",
-          "pct": 40
-        },
-        {
-          "name": "Bulk Up",
-          "pct": 32.8
-        },
-        {
-          "name": "Close Combat",
-          "pct": 24.8
-        },
-        {
-          "name": "Taunt",
-          "pct": 4.8
-        },
-        {
-          "name": "Encore",
-          "pct": 4
-        }
-      ],
-      "items": [
-        {
-          "name": "Mystic Water",
-          "pct": 56
-        },
-        {
-          "name": "Leftovers",
-          "pct": 31.2
-        },
-        {
-          "name": "Choice Scarf",
-          "pct": 7.2
-        },
-        {
-          "name": "Sitrus Berry",
-          "pct": 2.4
-        },
-        {
-          "name": "White Herb",
-          "pct": 1.6
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Zero to Hero",
-          "pct": 100
-        }
-      ]
-    },
     "Gyarados": {
       "usage": null,
       "moves": [
@@ -3740,6 +3675,71 @@
         {
           "name": "Moxie",
           "pct": 2.564
+        }
+      ]
+    },
+    "Palafin": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Jet Punch",
+          "pct": 98.4
+        },
+        {
+          "name": "Wave Crash",
+          "pct": 95.2
+        },
+        {
+          "name": "Protect",
+          "pct": 88.8
+        },
+        {
+          "name": "Flip Turn",
+          "pct": 40
+        },
+        {
+          "name": "Bulk Up",
+          "pct": 32.8
+        },
+        {
+          "name": "Close Combat",
+          "pct": 24.8
+        },
+        {
+          "name": "Taunt",
+          "pct": 4.8
+        },
+        {
+          "name": "Encore",
+          "pct": 4
+        }
+      ],
+      "items": [
+        {
+          "name": "Mystic Water",
+          "pct": 56
+        },
+        {
+          "name": "Leftovers",
+          "pct": 31.2
+        },
+        {
+          "name": "Choice Scarf",
+          "pct": 7.2
+        },
+        {
+          "name": "Sitrus Berry",
+          "pct": 2.4
+        },
+        {
+          "name": "White Herb",
+          "pct": 1.6
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Zero to Hero",
+          "pct": 100
         }
       ]
     },
@@ -5043,6 +5043,71 @@
         }
       ]
     },
+    "Azumarill": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Aqua Jet",
+          "pct": 98.63
+        },
+        {
+          "name": "Play Rough",
+          "pct": 94.521
+        },
+        {
+          "name": "Protect",
+          "pct": 93.151
+        },
+        {
+          "name": "Belly Drum",
+          "pct": 50.685
+        },
+        {
+          "name": "Liquidation",
+          "pct": 49.315
+        },
+        {
+          "name": "Knock Off",
+          "pct": 4.11
+        },
+        {
+          "name": "Ice Spinner",
+          "pct": 4.11
+        },
+        {
+          "name": "Superpower",
+          "pct": 2.74
+        }
+      ],
+      "items": [
+        {
+          "name": "Sitrus Berry",
+          "pct": 50.685
+        },
+        {
+          "name": "Mystic Water",
+          "pct": 45.205
+        },
+        {
+          "name": "Fairy Feather",
+          "pct": 1.37
+        },
+        {
+          "name": "Scope Lens",
+          "pct": 1.37
+        },
+        {
+          "name": "White Herb",
+          "pct": 1.37
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Huge Power",
+          "pct": 100
+        }
+      ]
+    },
     "Weavile": {
       "usage": null,
       "moves": [
@@ -5113,71 +5178,6 @@
         {
           "name": "Pressure",
           "pct": 27.473
-        }
-      ]
-    },
-    "Azumarill": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Aqua Jet",
-          "pct": 98.63
-        },
-        {
-          "name": "Play Rough",
-          "pct": 94.521
-        },
-        {
-          "name": "Protect",
-          "pct": 93.151
-        },
-        {
-          "name": "Belly Drum",
-          "pct": 50.685
-        },
-        {
-          "name": "Liquidation",
-          "pct": 49.315
-        },
-        {
-          "name": "Knock Off",
-          "pct": 4.11
-        },
-        {
-          "name": "Ice Spinner",
-          "pct": 4.11
-        },
-        {
-          "name": "Superpower",
-          "pct": 2.74
-        }
-      ],
-      "items": [
-        {
-          "name": "Sitrus Berry",
-          "pct": 50.685
-        },
-        {
-          "name": "Mystic Water",
-          "pct": 45.205
-        },
-        {
-          "name": "Fairy Feather",
-          "pct": 1.37
-        },
-        {
-          "name": "Scope Lens",
-          "pct": 1.37
-        },
-        {
-          "name": "White Herb",
-          "pct": 1.37
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Huge Power",
-          "pct": 100
         }
       ]
     },
@@ -5290,124 +5290,6 @@
         {
           "name": "Sand Stream",
           "pct": 99.461
-        }
-      ]
-    },
-    "Mega Gengar": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Protect",
-          "pct": 99.532
-        },
-        {
-          "name": "Shadow Ball",
-          "pct": 97.892
-        },
-        {
-          "name": "Sludge Bomb",
-          "pct": 62.061
-        },
-        {
-          "name": "Disable",
-          "pct": 58.782
-        },
-        {
-          "name": "Perish Song",
-          "pct": 58.08
-        },
-        {
-          "name": "Icy Wind",
-          "pct": 6.792
-        },
-        {
-          "name": "Will-O-Wisp",
-          "pct": 2.576
-        },
-        {
-          "name": "Focus Blast",
-          "pct": 2.108
-        }
-      ],
-      "items": [
-        {
-          "name": "Gengarite",
-          "pct": 100
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Cursed Body",
-          "pct": 92.272
-        },
-        {
-          "name": "Shadow Tag",
-          "pct": 7.494
-        }
-      ]
-    },
-    "Arcanine": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Snarl",
-          "pct": 67.568
-        },
-        {
-          "name": "Will-O-Wisp",
-          "pct": 64.865
-        },
-        {
-          "name": "Flare Blitz",
-          "pct": 59.459
-        },
-        {
-          "name": "Extreme Speed",
-          "pct": 51.351
-        },
-        {
-          "name": "Protect",
-          "pct": 45.946
-        },
-        {
-          "name": "Burn Up",
-          "pct": 29.73
-        },
-        {
-          "name": "Howl",
-          "pct": 24.324
-        },
-        {
-          "name": "Close Combat",
-          "pct": 16.216
-        }
-      ],
-      "items": [
-        {
-          "name": "Sitrus Berry",
-          "pct": 89.189
-        },
-        {
-          "name": "Shuca Berry",
-          "pct": 5.405
-        },
-        {
-          "name": "Leftovers",
-          "pct": 2.703
-        },
-        {
-          "name": "Lum Berry",
-          "pct": 2.703
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Intimidate",
-          "pct": 94.595
-        },
-        {
-          "name": "Flash Fire",
-          "pct": 5.405
         }
       ]
     },
@@ -5550,6 +5432,124 @@
         {
           "name": "Water Absorb",
           "pct": 1.852
+        }
+      ]
+    },
+    "Mega Gengar": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Protect",
+          "pct": 99.532
+        },
+        {
+          "name": "Shadow Ball",
+          "pct": 97.892
+        },
+        {
+          "name": "Sludge Bomb",
+          "pct": 62.061
+        },
+        {
+          "name": "Disable",
+          "pct": 58.782
+        },
+        {
+          "name": "Perish Song",
+          "pct": 58.08
+        },
+        {
+          "name": "Icy Wind",
+          "pct": 6.792
+        },
+        {
+          "name": "Will-O-Wisp",
+          "pct": 2.576
+        },
+        {
+          "name": "Focus Blast",
+          "pct": 2.108
+        }
+      ],
+      "items": [
+        {
+          "name": "Gengarite",
+          "pct": 100
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Cursed Body",
+          "pct": 92.272
+        },
+        {
+          "name": "Shadow Tag",
+          "pct": 7.494
+        }
+      ]
+    },
+    "Arcanine": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Snarl",
+          "pct": 67.568
+        },
+        {
+          "name": "Will-O-Wisp",
+          "pct": 64.865
+        },
+        {
+          "name": "Flare Blitz",
+          "pct": 59.459
+        },
+        {
+          "name": "Extreme Speed",
+          "pct": 51.351
+        },
+        {
+          "name": "Protect",
+          "pct": 45.946
+        },
+        {
+          "name": "Burn Up",
+          "pct": 29.73
+        },
+        {
+          "name": "Howl",
+          "pct": 24.324
+        },
+        {
+          "name": "Close Combat",
+          "pct": 16.216
+        }
+      ],
+      "items": [
+        {
+          "name": "Sitrus Berry",
+          "pct": 89.189
+        },
+        {
+          "name": "Shuca Berry",
+          "pct": 5.405
+        },
+        {
+          "name": "Leftovers",
+          "pct": 2.703
+        },
+        {
+          "name": "Lum Berry",
+          "pct": 2.703
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Intimidate",
+          "pct": 94.595
+        },
+        {
+          "name": "Flash Fire",
+          "pct": 5.405
         }
       ]
     },
@@ -5699,12 +5699,6 @@
         }
       ]
     },
-    "Mega Delphox": {
-      "usage": null,
-      "moves": [],
-      "items": [],
-      "abilities": []
-    },
     "Raichu": {
       "usage": null,
       "moves": [
@@ -5773,6 +5767,12 @@
           "pct": 100
         }
       ]
+    },
+    "Mega Delphox": {
+      "usage": null,
+      "moves": [],
+      "items": [],
+      "abilities": []
     },
     "Feraligatr": {
       "usage": null,
