@@ -577,10 +577,13 @@ function openMetaModal(name, event) {
   document.getElementById('metaName').textContent = name;
 
   const usageEl = document.getElementById('metaUsage');
-  if (pikData) {
+  if (pikData?.usage != null) {
     usageEl.textContent = dataSource !== name
       ? `${pikData.usage}% ladder usage (as ${dataSource})`
       : `${pikData.usage}% ladder usage`;
+    usageEl.style.display = '';
+  } else if (smogonData?.usage != null) {
+    usageEl.textContent = `${smogonData.usage.toFixed(1)}% Showdown ladder`;
     usageEl.style.display = '';
   } else {
     usageEl.style.display = 'none';
@@ -596,18 +599,20 @@ function openMetaModal(name, event) {
 
 function buildMetaBody(pikData, limData, smogonData) {
   let sectionIdx = 0;
-  function section(title, entries, footer) {
+  function section(title, entries, footer, startCollapsed = false) {
     if (!entries || !entries.length) return '';
     const id = `metaSec${sectionIdx++}`;
     const rows = entries.map(e =>
       `<div class="meta-row"><span>${esc(e.name)}</span><span class="meta-pct">${e.pct.toFixed(1)}%</span></div>`
     ).join('');
     const footerHtml = footer ? `<div class="meta-footer">${esc(footer)}</div>` : '';
+    const bodyClass = startCollapsed ? 'meta-section-body collapsed' : 'meta-section-body';
+    const chevClass = startCollapsed ? 'meta-section-chevron collapsed' : 'meta-section-chevron';
     return `<div class="meta-section">
       <div class="meta-section-title" onclick="toggleMetaSection('${id}')">
-        <span>${title}</span><span class="meta-section-chevron" id="${id}chv">▾</span>
+        <span>${title}</span><span class="${chevClass}" id="${id}chv">▾</span>
       </div>
-      <div class="meta-section-body" id="${id}">${rows}${footerHtml}</div>
+      <div class="${bodyClass}" id="${id}">${rows}${footerHtml}</div>
     </div>`;
   }
 
@@ -616,6 +621,11 @@ function buildMetaBody(pikData, limData, smogonData) {
     html += section('Moves', pikData.moves) +
             section('Items', pikData.items) +
             section('Abilities', pikData.abilities);
+  } else if (smogonData) {
+    // Smogon as fallback source when Pikalytics has no data for this Pokémon
+    html += section('Moves — Showdown Ladder', smogonData.moves) +
+            section('Items — Showdown Ladder', smogonData.items) +
+            section('Abilities — Showdown Ladder', smogonData.abilities);
   }
   if (limData) {
     html += section('Tournament Results',
@@ -627,14 +637,14 @@ function buildMetaBody(pikData, limData, smogonData) {
     );
   }
   if (smogonData?.spreads?.length) {
-    // Format spread as "Jolly · 0/32/2/0/0/32"
     const entries = smogonData.spreads.map(s => ({
       name: `${s.nature} · ${s.sp.join('/')}`,
       pct:  s.pct,
     }));
     html += section('SP Spreads — Showdown Ladder',
       entries,
-      `${smogonData.usage.toFixed(1)}% Showdown ladder usage`
+      `${smogonData.usage.toFixed(1)}% Showdown ladder usage`,
+      true  // start collapsed
     );
   }
   return html;
