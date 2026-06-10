@@ -23,13 +23,14 @@ que usa un sistema de inversión en stats completamente diferente al VGC convenc
 | Uso % en ladder | Pikalytics `/ai/pokedex/championstournaments` | Scraper diario (GitHub Action) |
 | Uso % en torneos + win rate | Limitless TCG (`data-format="1"`, Reg M-A) | Scraper diario (GitHub Action) |
 | Moves / Items / Abilities | Pikalytics páginas individuales | Scraper diario (GitHub Action) |
-| SP spreads / Naturalezas | **Pendiente** — Smogon publicará `gen9vgc2026regm-1760.json` cuando haya suficientes datos | `/check-new-data` lo monitoriza |
+| SP spreads / Naturalezas | Smogon `gen9championsvgc2026regma-1760.json` (Showdown ladder 1760+ Elo) | Scraper mensual (GitHub Action, día 2 del mes) |
 
 ## Arquitectura de datos
 
 - `data.json` — velocidades base y cálculos de speed tiers (generado por `generator/generate.js`)
 - `pikalytics.json` — uso en ladder + moves/items/abilities (81 Pokémon)
 - `limitless.json` — uso en torneos Champions + win rate acumulado (incrementa diariamente)
+- `smogon.json` — SP spreads + naturalezas por Pokémon, extraídos del chaos JSON de Showdown (1760+ Elo); se actualiza mensualmente
 
 ## Contexto del formato
 

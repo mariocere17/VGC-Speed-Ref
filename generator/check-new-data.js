@@ -105,68 +105,56 @@ async function checkLimitless() {
   return { newTournaments, knownPokemon };
 }
 
-// ── EV spreads / natures ────────────────────────────────────────────────────
-async function checkSpreads() {
-  console.log('\n── EV spreads & natures ────────────────────────────────');
+// ── Smogon SP spreads ───────────────────────────────────────────────────────
+const SMOGON_FILE   = path.join(ROOT, 'smogon.json');
+const SMOGON_FORMAT = 'gen9championsvgc2026regma';
+const SMOGON_CUTOFF = 1760;
 
-  // 1. Pikalytics: probe one popular Pokémon to see if spread data is now available
-  try {
-    const md = await get(`${PIK_INDEX_URL}/Incineroar`);
-    const hasSpread = md.includes('EV Spread') && !md.includes('No EV spread or nature data available');
-    if (hasSpread) {
-      console.log('🆕 Pikalytics NOW has EV/nature data for Champions format!');
-      console.log('   → Update scrape-pikalytics.js to parse the "Common Spreads" section');
-    } else {
-      console.log('⏳ Pikalytics: EV/nature data not yet available for Champions format');
-    }
-  } catch (e) {
-    console.log(`⚠️  Pikalytics probe failed: ${e.message}`);
+async function checkSmogon() {
+  console.log('\n── Smogon SP spreads ───────────────────────────────────');
+
+  // What month does our local smogon.json cover?
+  let localMonth = null;
+  if (fs.existsSync(SMOGON_FILE)) {
+    try {
+      localMonth = JSON.parse(fs.readFileSync(SMOGON_FILE, 'utf8')).month || null;
+    } catch { /* corrupt file */ }
   }
 
-  await sleep(DELAY_MS);
-
-  // 2. Smogon chaos JSON: check for Champions (regm) format
+  // Find the latest month available on Smogon (check prev month, then 2 months back)
   const now = new Date();
-  const months = [
-    `${now.getUTCFullYear()}-${String(now.getUTCMonth() + 1).padStart(2, '0')}`,
-    `${now.getUTCFullYear()}-${String(now.getUTCMonth()).padStart(2, '0')}`,
-  ];
-
-  let foundMonth = null;
-  let champJson  = null;
-  for (const month of months) {
+  let remoteMonth = null;
+  for (let back = 1; back <= 3; back++) {
+    const d = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth() - back, 1));
+    const month = `${d.getUTCFullYear()}-${String(d.getUTCMonth() + 1).padStart(2, '0')}`;
+    const url   = `https://www.smogon.com/stats/${month}/chaos/${SMOGON_FORMAT}-${SMOGON_CUTOFF}.json`;
     try {
-      // The chaos JSON has spreads in format "Nature:HP/Atk/Def/SpA/SpD/Spe"
-      const res = await fetch(
-        `https://www.smogon.com/stats/${month}/chaos/gen9vgc2026regm-1760.json`,
-        { headers: { 'User-Agent': 'VGCSpeedRef/1.0 (educational tool)' } }
-      );
-      if (res.ok) { champJson = await res.json(); foundMonth = month; break; }
-    } catch { /* not available yet */ }
+      const res = await fetch(url, {
+        method: 'HEAD',
+        headers: { 'User-Agent': 'VGCSpeedRef/1.0 (educational tool)' },
+      });
+      if (res.ok) { remoteMonth = month; break; }
+    } catch { /* skip */ }
     await sleep(DELAY_MS);
   }
 
-  if (champJson) {
-    const pokemonCount = Object.keys(champJson.data || {}).length;
-    const sample = Object.entries(champJson.data?.Incineroar?.Spreads || {}).slice(0, 3);
-    console.log(`🆕 Smogon HAS Champions (Reg M) chaos JSON for ${foundMonth}! (${pokemonCount} Pokémon)`);
-    console.log('   Sample Incineroar spreads:');
-    sample.forEach(([spread, raw]) => console.log(`     ${spread}: ~${raw.toFixed(1)}%`));
-    console.log('   → We can now scrape EV spreads from Smogon!');
-  } else {
-    // Fall back: report latest available VGC format with spreads
-    try {
-      const html = await get(`https://www.smogon.com/stats/${months[1]}/`);
-      const vgcFiles = [...html.matchAll(/href="([^"]*vgc[^"]*\.txt)"/gi)].map(m => m[1]);
-      const latest = vgcFiles.filter(f => /regi/i.test(f)).slice(0, 1)[0] || vgcFiles.slice(-1)[0];
-      console.log(`⏳ Smogon: no Champions (Reg M) stats yet (latest VGC: ${latest || 'none'})`);
-      console.log(`   → Will appear at smogon.com/stats/YYYY-MM/chaos/gen9vgc2026regm-1760.json`);
-    } catch {
-      console.log('⏳ Smogon: Champions stats not yet published');
-    }
+  if (!remoteMonth) {
+    console.log('⏳ Smogon: no Champions stats found yet');
+    return false;
   }
 
-  return !!champJson;
+  if (localMonth === remoteMonth) {
+    console.log(`✅ smogon.json is up to date (${remoteMonth})`);
+    return false;
+  }
+
+  if (!localMonth) {
+    console.log(`🆕 smogon.json missing — ${remoteMonth} data is available`);
+  } else {
+    console.log(`🆕 smogon.json outdated: local=${localMonth}, remote=${remoteMonth}`);
+  }
+  console.log('   → node generator/scrape-smogon.js');
+  return true;
 }
 
 // ── Main ────────────────────────────────────────────────────────────────────
@@ -178,15 +166,15 @@ async function checkSpreads() {
     await sleep(DELAY_MS);
     const { newTournaments } = await checkLimitless();
     await sleep(DELAY_MS);
-    const hasSmogonSpreads = await checkSpreads();
+    const smogonStale = await checkSmogon();
 
     console.log('\n── Summary ─────────────────────────────────────────────');
-    const hasNew = newPik.length > 0 || newTournaments.length > 0 || hasSmogonSpreads;
+    const hasNew = newPik.length > 0 || newTournaments.length > 0 || smogonStale;
     if (hasNew) {
       console.log('⚡ New data detected! Consider running:');
-      if (newPik.length)          console.log('   • node generator/scrape-pikalytics.js');
-      if (newTournaments.length)  console.log('   • node generator/scrape-limitless.js');
-      if (hasSmogonSpreads)       console.log('   • Implementar scraper de spreads de Smogon (nuevo)');
+      if (newPik.length)         console.log('   • node generator/scrape-pikalytics.js');
+      if (newTournaments.length) console.log('   • node generator/scrape-limitless.js');
+      if (smogonStale)           console.log('   • node generator/scrape-smogon.js');
     } else {
       console.log('✅ Everything is up to date.');
     }

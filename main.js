@@ -111,6 +111,7 @@ let ALL_DATA = [];
 let filtered = [];
 let PIKALYTICS = {};
 let LIMITLESS  = {};
+let SMOGON     = {};
 let sortCol = 'actual';
 let sortDir = 'desc';
 let condition = null; // 'tailwind' | 'para' | null
@@ -186,10 +187,11 @@ function applyCondition(speed) {
 (async function loadData() {
   const lastUpdated = document.getElementById('lastUpdated');
   try {
-    const [dataRes, pikRes, limRes] = await Promise.all([
+    const [dataRes, pikRes, limRes, smogonRes] = await Promise.all([
       fetch('./data.json'),
       fetch('./pikalytics.json').catch(() => null),
       fetch('./limitless.json').catch(() => null),
+      fetch('./smogon.json').catch(() => null),
     ]);
     if (!dataRes.ok) throw new Error(`HTTP ${dataRes.status}`);
     const json = await dataRes.json();
@@ -203,6 +205,10 @@ function applyCondition(speed) {
     if (limRes?.ok) {
       const lim = await limRes.json();
       LIMITLESS = lim.aggregate?.pokemon || {};
+    }
+    if (smogonRes?.ok) {
+      const smogon = await smogonRes.json();
+      SMOGON = smogon.pokemon || {};
     }
     document.getElementById('mainContent').style.display = '';
     if (json.updated) {
@@ -560,6 +566,10 @@ function openMetaModal(name, event) {
   let limData = LIMITLESS[name];
   if (!limData && name.startsWith('Mega ')) limData = LIMITLESS[name.slice(5)];
 
+  // Smogon data (Showdown ladder SP spreads)
+  let smogonData = SMOGON[name];
+  if (!smogonData && name.startsWith('Mega ')) smogonData = SMOGON[name.slice(5)];
+
   const q = spriteQueue(name);
   const src = q.shift();
   document.getElementById('metaSprite').src = src;
@@ -576,15 +586,15 @@ function openMetaModal(name, event) {
     usageEl.style.display = 'none';
   }
 
-  const hasAnyData = pikData || limData;
+  const hasAnyData = pikData || limData || smogonData;
   document.getElementById('metaBody').innerHTML = hasAnyData
-    ? buildMetaBody(pikData, limData)
+    ? buildMetaBody(pikData, limData, smogonData)
     : '<p class="meta-no-data">No data available for this Pokémon.</p>';
 
   document.getElementById('metaOverlay').classList.add('open');
 }
 
-function buildMetaBody(pikData, limData) {
+function buildMetaBody(pikData, limData, smogonData) {
   let sectionIdx = 0;
   function section(title, entries, footer) {
     if (!entries || !entries.length) return '';
@@ -592,7 +602,7 @@ function buildMetaBody(pikData, limData) {
     const rows = entries.map(e =>
       `<div class="meta-row"><span>${esc(e.name)}</span><span class="meta-pct">${e.pct.toFixed(1)}%</span></div>`
     ).join('');
-    const footerHtml = footer ? `<div class="meta-footer">${footer}</div>` : '';
+    const footerHtml = footer ? `<div class="meta-footer">${esc(footer)}</div>` : '';
     return `<div class="meta-section">
       <div class="meta-section-title" onclick="toggleMetaSection('${id}')">
         <span>${title}</span><span class="meta-section-chevron" id="${id}chv">▾</span>
@@ -614,6 +624,17 @@ function buildMetaBody(pikData, limData) {
         { name: 'Win rate',             pct: limData.win_rate  },
       ],
       `${limData.teams} teams tracked`
+    );
+  }
+  if (smogonData?.spreads?.length) {
+    // Format spread as "Jolly · 0/32/2/0/0/32"
+    const entries = smogonData.spreads.map(s => ({
+      name: `${s.nature} · ${s.sp.join('/')}`,
+      pct:  s.pct,
+    }));
+    html += section('SP Spreads — Showdown Ladder',
+      entries,
+      `${smogonData.usage.toFixed(1)}% Showdown ladder usage`
     );
   }
   return html;
