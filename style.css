@@ -371,6 +371,10 @@ tbody tr { cursor: pointer; }
   margin-top: 4px;
 }
 .meta-modal-body { margin-top: 1rem; overflow-y: auto; flex: 1; min-height: 0; }
+.meta-modal-body::-webkit-scrollbar { width: 6px; }
+.meta-modal-body::-webkit-scrollbar-track { background: #130c24; border-radius: 3px; }
+.meta-modal-body::-webkit-scrollbar-thumb { background: #4a2a8a; border-radius: 3px; }
+.meta-modal-body::-webkit-scrollbar-thumb:hover { background: #7c4dff; }
 .meta-section { margin-top: 0.75rem; border: 1px solid #3d2080; border-radius: 6px; overflow: hidden; }
 .meta-section:first-child { margin-top: 0; }
 .meta-section-title {
