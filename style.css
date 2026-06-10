@@ -51,7 +51,7 @@ input[type="checkbox"] { width: 14px; height: 14px; cursor: pointer; accent-colo
 }
 
 .btn-reset {
-  margin-left: auto; align-self: flex-end; padding: 7px 14px; background: #2d0f0f;
+  margin-left: auto; align-self: center; padding: 7px 14px; background: #2d0f0f;
   border: 1px solid #5c1f1f; color: #e57373; border-radius: 6px;
   cursor: pointer; font-size: 0.82rem; transition: all .15s;
 }
