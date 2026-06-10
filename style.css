@@ -34,6 +34,9 @@ input, select {
 input:focus, select:focus { border-color: var(--accent); }
 input[type="number"] { width: 90px; }
 input[type="text"] { width: 160px; }
+/* Filter bar vertical divider */
+.filter-divider { width: 1px; background: var(--border); align-self: stretch; margin: 0 4px; flex-shrink: 0; }
+
 /* Group-by checkbox */
 input[type="checkbox"] { width: 14px; height: 14px; cursor: pointer; accent-color: var(--accent); padding: 0; }
 .check-label {
