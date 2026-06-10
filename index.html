@@ -161,6 +161,13 @@
         <button class="btn-toggle" id="btnPara"     onclick="toggleCondition('para')"     title="Halves Speed">Paralysis ÷2</button>
       </div>
     </div>
+    <div class="filter-group filter-group-check">
+      <label>View</label>
+      <label class="check-label" for="groupByCheck">
+        <input type="checkbox" id="groupByCheck" onchange="toggleGroupBy(this.checked)">
+        Group by Pokémon
+      </label>
+    </div>
     <button class="btn-reset" onclick="resetFilters()">Reset</button>
   </div>
 

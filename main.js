@@ -112,6 +112,8 @@ let filtered = [];
 let PIKALYTICS = {};
 let LIMITLESS  = {};
 let SMOGON     = {};
+let groupByPokemon = false;
+let displayed  = []; // rows currently rendered (subset of filtered when grouped)
 let sortCol = 'actual';
 let sortDir = 'desc';
 let condition = null; // 'tailwind' | 'para' | null
@@ -256,12 +258,19 @@ function resetFilters() {
   });
   document.getElementById('tierFilter').value = '';
   document.getElementById('multFilter').value = '';
+  document.getElementById('groupByCheck').checked = false;
+  groupByPokemon = false;
   condition = null;
   document.getElementById('btnTailwind').className = 'btn-toggle';
   document.getElementById('btnPara').className     = 'btn-toggle';
   compareA = null; compareB = null;
   closeCmp();
   applyFilters();
+}
+
+function toggleGroupBy(val) {
+  groupByPokemon = val;
+  render();
 }
 
 // ── Sort ─────────────────────────────────────────────────────────
@@ -316,7 +325,7 @@ function multBadge(m) {
   return '<span class="badge mult-none">×1</span>';
 }
 
-function buildRow(r, onClickAttr) {
+function buildRow(r, onClickAttr, groupCount = 1) {
   const q = spriteQueue(r.pokemon);
   const firstSrc = q.shift();
   const hasMeta = !r.isCustom && (!!PIKALYTICS[r.pokemon] || !!LIMITLESS[r.pokemon]);
@@ -328,10 +337,11 @@ function buildRow(r, onClickAttr) {
             onerror="this._spriteQ=JSON.parse(this.dataset.queue||'[]');nextSprite(this)"
             loading="lazy" ${spriteClick}>`
     : `<div class="pkmn-sprite-placeholder"></div>`;
-  const setLabel = r.isCustom && r.label ? `<div class="pkmn-set-label">${esc(r.label)}</div>` : '';
+  const setLabel  = r.isCustom && r.label ? `<div class="pkmn-set-label">${esc(r.label)}</div>` : '';
+  const setsChip  = groupCount > 1 ? `<span class="pkmn-sets-count">${groupCount} sets</span>` : '';
   const pkmn = r.pokemon
     ? `<div class="pkmn-name">${esc(r.pokemon)}</div>
-       <div class="pkmn-dex">#${esc(r.dex_id)}</div>${setLabel}`
+       <div class="pkmn-dex">#${esc(r.dex_id)}</div>${setsChip}${setLabel}`
     : `<div class="pkmn-name" style="color:var(--muted)">—</div>`;
   const displaySpeed = applyCondition(r.actual);
   const speedCls = condition === 'tailwind' ? ' speed-modified' : condition === 'para' ? ' speed-modified para' : '';
@@ -352,18 +362,38 @@ function buildRow(r, onClickAttr) {
 }
 
 function render() {
-  document.getElementById('infoBar').innerHTML =
-    `Showing <strong>${filtered.length}</strong> of <strong>${ALL_DATA.length}</strong> entries`;
+  // Build displayed list (deduplicated when groupByPokemon is on)
+  let groupCountMap = {};
+  if (groupByPokemon) {
+    for (const r of filtered) {
+      if (!r.isCustom) groupCountMap[r.pokemon] = (groupCountMap[r.pokemon] || 0) + 1;
+    }
+    const seen = new Set();
+    displayed = filtered.filter(r => {
+      if (r.isCustom) return true;
+      if (seen.has(r.pokemon)) return false;
+      seen.add(r.pokemon);
+      return true;
+    });
+  } else {
+    displayed = filtered;
+  }
+
+  const nonCustomTotal = ALL_DATA.filter(r => !r.isCustom).length;
+  document.getElementById('infoBar').innerHTML = groupByPokemon
+    ? `Showing <strong>${displayed.length}</strong> Pokémon · <strong>${filtered.length}</strong> speed tiers`
+    : `Showing <strong>${filtered.length}</strong> of <strong>${nonCustomTotal}</strong> entries`;
 
   const tbody = document.getElementById('tableBody');
-  if (!filtered.length) {
+  if (!displayed.length) {
     tbody.innerHTML = `<tr><td colspan="6" class="empty">
       <div class="empty-icon">🔍</div>No results — try adjusting filters.</td></tr>`;
     return;
   }
 
-  tbody.innerHTML = filtered.map((r, idx) =>
-    buildRow(r, `onclick="selectForCompare(${idx})"`)
+  tbody.innerHTML = displayed.map((r, idx) =>
+    buildRow(r, `onclick="selectForCompare(${idx})"`,
+      groupByPokemon && !r.isCustom ? (groupCountMap[r.pokemon] || 1) : 1)
   ).join('');
 }
 
@@ -373,7 +403,7 @@ function render() {
 
 // ── Compare logic ────────────────────────────────────────────────
 function selectForCompare(idx) {
-  const entry = filtered[idx];
+  const entry = displayed[idx];
   if (!entry) return;
 
   if (compareA === entry) { compareA = null; render(); renderCustomSection(); return; }
