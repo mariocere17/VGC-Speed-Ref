@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-10T06:39:17.835Z",
+  "updated": "2026-06-11T06:58:02.269Z",
   "format": "championstournaments",
   "count": 104,
   "pokemon": {
@@ -4478,71 +4478,6 @@
         }
       ]
     },
-    "Lucario": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Meteor Mash",
-          "pct": 76.471
-        },
-        {
-          "name": "Close Combat",
-          "pct": 70.588
-        },
-        {
-          "name": "Final Gambit",
-          "pct": 70.588
-        },
-        {
-          "name": "Coaching",
-          "pct": 47.059
-        },
-        {
-          "name": "Stone Edge",
-          "pct": 23.529
-        },
-        {
-          "name": "Drain Punch",
-          "pct": 17.647
-        },
-        {
-          "name": "Bullet Punch",
-          "pct": 11.765
-        },
-        {
-          "name": "Howl",
-          "pct": 11.765
-        }
-      ],
-      "items": [
-        {
-          "name": "Choice Scarf",
-          "pct": 76.471
-        },
-        {
-          "name": "Chople Berry",
-          "pct": 11.765
-        },
-        {
-          "name": "Black Belt",
-          "pct": 5.882
-        },
-        {
-          "name": "Lum Berry",
-          "pct": 5.882
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Inner Focus",
-          "pct": 94.118
-        },
-        {
-          "name": "Justified",
-          "pct": 5.882
-        }
-      ]
-    },
     "Crabominable": {
       "usage": null,
       "moves": [
@@ -4669,60 +4604,68 @@
         }
       ]
     },
-    "Mega Charizard Y": {
+    "Lucario": {
       "usage": null,
       "moves": [
         {
-          "name": "Protect",
-          "pct": 99.551
+          "name": "Meteor Mash",
+          "pct": 76.471
         },
         {
-          "name": "Heat Wave",
-          "pct": 98.789
+          "name": "Close Combat",
+          "pct": 70.588
         },
         {
-          "name": "Solar Beam",
-          "pct": 93.854
+          "name": "Final Gambit",
+          "pct": 70.588
         },
         {
-          "name": "Weather Ball",
-          "pct": 90.444
+          "name": "Coaching",
+          "pct": 47.059
         },
         {
-          "name": "Air Slash",
-          "pct": 6.057
+          "name": "Stone Edge",
+          "pct": 23.529
         },
         {
-          "name": "Ancient Power",
-          "pct": 2.647
+          "name": "Drain Punch",
+          "pct": 17.647
         },
         {
-          "name": "Overheat",
-          "pct": 2.198
+          "name": "Bullet Punch",
+          "pct": 11.765
         },
         {
-          "name": "Scorching Sands",
-          "pct": 1.256
+          "name": "Howl",
+          "pct": 11.765
         }
       ],
       "items": [
         {
-          "name": "Charizardite Y",
-          "pct": 100
+          "name": "Choice Scarf",
+          "pct": 76.471
+        },
+        {
+          "name": "Chople Berry",
+          "pct": 11.765
+        },
+        {
+          "name": "Black Belt",
+          "pct": 5.882
+        },
+        {
+          "name": "Lum Berry",
+          "pct": 5.882
         }
       ],
       "abilities": [
         {
-          "name": "Blaze",
-          "pct": 67.34
+          "name": "Inner Focus",
+          "pct": 94.118
         },
         {
-          "name": "Solar Power",
-          "pct": 29.43
-        },
-        {
-          "name": "Drought",
-          "pct": 3.14
+          "name": "Justified",
+          "pct": 5.882
         }
       ]
     },
@@ -4784,6 +4727,63 @@
         {
           "name": "Telepathy",
           "pct": 7.767
+        }
+      ]
+    },
+    "Mega Charizard Y": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Protect",
+          "pct": 99.551
+        },
+        {
+          "name": "Heat Wave",
+          "pct": 98.789
+        },
+        {
+          "name": "Solar Beam",
+          "pct": 93.854
+        },
+        {
+          "name": "Weather Ball",
+          "pct": 90.444
+        },
+        {
+          "name": "Air Slash",
+          "pct": 6.057
+        },
+        {
+          "name": "Ancient Power",
+          "pct": 2.647
+        },
+        {
+          "name": "Overheat",
+          "pct": 2.198
+        },
+        {
+          "name": "Scorching Sands",
+          "pct": 1.256
+        }
+      ],
+      "items": [
+        {
+          "name": "Charizardite Y",
+          "pct": 100
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Blaze",
+          "pct": 67.34
+        },
+        {
+          "name": "Solar Power",
+          "pct": 29.43
+        },
+        {
+          "name": "Drought",
+          "pct": 3.14
         }
       ]
     },
@@ -5293,6 +5293,59 @@
         }
       ]
     },
+    "Mega Gengar": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Protect",
+          "pct": 99.532
+        },
+        {
+          "name": "Shadow Ball",
+          "pct": 97.892
+        },
+        {
+          "name": "Sludge Bomb",
+          "pct": 62.061
+        },
+        {
+          "name": "Disable",
+          "pct": 58.782
+        },
+        {
+          "name": "Perish Song",
+          "pct": 58.08
+        },
+        {
+          "name": "Icy Wind",
+          "pct": 6.792
+        },
+        {
+          "name": "Will-O-Wisp",
+          "pct": 2.576
+        },
+        {
+          "name": "Focus Blast",
+          "pct": 2.108
+        }
+      ],
+      "items": [
+        {
+          "name": "Gengarite",
+          "pct": 100
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Cursed Body",
+          "pct": 92.272
+        },
+        {
+          "name": "Shadow Tag",
+          "pct": 7.494
+        }
+      ]
+    },
     "Snorlax": {
       "usage": null,
       "moves": [
@@ -5432,59 +5485,6 @@
         {
           "name": "Water Absorb",
           "pct": 1.852
-        }
-      ]
-    },
-    "Mega Gengar": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Protect",
-          "pct": 99.532
-        },
-        {
-          "name": "Shadow Ball",
-          "pct": 97.892
-        },
-        {
-          "name": "Sludge Bomb",
-          "pct": 62.061
-        },
-        {
-          "name": "Disable",
-          "pct": 58.782
-        },
-        {
-          "name": "Perish Song",
-          "pct": 58.08
-        },
-        {
-          "name": "Icy Wind",
-          "pct": 6.792
-        },
-        {
-          "name": "Will-O-Wisp",
-          "pct": 2.576
-        },
-        {
-          "name": "Focus Blast",
-          "pct": 2.108
-        }
-      ],
-      "items": [
-        {
-          "name": "Gengarite",
-          "pct": 100
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Cursed Body",
-          "pct": 92.272
-        },
-        {
-          "name": "Shadow Tag",
-          "pct": 7.494
         }
       ]
     },
