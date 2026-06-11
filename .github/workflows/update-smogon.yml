@@ -2,7 +2,7 @@ name: Update Smogon SP Spreads
 
 on:
   schedule:
-    - cron: '0 4 2 * *'   # 4am UTC on the 2nd of every month
+    - cron: '0 4 * * *'   # 4am UTC every day
   workflow_dispatch:        # allow manual run from GitHub UI
 
 env:
