@@ -58,6 +58,9 @@ const ATK_ITEMS = [
   { id:'',              label:'None' },
   { id:'choice-band',   label:'Choice Band (Atk ×1.5)' },
   { id:'choice-specs',  label:'Choice Specs (SpA ×1.5)' },
+  { id:'choice-scarf',  label:'Choice Scarf (Spe ×1.5)' },
+  { id:'iron-ball',     label:'Iron Ball (Spe ×0.5)' },
+  { id:'quick-powder',  label:'Quick Powder (Spe ×2)' },
   { id:'life-orb',      label:'Life Orb (damage ×1.3)' },
   { id:'expert-belt',   label:'Expert Belt (SE ×1.2)' },
   { id:'muscle-band',   label:'Muscle Band (Atk ×1.1)' },
@@ -287,6 +290,13 @@ let CHAMPIONS = new Set();  // lowercase keys of Champions Pokémon
 function getStageMult(stage) {
   if (!stage) return 1;
   return stage > 0 ? (2 + stage) / 2 : 2 / (2 - stage);
+}
+
+function getSpeItemMult(itemId) {
+  if (itemId === 'choice-scarf')  return 1.5;
+  if (itemId === 'iron-ball')     return 0.5;
+  if (itemId === 'quick-powder')  return 2.0;
+  return 1;
 }
 
 // Non-HP stats: SP is added inside nature multiplication
@@ -721,8 +731,10 @@ function buildEffBP(s, moveData, atkData, defData) {
     // Compute actual speed stats (with nature, SP and stage)
     const rawAtkSpe = atkData ? calcStat(atkData.spe, s.atkSpeSP, getNatureMult(s.atkNature, 'spe')) : 1;
     const rawDefSpe = defData ? calcStat(defData.spe, s.defSpeSP, getNatureMult(s.defNature, 'spe')) : 1;
-    const atkSpe = s.atkSpeStage ? Math.floor(rawAtkSpe * getStageMult(s.atkSpeStage)) : rawAtkSpe;
-    const defSpe = s.defSpeStage ? Math.floor(rawDefSpe * getStageMult(s.defSpeStage)) : rawDefSpe;
+    const atkSpeStaged = s.atkSpeStage ? Math.floor(rawAtkSpe * getStageMult(s.atkSpeStage)) : rawAtkSpe;
+    const defSpeStaged = s.defSpeStage ? Math.floor(rawDefSpe * getStageMult(s.defSpeStage)) : rawDefSpe;
+    const atkSpe = Math.floor(atkSpeStaged * getSpeItemMult(s.atkItem));
+    const defSpe = Math.floor(defSpeStaged * getSpeItemMult(s.defItem));
     bp = speedBasedBP(atkSpe, defSpe);
   } else {
     bp = moveData.bp;
@@ -1808,6 +1820,12 @@ function updateStatDisplays(prefix, s, pkmnData, moveData) {
       const stageEl = document.getElementById(prefix + statId + 'Stage');
       const stage   = stageEl ? parseInt(stageEl.value) || 0 : 0;
       if (stage) val = Math.floor(val * getStageMult(stage));
+      // Apply speed-modifying item (Choice Scarf, Iron Ball, Quick Powder)
+      if (statKey === 'spe') {
+        const item = prefix === 'atk' ? s.atkItem : s.defItem;
+        const speMult = getSpeItemMult(item);
+        if (speMult !== 1) val = Math.floor(val * speMult);
+      }
     }
     compEl.textContent = val;
 
