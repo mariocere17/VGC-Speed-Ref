@@ -2682,7 +2682,7 @@ function normalisePkmnKey(raw) {
   // Mega X / Mega X-Y  (Showdown: "Charizard-Mega-X" → us: "Mega Charizard X")
   const megaXY = s.match(/^(.+?)-Mega-([XY])$/i);
   if (megaXY) {
-    const k = `mega ${megaXY[1].replace(/-/g, ' ').toLowerCase()} ${megaXY[2].toUpperCase()}`;
+    const k = `mega ${megaXY[1].replace(/-/g, ' ').toLowerCase()} ${megaXY[2].toLowerCase()}`;
     if (PKMN[k]) return k;
   }
   const mega = s.match(/^(.+?)-Mega$/i);
