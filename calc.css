@@ -166,9 +166,14 @@
 
 .stat-row {
   display: grid;
-  grid-template-columns: 30px 1fr 26px 44px 46px;
+  grid-template-columns: 30px 1fr 26px 32px 44px 46px;
   align-items: center;
   gap: 6px;
+}
+
+.stat-base {
+  font-size: 0.72rem; color: var(--muted); text-align: right;
+  font-variant-numeric: tabular-nums;
 }
 
 /* ── STAGE SELECT ── */

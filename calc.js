@@ -1804,12 +1804,18 @@ function updateStatDisplays(prefix, s, pkmnData, moveData) {
     const compId  = prefix + statId + 'Comp';
     const lblId   = prefix + 'Lbl' + statId;
 
-    const sp    = spVal(spId);
+    const sp     = spVal(spId);
     const compEl = document.getElementById(compId);
+    const baseEl = document.getElementById(prefix + statId + 'Base');
     const lblEl  = document.getElementById(lblId);
     if (!compEl) continue;
 
-    if (!pkmnData) { compEl.textContent = '—'; compEl.className = 'stat-computed'; continue; }
+    if (!pkmnData) {
+      compEl.textContent = '—'; compEl.className = 'stat-computed';
+      if (baseEl) baseEl.textContent = '—';
+      continue;
+    }
+    if (baseEl) baseEl.textContent = pkmnData[statKey] ?? '—';
 
     let val;
     if (statKey === 'hp') {
