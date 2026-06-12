@@ -655,9 +655,7 @@
 /* Set-move quick-pick row: collapse to zero height when empty so the field
    row above stays aligned with the MOVE label. Reserves space only when the
    set has buttons rendered. */
-.set-moves-row { display: flex; gap: 5px; align-items: center; }
-.set-moves-row:empty { display: none; }
-.set-moves-row:not(:empty) { min-height: 32px; }
+.set-moves-row { display: flex; gap: 5px; align-items: center; min-height: 32px; }
 .btn-setmove {
   flex: 1;                   /* reparte el ancho igual que el input */
   font-size: 0.78rem; font-weight: 600;
