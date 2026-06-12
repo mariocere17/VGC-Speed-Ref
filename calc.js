@@ -1064,6 +1064,7 @@ function restoreState() {
   const atkPkmnEl = document.getElementById('atkPkmn');
   if (atkPkmnEl && saved.atkPkmn) {
     atkPkmnEl.value = PKMN[saved.atkPkmn]?.displayName || saved.atkPkmn;
+    atkPkmnEl.dataset.currentKey = saved.atkPkmn;
     updateMoveDatalist('atk', saved.atkPkmn);
     updateAbilitySelect('atk', saved.atkPkmn);
     updateSprite('atk', saved.atkPkmn);
@@ -1096,6 +1097,7 @@ function restoreState() {
   const defPkmnEl = document.getElementById('defPkmn');
   if (defPkmnEl && saved.defPkmn) {
     defPkmnEl.value = PKMN[saved.defPkmn]?.displayName || saved.defPkmn;
+    defPkmnEl.dataset.currentKey = saved.defPkmn;
     updateMoveDatalist('def', saved.defPkmn);
     updateAbilitySelect('def', saved.defPkmn);
     updateSprite('def', saved.defPkmn);
@@ -2896,6 +2898,7 @@ window.loadSetIntoPanel = function (prefix, setId) {
   const pkmnEl = document.getElementById(prefix + 'Pkmn');
   if (pkmnEl) {
     pkmnEl.value = PKMN[set.pokemon]?.displayName || set.pokemon;
+    pkmnEl.dataset.currentKey = set.pokemon;
     updateMoveDatalist(prefix, set.pokemon);
     updateAbilitySelect(prefix, set.pokemon);
     updateSprite(prefix, set.pokemon);
@@ -2903,6 +2906,12 @@ window.loadSetIntoPanel = function (prefix, setId) {
   }
 
   document.getElementById(prefix + 'Nature').value = set.nature;
+
+  // Reset stages — sets carry no stage information
+  for (const stat of ['Atk', 'Def', 'Spa', 'Spd', 'Spe']) {
+    const stageEl = document.getElementById(prefix + stat + 'Stage');
+    if (stageEl) { stageEl.value = 0; stageEl.className = 'stage-select'; }
+  }
 
   // SP sliders
   const statMap = { Hp: 'hp', Atk: 'atk', Def: 'def', Spa: 'spa', Spd: 'spd', Spe: 'spe' };
