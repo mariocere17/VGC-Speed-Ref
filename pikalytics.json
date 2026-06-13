@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-12T06:50:26.167Z",
+  "updated": "2026-06-13T06:24:00.963Z",
   "format": "championstournaments",
   "count": 103,
   "pokemon": {
@@ -4405,79 +4405,6 @@
         }
       ]
     },
-    "Starmie": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Protect",
-          "pct": 94.937
-        },
-        {
-          "name": "Liquidation",
-          "pct": 74.684
-        },
-        {
-          "name": "Aqua Jet",
-          "pct": 68.354
-        },
-        {
-          "name": "Zen Headbutt",
-          "pct": 36.709
-        },
-        {
-          "name": "Ice Spinner",
-          "pct": 26.582
-        },
-        {
-          "name": "Psycho Cut",
-          "pct": 20.253
-        },
-        {
-          "name": "Flip Turn",
-          "pct": 12.658
-        },
-        {
-          "name": "Scald",
-          "pct": 12.658
-        }
-      ],
-      "items": [
-        {
-          "name": "Starminite",
-          "pct": 87.342
-        },
-        {
-          "name": "Focus Sash",
-          "pct": 7.595
-        },
-        {
-          "name": "Bright Powder",
-          "pct": 1.266
-        },
-        {
-          "name": "Never-Melt Ice",
-          "pct": 1.266
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Natural Cure",
-          "pct": 81.013
-        },
-        {
-          "name": "Illuminate",
-          "pct": 11.392
-        },
-        {
-          "name": "Analytic",
-          "pct": 3.797
-        },
-        {
-          "name": "Huge Power",
-          "pct": 2.532
-        }
-      ]
-    },
     "Gallade": {
       "usage": null,
       "moves": [
@@ -4666,6 +4593,79 @@
         {
           "name": "Justified",
           "pct": 5.882
+        }
+      ]
+    },
+    "Starmie": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Protect",
+          "pct": 94.937
+        },
+        {
+          "name": "Liquidation",
+          "pct": 74.684
+        },
+        {
+          "name": "Aqua Jet",
+          "pct": 68.354
+        },
+        {
+          "name": "Zen Headbutt",
+          "pct": 36.709
+        },
+        {
+          "name": "Ice Spinner",
+          "pct": 26.582
+        },
+        {
+          "name": "Psycho Cut",
+          "pct": 20.253
+        },
+        {
+          "name": "Flip Turn",
+          "pct": 12.658
+        },
+        {
+          "name": "Scald",
+          "pct": 12.658
+        }
+      ],
+      "items": [
+        {
+          "name": "Starminite",
+          "pct": 87.342
+        },
+        {
+          "name": "Focus Sash",
+          "pct": 7.595
+        },
+        {
+          "name": "Bright Powder",
+          "pct": 1.266
+        },
+        {
+          "name": "Never-Melt Ice",
+          "pct": 1.266
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Natural Cure",
+          "pct": 81.013
+        },
+        {
+          "name": "Illuminate",
+          "pct": 11.392
+        },
+        {
+          "name": "Analytic",
+          "pct": 3.797
+        },
+        {
+          "name": "Huge Power",
+          "pct": 2.532
         }
       ]
     },
@@ -5244,55 +5244,6 @@
       "items": [],
       "abilities": []
     },
-    "Mega Tyranitar": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Protect",
-          "pct": 99.641
-        },
-        {
-          "name": "Rock Slide",
-          "pct": 98.743
-        },
-        {
-          "name": "Knock Off",
-          "pct": 94.614
-        },
-        {
-          "name": "Low Kick",
-          "pct": 58.528
-        },
-        {
-          "name": "Dragon Dance",
-          "pct": 22.442
-        },
-        {
-          "name": "Ice Punch",
-          "pct": 9.156
-        },
-        {
-          "name": "High Horsepower",
-          "pct": 4.847
-        },
-        {
-          "name": "Crunch",
-          "pct": 3.95
-        }
-      ],
-      "items": [
-        {
-          "name": "Tyranitarite",
-          "pct": 100
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Sand Stream",
-          "pct": 99.461
-        }
-      ]
-    },
     "Snorlax": {
       "usage": null,
       "moves": [
@@ -5435,56 +5386,52 @@
         }
       ]
     },
-    "Mega Gengar": {
+    "Mega Tyranitar": {
       "usage": null,
       "moves": [
         {
           "name": "Protect",
-          "pct": 99.532
+          "pct": 99.641
         },
         {
-          "name": "Shadow Ball",
-          "pct": 97.892
+          "name": "Rock Slide",
+          "pct": 98.743
         },
         {
-          "name": "Sludge Bomb",
-          "pct": 62.061
+          "name": "Knock Off",
+          "pct": 94.614
         },
         {
-          "name": "Disable",
-          "pct": 58.782
+          "name": "Low Kick",
+          "pct": 58.528
         },
         {
-          "name": "Perish Song",
-          "pct": 58.08
+          "name": "Dragon Dance",
+          "pct": 22.442
         },
         {
-          "name": "Icy Wind",
-          "pct": 6.792
+          "name": "Ice Punch",
+          "pct": 9.156
         },
         {
-          "name": "Will-O-Wisp",
-          "pct": 2.576
+          "name": "High Horsepower",
+          "pct": 4.847
         },
         {
-          "name": "Focus Blast",
-          "pct": 2.108
+          "name": "Crunch",
+          "pct": 3.95
         }
       ],
       "items": [
         {
-          "name": "Gengarite",
+          "name": "Tyranitarite",
           "pct": 100
         }
       ],
       "abilities": [
         {
-          "name": "Cursed Body",
-          "pct": 92.272
-        },
-        {
-          "name": "Shadow Tag",
-          "pct": 7.494
+          "name": "Sand Stream",
+          "pct": 99.461
         }
       ]
     },
@@ -5550,6 +5497,59 @@
         {
           "name": "Flash Fire",
           "pct": 5.405
+        }
+      ]
+    },
+    "Mega Gengar": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Protect",
+          "pct": 99.532
+        },
+        {
+          "name": "Shadow Ball",
+          "pct": 97.892
+        },
+        {
+          "name": "Sludge Bomb",
+          "pct": 62.061
+        },
+        {
+          "name": "Disable",
+          "pct": 58.782
+        },
+        {
+          "name": "Perish Song",
+          "pct": 58.08
+        },
+        {
+          "name": "Icy Wind",
+          "pct": 6.792
+        },
+        {
+          "name": "Will-O-Wisp",
+          "pct": 2.576
+        },
+        {
+          "name": "Focus Blast",
+          "pct": 2.108
+        }
+      ],
+      "items": [
+        {
+          "name": "Gengarite",
+          "pct": 100
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Cursed Body",
+          "pct": 92.272
+        },
+        {
+          "name": "Shadow Tag",
+          "pct": 7.494
         }
       ]
     },
