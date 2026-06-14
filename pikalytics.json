@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-13T06:24:00.963Z",
+  "updated": "2026-06-14T06:49:20.429Z",
   "format": "championstournaments",
   "count": 103,
   "pokemon": {
@@ -4352,59 +4352,6 @@
         }
       ]
     },
-    "Lopunny": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Fake Out",
-          "pct": 100
-        },
-        {
-          "name": "Baton Pass",
-          "pct": 66.667
-        },
-        {
-          "name": "Helping Hand",
-          "pct": 66.667
-        },
-        {
-          "name": "Cotton Guard",
-          "pct": 33.333
-        },
-        {
-          "name": "Cosmic Power",
-          "pct": 33.333
-        },
-        {
-          "name": "Protect",
-          "pct": 33.333
-        },
-        {
-          "name": "Close Combat",
-          "pct": 33.333
-        },
-        {
-          "name": "Triple Axel",
-          "pct": 33.333
-        }
-      ],
-      "items": [
-        {
-          "name": "Chople Berry",
-          "pct": 66.667
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Cute Charm",
-          "pct": 66.667
-        },
-        {
-          "name": "Limber",
-          "pct": 33.333
-        }
-      ]
-    },
     "Gallade": {
       "usage": null,
       "moves": [
@@ -4471,6 +4418,59 @@
         {
           "name": "Sharpness",
           "pct": 100
+        }
+      ]
+    },
+    "Lopunny": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Fake Out",
+          "pct": 100
+        },
+        {
+          "name": "Baton Pass",
+          "pct": 66.667
+        },
+        {
+          "name": "Helping Hand",
+          "pct": 66.667
+        },
+        {
+          "name": "Cotton Guard",
+          "pct": 33.333
+        },
+        {
+          "name": "Cosmic Power",
+          "pct": 33.333
+        },
+        {
+          "name": "Protect",
+          "pct": 33.333
+        },
+        {
+          "name": "Close Combat",
+          "pct": 33.333
+        },
+        {
+          "name": "Triple Axel",
+          "pct": 33.333
+        }
+      ],
+      "items": [
+        {
+          "name": "Chople Berry",
+          "pct": 66.667
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Cute Charm",
+          "pct": 66.667
+        },
+        {
+          "name": "Limber",
+          "pct": 33.333
         }
       ]
     },
