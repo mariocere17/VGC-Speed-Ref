@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-14T06:49:20.429Z",
+  "updated": "2026-06-15T07:29:16.435Z",
   "format": "championstournaments",
   "count": 103,
   "pokemon": {
@@ -4352,6 +4352,59 @@
         }
       ]
     },
+    "Lopunny": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Fake Out",
+          "pct": 100
+        },
+        {
+          "name": "Baton Pass",
+          "pct": 66.667
+        },
+        {
+          "name": "Helping Hand",
+          "pct": 66.667
+        },
+        {
+          "name": "Cotton Guard",
+          "pct": 33.333
+        },
+        {
+          "name": "Cosmic Power",
+          "pct": 33.333
+        },
+        {
+          "name": "Protect",
+          "pct": 33.333
+        },
+        {
+          "name": "Close Combat",
+          "pct": 33.333
+        },
+        {
+          "name": "Triple Axel",
+          "pct": 33.333
+        }
+      ],
+      "items": [
+        {
+          "name": "Chople Berry",
+          "pct": 66.667
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Cute Charm",
+          "pct": 66.667
+        },
+        {
+          "name": "Limber",
+          "pct": 33.333
+        }
+      ]
+    },
     "Gallade": {
       "usage": null,
       "moves": [
@@ -4418,59 +4471,6 @@
         {
           "name": "Sharpness",
           "pct": 100
-        }
-      ]
-    },
-    "Lopunny": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Fake Out",
-          "pct": 100
-        },
-        {
-          "name": "Baton Pass",
-          "pct": 66.667
-        },
-        {
-          "name": "Helping Hand",
-          "pct": 66.667
-        },
-        {
-          "name": "Cotton Guard",
-          "pct": 33.333
-        },
-        {
-          "name": "Cosmic Power",
-          "pct": 33.333
-        },
-        {
-          "name": "Protect",
-          "pct": 33.333
-        },
-        {
-          "name": "Close Combat",
-          "pct": 33.333
-        },
-        {
-          "name": "Triple Axel",
-          "pct": 33.333
-        }
-      ],
-      "items": [
-        {
-          "name": "Chople Berry",
-          "pct": 66.667
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Cute Charm",
-          "pct": 66.667
-        },
-        {
-          "name": "Limber",
-          "pct": 33.333
         }
       ]
     },
@@ -4860,6 +4860,59 @@
         }
       ]
     },
+    "Camerupt": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Earth Power",
+          "pct": 99.237
+        },
+        {
+          "name": "Protect",
+          "pct": 95.42
+        },
+        {
+          "name": "Heat Wave",
+          "pct": 87.023
+        },
+        {
+          "name": "Ancient Power",
+          "pct": 74.046
+        },
+        {
+          "name": "Eruption",
+          "pct": 29.008
+        },
+        {
+          "name": "Flash Cannon",
+          "pct": 5.344
+        },
+        {
+          "name": "Flamethrower",
+          "pct": 3.053
+        },
+        {
+          "name": "Rock Slide",
+          "pct": 2.29
+        }
+      ],
+      "items": [
+        {
+          "name": "Cameruptite",
+          "pct": 100
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Solid Rock",
+          "pct": 93.893
+        },
+        {
+          "name": "Magma Armor",
+          "pct": 5.344
+        }
+      ]
+    },
     "Drampa": {
       "usage": null,
       "moves": [
@@ -4934,59 +4987,6 @@
         {
           "name": "Sap Sipper",
           "pct": 2.857
-        }
-      ]
-    },
-    "Camerupt": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Earth Power",
-          "pct": 99.237
-        },
-        {
-          "name": "Protect",
-          "pct": 95.42
-        },
-        {
-          "name": "Heat Wave",
-          "pct": 87.023
-        },
-        {
-          "name": "Ancient Power",
-          "pct": 74.046
-        },
-        {
-          "name": "Eruption",
-          "pct": 29.008
-        },
-        {
-          "name": "Flash Cannon",
-          "pct": 5.344
-        },
-        {
-          "name": "Flamethrower",
-          "pct": 3.053
-        },
-        {
-          "name": "Rock Slide",
-          "pct": 2.29
-        }
-      ],
-      "items": [
-        {
-          "name": "Cameruptite",
-          "pct": 100
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Solid Rock",
-          "pct": 93.893
-        },
-        {
-          "name": "Magma Armor",
-          "pct": 5.344
         }
       ]
     },
@@ -5386,55 +5386,6 @@
         }
       ]
     },
-    "Mega Tyranitar": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Protect",
-          "pct": 99.641
-        },
-        {
-          "name": "Rock Slide",
-          "pct": 98.743
-        },
-        {
-          "name": "Knock Off",
-          "pct": 94.614
-        },
-        {
-          "name": "Low Kick",
-          "pct": 58.528
-        },
-        {
-          "name": "Dragon Dance",
-          "pct": 22.442
-        },
-        {
-          "name": "Ice Punch",
-          "pct": 9.156
-        },
-        {
-          "name": "High Horsepower",
-          "pct": 4.847
-        },
-        {
-          "name": "Crunch",
-          "pct": 3.95
-        }
-      ],
-      "items": [
-        {
-          "name": "Tyranitarite",
-          "pct": 100
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Sand Stream",
-          "pct": 99.461
-        }
-      ]
-    },
     "Arcanine": {
       "usage": null,
       "moves": [
@@ -5500,56 +5451,52 @@
         }
       ]
     },
-    "Mega Gengar": {
+    "Mega Tyranitar": {
       "usage": null,
       "moves": [
         {
           "name": "Protect",
-          "pct": 99.532
+          "pct": 99.641
         },
         {
-          "name": "Shadow Ball",
-          "pct": 97.892
+          "name": "Rock Slide",
+          "pct": 98.743
         },
         {
-          "name": "Sludge Bomb",
-          "pct": 62.061
+          "name": "Knock Off",
+          "pct": 94.614
         },
         {
-          "name": "Disable",
-          "pct": 58.782
+          "name": "Low Kick",
+          "pct": 58.528
         },
         {
-          "name": "Perish Song",
-          "pct": 58.08
+          "name": "Dragon Dance",
+          "pct": 22.442
         },
         {
-          "name": "Icy Wind",
-          "pct": 6.792
+          "name": "Ice Punch",
+          "pct": 9.156
         },
         {
-          "name": "Will-O-Wisp",
-          "pct": 2.576
+          "name": "High Horsepower",
+          "pct": 4.847
         },
         {
-          "name": "Focus Blast",
-          "pct": 2.108
+          "name": "Crunch",
+          "pct": 3.95
         }
       ],
       "items": [
         {
-          "name": "Gengarite",
+          "name": "Tyranitarite",
           "pct": 100
         }
       ],
       "abilities": [
         {
-          "name": "Cursed Body",
-          "pct": 92.272
-        },
-        {
-          "name": "Shadow Tag",
-          "pct": 7.494
+          "name": "Sand Stream",
+          "pct": 99.461
         }
       ]
     },
@@ -5623,6 +5570,59 @@
         {
           "name": "Infiltrator",
           "pct": 3.774
+        }
+      ]
+    },
+    "Mega Gengar": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Protect",
+          "pct": 99.532
+        },
+        {
+          "name": "Shadow Ball",
+          "pct": 97.892
+        },
+        {
+          "name": "Sludge Bomb",
+          "pct": 62.061
+        },
+        {
+          "name": "Disable",
+          "pct": 58.782
+        },
+        {
+          "name": "Perish Song",
+          "pct": 58.08
+        },
+        {
+          "name": "Icy Wind",
+          "pct": 6.792
+        },
+        {
+          "name": "Will-O-Wisp",
+          "pct": 2.576
+        },
+        {
+          "name": "Focus Blast",
+          "pct": 2.108
+        }
+      ],
+      "items": [
+        {
+          "name": "Gengarite",
+          "pct": 100
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Cursed Body",
+          "pct": 92.272
+        },
+        {
+          "name": "Shadow Tag",
+          "pct": 7.494
         }
       ]
     },
@@ -6131,75 +6131,6 @@
         }
       ]
     },
-    "Hawlucha": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Entrainment",
-          "pct": 85.714
-        },
-        {
-          "name": "Detect",
-          "pct": 69.643
-        },
-        {
-          "name": "Brave Bird",
-          "pct": 67.857
-        },
-        {
-          "name": "Close Combat",
-          "pct": 66.071
-        },
-        {
-          "name": "Protect",
-          "pct": 21.429
-        },
-        {
-          "name": "Dual Wingbeat",
-          "pct": 17.857
-        },
-        {
-          "name": "High Jump Kick",
-          "pct": 16.071
-        },
-        {
-          "name": "Coaching",
-          "pct": 7.143
-        }
-      ],
-      "items": [
-        {
-          "name": "Hawluchanite",
-          "pct": 94.643
-        },
-        {
-          "name": "Focus Sash",
-          "pct": 3.571
-        },
-        {
-          "name": "White Herb",
-          "pct": 1.786
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Limber",
-          "pct": 69.643
-        },
-        {
-          "name": "Mold Breaker",
-          "pct": 19.643
-        },
-        {
-          "name": "Unburden",
-          "pct": 7.143
-        },
-        {
-          "name": "No Guard",
-          "pct": 3.571
-        }
-      ]
-    },
     "Espathra": {
       "usage": null,
       "moves": [
@@ -6266,6 +6197,75 @@
         {
           "name": "Speed Boost",
           "pct": 100
+        }
+      ]
+    },
+    "Hawlucha": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Entrainment",
+          "pct": 85.714
+        },
+        {
+          "name": "Detect",
+          "pct": 69.643
+        },
+        {
+          "name": "Brave Bird",
+          "pct": 67.857
+        },
+        {
+          "name": "Close Combat",
+          "pct": 66.071
+        },
+        {
+          "name": "Protect",
+          "pct": 21.429
+        },
+        {
+          "name": "Dual Wingbeat",
+          "pct": 17.857
+        },
+        {
+          "name": "High Jump Kick",
+          "pct": 16.071
+        },
+        {
+          "name": "Coaching",
+          "pct": 7.143
+        }
+      ],
+      "items": [
+        {
+          "name": "Hawluchanite",
+          "pct": 94.643
+        },
+        {
+          "name": "Focus Sash",
+          "pct": 3.571
+        },
+        {
+          "name": "White Herb",
+          "pct": 1.786
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Limber",
+          "pct": 69.643
+        },
+        {
+          "name": "Mold Breaker",
+          "pct": 19.643
+        },
+        {
+          "name": "Unburden",
+          "pct": 7.143
+        },
+        {
+          "name": "No Guard",
+          "pct": 3.571
         }
       ]
     },
