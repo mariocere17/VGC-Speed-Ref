@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-19T06:43:18.593Z",
+  "updated": "2026-06-19T07:20:27.241Z",
   "format": "championstournaments",
   "count": 111,
   "pokemon": {
@@ -4212,6 +4212,39 @@
         }
       ]
     },
+    "Lucario": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Close Combat",
+          "pct": 100
+        },
+        {
+          "name": "Meteor Mash",
+          "pct": 100
+        },
+        {
+          "name": "Extreme Speed",
+          "pct": 100
+        },
+        {
+          "name": "Detect",
+          "pct": 100
+        }
+      ],
+      "items": [
+        {
+          "name": "Lucarionite",
+          "pct": 100
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Inner Focus",
+          "pct": 100
+        }
+      ]
+    },
     "Crabominable": {
       "usage": null,
       "moves": [
@@ -4249,39 +4282,6 @@
       "abilities": [
         {
           "name": "Hyper Cutter",
-          "pct": 100
-        }
-      ]
-    },
-    "Lucario": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Close Combat",
-          "pct": 100
-        },
-        {
-          "name": "Meteor Mash",
-          "pct": 100
-        },
-        {
-          "name": "Extreme Speed",
-          "pct": 100
-        },
-        {
-          "name": "Detect",
-          "pct": 100
-        }
-      ],
-      "items": [
-        {
-          "name": "Lucarionite",
-          "pct": 100
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Inner Focus",
           "pct": 100
         }
       ]
@@ -4329,6 +4329,39 @@
       "abilities": [
         {
           "name": "Inner Focus",
+          "pct": 100
+        }
+      ]
+    },
+    "Ceruledge": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Bitter Blade",
+          "pct": 100
+        },
+        {
+          "name": "Shadow Sneak",
+          "pct": 100
+        },
+        {
+          "name": "Psycho Cut",
+          "pct": 100
+        },
+        {
+          "name": "Protect",
+          "pct": 100
+        }
+      ],
+      "items": [
+        {
+          "name": "Life Orb",
+          "pct": 100
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Flash Fire",
           "pct": 100
         }
       ]
@@ -4383,39 +4416,6 @@
         {
           "name": "Drought",
           "pct": 11.628
-        }
-      ]
-    },
-    "Ceruledge": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Bitter Blade",
-          "pct": 100
-        },
-        {
-          "name": "Shadow Sneak",
-          "pct": 100
-        },
-        {
-          "name": "Psycho Cut",
-          "pct": 100
-        },
-        {
-          "name": "Protect",
-          "pct": 100
-        }
-      ],
-      "items": [
-        {
-          "name": "Life Orb",
-          "pct": 100
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Flash Fire",
-          "pct": 100
         }
       ]
     },
@@ -4744,39 +4744,6 @@
         }
       ]
     },
-    "Snorlax": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Double-Edge",
-          "pct": 100
-        },
-        {
-          "name": "High Horsepower",
-          "pct": 100
-        },
-        {
-          "name": "Yawn",
-          "pct": 100
-        },
-        {
-          "name": "Protect",
-          "pct": 100
-        }
-      ],
-      "items": [
-        {
-          "name": "Leftovers",
-          "pct": 100
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Thick Fat",
-          "pct": 100
-        }
-      ]
-    },
     "Araquanid": {
       "usage": null,
       "moves": [
@@ -4813,6 +4780,45 @@
           "pct": 100
         }
       ]
+    },
+    "Snorlax": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Double-Edge",
+          "pct": 100
+        },
+        {
+          "name": "High Horsepower",
+          "pct": 100
+        },
+        {
+          "name": "Yawn",
+          "pct": 100
+        },
+        {
+          "name": "Protect",
+          "pct": 100
+        }
+      ],
+      "items": [
+        {
+          "name": "Leftovers",
+          "pct": 100
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Thick Fat",
+          "pct": 100
+        }
+      ]
+    },
+    "Arcanine": {
+      "usage": null,
+      "moves": [],
+      "items": [],
+      "abilities": []
     },
     "Mega Tyranitar": {
       "usage": null,
@@ -4863,7 +4869,7 @@
         }
       ]
     },
-    "Arcanine": {
+    "Chandelure": {
       "usage": null,
       "moves": [],
       "items": [],
@@ -4913,12 +4919,6 @@
           "pct": 100
         }
       ]
-    },
-    "Chandelure": {
-      "usage": null,
-      "moves": [],
-      "items": [],
-      "abilities": []
     },
     "Empoleon": {
       "usage": null,
@@ -4973,84 +4973,6 @@
         }
       ]
     },
-    "Mega Delphox": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Heat Wave",
-          "pct": 100
-        },
-        {
-          "name": "Protect",
-          "pct": 100
-        },
-        {
-          "name": "Psyshock",
-          "pct": 70
-        },
-        {
-          "name": "Nasty Plot",
-          "pct": 70
-        },
-        {
-          "name": "Psychic",
-          "pct": 30
-        },
-        {
-          "name": "Substitute",
-          "pct": 20
-        },
-        {
-          "name": "Encore",
-          "pct": 10
-        }
-      ],
-      "items": [
-        {
-          "name": "Delphoxite",
-          "pct": 100
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Blaze",
-          "pct": 100
-        }
-      ]
-    },
-    "Feraligatr": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Protect",
-          "pct": 100
-        },
-        {
-          "name": "Liquidation",
-          "pct": 100
-        },
-        {
-          "name": "Aqua Jet",
-          "pct": 100
-        },
-        {
-          "name": "Double-Edge",
-          "pct": 100
-        }
-      ],
-      "items": [
-        {
-          "name": "Feraligite",
-          "pct": 100
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Sheer Force",
-          "pct": 100
-        }
-      ]
-    },
     "Mamoswine": {
       "usage": null,
       "moves": [
@@ -5100,7 +5022,7 @@
         }
       ]
     },
-    "Conkeldurr": {
+    "Feraligatr": {
       "usage": null,
       "moves": [
         {
@@ -5108,44 +5030,36 @@
           "pct": 100
         },
         {
-          "name": "Drain Punch",
+          "name": "Liquidation",
           "pct": 100
         },
         {
-          "name": "Mach Punch",
+          "name": "Aqua Jet",
           "pct": 100
         },
         {
-          "name": "Thunder Punch",
+          "name": "Double-Edge",
           "pct": 100
         }
       ],
       "items": [
         {
-          "name": "Life Orb",
-          "pct": 50
-        },
-        {
-          "name": "Black Belt",
-          "pct": 50
+          "name": "Feraligite",
+          "pct": 100
         }
       ],
       "abilities": [
         {
-          "name": "Iron Fist",
+          "name": "Sheer Force",
           "pct": 100
         }
       ]
     },
-    "Meowstic": {
+    "Mega Delphox": {
       "usage": null,
       "moves": [
         {
-          "name": "Expanding Force",
-          "pct": 100
-        },
-        {
-          "name": "Psychic Terrain",
+          "name": "Heat Wave",
           "pct": 100
         },
         {
@@ -5153,19 +5067,35 @@
           "pct": 100
         },
         {
-          "name": "Dark Pulse",
-          "pct": 100
+          "name": "Psyshock",
+          "pct": 70
+        },
+        {
+          "name": "Nasty Plot",
+          "pct": 70
+        },
+        {
+          "name": "Psychic",
+          "pct": 30
+        },
+        {
+          "name": "Substitute",
+          "pct": 20
+        },
+        {
+          "name": "Encore",
+          "pct": 10
         }
       ],
       "items": [
         {
-          "name": "Mental Herb",
+          "name": "Delphoxite",
           "pct": 100
         }
       ],
       "abilities": [
         {
-          "name": "Prankster",
+          "name": "Blaze",
           "pct": 100
         }
       ]
@@ -5203,6 +5133,82 @@
         }
       ]
     },
+    "Meowstic": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Expanding Force",
+          "pct": 100
+        },
+        {
+          "name": "Psychic Terrain",
+          "pct": 100
+        },
+        {
+          "name": "Protect",
+          "pct": 100
+        },
+        {
+          "name": "Dark Pulse",
+          "pct": 100
+        }
+      ],
+      "items": [
+        {
+          "name": "Mental Herb",
+          "pct": 100
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Prankster",
+          "pct": 100
+        }
+      ]
+    },
+    "Conkeldurr": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Protect",
+          "pct": 100
+        },
+        {
+          "name": "Drain Punch",
+          "pct": 100
+        },
+        {
+          "name": "Mach Punch",
+          "pct": 100
+        },
+        {
+          "name": "Thunder Punch",
+          "pct": 100
+        }
+      ],
+      "items": [
+        {
+          "name": "Life Orb",
+          "pct": 50
+        },
+        {
+          "name": "Black Belt",
+          "pct": 50
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Iron Fist",
+          "pct": 100
+        }
+      ]
+    },
+    "Espathra": {
+      "usage": null,
+      "moves": [],
+      "items": [],
+      "abilities": []
+    },
     "Hawlucha": {
       "usage": null,
       "moves": [
@@ -5235,12 +5241,6 @@
           "pct": 100
         }
       ]
-    },
-    "Espathra": {
-      "usage": null,
-      "moves": [],
-      "items": [],
-      "abilities": []
     },
     "Heliolisk": {
       "usage": null,
