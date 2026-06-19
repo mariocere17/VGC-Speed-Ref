@@ -21,9 +21,9 @@ que usa un sistema de inversión en stats completamente diferente al VGC convenc
 | Dato | Fuente | Método |
 |------|--------|--------|
 | Uso % en ladder | Pikalytics `/ai/pokedex/championstournaments` | Scraper diario (GitHub Action) |
-| Uso % en torneos + win rate | Limitless TCG (`data-format="1"`, Reg M-A) | Scraper diario (GitHub Action) |
+| Uso % en torneos + win rate | Limitless TCG (`data-format="1"`, Reg M-A o M-B) | Scraper diario (GitHub Action) |
 | Moves / Items / Abilities | Pikalytics páginas individuales | Scraper diario (GitHub Action) |
-| SP spreads / Naturalezas | Smogon `gen9championsvgc2026regma-1760.json` (Showdown ladder 1760+ Elo) | Scraper mensual (GitHub Action, día 2 del mes) |
+| SP spreads / Naturalezas | Smogon `gen9championsvgc2026regmb-1760.json` (Showdown ladder 1760+ Elo) | Scraper mensual (GitHub Action, día 2 del mes) |
 
 ## Arquitectura de datos
 
@@ -34,9 +34,9 @@ que usa un sistema de inversión en stats completamente diferente al VGC convenc
 
 ## Contexto del formato
 
-- Formato: **Pokémon Champions** — Reg M-A (Regulation M, Series A)
+- Formato: **Pokémon Champions** — Reg M-B (Regulation M, Series B, activo desde 2026-06-17)
 - El juego tiene Mega Evoluciones disponibles
-- Los torneos en Limitless filtrados por `data-format="1"` + verificación "M-A" en descripción
+- Los torneos en Limitless filtrados por `data-format="1"` + verificación "M-A" o "M-B" en descripción
 - Pikalytics usa el nombre de formato `championstournaments`
 
 ## Modificadores de campo — global vs. per-side

@@ -49,14 +49,14 @@ async function getTournaments(date) {
   return results;
 }
 
-// Scrape metagame table for a tournament. Returns null if not Champions (M-A) format.
+// Scrape metagame table for a tournament. Returns null if not Champions (M-A or M-B) format.
 async function getMetagame(tournamentId) {
   const url = `${BASE_URL}/tournament/${tournamentId}/metagame`;
   const html = await fetchHtml(url);
 
-  // Confirm this is the Champions (Regulation M-A) format
+  // Confirm this is the Champions format (Regulation M-A or M-B)
   const desc = html.match(/<meta name="description" content="([^"]+)"/)?.[1] || '';
-  if (!desc.includes('M-A')) return null;
+  if (!desc.includes('M-A') && !desc.includes('M-B')) return null;
 
   const pokemon = {};
   // Each row has data-share and data-winrate attributes

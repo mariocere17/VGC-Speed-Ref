@@ -107,7 +107,7 @@ async function checkLimitless() {
 
 // ── Smogon SP spreads ───────────────────────────────────────────────────────
 const SMOGON_FILE   = path.join(ROOT, 'smogon.json');
-const SMOGON_FORMAT = 'gen9championsvgc2026regma';
+const SMOGON_FORMAT = 'gen9championsvgc2026regmb';
 const SMOGON_CUTOFF = 1760;
 
 async function checkSmogon() {

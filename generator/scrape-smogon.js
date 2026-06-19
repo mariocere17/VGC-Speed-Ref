@@ -2,7 +2,7 @@
 const fs   = require('fs');
 const path = require('path');
 
-const FORMAT     = 'gen9championsvgc2026regma';
+const FORMAT     = 'gen9championsvgc2026regmb';
 const CUTOFF     = 1760;
 const OUT_FILE   = path.join(__dirname, '..', 'smogon.json');
 const MOVES_FILE = path.join(__dirname, '..', 'moves.json');
