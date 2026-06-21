@@ -1,7 +1,7 @@
 {
-  "updated": "2026-06-20T06:38:11.096Z",
+  "updated": "2026-06-21T06:58:31.722Z",
   "format": "championstournaments",
-  "count": 114,
+  "count": 115,
   "pokemon": {
     "Sinistcha": {
       "usage": 39.13,
@@ -4465,43 +4465,6 @@
         }
       ]
     },
-    "Golurk": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Protect",
-          "pct": 100
-        },
-        {
-          "name": "Headlong Rush",
-          "pct": 100
-        },
-        {
-          "name": "Poltergeist",
-          "pct": 100
-        },
-        {
-          "name": "Rock Slide",
-          "pct": 66.667
-        },
-        {
-          "name": "Ice Punch",
-          "pct": 33.333
-        }
-      ],
-      "items": [
-        {
-          "name": "Golurkite",
-          "pct": 100
-        }
-      ],
-      "abilities": [
-        {
-          "name": "No Guard",
-          "pct": 100
-        }
-      ]
-    },
     "Vivillon": {
       "usage": null,
       "moves": [
@@ -4552,6 +4515,43 @@
         {
           "name": "Friend Guard",
           "pct": 13.333
+        }
+      ]
+    },
+    "Golurk": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Protect",
+          "pct": 100
+        },
+        {
+          "name": "Headlong Rush",
+          "pct": 100
+        },
+        {
+          "name": "Poltergeist",
+          "pct": 100
+        },
+        {
+          "name": "Rock Slide",
+          "pct": 66.667
+        },
+        {
+          "name": "Ice Punch",
+          "pct": 33.333
+        }
+      ],
+      "items": [
+        {
+          "name": "Golurkite",
+          "pct": 100
+        }
+      ],
+      "abilities": [
+        {
+          "name": "No Guard",
+          "pct": 100
         }
       ]
     },
@@ -5189,6 +5189,71 @@
         }
       ]
     },
+    "Azumarill": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Aqua Jet",
+          "pct": 100
+        },
+        {
+          "name": "Play Rough",
+          "pct": 93.75
+        },
+        {
+          "name": "Belly Drum",
+          "pct": 81.25
+        },
+        {
+          "name": "Protect",
+          "pct": 81.25
+        },
+        {
+          "name": "Superpower",
+          "pct": 25
+        },
+        {
+          "name": "Liquidation",
+          "pct": 6.25
+        },
+        {
+          "name": "Waterfall",
+          "pct": 6.25
+        },
+        {
+          "name": "Helping Hand",
+          "pct": 6.25
+        }
+      ],
+      "items": [
+        {
+          "name": "Sitrus Berry",
+          "pct": 75
+        },
+        {
+          "name": "Mystic Water",
+          "pct": 6.25
+        },
+        {
+          "name": "White Herb",
+          "pct": 6.25
+        },
+        {
+          "name": "Leftovers",
+          "pct": 6.25
+        },
+        {
+          "name": "Metronome",
+          "pct": 6.25
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Huge Power",
+          "pct": 100
+        }
+      ]
+    },
     "Manectric": {
       "usage": null,
       "moves": [
@@ -5251,71 +5316,6 @@
       "abilities": [
         {
           "name": "Sturdy",
-          "pct": 100
-        }
-      ]
-    },
-    "Azumarill": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Aqua Jet",
-          "pct": 100
-        },
-        {
-          "name": "Play Rough",
-          "pct": 93.75
-        },
-        {
-          "name": "Belly Drum",
-          "pct": 81.25
-        },
-        {
-          "name": "Protect",
-          "pct": 81.25
-        },
-        {
-          "name": "Superpower",
-          "pct": 25
-        },
-        {
-          "name": "Liquidation",
-          "pct": 6.25
-        },
-        {
-          "name": "Waterfall",
-          "pct": 6.25
-        },
-        {
-          "name": "Helping Hand",
-          "pct": 6.25
-        }
-      ],
-      "items": [
-        {
-          "name": "Sitrus Berry",
-          "pct": 75
-        },
-        {
-          "name": "Mystic Water",
-          "pct": 6.25
-        },
-        {
-          "name": "White Herb",
-          "pct": 6.25
-        },
-        {
-          "name": "Leftovers",
-          "pct": 6.25
-        },
-        {
-          "name": "Metronome",
-          "pct": 6.25
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Huge Power",
           "pct": 100
         }
       ]
@@ -5791,59 +5791,6 @@
         }
       ]
     },
-    "Empoleon": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Icy Wind",
-          "pct": 66.667
-        },
-        {
-          "name": "Surf",
-          "pct": 66.667
-        },
-        {
-          "name": "Protect",
-          "pct": 66.667
-        },
-        {
-          "name": "Ice Beam",
-          "pct": 66.667
-        },
-        {
-          "name": "Helping Hand",
-          "pct": 33.333
-        },
-        {
-          "name": "Flash Cannon",
-          "pct": 33.333
-        },
-        {
-          "name": "Hydro Pump",
-          "pct": 33.333
-        },
-        {
-          "name": "Haze",
-          "pct": 33.333
-        }
-      ],
-      "items": [
-        {
-          "name": "Chople Berry",
-          "pct": 66.667
-        },
-        {
-          "name": "Choice Scarf",
-          "pct": 33.333
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Competitive",
-          "pct": 100
-        }
-      ]
-    },
     "Mamoswine": {
       "usage": null,
       "moves": [
@@ -5906,6 +5853,59 @@
         {
           "name": "Thick Fat",
           "pct": 16.667
+        }
+      ]
+    },
+    "Empoleon": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Icy Wind",
+          "pct": 66.667
+        },
+        {
+          "name": "Surf",
+          "pct": 66.667
+        },
+        {
+          "name": "Protect",
+          "pct": 66.667
+        },
+        {
+          "name": "Ice Beam",
+          "pct": 66.667
+        },
+        {
+          "name": "Helping Hand",
+          "pct": 33.333
+        },
+        {
+          "name": "Flash Cannon",
+          "pct": 33.333
+        },
+        {
+          "name": "Hydro Pump",
+          "pct": 33.333
+        },
+        {
+          "name": "Haze",
+          "pct": 33.333
+        }
+      ],
+      "items": [
+        {
+          "name": "Chople Berry",
+          "pct": 66.667
+        },
+        {
+          "name": "Choice Scarf",
+          "pct": 33.333
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Competitive",
+          "pct": 100
         }
       ]
     },
@@ -6040,59 +6040,6 @@
         }
       ]
     },
-    "Meowstic": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Quick Guard",
-          "pct": 50
-        },
-        {
-          "name": "Charm",
-          "pct": 50
-        },
-        {
-          "name": "Thunder Wave",
-          "pct": 50
-        },
-        {
-          "name": "Psychic",
-          "pct": 50
-        },
-        {
-          "name": "Expanding Force",
-          "pct": 50
-        },
-        {
-          "name": "Psychic Terrain",
-          "pct": 50
-        },
-        {
-          "name": "Protect",
-          "pct": 50
-        },
-        {
-          "name": "Dark Pulse",
-          "pct": 50
-        }
-      ],
-      "items": [
-        {
-          "name": "Leftovers",
-          "pct": 50
-        },
-        {
-          "name": "Mental Herb",
-          "pct": 50
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Prankster",
-          "pct": 100
-        }
-      ]
-    },
     "Conkeldurr": {
       "usage": null,
       "moves": [
@@ -6147,6 +6094,108 @@
         {
           "name": "Guts",
           "pct": 33.333
+        }
+      ]
+    },
+    "Meowstic": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Quick Guard",
+          "pct": 50
+        },
+        {
+          "name": "Charm",
+          "pct": 50
+        },
+        {
+          "name": "Thunder Wave",
+          "pct": 50
+        },
+        {
+          "name": "Psychic",
+          "pct": 50
+        },
+        {
+          "name": "Expanding Force",
+          "pct": 50
+        },
+        {
+          "name": "Psychic Terrain",
+          "pct": 50
+        },
+        {
+          "name": "Protect",
+          "pct": 50
+        },
+        {
+          "name": "Dark Pulse",
+          "pct": 50
+        }
+      ],
+      "items": [
+        {
+          "name": "Leftovers",
+          "pct": 50
+        },
+        {
+          "name": "Mental Herb",
+          "pct": 50
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Prankster",
+          "pct": 100
+        }
+      ]
+    },
+    "Staraptor": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Brave Bird",
+          "pct": 100
+        },
+        {
+          "name": "Close Combat",
+          "pct": 100
+        },
+        {
+          "name": "Protect",
+          "pct": 60
+        },
+        {
+          "name": "Final Gambit",
+          "pct": 40
+        },
+        {
+          "name": "Roost",
+          "pct": 40
+        },
+        {
+          "name": "U-turn",
+          "pct": 40
+        },
+        {
+          "name": "Double-Edge",
+          "pct": 20
+        }
+      ],
+      "items": [
+        {
+          "name": "Choice Scarf",
+          "pct": 40
+        },
+        {
+          "name": "Starminite",
+          "pct": 40
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Intimidate",
+          "pct": 100
         }
       ]
     },
@@ -6246,56 +6295,52 @@
         }
       ]
     },
-    "Mega Dragonite": {
+    "Metagross": {
       "usage": null,
       "moves": [
         {
+          "name": "Psychic Fangs",
+          "pct": 100
+        },
+        {
+          "name": "Bullet Punch",
+          "pct": 83.333
+        },
+        {
           "name": "Protect",
-          "pct": 83.784
+          "pct": 66.667
         },
         {
-          "name": "Dragon Pulse",
-          "pct": 64.865
+          "name": "Iron Head",
+          "pct": 50
         },
         {
-          "name": "Tailwind",
-          "pct": 43.243
+          "name": "Meteor Mash",
+          "pct": 50
         },
         {
-          "name": "Hurricane",
-          "pct": 43.243
+          "name": "Earthquake",
+          "pct": 33.333
         },
         {
-          "name": "Flamethrower",
-          "pct": 35.135
-        },
-        {
-          "name": "Draco Meteor",
-          "pct": 32.432
-        },
-        {
-          "name": "Heat Wave",
-          "pct": 24.324
-        },
-        {
-          "name": "Thunder",
-          "pct": 21.622
+          "name": "Body Press",
+          "pct": 16.667
         }
       ],
       "items": [
         {
-          "name": "Dragoninite",
-          "pct": 100
+          "name": "Life Orb",
+          "pct": 83.333
+        },
+        {
+          "name": "Lum Berry",
+          "pct": 16.667
         }
       ],
       "abilities": [
         {
-          "name": "Multiscale",
-          "pct": 59.459
-        },
-        {
-          "name": "Inner Focus",
-          "pct": 40.541
+          "name": "Clear Body",
+          "pct": 100
         }
       ]
     }
