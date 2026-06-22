@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-21T06:58:31.722Z",
+  "updated": "2026-06-22T07:33:32.571Z",
   "format": "championstournaments",
   "count": 115,
   "pokemon": {
@@ -4075,67 +4075,6 @@
         }
       ]
     },
-    "Palafin": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Wave Crash",
-          "pct": 88.889
-        },
-        {
-          "name": "Jet Punch",
-          "pct": 88.889
-        },
-        {
-          "name": "Close Combat",
-          "pct": 55.556
-        },
-        {
-          "name": "Ice Punch",
-          "pct": 55.556
-        },
-        {
-          "name": "Flip Turn",
-          "pct": 44.444
-        },
-        {
-          "name": "Protect",
-          "pct": 33.333
-        },
-        {
-          "name": "Drain Punch",
-          "pct": 22.222
-        },
-        {
-          "name": "Throat Chop",
-          "pct": 11.111
-        }
-      ],
-      "items": [
-        {
-          "name": "Mystic Water",
-          "pct": 55.556
-        },
-        {
-          "name": "Choice Scarf",
-          "pct": 22.222
-        },
-        {
-          "name": "Quick Claw",
-          "pct": 11.111
-        },
-        {
-          "name": "Life Orb",
-          "pct": 11.111
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Zero to Hero",
-          "pct": 100
-        }
-      ]
-    },
     "Clefable": {
       "usage": null,
       "moves": [
@@ -4206,6 +4145,67 @@
         {
           "name": "Magic Guard",
           "pct": 6.667
+        }
+      ]
+    },
+    "Palafin": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Wave Crash",
+          "pct": 88.889
+        },
+        {
+          "name": "Jet Punch",
+          "pct": 88.889
+        },
+        {
+          "name": "Close Combat",
+          "pct": 55.556
+        },
+        {
+          "name": "Ice Punch",
+          "pct": 55.556
+        },
+        {
+          "name": "Flip Turn",
+          "pct": 44.444
+        },
+        {
+          "name": "Protect",
+          "pct": 33.333
+        },
+        {
+          "name": "Drain Punch",
+          "pct": 22.222
+        },
+        {
+          "name": "Throat Chop",
+          "pct": 11.111
+        }
+      ],
+      "items": [
+        {
+          "name": "Mystic Water",
+          "pct": 55.556
+        },
+        {
+          "name": "Choice Scarf",
+          "pct": 22.222
+        },
+        {
+          "name": "Quick Claw",
+          "pct": 11.111
+        },
+        {
+          "name": "Life Orb",
+          "pct": 11.111
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Zero to Hero",
+          "pct": 100
         }
       ]
     },
@@ -5909,6 +5909,55 @@
         }
       ]
     },
+    "Staraptor": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Brave Bird",
+          "pct": 100
+        },
+        {
+          "name": "Close Combat",
+          "pct": 100
+        },
+        {
+          "name": "Protect",
+          "pct": 60
+        },
+        {
+          "name": "Final Gambit",
+          "pct": 40
+        },
+        {
+          "name": "Roost",
+          "pct": 40
+        },
+        {
+          "name": "U-turn",
+          "pct": 40
+        },
+        {
+          "name": "Double-Edge",
+          "pct": 20
+        }
+      ],
+      "items": [
+        {
+          "name": "Choice Scarf",
+          "pct": 40
+        },
+        {
+          "name": "Starminite",
+          "pct": 40
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Intimidate",
+          "pct": 100
+        }
+      ]
+    },
     "Feraligatr": {
       "usage": null,
       "moves": [
@@ -6040,6 +6089,59 @@
         }
       ]
     },
+    "Meowstic": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Quick Guard",
+          "pct": 50
+        },
+        {
+          "name": "Charm",
+          "pct": 50
+        },
+        {
+          "name": "Thunder Wave",
+          "pct": 50
+        },
+        {
+          "name": "Psychic",
+          "pct": 50
+        },
+        {
+          "name": "Expanding Force",
+          "pct": 50
+        },
+        {
+          "name": "Psychic Terrain",
+          "pct": 50
+        },
+        {
+          "name": "Protect",
+          "pct": 50
+        },
+        {
+          "name": "Dark Pulse",
+          "pct": 50
+        }
+      ],
+      "items": [
+        {
+          "name": "Leftovers",
+          "pct": 50
+        },
+        {
+          "name": "Mental Herb",
+          "pct": 50
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Prankster",
+          "pct": 100
+        }
+      ]
+    },
     "Conkeldurr": {
       "usage": null,
       "moves": [
@@ -6094,108 +6196,6 @@
         {
           "name": "Guts",
           "pct": 33.333
-        }
-      ]
-    },
-    "Meowstic": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Quick Guard",
-          "pct": 50
-        },
-        {
-          "name": "Charm",
-          "pct": 50
-        },
-        {
-          "name": "Thunder Wave",
-          "pct": 50
-        },
-        {
-          "name": "Psychic",
-          "pct": 50
-        },
-        {
-          "name": "Expanding Force",
-          "pct": 50
-        },
-        {
-          "name": "Psychic Terrain",
-          "pct": 50
-        },
-        {
-          "name": "Protect",
-          "pct": 50
-        },
-        {
-          "name": "Dark Pulse",
-          "pct": 50
-        }
-      ],
-      "items": [
-        {
-          "name": "Leftovers",
-          "pct": 50
-        },
-        {
-          "name": "Mental Herb",
-          "pct": 50
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Prankster",
-          "pct": 100
-        }
-      ]
-    },
-    "Staraptor": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Brave Bird",
-          "pct": 100
-        },
-        {
-          "name": "Close Combat",
-          "pct": 100
-        },
-        {
-          "name": "Protect",
-          "pct": 60
-        },
-        {
-          "name": "Final Gambit",
-          "pct": 40
-        },
-        {
-          "name": "Roost",
-          "pct": 40
-        },
-        {
-          "name": "U-turn",
-          "pct": 40
-        },
-        {
-          "name": "Double-Edge",
-          "pct": 20
-        }
-      ],
-      "items": [
-        {
-          "name": "Choice Scarf",
-          "pct": 40
-        },
-        {
-          "name": "Starminite",
-          "pct": 40
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Intimidate",
-          "pct": 100
         }
       ]
     },
