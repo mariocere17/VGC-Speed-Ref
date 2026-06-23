@@ -1,7 +1,7 @@
 {
-  "updated": "2026-06-22T07:33:32.571Z",
+  "updated": "2026-06-23T06:16:10.972Z",
   "format": "championstournaments",
-  "count": 115,
+  "count": 116,
   "pokemon": {
     "Sinistcha": {
       "usage": 39.13,
@@ -5585,6 +5585,55 @@
         }
       ]
     },
+    "Staraptor": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Brave Bird",
+          "pct": 100
+        },
+        {
+          "name": "Close Combat",
+          "pct": 100
+        },
+        {
+          "name": "Protect",
+          "pct": 60
+        },
+        {
+          "name": "Final Gambit",
+          "pct": 40
+        },
+        {
+          "name": "Roost",
+          "pct": 40
+        },
+        {
+          "name": "U-turn",
+          "pct": 40
+        },
+        {
+          "name": "Double-Edge",
+          "pct": 20
+        }
+      ],
+      "items": [
+        {
+          "name": "Choice Scarf",
+          "pct": 40
+        },
+        {
+          "name": "Starminite",
+          "pct": 40
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Intimidate",
+          "pct": 100
+        }
+      ]
+    },
     "Snorlax": {
       "usage": null,
       "moves": [
@@ -5791,6 +5840,59 @@
         }
       ]
     },
+    "Empoleon": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Icy Wind",
+          "pct": 66.667
+        },
+        {
+          "name": "Surf",
+          "pct": 66.667
+        },
+        {
+          "name": "Protect",
+          "pct": 66.667
+        },
+        {
+          "name": "Ice Beam",
+          "pct": 66.667
+        },
+        {
+          "name": "Helping Hand",
+          "pct": 33.333
+        },
+        {
+          "name": "Flash Cannon",
+          "pct": 33.333
+        },
+        {
+          "name": "Hydro Pump",
+          "pct": 33.333
+        },
+        {
+          "name": "Haze",
+          "pct": 33.333
+        }
+      ],
+      "items": [
+        {
+          "name": "Chople Berry",
+          "pct": 66.667
+        },
+        {
+          "name": "Choice Scarf",
+          "pct": 33.333
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Competitive",
+          "pct": 100
+        }
+      ]
+    },
     "Mamoswine": {
       "usage": null,
       "moves": [
@@ -5853,108 +5955,6 @@
         {
           "name": "Thick Fat",
           "pct": 16.667
-        }
-      ]
-    },
-    "Empoleon": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Icy Wind",
-          "pct": 66.667
-        },
-        {
-          "name": "Surf",
-          "pct": 66.667
-        },
-        {
-          "name": "Protect",
-          "pct": 66.667
-        },
-        {
-          "name": "Ice Beam",
-          "pct": 66.667
-        },
-        {
-          "name": "Helping Hand",
-          "pct": 33.333
-        },
-        {
-          "name": "Flash Cannon",
-          "pct": 33.333
-        },
-        {
-          "name": "Hydro Pump",
-          "pct": 33.333
-        },
-        {
-          "name": "Haze",
-          "pct": 33.333
-        }
-      ],
-      "items": [
-        {
-          "name": "Chople Berry",
-          "pct": 66.667
-        },
-        {
-          "name": "Choice Scarf",
-          "pct": 33.333
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Competitive",
-          "pct": 100
-        }
-      ]
-    },
-    "Staraptor": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Brave Bird",
-          "pct": 100
-        },
-        {
-          "name": "Close Combat",
-          "pct": 100
-        },
-        {
-          "name": "Protect",
-          "pct": 60
-        },
-        {
-          "name": "Final Gambit",
-          "pct": 40
-        },
-        {
-          "name": "Roost",
-          "pct": 40
-        },
-        {
-          "name": "U-turn",
-          "pct": 40
-        },
-        {
-          "name": "Double-Edge",
-          "pct": 20
-        }
-      ],
-      "items": [
-        {
-          "name": "Choice Scarf",
-          "pct": 40
-        },
-        {
-          "name": "Starminite",
-          "pct": 40
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Intimidate",
-          "pct": 100
         }
       ]
     },
@@ -6085,6 +6085,55 @@
       "abilities": [
         {
           "name": "Protean",
+          "pct": 100
+        }
+      ]
+    },
+    "Metagross": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Psychic Fangs",
+          "pct": 100
+        },
+        {
+          "name": "Bullet Punch",
+          "pct": 83.333
+        },
+        {
+          "name": "Protect",
+          "pct": 66.667
+        },
+        {
+          "name": "Iron Head",
+          "pct": 50
+        },
+        {
+          "name": "Meteor Mash",
+          "pct": 50
+        },
+        {
+          "name": "Earthquake",
+          "pct": 33.333
+        },
+        {
+          "name": "Body Press",
+          "pct": 16.667
+        }
+      ],
+      "items": [
+        {
+          "name": "Life Orb",
+          "pct": 83.333
+        },
+        {
+          "name": "Lum Berry",
+          "pct": 16.667
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Clear Body",
           "pct": 100
         }
       ]
@@ -6295,51 +6344,35 @@
         }
       ]
     },
-    "Metagross": {
+    "Swampert": {
       "usage": null,
       "moves": [
         {
-          "name": "Psychic Fangs",
+          "name": "Wide Guard",
           "pct": 100
         },
         {
-          "name": "Bullet Punch",
-          "pct": 83.333
-        },
-        {
-          "name": "Protect",
-          "pct": 66.667
-        },
-        {
-          "name": "Iron Head",
-          "pct": 50
-        },
-        {
-          "name": "Meteor Mash",
-          "pct": 50
-        },
-        {
           "name": "Earthquake",
-          "pct": 33.333
+          "pct": 100
         },
         {
-          "name": "Body Press",
-          "pct": 16.667
+          "name": "Icy Wind",
+          "pct": 100
+        },
+        {
+          "name": "Liquidation",
+          "pct": 100
         }
       ],
       "items": [
         {
-          "name": "Life Orb",
-          "pct": 83.333
-        },
-        {
-          "name": "Lum Berry",
-          "pct": 16.667
+          "name": "Rindo Berry",
+          "pct": 100
         }
       ],
       "abilities": [
         {
-          "name": "Clear Body",
+          "name": "Torrent",
           "pct": 100
         }
       ]
