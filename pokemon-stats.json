@@ -81431,7 +81431,9 @@
       "bug",
       "poison"
     ],
-    "abilities": [],
+    "abilities": [
+      "shell-armor"
+    ],
     "moves": [
       "Aqua Tail",
       "Assurance",
@@ -81496,7 +81498,9 @@
       "dark",
       "fighting"
     ],
-    "abilities": [],
+    "abilities": [
+      "intimidate"
+    ],
     "moves": [
       "Acid Spray",
       "Assurance",
@@ -81575,7 +81579,9 @@
     "types": [
       "electric"
     ],
-    "abilities": [],
+    "abilities": [
+      "eelevate"
+    ],
     "moves": [
       "Acid",
       "Acid Spray",
@@ -81953,7 +81959,9 @@
       "fire",
       "normal"
     ],
-    "abilities": [],
+    "abilities": [
+      "fire-mane"
+    ],
     "moves": [
       "Acrobatics",
       "Body Slam",
@@ -82063,7 +82071,9 @@
       "dark",
       "psychic"
     ],
-    "abilities": [],
+    "abilities": [
+      "contrary"
+    ],
     "moves": [
       "Aerial Ace",
       "Bind",
@@ -82123,7 +82133,9 @@
       "rock",
       "fighting"
     ],
-    "abilities": [],
+    "abilities": [
+      "tough-claws"
+    ],
     "moves": [
       "Aerial Ace",
       "Ancient Power",
@@ -82201,7 +82213,9 @@
       "poison",
       "dragon"
     ],
-    "abilities": [],
+    "abilities": [
+      "regenerator"
+    ],
     "moves": [
       "Acid",
       "Acid Spray",
@@ -82481,7 +82495,9 @@
     "types": [
       "fighting"
     ],
-    "abilities": [],
+    "abilities": [
+      "defiant"
+    ],
     "moves": [
       "Assurance",
       "Body Press",
@@ -82845,7 +82861,9 @@
       "fighting",
       "flying"
     ],
-    "abilities": [],
+    "abilities": [
+      "contrary"
+    ],
     "moves": [
       "Acrobatics",
       "Aerial Ace",
@@ -83283,8 +83301,8 @@
       "Zen Headbutt"
     ]
   },
-  "mega meowstic": {
-    "displayName": "Mega Meowstic",
+  "mega meowstic male": {
+    "displayName": "Mega Meowstic Male",
     "hp": 74,
     "atk": 48,
     "def": 76,
@@ -83897,5 +83915,11 @@
       "Thunder Fang",
       "Zen Headbutt"
     ]
+  },
+  "mega meowstic female": {
+    "displayName": "Mega Meowstic Female",
+    "types": [],
+    "abilities": [],
+    "moves": []
   }
 }
