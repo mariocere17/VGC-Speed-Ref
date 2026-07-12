@@ -83918,8 +83918,18 @@
   },
   "mega meowstic female": {
     "displayName": "Mega Meowstic Female",
-    "types": [],
-    "abilities": [],
+    "hp": 74,
+    "atk": 48,
+    "def": 76,
+    "spa": 143,
+    "spd": 101,
+    "spe": 124,
+    "types": [
+      "psychic"
+    ],
+    "abilities": [
+      "trace"
+    ],
     "moves": []
   }
 }
