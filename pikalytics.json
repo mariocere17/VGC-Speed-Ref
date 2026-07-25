@@ -1,7 +1,7 @@
 {
-  "updated": "2026-07-24T05:27:48.876Z",
+  "updated": "2026-07-25T05:21:29.400Z",
   "format": "championstournaments",
-  "count": 119,
+  "count": 120,
   "pokemon": {
     "Garchomp": {
       "usage": 38.44,
@@ -5060,51 +5060,6 @@
         }
       ]
     },
-    "Mega Floette": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Protect",
-          "pct": 99.625
-        },
-        {
-          "name": "Dazzling Gleam",
-          "pct": 95.174
-        },
-        {
-          "name": "Moonblast",
-          "pct": 76.676
-        },
-        {
-          "name": "Calm Mind",
-          "pct": 49.973
-        },
-        {
-          "name": "Light of Ruin",
-          "pct": 49.276
-        },
-        {
-          "name": "Draining Kiss",
-          "pct": 25.952
-        }
-      ],
-      "items": [
-        {
-          "name": "Floettite",
-          "pct": 100
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Flower Veil",
-          "pct": 96.086
-        },
-        {
-          "name": "Fairy Aura",
-          "pct": 3.378
-        }
-      ]
-    },
     "Meowscarada": {
       "usage": null,
       "moves": [
@@ -5178,72 +5133,48 @@
         }
       ]
     },
-    "Volcarona": {
+    "Mega Floette": {
       "usage": null,
       "moves": [
         {
           "name": "Protect",
-          "pct": 60
+          "pct": 99.625
         },
         {
-          "name": "Quiver Dance",
-          "pct": 58.571
+          "name": "Dazzling Gleam",
+          "pct": 95.174
         },
         {
-          "name": "Giga Drain",
-          "pct": 57.143
+          "name": "Moonblast",
+          "pct": 76.676
         },
         {
-          "name": "Fiery Dance",
-          "pct": 47.143
+          "name": "Calm Mind",
+          "pct": 49.973
         },
         {
-          "name": "Heat Wave",
-          "pct": 45.714
+          "name": "Light of Ruin",
+          "pct": 49.276
         },
         {
-          "name": "Rage Powder",
-          "pct": 37.143
-        },
-        {
-          "name": "Tailwind",
-          "pct": 25.714
-        },
-        {
-          "name": "Bug Buzz",
-          "pct": 24.286
+          "name": "Draining Kiss",
+          "pct": 25.952
         }
       ],
       "items": [
         {
-          "name": "Leftovers",
-          "pct": 32.857
-        },
-        {
-          "name": "Sitrus Berry",
-          "pct": 20
-        },
-        {
-          "name": "Charti Berry",
-          "pct": 18.571
-        },
-        {
-          "name": "Focus Sash",
-          "pct": 18.571
-        },
-        {
-          "name": "Life Orb",
-          "pct": 4.286
-        },
-        {
-          "name": "Passho Berry",
-          "pct": 2.857
+          "name": "Floettite",
+          "pct": 100
         }
       ],
       "abilities": [
         {
-          "name": "Flame Body",
-          "pct": 100
+          "name": "Flower Veil",
+          "pct": 96.086
+        },
+        {
+          "name": "Fairy Aura",
+          "pct": 3.378
         }
       ]
     },
@@ -5317,6 +5248,75 @@
         {
           "name": "Blaze",
           "pct": 1.852
+        }
+      ]
+    },
+    "Volcarona": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Protect",
+          "pct": 60
+        },
+        {
+          "name": "Quiver Dance",
+          "pct": 58.571
+        },
+        {
+          "name": "Giga Drain",
+          "pct": 57.143
+        },
+        {
+          "name": "Fiery Dance",
+          "pct": 47.143
+        },
+        {
+          "name": "Heat Wave",
+          "pct": 45.714
+        },
+        {
+          "name": "Rage Powder",
+          "pct": 37.143
+        },
+        {
+          "name": "Tailwind",
+          "pct": 25.714
+        },
+        {
+          "name": "Bug Buzz",
+          "pct": 24.286
+        }
+      ],
+      "items": [
+        {
+          "name": "Leftovers",
+          "pct": 32.857
+        },
+        {
+          "name": "Sitrus Berry",
+          "pct": 20
+        },
+        {
+          "name": "Charti Berry",
+          "pct": 18.571
+        },
+        {
+          "name": "Focus Sash",
+          "pct": 18.571
+        },
+        {
+          "name": "Life Orb",
+          "pct": 4.286
+        },
+        {
+          "name": "Passho Berry",
+          "pct": 2.857
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Flame Body",
+          "pct": 100
         }
       ]
     },
@@ -6652,6 +6652,55 @@
         }
       ]
     },
+    "Skarmory": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Iron Head",
+          "pct": 100
+        },
+        {
+          "name": "Protect",
+          "pct": 100
+        },
+        {
+          "name": "Brave Bird",
+          "pct": 66.667
+        },
+        {
+          "name": "Dual Wingbeat",
+          "pct": 33.333
+        },
+        {
+          "name": "Whirlwind",
+          "pct": 33.333
+        },
+        {
+          "name": "Substitute",
+          "pct": 33.333
+        },
+        {
+          "name": "Tailwind",
+          "pct": 33.333
+        }
+      ],
+      "items": [
+        {
+          "name": "Metal Coat",
+          "pct": 66.667
+        },
+        {
+          "name": "Sitrus Berry",
+          "pct": 33.333
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Sturdy",
+          "pct": 100
+        }
+      ]
+    },
     "Manectric": {
       "usage": null,
       "moves": [
@@ -6706,55 +6755,6 @@
         {
           "name": "Static",
           "pct": 25
-        }
-      ]
-    },
-    "Skarmory": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Iron Head",
-          "pct": 100
-        },
-        {
-          "name": "Protect",
-          "pct": 100
-        },
-        {
-          "name": "Brave Bird",
-          "pct": 66.667
-        },
-        {
-          "name": "Dual Wingbeat",
-          "pct": 33.333
-        },
-        {
-          "name": "Whirlwind",
-          "pct": 33.333
-        },
-        {
-          "name": "Substitute",
-          "pct": 33.333
-        },
-        {
-          "name": "Tailwind",
-          "pct": 33.333
-        }
-      ],
-      "items": [
-        {
-          "name": "Metal Coat",
-          "pct": 66.667
-        },
-        {
-          "name": "Sitrus Berry",
-          "pct": 33.333
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Sturdy",
-          "pct": 100
         }
       ]
     },
@@ -7689,6 +7689,63 @@
         {
           "name": "Opportunist",
           "pct": 3.226
+        }
+      ]
+    },
+    "Eelektross": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Protect",
+          "pct": 87.5
+        },
+        {
+          "name": "Supercell Slam",
+          "pct": 25
+        },
+        {
+          "name": "Thunderbolt",
+          "pct": 25
+        },
+        {
+          "name": "Flamethrower",
+          "pct": 12.5
+        },
+        {
+          "name": "Psychic Fangs",
+          "pct": 12.5
+        },
+        {
+          "name": "Knock Off",
+          "pct": 12.5
+        },
+        {
+          "name": "Wild Charge",
+          "pct": 12.5
+        },
+        {
+          "name": "Drain Punch",
+          "pct": 12.5
+        }
+      ],
+      "items": [
+        {
+          "name": "Nothing",
+          "pct": 62.5
+        },
+        {
+          "name": "Leftovers",
+          "pct": 25
+        },
+        {
+          "name": "Quick Claw",
+          "pct": 12.5
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Levitate",
+          "pct": 37.5
         }
       ]
     }
