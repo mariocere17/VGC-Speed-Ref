@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-29T05:29:26.421Z",
+  "updated": "2026-07-30T05:15:49.931Z",
   "format": "championstournaments",
   "count": 116,
   "pokemon": {
@@ -5150,59 +5150,6 @@
         }
       ]
     },
-    "Mega Floette": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Protect",
-          "pct": 99.435
-        },
-        {
-          "name": "Dazzling Gleam",
-          "pct": 93.829
-        },
-        {
-          "name": "Moonblast",
-          "pct": 72.539
-        },
-        {
-          "name": "Calm Mind",
-          "pct": 51.437
-        },
-        {
-          "name": "Light of Ruin",
-          "pct": 46.868
-        },
-        {
-          "name": "Draining Kiss",
-          "pct": 30.947
-        },
-        {
-          "name": "Giga Drain",
-          "pct": 1.036
-        },
-        {
-          "name": "Psychic",
-          "pct": 1.036
-        }
-      ],
-      "items": [
-        {
-          "name": "Floettite",
-          "pct": 100
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Flower Veil",
-          "pct": 96.42
-        },
-        {
-          "name": "Fairy Aura",
-          "pct": 2.685
-        }
-      ]
-    },
     "Volcarona": {
       "usage": null,
       "moves": [
@@ -5273,6 +5220,59 @@
         {
           "name": "Swarm",
           "pct": 2.817
+        }
+      ]
+    },
+    "Mega Floette": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Protect",
+          "pct": 99.435
+        },
+        {
+          "name": "Dazzling Gleam",
+          "pct": 93.829
+        },
+        {
+          "name": "Moonblast",
+          "pct": 72.539
+        },
+        {
+          "name": "Calm Mind",
+          "pct": 51.437
+        },
+        {
+          "name": "Light of Ruin",
+          "pct": 46.868
+        },
+        {
+          "name": "Draining Kiss",
+          "pct": 30.947
+        },
+        {
+          "name": "Giga Drain",
+          "pct": 1.036
+        },
+        {
+          "name": "Psychic",
+          "pct": 1.036
+        }
+      ],
+      "items": [
+        {
+          "name": "Floettite",
+          "pct": 100
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Flower Veil",
+          "pct": 96.42
+        },
+        {
+          "name": "Fairy Aura",
+          "pct": 2.685
         }
       ]
     },
@@ -6656,71 +6656,6 @@
         }
       ]
     },
-    "Skarmory": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Iron Head",
-          "pct": 69.231
-        },
-        {
-          "name": "Protect",
-          "pct": 69.231
-        },
-        {
-          "name": "Tailwind",
-          "pct": 61.538
-        },
-        {
-          "name": "Brave Bird",
-          "pct": 53.846
-        },
-        {
-          "name": "Body Press",
-          "pct": 46.154
-        },
-        {
-          "name": "Iron Defense",
-          "pct": 30.769
-        },
-        {
-          "name": "Roost",
-          "pct": 23.077
-        },
-        {
-          "name": "Dual Wingbeat",
-          "pct": 15.385
-        }
-      ],
-      "items": [
-        {
-          "name": "Leftovers",
-          "pct": 53.846
-        },
-        {
-          "name": "Metal Coat",
-          "pct": 23.077
-        },
-        {
-          "name": "Expert Belt",
-          "pct": 15.385
-        },
-        {
-          "name": "Sharp Beak",
-          "pct": 7.692
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Sturdy",
-          "pct": 92.308
-        },
-        {
-          "name": "Keen Eye",
-          "pct": 7.692
-        }
-      ]
-    },
     "Araquanid": {
       "usage": null,
       "moves": [
@@ -6794,6 +6729,71 @@
         }
       ]
     },
+    "Skarmory": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Iron Head",
+          "pct": 69.231
+        },
+        {
+          "name": "Protect",
+          "pct": 69.231
+        },
+        {
+          "name": "Tailwind",
+          "pct": 61.538
+        },
+        {
+          "name": "Brave Bird",
+          "pct": 53.846
+        },
+        {
+          "name": "Body Press",
+          "pct": 46.154
+        },
+        {
+          "name": "Iron Defense",
+          "pct": 30.769
+        },
+        {
+          "name": "Roost",
+          "pct": 23.077
+        },
+        {
+          "name": "Dual Wingbeat",
+          "pct": 15.385
+        }
+      ],
+      "items": [
+        {
+          "name": "Leftovers",
+          "pct": 53.846
+        },
+        {
+          "name": "Metal Coat",
+          "pct": 23.077
+        },
+        {
+          "name": "Expert Belt",
+          "pct": 15.385
+        },
+        {
+          "name": "Sharp Beak",
+          "pct": 7.692
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Sturdy",
+          "pct": 92.308
+        },
+        {
+          "name": "Keen Eye",
+          "pct": 7.692
+        }
+      ]
+    },
     "Manectric": {
       "usage": null,
       "moves": [
@@ -6863,63 +6863,6 @@
         }
       ]
     },
-    "Mega Charizard Y": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Protect",
-          "pct": 99.258
-        },
-        {
-          "name": "Heat Wave",
-          "pct": 99.04
-        },
-        {
-          "name": "Weather Ball",
-          "pct": 92.234
-        },
-        {
-          "name": "Solar Beam",
-          "pct": 91.274
-        },
-        {
-          "name": "Helping Hand",
-          "pct": 6.479
-        },
-        {
-          "name": "Air Slash",
-          "pct": 2.596
-        },
-        {
-          "name": "Ancient Power",
-          "pct": 2.16
-        },
-        {
-          "name": "Hurricane",
-          "pct": 1.309
-        }
-      ],
-      "items": [
-        {
-          "name": "Charizardite Y",
-          "pct": 100
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Blaze",
-          "pct": 82.068
-        },
-        {
-          "name": "Solar Power",
-          "pct": 15.38
-        },
-        {
-          "name": "Drought",
-          "pct": 2.509
-        }
-      ]
-    },
     "Vileplume": {
       "usage": null,
       "moves": [
@@ -6986,6 +6929,63 @@
         {
           "name": "Effect Spore",
           "pct": 9.319
+        }
+      ]
+    },
+    "Mega Charizard Y": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Protect",
+          "pct": 99.258
+        },
+        {
+          "name": "Heat Wave",
+          "pct": 99.04
+        },
+        {
+          "name": "Weather Ball",
+          "pct": 92.234
+        },
+        {
+          "name": "Solar Beam",
+          "pct": 91.274
+        },
+        {
+          "name": "Helping Hand",
+          "pct": 6.479
+        },
+        {
+          "name": "Air Slash",
+          "pct": 2.596
+        },
+        {
+          "name": "Ancient Power",
+          "pct": 2.16
+        },
+        {
+          "name": "Hurricane",
+          "pct": 1.309
+        }
+      ],
+      "items": [
+        {
+          "name": "Charizardite Y",
+          "pct": 100
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Blaze",
+          "pct": 82.068
+        },
+        {
+          "name": "Solar Power",
+          "pct": 15.38
+        },
+        {
+          "name": "Drought",
+          "pct": 2.509
         }
       ]
     },
