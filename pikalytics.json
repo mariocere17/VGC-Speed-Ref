@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-30T05:15:49.931Z",
+  "updated": "2026-07-31T05:42:30.791Z",
   "format": "championstournaments",
   "count": 116,
   "pokemon": {
@@ -3750,6 +3750,67 @@
         }
       ]
     },
+    "Staraptor": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Close Combat",
+          "pct": 89.498
+        },
+        {
+          "name": "Brave Bird",
+          "pct": 85.388
+        },
+        {
+          "name": "Final Gambit",
+          "pct": 84.018
+        },
+        {
+          "name": "U-turn",
+          "pct": 76.256
+        },
+        {
+          "name": "Tailwind",
+          "pct": 16.438
+        },
+        {
+          "name": "Protect",
+          "pct": 15.982
+        },
+        {
+          "name": "Dual Wingbeat",
+          "pct": 13.242
+        },
+        {
+          "name": "Roost",
+          "pct": 5.023
+        }
+      ],
+      "items": [
+        {
+          "name": "Choice Scarf",
+          "pct": 83.562
+        },
+        {
+          "name": "Lum Berry",
+          "pct": 3.196
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Intimidate",
+          "pct": 87.671
+        },
+        {
+          "name": "Reckless",
+          "pct": 9.132
+        },
+        {
+          "name": "Contrary",
+          "pct": 2.74
+        }
+      ]
+    },
     "Glimmora": {
       "usage": null,
       "moves": [
@@ -3816,67 +3877,6 @@
         {
           "name": "Corrosion",
           "pct": 1.762
-        }
-      ]
-    },
-    "Staraptor": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Close Combat",
-          "pct": 89.498
-        },
-        {
-          "name": "Brave Bird",
-          "pct": 85.388
-        },
-        {
-          "name": "Final Gambit",
-          "pct": 84.018
-        },
-        {
-          "name": "U-turn",
-          "pct": 76.256
-        },
-        {
-          "name": "Tailwind",
-          "pct": 16.438
-        },
-        {
-          "name": "Protect",
-          "pct": 15.982
-        },
-        {
-          "name": "Dual Wingbeat",
-          "pct": 13.242
-        },
-        {
-          "name": "Roost",
-          "pct": 5.023
-        }
-      ],
-      "items": [
-        {
-          "name": "Choice Scarf",
-          "pct": 83.562
-        },
-        {
-          "name": "Lum Berry",
-          "pct": 3.196
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Intimidate",
-          "pct": 87.671
-        },
-        {
-          "name": "Reckless",
-          "pct": 9.132
-        },
-        {
-          "name": "Contrary",
-          "pct": 2.74
         }
       ]
     },
@@ -5962,6 +5962,55 @@
         }
       ]
     },
+    "Pyroar": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Protect",
+          "pct": 100
+        },
+        {
+          "name": "Rock Slide",
+          "pct": 66.667
+        },
+        {
+          "name": "Earthquake",
+          "pct": 66.667
+        },
+        {
+          "name": "Iron Head",
+          "pct": 66.667
+        },
+        {
+          "name": "Heat Wave",
+          "pct": 33.333
+        },
+        {
+          "name": "Overheat",
+          "pct": 33.333
+        },
+        {
+          "name": "Snarl",
+          "pct": 33.333
+        }
+      ],
+      "items": [
+        {
+          "name": "Focus Sash",
+          "pct": 100
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Sand Rush",
+          "pct": 66.667
+        },
+        {
+          "name": "Unnerve",
+          "pct": 33.333
+        }
+      ]
+    },
     "Aggron": {
       "usage": null,
       "moves": [
@@ -6023,55 +6072,6 @@
         },
         {
           "name": "Heavy Metal",
-          "pct": 33.333
-        }
-      ]
-    },
-    "Pyroar": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Protect",
-          "pct": 100
-        },
-        {
-          "name": "Rock Slide",
-          "pct": 66.667
-        },
-        {
-          "name": "Earthquake",
-          "pct": 66.667
-        },
-        {
-          "name": "Iron Head",
-          "pct": 66.667
-        },
-        {
-          "name": "Heat Wave",
-          "pct": 33.333
-        },
-        {
-          "name": "Overheat",
-          "pct": 33.333
-        },
-        {
-          "name": "Snarl",
-          "pct": 33.333
-        }
-      ],
-      "items": [
-        {
-          "name": "Focus Sash",
-          "pct": 100
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Sand Rush",
-          "pct": 66.667
-        },
-        {
-          "name": "Unnerve",
           "pct": 33.333
         }
       ]
@@ -7330,79 +7330,6 @@
         }
       ]
     },
-    "Empoleon": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Flash Cannon",
-          "pct": 87.234
-        },
-        {
-          "name": "Protect",
-          "pct": 78.723
-        },
-        {
-          "name": "Hydro Pump",
-          "pct": 70.213
-        },
-        {
-          "name": "Ice Beam",
-          "pct": 42.553
-        },
-        {
-          "name": "Surf",
-          "pct": 17.021
-        },
-        {
-          "name": "Roar",
-          "pct": 12.766
-        },
-        {
-          "name": "Icy Wind",
-          "pct": 12.766
-        },
-        {
-          "name": "Yawn",
-          "pct": 12.766
-        }
-      ],
-      "items": [
-        {
-          "name": "Leftovers",
-          "pct": 31.915
-        },
-        {
-          "name": "Sitrus Berry",
-          "pct": 19.149
-        },
-        {
-          "name": "Chople Berry",
-          "pct": 12.766
-        },
-        {
-          "name": "Life Orb",
-          "pct": 10.638
-        },
-        {
-          "name": "Wide Lens",
-          "pct": 8.511
-        },
-        {
-          "name": "Shuca Berry",
-          "pct": 6.383
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Competitive",
-          "pct": 97.872
-        },
-        {
-          "name": "Torrent",
-          "pct": 2.128
-        }
-      ]
-    },
     "Meowstic": {
       "usage": null,
       "moves": [
@@ -7481,6 +7408,79 @@
         {
           "name": "Keen Eye",
           "pct": 1.042
+        }
+      ]
+    },
+    "Empoleon": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Flash Cannon",
+          "pct": 87.234
+        },
+        {
+          "name": "Protect",
+          "pct": 78.723
+        },
+        {
+          "name": "Hydro Pump",
+          "pct": 70.213
+        },
+        {
+          "name": "Ice Beam",
+          "pct": 42.553
+        },
+        {
+          "name": "Surf",
+          "pct": 17.021
+        },
+        {
+          "name": "Roar",
+          "pct": 12.766
+        },
+        {
+          "name": "Icy Wind",
+          "pct": 12.766
+        },
+        {
+          "name": "Yawn",
+          "pct": 12.766
+        }
+      ],
+      "items": [
+        {
+          "name": "Leftovers",
+          "pct": 31.915
+        },
+        {
+          "name": "Sitrus Berry",
+          "pct": 19.149
+        },
+        {
+          "name": "Chople Berry",
+          "pct": 12.766
+        },
+        {
+          "name": "Life Orb",
+          "pct": 10.638
+        },
+        {
+          "name": "Wide Lens",
+          "pct": 8.511
+        },
+        {
+          "name": "Shuca Berry",
+          "pct": 6.383
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Competitive",
+          "pct": 97.872
+        },
+        {
+          "name": "Torrent",
+          "pct": 2.128
         }
       ]
     },
