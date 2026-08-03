@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-02T05:34:36.219Z",
+  "updated": "2026-08-03T05:50:35.534Z",
   "format": "championstournaments",
   "count": 117,
   "pokemon": {
@@ -3742,75 +3742,6 @@
         }
       ]
     },
-    "Aegislash": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "King's Shield",
-          "pct": 85.714
-        },
-        {
-          "name": "Shadow Sneak",
-          "pct": 72.18
-        },
-        {
-          "name": "Iron Head",
-          "pct": 69.173
-        },
-        {
-          "name": "Poltergeist",
-          "pct": 51.128
-        },
-        {
-          "name": "Wide Guard",
-          "pct": 30.075
-        },
-        {
-          "name": "Sacred Sword",
-          "pct": 27.82
-        },
-        {
-          "name": "Close Combat",
-          "pct": 23.308
-        },
-        {
-          "name": "Flash Cannon",
-          "pct": 9.023
-        }
-      ],
-      "items": [
-        {
-          "name": "Spell Tag",
-          "pct": 26.316
-        },
-        {
-          "name": "Life Orb",
-          "pct": 19.549
-        },
-        {
-          "name": "Focus Sash",
-          "pct": 16.541
-        },
-        {
-          "name": "Leftovers",
-          "pct": 9.023
-        },
-        {
-          "name": "Kasib Berry",
-          "pct": 5.263
-        },
-        {
-          "name": "Sitrus Berry",
-          "pct": 5.263
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Stance Change",
-          "pct": 100
-        }
-      ]
-    },
     "Glimmora": {
       "usage": null,
       "moves": [
@@ -3877,6 +3808,75 @@
         {
           "name": "Corrosion",
           "pct": 1.762
+        }
+      ]
+    },
+    "Aegislash": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "King's Shield",
+          "pct": 85.714
+        },
+        {
+          "name": "Shadow Sneak",
+          "pct": 72.18
+        },
+        {
+          "name": "Iron Head",
+          "pct": 69.173
+        },
+        {
+          "name": "Poltergeist",
+          "pct": 51.128
+        },
+        {
+          "name": "Wide Guard",
+          "pct": 30.075
+        },
+        {
+          "name": "Sacred Sword",
+          "pct": 27.82
+        },
+        {
+          "name": "Close Combat",
+          "pct": 23.308
+        },
+        {
+          "name": "Flash Cannon",
+          "pct": 9.023
+        }
+      ],
+      "items": [
+        {
+          "name": "Spell Tag",
+          "pct": 26.316
+        },
+        {
+          "name": "Life Orb",
+          "pct": 19.549
+        },
+        {
+          "name": "Focus Sash",
+          "pct": 16.541
+        },
+        {
+          "name": "Leftovers",
+          "pct": 9.023
+        },
+        {
+          "name": "Kasib Berry",
+          "pct": 5.263
+        },
+        {
+          "name": "Sitrus Berry",
+          "pct": 5.263
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Stance Change",
+          "pct": 100
         }
       ]
     },
@@ -3953,79 +3953,6 @@
         }
       ]
     },
-    "Scizor": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Bullet Punch",
-          "pct": 98.077
-        },
-        {
-          "name": "Protect",
-          "pct": 75
-        },
-        {
-          "name": "Bug Bite",
-          "pct": 63.462
-        },
-        {
-          "name": "Swords Dance",
-          "pct": 50
-        },
-        {
-          "name": "Close Combat",
-          "pct": 40.385
-        },
-        {
-          "name": "U-turn",
-          "pct": 17.308
-        },
-        {
-          "name": "Dual Wingbeat",
-          "pct": 15.385
-        },
-        {
-          "name": "Knock Off",
-          "pct": 11.538
-        }
-      ],
-      "items": [
-        {
-          "name": "Life Orb",
-          "pct": 32.692
-        },
-        {
-          "name": "Expert Belt",
-          "pct": 21.154
-        },
-        {
-          "name": "Metal Coat",
-          "pct": 17.308
-        },
-        {
-          "name": "Focus Sash",
-          "pct": 7.692
-        },
-        {
-          "name": "Sitrus Berry",
-          "pct": 5.769
-        },
-        {
-          "name": "Leftovers",
-          "pct": 5.769
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Technician",
-          "pct": 96.154
-        },
-        {
-          "name": "Swarm",
-          "pct": 1.923
-        }
-      ]
-    },
     "Raichu": {
       "usage": null,
       "moves": [
@@ -4096,6 +4023,79 @@
         {
           "name": "Static",
           "pct": 1.316
+        }
+      ]
+    },
+    "Scizor": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Bullet Punch",
+          "pct": 98.077
+        },
+        {
+          "name": "Protect",
+          "pct": 75
+        },
+        {
+          "name": "Bug Bite",
+          "pct": 63.462
+        },
+        {
+          "name": "Swords Dance",
+          "pct": 50
+        },
+        {
+          "name": "Close Combat",
+          "pct": 40.385
+        },
+        {
+          "name": "U-turn",
+          "pct": 17.308
+        },
+        {
+          "name": "Dual Wingbeat",
+          "pct": 15.385
+        },
+        {
+          "name": "Knock Off",
+          "pct": 11.538
+        }
+      ],
+      "items": [
+        {
+          "name": "Life Orb",
+          "pct": 32.692
+        },
+        {
+          "name": "Expert Belt",
+          "pct": 21.154
+        },
+        {
+          "name": "Metal Coat",
+          "pct": 17.308
+        },
+        {
+          "name": "Focus Sash",
+          "pct": 7.692
+        },
+        {
+          "name": "Sitrus Berry",
+          "pct": 5.769
+        },
+        {
+          "name": "Leftovers",
+          "pct": 5.769
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Technician",
+          "pct": 96.154
+        },
+        {
+          "name": "Swarm",
+          "pct": 1.923
         }
       ]
     },
@@ -5491,67 +5491,6 @@
         }
       ]
     },
-    "Golurk": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Poltergeist",
-          "pct": 77.778
-        },
-        {
-          "name": "Headlong Rush",
-          "pct": 77.778
-        },
-        {
-          "name": "Rock Slide",
-          "pct": 55.556
-        },
-        {
-          "name": "Protect",
-          "pct": 55.556
-        },
-        {
-          "name": "Ice Punch",
-          "pct": 33.333
-        },
-        {
-          "name": "Stone Edge",
-          "pct": 22.222
-        },
-        {
-          "name": "Dynamic Punch",
-          "pct": 22.222
-        },
-        {
-          "name": "High Horsepower",
-          "pct": 11.111
-        }
-      ],
-      "items": [
-        {
-          "name": "Life Orb",
-          "pct": 33.333
-        },
-        {
-          "name": "Expert Belt",
-          "pct": 33.333
-        },
-        {
-          "name": "Muscle Band",
-          "pct": 11.111
-        }
-      ],
-      "abilities": [
-        {
-          "name": "No Guard",
-          "pct": 55.556
-        },
-        {
-          "name": "Iron Fist",
-          "pct": 44.444
-        }
-      ]
-    },
     "Scrafty": {
       "usage": null,
       "moves": [
@@ -5626,6 +5565,67 @@
         {
           "name": "Shed Skin",
           "pct": 2.381
+        }
+      ]
+    },
+    "Golurk": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Poltergeist",
+          "pct": 77.778
+        },
+        {
+          "name": "Headlong Rush",
+          "pct": 77.778
+        },
+        {
+          "name": "Rock Slide",
+          "pct": 55.556
+        },
+        {
+          "name": "Protect",
+          "pct": 55.556
+        },
+        {
+          "name": "Ice Punch",
+          "pct": 33.333
+        },
+        {
+          "name": "Stone Edge",
+          "pct": 22.222
+        },
+        {
+          "name": "Dynamic Punch",
+          "pct": 22.222
+        },
+        {
+          "name": "High Horsepower",
+          "pct": 11.111
+        }
+      ],
+      "items": [
+        {
+          "name": "Life Orb",
+          "pct": 33.333
+        },
+        {
+          "name": "Expert Belt",
+          "pct": 33.333
+        },
+        {
+          "name": "Muscle Band",
+          "pct": 11.111
+        }
+      ],
+      "abilities": [
+        {
+          "name": "No Guard",
+          "pct": 55.556
+        },
+        {
+          "name": "Iron Fist",
+          "pct": 44.444
         }
       ]
     },
@@ -5828,6 +5828,55 @@
         }
       ]
     },
+    "Pyroar": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Protect",
+          "pct": 100
+        },
+        {
+          "name": "Rock Slide",
+          "pct": 66.667
+        },
+        {
+          "name": "Earthquake",
+          "pct": 66.667
+        },
+        {
+          "name": "Iron Head",
+          "pct": 66.667
+        },
+        {
+          "name": "Heat Wave",
+          "pct": 33.333
+        },
+        {
+          "name": "Overheat",
+          "pct": 33.333
+        },
+        {
+          "name": "Snarl",
+          "pct": 33.333
+        }
+      ],
+      "items": [
+        {
+          "name": "Focus Sash",
+          "pct": 100
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Sand Rush",
+          "pct": 66.667
+        },
+        {
+          "name": "Unnerve",
+          "pct": 33.333
+        }
+      ]
+    },
     "Lopunny": {
       "usage": null,
       "moves": [
@@ -5882,55 +5931,6 @@
         {
           "name": "Limber",
           "pct": 25
-        }
-      ]
-    },
-    "Pyroar": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Protect",
-          "pct": 100
-        },
-        {
-          "name": "Rock Slide",
-          "pct": 66.667
-        },
-        {
-          "name": "Earthquake",
-          "pct": 66.667
-        },
-        {
-          "name": "Iron Head",
-          "pct": 66.667
-        },
-        {
-          "name": "Heat Wave",
-          "pct": 33.333
-        },
-        {
-          "name": "Overheat",
-          "pct": 33.333
-        },
-        {
-          "name": "Snarl",
-          "pct": 33.333
-        }
-      ],
-      "items": [
-        {
-          "name": "Focus Sash",
-          "pct": 100
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Sand Rush",
-          "pct": 66.667
-        },
-        {
-          "name": "Unnerve",
-          "pct": 33.333
         }
       ]
     },
@@ -6863,75 +6863,6 @@
         }
       ]
     },
-    "Manectric": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Overheat",
-          "pct": 83.333
-        },
-        {
-          "name": "Volt Switch",
-          "pct": 83.333
-        },
-        {
-          "name": "Thunderbolt",
-          "pct": 66.667
-        },
-        {
-          "name": "Discharge",
-          "pct": 33.333
-        },
-        {
-          "name": "Snarl",
-          "pct": 33.333
-        },
-        {
-          "name": "Rising Voltage",
-          "pct": 33.333
-        },
-        {
-          "name": "Protect",
-          "pct": 33.333
-        },
-        {
-          "name": "Electric Terrain",
-          "pct": 16.667
-        }
-      ],
-      "items": [
-        {
-          "name": "Choice Scarf",
-          "pct": 33.333
-        },
-        {
-          "name": "White Herb",
-          "pct": 16.667
-        },
-        {
-          "name": "Life Orb",
-          "pct": 16.667
-        },
-        {
-          "name": "Focus Sash",
-          "pct": 16.667
-        },
-        {
-          "name": "Expert Belt",
-          "pct": 16.667
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Lightning Rod",
-          "pct": 83.333
-        },
-        {
-          "name": "Static",
-          "pct": 16.667
-        }
-      ]
-    },
     "Sceptile": {
       "usage": null,
       "moves": [
@@ -7005,60 +6936,72 @@
         }
       ]
     },
-    "Mega Charizard Y": {
+    "Manectric": {
       "usage": null,
       "moves": [
         {
+          "name": "Overheat",
+          "pct": 83.333
+        },
+        {
+          "name": "Volt Switch",
+          "pct": 83.333
+        },
+        {
+          "name": "Thunderbolt",
+          "pct": 66.667
+        },
+        {
+          "name": "Discharge",
+          "pct": 33.333
+        },
+        {
+          "name": "Snarl",
+          "pct": 33.333
+        },
+        {
+          "name": "Rising Voltage",
+          "pct": 33.333
+        },
+        {
           "name": "Protect",
-          "pct": 99.258
+          "pct": 33.333
         },
         {
-          "name": "Heat Wave",
-          "pct": 99.04
-        },
-        {
-          "name": "Weather Ball",
-          "pct": 92.234
-        },
-        {
-          "name": "Solar Beam",
-          "pct": 91.274
-        },
-        {
-          "name": "Helping Hand",
-          "pct": 6.479
-        },
-        {
-          "name": "Air Slash",
-          "pct": 2.596
-        },
-        {
-          "name": "Ancient Power",
-          "pct": 2.16
-        },
-        {
-          "name": "Hurricane",
-          "pct": 1.309
+          "name": "Electric Terrain",
+          "pct": 16.667
         }
       ],
       "items": [
         {
-          "name": "Charizardite Y",
-          "pct": 100
+          "name": "Choice Scarf",
+          "pct": 33.333
+        },
+        {
+          "name": "White Herb",
+          "pct": 16.667
+        },
+        {
+          "name": "Life Orb",
+          "pct": 16.667
+        },
+        {
+          "name": "Focus Sash",
+          "pct": 16.667
+        },
+        {
+          "name": "Expert Belt",
+          "pct": 16.667
         }
       ],
       "abilities": [
         {
-          "name": "Blaze",
-          "pct": 82.068
+          "name": "Lightning Rod",
+          "pct": 83.333
         },
         {
-          "name": "Solar Power",
-          "pct": 15.38
-        },
-        {
-          "name": "Drought",
-          "pct": 2.509
+          "name": "Static",
+          "pct": 16.667
         }
       ]
     },
@@ -7132,6 +7075,63 @@
         {
           "name": "Torrent",
           "pct": 11.111
+        }
+      ]
+    },
+    "Mega Charizard Y": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Protect",
+          "pct": 99.258
+        },
+        {
+          "name": "Heat Wave",
+          "pct": 99.04
+        },
+        {
+          "name": "Weather Ball",
+          "pct": 92.234
+        },
+        {
+          "name": "Solar Beam",
+          "pct": 91.274
+        },
+        {
+          "name": "Helping Hand",
+          "pct": 6.479
+        },
+        {
+          "name": "Air Slash",
+          "pct": 2.596
+        },
+        {
+          "name": "Ancient Power",
+          "pct": 2.16
+        },
+        {
+          "name": "Hurricane",
+          "pct": 1.309
+        }
+      ],
+      "items": [
+        {
+          "name": "Charizardite Y",
+          "pct": 100
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Blaze",
+          "pct": 82.068
+        },
+        {
+          "name": "Solar Power",
+          "pct": 15.38
+        },
+        {
+          "name": "Drought",
+          "pct": 2.509
         }
       ]
     },
@@ -7346,71 +7346,6 @@
         }
       ]
     },
-    "Orthworm": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Body Press",
-          "pct": 83.333
-        },
-        {
-          "name": "Shed Tail",
-          "pct": 83.333
-        },
-        {
-          "name": "Heavy Slam",
-          "pct": 60
-        },
-        {
-          "name": "Protect",
-          "pct": 46.667
-        },
-        {
-          "name": "Iron Defense",
-          "pct": 33.333
-        },
-        {
-          "name": "Helping Hand",
-          "pct": 26.667
-        },
-        {
-          "name": "Iron Head",
-          "pct": 23.333
-        },
-        {
-          "name": "Rock Slide",
-          "pct": 10
-        }
-      ],
-      "items": [
-        {
-          "name": "Sitrus Berry",
-          "pct": 60
-        },
-        {
-          "name": "Leftovers",
-          "pct": 20
-        },
-        {
-          "name": "Chople Berry",
-          "pct": 10
-        },
-        {
-          "name": "Occa Berry",
-          "pct": 6.667
-        },
-        {
-          "name": "Muscle Band",
-          "pct": 3.333
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Earth Eater",
-          "pct": 100
-        }
-      ]
-    },
     "Empoleon": {
       "usage": null,
       "moves": [
@@ -7550,6 +7485,71 @@
         {
           "name": "Prankster",
           "pct": 99.099
+        }
+      ]
+    },
+    "Orthworm": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Body Press",
+          "pct": 83.333
+        },
+        {
+          "name": "Shed Tail",
+          "pct": 83.333
+        },
+        {
+          "name": "Heavy Slam",
+          "pct": 60
+        },
+        {
+          "name": "Protect",
+          "pct": 46.667
+        },
+        {
+          "name": "Iron Defense",
+          "pct": 33.333
+        },
+        {
+          "name": "Helping Hand",
+          "pct": 26.667
+        },
+        {
+          "name": "Iron Head",
+          "pct": 23.333
+        },
+        {
+          "name": "Rock Slide",
+          "pct": 10
+        }
+      ],
+      "items": [
+        {
+          "name": "Sitrus Berry",
+          "pct": 60
+        },
+        {
+          "name": "Leftovers",
+          "pct": 20
+        },
+        {
+          "name": "Chople Berry",
+          "pct": 10
+        },
+        {
+          "name": "Occa Berry",
+          "pct": 6.667
+        },
+        {
+          "name": "Muscle Band",
+          "pct": 3.333
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Earth Eater",
+          "pct": 100
         }
       ]
     },
