@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-05T05:22:06.704Z",
+  "updated": "2026-08-06T05:23:53.929Z",
   "format": "championstournaments",
   "count": 116,
   "pokemon": {
@@ -6579,6 +6579,79 @@
         }
       ]
     },
+    "Araquanid": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Liquidation",
+          "pct": 90.909
+        },
+        {
+          "name": "Wide Guard",
+          "pct": 87.413
+        },
+        {
+          "name": "Protect",
+          "pct": 76.923
+        },
+        {
+          "name": "Leech Life",
+          "pct": 53.147
+        },
+        {
+          "name": "Entrainment",
+          "pct": 16.084
+        },
+        {
+          "name": "Mirror Coat",
+          "pct": 8.392
+        },
+        {
+          "name": "Poison Jab",
+          "pct": 7.692
+        },
+        {
+          "name": "Rain Dance",
+          "pct": 7.692
+        }
+      ],
+      "items": [
+        {
+          "name": "Mystic Water",
+          "pct": 59.441
+        },
+        {
+          "name": "Leftovers",
+          "pct": 16.783
+        },
+        {
+          "name": "Life Orb",
+          "pct": 8.392
+        },
+        {
+          "name": "Sitrus Berry",
+          "pct": 4.895
+        },
+        {
+          "name": "Iron Ball",
+          "pct": 2.797
+        },
+        {
+          "name": "Coba Berry",
+          "pct": 2.098
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Water Bubble",
+          "pct": 98.601
+        },
+        {
+          "name": "Water Absorb",
+          "pct": 1.399
+        }
+      ]
+    },
     "Snorlax": {
       "usage": null,
       "moves": [
@@ -6653,79 +6726,6 @@
         {
           "name": "Gluttony",
           "pct": 3.306
-        }
-      ]
-    },
-    "Araquanid": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Liquidation",
-          "pct": 90.909
-        },
-        {
-          "name": "Wide Guard",
-          "pct": 87.413
-        },
-        {
-          "name": "Protect",
-          "pct": 76.923
-        },
-        {
-          "name": "Leech Life",
-          "pct": 53.147
-        },
-        {
-          "name": "Entrainment",
-          "pct": 16.084
-        },
-        {
-          "name": "Mirror Coat",
-          "pct": 8.392
-        },
-        {
-          "name": "Poison Jab",
-          "pct": 7.692
-        },
-        {
-          "name": "Rain Dance",
-          "pct": 7.692
-        }
-      ],
-      "items": [
-        {
-          "name": "Mystic Water",
-          "pct": 59.441
-        },
-        {
-          "name": "Leftovers",
-          "pct": 16.783
-        },
-        {
-          "name": "Life Orb",
-          "pct": 8.392
-        },
-        {
-          "name": "Sitrus Berry",
-          "pct": 4.895
-        },
-        {
-          "name": "Iron Ball",
-          "pct": 2.797
-        },
-        {
-          "name": "Coba Berry",
-          "pct": 2.098
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Water Bubble",
-          "pct": 98.601
-        },
-        {
-          "name": "Water Absorb",
-          "pct": 1.399
         }
       ]
     },
@@ -7346,6 +7346,75 @@
         }
       ]
     },
+    "Klefki": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Light Screen",
+          "pct": 74.775
+        },
+        {
+          "name": "Reflect",
+          "pct": 68.468
+        },
+        {
+          "name": "Dazzling Gleam",
+          "pct": 50.45
+        },
+        {
+          "name": "Thunder Wave",
+          "pct": 33.333
+        },
+        {
+          "name": "Trick Room",
+          "pct": 28.829
+        },
+        {
+          "name": "Rain Dance",
+          "pct": 25.225
+        },
+        {
+          "name": "Draining Kiss",
+          "pct": 22.523
+        },
+        {
+          "name": "Psych Up",
+          "pct": 16.216
+        }
+      ],
+      "items": [
+        {
+          "name": "Light Clay",
+          "pct": 59.459
+        },
+        {
+          "name": "Sitrus Berry",
+          "pct": 17.117
+        },
+        {
+          "name": "Mental Herb",
+          "pct": 9.91
+        },
+        {
+          "name": "Leftovers",
+          "pct": 4.505
+        },
+        {
+          "name": "Occa Berry",
+          "pct": 2.703
+        },
+        {
+          "name": "Shuca Berry",
+          "pct": 1.802
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Prankster",
+          "pct": 99.099
+        }
+      ]
+    },
     "Empoleon": {
       "usage": null,
       "moves": [
@@ -7419,72 +7488,68 @@
         }
       ]
     },
-    "Klefki": {
+    "Orthworm": {
       "usage": null,
       "moves": [
         {
-          "name": "Light Screen",
-          "pct": 74.775
+          "name": "Body Press",
+          "pct": 83.333
         },
         {
-          "name": "Reflect",
-          "pct": 68.468
+          "name": "Shed Tail",
+          "pct": 83.333
         },
         {
-          "name": "Dazzling Gleam",
-          "pct": 50.45
+          "name": "Heavy Slam",
+          "pct": 60
         },
         {
-          "name": "Thunder Wave",
+          "name": "Protect",
+          "pct": 46.667
+        },
+        {
+          "name": "Iron Defense",
           "pct": 33.333
         },
         {
-          "name": "Trick Room",
-          "pct": 28.829
+          "name": "Helping Hand",
+          "pct": 26.667
         },
         {
-          "name": "Rain Dance",
-          "pct": 25.225
+          "name": "Iron Head",
+          "pct": 23.333
         },
         {
-          "name": "Draining Kiss",
-          "pct": 22.523
-        },
-        {
-          "name": "Psych Up",
-          "pct": 16.216
+          "name": "Rock Slide",
+          "pct": 10
         }
       ],
       "items": [
         {
-          "name": "Light Clay",
-          "pct": 59.459
-        },
-        {
           "name": "Sitrus Berry",
-          "pct": 17.117
-        },
-        {
-          "name": "Mental Herb",
-          "pct": 9.91
+          "pct": 60
         },
         {
           "name": "Leftovers",
-          "pct": 4.505
+          "pct": 20
+        },
+        {
+          "name": "Chople Berry",
+          "pct": 10
         },
         {
           "name": "Occa Berry",
-          "pct": 2.703
+          "pct": 6.667
         },
         {
-          "name": "Shuca Berry",
-          "pct": 1.802
+          "name": "Muscle Band",
+          "pct": 3.333
         }
       ],
       "abilities": [
         {
-          "name": "Prankster",
-          "pct": 99.099
+          "name": "Earth Eater",
+          "pct": 100
         }
       ]
     },
@@ -7550,71 +7615,6 @@
         {
           "name": "Levitate",
           "pct": 88.889
-        }
-      ]
-    },
-    "Orthworm": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Body Press",
-          "pct": 83.333
-        },
-        {
-          "name": "Shed Tail",
-          "pct": 83.333
-        },
-        {
-          "name": "Heavy Slam",
-          "pct": 60
-        },
-        {
-          "name": "Protect",
-          "pct": 46.667
-        },
-        {
-          "name": "Iron Defense",
-          "pct": 33.333
-        },
-        {
-          "name": "Helping Hand",
-          "pct": 26.667
-        },
-        {
-          "name": "Iron Head",
-          "pct": 23.333
-        },
-        {
-          "name": "Rock Slide",
-          "pct": 10
-        }
-      ],
-      "items": [
-        {
-          "name": "Sitrus Berry",
-          "pct": 60
-        },
-        {
-          "name": "Leftovers",
-          "pct": 20
-        },
-        {
-          "name": "Chople Berry",
-          "pct": 10
-        },
-        {
-          "name": "Occa Berry",
-          "pct": 6.667
-        },
-        {
-          "name": "Muscle Band",
-          "pct": 3.333
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Earth Eater",
-          "pct": 100
         }
       ]
     },
