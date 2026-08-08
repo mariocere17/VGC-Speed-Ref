@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-07T04:30:39.993Z",
+  "updated": "2026-08-08T03:39:56.711Z",
   "format": "championstournaments",
   "count": 116,
   "pokemon": {
@@ -3600,75 +3600,6 @@
         }
       ]
     },
-    "Corviknight": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Brave Bird",
-          "pct": 78.827
-        },
-        {
-          "name": "Tailwind",
-          "pct": 69.381
-        },
-        {
-          "name": "Roost",
-          "pct": 54.723
-        },
-        {
-          "name": "Iron Head",
-          "pct": 52.769
-        },
-        {
-          "name": "Bulk Up",
-          "pct": 40.391
-        },
-        {
-          "name": "Body Press",
-          "pct": 37.134
-        },
-        {
-          "name": "Protect",
-          "pct": 30.945
-        },
-        {
-          "name": "Iron Defense",
-          "pct": 15.961
-        }
-      ],
-      "items": [
-        {
-          "name": "Leftovers",
-          "pct": 73.29
-        },
-        {
-          "name": "Sitrus Berry",
-          "pct": 12.378
-        },
-        {
-          "name": "Occa Berry",
-          "pct": 8.795
-        },
-        {
-          "name": "Life Orb",
-          "pct": 1.303
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Mirror Armor",
-          "pct": 91.857
-        },
-        {
-          "name": "Pressure",
-          "pct": 4.886
-        },
-        {
-          "name": "Unnerve",
-          "pct": 3.257
-        }
-      ]
-    },
     "Glimmora": {
       "usage": null,
       "moves": [
@@ -3735,6 +3666,75 @@
         {
           "name": "Corrosion",
           "pct": 1.762
+        }
+      ]
+    },
+    "Corviknight": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Brave Bird",
+          "pct": 78.827
+        },
+        {
+          "name": "Tailwind",
+          "pct": 69.381
+        },
+        {
+          "name": "Roost",
+          "pct": 54.723
+        },
+        {
+          "name": "Iron Head",
+          "pct": 52.769
+        },
+        {
+          "name": "Bulk Up",
+          "pct": 40.391
+        },
+        {
+          "name": "Body Press",
+          "pct": 37.134
+        },
+        {
+          "name": "Protect",
+          "pct": 30.945
+        },
+        {
+          "name": "Iron Defense",
+          "pct": 15.961
+        }
+      ],
+      "items": [
+        {
+          "name": "Leftovers",
+          "pct": 73.29
+        },
+        {
+          "name": "Sitrus Berry",
+          "pct": 12.378
+        },
+        {
+          "name": "Occa Berry",
+          "pct": 8.795
+        },
+        {
+          "name": "Life Orb",
+          "pct": 1.303
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Mirror Armor",
+          "pct": 91.857
+        },
+        {
+          "name": "Pressure",
+          "pct": 4.886
+        },
+        {
+          "name": "Unnerve",
+          "pct": 3.257
         }
       ]
     },
@@ -7135,87 +7135,6 @@
         }
       ]
     },
-    "Arcanine": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Flare Blitz",
-          "pct": 84.483
-        },
-        {
-          "name": "Protect",
-          "pct": 75.862
-        },
-        {
-          "name": "Extreme Speed",
-          "pct": 72.414
-        },
-        {
-          "name": "Will-O-Wisp",
-          "pct": 39.655
-        },
-        {
-          "name": "Snarl",
-          "pct": 32.759
-        },
-        {
-          "name": "Play Rough",
-          "pct": 22.414
-        },
-        {
-          "name": "Howl",
-          "pct": 10.345
-        },
-        {
-          "name": "Heat Wave",
-          "pct": 8.621
-        }
-      ],
-      "items": [
-        {
-          "name": "Sitrus Berry",
-          "pct": 62.069
-        },
-        {
-          "name": "Choice Scarf",
-          "pct": 6.897
-        },
-        {
-          "name": "Life Orb",
-          "pct": 6.897
-        },
-        {
-          "name": "Leftovers",
-          "pct": 6.897
-        },
-        {
-          "name": "Charcoal",
-          "pct": 3.448
-        },
-        {
-          "name": "Wide Lens",
-          "pct": 3.448
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Intimidate",
-          "pct": 91.379
-        },
-        {
-          "name": "Rock Head",
-          "pct": 3.448
-        },
-        {
-          "name": "Flash Fire",
-          "pct": 3.448
-        },
-        {
-          "name": "Justified",
-          "pct": 1.724
-        }
-      ]
-    },
     "Meowstic": {
       "usage": null,
       "moves": [
@@ -7294,6 +7213,87 @@
         {
           "name": "Keen Eye",
           "pct": 1.042
+        }
+      ]
+    },
+    "Arcanine": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Flare Blitz",
+          "pct": 84.483
+        },
+        {
+          "name": "Protect",
+          "pct": 75.862
+        },
+        {
+          "name": "Extreme Speed",
+          "pct": 72.414
+        },
+        {
+          "name": "Will-O-Wisp",
+          "pct": 39.655
+        },
+        {
+          "name": "Snarl",
+          "pct": 32.759
+        },
+        {
+          "name": "Play Rough",
+          "pct": 22.414
+        },
+        {
+          "name": "Howl",
+          "pct": 10.345
+        },
+        {
+          "name": "Heat Wave",
+          "pct": 8.621
+        }
+      ],
+      "items": [
+        {
+          "name": "Sitrus Berry",
+          "pct": 62.069
+        },
+        {
+          "name": "Choice Scarf",
+          "pct": 6.897
+        },
+        {
+          "name": "Life Orb",
+          "pct": 6.897
+        },
+        {
+          "name": "Leftovers",
+          "pct": 6.897
+        },
+        {
+          "name": "Charcoal",
+          "pct": 3.448
+        },
+        {
+          "name": "Wide Lens",
+          "pct": 3.448
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Intimidate",
+          "pct": 91.379
+        },
+        {
+          "name": "Rock Head",
+          "pct": 3.448
+        },
+        {
+          "name": "Flash Fire",
+          "pct": 3.448
+        },
+        {
+          "name": "Justified",
+          "pct": 1.724
         }
       ]
     },
@@ -7488,71 +7488,6 @@
         }
       ]
     },
-    "Orthworm": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Body Press",
-          "pct": 83.333
-        },
-        {
-          "name": "Shed Tail",
-          "pct": 83.333
-        },
-        {
-          "name": "Heavy Slam",
-          "pct": 60
-        },
-        {
-          "name": "Protect",
-          "pct": 46.667
-        },
-        {
-          "name": "Iron Defense",
-          "pct": 33.333
-        },
-        {
-          "name": "Helping Hand",
-          "pct": 26.667
-        },
-        {
-          "name": "Iron Head",
-          "pct": 23.333
-        },
-        {
-          "name": "Rock Slide",
-          "pct": 10
-        }
-      ],
-      "items": [
-        {
-          "name": "Sitrus Berry",
-          "pct": 60
-        },
-        {
-          "name": "Leftovers",
-          "pct": 20
-        },
-        {
-          "name": "Chople Berry",
-          "pct": 10
-        },
-        {
-          "name": "Occa Berry",
-          "pct": 6.667
-        },
-        {
-          "name": "Muscle Band",
-          "pct": 3.333
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Earth Eater",
-          "pct": 100
-        }
-      ]
-    },
     "Eelektross": {
       "usage": null,
       "moves": [
@@ -7615,6 +7550,71 @@
         {
           "name": "Levitate",
           "pct": 88.889
+        }
+      ]
+    },
+    "Orthworm": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Body Press",
+          "pct": 83.333
+        },
+        {
+          "name": "Shed Tail",
+          "pct": 83.333
+        },
+        {
+          "name": "Heavy Slam",
+          "pct": 60
+        },
+        {
+          "name": "Protect",
+          "pct": 46.667
+        },
+        {
+          "name": "Iron Defense",
+          "pct": 33.333
+        },
+        {
+          "name": "Helping Hand",
+          "pct": 26.667
+        },
+        {
+          "name": "Iron Head",
+          "pct": 23.333
+        },
+        {
+          "name": "Rock Slide",
+          "pct": 10
+        }
+      ],
+      "items": [
+        {
+          "name": "Sitrus Berry",
+          "pct": 60
+        },
+        {
+          "name": "Leftovers",
+          "pct": 20
+        },
+        {
+          "name": "Chople Berry",
+          "pct": 10
+        },
+        {
+          "name": "Occa Berry",
+          "pct": 6.667
+        },
+        {
+          "name": "Muscle Band",
+          "pct": 3.333
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Earth Eater",
+          "pct": 100
         }
       ]
     },
