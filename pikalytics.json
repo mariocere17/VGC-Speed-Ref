@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-12T04:13:31.999Z",
+  "updated": "2026-08-13T04:18:19.518Z",
   "format": "championstournaments",
   "count": 116,
   "pokemon": {
@@ -5625,6 +5625,67 @@
         }
       ]
     },
+    "Golurk": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Poltergeist",
+          "pct": 77.778
+        },
+        {
+          "name": "Headlong Rush",
+          "pct": 77.778
+        },
+        {
+          "name": "Rock Slide",
+          "pct": 55.556
+        },
+        {
+          "name": "Protect",
+          "pct": 55.556
+        },
+        {
+          "name": "Ice Punch",
+          "pct": 33.333
+        },
+        {
+          "name": "Stone Edge",
+          "pct": 22.222
+        },
+        {
+          "name": "Dynamic Punch",
+          "pct": 22.222
+        },
+        {
+          "name": "High Horsepower",
+          "pct": 11.111
+        }
+      ],
+      "items": [
+        {
+          "name": "Life Orb",
+          "pct": 33.333
+        },
+        {
+          "name": "Expert Belt",
+          "pct": 33.333
+        },
+        {
+          "name": "Muscle Band",
+          "pct": 11.111
+        }
+      ],
+      "abilities": [
+        {
+          "name": "No Guard",
+          "pct": 55.556
+        },
+        {
+          "name": "Iron Fist",
+          "pct": 44.444
+        }
+      ]
+    },
     "Hatterene": {
       "usage": null,
       "moves": [
@@ -5691,67 +5752,6 @@
         {
           "name": "Magic Bounce",
           "pct": 99.123
-        }
-      ]
-    },
-    "Golurk": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Poltergeist",
-          "pct": 77.778
-        },
-        {
-          "name": "Headlong Rush",
-          "pct": 77.778
-        },
-        {
-          "name": "Rock Slide",
-          "pct": 55.556
-        },
-        {
-          "name": "Protect",
-          "pct": 55.556
-        },
-        {
-          "name": "Ice Punch",
-          "pct": 33.333
-        },
-        {
-          "name": "Stone Edge",
-          "pct": 22.222
-        },
-        {
-          "name": "Dynamic Punch",
-          "pct": 22.222
-        },
-        {
-          "name": "High Horsepower",
-          "pct": 11.111
-        }
-      ],
-      "items": [
-        {
-          "name": "Life Orb",
-          "pct": 33.333
-        },
-        {
-          "name": "Expert Belt",
-          "pct": 33.333
-        },
-        {
-          "name": "Muscle Band",
-          "pct": 11.111
-        }
-      ],
-      "abilities": [
-        {
-          "name": "No Guard",
-          "pct": 55.556
-        },
-        {
-          "name": "Iron Fist",
-          "pct": 44.444
         }
       ]
     },
