@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-15T02:57:50.184Z",
+  "updated": "2026-08-16T03:07:08.533Z",
   "format": "championstournaments",
   "count": 115,
   "pokemon": {
@@ -5191,6 +5191,71 @@
         }
       ]
     },
+    "Mamoswine": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Ice Shard",
+          "pct": 90.741
+        },
+        {
+          "name": "Protect",
+          "pct": 89.815
+        },
+        {
+          "name": "High Horsepower",
+          "pct": 74.074
+        },
+        {
+          "name": "Icicle Crash",
+          "pct": 59.722
+        },
+        {
+          "name": "Earthquake",
+          "pct": 34.722
+        },
+        {
+          "name": "Rock Slide",
+          "pct": 25.926
+        },
+        {
+          "name": "Rock Tomb",
+          "pct": 12.5
+        },
+        {
+          "name": "Icicle Spear",
+          "pct": 2.778
+        }
+      ],
+      "items": [
+        {
+          "name": "Focus Sash",
+          "pct": 43.981
+        },
+        {
+          "name": "Life Orb",
+          "pct": 42.13
+        },
+        {
+          "name": "Choice Scarf",
+          "pct": 8.333
+        },
+        {
+          "name": "Never-Melt Ice",
+          "pct": 2.778
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Oblivious",
+          "pct": 90.278
+        },
+        {
+          "name": "Thick Fat",
+          "pct": 9.722
+        }
+      ]
+    },
     "Gallade": {
       "usage": null,
       "moves": [
@@ -5261,71 +5326,6 @@
         {
           "name": "Justified",
           "pct": 1.379
-        }
-      ]
-    },
-    "Mamoswine": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Ice Shard",
-          "pct": 90.741
-        },
-        {
-          "name": "Protect",
-          "pct": 89.815
-        },
-        {
-          "name": "High Horsepower",
-          "pct": 74.074
-        },
-        {
-          "name": "Icicle Crash",
-          "pct": 59.722
-        },
-        {
-          "name": "Earthquake",
-          "pct": 34.722
-        },
-        {
-          "name": "Rock Slide",
-          "pct": 25.926
-        },
-        {
-          "name": "Rock Tomb",
-          "pct": 12.5
-        },
-        {
-          "name": "Icicle Spear",
-          "pct": 2.778
-        }
-      ],
-      "items": [
-        {
-          "name": "Focus Sash",
-          "pct": 43.981
-        },
-        {
-          "name": "Life Orb",
-          "pct": 42.13
-        },
-        {
-          "name": "Choice Scarf",
-          "pct": 8.333
-        },
-        {
-          "name": "Never-Melt Ice",
-          "pct": 2.778
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Oblivious",
-          "pct": 90.278
-        },
-        {
-          "name": "Thick Fat",
-          "pct": 9.722
         }
       ]
     },
@@ -5979,59 +5979,6 @@
         }
       ]
     },
-    "Aggron": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Body Press",
-          "pct": 100
-        },
-        {
-          "name": "Rock Blast",
-          "pct": 50
-        },
-        {
-          "name": "Roar",
-          "pct": 50
-        },
-        {
-          "name": "Substitute",
-          "pct": 50
-        },
-        {
-          "name": "Iron Defense",
-          "pct": 50
-        },
-        {
-          "name": "Head Smash",
-          "pct": 50
-        },
-        {
-          "name": "Protect",
-          "pct": 50
-        }
-      ],
-      "items": [
-        {
-          "name": "Leftovers",
-          "pct": 50
-        },
-        {
-          "name": "Life Orb",
-          "pct": 50
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Sturdy",
-          "pct": 50
-        },
-        {
-          "name": "Rock Head",
-          "pct": 50
-        }
-      ]
-    },
     "Chandelure": {
       "usage": null,
       "moves": [
@@ -6102,6 +6049,59 @@
         {
           "name": "Infiltrator",
           "pct": 5.263
+        }
+      ]
+    },
+    "Aggron": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Body Press",
+          "pct": 100
+        },
+        {
+          "name": "Rock Blast",
+          "pct": 50
+        },
+        {
+          "name": "Roar",
+          "pct": 50
+        },
+        {
+          "name": "Substitute",
+          "pct": 50
+        },
+        {
+          "name": "Iron Defense",
+          "pct": 50
+        },
+        {
+          "name": "Head Smash",
+          "pct": 50
+        },
+        {
+          "name": "Protect",
+          "pct": 50
+        }
+      ],
+      "items": [
+        {
+          "name": "Leftovers",
+          "pct": 50
+        },
+        {
+          "name": "Life Orb",
+          "pct": 50
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Sturdy",
+          "pct": 50
+        },
+        {
+          "name": "Rock Head",
+          "pct": 50
         }
       ]
     },
@@ -6320,79 +6320,6 @@
         }
       ]
     },
-    "Azumarill": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Aqua Jet",
-          "pct": 93.22
-        },
-        {
-          "name": "Play Rough",
-          "pct": 93.22
-        },
-        {
-          "name": "Protect",
-          "pct": 74.576
-        },
-        {
-          "name": "Belly Drum",
-          "pct": 66.102
-        },
-        {
-          "name": "Liquidation",
-          "pct": 30.508
-        },
-        {
-          "name": "Superpower",
-          "pct": 10.169
-        },
-        {
-          "name": "Ice Spinner",
-          "pct": 6.78
-        },
-        {
-          "name": "Hydro Pump",
-          "pct": 3.39
-        }
-      ],
-      "items": [
-        {
-          "name": "Sitrus Berry",
-          "pct": 64.407
-        },
-        {
-          "name": "Leftovers",
-          "pct": 6.78
-        },
-        {
-          "name": "Mystic Water",
-          "pct": 6.78
-        },
-        {
-          "name": "Lum Berry",
-          "pct": 3.39
-        },
-        {
-          "name": "Life Orb",
-          "pct": 3.39
-        },
-        {
-          "name": "Muscle Band",
-          "pct": 3.39
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Huge Power",
-          "pct": 98.305
-        },
-        {
-          "name": "Thick Fat",
-          "pct": 1.695
-        }
-      ]
-    },
     "Weavile": {
       "usage": null,
       "moves": [
@@ -6463,6 +6390,79 @@
         {
           "name": "Pressure",
           "pct": 30.682
+        }
+      ]
+    },
+    "Azumarill": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Aqua Jet",
+          "pct": 93.22
+        },
+        {
+          "name": "Play Rough",
+          "pct": 93.22
+        },
+        {
+          "name": "Protect",
+          "pct": 74.576
+        },
+        {
+          "name": "Belly Drum",
+          "pct": 66.102
+        },
+        {
+          "name": "Liquidation",
+          "pct": 30.508
+        },
+        {
+          "name": "Superpower",
+          "pct": 10.169
+        },
+        {
+          "name": "Ice Spinner",
+          "pct": 6.78
+        },
+        {
+          "name": "Hydro Pump",
+          "pct": 3.39
+        }
+      ],
+      "items": [
+        {
+          "name": "Sitrus Berry",
+          "pct": 64.407
+        },
+        {
+          "name": "Leftovers",
+          "pct": 6.78
+        },
+        {
+          "name": "Mystic Water",
+          "pct": 6.78
+        },
+        {
+          "name": "Lum Berry",
+          "pct": 3.39
+        },
+        {
+          "name": "Life Orb",
+          "pct": 3.39
+        },
+        {
+          "name": "Muscle Band",
+          "pct": 3.39
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Huge Power",
+          "pct": 98.305
+        },
+        {
+          "name": "Thick Fat",
+          "pct": 1.695
         }
       ]
     },
