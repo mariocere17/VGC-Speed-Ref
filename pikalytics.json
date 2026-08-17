@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-16T03:07:08.533Z",
+  "updated": "2026-08-17T03:06:31.993Z",
   "format": "championstournaments",
   "count": 115,
   "pokemon": {
@@ -5979,6 +5979,59 @@
         }
       ]
     },
+    "Aggron": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Body Press",
+          "pct": 100
+        },
+        {
+          "name": "Rock Blast",
+          "pct": 50
+        },
+        {
+          "name": "Roar",
+          "pct": 50
+        },
+        {
+          "name": "Substitute",
+          "pct": 50
+        },
+        {
+          "name": "Iron Defense",
+          "pct": 50
+        },
+        {
+          "name": "Head Smash",
+          "pct": 50
+        },
+        {
+          "name": "Protect",
+          "pct": 50
+        }
+      ],
+      "items": [
+        {
+          "name": "Leftovers",
+          "pct": 50
+        },
+        {
+          "name": "Life Orb",
+          "pct": 50
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Sturdy",
+          "pct": 50
+        },
+        {
+          "name": "Rock Head",
+          "pct": 50
+        }
+      ]
+    },
     "Chandelure": {
       "usage": null,
       "moves": [
@@ -6049,59 +6102,6 @@
         {
           "name": "Infiltrator",
           "pct": 5.263
-        }
-      ]
-    },
-    "Aggron": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Body Press",
-          "pct": 100
-        },
-        {
-          "name": "Rock Blast",
-          "pct": 50
-        },
-        {
-          "name": "Roar",
-          "pct": 50
-        },
-        {
-          "name": "Substitute",
-          "pct": 50
-        },
-        {
-          "name": "Iron Defense",
-          "pct": 50
-        },
-        {
-          "name": "Head Smash",
-          "pct": 50
-        },
-        {
-          "name": "Protect",
-          "pct": 50
-        }
-      ],
-      "items": [
-        {
-          "name": "Leftovers",
-          "pct": 50
-        },
-        {
-          "name": "Life Orb",
-          "pct": 50
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Sturdy",
-          "pct": 50
-        },
-        {
-          "name": "Rock Head",
-          "pct": 50
         }
       ]
     },
@@ -6466,6 +6466,152 @@
         }
       ]
     },
+    "Sceptile": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Earth Power",
+          "pct": 70.833
+        },
+        {
+          "name": "Dragon Pulse",
+          "pct": 62.5
+        },
+        {
+          "name": "Leaf Storm",
+          "pct": 58.333
+        },
+        {
+          "name": "Energy Ball",
+          "pct": 37.5
+        },
+        {
+          "name": "Quick Guard",
+          "pct": 37.5
+        },
+        {
+          "name": "Protect",
+          "pct": 29.167
+        },
+        {
+          "name": "Rock Tomb",
+          "pct": 25
+        },
+        {
+          "name": "Detect",
+          "pct": 16.667
+        }
+      ],
+      "items": [
+        {
+          "name": "White Herb",
+          "pct": 45.833
+        },
+        {
+          "name": "Focus Sash",
+          "pct": 29.167
+        },
+        {
+          "name": "Expert Belt",
+          "pct": 4.167
+        },
+        {
+          "name": "Dragon Fang",
+          "pct": 4.167
+        },
+        {
+          "name": "Light Ball",
+          "pct": 4.167
+        },
+        {
+          "name": "Choice Scarf",
+          "pct": 4.167
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Unburden",
+          "pct": 87.5
+        },
+        {
+          "name": "Overgrow",
+          "pct": 12.5
+        }
+      ]
+    },
+    "Greninja": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Ice Beam",
+          "pct": 63.83
+        },
+        {
+          "name": "Protect",
+          "pct": 57.447
+        },
+        {
+          "name": "Dark Pulse",
+          "pct": 55.319
+        },
+        {
+          "name": "Hydro Pump",
+          "pct": 27.66
+        },
+        {
+          "name": "Water Shuriken",
+          "pct": 27.66
+        },
+        {
+          "name": "Low Kick",
+          "pct": 25.532
+        },
+        {
+          "name": "Rock Tomb",
+          "pct": 23.404
+        },
+        {
+          "name": "Sludge Wave",
+          "pct": 14.894
+        }
+      ],
+      "items": [
+        {
+          "name": "Life Orb",
+          "pct": 51.064
+        },
+        {
+          "name": "Focus Sash",
+          "pct": 17.021
+        },
+        {
+          "name": "Choice Scarf",
+          "pct": 8.511
+        },
+        {
+          "name": "Leftovers",
+          "pct": 4.255
+        },
+        {
+          "name": "Expert Belt",
+          "pct": 4.255
+        },
+        {
+          "name": "Wide Lens",
+          "pct": 2.128
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Protean",
+          "pct": 89.362
+        },
+        {
+          "name": "Torrent",
+          "pct": 10.638
+        }
+      ]
+    },
     "Araquanid": {
       "usage": null,
       "moves": [
@@ -6605,152 +6751,6 @@
         {
           "name": "Gluttony",
           "pct": 1.22
-        }
-      ]
-    },
-    "Greninja": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Ice Beam",
-          "pct": 63.83
-        },
-        {
-          "name": "Protect",
-          "pct": 57.447
-        },
-        {
-          "name": "Dark Pulse",
-          "pct": 55.319
-        },
-        {
-          "name": "Hydro Pump",
-          "pct": 27.66
-        },
-        {
-          "name": "Water Shuriken",
-          "pct": 27.66
-        },
-        {
-          "name": "Low Kick",
-          "pct": 25.532
-        },
-        {
-          "name": "Rock Tomb",
-          "pct": 23.404
-        },
-        {
-          "name": "Sludge Wave",
-          "pct": 14.894
-        }
-      ],
-      "items": [
-        {
-          "name": "Life Orb",
-          "pct": 51.064
-        },
-        {
-          "name": "Focus Sash",
-          "pct": 17.021
-        },
-        {
-          "name": "Choice Scarf",
-          "pct": 8.511
-        },
-        {
-          "name": "Leftovers",
-          "pct": 4.255
-        },
-        {
-          "name": "Expert Belt",
-          "pct": 4.255
-        },
-        {
-          "name": "Wide Lens",
-          "pct": 2.128
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Protean",
-          "pct": 89.362
-        },
-        {
-          "name": "Torrent",
-          "pct": 10.638
-        }
-      ]
-    },
-    "Sceptile": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Earth Power",
-          "pct": 70.833
-        },
-        {
-          "name": "Dragon Pulse",
-          "pct": 62.5
-        },
-        {
-          "name": "Leaf Storm",
-          "pct": 58.333
-        },
-        {
-          "name": "Energy Ball",
-          "pct": 37.5
-        },
-        {
-          "name": "Quick Guard",
-          "pct": 37.5
-        },
-        {
-          "name": "Protect",
-          "pct": 29.167
-        },
-        {
-          "name": "Rock Tomb",
-          "pct": 25
-        },
-        {
-          "name": "Detect",
-          "pct": 16.667
-        }
-      ],
-      "items": [
-        {
-          "name": "White Herb",
-          "pct": 45.833
-        },
-        {
-          "name": "Focus Sash",
-          "pct": 29.167
-        },
-        {
-          "name": "Expert Belt",
-          "pct": 4.167
-        },
-        {
-          "name": "Dragon Fang",
-          "pct": 4.167
-        },
-        {
-          "name": "Light Ball",
-          "pct": 4.167
-        },
-        {
-          "name": "Choice Scarf",
-          "pct": 4.167
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Unburden",
-          "pct": 87.5
-        },
-        {
-          "name": "Overgrow",
-          "pct": 12.5
         }
       ]
     },
@@ -7087,6 +7087,63 @@
         }
       ]
     },
+    "Feraligatr": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Liquidation",
+          "pct": 96.552
+        },
+        {
+          "name": "Ice Punch",
+          "pct": 75.862
+        },
+        {
+          "name": "Aqua Jet",
+          "pct": 72.414
+        },
+        {
+          "name": "Rock Slide",
+          "pct": 48.276
+        },
+        {
+          "name": "Protect",
+          "pct": 48.276
+        },
+        {
+          "name": "Dragon Dance",
+          "pct": 13.793
+        },
+        {
+          "name": "Crunch",
+          "pct": 13.793
+        },
+        {
+          "name": "Double-Edge",
+          "pct": 3.448
+        }
+      ],
+      "items": [
+        {
+          "name": "Life Orb",
+          "pct": 96.552
+        },
+        {
+          "name": "Leftovers",
+          "pct": 3.448
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Sheer Force",
+          "pct": 96.552
+        },
+        {
+          "name": "Torrent",
+          "pct": 3.448
+        }
+      ]
+    },
     "Arcanine": {
       "usage": null,
       "moves": [
@@ -7165,63 +7222,6 @@
         {
           "name": "Justified",
           "pct": 4.348
-        }
-      ]
-    },
-    "Feraligatr": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Liquidation",
-          "pct": 96.552
-        },
-        {
-          "name": "Ice Punch",
-          "pct": 75.862
-        },
-        {
-          "name": "Aqua Jet",
-          "pct": 72.414
-        },
-        {
-          "name": "Rock Slide",
-          "pct": 48.276
-        },
-        {
-          "name": "Protect",
-          "pct": 48.276
-        },
-        {
-          "name": "Dragon Dance",
-          "pct": 13.793
-        },
-        {
-          "name": "Crunch",
-          "pct": 13.793
-        },
-        {
-          "name": "Double-Edge",
-          "pct": 3.448
-        }
-      ],
-      "items": [
-        {
-          "name": "Life Orb",
-          "pct": 96.552
-        },
-        {
-          "name": "Leftovers",
-          "pct": 3.448
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Sheer Force",
-          "pct": 96.552
-        },
-        {
-          "name": "Torrent",
-          "pct": 3.448
         }
       ]
     },
