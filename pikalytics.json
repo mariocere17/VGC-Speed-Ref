@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-18T03:02:16.508Z",
+  "updated": "2026-08-19T03:04:32.897Z",
   "format": "championstournaments",
   "count": 115,
   "pokemon": {
@@ -5833,79 +5833,6 @@
         }
       ]
     },
-    "Lucario": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Close Combat",
-          "pct": 63.636
-        },
-        {
-          "name": "Meteor Mash",
-          "pct": 54.545
-        },
-        {
-          "name": "Bullet Punch",
-          "pct": 36.364
-        },
-        {
-          "name": "Aura Sphere",
-          "pct": 31.818
-        },
-        {
-          "name": "Final Gambit",
-          "pct": 27.273
-        },
-        {
-          "name": "Stone Edge",
-          "pct": 27.273
-        },
-        {
-          "name": "Ice Punch",
-          "pct": 18.182
-        },
-        {
-          "name": "Flash Cannon",
-          "pct": 18.182
-        }
-      ],
-      "items": [
-        {
-          "name": "Choice Scarf",
-          "pct": 36.364
-        },
-        {
-          "name": "Focus Sash",
-          "pct": 31.818
-        },
-        {
-          "name": "Expert Belt",
-          "pct": 9.091
-        },
-        {
-          "name": "Sitrus Berry",
-          "pct": 9.091
-        },
-        {
-          "name": "Muscle Band",
-          "pct": 4.545
-        },
-        {
-          "name": "Metal Coat",
-          "pct": 4.545
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Inner Focus",
-          "pct": 90.909
-        },
-        {
-          "name": "Steadfast",
-          "pct": 9.091
-        }
-      ]
-    },
     "Drampa": {
       "usage": null,
       "moves": [
@@ -5976,6 +5903,79 @@
         {
           "name": "Berserk",
           "pct": 19.048
+        }
+      ]
+    },
+    "Lucario": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Close Combat",
+          "pct": 63.636
+        },
+        {
+          "name": "Meteor Mash",
+          "pct": 54.545
+        },
+        {
+          "name": "Bullet Punch",
+          "pct": 36.364
+        },
+        {
+          "name": "Aura Sphere",
+          "pct": 31.818
+        },
+        {
+          "name": "Final Gambit",
+          "pct": 27.273
+        },
+        {
+          "name": "Stone Edge",
+          "pct": 27.273
+        },
+        {
+          "name": "Ice Punch",
+          "pct": 18.182
+        },
+        {
+          "name": "Flash Cannon",
+          "pct": 18.182
+        }
+      ],
+      "items": [
+        {
+          "name": "Choice Scarf",
+          "pct": 36.364
+        },
+        {
+          "name": "Focus Sash",
+          "pct": 31.818
+        },
+        {
+          "name": "Expert Belt",
+          "pct": 9.091
+        },
+        {
+          "name": "Sitrus Berry",
+          "pct": 9.091
+        },
+        {
+          "name": "Muscle Band",
+          "pct": 4.545
+        },
+        {
+          "name": "Metal Coat",
+          "pct": 4.545
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Inner Focus",
+          "pct": 90.909
+        },
+        {
+          "name": "Steadfast",
+          "pct": 9.091
         }
       ]
     },
@@ -7010,6 +7010,63 @@
         }
       ]
     },
+    "Feraligatr": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Liquidation",
+          "pct": 96.552
+        },
+        {
+          "name": "Ice Punch",
+          "pct": 75.862
+        },
+        {
+          "name": "Aqua Jet",
+          "pct": 72.414
+        },
+        {
+          "name": "Rock Slide",
+          "pct": 48.276
+        },
+        {
+          "name": "Protect",
+          "pct": 48.276
+        },
+        {
+          "name": "Dragon Dance",
+          "pct": 13.793
+        },
+        {
+          "name": "Crunch",
+          "pct": 13.793
+        },
+        {
+          "name": "Double-Edge",
+          "pct": 3.448
+        }
+      ],
+      "items": [
+        {
+          "name": "Life Orb",
+          "pct": 96.552
+        },
+        {
+          "name": "Leftovers",
+          "pct": 3.448
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Sheer Force",
+          "pct": 96.552
+        },
+        {
+          "name": "Torrent",
+          "pct": 3.448
+        }
+      ]
+    },
     "Meowstic": {
       "usage": null,
       "moves": [
@@ -7084,63 +7141,6 @@
         {
           "name": "Competitive",
           "pct": 1.25
-        }
-      ]
-    },
-    "Feraligatr": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Liquidation",
-          "pct": 96.552
-        },
-        {
-          "name": "Ice Punch",
-          "pct": 75.862
-        },
-        {
-          "name": "Aqua Jet",
-          "pct": 72.414
-        },
-        {
-          "name": "Rock Slide",
-          "pct": 48.276
-        },
-        {
-          "name": "Protect",
-          "pct": 48.276
-        },
-        {
-          "name": "Dragon Dance",
-          "pct": 13.793
-        },
-        {
-          "name": "Crunch",
-          "pct": 13.793
-        },
-        {
-          "name": "Double-Edge",
-          "pct": 3.448
-        }
-      ],
-      "items": [
-        {
-          "name": "Life Orb",
-          "pct": 96.552
-        },
-        {
-          "name": "Leftovers",
-          "pct": 3.448
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Sheer Force",
-          "pct": 96.552
-        },
-        {
-          "name": "Torrent",
-          "pct": 3.448
         }
       ]
     },
@@ -7355,83 +7355,6 @@
         }
       ]
     },
-    "Hawlucha": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Acrobatics",
-          "pct": 46.154
-        },
-        {
-          "name": "Protect",
-          "pct": 38.462
-        },
-        {
-          "name": "Close Combat",
-          "pct": 38.462
-        },
-        {
-          "name": "Brave Bird",
-          "pct": 38.462
-        },
-        {
-          "name": "Stone Edge",
-          "pct": 30.769
-        },
-        {
-          "name": "High Jump Kick",
-          "pct": 30.769
-        },
-        {
-          "name": "Flying Press",
-          "pct": 23.077
-        },
-        {
-          "name": "Swords Dance",
-          "pct": 15.385
-        }
-      ],
-      "items": [
-        {
-          "name": "Sitrus Berry",
-          "pct": 30.769
-        },
-        {
-          "name": "White Herb",
-          "pct": 23.077
-        },
-        {
-          "name": "Leftovers",
-          "pct": 7.692
-        },
-        {
-          "name": "King's Rock",
-          "pct": 7.692
-        },
-        {
-          "name": "Wide Lens",
-          "pct": 7.692
-        },
-        {
-          "name": "Lum Berry",
-          "pct": 7.692
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Unburden",
-          "pct": 69.231
-        },
-        {
-          "name": "Mold Breaker",
-          "pct": 23.077
-        },
-        {
-          "name": "Limber",
-          "pct": 7.692
-        }
-      ]
-    },
     "Orthworm": {
       "usage": null,
       "moves": [
@@ -7567,6 +7490,83 @@
         {
           "name": "Torrent",
           "pct": 4.167
+        }
+      ]
+    },
+    "Hawlucha": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Acrobatics",
+          "pct": 46.154
+        },
+        {
+          "name": "Protect",
+          "pct": 38.462
+        },
+        {
+          "name": "Close Combat",
+          "pct": 38.462
+        },
+        {
+          "name": "Brave Bird",
+          "pct": 38.462
+        },
+        {
+          "name": "Stone Edge",
+          "pct": 30.769
+        },
+        {
+          "name": "High Jump Kick",
+          "pct": 30.769
+        },
+        {
+          "name": "Flying Press",
+          "pct": 23.077
+        },
+        {
+          "name": "Swords Dance",
+          "pct": 15.385
+        }
+      ],
+      "items": [
+        {
+          "name": "Sitrus Berry",
+          "pct": 30.769
+        },
+        {
+          "name": "White Herb",
+          "pct": 23.077
+        },
+        {
+          "name": "Leftovers",
+          "pct": 7.692
+        },
+        {
+          "name": "King's Rock",
+          "pct": 7.692
+        },
+        {
+          "name": "Wide Lens",
+          "pct": 7.692
+        },
+        {
+          "name": "Lum Berry",
+          "pct": 7.692
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Unburden",
+          "pct": 69.231
+        },
+        {
+          "name": "Mold Breaker",
+          "pct": 23.077
+        },
+        {
+          "name": "Limber",
+          "pct": 7.692
         }
       ]
     }
