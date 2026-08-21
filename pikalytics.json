@@ -1,7 +1,7 @@
 {
-  "updated": "2026-08-20T03:03:26.616Z",
+  "updated": "2026-08-21T03:09:50.364Z",
   "format": "championstournaments",
-  "count": 115,
+  "count": 116,
   "pokemon": {
     "Kingambit": {
       "usage": 35.59,
@@ -3815,6 +3815,79 @@
         }
       ]
     },
+    "Blastoise": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Fake Out",
+          "pct": 70.588
+        },
+        {
+          "name": "Protect",
+          "pct": 70.588
+        },
+        {
+          "name": "Water Spout",
+          "pct": 52.941
+        },
+        {
+          "name": "Shell Smash",
+          "pct": 26.471
+        },
+        {
+          "name": "Flip Turn",
+          "pct": 23.529
+        },
+        {
+          "name": "Yawn",
+          "pct": 23.529
+        },
+        {
+          "name": "Ice Beam",
+          "pct": 20.588
+        },
+        {
+          "name": "Dark Pulse",
+          "pct": 20.588
+        }
+      ],
+      "items": [
+        {
+          "name": "Sitrus Berry",
+          "pct": 29.412
+        },
+        {
+          "name": "Mystic Water",
+          "pct": 20.588
+        },
+        {
+          "name": "White Herb",
+          "pct": 11.765
+        },
+        {
+          "name": "Leftovers",
+          "pct": 8.824
+        },
+        {
+          "name": "Lum Berry",
+          "pct": 5.882
+        },
+        {
+          "name": "Wide Lens",
+          "pct": 5.882
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Rain Dish",
+          "pct": 55.882
+        },
+        {
+          "name": "Torrent",
+          "pct": 44.118
+        }
+      ]
+    },
     "Metagross": {
       "usage": null,
       "moves": [
@@ -3946,79 +4019,6 @@
         {
           "name": "Technician",
           "pct": 99.265
-        }
-      ]
-    },
-    "Blastoise": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Fake Out",
-          "pct": 70.588
-        },
-        {
-          "name": "Protect",
-          "pct": 70.588
-        },
-        {
-          "name": "Water Spout",
-          "pct": 52.941
-        },
-        {
-          "name": "Shell Smash",
-          "pct": 26.471
-        },
-        {
-          "name": "Flip Turn",
-          "pct": 23.529
-        },
-        {
-          "name": "Yawn",
-          "pct": 23.529
-        },
-        {
-          "name": "Ice Beam",
-          "pct": 20.588
-        },
-        {
-          "name": "Dark Pulse",
-          "pct": 20.588
-        }
-      ],
-      "items": [
-        {
-          "name": "Sitrus Berry",
-          "pct": 29.412
-        },
-        {
-          "name": "Mystic Water",
-          "pct": 20.588
-        },
-        {
-          "name": "White Herb",
-          "pct": 11.765
-        },
-        {
-          "name": "Leftovers",
-          "pct": 8.824
-        },
-        {
-          "name": "Lum Berry",
-          "pct": 5.882
-        },
-        {
-          "name": "Wide Lens",
-          "pct": 5.882
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Rain Dish",
-          "pct": 55.882
-        },
-        {
-          "name": "Torrent",
-          "pct": 44.118
         }
       ]
     },
@@ -6539,79 +6539,6 @@
         }
       ]
     },
-    "Greninja": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Ice Beam",
-          "pct": 63.83
-        },
-        {
-          "name": "Protect",
-          "pct": 57.447
-        },
-        {
-          "name": "Dark Pulse",
-          "pct": 55.319
-        },
-        {
-          "name": "Hydro Pump",
-          "pct": 27.66
-        },
-        {
-          "name": "Water Shuriken",
-          "pct": 27.66
-        },
-        {
-          "name": "Low Kick",
-          "pct": 25.532
-        },
-        {
-          "name": "Rock Tomb",
-          "pct": 23.404
-        },
-        {
-          "name": "Sludge Wave",
-          "pct": 14.894
-        }
-      ],
-      "items": [
-        {
-          "name": "Life Orb",
-          "pct": 51.064
-        },
-        {
-          "name": "Focus Sash",
-          "pct": 17.021
-        },
-        {
-          "name": "Choice Scarf",
-          "pct": 8.511
-        },
-        {
-          "name": "Leftovers",
-          "pct": 4.255
-        },
-        {
-          "name": "Expert Belt",
-          "pct": 4.255
-        },
-        {
-          "name": "Wide Lens",
-          "pct": 2.128
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Protean",
-          "pct": 89.362
-        },
-        {
-          "name": "Torrent",
-          "pct": 10.638
-        }
-      ]
-    },
     "Araquanid": {
       "usage": null,
       "moves": [
@@ -6751,6 +6678,79 @@
         {
           "name": "Gluttony",
           "pct": 1.22
+        }
+      ]
+    },
+    "Greninja": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Ice Beam",
+          "pct": 63.83
+        },
+        {
+          "name": "Protect",
+          "pct": 57.447
+        },
+        {
+          "name": "Dark Pulse",
+          "pct": 55.319
+        },
+        {
+          "name": "Hydro Pump",
+          "pct": 27.66
+        },
+        {
+          "name": "Water Shuriken",
+          "pct": 27.66
+        },
+        {
+          "name": "Low Kick",
+          "pct": 25.532
+        },
+        {
+          "name": "Rock Tomb",
+          "pct": 23.404
+        },
+        {
+          "name": "Sludge Wave",
+          "pct": 14.894
+        }
+      ],
+      "items": [
+        {
+          "name": "Life Orb",
+          "pct": 51.064
+        },
+        {
+          "name": "Focus Sash",
+          "pct": 17.021
+        },
+        {
+          "name": "Choice Scarf",
+          "pct": 8.511
+        },
+        {
+          "name": "Leftovers",
+          "pct": 4.255
+        },
+        {
+          "name": "Expert Belt",
+          "pct": 4.255
+        },
+        {
+          "name": "Wide Lens",
+          "pct": 2.128
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Protean",
+          "pct": 89.362
+        },
+        {
+          "name": "Torrent",
+          "pct": 10.638
         }
       ]
     },
@@ -7420,79 +7420,6 @@
         }
       ]
     },
-    "Empoleon": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Flash Cannon",
-          "pct": 89.583
-        },
-        {
-          "name": "Protect",
-          "pct": 77.083
-        },
-        {
-          "name": "Hydro Pump",
-          "pct": 58.333
-        },
-        {
-          "name": "Ice Beam",
-          "pct": 47.917
-        },
-        {
-          "name": "Surf",
-          "pct": 35.417
-        },
-        {
-          "name": "Icy Wind",
-          "pct": 16.667
-        },
-        {
-          "name": "Roost",
-          "pct": 8.333
-        },
-        {
-          "name": "Roar",
-          "pct": 8.333
-        }
-      ],
-      "items": [
-        {
-          "name": "Leftovers",
-          "pct": 35.417
-        },
-        {
-          "name": "Life Orb",
-          "pct": 14.583
-        },
-        {
-          "name": "Sitrus Berry",
-          "pct": 14.583
-        },
-        {
-          "name": "Mystic Water",
-          "pct": 6.25
-        },
-        {
-          "name": "Chople Berry",
-          "pct": 6.25
-        },
-        {
-          "name": "Focus Sash",
-          "pct": 6.25
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Competitive",
-          "pct": 95.833
-        },
-        {
-          "name": "Torrent",
-          "pct": 4.167
-        }
-      ]
-    },
     "Hawlucha": {
       "usage": null,
       "moves": [
@@ -7567,6 +7494,144 @@
         {
           "name": "Limber",
           "pct": 7.692
+        }
+      ]
+    },
+    "Empoleon": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Flash Cannon",
+          "pct": 89.583
+        },
+        {
+          "name": "Protect",
+          "pct": 77.083
+        },
+        {
+          "name": "Hydro Pump",
+          "pct": 58.333
+        },
+        {
+          "name": "Ice Beam",
+          "pct": 47.917
+        },
+        {
+          "name": "Surf",
+          "pct": 35.417
+        },
+        {
+          "name": "Icy Wind",
+          "pct": 16.667
+        },
+        {
+          "name": "Roost",
+          "pct": 8.333
+        },
+        {
+          "name": "Roar",
+          "pct": 8.333
+        }
+      ],
+      "items": [
+        {
+          "name": "Leftovers",
+          "pct": 35.417
+        },
+        {
+          "name": "Life Orb",
+          "pct": 14.583
+        },
+        {
+          "name": "Sitrus Berry",
+          "pct": 14.583
+        },
+        {
+          "name": "Mystic Water",
+          "pct": 6.25
+        },
+        {
+          "name": "Chople Berry",
+          "pct": 6.25
+        },
+        {
+          "name": "Focus Sash",
+          "pct": 6.25
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Competitive",
+          "pct": 95.833
+        },
+        {
+          "name": "Torrent",
+          "pct": 4.167
+        }
+      ]
+    },
+    "Vanilluxe": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Blizzard",
+          "pct": 99.206
+        },
+        {
+          "name": "Freeze-Dry",
+          "pct": 96.032
+        },
+        {
+          "name": "Protect",
+          "pct": 78.571
+        },
+        {
+          "name": "Ice Shard",
+          "pct": 63.492
+        },
+        {
+          "name": "Aurora Veil",
+          "pct": 17.46
+        },
+        {
+          "name": "Icy Wind",
+          "pct": 14.286
+        },
+        {
+          "name": "Sheer Cold",
+          "pct": 6.349
+        },
+        {
+          "name": "Flash Cannon",
+          "pct": 6.349
+        }
+      ],
+      "items": [
+        {
+          "name": "Never-Melt Ice",
+          "pct": 74.603
+        },
+        {
+          "name": "Choice Scarf",
+          "pct": 17.46
+        },
+        {
+          "name": "Light Clay",
+          "pct": 3.175
+        },
+        {
+          "name": "Life Orb",
+          "pct": 1.587
+        },
+        {
+          "name": "Sitrus Berry",
+          "pct": 1.587
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Snow Warning",
+          "pct": 100
         }
       ]
     }
