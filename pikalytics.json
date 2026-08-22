@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-21T03:09:50.364Z",
+  "updated": "2026-08-22T03:00:32.795Z",
   "format": "championstournaments",
   "count": 116,
   "pokemon": {
@@ -4233,39 +4233,6 @@
         }
       ]
     },
-    "Meganium": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Dazzling Gleam",
-          "pct": 100
-        },
-        {
-          "name": "Synthesis",
-          "pct": 100
-        },
-        {
-          "name": "Frenzy Plant",
-          "pct": 100
-        },
-        {
-          "name": "Helping Hand",
-          "pct": 100
-        }
-      ],
-      "items": [
-        {
-          "name": "Sitrus Berry",
-          "pct": 100
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Leaf Guard",
-          "pct": 100
-        }
-      ]
-    },
     "Primarina": {
       "usage": null,
       "moves": [
@@ -4336,6 +4303,39 @@
         {
           "name": "Torrent",
           "pct": 5.24
+        }
+      ]
+    },
+    "Meganium": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Dazzling Gleam",
+          "pct": 100
+        },
+        {
+          "name": "Synthesis",
+          "pct": 100
+        },
+        {
+          "name": "Frenzy Plant",
+          "pct": 100
+        },
+        {
+          "name": "Helping Hand",
+          "pct": 100
+        }
+      ],
+      "items": [
+        {
+          "name": "Sitrus Berry",
+          "pct": 100
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Leaf Guard",
+          "pct": 100
         }
       ]
     },
@@ -6539,71 +6539,6 @@
         }
       ]
     },
-    "Araquanid": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Liquidation",
-          "pct": 93.069
-        },
-        {
-          "name": "Wide Guard",
-          "pct": 90.099
-        },
-        {
-          "name": "Protect",
-          "pct": 73.267
-        },
-        {
-          "name": "Leech Life",
-          "pct": 43.564
-        },
-        {
-          "name": "Infestation",
-          "pct": 21.782
-        },
-        {
-          "name": "Entrainment",
-          "pct": 16.832
-        },
-        {
-          "name": "Poison Jab",
-          "pct": 10.891
-        },
-        {
-          "name": "Mirror Coat",
-          "pct": 6.931
-        }
-      ],
-      "items": [
-        {
-          "name": "Mystic Water",
-          "pct": 70.297
-        },
-        {
-          "name": "Leftovers",
-          "pct": 11.881
-        },
-        {
-          "name": "Life Orb",
-          "pct": 4.95
-        },
-        {
-          "name": "Sitrus Berry",
-          "pct": 4.95
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Water Bubble",
-          "pct": 97.03
-        },
-        {
-          "name": "Water Absorb",
-          "pct": 1.98
-        }
-      ]
-    },
     "Snorlax": {
       "usage": null,
       "moves": [
@@ -6751,6 +6686,71 @@
         {
           "name": "Torrent",
           "pct": 10.638
+        }
+      ]
+    },
+    "Araquanid": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Liquidation",
+          "pct": 93.069
+        },
+        {
+          "name": "Wide Guard",
+          "pct": 90.099
+        },
+        {
+          "name": "Protect",
+          "pct": 73.267
+        },
+        {
+          "name": "Leech Life",
+          "pct": 43.564
+        },
+        {
+          "name": "Infestation",
+          "pct": 21.782
+        },
+        {
+          "name": "Entrainment",
+          "pct": 16.832
+        },
+        {
+          "name": "Poison Jab",
+          "pct": 10.891
+        },
+        {
+          "name": "Mirror Coat",
+          "pct": 6.931
+        }
+      ],
+      "items": [
+        {
+          "name": "Mystic Water",
+          "pct": 70.297
+        },
+        {
+          "name": "Leftovers",
+          "pct": 11.881
+        },
+        {
+          "name": "Life Orb",
+          "pct": 4.95
+        },
+        {
+          "name": "Sitrus Berry",
+          "pct": 4.95
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Water Bubble",
+          "pct": 97.03
+        },
+        {
+          "name": "Water Absorb",
+          "pct": 1.98
         }
       ]
     },
