@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-22T03:00:32.795Z",
+  "updated": "2026-08-23T03:09:45.352Z",
   "format": "championstournaments",
   "count": 116,
   "pokemon": {
@@ -6178,75 +6178,6 @@
         }
       ]
     },
-    "Crabominable": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Close Combat",
-          "pct": 63.636
-        },
-        {
-          "name": "Ice Hammer",
-          "pct": 54.545
-        },
-        {
-          "name": "Protect",
-          "pct": 54.545
-        },
-        {
-          "name": "Mach Punch",
-          "pct": 45.455
-        },
-        {
-          "name": "Rock Slide",
-          "pct": 27.273
-        },
-        {
-          "name": "Crabhammer",
-          "pct": 27.273
-        },
-        {
-          "name": "Ice Spinner",
-          "pct": 27.273
-        },
-        {
-          "name": "Thunder Punch",
-          "pct": 18.182
-        }
-      ],
-      "items": [
-        {
-          "name": "Life Orb",
-          "pct": 36.364
-        },
-        {
-          "name": "Quick Claw",
-          "pct": 27.273
-        },
-        {
-          "name": "Expert Belt",
-          "pct": 18.182
-        },
-        {
-          "name": "Lum Berry",
-          "pct": 9.091
-        },
-        {
-          "name": "Muscle Band",
-          "pct": 9.091
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Hyper Cutter",
-          "pct": 72.727
-        },
-        {
-          "name": "Iron Fist",
-          "pct": 27.273
-        }
-      ]
-    },
     "Kleavor": {
       "usage": null,
       "moves": [
@@ -6317,6 +6248,75 @@
         {
           "name": "Sheer Force",
           "pct": 3.906
+        }
+      ]
+    },
+    "Crabominable": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Close Combat",
+          "pct": 63.636
+        },
+        {
+          "name": "Ice Hammer",
+          "pct": 54.545
+        },
+        {
+          "name": "Protect",
+          "pct": 54.545
+        },
+        {
+          "name": "Mach Punch",
+          "pct": 45.455
+        },
+        {
+          "name": "Rock Slide",
+          "pct": 27.273
+        },
+        {
+          "name": "Crabhammer",
+          "pct": 27.273
+        },
+        {
+          "name": "Ice Spinner",
+          "pct": 27.273
+        },
+        {
+          "name": "Thunder Punch",
+          "pct": 18.182
+        }
+      ],
+      "items": [
+        {
+          "name": "Life Orb",
+          "pct": 36.364
+        },
+        {
+          "name": "Quick Claw",
+          "pct": 27.273
+        },
+        {
+          "name": "Expert Belt",
+          "pct": 18.182
+        },
+        {
+          "name": "Lum Berry",
+          "pct": 9.091
+        },
+        {
+          "name": "Muscle Band",
+          "pct": 9.091
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Hyper Cutter",
+          "pct": 72.727
+        },
+        {
+          "name": "Iron Fist",
+          "pct": 27.273
         }
       ]
     },
