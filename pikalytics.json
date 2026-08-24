@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-23T03:09:45.352Z",
+  "updated": "2026-08-24T03:10:57.455Z",
   "format": "championstournaments",
   "count": 116,
   "pokemon": {
@@ -5329,6 +5329,75 @@
         }
       ]
     },
+    "Mimikyu": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Play Rough",
+          "pct": 88.636
+        },
+        {
+          "name": "Shadow Sneak",
+          "pct": 81.818
+        },
+        {
+          "name": "Trick Room",
+          "pct": 48.864
+        },
+        {
+          "name": "Swords Dance",
+          "pct": 36.364
+        },
+        {
+          "name": "Shadow Claw",
+          "pct": 30.682
+        },
+        {
+          "name": "Protect",
+          "pct": 29.545
+        },
+        {
+          "name": "Wood Hammer",
+          "pct": 13.636
+        },
+        {
+          "name": "Will-O-Wisp",
+          "pct": 13.636
+        }
+      ],
+      "items": [
+        {
+          "name": "Life Orb",
+          "pct": 48.864
+        },
+        {
+          "name": "Mental Herb",
+          "pct": 17.045
+        },
+        {
+          "name": "Spell Tag",
+          "pct": 7.955
+        },
+        {
+          "name": "Sitrus Berry",
+          "pct": 3.409
+        },
+        {
+          "name": "White Herb",
+          "pct": 3.409
+        },
+        {
+          "name": "Iron Ball",
+          "pct": 3.409
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Disguise",
+          "pct": 100
+        }
+      ]
+    },
     "Tinkaton": {
       "usage": null,
       "moves": [
@@ -5403,75 +5472,6 @@
         {
           "name": "Pickpocket",
           "pct": 2.419
-        }
-      ]
-    },
-    "Mimikyu": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Play Rough",
-          "pct": 88.636
-        },
-        {
-          "name": "Shadow Sneak",
-          "pct": 81.818
-        },
-        {
-          "name": "Trick Room",
-          "pct": 48.864
-        },
-        {
-          "name": "Swords Dance",
-          "pct": 36.364
-        },
-        {
-          "name": "Shadow Claw",
-          "pct": 30.682
-        },
-        {
-          "name": "Protect",
-          "pct": 29.545
-        },
-        {
-          "name": "Wood Hammer",
-          "pct": 13.636
-        },
-        {
-          "name": "Will-O-Wisp",
-          "pct": 13.636
-        }
-      ],
-      "items": [
-        {
-          "name": "Life Orb",
-          "pct": 48.864
-        },
-        {
-          "name": "Mental Herb",
-          "pct": 17.045
-        },
-        {
-          "name": "Spell Tag",
-          "pct": 7.955
-        },
-        {
-          "name": "Sitrus Berry",
-          "pct": 3.409
-        },
-        {
-          "name": "White Herb",
-          "pct": 3.409
-        },
-        {
-          "name": "Iron Ball",
-          "pct": 3.409
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Disguise",
-          "pct": 100
         }
       ]
     },
@@ -6953,63 +6953,6 @@
         }
       ]
     },
-    "Mega Charizard Y": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Protect",
-          "pct": 99.058
-        },
-        {
-          "name": "Heat Wave",
-          "pct": 98.97
-        },
-        {
-          "name": "Weather Ball",
-          "pct": 92.964
-        },
-        {
-          "name": "Solar Beam",
-          "pct": 86.429
-        },
-        {
-          "name": "Helping Hand",
-          "pct": 8.037
-        },
-        {
-          "name": "Ancient Power",
-          "pct": 3.856
-        },
-        {
-          "name": "Hurricane",
-          "pct": 3.179
-        },
-        {
-          "name": "Air Slash",
-          "pct": 2.708
-        }
-      ],
-      "items": [
-        {
-          "name": "Charizardite Y",
-          "pct": 100
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Blaze",
-          "pct": 83.397
-        },
-        {
-          "name": "Solar Power",
-          "pct": 13.541
-        },
-        {
-          "name": "Drought",
-          "pct": 3.032
-        }
-      ]
-    },
     "Feraligatr": {
       "usage": null,
       "moves": [
@@ -7064,6 +7007,63 @@
         {
           "name": "Torrent",
           "pct": 3.448
+        }
+      ]
+    },
+    "Mega Charizard Y": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Protect",
+          "pct": 99.058
+        },
+        {
+          "name": "Heat Wave",
+          "pct": 98.97
+        },
+        {
+          "name": "Weather Ball",
+          "pct": 92.964
+        },
+        {
+          "name": "Solar Beam",
+          "pct": 86.429
+        },
+        {
+          "name": "Helping Hand",
+          "pct": 8.037
+        },
+        {
+          "name": "Ancient Power",
+          "pct": 3.856
+        },
+        {
+          "name": "Hurricane",
+          "pct": 3.179
+        },
+        {
+          "name": "Air Slash",
+          "pct": 2.708
+        }
+      ],
+      "items": [
+        {
+          "name": "Charizardite Y",
+          "pct": 100
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Blaze",
+          "pct": 83.397
+        },
+        {
+          "name": "Solar Power",
+          "pct": 13.541
+        },
+        {
+          "name": "Drought",
+          "pct": 3.032
         }
       ]
     },
