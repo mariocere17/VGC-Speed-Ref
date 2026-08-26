@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-25T03:05:45.715Z",
+  "updated": "2026-08-26T03:12:30.932Z",
   "format": "championstournaments",
   "count": 115,
   "pokemon": {
@@ -3348,51 +3348,6 @@
         }
       ]
     },
-    "Froslass": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Shadow Ball",
-          "pct": 100
-        },
-        {
-          "name": "Protect",
-          "pct": 100
-        },
-        {
-          "name": "Blizzard",
-          "pct": 66.667
-        },
-        {
-          "name": "Aurora Veil",
-          "pct": 66.667
-        },
-        {
-          "name": "Icy Wind",
-          "pct": 33.333
-        },
-        {
-          "name": "Will-O-Wisp",
-          "pct": 33.333
-        }
-      ],
-      "items": [
-        {
-          "name": "Focus Sash",
-          "pct": 100
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Cursed Body",
-          "pct": 66.667
-        },
-        {
-          "name": "Snow Cloak",
-          "pct": 33.333
-        }
-      ]
-    },
     "Staraptor": {
       "usage": null,
       "moves": [
@@ -3459,6 +3414,51 @@
         {
           "name": "Contrary",
           "pct": 2.732
+        }
+      ]
+    },
+    "Froslass": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Shadow Ball",
+          "pct": 100
+        },
+        {
+          "name": "Protect",
+          "pct": 100
+        },
+        {
+          "name": "Blizzard",
+          "pct": 66.667
+        },
+        {
+          "name": "Aurora Veil",
+          "pct": 66.667
+        },
+        {
+          "name": "Icy Wind",
+          "pct": 33.333
+        },
+        {
+          "name": "Will-O-Wisp",
+          "pct": 33.333
+        }
+      ],
+      "items": [
+        {
+          "name": "Focus Sash",
+          "pct": 100
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Cursed Body",
+          "pct": 66.667
+        },
+        {
+          "name": "Snow Cloak",
+          "pct": 33.333
         }
       ]
     },
@@ -5398,63 +5398,6 @@
         }
       ]
     },
-    "Mega Floette": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Protect",
-          "pct": 99.436
-        },
-        {
-          "name": "Dazzling Gleam",
-          "pct": 94.608
-        },
-        {
-          "name": "Moonblast",
-          "pct": 71.85
-        },
-        {
-          "name": "Light of Ruin",
-          "pct": 48.715
-        },
-        {
-          "name": "Calm Mind",
-          "pct": 48.15
-        },
-        {
-          "name": "Draining Kiss",
-          "pct": 31.411
-        },
-        {
-          "name": "Helping Hand",
-          "pct": 1.755
-        },
-        {
-          "name": "Psychic",
-          "pct": 1.317
-        }
-      ],
-      "items": [
-        {
-          "name": "Floettite",
-          "pct": 100
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Flower Veil",
-          "pct": 95.925
-        },
-        {
-          "name": "Fairy Aura",
-          "pct": 3.072
-        },
-        {
-          "name": "Symbiosis",
-          "pct": 1.003
-        }
-      ]
-    },
     "Tinkaton": {
       "usage": null,
       "moves": [
@@ -5529,6 +5472,63 @@
         {
           "name": "Pickpocket",
           "pct": 2.419
+        }
+      ]
+    },
+    "Mega Floette": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Protect",
+          "pct": 99.436
+        },
+        {
+          "name": "Dazzling Gleam",
+          "pct": 94.608
+        },
+        {
+          "name": "Moonblast",
+          "pct": 71.85
+        },
+        {
+          "name": "Light of Ruin",
+          "pct": 48.715
+        },
+        {
+          "name": "Calm Mind",
+          "pct": 48.15
+        },
+        {
+          "name": "Draining Kiss",
+          "pct": 31.411
+        },
+        {
+          "name": "Helping Hand",
+          "pct": 1.755
+        },
+        {
+          "name": "Psychic",
+          "pct": 1.317
+        }
+      ],
+      "items": [
+        {
+          "name": "Floettite",
+          "pct": 100
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Flower Veil",
+          "pct": 95.925
+        },
+        {
+          "name": "Fairy Aura",
+          "pct": 3.072
+        },
+        {
+          "name": "Symbiosis",
+          "pct": 1.003
         }
       ]
     },
