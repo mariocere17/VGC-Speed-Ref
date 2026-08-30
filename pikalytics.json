@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-29T08:54:10.253Z",
+  "updated": "2026-08-30T08:11:32.158Z",
   "format": "championstournaments",
   "count": 114,
   "pokemon": {
@@ -5199,6 +5199,63 @@
         }
       ]
     },
+    "Camerupt": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Earth Power",
+          "pct": 100
+        },
+        {
+          "name": "Protect",
+          "pct": 100
+        },
+        {
+          "name": "Eruption",
+          "pct": 60
+        },
+        {
+          "name": "Heat Wave",
+          "pct": 60
+        },
+        {
+          "name": "Overheat",
+          "pct": 40
+        },
+        {
+          "name": "Yawn",
+          "pct": 20
+        },
+        {
+          "name": "Rock Slide",
+          "pct": 20
+        }
+      ],
+      "items": [
+        {
+          "name": "Charcoal",
+          "pct": 40
+        },
+        {
+          "name": "Leftovers",
+          "pct": 20
+        },
+        {
+          "name": "Life Orb",
+          "pct": 20
+        },
+        {
+          "name": "Iron Ball",
+          "pct": 20
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Solid Rock",
+          "pct": 100
+        }
+      ]
+    },
     "Gallade": {
       "usage": null,
       "moves": [
@@ -5269,63 +5326,6 @@
         {
           "name": "Justified",
           "pct": 1.379
-        }
-      ]
-    },
-    "Camerupt": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Earth Power",
-          "pct": 100
-        },
-        {
-          "name": "Protect",
-          "pct": 100
-        },
-        {
-          "name": "Eruption",
-          "pct": 60
-        },
-        {
-          "name": "Heat Wave",
-          "pct": 60
-        },
-        {
-          "name": "Overheat",
-          "pct": 40
-        },
-        {
-          "name": "Yawn",
-          "pct": 20
-        },
-        {
-          "name": "Rock Slide",
-          "pct": 20
-        }
-      ],
-      "items": [
-        {
-          "name": "Charcoal",
-          "pct": 40
-        },
-        {
-          "name": "Leftovers",
-          "pct": 20
-        },
-        {
-          "name": "Life Orb",
-          "pct": 20
-        },
-        {
-          "name": "Iron Ball",
-          "pct": 20
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Solid Rock",
-          "pct": 100
         }
       ]
     },
@@ -6539,6 +6539,79 @@
         }
       ]
     },
+    "Greninja": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Ice Beam",
+          "pct": 63.83
+        },
+        {
+          "name": "Protect",
+          "pct": 57.447
+        },
+        {
+          "name": "Dark Pulse",
+          "pct": 55.319
+        },
+        {
+          "name": "Hydro Pump",
+          "pct": 27.66
+        },
+        {
+          "name": "Water Shuriken",
+          "pct": 27.66
+        },
+        {
+          "name": "Low Kick",
+          "pct": 25.532
+        },
+        {
+          "name": "Rock Tomb",
+          "pct": 23.404
+        },
+        {
+          "name": "Sludge Wave",
+          "pct": 14.894
+        }
+      ],
+      "items": [
+        {
+          "name": "Life Orb",
+          "pct": 51.064
+        },
+        {
+          "name": "Focus Sash",
+          "pct": 17.021
+        },
+        {
+          "name": "Choice Scarf",
+          "pct": 8.511
+        },
+        {
+          "name": "Leftovers",
+          "pct": 4.255
+        },
+        {
+          "name": "Expert Belt",
+          "pct": 4.255
+        },
+        {
+          "name": "Wide Lens",
+          "pct": 2.128
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Protean",
+          "pct": 89.362
+        },
+        {
+          "name": "Torrent",
+          "pct": 10.638
+        }
+      ]
+    },
     "Snorlax": {
       "usage": null,
       "moves": [
@@ -6613,79 +6686,6 @@
         {
           "name": "Gluttony",
           "pct": 1.22
-        }
-      ]
-    },
-    "Greninja": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Ice Beam",
-          "pct": 63.83
-        },
-        {
-          "name": "Protect",
-          "pct": 57.447
-        },
-        {
-          "name": "Dark Pulse",
-          "pct": 55.319
-        },
-        {
-          "name": "Hydro Pump",
-          "pct": 27.66
-        },
-        {
-          "name": "Water Shuriken",
-          "pct": 27.66
-        },
-        {
-          "name": "Low Kick",
-          "pct": 25.532
-        },
-        {
-          "name": "Rock Tomb",
-          "pct": 23.404
-        },
-        {
-          "name": "Sludge Wave",
-          "pct": 14.894
-        }
-      ],
-      "items": [
-        {
-          "name": "Life Orb",
-          "pct": 51.064
-        },
-        {
-          "name": "Focus Sash",
-          "pct": 17.021
-        },
-        {
-          "name": "Choice Scarf",
-          "pct": 8.511
-        },
-        {
-          "name": "Leftovers",
-          "pct": 4.255
-        },
-        {
-          "name": "Expert Belt",
-          "pct": 4.255
-        },
-        {
-          "name": "Wide Lens",
-          "pct": 2.128
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Protean",
-          "pct": 89.362
-        },
-        {
-          "name": "Torrent",
-          "pct": 10.638
         }
       ]
     },
