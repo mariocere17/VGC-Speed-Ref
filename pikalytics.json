@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-30T08:11:32.158Z",
+  "updated": "2026-08-31T08:31:57.111Z",
   "format": "championstournaments",
   "count": 114,
   "pokemon": {
@@ -7225,67 +7225,6 @@
         }
       ]
     },
-    "Eelektross": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Supercell Slam",
-          "pct": 54.545
-        },
-        {
-          "name": "Psychic Fangs",
-          "pct": 36.364
-        },
-        {
-          "name": "Thunderbolt",
-          "pct": 36.364
-        },
-        {
-          "name": "Liquidation",
-          "pct": 27.273
-        },
-        {
-          "name": "Poison Fang",
-          "pct": 27.273
-        },
-        {
-          "name": "Stomping Tantrum",
-          "pct": 27.273
-        },
-        {
-          "name": "Giga Drain",
-          "pct": 27.273
-        },
-        {
-          "name": "Protect",
-          "pct": 27.273
-        }
-      ],
-      "items": [
-        {
-          "name": "Quick Claw",
-          "pct": 36.364
-        },
-        {
-          "name": "Life Orb",
-          "pct": 27.273
-        },
-        {
-          "name": "Leftovers",
-          "pct": 9.091
-        },
-        {
-          "name": "Choice Scarf",
-          "pct": 9.091
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Levitate",
-          "pct": 100
-        }
-      ]
-    },
     "Klefki": {
       "usage": null,
       "moves": [
@@ -7352,6 +7291,67 @@
         {
           "name": "Prankster",
           "pct": 99.13
+        }
+      ]
+    },
+    "Eelektross": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Supercell Slam",
+          "pct": 54.545
+        },
+        {
+          "name": "Psychic Fangs",
+          "pct": 36.364
+        },
+        {
+          "name": "Thunderbolt",
+          "pct": 36.364
+        },
+        {
+          "name": "Liquidation",
+          "pct": 27.273
+        },
+        {
+          "name": "Poison Fang",
+          "pct": 27.273
+        },
+        {
+          "name": "Stomping Tantrum",
+          "pct": 27.273
+        },
+        {
+          "name": "Giga Drain",
+          "pct": 27.273
+        },
+        {
+          "name": "Protect",
+          "pct": 27.273
+        }
+      ],
+      "items": [
+        {
+          "name": "Quick Claw",
+          "pct": 36.364
+        },
+        {
+          "name": "Life Orb",
+          "pct": 27.273
+        },
+        {
+          "name": "Leftovers",
+          "pct": 9.091
+        },
+        {
+          "name": "Choice Scarf",
+          "pct": 9.091
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Levitate",
+          "pct": 100
         }
       ]
     },
