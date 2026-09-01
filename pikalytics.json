@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-31T08:31:57.111Z",
+  "updated": "2026-09-01T07:38:23.381Z",
   "format": "championstournaments",
   "count": 114,
   "pokemon": {
@@ -6539,79 +6539,6 @@
         }
       ]
     },
-    "Greninja": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Ice Beam",
-          "pct": 63.83
-        },
-        {
-          "name": "Protect",
-          "pct": 57.447
-        },
-        {
-          "name": "Dark Pulse",
-          "pct": 55.319
-        },
-        {
-          "name": "Hydro Pump",
-          "pct": 27.66
-        },
-        {
-          "name": "Water Shuriken",
-          "pct": 27.66
-        },
-        {
-          "name": "Low Kick",
-          "pct": 25.532
-        },
-        {
-          "name": "Rock Tomb",
-          "pct": 23.404
-        },
-        {
-          "name": "Sludge Wave",
-          "pct": 14.894
-        }
-      ],
-      "items": [
-        {
-          "name": "Life Orb",
-          "pct": 51.064
-        },
-        {
-          "name": "Focus Sash",
-          "pct": 17.021
-        },
-        {
-          "name": "Choice Scarf",
-          "pct": 8.511
-        },
-        {
-          "name": "Leftovers",
-          "pct": 4.255
-        },
-        {
-          "name": "Expert Belt",
-          "pct": 4.255
-        },
-        {
-          "name": "Wide Lens",
-          "pct": 2.128
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Protean",
-          "pct": 89.362
-        },
-        {
-          "name": "Torrent",
-          "pct": 10.638
-        }
-      ]
-    },
     "Snorlax": {
       "usage": null,
       "moves": [
@@ -6686,6 +6613,79 @@
         {
           "name": "Gluttony",
           "pct": 1.22
+        }
+      ]
+    },
+    "Greninja": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Ice Beam",
+          "pct": 63.83
+        },
+        {
+          "name": "Protect",
+          "pct": 57.447
+        },
+        {
+          "name": "Dark Pulse",
+          "pct": 55.319
+        },
+        {
+          "name": "Hydro Pump",
+          "pct": 27.66
+        },
+        {
+          "name": "Water Shuriken",
+          "pct": 27.66
+        },
+        {
+          "name": "Low Kick",
+          "pct": 25.532
+        },
+        {
+          "name": "Rock Tomb",
+          "pct": 23.404
+        },
+        {
+          "name": "Sludge Wave",
+          "pct": 14.894
+        }
+      ],
+      "items": [
+        {
+          "name": "Life Orb",
+          "pct": 51.064
+        },
+        {
+          "name": "Focus Sash",
+          "pct": 17.021
+        },
+        {
+          "name": "Choice Scarf",
+          "pct": 8.511
+        },
+        {
+          "name": "Leftovers",
+          "pct": 4.255
+        },
+        {
+          "name": "Expert Belt",
+          "pct": 4.255
+        },
+        {
+          "name": "Wide Lens",
+          "pct": 2.128
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Protean",
+          "pct": 89.362
+        },
+        {
+          "name": "Torrent",
+          "pct": 10.638
         }
       ]
     },
@@ -7225,6 +7225,67 @@
         }
       ]
     },
+    "Eelektross": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Supercell Slam",
+          "pct": 54.545
+        },
+        {
+          "name": "Psychic Fangs",
+          "pct": 36.364
+        },
+        {
+          "name": "Thunderbolt",
+          "pct": 36.364
+        },
+        {
+          "name": "Liquidation",
+          "pct": 27.273
+        },
+        {
+          "name": "Poison Fang",
+          "pct": 27.273
+        },
+        {
+          "name": "Stomping Tantrum",
+          "pct": 27.273
+        },
+        {
+          "name": "Giga Drain",
+          "pct": 27.273
+        },
+        {
+          "name": "Protect",
+          "pct": 27.273
+        }
+      ],
+      "items": [
+        {
+          "name": "Quick Claw",
+          "pct": 36.364
+        },
+        {
+          "name": "Life Orb",
+          "pct": 27.273
+        },
+        {
+          "name": "Leftovers",
+          "pct": 9.091
+        },
+        {
+          "name": "Choice Scarf",
+          "pct": 9.091
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Levitate",
+          "pct": 100
+        }
+      ]
+    },
     "Klefki": {
       "usage": null,
       "moves": [
@@ -7291,67 +7352,6 @@
         {
           "name": "Prankster",
           "pct": 99.13
-        }
-      ]
-    },
-    "Eelektross": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Supercell Slam",
-          "pct": 54.545
-        },
-        {
-          "name": "Psychic Fangs",
-          "pct": 36.364
-        },
-        {
-          "name": "Thunderbolt",
-          "pct": 36.364
-        },
-        {
-          "name": "Liquidation",
-          "pct": 27.273
-        },
-        {
-          "name": "Poison Fang",
-          "pct": 27.273
-        },
-        {
-          "name": "Stomping Tantrum",
-          "pct": 27.273
-        },
-        {
-          "name": "Giga Drain",
-          "pct": 27.273
-        },
-        {
-          "name": "Protect",
-          "pct": 27.273
-        }
-      ],
-      "items": [
-        {
-          "name": "Quick Claw",
-          "pct": 36.364
-        },
-        {
-          "name": "Life Orb",
-          "pct": 27.273
-        },
-        {
-          "name": "Leftovers",
-          "pct": 9.091
-        },
-        {
-          "name": "Choice Scarf",
-          "pct": 9.091
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Levitate",
-          "pct": 100
         }
       ]
     },
