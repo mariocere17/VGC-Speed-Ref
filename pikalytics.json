@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-01T07:38:23.381Z",
+  "updated": "2026-09-02T07:01:28.764Z",
   "format": "championstournaments",
   "count": 114,
   "pokemon": {
@@ -5329,75 +5329,6 @@
         }
       ]
     },
-    "Mimikyu": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Play Rough",
-          "pct": 88.636
-        },
-        {
-          "name": "Shadow Sneak",
-          "pct": 81.818
-        },
-        {
-          "name": "Trick Room",
-          "pct": 48.864
-        },
-        {
-          "name": "Swords Dance",
-          "pct": 36.364
-        },
-        {
-          "name": "Shadow Claw",
-          "pct": 30.682
-        },
-        {
-          "name": "Protect",
-          "pct": 29.545
-        },
-        {
-          "name": "Wood Hammer",
-          "pct": 13.636
-        },
-        {
-          "name": "Will-O-Wisp",
-          "pct": 13.636
-        }
-      ],
-      "items": [
-        {
-          "name": "Life Orb",
-          "pct": 48.864
-        },
-        {
-          "name": "Mental Herb",
-          "pct": 17.045
-        },
-        {
-          "name": "Spell Tag",
-          "pct": 7.955
-        },
-        {
-          "name": "Sitrus Berry",
-          "pct": 3.409
-        },
-        {
-          "name": "White Herb",
-          "pct": 3.409
-        },
-        {
-          "name": "Iron Ball",
-          "pct": 3.409
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Disguise",
-          "pct": 100
-        }
-      ]
-    },
     "Tinkaton": {
       "usage": null,
       "moves": [
@@ -5472,6 +5403,75 @@
         {
           "name": "Pickpocket",
           "pct": 2.419
+        }
+      ]
+    },
+    "Mimikyu": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Play Rough",
+          "pct": 88.636
+        },
+        {
+          "name": "Shadow Sneak",
+          "pct": 81.818
+        },
+        {
+          "name": "Trick Room",
+          "pct": 48.864
+        },
+        {
+          "name": "Swords Dance",
+          "pct": 36.364
+        },
+        {
+          "name": "Shadow Claw",
+          "pct": 30.682
+        },
+        {
+          "name": "Protect",
+          "pct": 29.545
+        },
+        {
+          "name": "Wood Hammer",
+          "pct": 13.636
+        },
+        {
+          "name": "Will-O-Wisp",
+          "pct": 13.636
+        }
+      ],
+      "items": [
+        {
+          "name": "Life Orb",
+          "pct": 48.864
+        },
+        {
+          "name": "Mental Herb",
+          "pct": 17.045
+        },
+        {
+          "name": "Spell Tag",
+          "pct": 7.955
+        },
+        {
+          "name": "Sitrus Berry",
+          "pct": 3.409
+        },
+        {
+          "name": "White Herb",
+          "pct": 3.409
+        },
+        {
+          "name": "Iron Ball",
+          "pct": 3.409
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Disguise",
+          "pct": 100
         }
       ]
     },
@@ -5707,6 +5707,63 @@
         }
       ]
     },
+    "Lopunny": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Fake Out",
+          "pct": 100
+        },
+        {
+          "name": "Encore",
+          "pct": 50
+        },
+        {
+          "name": "High Jump Kick",
+          "pct": 50
+        },
+        {
+          "name": "Healing Wish",
+          "pct": 25
+        },
+        {
+          "name": "Protect",
+          "pct": 25
+        },
+        {
+          "name": "After You",
+          "pct": 25
+        },
+        {
+          "name": "Close Combat",
+          "pct": 25
+        },
+        {
+          "name": "Triple Axel",
+          "pct": 25
+        }
+      ],
+      "items": [
+        {
+          "name": "Focus Sash",
+          "pct": 75
+        },
+        {
+          "name": "Wide Lens",
+          "pct": 25
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Limber",
+          "pct": 50
+        },
+        {
+          "name": "Cute Charm",
+          "pct": 50
+        }
+      ]
+    },
     "Starmie": {
       "usage": null,
       "moves": [
@@ -5773,63 +5830,6 @@
         {
           "name": "Illuminate",
           "pct": 21.429
-        }
-      ]
-    },
-    "Lopunny": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Fake Out",
-          "pct": 100
-        },
-        {
-          "name": "Encore",
-          "pct": 50
-        },
-        {
-          "name": "High Jump Kick",
-          "pct": 50
-        },
-        {
-          "name": "Healing Wish",
-          "pct": 25
-        },
-        {
-          "name": "Protect",
-          "pct": 25
-        },
-        {
-          "name": "After You",
-          "pct": 25
-        },
-        {
-          "name": "Close Combat",
-          "pct": 25
-        },
-        {
-          "name": "Triple Axel",
-          "pct": 25
-        }
-      ],
-      "items": [
-        {
-          "name": "Focus Sash",
-          "pct": 75
-        },
-        {
-          "name": "Wide Lens",
-          "pct": 25
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Limber",
-          "pct": 50
-        },
-        {
-          "name": "Cute Charm",
-          "pct": 50
         }
       ]
     },
@@ -6251,75 +6251,6 @@
         }
       ]
     },
-    "Crabominable": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Close Combat",
-          "pct": 63.636
-        },
-        {
-          "name": "Ice Hammer",
-          "pct": 54.545
-        },
-        {
-          "name": "Protect",
-          "pct": 54.545
-        },
-        {
-          "name": "Mach Punch",
-          "pct": 45.455
-        },
-        {
-          "name": "Rock Slide",
-          "pct": 27.273
-        },
-        {
-          "name": "Crabhammer",
-          "pct": 27.273
-        },
-        {
-          "name": "Ice Spinner",
-          "pct": 27.273
-        },
-        {
-          "name": "Thunder Punch",
-          "pct": 18.182
-        }
-      ],
-      "items": [
-        {
-          "name": "Life Orb",
-          "pct": 36.364
-        },
-        {
-          "name": "Quick Claw",
-          "pct": 27.273
-        },
-        {
-          "name": "Expert Belt",
-          "pct": 18.182
-        },
-        {
-          "name": "Lum Berry",
-          "pct": 9.091
-        },
-        {
-          "name": "Muscle Band",
-          "pct": 9.091
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Hyper Cutter",
-          "pct": 72.727
-        },
-        {
-          "name": "Iron Fist",
-          "pct": 27.273
-        }
-      ]
-    },
     "Weavile": {
       "usage": null,
       "moves": [
@@ -6390,6 +6321,75 @@
         {
           "name": "Pressure",
           "pct": 30.682
+        }
+      ]
+    },
+    "Crabominable": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Close Combat",
+          "pct": 63.636
+        },
+        {
+          "name": "Ice Hammer",
+          "pct": 54.545
+        },
+        {
+          "name": "Protect",
+          "pct": 54.545
+        },
+        {
+          "name": "Mach Punch",
+          "pct": 45.455
+        },
+        {
+          "name": "Rock Slide",
+          "pct": 27.273
+        },
+        {
+          "name": "Crabhammer",
+          "pct": 27.273
+        },
+        {
+          "name": "Ice Spinner",
+          "pct": 27.273
+        },
+        {
+          "name": "Thunder Punch",
+          "pct": 18.182
+        }
+      ],
+      "items": [
+        {
+          "name": "Life Orb",
+          "pct": 36.364
+        },
+        {
+          "name": "Quick Claw",
+          "pct": 27.273
+        },
+        {
+          "name": "Expert Belt",
+          "pct": 18.182
+        },
+        {
+          "name": "Lum Berry",
+          "pct": 9.091
+        },
+        {
+          "name": "Muscle Band",
+          "pct": 9.091
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Hyper Cutter",
+          "pct": 72.727
+        },
+        {
+          "name": "Iron Fist",
+          "pct": 27.273
         }
       ]
     },
@@ -7355,6 +7355,71 @@
         }
       ]
     },
+    "Vanilluxe": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Blizzard",
+          "pct": 99.206
+        },
+        {
+          "name": "Freeze-Dry",
+          "pct": 96.032
+        },
+        {
+          "name": "Protect",
+          "pct": 78.571
+        },
+        {
+          "name": "Ice Shard",
+          "pct": 63.492
+        },
+        {
+          "name": "Aurora Veil",
+          "pct": 17.46
+        },
+        {
+          "name": "Icy Wind",
+          "pct": 14.286
+        },
+        {
+          "name": "Sheer Cold",
+          "pct": 6.349
+        },
+        {
+          "name": "Flash Cannon",
+          "pct": 6.349
+        }
+      ],
+      "items": [
+        {
+          "name": "Never-Melt Ice",
+          "pct": 74.603
+        },
+        {
+          "name": "Choice Scarf",
+          "pct": 17.46
+        },
+        {
+          "name": "Light Clay",
+          "pct": 3.175
+        },
+        {
+          "name": "Life Orb",
+          "pct": 1.587
+        },
+        {
+          "name": "Sitrus Berry",
+          "pct": 1.587
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Snow Warning",
+          "pct": 100
+        }
+      ]
+    },
     "Hawlucha": {
       "usage": null,
       "moves": [
@@ -7429,71 +7494,6 @@
         {
           "name": "Limber",
           "pct": 7.692
-        }
-      ]
-    },
-    "Vanilluxe": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Blizzard",
-          "pct": 99.206
-        },
-        {
-          "name": "Freeze-Dry",
-          "pct": 96.032
-        },
-        {
-          "name": "Protect",
-          "pct": 78.571
-        },
-        {
-          "name": "Ice Shard",
-          "pct": 63.492
-        },
-        {
-          "name": "Aurora Veil",
-          "pct": 17.46
-        },
-        {
-          "name": "Icy Wind",
-          "pct": 14.286
-        },
-        {
-          "name": "Sheer Cold",
-          "pct": 6.349
-        },
-        {
-          "name": "Flash Cannon",
-          "pct": 6.349
-        }
-      ],
-      "items": [
-        {
-          "name": "Never-Melt Ice",
-          "pct": 74.603
-        },
-        {
-          "name": "Choice Scarf",
-          "pct": 17.46
-        },
-        {
-          "name": "Light Clay",
-          "pct": 3.175
-        },
-        {
-          "name": "Life Orb",
-          "pct": 1.587
-        },
-        {
-          "name": "Sitrus Berry",
-          "pct": 1.587
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Snow Warning",
-          "pct": 100
         }
       ]
     }
