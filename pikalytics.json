@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-03T07:05:24.939Z",
+  "updated": "2026-09-04T07:09:31.175Z",
   "format": "championstournaments",
   "count": 114,
   "pokemon": {
@@ -5134,6 +5134,63 @@
         }
       ]
     },
+    "Camerupt": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Earth Power",
+          "pct": 100
+        },
+        {
+          "name": "Protect",
+          "pct": 100
+        },
+        {
+          "name": "Eruption",
+          "pct": 60
+        },
+        {
+          "name": "Heat Wave",
+          "pct": 60
+        },
+        {
+          "name": "Overheat",
+          "pct": 40
+        },
+        {
+          "name": "Yawn",
+          "pct": 20
+        },
+        {
+          "name": "Rock Slide",
+          "pct": 20
+        }
+      ],
+      "items": [
+        {
+          "name": "Charcoal",
+          "pct": 40
+        },
+        {
+          "name": "Leftovers",
+          "pct": 20
+        },
+        {
+          "name": "Life Orb",
+          "pct": 20
+        },
+        {
+          "name": "Iron Ball",
+          "pct": 20
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Solid Rock",
+          "pct": 100
+        }
+      ]
+    },
     "Mamoswine": {
       "usage": null,
       "moves": [
@@ -5196,63 +5253,6 @@
         {
           "name": "Thick Fat",
           "pct": 9.722
-        }
-      ]
-    },
-    "Camerupt": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Earth Power",
-          "pct": 100
-        },
-        {
-          "name": "Protect",
-          "pct": 100
-        },
-        {
-          "name": "Eruption",
-          "pct": 60
-        },
-        {
-          "name": "Heat Wave",
-          "pct": 60
-        },
-        {
-          "name": "Overheat",
-          "pct": 40
-        },
-        {
-          "name": "Yawn",
-          "pct": 20
-        },
-        {
-          "name": "Rock Slide",
-          "pct": 20
-        }
-      ],
-      "items": [
-        {
-          "name": "Charcoal",
-          "pct": 40
-        },
-        {
-          "name": "Leftovers",
-          "pct": 20
-        },
-        {
-          "name": "Life Orb",
-          "pct": 20
-        },
-        {
-          "name": "Iron Ball",
-          "pct": 20
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Solid Rock",
-          "pct": 100
         }
       ]
     },
