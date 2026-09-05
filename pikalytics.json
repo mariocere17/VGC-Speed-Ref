@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-04T07:09:31.175Z",
+  "updated": "2026-09-05T06:52:29.379Z",
   "format": "championstournaments",
   "count": 114,
   "pokemon": {
@@ -3957,71 +3957,6 @@
         }
       ]
     },
-    "Scizor": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Bullet Punch",
-          "pct": 98.529
-        },
-        {
-          "name": "Protect",
-          "pct": 91.912
-        },
-        {
-          "name": "Bug Bite",
-          "pct": 84.559
-        },
-        {
-          "name": "Swords Dance",
-          "pct": 70.588
-        },
-        {
-          "name": "Close Combat",
-          "pct": 13.971
-        },
-        {
-          "name": "U-turn",
-          "pct": 6.618
-        },
-        {
-          "name": "Dual Wingbeat",
-          "pct": 5.882
-        },
-        {
-          "name": "Knock Off",
-          "pct": 5.147
-        }
-      ],
-      "items": [
-        {
-          "name": "Life Orb",
-          "pct": 77.206
-        },
-        {
-          "name": "Metal Coat",
-          "pct": 10.294
-        },
-        {
-          "name": "Expert Belt",
-          "pct": 5.882
-        },
-        {
-          "name": "Sitrus Berry",
-          "pct": 2.941
-        },
-        {
-          "name": "Choice Scarf",
-          "pct": 2.206
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Technician",
-          "pct": 99.265
-        }
-      ]
-    },
     "Scovillain": {
       "usage": null,
       "moves": [
@@ -4084,6 +4019,71 @@
         {
           "name": "Chlorophyll",
           "pct": 38.462
+        }
+      ]
+    },
+    "Scizor": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Bullet Punch",
+          "pct": 98.529
+        },
+        {
+          "name": "Protect",
+          "pct": 91.912
+        },
+        {
+          "name": "Bug Bite",
+          "pct": 84.559
+        },
+        {
+          "name": "Swords Dance",
+          "pct": 70.588
+        },
+        {
+          "name": "Close Combat",
+          "pct": 13.971
+        },
+        {
+          "name": "U-turn",
+          "pct": 6.618
+        },
+        {
+          "name": "Dual Wingbeat",
+          "pct": 5.882
+        },
+        {
+          "name": "Knock Off",
+          "pct": 5.147
+        }
+      ],
+      "items": [
+        {
+          "name": "Life Orb",
+          "pct": 77.206
+        },
+        {
+          "name": "Metal Coat",
+          "pct": 10.294
+        },
+        {
+          "name": "Expert Belt",
+          "pct": 5.882
+        },
+        {
+          "name": "Sitrus Berry",
+          "pct": 2.941
+        },
+        {
+          "name": "Choice Scarf",
+          "pct": 2.206
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Technician",
+          "pct": 99.265
         }
       ]
     },
