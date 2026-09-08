@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-07T07:14:19.448Z",
+  "updated": "2026-09-08T07:09:47.891Z",
   "format": "championstournaments",
   "count": 113,
   "pokemon": {
@@ -3535,75 +3535,6 @@
         }
       ]
     },
-    "Gengar": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Shadow Ball",
-          "pct": 79.592
-        },
-        {
-          "name": "Sludge Bomb",
-          "pct": 65.306
-        },
-        {
-          "name": "Protect",
-          "pct": 59.184
-        },
-        {
-          "name": "Destiny Bond",
-          "pct": 42.857
-        },
-        {
-          "name": "Icy Wind",
-          "pct": 34.694
-        },
-        {
-          "name": "Dazzling Gleam",
-          "pct": 16.327
-        },
-        {
-          "name": "Trick Room",
-          "pct": 16.327
-        },
-        {
-          "name": "Sludge Wave",
-          "pct": 14.286
-        }
-      ],
-      "items": [
-        {
-          "name": "Focus Sash",
-          "pct": 75.51
-        },
-        {
-          "name": "Choice Scarf",
-          "pct": 6.122
-        },
-        {
-          "name": "Colbur Berry",
-          "pct": 4.082
-        },
-        {
-          "name": "Sitrus Berry",
-          "pct": 4.082
-        },
-        {
-          "name": "Black Sludge",
-          "pct": 2.041
-        },
-        {
-          "name": "Life Orb",
-          "pct": 2.041
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Cursed Body",
-          "pct": 100
-        }
-      ]
-    },
     "Swampert": {
       "usage": null,
       "moves": [
@@ -3674,6 +3605,75 @@
         {
           "name": "Damp",
           "pct": 13.636
+        }
+      ]
+    },
+    "Gengar": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Shadow Ball",
+          "pct": 79.592
+        },
+        {
+          "name": "Sludge Bomb",
+          "pct": 65.306
+        },
+        {
+          "name": "Protect",
+          "pct": 59.184
+        },
+        {
+          "name": "Destiny Bond",
+          "pct": 42.857
+        },
+        {
+          "name": "Icy Wind",
+          "pct": 34.694
+        },
+        {
+          "name": "Dazzling Gleam",
+          "pct": 16.327
+        },
+        {
+          "name": "Trick Room",
+          "pct": 16.327
+        },
+        {
+          "name": "Sludge Wave",
+          "pct": 14.286
+        }
+      ],
+      "items": [
+        {
+          "name": "Focus Sash",
+          "pct": 75.51
+        },
+        {
+          "name": "Choice Scarf",
+          "pct": 6.122
+        },
+        {
+          "name": "Colbur Berry",
+          "pct": 4.082
+        },
+        {
+          "name": "Sitrus Berry",
+          "pct": 4.082
+        },
+        {
+          "name": "Black Sludge",
+          "pct": 2.041
+        },
+        {
+          "name": "Life Orb",
+          "pct": 2.041
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Cursed Body",
+          "pct": 100
         }
       ]
     },
@@ -3819,6 +3819,71 @@
         }
       ]
     },
+    "Scovillain": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Protect",
+          "pct": 84.615
+        },
+        {
+          "name": "Rage Powder",
+          "pct": 69.231
+        },
+        {
+          "name": "Flamethrower",
+          "pct": 53.846
+        },
+        {
+          "name": "Leech Seed",
+          "pct": 30.769
+        },
+        {
+          "name": "Giga Drain",
+          "pct": 30.769
+        },
+        {
+          "name": "Spicy Extract",
+          "pct": 23.077
+        },
+        {
+          "name": "Will-O-Wisp",
+          "pct": 23.077
+        },
+        {
+          "name": "Overheat",
+          "pct": 15.385
+        }
+      ],
+      "items": [
+        {
+          "name": "Focus Sash",
+          "pct": 46.154
+        },
+        {
+          "name": "Sitrus Berry",
+          "pct": 30.769
+        },
+        {
+          "name": "Leftovers",
+          "pct": 15.385
+        },
+        {
+          "name": "Scolipite",
+          "pct": 7.692
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Moody",
+          "pct": 61.538
+        },
+        {
+          "name": "Chlorophyll",
+          "pct": 38.462
+        }
+      ]
+    },
     "Metagross": {
       "usage": null,
       "moves": [
@@ -3885,71 +3950,6 @@
         {
           "name": "Clear Body",
           "pct": 100
-        }
-      ]
-    },
-    "Scovillain": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Protect",
-          "pct": 84.615
-        },
-        {
-          "name": "Rage Powder",
-          "pct": 69.231
-        },
-        {
-          "name": "Flamethrower",
-          "pct": 53.846
-        },
-        {
-          "name": "Leech Seed",
-          "pct": 30.769
-        },
-        {
-          "name": "Giga Drain",
-          "pct": 30.769
-        },
-        {
-          "name": "Spicy Extract",
-          "pct": 23.077
-        },
-        {
-          "name": "Will-O-Wisp",
-          "pct": 23.077
-        },
-        {
-          "name": "Overheat",
-          "pct": 15.385
-        }
-      ],
-      "items": [
-        {
-          "name": "Focus Sash",
-          "pct": 46.154
-        },
-        {
-          "name": "Sitrus Berry",
-          "pct": 30.769
-        },
-        {
-          "name": "Leftovers",
-          "pct": 15.385
-        },
-        {
-          "name": "Scolipite",
-          "pct": 7.692
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Moody",
-          "pct": 61.538
-        },
-        {
-          "name": "Chlorophyll",
-          "pct": 38.462
         }
       ]
     },
@@ -5260,6 +5260,71 @@
         }
       ]
     },
+    "Mamoswine": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Ice Shard",
+          "pct": 90.741
+        },
+        {
+          "name": "Protect",
+          "pct": 89.815
+        },
+        {
+          "name": "High Horsepower",
+          "pct": 74.074
+        },
+        {
+          "name": "Icicle Crash",
+          "pct": 59.722
+        },
+        {
+          "name": "Earthquake",
+          "pct": 34.722
+        },
+        {
+          "name": "Rock Slide",
+          "pct": 25.926
+        },
+        {
+          "name": "Rock Tomb",
+          "pct": 12.5
+        },
+        {
+          "name": "Icicle Spear",
+          "pct": 2.778
+        }
+      ],
+      "items": [
+        {
+          "name": "Focus Sash",
+          "pct": 43.981
+        },
+        {
+          "name": "Life Orb",
+          "pct": 42.13
+        },
+        {
+          "name": "Choice Scarf",
+          "pct": 8.333
+        },
+        {
+          "name": "Never-Melt Ice",
+          "pct": 2.778
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Oblivious",
+          "pct": 90.278
+        },
+        {
+          "name": "Thick Fat",
+          "pct": 9.722
+        }
+      ]
+    },
     "Gallade": {
       "usage": null,
       "moves": [
@@ -5330,71 +5395,6 @@
         {
           "name": "Justified",
           "pct": 1.379
-        }
-      ]
-    },
-    "Mamoswine": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Ice Shard",
-          "pct": 90.741
-        },
-        {
-          "name": "Protect",
-          "pct": 89.815
-        },
-        {
-          "name": "High Horsepower",
-          "pct": 74.074
-        },
-        {
-          "name": "Icicle Crash",
-          "pct": 59.722
-        },
-        {
-          "name": "Earthquake",
-          "pct": 34.722
-        },
-        {
-          "name": "Rock Slide",
-          "pct": 25.926
-        },
-        {
-          "name": "Rock Tomb",
-          "pct": 12.5
-        },
-        {
-          "name": "Icicle Spear",
-          "pct": 2.778
-        }
-      ],
-      "items": [
-        {
-          "name": "Focus Sash",
-          "pct": 43.981
-        },
-        {
-          "name": "Life Orb",
-          "pct": 42.13
-        },
-        {
-          "name": "Choice Scarf",
-          "pct": 8.333
-        },
-        {
-          "name": "Never-Melt Ice",
-          "pct": 2.778
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Oblivious",
-          "pct": 90.278
-        },
-        {
-          "name": "Thick Fat",
-          "pct": 9.722
         }
       ]
     },
@@ -7148,63 +7148,6 @@
         }
       ]
     },
-    "Mega Charizard Y": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Protect",
-          "pct": 99.058
-        },
-        {
-          "name": "Heat Wave",
-          "pct": 98.97
-        },
-        {
-          "name": "Weather Ball",
-          "pct": 92.964
-        },
-        {
-          "name": "Solar Beam",
-          "pct": 86.429
-        },
-        {
-          "name": "Helping Hand",
-          "pct": 8.037
-        },
-        {
-          "name": "Ancient Power",
-          "pct": 3.856
-        },
-        {
-          "name": "Hurricane",
-          "pct": 3.179
-        },
-        {
-          "name": "Air Slash",
-          "pct": 2.708
-        }
-      ],
-      "items": [
-        {
-          "name": "Charizardite Y",
-          "pct": 100
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Blaze",
-          "pct": 83.397
-        },
-        {
-          "name": "Solar Power",
-          "pct": 13.541
-        },
-        {
-          "name": "Drought",
-          "pct": 3.032
-        }
-      ]
-    },
     "Klefki": {
       "usage": null,
       "moves": [
@@ -7271,6 +7214,128 @@
         {
           "name": "Prankster",
           "pct": 99.13
+        }
+      ]
+    },
+    "Vanilluxe": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Blizzard",
+          "pct": 99.206
+        },
+        {
+          "name": "Freeze-Dry",
+          "pct": 96.032
+        },
+        {
+          "name": "Protect",
+          "pct": 78.571
+        },
+        {
+          "name": "Ice Shard",
+          "pct": 63.492
+        },
+        {
+          "name": "Aurora Veil",
+          "pct": 17.46
+        },
+        {
+          "name": "Icy Wind",
+          "pct": 14.286
+        },
+        {
+          "name": "Sheer Cold",
+          "pct": 6.349
+        },
+        {
+          "name": "Flash Cannon",
+          "pct": 6.349
+        }
+      ],
+      "items": [
+        {
+          "name": "Never-Melt Ice",
+          "pct": 74.603
+        },
+        {
+          "name": "Choice Scarf",
+          "pct": 17.46
+        },
+        {
+          "name": "Light Clay",
+          "pct": 3.175
+        },
+        {
+          "name": "Life Orb",
+          "pct": 1.587
+        },
+        {
+          "name": "Sitrus Berry",
+          "pct": 1.587
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Snow Warning",
+          "pct": 100
+        }
+      ]
+    },
+    "Mega Charizard Y": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Protect",
+          "pct": 99.058
+        },
+        {
+          "name": "Heat Wave",
+          "pct": 98.97
+        },
+        {
+          "name": "Weather Ball",
+          "pct": 92.964
+        },
+        {
+          "name": "Solar Beam",
+          "pct": 86.429
+        },
+        {
+          "name": "Helping Hand",
+          "pct": 8.037
+        },
+        {
+          "name": "Ancient Power",
+          "pct": 3.856
+        },
+        {
+          "name": "Hurricane",
+          "pct": 3.179
+        },
+        {
+          "name": "Air Slash",
+          "pct": 2.708
+        }
+      ],
+      "items": [
+        {
+          "name": "Charizardite Y",
+          "pct": 100
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Blaze",
+          "pct": 83.397
+        },
+        {
+          "name": "Solar Power",
+          "pct": 13.541
+        },
+        {
+          "name": "Drought",
+          "pct": 3.032
         }
       ]
     },
@@ -7352,71 +7417,6 @@
         {
           "name": "Justified",
           "pct": 4.348
-        }
-      ]
-    },
-    "Vanilluxe": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Blizzard",
-          "pct": 99.206
-        },
-        {
-          "name": "Freeze-Dry",
-          "pct": 96.032
-        },
-        {
-          "name": "Protect",
-          "pct": 78.571
-        },
-        {
-          "name": "Ice Shard",
-          "pct": 63.492
-        },
-        {
-          "name": "Aurora Veil",
-          "pct": 17.46
-        },
-        {
-          "name": "Icy Wind",
-          "pct": 14.286
-        },
-        {
-          "name": "Sheer Cold",
-          "pct": 6.349
-        },
-        {
-          "name": "Flash Cannon",
-          "pct": 6.349
-        }
-      ],
-      "items": [
-        {
-          "name": "Never-Melt Ice",
-          "pct": 74.603
-        },
-        {
-          "name": "Choice Scarf",
-          "pct": 17.46
-        },
-        {
-          "name": "Light Clay",
-          "pct": 3.175
-        },
-        {
-          "name": "Life Orb",
-          "pct": 1.587
-        },
-        {
-          "name": "Sitrus Berry",
-          "pct": 1.587
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Snow Warning",
-          "pct": 100
         }
       ]
     }
