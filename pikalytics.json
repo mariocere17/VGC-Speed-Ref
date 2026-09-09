@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-08T07:09:47.891Z",
+  "updated": "2026-09-09T07:17:19.851Z",
   "format": "championstournaments",
   "count": 113,
   "pokemon": {
@@ -6531,79 +6531,6 @@
         }
       ]
     },
-    "Sceptile": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Earth Power",
-          "pct": 70.833
-        },
-        {
-          "name": "Dragon Pulse",
-          "pct": 62.5
-        },
-        {
-          "name": "Leaf Storm",
-          "pct": 58.333
-        },
-        {
-          "name": "Energy Ball",
-          "pct": 37.5
-        },
-        {
-          "name": "Quick Guard",
-          "pct": 37.5
-        },
-        {
-          "name": "Protect",
-          "pct": 29.167
-        },
-        {
-          "name": "Rock Tomb",
-          "pct": 25
-        },
-        {
-          "name": "Detect",
-          "pct": 16.667
-        }
-      ],
-      "items": [
-        {
-          "name": "White Herb",
-          "pct": 45.833
-        },
-        {
-          "name": "Focus Sash",
-          "pct": 29.167
-        },
-        {
-          "name": "Expert Belt",
-          "pct": 4.167
-        },
-        {
-          "name": "Dragon Fang",
-          "pct": 4.167
-        },
-        {
-          "name": "Light Ball",
-          "pct": 4.167
-        },
-        {
-          "name": "Choice Scarf",
-          "pct": 4.167
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Unburden",
-          "pct": 87.5
-        },
-        {
-          "name": "Overgrow",
-          "pct": 12.5
-        }
-      ]
-    },
     "Greninja": {
       "usage": null,
       "moves": [
@@ -6674,6 +6601,79 @@
         {
           "name": "Torrent",
           "pct": 10.638
+        }
+      ]
+    },
+    "Sceptile": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Earth Power",
+          "pct": 70.833
+        },
+        {
+          "name": "Dragon Pulse",
+          "pct": 62.5
+        },
+        {
+          "name": "Leaf Storm",
+          "pct": 58.333
+        },
+        {
+          "name": "Energy Ball",
+          "pct": 37.5
+        },
+        {
+          "name": "Quick Guard",
+          "pct": 37.5
+        },
+        {
+          "name": "Protect",
+          "pct": 29.167
+        },
+        {
+          "name": "Rock Tomb",
+          "pct": 25
+        },
+        {
+          "name": "Detect",
+          "pct": 16.667
+        }
+      ],
+      "items": [
+        {
+          "name": "White Herb",
+          "pct": 45.833
+        },
+        {
+          "name": "Focus Sash",
+          "pct": 29.167
+        },
+        {
+          "name": "Expert Belt",
+          "pct": 4.167
+        },
+        {
+          "name": "Dragon Fang",
+          "pct": 4.167
+        },
+        {
+          "name": "Light Ball",
+          "pct": 4.167
+        },
+        {
+          "name": "Choice Scarf",
+          "pct": 4.167
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Unburden",
+          "pct": 87.5
+        },
+        {
+          "name": "Overgrow",
+          "pct": 12.5
         }
       ]
     },
