@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-13T07:23:39.053Z",
+  "updated": "2026-09-14T07:48:25.543Z",
   "format": "championstournaments",
   "count": 123,
   "pokemon": {
@@ -6045,55 +6045,6 @@
         }
       ]
     },
-    "Aggron": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Body Press",
-          "pct": 100
-        },
-        {
-          "name": "Heavy Slam",
-          "pct": 100
-        },
-        {
-          "name": "Protect",
-          "pct": 75
-        },
-        {
-          "name": "Iron Defense",
-          "pct": 75
-        },
-        {
-          "name": "Curse",
-          "pct": 25
-        },
-        {
-          "name": "Avalanche",
-          "pct": 25
-        }
-      ],
-      "items": [
-        {
-          "name": "Aggronite",
-          "pct": 100
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Sturdy",
-          "pct": 50
-        },
-        {
-          "name": "Heavy Metal",
-          "pct": 25
-        },
-        {
-          "name": "Filter",
-          "pct": 25
-        }
-      ]
-    },
     "Oranguru": {
       "usage": null,
       "moves": [
@@ -6156,6 +6107,55 @@
         {
           "name": "Telepathy",
           "pct": 14.286
+        }
+      ]
+    },
+    "Aggron": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Body Press",
+          "pct": 100
+        },
+        {
+          "name": "Heavy Slam",
+          "pct": 100
+        },
+        {
+          "name": "Protect",
+          "pct": 75
+        },
+        {
+          "name": "Iron Defense",
+          "pct": 75
+        },
+        {
+          "name": "Curse",
+          "pct": 25
+        },
+        {
+          "name": "Avalanche",
+          "pct": 25
+        }
+      ],
+      "items": [
+        {
+          "name": "Aggronite",
+          "pct": 100
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Sturdy",
+          "pct": 50
+        },
+        {
+          "name": "Heavy Metal",
+          "pct": 25
+        },
+        {
+          "name": "Filter",
+          "pct": 25
         }
       ]
     },
@@ -6583,6 +6583,75 @@
         }
       ]
     },
+    "Salamence": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Tailwind",
+          "pct": 90
+        },
+        {
+          "name": "Protect",
+          "pct": 80
+        },
+        {
+          "name": "Dragon Claw",
+          "pct": 40
+        },
+        {
+          "name": "Draco Meteor",
+          "pct": 30
+        },
+        {
+          "name": "Dual Wingbeat",
+          "pct": 30
+        },
+        {
+          "name": "Breaking Swipe",
+          "pct": 20
+        },
+        {
+          "name": "Earthquake",
+          "pct": 20
+        },
+        {
+          "name": "Dragon Pulse",
+          "pct": 10
+        }
+      ],
+      "items": [
+        {
+          "name": "Life Orb",
+          "pct": 40
+        },
+        {
+          "name": "Focus Sash",
+          "pct": 20
+        },
+        {
+          "name": "Expert Belt",
+          "pct": 10
+        },
+        {
+          "name": "Sharp Beak",
+          "pct": 10
+        },
+        {
+          "name": "Sablenite",
+          "pct": 10
+        },
+        {
+          "name": "Haban Berry",
+          "pct": 10
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Intimidate",
+          "pct": 100
+        }
+      ]
+    },
     "Skarmory": {
       "usage": null,
       "moves": [
@@ -6686,75 +6755,6 @@
         {
           "name": "Competitive",
           "pct": 16.667
-        }
-      ]
-    },
-    "Salamence": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Tailwind",
-          "pct": 90
-        },
-        {
-          "name": "Protect",
-          "pct": 80
-        },
-        {
-          "name": "Dragon Claw",
-          "pct": 40
-        },
-        {
-          "name": "Draco Meteor",
-          "pct": 30
-        },
-        {
-          "name": "Dual Wingbeat",
-          "pct": 30
-        },
-        {
-          "name": "Breaking Swipe",
-          "pct": 20
-        },
-        {
-          "name": "Earthquake",
-          "pct": 20
-        },
-        {
-          "name": "Dragon Pulse",
-          "pct": 10
-        }
-      ],
-      "items": [
-        {
-          "name": "Life Orb",
-          "pct": 40
-        },
-        {
-          "name": "Focus Sash",
-          "pct": 20
-        },
-        {
-          "name": "Expert Belt",
-          "pct": 10
-        },
-        {
-          "name": "Sharp Beak",
-          "pct": 10
-        },
-        {
-          "name": "Sablenite",
-          "pct": 10
-        },
-        {
-          "name": "Haban Berry",
-          "pct": 10
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Intimidate",
-          "pct": 100
         }
       ]
     },
