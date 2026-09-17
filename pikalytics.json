@@ -1,7 +1,7 @@
 {
-  "updated": "2026-09-16T07:32:22.394Z",
+  "updated": "2026-09-17T07:29:05.268Z",
   "format": "championstournaments",
-  "count": 123,
+  "count": 121,
   "pokemon": {
     "Rillaboom": {
       "usage": 48.87,
@@ -6909,6 +6909,55 @@
         }
       ]
     },
+    "Golisopod": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Protect",
+          "pct": 66.667
+        },
+        {
+          "name": "Iron Head",
+          "pct": 66.667
+        },
+        {
+          "name": "Rock Slide",
+          "pct": 33.333
+        },
+        {
+          "name": "Leech Life",
+          "pct": 33.333
+        },
+        {
+          "name": "Aqua Jet",
+          "pct": 33.333
+        },
+        {
+          "name": "Swords Dance",
+          "pct": 33.333
+        },
+        {
+          "name": "U-turn",
+          "pct": 33.333
+        },
+        {
+          "name": "First Impression",
+          "pct": 33.333
+        }
+      ],
+      "items": [
+        {
+          "name": "Leftovers",
+          "pct": 33.333
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Emergency Exit",
+          "pct": 100
+        }
+      ]
+    },
     "Vanilluxe": {
       "usage": null,
       "moves": [
@@ -6963,157 +7012,6 @@
         {
           "name": "Snow Warning",
           "pct": 100
-        }
-      ]
-    },
-    "Golisopod": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Protect",
-          "pct": 66.667
-        },
-        {
-          "name": "Iron Head",
-          "pct": 66.667
-        },
-        {
-          "name": "Rock Slide",
-          "pct": 33.333
-        },
-        {
-          "name": "Leech Life",
-          "pct": 33.333
-        },
-        {
-          "name": "Aqua Jet",
-          "pct": 33.333
-        },
-        {
-          "name": "Swords Dance",
-          "pct": 33.333
-        },
-        {
-          "name": "U-turn",
-          "pct": 33.333
-        },
-        {
-          "name": "First Impression",
-          "pct": 33.333
-        }
-      ],
-      "items": [
-        {
-          "name": "Leftovers",
-          "pct": 33.333
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Emergency Exit",
-          "pct": 100
-        }
-      ]
-    },
-    "Mega Charizard Y": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Protect",
-          "pct": 100
-        },
-        {
-          "name": "Heat Wave",
-          "pct": 99.342
-        },
-        {
-          "name": "Weather Ball",
-          "pct": 85.526
-        },
-        {
-          "name": "Ancient Power",
-          "pct": 51.316
-        },
-        {
-          "name": "Solar Beam",
-          "pct": 47.368
-        },
-        {
-          "name": "Hurricane",
-          "pct": 4.605
-        },
-        {
-          "name": "Air Slash",
-          "pct": 3.947
-        },
-        {
-          "name": "Helping Hand",
-          "pct": 2.632
-        }
-      ],
-      "items": [
-        {
-          "name": "Charizardite Y",
-          "pct": 100
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Blaze",
-          "pct": 84.868
-        },
-        {
-          "name": "Solar Power",
-          "pct": 13.816
-        },
-        {
-          "name": "Drought",
-          "pct": 1.316
-        }
-      ]
-    },
-    "Arcanine": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Flare Blitz",
-          "pct": 100
-        },
-        {
-          "name": "Extreme Speed",
-          "pct": 100
-        },
-        {
-          "name": "Protect",
-          "pct": 100
-        },
-        {
-          "name": "Howl",
-          "pct": 66.667
-        },
-        {
-          "name": "Head Smash",
-          "pct": 33.333
-        }
-      ],
-      "items": [
-        {
-          "name": "Sitrus Berry",
-          "pct": 66.667
-        },
-        {
-          "name": "Focus Sash",
-          "pct": 33.333
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Intimidate",
-          "pct": 66.667
-        },
-        {
-          "name": "Rock Head",
-          "pct": 33.333
         }
       ]
     },
