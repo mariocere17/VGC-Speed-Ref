@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-18T07:17:50.190Z",
+  "updated": "2026-09-19T07:14:56.154Z",
   "format": "championstournaments",
   "count": 121,
   "pokemon": {
@@ -5356,67 +5356,6 @@
         }
       ]
     },
-    "Mimikyu": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Play Rough",
-          "pct": 100
-        },
-        {
-          "name": "Shadow Claw",
-          "pct": 75
-        },
-        {
-          "name": "Swords Dance",
-          "pct": 50
-        },
-        {
-          "name": "Trick Room",
-          "pct": 50
-        },
-        {
-          "name": "Will-O-Wisp",
-          "pct": 50
-        },
-        {
-          "name": "Shadow Sneak",
-          "pct": 25
-        },
-        {
-          "name": "Curse",
-          "pct": 25
-        },
-        {
-          "name": "Protect",
-          "pct": 25
-        }
-      ],
-      "items": [
-        {
-          "name": "Fairy Feather",
-          "pct": 25
-        },
-        {
-          "name": "King's Rock",
-          "pct": 25
-        },
-        {
-          "name": "Sitrus Berry",
-          "pct": 25
-        },
-        {
-          "name": "Life Orb",
-          "pct": 25
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Disguise",
-          "pct": 100
-        }
-      ]
-    },
     "Salamence": {
       "usage": null,
       "moves": [
@@ -5482,6 +5421,67 @@
       "abilities": [
         {
           "name": "Intimidate",
+          "pct": 100
+        }
+      ]
+    },
+    "Mimikyu": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Play Rough",
+          "pct": 100
+        },
+        {
+          "name": "Shadow Claw",
+          "pct": 75
+        },
+        {
+          "name": "Swords Dance",
+          "pct": 50
+        },
+        {
+          "name": "Trick Room",
+          "pct": 50
+        },
+        {
+          "name": "Will-O-Wisp",
+          "pct": 50
+        },
+        {
+          "name": "Shadow Sneak",
+          "pct": 25
+        },
+        {
+          "name": "Curse",
+          "pct": 25
+        },
+        {
+          "name": "Protect",
+          "pct": 25
+        }
+      ],
+      "items": [
+        {
+          "name": "Fairy Feather",
+          "pct": 25
+        },
+        {
+          "name": "King's Rock",
+          "pct": 25
+        },
+        {
+          "name": "Sitrus Berry",
+          "pct": 25
+        },
+        {
+          "name": "Life Orb",
+          "pct": 25
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Disguise",
           "pct": 100
         }
       ]
@@ -5608,6 +5608,39 @@
         }
       ]
     },
+    "Lucario": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Aura Sphere",
+          "pct": 100
+        },
+        {
+          "name": "Steel Beam",
+          "pct": 100
+        },
+        {
+          "name": "Dark Pulse",
+          "pct": 100
+        },
+        {
+          "name": "Vacuum Wave",
+          "pct": 100
+        }
+      ],
+      "items": [
+        {
+          "name": "Choice Scarf",
+          "pct": 100
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Inner Focus",
+          "pct": 100
+        }
+      ]
+    },
     "Tinkaton": {
       "usage": null,
       "moves": [
@@ -5670,39 +5703,6 @@
         {
           "name": "Own Tempo",
           "pct": 14.286
-        }
-      ]
-    },
-    "Lucario": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Aura Sphere",
-          "pct": 100
-        },
-        {
-          "name": "Steel Beam",
-          "pct": 100
-        },
-        {
-          "name": "Dark Pulse",
-          "pct": 100
-        },
-        {
-          "name": "Vacuum Wave",
-          "pct": 100
-        }
-      ],
-      "items": [
-        {
-          "name": "Choice Scarf",
-          "pct": 100
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Inner Focus",
-          "pct": 100
         }
       ]
     },
@@ -5906,59 +5906,6 @@
         }
       ]
     },
-    "Starmie": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Aqua Jet",
-          "pct": 66.667
-        },
-        {
-          "name": "Liquidation",
-          "pct": 66.667
-        },
-        {
-          "name": "Zen Headbutt",
-          "pct": 66.667
-        },
-        {
-          "name": "Protect",
-          "pct": 66.667
-        },
-        {
-          "name": "Ice Spinner",
-          "pct": 33.333
-        },
-        {
-          "name": "Flip Turn",
-          "pct": 33.333
-        },
-        {
-          "name": "Psycho Cut",
-          "pct": 33.333
-        },
-        {
-          "name": "Self-Destruct",
-          "pct": 33.333
-        }
-      ],
-      "items": [
-        {
-          "name": "Starminite",
-          "pct": 100
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Natural Cure",
-          "pct": 66.667
-        },
-        {
-          "name": "Illuminate",
-          "pct": 33.333
-        }
-      ]
-    },
     "Lopunny": {
       "usage": null,
       "moves": [
@@ -6009,6 +5956,59 @@
         {
           "name": "Cute Charm",
           "pct": 25
+        }
+      ]
+    },
+    "Starmie": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Aqua Jet",
+          "pct": 66.667
+        },
+        {
+          "name": "Liquidation",
+          "pct": 66.667
+        },
+        {
+          "name": "Zen Headbutt",
+          "pct": 66.667
+        },
+        {
+          "name": "Protect",
+          "pct": 66.667
+        },
+        {
+          "name": "Ice Spinner",
+          "pct": 33.333
+        },
+        {
+          "name": "Flip Turn",
+          "pct": 33.333
+        },
+        {
+          "name": "Psycho Cut",
+          "pct": 33.333
+        },
+        {
+          "name": "Self-Destruct",
+          "pct": 33.333
+        }
+      ],
+      "items": [
+        {
+          "name": "Starminite",
+          "pct": 100
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Natural Cure",
+          "pct": 66.667
+        },
+        {
+          "name": "Illuminate",
+          "pct": 33.333
         }
       ]
     },
@@ -6693,6 +6693,55 @@
         }
       ]
     },
+    "Golisopod": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Protect",
+          "pct": 66.667
+        },
+        {
+          "name": "Iron Head",
+          "pct": 66.667
+        },
+        {
+          "name": "Rock Slide",
+          "pct": 33.333
+        },
+        {
+          "name": "Leech Life",
+          "pct": 33.333
+        },
+        {
+          "name": "Aqua Jet",
+          "pct": 33.333
+        },
+        {
+          "name": "Swords Dance",
+          "pct": 33.333
+        },
+        {
+          "name": "U-turn",
+          "pct": 33.333
+        },
+        {
+          "name": "First Impression",
+          "pct": 33.333
+        }
+      ],
+      "items": [
+        {
+          "name": "Leftovers",
+          "pct": 33.333
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Emergency Exit",
+          "pct": 100
+        }
+      ]
+    },
     "Meowstic": {
       "usage": null,
       "moves": [
@@ -6803,55 +6852,6 @@
       "abilities": [
         {
           "name": "Lightning Rod",
-          "pct": 100
-        }
-      ]
-    },
-    "Golisopod": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Protect",
-          "pct": 66.667
-        },
-        {
-          "name": "Iron Head",
-          "pct": 66.667
-        },
-        {
-          "name": "Rock Slide",
-          "pct": 33.333
-        },
-        {
-          "name": "Leech Life",
-          "pct": 33.333
-        },
-        {
-          "name": "Aqua Jet",
-          "pct": 33.333
-        },
-        {
-          "name": "Swords Dance",
-          "pct": 33.333
-        },
-        {
-          "name": "U-turn",
-          "pct": 33.333
-        },
-        {
-          "name": "First Impression",
-          "pct": 33.333
-        }
-      ],
-      "items": [
-        {
-          "name": "Leftovers",
-          "pct": 33.333
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Emergency Exit",
           "pct": 100
         }
       ]
