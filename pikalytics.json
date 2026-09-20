@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-19T07:14:56.154Z",
+  "updated": "2026-09-20T07:40:01.514Z",
   "format": "championstournaments",
   "count": 121,
   "pokemon": {
@@ -6693,55 +6693,6 @@
         }
       ]
     },
-    "Golisopod": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Protect",
-          "pct": 66.667
-        },
-        {
-          "name": "Iron Head",
-          "pct": 66.667
-        },
-        {
-          "name": "Rock Slide",
-          "pct": 33.333
-        },
-        {
-          "name": "Leech Life",
-          "pct": 33.333
-        },
-        {
-          "name": "Aqua Jet",
-          "pct": 33.333
-        },
-        {
-          "name": "Swords Dance",
-          "pct": 33.333
-        },
-        {
-          "name": "U-turn",
-          "pct": 33.333
-        },
-        {
-          "name": "First Impression",
-          "pct": 33.333
-        }
-      ],
-      "items": [
-        {
-          "name": "Leftovers",
-          "pct": 33.333
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Emergency Exit",
-          "pct": 100
-        }
-      ]
-    },
     "Meowstic": {
       "usage": null,
       "moves": [
@@ -6804,6 +6755,55 @@
         {
           "name": "Competitive",
           "pct": 16.667
+        }
+      ]
+    },
+    "Golisopod": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Protect",
+          "pct": 66.667
+        },
+        {
+          "name": "Iron Head",
+          "pct": 66.667
+        },
+        {
+          "name": "Rock Slide",
+          "pct": 33.333
+        },
+        {
+          "name": "Leech Life",
+          "pct": 33.333
+        },
+        {
+          "name": "Aqua Jet",
+          "pct": 33.333
+        },
+        {
+          "name": "Swords Dance",
+          "pct": 33.333
+        },
+        {
+          "name": "U-turn",
+          "pct": 33.333
+        },
+        {
+          "name": "First Impression",
+          "pct": 33.333
+        }
+      ],
+      "items": [
+        {
+          "name": "Leftovers",
+          "pct": 33.333
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Emergency Exit",
+          "pct": 100
         }
       ]
     },
