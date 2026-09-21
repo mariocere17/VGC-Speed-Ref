@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-20T07:40:01.514Z",
+  "updated": "2026-09-21T07:52:10.134Z",
   "format": "championstournaments",
   "count": 121,
   "pokemon": {
@@ -5258,6 +5258,75 @@
         }
       ]
     },
+    "Salamence": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Tailwind",
+          "pct": 90
+        },
+        {
+          "name": "Protect",
+          "pct": 80
+        },
+        {
+          "name": "Dragon Claw",
+          "pct": 40
+        },
+        {
+          "name": "Draco Meteor",
+          "pct": 30
+        },
+        {
+          "name": "Dual Wingbeat",
+          "pct": 30
+        },
+        {
+          "name": "Breaking Swipe",
+          "pct": 20
+        },
+        {
+          "name": "Earthquake",
+          "pct": 20
+        },
+        {
+          "name": "Dragon Pulse",
+          "pct": 10
+        }
+      ],
+      "items": [
+        {
+          "name": "Life Orb",
+          "pct": 40
+        },
+        {
+          "name": "Focus Sash",
+          "pct": 20
+        },
+        {
+          "name": "Expert Belt",
+          "pct": 10
+        },
+        {
+          "name": "Sharp Beak",
+          "pct": 10
+        },
+        {
+          "name": "Sablenite",
+          "pct": 10
+        },
+        {
+          "name": "Haban Berry",
+          "pct": 10
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Intimidate",
+          "pct": 100
+        }
+      ]
+    },
     "Palafin": {
       "usage": null,
       "moves": [
@@ -5353,75 +5422,6 @@
         {
           "name": "Sheer Force",
           "pct": 4.348
-        }
-      ]
-    },
-    "Salamence": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Tailwind",
-          "pct": 90
-        },
-        {
-          "name": "Protect",
-          "pct": 80
-        },
-        {
-          "name": "Dragon Claw",
-          "pct": 40
-        },
-        {
-          "name": "Draco Meteor",
-          "pct": 30
-        },
-        {
-          "name": "Dual Wingbeat",
-          "pct": 30
-        },
-        {
-          "name": "Breaking Swipe",
-          "pct": 20
-        },
-        {
-          "name": "Earthquake",
-          "pct": 20
-        },
-        {
-          "name": "Dragon Pulse",
-          "pct": 10
-        }
-      ],
-      "items": [
-        {
-          "name": "Life Orb",
-          "pct": 40
-        },
-        {
-          "name": "Focus Sash",
-          "pct": 20
-        },
-        {
-          "name": "Expert Belt",
-          "pct": 10
-        },
-        {
-          "name": "Sharp Beak",
-          "pct": 10
-        },
-        {
-          "name": "Sablenite",
-          "pct": 10
-        },
-        {
-          "name": "Haban Berry",
-          "pct": 10
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Intimidate",
-          "pct": 100
         }
       ]
     },
@@ -6114,6 +6114,55 @@
         }
       ]
     },
+    "Aggron": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Body Press",
+          "pct": 100
+        },
+        {
+          "name": "Heavy Slam",
+          "pct": 100
+        },
+        {
+          "name": "Protect",
+          "pct": 75
+        },
+        {
+          "name": "Iron Defense",
+          "pct": 75
+        },
+        {
+          "name": "Curse",
+          "pct": 25
+        },
+        {
+          "name": "Avalanche",
+          "pct": 25
+        }
+      ],
+      "items": [
+        {
+          "name": "Aggronite",
+          "pct": 100
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Sturdy",
+          "pct": 50
+        },
+        {
+          "name": "Heavy Metal",
+          "pct": 25
+        },
+        {
+          "name": "Filter",
+          "pct": 25
+        }
+      ]
+    },
     "Oranguru": {
       "usage": null,
       "moves": [
@@ -6176,55 +6225,6 @@
         {
           "name": "Telepathy",
           "pct": 14.286
-        }
-      ]
-    },
-    "Aggron": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Body Press",
-          "pct": 100
-        },
-        {
-          "name": "Heavy Slam",
-          "pct": 100
-        },
-        {
-          "name": "Protect",
-          "pct": 75
-        },
-        {
-          "name": "Iron Defense",
-          "pct": 75
-        },
-        {
-          "name": "Curse",
-          "pct": 25
-        },
-        {
-          "name": "Avalanche",
-          "pct": 25
-        }
-      ],
-      "items": [
-        {
-          "name": "Aggronite",
-          "pct": 100
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Sturdy",
-          "pct": 50
-        },
-        {
-          "name": "Heavy Metal",
-          "pct": 25
-        },
-        {
-          "name": "Filter",
-          "pct": 25
         }
       ]
     },
@@ -6693,6 +6693,55 @@
         }
       ]
     },
+    "Golisopod": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Protect",
+          "pct": 66.667
+        },
+        {
+          "name": "Iron Head",
+          "pct": 66.667
+        },
+        {
+          "name": "Rock Slide",
+          "pct": 33.333
+        },
+        {
+          "name": "Leech Life",
+          "pct": 33.333
+        },
+        {
+          "name": "Aqua Jet",
+          "pct": 33.333
+        },
+        {
+          "name": "Swords Dance",
+          "pct": 33.333
+        },
+        {
+          "name": "U-turn",
+          "pct": 33.333
+        },
+        {
+          "name": "First Impression",
+          "pct": 33.333
+        }
+      ],
+      "items": [
+        {
+          "name": "Leftovers",
+          "pct": 33.333
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Emergency Exit",
+          "pct": 100
+        }
+      ]
+    },
     "Meowstic": {
       "usage": null,
       "moves": [
@@ -6755,55 +6804,6 @@
         {
           "name": "Competitive",
           "pct": 16.667
-        }
-      ]
-    },
-    "Golisopod": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Protect",
-          "pct": 66.667
-        },
-        {
-          "name": "Iron Head",
-          "pct": 66.667
-        },
-        {
-          "name": "Rock Slide",
-          "pct": 33.333
-        },
-        {
-          "name": "Leech Life",
-          "pct": 33.333
-        },
-        {
-          "name": "Aqua Jet",
-          "pct": 33.333
-        },
-        {
-          "name": "Swords Dance",
-          "pct": 33.333
-        },
-        {
-          "name": "U-turn",
-          "pct": 33.333
-        },
-        {
-          "name": "First Impression",
-          "pct": 33.333
-        }
-      ],
-      "items": [
-        {
-          "name": "Leftovers",
-          "pct": 33.333
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Emergency Exit",
-          "pct": 100
         }
       ]
     },
