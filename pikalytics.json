@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-22T07:36:09.757Z",
+  "updated": "2026-09-23T07:38:43.209Z",
   "format": "championstournaments",
   "count": 121,
   "pokemon": {
@@ -4334,59 +4334,6 @@
         }
       ]
     },
-    "Scizor": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Bullet Punch",
-          "pct": 100
-        },
-        {
-          "name": "Bug Bite",
-          "pct": 85.714
-        },
-        {
-          "name": "Protect",
-          "pct": 71.429
-        },
-        {
-          "name": "Swords Dance",
-          "pct": 42.857
-        },
-        {
-          "name": "Trailblaze",
-          "pct": 28.571
-        },
-        {
-          "name": "Dual Wingbeat",
-          "pct": 28.571
-        },
-        {
-          "name": "Brick Break",
-          "pct": 14.286
-        },
-        {
-          "name": "Knock Off",
-          "pct": 14.286
-        }
-      ],
-      "items": [
-        {
-          "name": "Life Orb",
-          "pct": 85.714
-        },
-        {
-          "name": "Metal Coat",
-          "pct": 14.286
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Technician",
-          "pct": 100
-        }
-      ]
-    },
     "Gardevoir": {
       "usage": null,
       "moves": [
@@ -4445,6 +4392,59 @@
         {
           "name": "Trace",
           "pct": 25
+        }
+      ]
+    },
+    "Scizor": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Bullet Punch",
+          "pct": 100
+        },
+        {
+          "name": "Bug Bite",
+          "pct": 85.714
+        },
+        {
+          "name": "Protect",
+          "pct": 71.429
+        },
+        {
+          "name": "Swords Dance",
+          "pct": 42.857
+        },
+        {
+          "name": "Trailblaze",
+          "pct": 28.571
+        },
+        {
+          "name": "Dual Wingbeat",
+          "pct": 28.571
+        },
+        {
+          "name": "Brick Break",
+          "pct": 14.286
+        },
+        {
+          "name": "Knock Off",
+          "pct": 14.286
+        }
+      ],
+      "items": [
+        {
+          "name": "Life Orb",
+          "pct": 85.714
+        },
+        {
+          "name": "Metal Coat",
+          "pct": 14.286
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Technician",
+          "pct": 100
         }
       ]
     },
