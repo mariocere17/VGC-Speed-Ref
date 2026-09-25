@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-24T07:30:34.076Z",
+  "updated": "2026-09-25T07:31:54.092Z",
   "format": "championstournaments",
   "count": 121,
   "pokemon": {
@@ -5445,6 +5445,79 @@
         }
       ]
     },
+    "Salamence": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Tailwind",
+          "pct": 86.364
+        },
+        {
+          "name": "Protect",
+          "pct": 72.727
+        },
+        {
+          "name": "Dragon Claw",
+          "pct": 36.364
+        },
+        {
+          "name": "Draco Meteor",
+          "pct": 36.364
+        },
+        {
+          "name": "Dual Wingbeat",
+          "pct": 31.818
+        },
+        {
+          "name": "Heat Wave",
+          "pct": 18.182
+        },
+        {
+          "name": "Breaking Swipe",
+          "pct": 13.636
+        },
+        {
+          "name": "Psychic Fangs",
+          "pct": 13.636
+        }
+      ],
+      "items": [
+        {
+          "name": "Life Orb",
+          "pct": 45.455
+        },
+        {
+          "name": "Haban Berry",
+          "pct": 9.091
+        },
+        {
+          "name": "Sablenite",
+          "pct": 9.091
+        },
+        {
+          "name": "Focus Sash",
+          "pct": 9.091
+        },
+        {
+          "name": "Leftovers",
+          "pct": 4.545
+        },
+        {
+          "name": "Rocky Helmet",
+          "pct": 4.545
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Intimidate",
+          "pct": 95.455
+        },
+        {
+          "name": "Moxie",
+          "pct": 4.545
+        }
+      ]
+    },
     "Dragapult": {
       "usage": null,
       "moves": [
@@ -5522,76 +5595,60 @@
         }
       ]
     },
-    "Salamence": {
+    "Camerupt": {
       "usage": null,
       "moves": [
         {
-          "name": "Tailwind",
-          "pct": 86.364
+          "name": "Earth Power",
+          "pct": 100
         },
         {
           "name": "Protect",
-          "pct": 72.727
-        },
-        {
-          "name": "Dragon Claw",
-          "pct": 36.364
-        },
-        {
-          "name": "Draco Meteor",
-          "pct": 36.364
-        },
-        {
-          "name": "Dual Wingbeat",
-          "pct": 31.818
+          "pct": 94.764
         },
         {
           "name": "Heat Wave",
-          "pct": 18.182
+          "pct": 94.241
         },
         {
-          "name": "Breaking Swipe",
-          "pct": 13.636
+          "name": "Ancient Power",
+          "pct": 92.147
         },
         {
-          "name": "Psychic Fangs",
-          "pct": 13.636
+          "name": "Eruption",
+          "pct": 13.089
+        },
+        {
+          "name": "Flamethrower",
+          "pct": 2.094
+        },
+        {
+          "name": "Flash Cannon",
+          "pct": 1.571
         }
       ],
       "items": [
         {
-          "name": "Life Orb",
-          "pct": 45.455
-        },
-        {
-          "name": "Haban Berry",
-          "pct": 9.091
-        },
-        {
-          "name": "Sablenite",
-          "pct": 9.091
-        },
-        {
-          "name": "Focus Sash",
-          "pct": 9.091
-        },
-        {
-          "name": "Leftovers",
-          "pct": 4.545
-        },
-        {
-          "name": "Rocky Helmet",
-          "pct": 4.545
+          "name": "Cameruptite",
+          "pct": 100
         }
       ],
       "abilities": [
         {
-          "name": "Intimidate",
-          "pct": 95.455
+          "name": "Solid Rock",
+          "pct": 86.911
         },
         {
-          "name": "Moxie",
-          "pct": 4.545
+          "name": "Magma Armor",
+          "pct": 6.806
+        },
+        {
+          "name": "Anger Point",
+          "pct": 4.712
+        },
+        {
+          "name": "Sheer Force",
+          "pct": 1.571
         }
       ]
     },
@@ -5661,63 +5718,6 @@
         {
           "name": "Zero to Hero",
           "pct": 76
-        }
-      ]
-    },
-    "Camerupt": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Earth Power",
-          "pct": 100
-        },
-        {
-          "name": "Protect",
-          "pct": 94.764
-        },
-        {
-          "name": "Heat Wave",
-          "pct": 94.241
-        },
-        {
-          "name": "Ancient Power",
-          "pct": 92.147
-        },
-        {
-          "name": "Eruption",
-          "pct": 13.089
-        },
-        {
-          "name": "Flamethrower",
-          "pct": 2.094
-        },
-        {
-          "name": "Flash Cannon",
-          "pct": 1.571
-        }
-      ],
-      "items": [
-        {
-          "name": "Cameruptite",
-          "pct": 100
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Solid Rock",
-          "pct": 86.911
-        },
-        {
-          "name": "Magma Armor",
-          "pct": 6.806
-        },
-        {
-          "name": "Anger Point",
-          "pct": 4.712
-        },
-        {
-          "name": "Sheer Force",
-          "pct": 1.571
         }
       ]
     },
@@ -7084,39 +7084,6 @@
         }
       ]
     },
-    "Skarmory": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Brave Bird",
-          "pct": 100
-        },
-        {
-          "name": "Iron Head",
-          "pct": 100
-        },
-        {
-          "name": "Tailwind",
-          "pct": 100
-        },
-        {
-          "name": "Protect",
-          "pct": 100
-        }
-      ],
-      "items": [
-        {
-          "name": "Sitrus Berry",
-          "pct": 100
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Weak Armor",
-          "pct": 100
-        }
-      ]
-    },
     "Golisopod": {
       "usage": null,
       "moves": [
@@ -7187,6 +7154,39 @@
         {
           "name": "Tough Claws",
           "pct": 5.263
+        }
+      ]
+    },
+    "Skarmory": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Brave Bird",
+          "pct": 100
+        },
+        {
+          "name": "Iron Head",
+          "pct": 100
+        },
+        {
+          "name": "Tailwind",
+          "pct": 100
+        },
+        {
+          "name": "Protect",
+          "pct": 100
+        }
+      ],
+      "items": [
+        {
+          "name": "Sitrus Berry",
+          "pct": 100
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Weak Armor",
+          "pct": 100
         }
       ]
     },
