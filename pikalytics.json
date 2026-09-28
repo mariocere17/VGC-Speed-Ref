@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-27T07:57:09.275Z",
+  "updated": "2026-09-28T08:32:44.794Z",
   "format": "championstournaments",
   "count": 121,
   "pokemon": {
@@ -5595,63 +5595,6 @@
         }
       ]
     },
-    "Camerupt": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Earth Power",
-          "pct": 100
-        },
-        {
-          "name": "Protect",
-          "pct": 94.764
-        },
-        {
-          "name": "Heat Wave",
-          "pct": 94.241
-        },
-        {
-          "name": "Ancient Power",
-          "pct": 92.147
-        },
-        {
-          "name": "Eruption",
-          "pct": 13.089
-        },
-        {
-          "name": "Flamethrower",
-          "pct": 2.094
-        },
-        {
-          "name": "Flash Cannon",
-          "pct": 1.571
-        }
-      ],
-      "items": [
-        {
-          "name": "Cameruptite",
-          "pct": 100
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Solid Rock",
-          "pct": 86.911
-        },
-        {
-          "name": "Magma Armor",
-          "pct": 6.806
-        },
-        {
-          "name": "Anger Point",
-          "pct": 4.712
-        },
-        {
-          "name": "Sheer Force",
-          "pct": 1.571
-        }
-      ]
-    },
     "Palafin": {
       "usage": null,
       "moves": [
@@ -5718,6 +5661,63 @@
         {
           "name": "Zero to Hero",
           "pct": 76
+        }
+      ]
+    },
+    "Camerupt": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Earth Power",
+          "pct": 100
+        },
+        {
+          "name": "Protect",
+          "pct": 94.764
+        },
+        {
+          "name": "Heat Wave",
+          "pct": 94.241
+        },
+        {
+          "name": "Ancient Power",
+          "pct": 92.147
+        },
+        {
+          "name": "Eruption",
+          "pct": 13.089
+        },
+        {
+          "name": "Flamethrower",
+          "pct": 2.094
+        },
+        {
+          "name": "Flash Cannon",
+          "pct": 1.571
+        }
+      ],
+      "items": [
+        {
+          "name": "Cameruptite",
+          "pct": 100
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Solid Rock",
+          "pct": 86.911
+        },
+        {
+          "name": "Magma Armor",
+          "pct": 6.806
+        },
+        {
+          "name": "Anger Point",
+          "pct": 4.712
+        },
+        {
+          "name": "Sheer Force",
+          "pct": 1.571
         }
       ]
     },
