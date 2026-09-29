@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-28T08:32:44.794Z",
+  "updated": "2026-09-29T08:16:17.427Z",
   "format": "championstournaments",
   "count": 121,
   "pokemon": {
@@ -5380,71 +5380,6 @@
         }
       ]
     },
-    "Scrafty": {
-      "usage": null,
-      "moves": [
-        {
-          "name": "Knock Off",
-          "pct": 100
-        },
-        {
-          "name": "Fake Out",
-          "pct": 100
-        },
-        {
-          "name": "Protect",
-          "pct": 85
-        },
-        {
-          "name": "Close Combat",
-          "pct": 75
-        },
-        {
-          "name": "Drain Punch",
-          "pct": 25
-        },
-        {
-          "name": "Detect",
-          "pct": 5
-        },
-        {
-          "name": "Ice Punch",
-          "pct": 5
-        },
-        {
-          "name": "Helping Hand",
-          "pct": 5
-        }
-      ],
-      "items": [
-        {
-          "name": "Focus Sash",
-          "pct": 65
-        },
-        {
-          "name": "Roseli Berry",
-          "pct": 10
-        },
-        {
-          "name": "Life Orb",
-          "pct": 10
-        },
-        {
-          "name": "Leftovers",
-          "pct": 5
-        },
-        {
-          "name": "Sitrus Berry",
-          "pct": 5
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Intimidate",
-          "pct": 100
-        }
-      ]
-    },
     "Salamence": {
       "usage": null,
       "moves": [
@@ -5515,6 +5450,71 @@
         {
           "name": "Moxie",
           "pct": 4.545
+        }
+      ]
+    },
+    "Scrafty": {
+      "usage": null,
+      "moves": [
+        {
+          "name": "Knock Off",
+          "pct": 100
+        },
+        {
+          "name": "Fake Out",
+          "pct": 100
+        },
+        {
+          "name": "Protect",
+          "pct": 85
+        },
+        {
+          "name": "Close Combat",
+          "pct": 75
+        },
+        {
+          "name": "Drain Punch",
+          "pct": 25
+        },
+        {
+          "name": "Detect",
+          "pct": 5
+        },
+        {
+          "name": "Ice Punch",
+          "pct": 5
+        },
+        {
+          "name": "Helping Hand",
+          "pct": 5
+        }
+      ],
+      "items": [
+        {
+          "name": "Focus Sash",
+          "pct": 65
+        },
+        {
+          "name": "Roseli Berry",
+          "pct": 10
+        },
+        {
+          "name": "Life Orb",
+          "pct": 10
+        },
+        {
+          "name": "Leftovers",
+          "pct": 5
+        },
+        {
+          "name": "Sitrus Berry",
+          "pct": 5
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Intimidate",
+          "pct": 100
         }
       ]
     },
