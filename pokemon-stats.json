@@ -59495,6 +59495,7 @@
       "Endure",
       "Charm",
       "Sleep Talk",
+      "Baton Pass",
       "Encore",
       "Rain Dance",
       "Sunny Day",
@@ -73024,7 +73025,73 @@
     "abilities": [
       "battle-bond"
     ],
-    "moves": []
+    "moves": [
+      "Pound",
+      "Ice Punch",
+      "Swords Dance",
+      "Take Down",
+      "Growl",
+      "Water Gun",
+      "Hydro Pump",
+      "Surf",
+      "Ice Beam",
+      "Blizzard",
+      "Hyper Beam",
+      "Low Kick",
+      "Dig",
+      "Quick Attack",
+      "Double Team",
+      "Smokescreen",
+      "Haze",
+      "Lick",
+      "Waterfall",
+      "Swift",
+      "Rest",
+      "Rock Slide",
+      "Substitute",
+      "Thief",
+      "Protect",
+      "Mud Slap",
+      "Spikes",
+      "Icy Wind",
+      "Endure",
+      "False Swipe",
+      "Sleep Talk",
+      "Rain Dance",
+      "Facade",
+      "Taunt",
+      "Helping Hand",
+      "Role Play",
+      "Brick Break",
+      "Hydro Cannon",
+      "Weather Ball",
+      "Rock Tomb",
+      "Extrasensory",
+      "Aerial Ace",
+      "Mud Shot",
+      "Water Pulse",
+      "U Turn",
+      "Fling",
+      "Toxic Spikes",
+      "Dark Pulse",
+      "Night Slash",
+      "Giga Impact",
+      "Shadow Sneak",
+      "Gunk Shot",
+      "Grass Knot",
+      "Smack Down",
+      "Sludge Wave",
+      "Low Sweep",
+      "Acrobatics",
+      "Water Pledge",
+      "Water Shuriken",
+      "Liquidation",
+      "Tera Blast",
+      "Snowscape",
+      "Trailblaze",
+      "Chilling Water",
+      "Upper Hand"
+    ]
   },
   "greninja ash": {
     "displayName": "Greninja Ash",
@@ -74316,6 +74383,7 @@
       "Body Slam",
       "Take Down",
       "Thrash",
+      "Double Edge",
       "Leer",
       "Bite",
       "Roar",
@@ -74342,6 +74410,7 @@
       "Iron Defense",
       "Howl",
       "Last Resort",
+      "Sucker Punch",
       "Earth Power",
       "Thunder Fang",
       "Fire Fang",
@@ -79206,6 +79275,7 @@
       "Endure",
       "Charm",
       "Sleep Talk",
+      "Baton Pass",
       "Encore",
       "Rain Dance",
       "Sunny Day",
@@ -79558,6 +79628,7 @@
       "Swords Dance",
       "Body Slam",
       "Take Down",
+      "Double Edge",
       "Roar",
       "Flamethrower",
       "Hyper Beam",
@@ -79620,9 +79691,12 @@
       "Body Press",
       "Breaking Swipe",
       "Scale Shot",
+      "Meteor Beam",
       "Dual Wingbeat",
       "Tera Blast",
-      "Collision Course"
+      "Collision Course",
+      "Dragon Cheer",
+      "Temper Flare"
     ]
   },
   "koraidon sprinting build": {
@@ -79644,6 +79718,7 @@
       "Swords Dance",
       "Body Slam",
       "Take Down",
+      "Double Edge",
       "Roar",
       "Flamethrower",
       "Hyper Beam",
@@ -79706,9 +79781,12 @@
       "Body Press",
       "Breaking Swipe",
       "Scale Shot",
+      "Meteor Beam",
       "Dual Wingbeat",
       "Tera Blast",
-      "Collision Course"
+      "Collision Course",
+      "Dragon Cheer",
+      "Temper Flare"
     ]
   },
   "koraidon swimming build": {
@@ -79730,6 +79808,7 @@
       "Swords Dance",
       "Body Slam",
       "Take Down",
+      "Double Edge",
       "Roar",
       "Flamethrower",
       "Hyper Beam",
@@ -79792,9 +79871,12 @@
       "Body Press",
       "Breaking Swipe",
       "Scale Shot",
+      "Meteor Beam",
       "Dual Wingbeat",
       "Tera Blast",
-      "Collision Course"
+      "Collision Course",
+      "Dragon Cheer",
+      "Temper Flare"
     ]
   },
   "koraidon gliding build": {
@@ -79816,6 +79898,7 @@
       "Swords Dance",
       "Body Slam",
       "Take Down",
+      "Double Edge",
       "Roar",
       "Flamethrower",
       "Hyper Beam",
@@ -79878,9 +79961,12 @@
       "Body Press",
       "Breaking Swipe",
       "Scale Shot",
+      "Meteor Beam",
       "Dual Wingbeat",
       "Tera Blast",
-      "Collision Course"
+      "Collision Course",
+      "Dragon Cheer",
+      "Temper Flare"
     ]
   },
   "miraidon low power mode": {
@@ -79952,7 +80038,9 @@
       "Electric Terrain",
       "Dazzling Gleam",
       "Tera Blast",
-      "Electro Drift"
+      "Electro Drift",
+      "Dragon Cheer",
+      "Supercell Slam"
     ]
   },
   "miraidon drive mode": {
@@ -80024,7 +80112,9 @@
       "Electric Terrain",
       "Dazzling Gleam",
       "Tera Blast",
-      "Electro Drift"
+      "Electro Drift",
+      "Dragon Cheer",
+      "Supercell Slam"
     ]
   },
   "miraidon aquatic mode": {
@@ -80096,7 +80186,9 @@
       "Electric Terrain",
       "Dazzling Gleam",
       "Tera Blast",
-      "Electro Drift"
+      "Electro Drift",
+      "Dragon Cheer",
+      "Supercell Slam"
     ]
   },
   "miraidon glide mode": {
@@ -80168,7 +80260,9 @@
       "Electric Terrain",
       "Dazzling Gleam",
       "Tera Blast",
-      "Electro Drift"
+      "Electro Drift",
+      "Dragon Cheer",
+      "Supercell Slam"
     ]
   },
   "ursaluna bloodmoon": {
